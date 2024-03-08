@@ -1,0 +1,41 @@
+TITLE:
+A Long-Step, Cutting Plane Algorithm for Linear and Convex
+Programming
+
+AUTHORS:
+John E. Mitchell  
+Department of Mathematical Sciences
+Rensselaer Polytechnic Institute
+Troy,  NY  12180
+
+and
+
+Srinivasan Ramaswamy
+Dept. of Decision Sciences & Engg. Systems
+Rensselaer Polytechnic Institute
+Troy, NY 12180
+
+NUMBER:
+DSES Technical Report No. 37-93-387
+
+DATE:
+August 18, 1993.  Revised November 16, 1993, Aug 15, 1994.
+
+ABSTRACT:
+A cutting plane method for linear programming is described. 
+This method is an extension of Atkinson and Vaidya's algorithm, and
+uses the central trajectory. The logarithmic 
+barrier function is used
+explicitly, motivated partly by the successful implementation
+of such algorithms. 
+This makes it possible to maintain primal
+and dual iterates, thus allowing termination at will, instead of
+having to solve to completion. This algorithm has the same
+complexity ($O(nL^2)$ iterations) 
+as Atkinson and Vaidya's algorithm, but improves
+upon it in that it is a `long-step' version, while their's is
+a `short-step' one in some sense. For this reason, this algorithm is
+computationally much more promising as well. 
+This algorithm can be of use in solving combinatorial optimization
+problems with large numbers of constraints, such as the Traveling
+Salesman Problem.

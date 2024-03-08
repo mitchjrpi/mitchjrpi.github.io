@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="QCQP_QPCCabs.tex"> 
+<meta name="date" content="2014-10-17 16:23:00"> 
+<link rel="stylesheet" type="text/css" href="QCQP_QPCCabs.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 74--><p class="noindent" >
+<!--l. 75--><p class="noindent" ><a 
+href="http://eaton.math.rpi.edu/faculty/Mitchell/papers/QCQP_QPCC/QCQP_QPCC.pdf" ><span 
+class="cmbx-12x-x-120">On QPCCs, QCQPs and Completely Positive</span>
+<span 
+class="cmbx-12x-x-120">Programs</span></a>
+<span class="footnote-mark"><a 
+href="QCQP_QPCCabs2.html#fn1x0"><sup class="textsuperscript">1</sup></a></span><a 
+ id="x1-2f1"></a>
+<!--l. 92--><p class="noindent" ><span 
+class="cmr-12">Lijie</span>
+<span 
+class="cmr-12">Bai</span><span class="footnote-mark"><a 
+href="QCQP_QPCCabs3.html#fn2x0"><sup class="textsuperscript">2</sup></a></span><a 
+ id="x1-3f2"></a> <span 
+class="cmr-12">,</span>
+<a 
+href="http://www.rpi.edu/~mitchj" ><span 
+class="cmr-12">John</span>
+<span 
+class="cmr-12">E.Mitchell</span></a><span class="footnote-mark"><a 
+href="QCQP_QPCCabs4.html#fn3x0"><sup class="textsuperscript">3</sup></a></span><a 
+ id="x1-4f3"></a> 
+<span 
+class="cmr-12">and Jong-Shi</span>
+<span 
+class="cmr-12">Pang</span><span class="footnote-mark"><a 
+href="QCQP_QPCCabs5.html#fn4x0"><sup class="textsuperscript">4</sup></a></span><a 
+ id="x1-5f4"></a> 
+<p>January 26, 2014. Revised October 17, 2014 and July 28, 2015.
+</p>
+</div>
+   <div 
+class="abstract" 
+>
+<div class="center" 
+>
+<!--l. 113--><p class="noindent" >
+<!--l. 113--><p class="noindent" ><span 
+class="cmbx-9">Abstract</span></div>
+     <!--l. 114--><p class="indent" >    <span 
+class="cmr-9">This paper studies several classes of nonconvex optimization problems</span>
+     <span 
+class="cmr-9">defined over convex cones, establishing connections between them and</span>
+     <span 
+class="cmr-9">demonstrating  that  they  can  be  equivalently  formulated  as  convex</span>
+     <span 
+class="cmr-9">completely  positive  programs.  The  problems  being  studied  include:</span>
+     <span 
+class="cmr-9">a  quadratically  constrained  quadratic  program  (QCQP),  a  quadratic</span>
+     <span 
+class="cmr-9">program with complementarity constraints (QPCC), and rank constrained</span>
+     <span 
+class="cmr-9">semidefinite  programs.  Our  results  do  not  make  any  boundedness</span>
+     <span 
+class="cmr-9">assumptions on the feasible regions of the various problems considered.</span>
+     <span 
+class="cmr-9">The first stage in the reformulation is to cast the problem as a conic</span>
+     <span 
+class="cmr-9">QCQP  with  just  one  nonconvex  constraint  </span><span 
+class="cmmi-9">q</span><span 
+class="cmr-9">(</span><span 
+class="cmmi-9">x</span><span 
+class="cmr-9">)  </span><span 
+class="cmsy-9">&#x2264; </span><span 
+class="cmr-9">0,  where  </span><span 
+class="cmmi-9">q</span><span 
+class="cmr-9">(</span><span 
+class="cmmi-9">x</span><span 
+class="cmr-9">)  is</span>
+     <span 
+class="cmr-9">nonnegative over the (convex) conic and linear constraints, so the problem</span>
+     <span 
+class="cmr-9">fails the Slater constraint qualification. A quadratic program with (linear)</span>
+     <span 
+class="cmr-9">complementarity constraints (or QPCC) has such a structure; we prove</span>
+                                                                  
+
+                                                                  
+     <span 
+class="cmr-9">the  converse,  namely  that  any  conic  QCQP  satisfying  a  constraint</span>
+     <span 
+class="cmr-9">qualification can be expressed as an equivalent conic QPCC. The second</span>
+     <span 
+class="cmr-9">stage  of  the  reformulation  lifts  the  problem  to  a  completely  positive</span>
+     <span 
+class="cmr-9">program, and exploits and generalizes a result of Burer. We also show</span>
+     <span 
+class="cmr-9">that  a  Frank-Wolfe  type  result  holds  for  a  subclass  of  this  class  of</span>
+     <span 
+class="cmr-9">QCQPs. Further, we derive necessary and sufficient optimality conditions</span>
+     <span 
+class="cmr-9">for nonlinear programs where the only nonconvex constraint is a quadratic</span>
+     <span 
+class="cmr-9">constraint of the structure considered elsewhere in the paper.</span>
+     <!--l. 200--><p class="noindent" ><span 
+class="cmbx-9">Keywords:   </span><span 
+class="cmr-9">QCQP,   QPCC,   Completely   Positive   Representation,</span>
+     <span 
+class="cmr-9">rank-constrained SDP, Local Optimality</span>
+</div>
+    
+</body></html> 
+
+                                                                  
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="QCQP_QPCCabs.tex"> 
+<meta name="date" content="2014-10-17 16:23:00"> 
+<link rel="stylesheet" type="text/css" href="QCQP_QPCCabs.css"> 
+</head><body 
+>
+ <div class="footnote-text">
+ <!--l. 82--><p class="noindent" ><span class="footnote-mark"><a 
+ id="fn1x0">   <sup class="textsuperscript">1</sup></a></span><span 
+class="cmr-8">The work of Bai and Mitchell was supported by the Air Force Office of Sponsored Research</span>
+ <span 
+class="cmr-8">under grant FA9550-11-1-0260 and by the National Science Foundation under Grant Number</span>
+ <span 
+class="cmr-8">CMMI-1334327. The work of Pang was supported by the National Science Foundation under Grant</span>
+ <span 
+class="cmr-8">Number CMMI-1333902 and by the Air Force Office of Scientific Research under Grant Number</span>
+ <span 
+class="cmr-8">FA9550-11-1-0151.</span></div> 
+</body></html> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="QCQP_QPCCabs.tex"> 
+<meta name="date" content="2014-10-17 16:23:00"> 
+<link rel="stylesheet" type="text/css" href="QCQP_QPCCabs.css"> 
+</head><body 
+>
+  <div class="footnote-text">
+  <!--l. 96--><p class="noindent" ><span class="footnote-mark"><a 
+ id="fn2x0">   <sup class="textsuperscript">2</sup></a></span><span 
+class="cmr-8">Department of Mathematical Sciences, Rensselaer Polytechnic Institute, Troy, NY 12180, U.S.A.</span>
+  <a 
+href="mailto:bail@gmail.com" ><span 
+class="cmr-8">email</span></a> </div> 
+</body></html> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="QCQP_QPCCabs.tex"> 
+<meta name="date" content="2014-10-17 16:23:00"> 
+<link rel="stylesheet" type="text/css" href="QCQP_QPCCabs.css"> 
+</head><body 
+>
+  <div class="footnote-text">
+  <!--l. 99--><p class="noindent" ><span class="footnote-mark"><a 
+ id="fn3x0">   <sup class="textsuperscript">3</sup></a></span><span 
+class="cmr-8">Department of Mathematical Sciences, Rensselaer Polytechnic Institute, Troy, NY 12180, U.S.A.</span>
+  <a 
+href="mailto:mitchj@rpi.edu" ><span 
+class="cmr-8">email</span></a></div> 
+</body></html> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="QCQP_QPCCabs.tex"> 
+<meta name="date" content="2014-10-17 16:23:00"> 
+<link rel="stylesheet" type="text/css" href="QCQP_QPCCabs.css"> 
+</head><body 
+>
+  <div class="footnote-text">
+  <!--l. 103--><p class="noindent" ><span class="footnote-mark"><a 
+ id="fn4x0">   <sup class="textsuperscript">4</sup></a></span><span 
+class="cmr-8">Department of Industrial and Systems Engineering, University of Southern California, Los</span>
+  <span 
+class="cmr-8">Angeles, CA 90089, USA. </span><a 
+href="mailto:jongship@usc.edu" ><span 
+class="cmr-8">email</span></a></div> 
+</body></html> 
+
+
+<hr>
+
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/papers/QCQP_QPCC/QCQP_QPCC.pdf>Download the paper (pdf)</a> |
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/chrono.html>Return
+to my list of papers</a> |
+<a href=http://www.rpi.edu/~mitchj>John E. Mitchell</a>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-39407322-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+ 
+</body></html> 

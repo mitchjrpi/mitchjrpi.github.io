@@ -1,0 +1,31 @@
+TITLE:
+Interior Point Algorithms for Integer Programming
+
+AUTHOR:
+John E. Mitchell
+Department of Mathematical Sciences
+Rensselaer Polytechnic Institute
+Troy,  NY  12180
+mitchj@rpi.edu
+
+NUMBER:
+R.P.I. Mathematical Sciences Technical Report No. 215
+
+DATE:
+June 15, 1994.
+
+
+ABSTRACT:
+Research on using interior point algorithms to solve
+integer programming problems is surveyed.
+This paper concentrates on branch and bound and cutting plane methods;
+a potential function method is also briefly mentioned.
+The principal difficulty with using an interior point algorithm in
+a branch and cut method
+to solve integer programming problems is in warm starting
+the algorithm efficiently.
+Methods for overcoming this difficulty are described and other features
+of the algorithms are given.
+This paper focuses on the techniques necessary to obtain an efficient
+computational implementation;
+there is a short discussion of theoretical issues.

@@ -1,0 +1,1626 @@
+\documentclass[12pt]{article}
+
+\usepackage{color}
+\usepackage{graphicx}
+
+\renewcommand{\baselinestretch}{1.2}
+
+\newcommand{\real}{I\!\!R}
+\newcommand{\til}{\char '176}
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+
+% Definition of the proof-environment:
+\newenvironment{proof}{{\raggedright\bf
+Proof:}\quad}{\hspace*{\fill}$\fbox{ }$\\}
+\newenvironment{altproof}{{\raggedright\bf Alternative
+Proof:}\quad}{\hspace*{\fill}$\fbox{ }$}
+
+
+\newtheorem{algorithm1}{Algorithm}
+\newenvironment{algorithm}[1]{\begin{algorithm1}[#1]~\\
+    \vspace{-0.5cm}}{\end{algorithm1}}
+
+
+% My definitions of page layout
+\oddsidemargin .3in
+\textwidth 6in
+\textheight 8.8in
+\topmargin -30pt
+
+\begin{document}
+
+\bibliographystyle{plain}
+%\begin{center}
+%{\bigskip\Huge\bf McMaster University}\\[1cm]
+%{\LARGE\bf Advanced Optimization Laboratory}\\[3.5cm]
+%\begin{center}
+%\centering
+%% \includegraphics[width=2.5in]{advolab1}\\[2cm]
+%
+%{\LARGE\bf Title:}\\[0.1cm]
+%
+%{\LARGE\ A semidefinite programming based polyhedral cut and price
+%approach for the maxcut problem} \vspace{1cm}
+%
+%{\Large\bf Authors:}\\[0.5cm]
+%{\Large\ Kartik Krishnan, John Mitchell}\\[1cm]
+%\end{center}
+%\vspace{2cm} {\Large\bf AdvOL-Report No. 2004/3}\\[0.5cm]
+%{\large\ May 2004, revised February 2005, Hamilton, Ontario,
+%Canada}
+%\end{center}
+
+\begin{titlepage}
+\begin{center}
+{\bf\Large\bf A semidefinite programming based polyhedral cut and
+price approach for the maxcut problem\footnote{Research supported
+in part by NSF grant numbers CCR--9901822 and DMS--0317323}
+\footnote{Work done as part of the first authors Ph.D.
+dissertation at RPI}}
+\end{center}
+
+%\vspace{\baselineskip}
+
+\begin{center}
+{\bf\large\bf Kartik Krishnan}
+
+
+  Harrelson Hall 235  \\
+     Department of Mathematics  \\
+     Campus Box 8205  \\
+     North Carolina State University  \\
+     Raleigh, NC 27695-8205  \\
+     kksivara@ncsu.edu  \\
+     http://www4.ncsu.edu/\til kksivara
+     
+\vspace{\baselineskip}
+
+{\bf\large\bf John E. Mitchell}
+
+
+    Mathematical Sciences  \\
+    Rensselaer Polytechnic Institute  \\
+    Troy,  NY 12180  \\
+    mitchj@rpi.edu  \\
+    http://www.rpi.edu/\til mitchj
+
+\end{center}
+
+\begin{center}
+    Draft of \today
+\end{center}
+
+\begin{abstract}
+We investigate solution of the maximum cut problem using a
+polyhedral cut and price approach. The dual of the well-known SDP
+relaxation of maxcut is formulated as a semi-infinite linear
+programming problem, which is solved within an interior point
+cutting plane algorithm in a dual setting; this constitutes the
+pricing (column generation) phase of the algorithm. Cutting planes
+based on the polyhedral theory of the maxcut problem are then
+added to the primal problem in order to improve the SDP
+relaxation; this is the cutting phase of the algorithm. We provide
+computational results, and compare these results with a standard
+SDP cutting plane scheme.
+\begin{flushleft}
+{\bf Keywords:} Semidefinite programming, column generation,
+cutting plane methods, combinatorial optimization
+\end{flushleft}
+\end{abstract}
+
+\end{titlepage}
+
+
+\section{Introduction}
+
+Let $G = (V,E)$ denote an edge weighted undirected graph without
+loops or multiple edges. Let $V = \{1,\ldots,n\}$, $E \subset \{
+\{i,j\} : 1 \le i < j \le n\}$, and $w \in \real^{|E|}$, with
+$\{i,j\}$ the edge with endpoints $i$ and $j$, and weight
+$w_{ij}$. We assume that $m = |E|$. For $S \subseteq V$, the set
+of edges $\{i,j\} \in E$ with one endpoint in $S$ and the other in
+$V \backslash S$ form the {\em cut} denoted by $\delta(S)$. We
+define the weight of the cut as $w(\delta(S)) = \displaystyle
+\sum_{\{i,j\} \in \delta(S)} w_{ij}$. The {\em maximum cut
+problem}, denoted as (MC), is the problem of finding a cut for
+which the total weight is maximum. (MC) can be formulated as
+\begin{eqnarray}
+\begin{array}{cc}
+\max \{w(\delta(S)) | S \subseteq V \} & \qquad(MC)
+\end{array}
+\end{eqnarray}
+The problem finds numerous applications in, for example, the layout of
+electronic circuitry (Chang \& Du \cite{chang_du} and Pinter
+\cite{pinter}), and state problems in statistical physics (Barahona et
+al. \cite{barahona_et_al}). It is also a canonical problem from
+which one can develop algorithms for other combinatorial
+optimization problems such as min-bisection, graph partitioning
+etc.
+
+The maximum cut problem is one of the original NP complete
+problems (Karp \cite{karp1}). However, there are several classes
+of graphs for which the maximum cut problem can be solved in
+polynomial time; for instance planar graphs, graphs with no $K_5$
+minor etc. A good survey on the maxcut problem appears in Poljak
+and Tuza \cite{poljak3}.
+
+We can model the maxcut problem as an integer program as follows:
+Consider a binary variable associated with each edge of the graph.
+The value of the variable indicates whether the two endpoints of
+the edge are on the same side of the cut or on opposite sides.
+Taken together, these binary variables define a binary vector,
+which represents a  feasible solution to the maxcut problem. The
+convex hull of all these candidate solutions forms a polytope
+known as the maxcut polytope, whose complete description is
+unknown. The maxcut problem amounts to minimizing a linear
+objective function over this polytope. One can also regard these
+variables as the entries of a matrix which has a row and a column
+for each vertex, and this matrix should be rank one (and therefore
+positive semidefinite) for the values of the variables to be
+consistent. This gives rise to a non-polyhedral (SDP) formulation
+of the maxcut problem where one is now optimizing over this matrix
+variable. These non-polyhedral formulations can be solved
+efficiently and in polynomial time using interior point methods.
+In an LP (SDP) cutting plane approach, one begins with an initial
+polyhedral (non-polyhedral) description that contains the maxcut
+polytope, and these descriptions are progressively refined using
+cutting planes. The procedure is repeated until we have an optimal
+solution to the maxcut problem.
+
+Our aim in this paper is to solve the maxcut problem to optimality
+using a polyhedral cut and price approach and heuristics.
+Although, our approach is entirely polyhedral, it closely mimics
+an SDP cutting plane approach for the maxcut problem.
+
+The paper is organized in a manner that we have all the details at
+hand to describe our cutting plane approach, which appears in
+\S\ref{maxcut_as_lp}. An outline of the paper is as follows:
+\S\ref{lp_formulations_of_maxcut} deals with a linear programming
+(LP) formulation  while \S\ref{sdp_formulations_of_maxcut} deals
+with a semidefinite programming (SDP) formulation of the maxcut
+problem. In \S\ref{maxcut_as_lp} we motivate and develop our
+polyhedral cut and price approach for the maxcut problem; this is
+based on an SDP formulation of the maxcut problem presented in
+\S\ref{sdp_formulations_of_maxcut}. The details of the algorithm
+are given in \S\ref{sec_details}. We present some computational
+results in \S\ref{maxcut_computational_results} and our
+conclusions in \S\ref{maxcut_conclusions}.
+
+\subsection{Notation}
+A quick word on notation: we represent vectors and matrices, by
+lower and upper case letters respectively. For instance $d_{ij}$
+denotes the $j$th entry of the vector $d_i$ in a collection,
+whereas $X_{ij}$ denotes the entry in the $i$th row and $j$th
+column of matrix $X$. The requirement that a matrix $X$ be
+symmetric and positive semidefinite (psd) is expressed $X \succeq 0$. We also
+use MATLAB-like notation frequently in this paper. For instance
+$y(n+1:m)$ will denote components $n+1$ to $m$ of vector $y$,
+while $A(n+1:m,1:p)$ will denote the sub-matrix obtained by
+considering rows $n+1$ to $m$, and the first $p$ columns of matrix
+$A$. Finally ${d_j}.^ 2$ refers to a {\em row} vector obtained by
+squaring all the components of $d_j$.
+
+\section{Linear programming formulations of the maxcut problem}
+
+\label{lp_formulations_of_maxcut} Consider a variable $x_{ij}$ for
+each edge $\{i,j\}$ in the graph. Let $x_{ij}$ assume the value
+$1$ if edge $\{i,j\}$ is in the cut, and $0$ otherwise. The maxcut
+problem can then be modelled as the following integer programming
+problem.
+\begin{eqnarray}
+\label{maxcut_as_ip}
+\begin{array}{ccc}
+\max & \displaystyle \displaystyle \sum_{i=1}^n \sum_{i<j, \{i,j\} \in E} w_{ij} x_{ij} \\
+\mbox{subject to} & x & \mbox{is the incidence vector of a cut},
+\end{array}
+\end{eqnarray}
+where $n$ is the number of vertices in the graph.
+
+Let $\mbox{CUT}(G)$ denote the convex hull of the incidence
+vectors of cuts. Since maximizing a linear function over a set of
+points is equivalent to maximizing it over the convex hull of this
+set of points, we can also write (\ref{maxcut_as_ip}) as the
+following linear program
+\begin{eqnarray}
+\label{maxcut_as_01lp}
+\begin{array}{cc}
+\max & c^Tx \\
+\mbox{s.t.} & x \in \mbox{CUT}(G).
+\end{array}
+\end{eqnarray}
+Here $c = \{w_{ij} \}, \,\ x = \{x_{ij}\} \in \real^m$, where $m$
+is the number of edges in the graph. We usually index $c$ and $x$
+with the subscript $e$ to relate them to the edges in the graph.
+However from time to time we drop the subscript $e$ as
+appropriate. If we had an oracle capable of solving the separation
+problem with respect to this polytope in polynomial time, we could
+use this oracle in conjunction with the ellipsoid algorithm to
+solve the maxcut problem in polynomial time (Gr\"otschel et al
+\cite{GLSbook}). Unfortunately we do not have polynomial time
+separation oracles for some of the inequalities that describe the
+maxcut polytope, owing to the {\em NP complete} nature of the
+problem.
+
+It is instructive to study facets of the maxcut polytope,
+since these provide good separation
+inequalities in a cutting plane approach. Numerous facets of the maxcut polytope have been studied,
+but the ones widely investigated in connection with a cutting plane approach are the following inequalities
+\begin{eqnarray}
+\label{facets_of_mcpolytope}
+\begin{array}{cccc}
+x_e & \ge & 0, & \forall e \in E, \\
+x_e & \le & 1, & \forall e \in E, \\
+x(F) - x(C \backslash F) & \le & |F| - 1 & \forall \hspace*{0.25cm} \mbox{circuits} \hspace*{0.25cm} C \subseteq E \\
+& & & \mbox{and all} \hspace*{0.25cm} F \subseteq C
+\hspace*{0.25cm} \mbox{with} \hspace*{0.25cm} |F| \hspace*{0.25cm}
+\mbox{odd},
+\end{array}
+\end{eqnarray}
+where $x(S) = \displaystyle \sum_{\{i,j\} \in S} x_{ij}$ for any $
+S \subseteq E$. It is easy to see that these are valid
+inequalities for the maxcut polytope. The first and second set of
+inequalities define facets of $\mbox{CUT}(G)$, if $e$ is not
+contained in a triangle. The third set known as the {\em odd-cycle
+inequalities} defines facets for each $F \subseteq C$, with $|F|$
+odd, if $C$ has no chord. We will call a graph {\em chordal} if
+any cycle $C$ of length $\ge$ 4 has a chord. The latter
+inequalities can be derived from the observation that every cycle
+and cut intersect in an even number of edges. Moreover, the
+integral vectors satisfying (\ref{facets_of_mcpolytope}) are
+vertices of $\mbox{CUT}(G)$. So we indeed have an integer
+programming formulation of the maximum cut problem, namely
+\begin{eqnarray}
+\label{maxcut_as_01ip}
+\begin{array}{lrccc}
+\max & c^Tx \\
+\mbox{s.t.} & x(F) - x(C \backslash F) & \le & |F| - 1 & \forall \hspace*{0.25cm} \mbox{circuits} \hspace*{0.25cm} C \subseteq E \\
+& & & & \mbox{and all} \hspace*{0.25cm} F \subseteq C \hspace*{0.25cm} \mbox{with} \hspace*{0.25cm} |F| \hspace*{0.25cm} \mbox{odd} \\
+& x & \in & \{0,1\}^m.
+\end{array}
+\end{eqnarray}
+Incidentally, the inequalities in (\ref{facets_of_mcpolytope})
+define a polytope known as the {\em odd cycle polytope}. Barahona
+and Mahjoub \cite{barahona4} show that we can drop the integrality
+restriction in (\ref{maxcut_as_01ip}), and solve the maxcut
+problem simply as an LP, if $G$ does not have any subgraph
+contractible to $K_5$. This includes planar graphs, so we can
+indeed solve these maxcut instances in polynomial time.
+
+Although there is an exponential number of linear constraints in
+(\ref{maxcut_as_01ip}), Barahona and Mahjoub \cite{barahona4}
+describe a polynomial time separation oracle for the inequalities
+(\ref{facets_of_mcpolytope}). Thus it is possible to optimize a
+linear function over the odd cycle polytope in polynomial time.
+This exact algorithm, together with separation heuristics, has
+been used in cutting plane algorithms for the maxcut problem by
+Mitchell~\cite{JEMising} and De Simone et
+al.~\cite{desimone1,desimone2}, among others. The initial
+relaxation used in these approaches is
+\begin{eqnarray}
+\label{initial_lp_relaxation}
+\begin{array}{lc}
+\max & c^Tx  \\
+\mbox{s.t.} &  0 \hspace*{0.25cm} \le \hspace*{0.25cm} x
+\hspace*{0.25cm} \le \hspace*{0.25cm} e,
+\end{array}
+\end{eqnarray}
+where $c,x \in \real^{m}$, where $m$ is the number of edges in the
+graph.
+
+\section{Semidefinite formulations of the maxcut problem}
+\label{sdp_formulations_of_maxcut} In this section we consider
+semidefinite programming (SDP) formulations of the maxcut problem.
+Our polyhedral cut and price algorithm presented in
+\S\ref{maxcut_as_lp} works with this SDP formulation.
+
+The maxcut problem can be modelled as an integer program using cut
+vectors $d \in \{-1,1\}^n$ with $d_i = 1$ if $i \in S$, and $d_i =
+-1$ for $i \in V \setminus S$. Consider the following problem
+\begin{eqnarray}
+\label{maxcut_as_pm1ip_1}
+\begin{array}{ccc}
+\max & \displaystyle \sum_{i,j=1}^n w_{ij} \frac{1-d_id_j}{4} \\
+\mbox{s.t.} & d_i^2 = 1, & i=1,\ldots,n.
+\end{array}
+\end{eqnarray}
+A factor of $\frac{1}{2}$ accounts for the fact that each edge is
+considered twice. Moreover the expression $\frac{(1-d_id_j)}{2}$
+is $0$ if $d_i = d_j$, i.e. if $i$ and $j$ are in the same set,
+and $1$ if $d_i = -d_j$. Thus $\frac{(1-d_id_j)}{2}$ yields the
+{\em incidence vector} of a cut associated with a cut vector $d$,
+evaluating to $1$ if and only if edge $\{i,j\}$ is in the cut.
+
+The Laplacian matrix of the graph $G$ is $L := \mbox{Diag}(Ae) -
+A$, where $A$ is the weighted adjacency matrix of the graph. The
+objective function in (\ref{maxcut_as_pm1ip_1}) can be rewritten
+as $\frac{1}{4} d^TLd$. Now, consider the symmetric matrix $X =
+dd^T$ of size $n$, whose $(i,j)$th entry is given by $X_{ij} =
+d_id_j$. One can rewrite the maxcut problem as the following
+optimization problem over the matrix variable $X$
+\begin{eqnarray}
+\label{maxcut_as_rank1sdp}
+\begin{array}{lrcc}
+\max & \frac{L}{4} \bullet X \\
+\mbox{s.t.} & \mbox{diag}(X) & = & e \\
+& X & \succeq & 0 \\
+& \mbox{rank}(X) & = & 1.
+\end{array}
+\end{eqnarray}
+Dropping the rank one restriction on the matrix $X$ gives the
+following SDP relaxation of the maxcut problem
+\begin{eqnarray}
+\label{maxcut_as_sdp}
+\begin{array}{lrcc}
+\max & \frac{L}{4} \bullet X \\
+\mbox{s.t.} & \mbox{diag}(X) & = & e \\
+& X & \succeq & 0,
+\end{array}
+\end{eqnarray}
+and its dual
+\begin{eqnarray}
+\label{maxcut_as_sdd}
+\begin{array}{lrcc}
+\min & e^Ty \\
+\mbox{s.t.} & S & = & \mbox{Diag}(y) - \frac{L}{4} \\
+& S & \succeq & 0,
+\end{array}
+\end{eqnarray}
+which was originally derived in Laurent and Poljak
+\cite{laurent_poljak} (see also Laurent \cite{laurent_maxcut},
+Helmberg \cite{helmberg8} and Krishnan \& Terlaky
+\cite{krishnan_terlaky}). We will refer to the feasible region of
+(\ref{maxcut_as_sdp}) as the {\em elliptope}. It must be
+emphasized that the elliptope is no longer a polytope. Thus
+(\ref{maxcut_as_sdp}) is actually a non-polyhedral relaxation of
+the maxcut problem.
+
+This semidefinite formulation of the maxcut problem satisfies
+strong duality, i.e., at optimality the objective values of
+(\ref{maxcut_as_sdp}) and (\ref{maxcut_as_sdd}) are the same. In a
+semidefinite cutting plane scheme for the maxcut problem, we would
+begin with (\ref{maxcut_as_sdp}) as our starting SDP relaxation.
+\begin{theorem}
+\label{sdp_is_stronger} The SDP relaxation (\ref{maxcut_as_sdp})
+is tighter than the LP relaxation (\ref{initial_lp_relaxation})
+\end{theorem}
+\begin{proof}
+We will show that any feasible solution in the SDP relaxation
+(\ref{maxcut_as_sdp}) gives a feasible solution in
+(\ref{initial_lp_relaxation}).
+
+Consider any feasible solution $X$ in (\ref{maxcut_as_sdp}). The
+constraints $\mbox{diag}(X) = e$, and $X \succeq 0$ together imply
+that $ -1 \le X_{ij} \le 1$.
+
+We now transform the problem into $\{0,1\}$ variables using the
+transformation $x_{ij} = \frac{1-X_{ij}}{2}$. This gives
+$\frac{L}{4} \bullet X = \displaystyle \sum_{i=1}^n \displaystyle
+\sum_{i < j, \{i,j\} \in E} w_{ij}x_{ij}$. Also, we have $ 0 \le
+x_{ij} \le 1$, $\forall \{i,j\} \in E$. Such an $x$ is feasible in
+(\ref{initial_lp_relaxation}).
+\end{proof}
+Goemans and Williamson \cite{goemans1} developed a 0.878
+approximation algorithm for the maxcut problem when all the edge
+weights are nonnegative. Their algorithm uses the solution $X$ to
+the SDP relaxation (\ref{maxcut_as_sdp}), followed by an ingenious
+randomized rounding procedure to generate the incidence vector $d$
+of the cut. Since we employ the rounding scheme in our algorithm,
+we briefly discuss the procedure in \S\ref{heuristics}. This 0.878
+approximation ratio for the SDP formulation is a tremendous
+improvement over previous known LP formulations, where the ratio
+of the maxcut value to that of the LP relaxation over the odd
+cycle polytope could be $\frac{1}{2}$ for various sparse random
+graphs (Poljak and Tuza \cite{poljak_tuza}). This ratio improves
+to $\frac{3}{4}$ if one considers dense random graphs, where it
+can be further improved by considering $k$-gonal inequalities; in
+fact one has a PTAS for dense graphs (Avis \& Umemoto
+\cite{avis_umemoto}). On the negative side, H\r{a}stad
+\cite{hastad1} showed that it is NP-hard to approximate the maxcut
+problem to within a factor of 0.9412.
+
+If we include negative edge weights and still have the Laplacian
+matrix $L \succeq 0$, then Nesterov \cite{nesterov10} showed that
+the GW rounding procedure gives an $\frac{2}{\pi}$ approximation
+algorithm for the maxcut problem.
+
+The solution obtained by the randomized rounding procedure can be
+further improved using a Kernighan-Lin \cite{Kernighan1} (see also
+Papadimitriou and Steiglitz \cite{papadimitriou_steiglitz}) local
+search heuristic. Since we employ this heuristic too in our
+algorithm, we discuss it in \S\ref{heuristics}.
+
+One can further improve the relaxation (\ref{maxcut_as_sdp}) using
+chordless odd cycle inequalities. These are simply the odd cycle
+inequalities for the LP formulation in a $\pm 1$ setting, and have
+the following form
+\begin{eqnarray}
+\label{odd_cycle_pm1}
+\begin{array}{ccc}
+X(C \backslash F) - X(F) & \le & |C|-2 \\
+& & \mbox{for each cycle} \hspace*{0.25cm} C, F \subset C, |F|
+\hspace*{0.25cm} \mbox{odd},
+\end{array}
+\end{eqnarray}
+where $X(S) = \displaystyle \sum_{\{i,j\} \in S} X_{ij}$ etc.
+These include among others the triangle inequalities. Since $
+\mbox{diag}(X) = e$, and $X \succeq 0$ imply $-1 \le X_{ij} \le
+1$, the feasible region of the SDP relaxation
+(\ref{maxcut_as_sdp}) intersected with the odd cycle inequalities
+(\ref{odd_cycle_pm1}) is contained within the odd cycle polytope.
+We should thus get tighter upper bounds on the maxcut value.
+
+Interestingly, although the additional inequalities improve the
+SDP relaxation, they do not necessarily give rise to better
+approximation algorithms. On the negative side, Karloff
+\cite{karloff1} exhibited a set of graphs for which the optimal
+solution to (\ref{maxcut_as_sdp}) satisfies all the triangle
+inequalities as well, so after the Goemans-Williamson rounding
+procedure we are still left with a $0.878$ approximation
+algorithm.
+
+More recently, Anjos and Wolkowicz \cite{anjos1} presented a
+strengthened semidefinite relaxation of the maxcut problem. Their
+SDP relaxation is tighter than the relaxation
+(\ref{maxcut_as_sdp}) together with all the triangle inequalities.
+To arrive at their relaxation they add certain redundant
+constraints of the maxcut problem to (\ref{maxcut_as_sdp}), and
+consider the Lagrangian dual of this problem. On the negative
+side, this strengthened SDP relaxation is fairly expensive to
+solve. Also, see Lasserre \cite{lasserre1,lasserre2} for a
+hierarchy of increasingly tighter SDP relaxations for the maxcut
+problem.
+
+\section{An SDP based polyhedral cut and price method for the maxcut problem}
+\label{maxcut_as_lp} This section deals with the major
+contribution of the paper which is a polyhedral cut and price
+algorithm, which is based on the SDP formulation of the maxcut
+problem presented in \S\ref{sdp_formulations_of_maxcut}.
+
+At the outset, we must mention that one could develop an SDP
+cutting plane approach for solving the maxcut problem. The
+approach sets up a series of primal SDP relaxations of the maxcut
+problem beginning with (\ref{maxcut_as_sdp}), which are
+progressively tightened by adding cutting planes, such as those
+presented in \S\ref{sdp_formulations_of_maxcut}, to the primal SDP
+relaxation. Such an SDP cutting plane approach for the maxcut
+problem is discussed in Helmberg and Rendl \cite{helmberg1}.
+
+Such an approach requires effective techniques for solving the
+SDPs that arise in the algorithm. The main tools for solving SDPs
+are interior point methods. Interior point methods, however, are
+fairly limited in the size of problems they can handle. Problems
+with more than 3000 constraints are considered quite hard (see
+Helmberg \cite{helmberg8}).
+
+Recently, several large scale approaches have been developed to
+try to overcome this drawback. For example, Helmberg
+\cite{helmberg10} has incorporated the spectral bundle method in a
+cutting plane approach to solving the maxcut problem.
+
+In this paper, we will solve each SDP in an interior point LP
+cutting plane framework. Such an approach is discussed in Krishnan
+and Mitchell \cite{kartik3,kartik2,kartik4,kartik5} and we present
+some details in \S\ref{pricing_phase}. The overall approach is a
+polyhedral cut and price approach for the maxcut problem that
+mimics an SDP cutting plane approach. We note that in the past
+such cut and price LP approaches have been applied with a great
+degree of success in solving large scale integer programs (see
+Wolsey \cite{wolsey}).
+
+We motivate our polyhedral cut and price approach as follows. The
+matrix variable $X$ is equal to $dd^T$ at optimality for
+(\ref{maxcut_as_rank1sdp}), where $d$ is a $\pm 1$ vector
+representing a cut. Let $d_i$ be a $\pm 1$ vector representing a
+cut. We can write $X$ as a convex combination of all such vectors,
+and so the maxcut problem (\ref{maxcut_as_pm1ip_1}) can also be
+written as follows
+\begin{eqnarray}
+\label{maxcut_as_pm1ip_2}
+\begin{array}{ccc}
+\max & \frac{L}{4} \bullet (\displaystyle \sum_{i \in \mathcal{I}} x_id_id_i^T) \\
+\mbox{s.t.} & \displaystyle \sum_{i \in \mathcal{I}} x_i d_{ij}^2
+= 1, &
+j=1,\ldots,n \\
+%& \displaystyle \sum_i x_i = 1 \\
+& x_i \ge 0, & i \in \mathcal{I},
+\end{array}
+\end{eqnarray}
+where $\mathcal{I}$ is the index set of all the $\pm 1$ incidence
+cut vectors. Note that all the equality constraints in
+(\ref{maxcut_as_pm1ip_2}) are equivalent to the single constraint
+$\displaystyle \sum_i x_i = 1$ for this choice of index set
+$\mathcal{I}$. Moreover, $d_i^Td_i = n$, and there is an {\em
+exponential} number of such vectors. If we allow $d_i$ instead to
+lie on the $n$ dimensional sphere of radius $\sqrt{n}$, we obtain
+the following relaxation of the maxcut problem
+\begin{eqnarray}
+\label{maxcut_as_inflp} \begin{array}{ccc} \displaystyle \max &
+\frac{L}{4}
+\bullet (\displaystyle \sum_{i \in \mathcal{J}} x_i d_id_i^T) \\
+\mbox{s.t.} & \displaystyle \sum_{i \in \mathcal{J}} x_i d_{ij}^2
+= 1, &
+j=1,\ldots,n \\
+%& \displaystyle \sum_i x_i = 1 \\
+& x_i \ge 0, & \forall i \in \mathcal{J}, \end{array}
+\end{eqnarray} where $\mathcal{J}$ is the index set of all the
+vectors with Euclidean norm $\sqrt{n}$. In fact,
+(\ref{maxcut_as_inflp}) is exactly the SDP formulation
+(\ref{maxcut_as_sdp}) for the maxcut problem. Note that there are
+now {\em infinitely} many terms in the summation, so
+(\ref{maxcut_as_inflp}) is really a semi-infinite LP relaxation of
+the maxcut problem. Note that summing the constraints
+$\displaystyle \sum_{i \in \mathcal{J}} x_i d_{ij}^2 = 1$ implies
+$\displaystyle \sum_{i \in \mathcal{J}} x_i = 1$, so the feasible
+region is contained in the set of convex combinations of the
+vectors~$d_i$.
+
+We can solve (\ref{maxcut_as_inflp}) in a polyhedral column
+generation (pricing) scheme, with a small number of $d_i \in
+\real^n$ and generating others as necessary. This is reminiscent
+of the Dantzig-Wolfe decomposition approach applied to
+(\ref{maxcut_as_inflp}) and constitutes the pricing phase of the
+algorithm. The key to this pricing phase is the existence of a
+polynomial time separation oracle for the SDP relaxations. Of
+course, we eventually want to solve the problem over $d_i$ that
+are $\pm 1$ vectors. To do so, we introduce linear cutting planes
+in (\ref{maxcut_as_inflp}), that cut off some of the non $\pm 1$
+vectors not in the maxcut polytope; this is the cutting phase of
+the algorithm. We elaborate on these two phases below:
+\begin{enumerate}
+\item {\bf Cutting phase:} The input to this phase is a feasible
+point $X$ in (\ref{maxcut_as_sdp}). This is given to an oracle,
+which verifies whether this point is also within the maxcut
+polytope in a $\pm 1$ setting. If this point is not in this
+polytope, the oracle returns linear cutting planes which are
+facets of the maxcut polytope. The cutting planes are added to the
+primal SDP relaxation, thereby strengthening it. This is identical
+to the cutting phase of an SDP cutting plane approach, and the
+hope is that the added cutting planes enforce the rank one
+constraint (see the formulation (\ref{maxcut_as_rank1sdp}) of the
+maxcut problem). \item {\bf Pricing phase:} The input to this
+phase is an SDP relaxation of the maxcut problem. We approximately
+solve the dual version of this SDP in a polyhedral interior point
+cutting plane scheme. In particular, one sets up LP relaxations of
+this dual SDP formulation, and approximately solves these
+relaxations using interior point methods. The solution is then
+given to a separation oracle for the SDP problem. The oracle
+verifies whether this point is also in the dual SDP feasible
+region. If this is not the case, the oracle returns linear cutting
+planes, which are supporting hyperplanes of the dual SDP feasible
+region. These cutting planes are added to the LP relaxation and
+the process is repeated. The reader familiar with linear
+programming decomposition will recognize the primal linear program
+as the reformulation obtained when Dantzig-Wolfe decomposition is
+applied to (\ref{maxcut_as_sdp}). Also, adding linear cutting
+planes in the dual LP relaxation amounts to pricing (column
+generation) in the primal LP setting. This is why we call this
+phase our pricing phase. We present some details in
+\S\ref{pricing_phase}.
+\end{enumerate}
+We now describe our entire algorithm in a nutshell. Each of these
+steps will be elaborated in more detail in~\S\ref{sec_details}.
+
+\begin{algorithm}{SDP cut-and-price algorithm for maxcut}
+\label{algo_cnp}
+\begin{enumerate}
+\item{\bf Initialize}
+
+\item{\bf Approximately solve the dual
+maxcut SDP as an LP} using the pricing phase discussed in
+\S\ref{pricing_phase}. This gives an upper bound on the maxcut
+value. Construct the primal matrix $X$.
+
+\item{\bf Generate good integer cut vectors} by running the
+Goemans-Williamson and Kernighan-Lin heuristics on the primal
+matrix $X$. These heuristics are presented in \S\ref{heuristics}.
+Add these integer vectors into the LP approximation, and solve
+this LP to optimality to find the new $X$.
+
+\item{\bf Check for termination:} If the difference
+between the upper bound and the value of the best cut is small,
+return the best cut as our solution to the maxcut problem. STOP.
+
+\item{\bf Finding violated odd cycle inequalities:} Feed the
+matrix $X$ to a separation oracle that returns violated odd cycle
+inequalities. This oracle is described in Barahona and Mahjoub
+\cite{barahona4} and involves the solution of $n$ shortest path
+problems on an auxiliary graph having twice the number of nodes
+and four times the number of edges. Bucket sort the resulting
+violated inequalities and add a subset of constraints to the
+primal LP approximation. This changes the dual slack matrix $S$.
+
+\item{\bf Update the LP relaxation} by choosing the most important
+constraints in the primal polyhedral approximation including the
+best integer cut vector, constraints based on the spectral
+factorization of $X$, and the initial box constraints. Return to
+Step 2.
+\end{enumerate}
+\end{algorithm}
+Assuming that we do not resort to branch and bound, at the
+termination of the cutting plane scheme we are approximately
+solving
+\begin{eqnarray}
+\label{maxcut_as_sdp_oc}
+\begin{array}{lrcc}
+\max & \frac{L}{4} \bullet X \\
+\mbox{s.t.} & \mbox{diag}(X) & = & e, \\
+& \displaystyle \sum_{ij \in C \backslash F} X_{ij} - \displaystyle \sum_{ij \in F} X_{ij} & \le & |C|-2, \\
+& \mbox{C} \hspace*{0.25cm} \mbox{a cycle}, & F \subseteq C, & |F| \hspace*{0.25cm} \mbox{odd}, \\
+& X & \succeq & 0,
+\end{array}
+\end{eqnarray}
+which is still a relaxation of the maxcut problem.
+
+We briefly motivate the steps in the algorithm: In Step 2 we are
+solving a relaxation of (\ref{maxcut_as_sdp_oc}) in a polyhedral
+column generation scheme. We utilize this solution to get integer
+cut vectors in Step 3; we then add these integer vectors to the
+polyhedral approximation and resolve this LP. This ensures that
+some of the $d_i$ in the LP are $\pm 1$ vectors representing the
+best incidence cuts currently obtained by the algorithm. Moreover,
+Step 3 ensures that the feasible region of the LP approximation
+has a non-empty intersection with the maxcut polytope.  In Step 5,
+we add violated odd cycle inequalities to the primal LP
+approximation; these odd cycle inequalities are cutting off some
+of the non $\pm 1$ $d_i$ vectors outside the maxcut polytope.
+Since we are employing an IPM to solve the LP approximations it is
+imperative that we keep the size of the LP approximations bounded.
+Step 6 realizes this objective by aggregating the useful
+information contained in the current polyhedral approximation.
+
+We must mention that Gruber \cite{gruber3} has a similar approach,
+where he solves a semi-infinite formulation of the primal SDP
+relaxation (\ref{maxcut_as_sdp}). However, he does not motivate it
+in this way; his aim is rather to strengthen the LP cutting plane
+approach by adding cutting planes valid for the SDP approach. An
+advantage of his approach is that he deals exclusively with the
+primal problem. If the graph is chordal then it suffices to force
+every submatrix of $X$ corresponding to a maximal clique to be
+positive semidefinite, so it is not necessary to consider the
+other entries in the primal matrix $X$ explicitly. Grone et
+al.~\cite{grone1} showed that values for the missing entries can
+be chosen to make $X$ positive semidefinite provided all these
+submatrices are positive semidefinite.
+
+The approach is advantageous only if the underlying graph is
+chordal and sparse. If the graph is not chordal, then one needs to
+construct a chordal extension of it, by adding redundant edges of
+weight zero. This could lead to a fairly dense graph. Moreover,
+since one is confined to the edge set of the original graph in
+this approach, it is not clear how one could add hypermetric
+inequalities (see, eg, \cite{deza_laurent}) without enlarging the
+support of $X$.
+
+\subsection{An LP pricing approach for SDP}
+\label{pricing_phase} We describe the pricing phase (step 2 of
+Algorithm~\ref{algo_cnp}) in detail in this section.
+
+Consider the following SDP
+\begin{eqnarray}
+\label{sdp_relax}
+\begin{array}{lrccc}
+\max & C \bullet X \\
+\mbox{s.t.} & A_i \bullet X & = & b_i, & i=1,\ldots,m \\
+& X & \succeq & 0,
+\end{array}
+\end{eqnarray}
+and its dual
+\begin{eqnarray}
+\label{sdd_relax}
+\begin{array}{lrcc}
+\min & b^Ty \\
+\mbox{s.t.} & S & = & \displaystyle \sum_{i=1}^my_iA_i - C, \\
+& S & \succeq & 0,
+\end{array}
+\end{eqnarray}
+which are some of the relaxations of the maxcut problem
+encountered during the course of the algorithm.
+
+Our method is based on the semi-infinite formulation of
+~(\ref{sdd_relax}), namely
+\begin{eqnarray}
+\begin{array}{lrcc}
+\min & b^Ty \\
+\mbox{s.t.} & S & = & \displaystyle \sum_{i=1}^my_iA_i - C, \\
+& d^TSd & \geq & 0, \,\ \forall d \in B,
+\end{array}
+\end{eqnarray}
+where $B$ is a compact set, typically $\{d : ||d||_2 \le 1\}$ or
+$\{d : ||d||_{\infty} \le 1\}$. We described a cutting plane
+approach to solving this relaxation in Krishnan and Mitchell
+\cite{kartik3,kartik2,kartik4,kartik5}. This approach sets up a
+relaxation to (\ref{sdd_relax}),
+\begin{eqnarray}
+\label{lp_relax_sdd}
+\begin{array}{lccclr}
+\min & b^Ty \\
+\mbox{subject to} &  \displaystyle \sum_{j=1}^my_j(d_i^TA_jd_i) &
+\geq & d_i^TCd_i &
+     \mbox{for } i=1,\ldots,k,
+\end{array}
+\end{eqnarray}
+with a corresponding constrained version of (\ref{sdp_relax}),
+\begin{eqnarray}
+\label{lp_relax_sdp}
+\begin{array}{lrclr}
+\max & C \bullet (\displaystyle \sum_{j=1}^k x_j d_j d_j^T)  \\
+\mbox{subject to} & A_i \bullet (\displaystyle \sum_{j=1}^k x_j d_j d_j^T) & = & b_i & i=1,\ldots,m  \\
+& x & \geq & 0.
+\end{array}
+\end{eqnarray}
+We briefly present the pricing phase below:
+\begin{algorithm}{Pricing procedure}
+\begin{enumerate}
+\item {\bf Initialize:} Start with an initial relaxation of the
+form (\ref{lp_relax_sdd}). \item {\bf Solve the LP relaxation:}
+Approximately solve (\ref{lp_relax_sdd}) and (\ref{lp_relax_sdp})
+using a primal-dual interior point method to a prescribed
+tolerance for the solution $(x,y)$. \item {\bf Call the SDP
+separation oracle:} Compute the slack matrix $S$ at the
+approximate solution $y$ to (\ref{lp_relax_sdd}). If $S$ is psd
+then we proceed to Step 4. Else, if $S$ is indefinite, we add the
+following cutting plane
+\begin{displaymath}
+\begin{array}{ccc}
+\displaystyle \sum_{j=1}^my_j(d^TA_jd) & \geq & (d^TCd),
+\end{array}
+\end{displaymath}
+where $d$ is an eigenvector corresponding to the minimum
+eigenvalue of $S$ to (\ref{lp_relax_sdd}), update $k$, and return
+to Step 2. \item {\bf Tighten the tolerance:} If the prescribed
+tolerance is still above the minimum threshold, tighten the
+tolerance, and proceed to Step 2. Else, the solution $(X,y)$,
+where $X = \displaystyle \sum_{i=1}^kx_id_id_i^T$ is optimal for
+the current SDP relaxation. STOP.
+\end{enumerate}
+\end{algorithm}
+This cutting plane approach will be used as a subroutine to solve
+the SDP relaxations which arise while solving the maxcut problem.
+
+An important point needs to be emphasized here: We use a
+primal-dual IPM to solve the LP relaxations approximately; the
+query points at which we call the oracle are more central iterates
+in the feasible region of (\ref{lp_relax_sdd}), where this oracle
+returns better cuts. One could use the simplex method to solve the
+LP relaxations or even an interior point method solving these
+relaxations to optimality. This leads to the classical Kelley LP
+cutting plane scheme \cite{Kelley} for convex optimization (or the
+traditional Dantzig-Wolfe decomposition in the primal setting);
+here the query points are extreme points of the LP feasible
+region. It is known that the Kelley cutting plane method suffers
+from tailing effects, and we observed in Krishnan \cite{kartik3}
+(see also Elhedhli \& Goffin \cite{elhedhli_goffin}) that a
+simplex implementation performed very badly. Some convergence
+estimates for Kelley's method can be found in Lemarechal
+\cite{lemarechal}.
+
+\subsection{Heuristics for generating good incidence cut vectors}
+\label{heuristics} We briefly mention the Goemans-Williamson
+rounding procedure and the Kernighan-Lin local search heuristic in
+this section. These heuristics will be employed in generating good
+incidence cut vectors in step 3 of Algorithm~\ref{algo_cnp}.
+
+\begin{algorithm}
+{The Goemans-Williamson rounding procedure}
+\begin{enumerate}
+\item We assume we have a feasible solution $X$ in
+(\ref{maxcut_as_sdp}) to start with. \item Compute $Z$ such that
+$X = Z^TZ$. Let $z_i$, $i=1,\ldots,n$ be the $i$th column of the
+matrix $Z$. \item Generate a random vector $r$ on the unit sphere
+in $\real^n$. Assign vertex $i$ to $S$ if $z_i^Tr \ge 0$, and $V
+\backslash S$ otherwise. Repeat this procedure for all the
+vertices in the graph.
+\end{enumerate}
+\end{algorithm}
+In practice, one repeats Step 3 a number of times, and picks the
+best cut that was generated. We refer the reader to Goemans and
+Williamson \cite{goemans1} for more details.
+
+\begin{algorithm}
+{\bf The Kernighan and Lin (KL) heuristic}
+\begin{enumerate}
+\item We assume that we have a cut to start with; this is given by
+the bipartition $S$ and $V \backslash S$ of the vertex set $V$.
+For each vertex $i$, $i=1,\ldots,n$, compute the external and
+internal costs $E(i)$ and $I(i)$. For a vertex $a$ in $S$ this is
+the following (the other case is treated similarly):
+\begin{displaymath}
+\begin{array}{ccc}
+E(a) & = & \displaystyle \sum_{i \in V \backslash S} w_{ai}, \\
+I(a) & = & \displaystyle \sum_{i \in S} w_{ai},
+\end{array}
+\end{displaymath}
+where $w_{ij}$ is the weight of edge $\{i,j\}$. \item For each
+vertex $i$, compute $D^1(i) = E(i) - I(i)$, $i=1,\ldots,n$. This
+can be interpreted as follows: Sending the vertex $a$ from $S$ to
+$V \backslash S$ will reduce the objective value of the cut by a
+factor of $D(a)$. \item In the $k$ iteration, choose a vertex $b$
+such that $D^k(b) = \min_i D^k(i)$ (not necessarily negative).
+Suppose that $b$ goes from $S$ to $ V \backslash S$ (the other
+case can be handled similarly). Let $g(k) = D^k(b)$. \item Mark
+$b$ as {\em tabu}, implying that this vertex will not be
+considered in future interchanges. Update $D(v)$ for all vertices
+$v$ adjacent to $b$ as follows :
+\begin{displaymath}
+\begin{array}{cccc}
+D^{k+1}(v) & = & D^k(v) + 2w_{bv}, & \forall v \in S, \\
+D^{k+1}(v) & = & D^k(v) - 2w_{bv}, & \forall v \in V \backslash S.
+\end{array}
+\end{displaymath}
+Also, $D^{k+1}(v) = D^k(v)$, for all vertices $v$ not adjacent to
+$b$. \item If $k < n$ return to step 3, else go to step 6. \item
+When $k=n$, we are done considering all the vertices. We are back
+to the original cut, since we have swapped all the vertices, i.e.
+roles of $S$ and $V \backslash S$ are reversed. Thus, we have
+$\sum_{i=1}^ng(i) = 0$. \item Examine the cumulative function
+$G(k) = \sum_{i=1}^kg(i)$, $k=1,\ldots,n$, and see where it is a
+minimum. If $G(k) \ge 0$, $k=1,\ldots,n$ we stop. Else, choose $k$
+such that $G(k)$ is most negative (break ties arbitrarily), and
+perform the $k$ first interchanges. This will give a cut, which is
+better than what we started with. \end{enumerate}\end{algorithm}
+ One can repeat
+this procedure until it runs out of steam. In our implementation,
+we repeat the procedure $5$ times in all. We refer the reader to
+Papadimitriou and Steiglitz \cite{papadimitriou_steiglitz} for
+more details on the K-L heuristic.
+
+\section{Details of the algorithm   \label{sec_details}}
+In this section, we describe the steps of Algorithm~\ref{algo_cnp} in more detail.
+
+Our initial dual LP relaxation is
+\begin{eqnarray}
+\label{dual_lp_initial}
+\begin{array}{lrccc}
+\min & \displaystyle \sum_{i=1}^n y_i  \\
+\mbox{s.t.} & y_i & \ge & \frac{L_{ii}}{4}, & i=1,\ldots,n.
+\end{array}
+\end{eqnarray}
+The initial constraints in (\ref{dual_lp_initial}) define
+one-sided box constraints. They suffice for the maxcut problem
+since the objective function is the all ones vector, and an
+optimal solution is $(x^0,y^0,z^0) =
+(e,\mbox{diag}(\frac{L}{4}),0) \in \real^n \times \real^n \times
+\real^n$. This corresponds to initial matrices $X^0 = I$, and $S^0
+= \frac{L}{4} - \mbox{Diag}(\frac{L}{4})$. We note that for other
+problems we will in general need two sided box constraints to
+ensure that the initial relaxation has a bounded objective value.
+
+The current dual maxcut SDP relaxation is not solved to optimality
+in step 2 of Algorithm~\ref{algo_cnp}; we mentioned some reasons in \S\ref{pricing_phase}. We
+use a dynamically altered tolerance on the required accuracy of
+the solution (for specifics, see
+\S\ref{maxcut_computational_results}). However, if we do not solve
+the SDP accurately enough, then the objective value of the LP
+relaxation is not guaranteed to be an upper bound on the maxcut
+value. In fact we typically have the following inequalities on the
+objective values of the various relaxations.
+\begin{displaymath}
+\begin{array}{cccc}
+\mbox{Cheap LP approximation to SDP} & \le & \mbox{Optimal Maxcut value} & \le \\
+\mbox{Good LP approximation to SDP} & \le & \mbox{SDP objective
+value}.
+\end{array}
+\end{displaymath}
+The accuracy to which the SDP is solved also affects the
+performance of the Goemans-Willamson rounding procedure. Using the
+same analysis as Goemans and Williamson \cite{goemans1}, we can
+show that the value of the cut generated by the procedure is at
+least $0.878$ times the value of the current LP approximation, if
+all the edge weights are nonnegative. However, we cannot always
+guarantee that the value of our LP approximation is an upper bound
+on the maxcut value. Thus, we do not have a performance guarantee
+out here. Nevertheless, we can say in a weak sense that the more
+accurately we solve the SDP as an LP in the cutting plane scheme,
+the more likely that a better cut is produced.
+
+It should be noted that we add cutting planes in both the primal
+and dual spaces. We add cutting planes of the form
+(\ref{odd_cycle_pm1}) (based on the polyhedral structure of the
+maxcut polytope) in the primal space, while the cutting planes
+added in the dual are sometimes low dimensional faces of the dual
+SDP cone (in $y$ space), and not always facets (see also~ Krishnan
+and Mitchell \cite{kartik5}); this amounts to column generation
+(pricing) in the primal space.
+
+As regards the primal, we cannot guarantee that our primal LP
+feasible region always contains the entire maxcut polytope; in
+most cases it does not. The primal LP feasible region increases,
+when we solve the dual SDP as an LP (pricing), and decreases when
+we add cutting planes in the primal.
+
+When we are adding cutting planes in the dual, we update the
+primal matrix $X = \displaystyle \sum_{i=1}^mx_id_id_i^T$. On the
+other hand, when we add cutting planes in the primal we are
+updating the dual slack matrix $ S = \mbox{Diag}(y) +
+\displaystyle \sum_{i=1}^p y_{n+i}A_i - \frac{L}{4}$, where $A_i$
+is the coefficient matrix associated with $i$th odd cycle
+inequality. In each iteration of the algorithm, we have an LP
+formulation of the dual maxcut SDP of the form
+\begin{eqnarray}
+\label{lp_formulation_sdd}
+\begin{array}{cc}
+\min & \displaystyle \sum_{i=1}^n y_i + \displaystyle \sum_{i=1}^{p} (|C_i|-2)y_{n+i} \\
+\mbox{s.t.} & \left[\begin{array}{cccc}
+                    I & 0 & \ldots & 0 \\
+                    d_{n+1}.^2 & d_{n+1}^TA_1d_{n+1} & \ldots & d_{n+1}^TA_{p}d_{n+1} \\
+                    \vdots & \vdots & \ddots & \vdots \\
+                    d_{m}.^2 & d_{m}^T A_1d_{m} & \ldots & d_{m}^T A_{p}d_{m}
+                    \end{array} \right] \left[\begin{array}{c}
+                                              y_1 \\
+                                              \vdots \\
+                                              y_n \\
+                                              y_{n+1} \\
+                                              \vdots \\
+                                              y_{n+p}
+                                              \end{array}\right] \\
+& \ge \hspace*{0.2cm}
+\left[\begin{array}{c}
+      \mbox{diag}(\frac{L}{4}) \\
+       d_{n+1}^T \frac{L}{4} d_{n+1} \\
+       \vdots \\
+       d_{m}^T \frac{L}{4} d_{m}
+       \end{array}\right] \\
+& y_{n+i} \hspace*{0.2cm} \ge \hspace*{0.2cm}  0, \hspace*{0.25cm}
+i=1,\ldots,p,
+\end{array}
+\end{eqnarray}
+and its dual
+\begin{eqnarray}
+\label{lp_formulation_sdp}
+\begin{array}{lrccc}
+\max & \frac{L}{4} \bullet (\displaystyle \sum_{j=1}^{m}x_jd_jd_j^T) \\
+\mbox{s.t.} & \mbox{diag}(\displaystyle \sum_{j=1}^{m}x_jd_jd_j^T) & = & e \\
+& A_i \bullet (\displaystyle \sum_{j=1}^{m}x_jd_jd_j^T) & \le & (|C_i|-2), & i=1,\ldots,p \\
+& x_j & \ge & 0, & j=1,\ldots,m.
+\end{array}
+\end{eqnarray}
+An odd cycle inequality (\ref{odd_cycle_pm1}) is written as $ A
+\bullet X \le (|C|-2)$, where $A$ is a symmetric matrix, and $|C|$
+is the cardinality of the cycle. Also $x_j$ is the primal variable
+corresponding to the $j$th dual constraint.
+
+In step 2  of Algorithm~\ref{algo_cnp}, we improve the LP approximation to the
+SDP using the pricing strategy outlined in \S\ref{pricing_phase}.
+The LPs are solved approximately using a primal-dual interior
+point method. Cutting planes are added to
+(\ref{lp_formulation_sdd}), which try and force the dual slack
+matrix $ S = \mbox{Diag}(y(1:n)) + \displaystyle
+\sum_{i=1}^{p}A_iy_{n+i} - \frac{L}{4} $ to be psd. Appropriate
+cuts can be found by looking for eigenvectors of the current dual
+slack matrix with negative eigenvalues. At the end of step 2, we
+have a solution $(X,y)$, where $X$ is feasible in the current
+primal SDP relaxation of the maxcut problem.
+
+To ensure that the feasible region of the current LP approximation
+has a nonempty intersection with the maxcut polytope, we add good
+incidence cut vectors to the LP approximation in step~3 of Algorithm~\ref{algo_cnp}. We run
+the Goemans and Williamson rounding procedure on $X$, and generate
+a number of good cut vectors. We then improve these cuts using the
+Kernighan and Lin (KL) heuristic. We then add the $5$ best
+incidence vectors as cuts in (\ref{lp_formulation_sdd}). These
+heuristics were described in \S\ref{heuristics}. We resolve the
+new LP for $(X,y)$.
+
+The value of the best cut found so far gives a lower bound on the
+optimal value of the maxcut problem. The value of any dual
+feasible vector $\hat{y}$ for which the corresponding slack matrix
+$\hat{S}$ is psd gives an upper bound on this optimal value. Such
+a vector can be constructed from the current solution $y$ by
+increasing its first $n$ components appropriately.  To compute
+$\hat{y}$ we proceed as follows:  Compute the dual slack matrix
+$S$ at the point $y$. Let $\lambda$ be the minimum eigenvalue of
+$S$. Then set
+\begin{displaymath}
+\begin{array}{cccc}
+\hat{y}_i & = & y_i - \lambda, & i=1,\ldots,n, \\
+\hat{y}_i & = & y_i, & i=n+1,\ldots,n+p. \end{array}
+\end{displaymath}
+The objective value at $\hat{y}$ gives us our current upper bound.
+The best such upper bound is stored, and when the upper bound and
+lower bound are close enough the algorithm is terminated in step
+4 of Algorithm~\ref{algo_cnp}.
+
+Cutting planes for (\ref{lp_formulation_sdp}) are found in step 5
+of Algorithm~\ref{algo_cnp}.
+These odd cycle inequalities are violated by the current solution
+$X$. We use the exact Barahona-Mahjoub separation oracle which
+returns violated odd cycle inequalities (\ref{odd_cycle_pm1}),
+which are facets of the maxcut polytope. These odd cycle
+inequalities are bucket sorted by violation, and the most violated
+ones are added to (\ref{lp_formulation_sdp}).
+
+In order to keep the size of the relaxations manageable, the
+constraint matrix is modified in step 6 of Algorithm~\ref{algo_cnp}. The rule is to drop those
+constraints whose primal variables $x_j$ are zero or small. We
+sort these constraints based on their $x$ values and retain the
+$q$ (an upper bound is given below) best constraints ensuring that
+the best integer vector is among these constraints. The modified
+LP formulation (\ref{lp_formulation_sdd}) has the following
+constraints :
+\begin{enumerate}
+\item The box constraints, i.e. the first $n$ constraints in the
+earlier (\ref{lp_formulation_sdd}). \item The $q$ best constraints
+from the earlier (\ref{lp_formulation_sdd}). \item The
+eigenvectors $v_i$, $i=1,\ldots,r$ corresponding to nonzero
+eigenvalues of $X$ ($r$ here is the rank of $X$). In a sense, the
+eigenvectors corresponding to the nonzero eigenvalues {\em
+aggregate} the important information contained in all the
+constraints added so far.
+\end{enumerate}
+The number $q$ is chosen as $q = \sqrt{2n} - r$. Note that,
+$\sqrt{2n}$ is an upper bound for the rank of at least one extreme
+point optimal solution for (\ref{maxcut_as_sdp_oc}) with $p$ odd
+cycle inequalities (see Pataki~\cite{pataki1}).
+%When the algorithm loops back to step 2 after adding odd cycle
+%inequalities, warm start information should be exploited in
+%solving the new $(LDRC)$ and $(LPRC)$. Since the odd cycle
+%inequalities returned in step 5 are designed to cut off the primal
+%matrix $\hat{X}$, the old solution $(\hat{x},\hat{y})$ is not
+%strictly feasible in the modified $(LDRC)$ and $(LPRC)$. We
+%consider the primal LP relaxation first.
+
+%A new primal matrix $\bar{X}$ is constructed as
+%\begin{displaymath}
+%\begin{array}{ccc}
+%\bar{X} & := & \frac{1}{2}\{\displaystyle \sum_{j=1}^q \hat{x}_j
+%d_{n+j}d_{n+j}^T + \displaystyle \sum_{i=1}^r \lambda_iv_iv_i^T\}
+%\end{array}
+%\end{displaymath}
+%This matrix is positive semidefinite, but it may not satisfy the
+%linear constraints of~(\ref{maxcut_as_sdp}). The old feasible $X$
+%however differs from $\bar{X}$ by a positive sum of outer products
+%of $d_j$ vectors, and this difference has a non-negative diagonal.
+%
+%Thus, one can add positive linear combinations of $e_ie_i^T$,
+%$i=1,\ldots,n$ to $\bar{X}$ until
+%\begin{displaymath}
+%\tilde{X} := \displaystyle \sum_{i=1}^n \alpha_i e_ie_i^T +
+%\bar{X}
+%\end{displaymath}
+%satisfies the equality constraints, i.e. $\mbox{diag}(\tilde{X}) =
+%e$. To strictly satisfy the odd cycle inequalities $A_i \bullet X
+%\le (|C_i|-2)$, $i=1,\ldots,p$, we backtrack towards $I$ along the
+%straight line between $\tilde{X}$ and $I$. Since $I$ is the
+%analytic center of the feasible region $\{X : \mbox{diag}(X) = e,
+%X \succeq 0\}$, which contains the max cut polytope, a line search
+%in this direction should enable us to strictly satisfy the
+%violated odd cycle inequalities. The final primal matrix $X$
+%enables us to find a strictly primal feasible solution~$\bar{x}$
+%in $(LPRC)$.
+%
+%As regards the dual, perturb $\hat{S}$ until it is psd as follows.
+%Set the new dual variables corresponding to the newly added odd
+%cycle inequalities to~$1$. Calculate the dual slack matrix
+%$\hat{S}$ with the old values of $\hat{y}$ together with these new
+%components, so
+%\begin{displaymath}
+%\hat{S}=\mbox{Diag}(y(1:n)) + \displaystyle
+%\sum_{i=1}^{p}A_iy_{n+i} - \frac{L}{4}
+%\end{displaymath}
+%where $p$ has been updated to reflect the added primal constraints.
+%Let $\lambda$ be the magnitude of the most negative eigenvalue of $\hat{S}$.
+%Compute
+%\begin{displaymath}
+%\begin{array}{ccll}
+%\bar{y}_i & = & \bar{y}_i + \lambda  & \mbox{for } i=1,\ldots,n \\
+%\end{array}
+%\end{displaymath}
+%and leave the other dual variables at their previous values.
+%This gives a strictly feasible dual solution, since the $(n+i)$th dual constraint
+%is equivalent to requiring $d_{n+i}^TS d_{n+i}$ be nonnegative.
+%The desired strictly feasible starting point is
+%$(\bar{x},\bar{y})$.
+The overall SDP cutting plane method for maxcut is best summarized
+in Figure \ref{ip_via_lp_fig}. The figure illustrates how the
+primal LP feasible region evolves during the course of the
+algorithm. Since we are solving a {\em constrained} version of the
+primal SDP relaxation, the LP feasible region is always within the
+corresponding primal SDP cone. The polytope shaded is the maxcut
+polytope. Suppose we are in the $k$th iteration, and the LP
+feasible region is the polytope $abcdea$. Since we have solved the
+current dual SDP only approximately as an LP, the polytope
+$abcdea$ does not contain the entire maxcut polytope. The Barahona
+separation oracle returns an odd cycle inequality, that is
+violated by the current LP solution $x^{k+1}$. The new LP feasible
+region is now the polytope $abcgha$. We then try and grow this LP
+feasible region, by adding cuts in the dual to try and force the
+new dual slack matrix $S^{k+1}$ to be positive semidefinite. At
+the end of the process, let $abefgh$ be the new LP feasible
+region. Although, $abefgha$ does not contain the entire maxcut
+polytope either, it is a better approximation than the earlier
+polytope $abcdea$. Proceeding in this manner, we eventually hit
+the optimal vertex $i$.
+\begin{figure}[htbp]
+\centering
+%\rotatebox{270}{
+\includegraphics[height=5in,width=5in]{ip_via_lp}
+\caption{\label{ip_via_lp_fig} The polyhedral cut and price
+algorithm for the maxcut problem}
+\end{figure}
+
+\section{Computational results}
+\label{maxcut_computational_results} In this section we report our
+preliminary computational experience. All results were obtained on
+a {\em Sun Ultra 5.6}, {\em 440 MHz} machine with {\em 128 MB} of
+memory. We carried out our tests on a number of maxcut problems
+from {\em SDPLIB} \cite{SDPLIB}, the {\em DIMACS Implementation
+Challenge} \cite{pataki4}, and some randomly generated Ising spin
+glass problems, i.e. maxcut problems with $\pm 1$ edge weights
+from Mitchell \cite{JEMising}. We compare our results with a
+traditional SDP cutting plane scheme that uses SDPT3 (Toh et al
+\cite{toh1}) to solve the SDP relaxations.
+
+We implemented our entire approach within the {\em MATLAB}
+environment. The LP solver was Zhang's {\em LIPSOL} \cite{zhang8}.
+The SDP separation oracle used in step 2 of Algorithm~\ref{algo_cnp} employs MATLAB's Lanczos
+solver. Finally, we used the Barahona-Mahjoub separation oracle to
+generate valid cutting planes in the primal; our implementation
+was based on the {\em CPLEX} \cite{cplex1} network optimization
+solver to solve the shortest path problem as an LP. In practice,
+one uses heuristics (see Berry and Goldberg \cite{berry_goldberg})
+to generate the violated cuts, but we used the exact separation
+oracle in our experiments.
+
+The computational results are summarized in Table
+\ref{maxcut_test_results}. The columns in the table represent
+\begin{center}
+\begin{tabular}{ll}
+Name: &Problem name
+\\  $n$: & Number of nodes
+\\  $m$: & Number of edges
+\\  Maxcut: & Objective value of the best incidence vector found.  \\
+& If not optimal, the optimal value is noted.
+\\  SDP1: & Objective value over the elliptope (\ref{maxcut_as_sdp})
+\\  SDP2: & Objective value over the elliptope and odd cycles (\ref{maxcut_as_sdp_oc})
+\\  UB: & The upper bound returned by the cutting plane scheme
+\end{tabular}
+\end{center}
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|} \hline
+Name & n & m & Maxcut(Opt) & SDP1 & SDP2& UB \\
+\hline \hline gpp100 \footnotemark[1] & 100 & 269 & 210 & 221.69 &
+211.27 & 212.56  \\ \hline gpp1241 \footnotemark[1] & 124 & 149 &
+137 & 141.91 & 137 & 137.45  \\ \hline gpp1242 \footnotemark[1] &
+124 & 318 & 256 & 269.64 & 257.66 & 258.60  \\ \hline gpp1243
+\footnotemark[1] & 124 & 620 & 446 & 467.68 & 458.35 & 458.90  \\
+\hline gpp1244 \footnotemark[1] & 124 & 1271 & 834 & 864.26 &
+848.92 & 850.08 \\ \hline gpp2501 \footnotemark[1] & 250 & 331 &
+305 & 317.23 & 305 & 307.83  \\ \hline gpp2502 \footnotemark[1] &
+250 & 612 & 502 & 531.78 & 511.12 & 520.19  \\ \hline gpp5001
+\footnotemark[1] & 500 & 625 & 574 & 598.11 & 576.64
+\footnotemark[4] & 584.91 \\ \hline toruspm-8-50 \footnotemark[2]
+& 512 & 1536 & 456 & 527.81 & 464.70 \footnotemark[4] & 472.28 \\
+\hline torusg3-8 \footnotemark[2] & 512 & 1536 & 412.75 (416.84) &
+457.36 & 417.69 \footnotemark[4] & 428.18 \\ \hline ising10
+\footnotemark[3] & 100 & 200 & 70 & 79.22 & 70 & 70.70 \\ \hline
+ising$20_1$ \footnotemark[3] & 400 & 800 & 282 & 314.25 & 282 &
+288.04  \\ \hline ising$20_2$ \footnotemark[3] & 400 & 800 & 268 &
+305.63 & 268 & 271.82 \\ \hline ising30 \footnotemark[3] & 900 &
+1800 & 630 (632) & 709.00 & 632 & \\ \hline
+\end{tabular}
+\caption{\label{maxcut_test_results} Test Results on Maxcut}
+\end{center}
+\end{table}
+
+%\footnotetext{All results for 10 iterations of the SDP scheme}
+\footnotetext[1]{SDPLIB}
+\footnotetext[2]{DIMACS}
+\footnotetext[3]{Random Ising Spin glass problems (Mitchell)}
+\footnotetext[4]{Best results obtained using an interior point approach}
+
+We ran $10$ cutting plane iterations in all. In our LP subroutine
+for the SDP, we add $5$ cutting planes in each iteration, our
+starting tolerance is $1$, and this is lowered by a factor of $0.9$ in each
+iteration. Initially, we solve our SDP relaxations very cheaply,
+i.e. perform only $5$ LP cutting plane iterations, and we increase
+this number if we are unable to improve the best incidence cut
+vector. Also, we add the $\frac{n}{4}$ most violated odd cycle
+inequalities returned by the Barahona-Mahjoub approach in each
+iteration.
+%
+%We must mention that our technique of estimating upper bounds does
+%not performs very well. Therefore to obtain the upper bounds
+%mentioned above, we solve the final primal SDP relaxation with the
+%odd cycle inequalities to a tolerance of 1e-8 using SDPT3 (Toh et
+%al \cite{toh1}).
+Interestingly, we were able to obtain the optimal integer solution
+in most cases (except problems torusg3-8 and ising30). The former
+problem is not easy, since the maxcut solution is not integer,
+whereas the latter problem is currently as big as we can handle.
+For most of the problems we do not have a proof of optimality,
+since the SDP relaxation over the elliptope and odd cycles is not
+enough, and there is yet some gap involved. For the Ising spin
+glass problems optimizing over the intersection of the elliptope
+and the odd cycle polytope is sufficient to give the optimal
+solution.
+
+To give an estimate of the times involved we performed the following experiment:
+\begin{enumerate}
+\item We ran our code against a standard SDP cutting plane scheme
+that employed $SDPT3$ \cite{toh1} version 2.3 to solve the SDP
+relaxations. \item We chose eight problems from SDPLIB. \item We
+ran $10$ cutting plane iterations in all. \item In our approach,
+we solve the SDP relaxations very cheaply ($5$ LP cutting plane
+iterations), and in every $5$th iteration we solve this SDP
+relaxation more accurately ($25$ iterations). In $SDPT3$ we solve
+the SDP relaxations to a moderate tolerance $10^{-2}$, and in every
+$5$th iteration we solve the SDP more accurately ($10^{-6}$). \item
+We add the $\frac{n}{4}$ most violated odd cycle inequalities
+returned by the Barahona-Mahjoub approach in each iteration.
+\end{enumerate}
+The results can be found in table \ref{maxcut_comparison}.
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|} \hline
+Problem & \multicolumn{3}{|c|}{SDPT3} & \multicolumn{3}{|c|}{Our approach} \\
+Name & UB & LB & Time & UB & LB & Time \\ \hline \hline
+gpp100 & 212.26 & 210 & 321 & 216.86 & 210 & 485 \\ \hline
+gpp1241 & 137 & 137 & 197 %\footnotemark[1]
+ & 138.33 & 137 & 488 \\ \hline
+gpp1242 & 258.4 & 256 & 423 & 263.73 & 256 & 620 \\ \hline
+gpp1243 & 458.86 & 446 & 409 & 461.92 & 446 & 832 \\ \hline
+gpp1244 & 851.01 & 834 & 468 & 857.35 & 834 & 902 \\ \hline
+gpp2501 & 305 & 305 & 2327 & 309.95 & 304 & 1073 \\ \hline
+gpp2502 & 512.06 & 502 & 1739 & 521.06 & 502 & 1687 \\ \hline
+gpp5001 & - & - & - & 583.65 & 574 & 2893 \\ \hline
+\end{tabular}
+\caption{\label{maxcut_comparison} Comparing two SDP cutting plane schemes for maxcut}
+\end{center}
+\end{table}
+%\footnotetext[1]{Converged in 5 iterations}
+Table
+\ref{maxcut_comparison} shows how our cutting plane approach
+scales with the problem size, and the increase in runtime with
+problem size compares quite well with a traditional interior point
+SDP cutting plane approach. The interior point approach solved the
+problem gpp1241 to optimality in just $5$ iterations. On the other
+hand on problem gpp5001, the interior point method was unable to
+complete the stipulated $10$ iterations.
+
+
+\section{Conclusions}
+\label{maxcut_conclusions} We have presented a polyhedral cut and
+price technique for approximating the maxcut problem; the
+polyhedral approach is based on a SDP formulation of the maxcut
+problem which is much tighter than traditional LP relaxations of
+the maxcut problem. This linear approach allows one to potentially
+solve large scale problems. Here are some conclusions based on our
+preliminary computational results
+\begin{enumerate}
+\item It is worth reiterating that although our scheme behaves
+like an SDP approach for the maxcut problem, it is entirely a
+polyhedral LP approach. The SDP relaxations themselves are solved
+within a cutting plane scheme, so our scheme is really a cutting
+plane approach within another cutting plane approach. We refer to
+the inner cutting plane approach as our pricing phase. \item The
+cutting plane approach is able to pick the optimal maxcut
+incidence vector quickly, but the certificate of optimality takes
+time. \item We are currently working on a number of techniques to
+improve our upper bounding procedure using information from the
+eigenvector based on the most negative eigenvalue. Nevertheless,
+we believe that if we are able to handle this difficulty, then our
+approach can be effective on large scale maxcut problems. \item
+The main computational task in our approach is the time taken by
+the SDP separation oracle. Another difficulty is that the oracle
+returns cutting planes that lead to dense linear programs. One way
+is to use a variant of the {\em matrix completion} idea in Gruber
+and Rendl \cite{gruber3}, and examine the positive
+semidefiniteness of $S_K$ for any clique $K \subseteq V$ (here
+$S_K$ is a sub-matrix of $S$ corresponding to only those entries
+in the clique). This should speed up the separation oracle, which
+will also return sparser constraints, since any cutting plane for
+$S_k$ can be lifted to $\mathcal{S}^n$ by assigning zero entries
+to all the components of the cutting plane not in~$K$. \item We
+are also trying to incorporate this approach in a branch and cut
+approach to solving the maxcut problem, i.e. we resort to
+branching when we are not able to improve our best cut values
+obtained so far, or our upper bounds. \item Helmberg
+\cite{helmberg10} shows that better SDP relaxations can be
+obtained by enlarging the number of cycles in the graph, i.e.
+adding edges of weights $0$ between non-adjacent nodes. This gives
+rise to a complete graph, and the only odd cycles now are triangle
+inequalities, which can be inspected by complete enumeration.
+Again, this in sharp contrast to the LP case, where adding these
+redundant edges does not improve the relaxation. We hope to
+utilize this feature in our cutting plane approach, in the near
+future. \item We hope to extend this approach to other
+combinatorial optimization problems such as min bisection, $k$ way
+equipartition, and max stable set problems based on a Lovasz theta
+SDP formulation.
+\end{enumerate}
+
+\section{Acknowledgements}
+The authors would like to thank three anonymous referees whose
+comments greatly improved the presentation in the paper.
+
+\begin{thebibliography}{10}
+
+\bibitem{anjos1}
+M.~F. Anjos and H.~Wolkowicz.
+\newblock {\em Strengthened semidefinite relaxations via a second lifting for the
+  max-cut problem}.
+\newblock Discrete Applied Mathematics, 119:79--106, 2002.
+
+\bibitem{avis_umemoto}
+D. Avis and J. Umemoto.
+\newblock {\em Stronger linear programming relaxations of
+max-cut}.
+\newblock Mathematical Programming, 97:451--469, 2003.
+
+\bibitem{barahona_et_al}
+F.~Barahona, M.~Gr\"{o}tschel, M. J\"{u}nger, and G. Reinelt.
+\newblock{\em An application of combinatorial optimization to
+statistical physics and circuit layout design}.
+\newblock Operations Research, 36:493--513, 1998.
+
+\bibitem{barahona4}
+F.~Barahona and A.~R. Mahjoub.
+\newblock {\em On the cut polytope}.
+\newblock Mathematical Programming, 36:157--173, 1986.
+
+\bibitem{berry_goldberg}
+J.~Berry and M.~Goldberg.
+\newblock {\em Path optimization for graph partitioning problems}.
+\newblock Discrete Applied Mathematics, 90:27--50, 1999.
+
+\bibitem{SDPLIB}
+B.~Borchers.
+\newblock {\em SDPLIB 1.2, a library of semidefinite programming test problems}.
+\newblock Optimization Methods and Software, 11:683--690, 1999.
+
+\bibitem{chang_du}
+K.~C. Chang and D.~Z. Du.
+\newblock{\em Efficient algorithms for layout assignment
+problems}.
+\newblock IEEE Transactions on Computer Aided Design, 6:67--78,
+1987.
+
+\bibitem{cplex1}
+{CPLEX Optimization Inc}.
+\newblock {\em CPLEX Linear Optimizer and Mixed Integer Optimizer}.
+\newblock Suite 279, 930 Tahoe Blvd. Bldg 802, Incline Village, NV 89541.
+
+\bibitem{desimone1}
+C.~{De Simone}, M.~Diehl, M.~J\"{u}nger, P.~Mutzel, G.~Reinelt,
+and G.~Rinaldi.
+\newblock {\em Exact ground states of {Ising} spin glasses: {New} experimental
+  results with a branch and cut algorithm}.
+\newblock Journal of Statistical Physics, 80:487--496, 1995.
+
+\bibitem{desimone2}
+C.~{De Simone}, M.~Diehl, M.~J\"{u}nger, P.~Mutzel, G.~Reinelt,
+and G.~Rinaldi.
+\newblock {\em Exact ground states of two-dimensional {$\pm J$} {Ising} spin
+  glasses}.
+\newblock Journal of Statistical Physics, 84:1363--1371, 1996.
+
+%\bibitem{deza_grishukhin_laurent}
+%M.~M. Deza, V.~P. Grishukhin, and M. Laurent.
+%\newblock {\em The hypermetric cone is polyhedral}.
+%\newblock Combinatorica, 13:397-411, 1993.
+%
+
+\bibitem{deza_laurent}
+M.~M. Deza and M. Laurent.
+\newblock {\em Geometry of cuts and metrics}.
+\newblock Springer Verlag, Berlin Heidelberg, 1997.
+
+\bibitem{elhedhli_goffin}
+S.~Elhedhli and J.~L. Goffin,
+\newblock {\em The integration of an interior-point cutting plane
+method within a branch-and-price algorithm}.
+\newblock Mathematical Programming, 100:267--294, 2004.
+
+\bibitem{goemans1}
+M.~X. Goemans and D.~P. Williamson.
+\newblock {\em Improved Approximation Algorithms for Maximum Cut and Satisfiability
+  Problems Using Semidefinite Programming}.
+\newblock J. Assoc. Comput. Mach., 42:1115--1145, 1995.
+
+\bibitem{grone1}
+B.~Grone, C.R. Johnson, E.~Marques de~Sa, and H.~Wolkowicz.
+\newblock {\em Positive definite completions of partial {Hermitian} matrices}.
+\newblock Linear Algebra and its Applications, 58:109--124, 1984.
+
+\bibitem{GLSbook}
+M.~Gr{\"{o}}tschel, L.~Lovasz, and A.~Schrijver.
+\newblock {\em Geometric Algorithms and Combinatorial Optimization}.
+\newblock Springer-Verlag, Berlin, Germany, 1988.
+
+\bibitem{gruber3}
+G.~Gruber.
+\newblock {\em On semidefinite programming and applications in combinatorial
+  optimization}.
+\newblock PhD thesis, University of Technology, Graz, Austria, April 2000.
+
+\bibitem{hastad1}
+J.~H\r{a}stad.
+\newblock {\em Some optimal inapproximability results}.
+\newblock Journal of the ACM, 48(4):798--859, 2001.
+
+\bibitem{helmberg8}
+C.~Helmberg.
+\newblock {\em Semidefinite programming for combinatorial optimization}.
+\newblock Technical Report ZR-00-34, TU Berlin, Konrad-Zuse-Zentrum, Berlin,
+  October 2000.
+\newblock Habilitationsschrift.
+
+\bibitem{helmberg10}
+C.~Helmberg.
+\newblock {\em A cutting plane algorithm for large scale semidefinite relaxations}.
+\newblock In {\em The Sharpest Cut}, edited by M. Gr\"{o}tschel, Festschrift in
+  honor of M. Padberg's 60th birthday, MPS-SIAM 2004, pp. 233-256.
+
+\bibitem{helmberg1}
+C.~Helmberg and F.~Rendl.
+\newblock {\em Solving quadratic (0,1)-problems by semidefinite programs and cutting
+  planes}.
+\newblock Mathematical Programming, 82:291--315, 1998.
+
+\bibitem{karloff1}
+H.~Karloff.
+\newblock {\em How good is the {Goemans}-{Williamson} {MAX} {CUT}
+algorithm?}
+\newblock SIAM Journal on Computing, 29:336--350, 1999.
+
+\bibitem{karp1}
+R.~M. Karp.
+\newblock {\em Reducibility among combinatorial problems}.
+\newblock In Complexity of
+  Computer Computations, edited by R.~E. Miller and J.~W. Thatcher,
+  Plenum Press, New York, 1972, pp. 85-103.
+
+\bibitem{Kelley}
+J.~E. Kelley.
+\newblock {\em The cutting plane method for solving convex
+programs}.
+\newblock Journal of SIAM, 8:703--712, 1960.
+
+\bibitem{Kernighan1}
+B.~W. Kernighan and S.~Lin.
+\newblock {\em An efficient heuristic procedure for partitioning graphs}.
+\newblock Bell System Technical Journal, 49:291--307, 1970.
+
+\bibitem{kartik3}
+K.~Krishnan.
+\newblock {\em Linear programming approaches to semidefinite programming
+  problems}.
+\newblock PhD thesis, Mathematical Sciences, Rensselaer Polytechnic Institute,
+  Troy, NY 12180, July 2002.
+
+\bibitem{kartik2}
+K.~Krishnan and J.~E. Mitchell.
+\newblock {\em Semi-infinite linear programming approaches to semidefinite
+  programming ({SDP}) problems}.
+\newblock Fields Institute Communications
+  Series, Volume 37, {\em Novel approaches to hard discrete optimization
+  problems}, edited by P. Pardalos and H. Wolkowicz, pages 121--140, 2003.
+
+\bibitem{kartik4}
+K.~Krishnan and J.~E. Mitchell.
+\newblock {\em An unifying framework for several cutting plane methods for
+   semidefinite programming}.
+\newblock AdvOL-Report No. 2004/2, Advanced Optimization
+Laboratory, McMaster University, August 2004 (to appear in
+Optimization Methods and Software, 2005).
+
+\bibitem{kartik5}
+K.~Krishnan and J.~E. Mitchell.
+\newblock {\em Properties of a cutting plane method for semidefinite programming}.
+\newblock Technical report, Mathematical Sciences, Rensselaer Polytechnic
+  Institute, Troy, NY 12180, May 2003.
+
+\bibitem{krishnan_terlaky}
+K.~Krishnan and T.~Terlaky.
+\newblock {\em Interior point and semidefinite approaches in
+combinatorial optimization}.
+\newblock AdvOL-Report No. 2004/1, Advanced Optimization
+Laboratory, McMaster University, April 2004 (to appear in the
+GERAD 25th Anniversary Volume on {\em Graphs and Combinatorial
+Optimization}, edited by D. Avis, A. Hertz, and O. Marcotte,
+Kluwer Academic Publishers, 2005).
+
+\bibitem{lasserre1}
+J.~B. Lasserre.
+\newblock {\em Global optimization with polynomials and the problem of moments}.
+\newblock SIAM Journal on Optimization, 11:796--817, 2001.
+
+\bibitem{lasserre2}
+J.~B. Lasserre.
+\newblock {\em An explicit equivalent semidefinite program for
+nonlinear 0-1 programs}.
+\newblock SIAM Journal on Optimization, 12:756-769, 2002.
+
+\bibitem{laurent_maxcut}
+M. Laurent.
+\newblock {\em A journey from some classical results to the
+Goemans Williamson approximation algorithm for maxcut}.
+\newblock Lecture given at CORE, Louvain La Neuve, September 1-12
+2003. Available from http://homepages.cwl.nl/\til monique/
+
+\bibitem{laurent_poljak}
+M. Laurent and S. Poljak.
+\newblock {\em On a positive semidefinite
+relaxation of the cut polytope}.
+\newblock Linear Algebra and its Applications, 223:439--461, 1995.
+
+\bibitem{lemarechal}
+C. Lemarechal.
+\newblock {\em Non-differentiable Optimization}
+\newblock in Optimization, G.L. Nemhauser, A.H.G. Rinnooy Kan, and M.J.
+Todd, eds., North-Holland, New York, 529--572, 1989.
+
+\bibitem{JEMising}
+J.~E. Mitchell.
+\newblock {\em Computational experience with an interior point cutting plane
+  algorithm}.
+\newblock SIAM Journal on Optimization, 10:1212--1227, 2000.
+
+\bibitem{nesterov10}
+Y.~E. Nesterov.
+\newblock {\em Semidefinite relaxation and nonconvex quadratic optimization}.
+\newblock Optimization Methods and Software, 9:141--160, 1998.
+
+\bibitem{papadimitriou_steiglitz}
+C.~H. Papadimitriou and K. Steiglitz.
+\newblock {\em Combinatorial Optimization: Algorithms and Complexity}.
+\newblock Dover Publications Inc., Mineola, New York, 1998.
+
+\bibitem{pataki1}
+G.~Pataki.
+\newblock {\em On the rank of extreme matrices in semidefinite programs and the
+  multiplicity of optimal eigenvalues}.
+\newblock Mathematics of Operations Research, 23:339--358, 1998.
+
+\bibitem{pataki4}
+G. Pataki and S. H. Schmieta.
+\newblock {\em The {DIMACS} library of mixed semidefinite, quadratic, and linear
+programs}.
+\newblock Available at
+http://dimacs.rutgers.edu/Challenges/Seventh/Instances/
+
+\bibitem{pinter}
+R.~Y. Pinter
+\newblock {\em Optimal layer assignment for interconnect}.
+\newblock Journal of VLSI Computational Systems, 1:123--137, 1984.
+
+\bibitem{poljak3}
+S.~Poljak and Z.~Tuza.
+\newblock {\em Maximum cuts and large bipartite subgraphs}.
+\newblock In {\em Combinatorial Optimization}, volume~20 of DIMACS Series
+  in Discrete Mathematics and Theoretical Computer Science, AMS/DIMACS, pp.
+  181--244, 1995.
+
+\bibitem{poljak_tuza}
+S.~Poljak and Z.~Tuza.
+\newblock {\em The expected relative error of
+the polyhedral approximation of the maxcut problem}.
+\newblock Operations Research Letters, 16:191-198, 1994.
+
+\bibitem{toh1}
+K.~C. Toh, M.~J. Todd, and R.~Tutuncu.
+\newblock {\em SDPT3-- a {Matlab} software package for semidefinite programming}.
+\newblock Optimization Methods and Software, 11:545--581, 1999.
+
+\bibitem{wolsey}
+L.~Wolsey.
+\newblock {\em Integer Programming}.
+\newblock John Wiley \& Sons, Inc., New York 1998.
+
+\bibitem{zhang8}
+Y.~Zhang.
+\newblock {\em User's guide to LIPSOL: Linear programming interior point solvers
+  v0.4}.
+\newblock Optimization Methods and Software, 11:385--396, 1999.
+
+\end{thebibliography}
+
+\end{document}

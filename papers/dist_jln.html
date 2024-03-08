@@ -1,0 +1,151 @@
+<TITLE>Proximity Queries between Convex Objects: 
+An Interior Point Approach for Implicit Surfaces
+</title>
+
+<H2>
+Proximity Queries between Convex Objects: 
+An Interior Point Approach for Implicit Surfaces
+</H2>
+
+
+<P>
+
+<B>
+<a href=http://www.cs.rpi.edu/~chakrn2/work/cdpaper/tro_revision_may07.pdf>Download
+the paper</a>.
+<!--
+<a href=http://www.cs.rpi.edu/~sakella/tmp/tro_revision_may07.pdf>Download
+the paper</a>.
+-->
+</b>
+<!--
+http://www.cs.rpi.edu/~sakella/papers/AkellaTROrevisionApr07.pdf
+<a href=http://www.cs.rpi.edu/~sakella/proxquery/dist_jln.pdf>Download the paper</a>
+<a href=http://www.cs.rpi.edu/~sakella/jufeng/query_proximity.pdf>query_proximity.pdf</a>.
+-->
+
+<h4>Authors:</h4>
+
+<b><a href=http://www.cs.rpi.edu/~chakrn2/>Nilanjan Chakraborty</a></b>
+<BR><A HREF="http://www.cs.rpi.edu">Department of Computer Science</A>
+<BR><A HREF="http://www.rpi.edu">Rensselaer Polytechnic Institute</A>
+<BR>Troy,  NY  12180 USA
+<BR><A HREF="mailto:chakrn2@cs.rpi.edu">chakrn2 at cs.rpi.edu</A>
+
+<p>
+
+
+<B>Jufeng Peng</B>
+<br>Progressive Insurance Company</a>
+<BR><A HREF="mailto:jamespjf@gmail.com">jamespjf at gmail.com</A>
+
+<p>
+
+<b><a href=http://www.cs.rpi.edu/~sakella/>Srinivas Akella</a></b>
+<BR><A HREF="http://www.cs.rpi.edu">Department of Computer Science</A>
+<BR><A HREF="http://www.rpi.edu">Rensselaer Polytechnic Institute</A>
+<BR>Troy,  NY  12180 USA
+<BR><A HREF="mailto:sakella@cs.rpi.edu">sakella at cs.rpi.edu</A>
+
+<p>
+
+
+<B><A HREF="http://www.rpi.edu/~mitchj">John E. Mitchell</A></B>
+<BR><A HREF="http://www.math.rpi.edu">Department of Mathematical Sciences</A>
+<BR><A HREF="http://www.rpi.edu">Rensselaer Polytechnic Institute</A>
+<BR>Troy,  NY  12180 USA
+<BR><A HREF="mailto:mitchj@rpi.edu">mitchj at rpi.edu</A>
+
+<p>
+<a href=http://www.dis.uniroma1.it/~ieeetro/>IEEE Transactions on Robotics</a>
+24(1), 2008, pages 211-220.
+
+<p>
+An <a href=query_proximity.html>earlier version</a>
+of this paper appeared in the
+Proceedings of
+<a href=http://www.icra2006.org/>ICRA2006</a>,
+the 2006 IEEE International Conference on
+Robotics and Automation.
+</h4>
+The proceedings are for sale
+<a href=http://shop.ieee.org/ieeestore/Product.aspx?product_no=CH37729>here</a>.
+
+
+
+
+<h4>Abstract:</h4>
+
+This paper presents an interior point approach to 
+exact distance computation between convex objects represented 
+as intersections of implicit surfaces. Exact distance computation 
+algorithms are particularly important for applications involving 
+objects that make contact, such as in multibody dynamic
+simulations and in contact point prediction for dextrous manipulation. 
+They can also be used in the narrow phase of hierarchical
+collision detection. In contrast to geometric approaches 
+developed for polyhedral objects, we formulate the distance 
+computation problem as a convex optimization problem; this 
+optimization formulation has been previously described for 
+polyhedral objects. We demonstrate that for general convex objects
+represented as implicit surfaces, interior point approaches 
+are sufficiently fast, and owing to their global convergence
+properties, are the only provably good choice for solving proximity 
+query problems for some object classes. We use a primal-dual
+interior point algorithm that solves the KKT conditions 
+obtained from the convex programming formulation. For the 
+case of polyhedra and quadrics, we establish a theoretical time 
+complexity of O(n^1.5), where n is the number of constraints. 
+We present implementation results for example implicit surface 
+objects, including polyhedra, quadrics, and generalizations of 
+quadrics such as superquadrics and hyperquadrics, as well 
+as intersections of these surfaces. We demonstrate that in 
+practice, the algorithm takes time linear in the number of 
+constraints, and that distance computation rates of about 1 
+kHz can be achieved. We also extend the approach to proximity 
+queries between deforming convex objects. Finally, we show that 
+continuous collision detection for linearly translating objects 
+can be performed by solving two related convex optimization 
+problems. For polyhedra and quadrics, we establish that the 
+computational complexity of this problem is O(n^1.5). 
+
+<br>
+
+Index Terms:  Proximity query, closest points, smooth objects,
+interior point algorithms, collision detection, multibody 
+dynamic simulation. 
+
+
+<P>
+
+<B>
+<a href=http://www.cs.rpi.edu/~chakrn2/work/cdpaper/tro_revision_may07.pdf>Download
+the paper</a>.
+<!--
+<a href=http://www.cs.rpi.edu/~sakella/tmp/tro_revision_may07.pdf>Download
+the paper</a>.
+-->
+</b>
+<!--
+http://www.cs.rpi.edu/~sakella/papers/AkellaTROrevisionApr07.pdf
+<a href=http://www.cs.rpi.edu/~sakella/proxquery/dist_jln.pdf>Download the paper</a>
+<a href=http://www.cs.rpi.edu/~sakella/jufeng/query_proximity.pdf>query_proximity.pdf</a>.
+-->
+
+
+<P>
+Return to my <A HREF=../papers.html>list of papers.</A>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-39407322-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>

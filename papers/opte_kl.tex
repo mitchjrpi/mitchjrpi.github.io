@@ -1,0 +1,1346 @@
+\documentclass[12pt]{kluwer}
+
+\newcommand{\til}{\char '176}
+
+\newcommand{\pe}{\psi}
+\def\d{\delta}
+\def\ds{\displaystyle}
+\def\e{{\epsilon}}
+\def\eb{\bar{\eta}}
+\def\enorm#1{\|#1\|_2}
+\def\Fp{F^\prime}
+\def\fishpack{{FISHPACK}}
+\def\fortran{{FORTRAN}}
+\def\gmres{{GMRES}}
+\def\gmresm{{\rm GMRES($m$)}}
+\def\Kc{{\cal K}}
+\def\norm#1{\|#1\|}
+\def\wb{{\bar w}}
+\def\zb{{\bar z}}
+
+\def\bfE{\mbox{\boldmath$E$}}
+\def\bfG{\mbox{\boldmath$G$}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+
+% My definitions of page layout
+%\oddsidemargin .3in
+%\textwidth 6in
+%\textheight 8.6in
+%\topmargin -30pt
+%\renewcommand{\baselinestretch}{1.2}
+
+
+% Definition of the proof-environment:
+ \newenvironment{proof}{{\raggedright\bf
+ Proof:}\quad}{\hspace*{\fill}$\fbox{ }$\\}
+ \newenvironment{altproof}{{\raggedright\bf Alternative
+ Proof:}\quad}{\hspace*{\fill}$\fbox{ }$}
+
+\newcommand{\trace}{\mbox{trace}}
+\newcommand{\real}{I\!\! R}
+
+\begin{document}
+\begin{article}
+\begin{opening}
+
+\title{Cutting plane methods for semidefinite programming \thanks{This
+        work was supported in part by NSF grant number CCR--9901822}}
+
+\author{Kartik \surname{Krishnan}\email{kartik@caam.rice.edu}}
+\institute{Department of Computational and Applied Mathematics, Rice
+        University, 6100 Main Street, Houston, Texas,
+        77005}
+
+\author{John E. \surname{Mitchell}\email{mitchj@rpi.edu}}
+\institute{Department of Mathematical Sciences, Rensselaer
+        Polytechnic Institute, 110 8th Street, Troy, New York,
+        12180. http://www.rpi.edu/\til mitchj
+        ~Corresponding author.}
+
+\runningtitle{Cutting plane methods for SDP}
+\runningauthor{Krishnan and Mitchell}
+
+
+
+\begin{abstract}
+Interior point methods for semidefinite programming (SDP)
+are fairly limited in the size of problems they can handle. Cutting plane
+methods provide a means to solve large scale SDP's cheaply and quickly.
+We give a survey of various cutting plane approaches for SDP in this paper.
+These cutting plane approaches arise from two perspectives: 
+the first is based on the polynomial separation oracle for the SDP that is utilized by
+polynomial interior point cutting plane methods; the
+second rewrites an SDP with a bounded feasible set as an eigenvalue optimization
+problem, which in turn is solved using bundle methods for nondifferentiable optimization.
+ 
+We present an accessible and unified introduction to various cutting plane
+approaches that have appeared in the literature; in particular we show how each approach
+arises as a natural enhancement of a primordial LP cutting plane
+scheme based on a semi-infinite formulation of the SDP.
+\end{abstract}
+
+\keywords{Semidefinite programming,
+nondifferentiable optimization,
+cutting plane methods.}
+
+\end{opening}
+
+\section{Introduction}
+
+Semidefinite Programming $(SDP)$ has been one of the most exciting and active areas in optimization recently.
+This tremendous activity was spurred by the discovery of efficient interior point algorithms for solving SDP,
+and important applications of the SDP in control, developing approximation algorithms for combinatorial
+optimization problems, finance, statistics etc.
+Some excellent references for SDP include the website maintained by
+\inlinecite{sdp_webpage}, the survey papers by \inlinecite{todd}
+and  \inlinecite{vandenberghe_boyd},
+and the SDP handbook edited by \inlinecite{sdp_handbook}.
+However these applications require effective techniques for solving the SDP.
+Although interior point algorithms are a great theoretical tool, and offer worst case polynomial complexity
+they are fairly limited in the size of problems they can handle. We investigate cutting plane approaches
+for the SDP in this paper with a view to solve large scale semidefinite programming problems. 
+Our aim is also to tie together all the cutting plane
+approaches for the SDP which have appeared in the literature so far.
+
+The cutting plane approaches for SDP fall in two categories:
+\begin{itemize}
+\item{\bf Polynomial interior point cutting plane methods:} These methods are based on the equivalence of
+separation and optimization as established in \inlinecite{grotschel_lovasz_schrijver}. The SDP
+has a polynomial time separation oracle, and hence it can be solved within this framework. Good
+surveys of such methods appear in \inlinecite{goffin_vial} and
+\inlinecite{mitchell_survey}. 
+We must emphasize that we could use these
+methods to solve the SDP in polynomial time, and that these complexities compare well with interior point methods
+for SDP (see \inlinecite{krishnan} for more details).
+\item{\bf Bundle methods for nondifferentiable optimization:} An SDP with some additional restrictions
+(see Assumption \ref{constant_trace}) can be written as an eigenvalue optimization problem. These are convex
+but non-smooth optimization problems, that can be handled by bundle methods for nondifferentiable optimization.
+A good survey on bundle methods appear in \inlinecite{lemarechal}. Polynomial time complexity proofs for 
+these methods are not known, but the spectral bundle method \cite{helmberg_rendl} appears to be very efficient
+in practice.
+\end{itemize}
+
+We are aware of at least three distinct cutting plane approaches for the SDP namely the spectral bundle method
+due to %Helmberg, Kiwiel, Oustry, and Rendl
+\inlinecite{helmberg_hab},
+\inlinecite{helmberg_kiwiel},
+\inlinecite{helmberg_oustry},
+\inlinecite{helmberg_rendl}, and
+\inlinecite{oustry},
+an LP cutting plane scheme for the SDP due to
+\inlinecite{krishnan} and \inlinecite{krishnan_mitchell},
+which is a special
+case of polynomial interior point cutting plane methods applied to the SDP, and analytic center cutting plane
+methods (ACCPM) which incorporate semidefinite cuts due to
+\inlinecite{oskoorouchi} and \inlinecite{oskoorouchi_goffin}.
+The latter two methods fall in the first category, while the spectral bundle method falls in the second category.
+Also, we note that the spectral bundle method, and the analytic center cutting plane method with semidefinite cuts
+constitute non-polyhedral cutting plane models for the SDP.
+
+Consider the semidefinite programming problem
+\begin{displaymath}
+\begin{array}{lrclr}
+\min & C \bullet X \\
+\mbox{subject to} & \mathcal{A} (X) & = & b & \qquad (SDP) \\
+& X & \succeq  & 0,
+\end{array}
+\end{displaymath}
+with dual
+\begin{displaymath}
+\begin{array}{lrccclr}
+\max & b^Ty \\
+\mbox{subject to} & \mathcal{A}^Ty  & + & S & = & C  & \qquad (SDD) \\
+&&& S & \succeq & 0
+\end{array}
+\end{displaymath}
+where $ X, S \in \mathcal{S}^{n} $, the space of real symmetric $ n \times n $ matrices. We define
+\begin{displaymath}
+\begin{array}{ccccc}
+C \bullet X & = & \mbox{Trace} (C^TX) & = & \sum_{i,j=1}^n C_{ij}X_{ij}
+\end{array}
+\end{displaymath}
+where $ \mathcal{A} : \mathcal{S}^{n} \to \real^{pc} $ and $ \mathcal{A}^T : \real^{pc} \to \mathcal{S}^n $ are of the form
+
+\begin{displaymath}
+\begin{array}{ccccccc}
+\mathcal{A} (X) & = & \left[ \begin{array}{c}
+            A_1 \bullet X \\ \vdots \\ A_{pc} \bullet X \end{array} \right] & \mbox{and} & \mathcal{A}^Ty & = & \sum_{i=1}^{pc} y_iA_i
+\end{array}
+\end{displaymath}
+with $ A_i \in \mathcal{S}^{n}, i = 1,\ldots,pc$. Here $pc$ denotes the number of primal constraints.
+We assume that $A_1,\ldots,A_{pc}$ are linearly independent in $\mathcal{S}^n$.
+$ C \in \mathcal{S}^n $ is the cost matrix, $ b \in \real^{pc} $ the RHS vector.
+The matrix $X \in \mathcal{S}^n$ is constrained to be positive semidefinite ({\em psd}) expressed as $ X \succeq 0 $. This is equivalent
+to
+requiring that $d^TXd \ge 0$, $ \forall d$.
+On the other hand $ X \succ 0 $ denotes a positive definite ({\em pd}) matrix, i.e. $ d^TXd > 0 $ , $ \forall d \neq 0 $.
+$ \mathcal{S}_{+}^{n} $ and $ \mathcal{S}_{++}^{n} $ denote the space of symmetric {\em psd} and {\em pd} matrices respectively.
+
+\begin{assumption}
+\label{slater_pt}
+Both $(SDP)$ and $(SDD)$ have strictly feasible points, namely the sets $\{X \in \mathcal{S}^n : \mathcal{A}(X)=b, X \succ 0 \}$
+and $\{(y,S) \in \real^{pc} \times \mathcal{S}^n : \mathcal{A}^Ty+S=C, S \succ 0 \}$ are nonempty.
+\end{assumption}
+This assumption guarantees that both $(SDP)$ and $(SDD)$ attain their optimal solutions $X^*$ and $(y^*,S^*)$, and their optimal
+values are equal, i.e. $C \bullet X^* = b^Ty^*$. Thus the duality gap $X^*S^*=0$ at optimality.
+
+We will also make the following assumption, which will enable us to write $(SDD)$ as an eigenvalue optimization problem.
+\begin{assumption}
+\label{constant_trace}
+\begin{equation}
+\begin{array}{ccccccc}
+\mathcal{A} (X) & = & b & \Rightarrow & \mbox{Trace}(X) & = & a
+\end{array}
+\end{equation}
+for some constant $a \ge 0$.
+\end{assumption}
+Assumption (\ref{constant_trace}) ensures the existence of the following $\hat{y}$.
+\begin{theorem}
+\label{constant_trace_corollary}
+If every feasible $X$ for $(SDP)$ satisfies $\mbox{Trace}(X) = a$, then
+\begin{displaymath}
+\exists \hat{y} \in \real^{pc}  \hspace*{0.25cm} \mbox{with} \hspace*{0.25cm} \mathcal{A}^T \hat{y} = I.
+\end{displaymath}
+Moreover this $\hat{y}$ satisfies $b^T \hat{y} = a$.
+\end{theorem}
+\begin{proof}
+Since $\mbox{Trace}(X) = a$ is satisfied for every feasible $X$ in $(SDP)$, it can be expressed
+as a linear combination of the other primal constraints $A_i \bullet X = b_i$, $i=1,\ldots,pc$.
+Letting the components of $\hat{y}$ to be the coefficients in this linear combination we get the desired result.
+\end{proof}
+
+We can write down the Lagrangian dual to $(SDP)$ transferring all the equality constraints
+into the objective function via Lagrangian multipliers $y_i$, $i=1,\ldots,pc$, to give (\ref{sdp_as_eig_opt_1}).
+Assumption \ref{slater_pt} ensures that this problem is equivalent to $(SDP)$.
+\begin{equation}
+\label{sdp_as_eig_opt_1}
+\begin{array}{lrcc}
+\max_y & b^Ty + & \min_{X : \mbox{Trace}(X) = a, X \succeq 0} & (C - \sum_{i=1}^{pc}y_iA_i) \bullet X 
+\end{array}
+\end{equation}
+Using the variational characterization of the minimum eigenvalue function, the quantity in the inner minimization 
+can be expressed as $a \lambda_{min}(C - \mathcal{A}^Ty)$. Thus, we have
+\begin{equation}
+\label{sdp_as_eig_opt_2}
+\begin{array}{ccc}
+\max_y b^Ty + a \lambda_{min}(C - \mathcal{A}^Ty)
+\end{array}
+\end{equation}
+Thus $(SDP)$ is essentially an eigenvalue optimization problem. We shall return to (\ref{sdp_as_eig_opt_2}) when we discuss
+cutting plane approaches for the SDP. Without loss of generality, and for the ease of exposition, we shall
+assume that $a=1$ in the succeeding sections. We must also emphasize that although we are dealing
+with $\lambda_{min}(S)$ which is a concave function, we shall continue to use terms like subgradients,
+subdifferential etc. These terms should be understood to mean the corresponding analogues for a concave function.
+We also fix some notation here
+\begin{displaymath}
+\begin{array}{ccc}
+f(y) & = & b^Ty + \lambda_{min}(C-\mathcal{A}^Ty) \\
+& = & \lambda_{min}(C-\sum_{i=1}^{pc}y_i(A_i-b_iI))
+\end{array}
+\end{displaymath}
+This function is nondifferentiable, precisely at those points, where $\lambda_{min}(C-\mathcal{A}^Ty)$
+has a multiplicity greater than one.
+
+Let us consider a point $y$, where $\lambda_{min}(C-\mathcal{A}^Ty)$ has a multiplicity $r$.
+Let $p_i$, $i=1,\ldots,r$ be a normalized set of eigenvectors at this point. 
+Also, let $P \in \real^{n \times r}$ be an orthonormal matrix, whose $i$th column
+is $p_i$. Any normalized eigenvector $p$ corresponding to $\lambda_{min}(C-\mathcal{A}^Ty)$
+can be expressed as $p = Px$, where $x \in \real^r$, with $x^Tx = 1$.
+The subdifferential of $f(y)$ at this point is then given by
+\begin{equation}
+\label{subdiff_for_f}
+\begin{array}{rcl}
+\partial f(y) & = & \mbox{conv}\{ b-\mathcal{A}(pp^T) : p = Px, x^Tx = 1 \} \\
+& = & \{ b - \mathcal{A}(PVP^T) : V \in \mathcal{S}^r, \mbox{Trace}(V) = 1, V \succeq 0\}
+\end{array}
+\end{equation}
+Here $\mbox{conv}$ denotes the convex hull operation.
+The equivalence of the two expressions can be found in \inlinecite{overton}.
+Each member of $\partial f(y)$ is called a subgradient.
+
+We also define the $\epsilon$ subdifferential at a point $y$, which we denote as $\partial_{\epsilon} f(y)$.
+This is given by
+\begin{equation}
+\label{epsilon_subdifferential}
+\begin{array}{rcl}
+\partial_{\epsilon} f(y) & = & \{b - \mathcal{A}(pp^T) :
+(b - \mathcal{A}(pp^T))^T(x-y)  \\
+&& \qquad \ge \lambda_{min}(S(x)) - \lambda_{min}(S(y)) - \epsilon, 
+\forall S(x) \in \mathcal{S}^n \}
+\end{array}
+\end{equation}
+
+\section{Linear programming formulations \\ of semidefinite programming}
+
+\label{lp_formulations_of_sdp}
+In this section we shall discuss linear programming cutting plane schemes for the SDP. We shall motivate these cutting
+plane schemes from two perspectives. We analyze the shortcomings of these cutting plane schemes,
+and then consider modifications, which lead to an improved polyhedral bundle scheme for the SDP. Further enhancements
+are possible, based on the multiplicity of $\lambda_{min}(S)$, and these lead to non-polyhedral cutting plane models
+for the SDP. We shall discuss two of these approaches in the next section.
+
+The first way to motivate cutting plane linear programming approaches for the $(SDP)$ is to consider a
+{\em semi-infinite} formulation $(LDD)$ of $(SDD)$. This formulation is given below.
+\begin{displaymath}
+\begin{array}{lrccc}
+\max & b^Ty \\
+\mbox{subject to} & \mathcal{A}^Ty + S & = & C & \qquad (LDD)\\
+&  d^TSd & \geq & 0 & \forall ||d||_2 = 1
+\end{array}
+\end{displaymath}
+We consider $(SDD)$ instead of $(SDP)$ for the following reasons:
+\begin{itemize}
+\item Since $X$ is a $n \times n$, and symmetric matrix, a semi-infinite formulation of $(SDP)$
+would involve ${n+1 \choose 2} = \frac{n(n+1)}{2} = O(n^2)$ variables.
+\item There are $pc$ variables in the dual formulation, and we have
+$pc \le {n+1 \choose 2}$. Thus it is more efficient to deal with the dual semi-infinite formulation,
+since we are dealing with smaller linear programs.
+\end{itemize}
+We discuss the finite linear programs $(LDR)$ and $(LPR)$ and some of their properties below.
+Given a finite set of vectors $\{d_i,i=1,\ldots,m\}$, we obtain the relaxation
+\begin{displaymath}
+\begin{array}{lccclr}
+\max & b^Ty \\
+\mbox{subject to} &  d_id_i^T \bullet \mathcal{A}^T y & \leq & d_id_i^T \bullet C &
+     \mbox{for } i=1,\ldots,m.  & \qquad (LDR)
+\end{array}
+\end{displaymath}
+
+We now derive the linear programming dual to $(LDR)$.
+We have
+\begin{eqnarray*}
+d_id_i^T \bullet \mathcal{A}^T y
+& = & d_id_i^T \bullet (\sum_{j=1}^{pc} y_j A_j)  \\
+& = & \sum_{j=1}^{pc} y_j d_i^T A_j d_i.  \\
+\end{eqnarray*}
+Thus, the constraints of $(LDR)$ can be written as
+\begin{displaymath}
+\sum_{j=1}^{pc} y_j d_i^T A_j d_i \leq  d_i^T C d_i \quad \mbox{for } i=1,\ldots,m.
+\end{displaymath}
+It follows that the dual problem is
+\begin{displaymath}
+\begin{array}{lrcll}
+\min & \sum_{i=1}^m d_i^T C d_i x_i  \\
+\mbox{subject to} & \sum_{i=1}^m d_i^T A_j d_i x_i & = & b_j
+     & \mbox{for }j=1,\ldots,pc  \\
+& x & \geq & 0.
+\end{array}
+\end{displaymath}
+
+This can be rewritten as
+\begin{displaymath}
+\begin{array}{lrclr}
+\min & C \bullet (\sum_{i=1}^m x_i d_i d_i^T)  \\
+\mbox{subject to} & \mathcal{A} (\sum_{i=1}^m x_i d_i d_i^T) & = & b & \qquad (LPR)  \\
+& x & \geq & 0.
+\end{array}
+\end{displaymath}
+\begin{theorem}
+\label{const_vers}
+Any feasible solution $x$ to $(LPR)$ will give a feasible solution $X$ to $(SDP)$.
+\end{theorem}
+\begin{proof}
+This lemma follows directly from the fact that $(LPR)$ is a constrained version of $(SDP)$. However
+we present a formal proof.
+Set $X=\sum_{i=1}^m x_i d_id_i^T$. From $(LPR)$ it is clear that this $X$ satisfies $\mathcal{A}X=b$.
+Moreover $X$ is psd. To see this
+\begin{displaymath}
+\begin{array}{ccccc}
+d^TXd & = & d^T(\sum_{i=1}^m x_id_id_i^T)d & = & \sum_{i=1}^m x_i(d_i^Td)^2 \\
+& \ge & 0 & \forall d
+\end{array}
+\end{displaymath}
+where the last inequality follows from the fact that $x \ge 0$.
+\end{proof}
+We discuss the perfect set of linear constraints that are required for the SDP.
+
+The optimality conditions for the SDP include primal feasibility, dual feasibility and complementarity
+$XS = 0$. The complementarity condition implies that $X$ and $S$ commute, and so they share a common
+share of eigenvectors (see {\em simultaneous diagonalization} in
+\inlinecite{horn_johnson1}).
+
+Thus, we have \cite{ali_hab_overton}:
+\begin{theorem}
+Let $X$ and $(y,S)$ be primal and dual feasible respectively. Then they are optimal if and only if
+there exists $Q \in \real^{n \times r}$,
+$R \in \real^{n \times (n-r)}$, with $Q^TQ = I_r$, $R^TR = I_{n-r}$, $Q^TR = 0$,
+and $\Lambda, \Omega $, diagonal matrices in $\mathcal{S_+}^r$, and $\mathcal{S_+}^{n-r}$, such that
+\begin{equation}
+\label{spectral_of_X}
+\begin{array}{ccc}
+X & = & [Q \;\; R] \left[ \begin{array}{cc} \Lambda & 0 \\ 0 & 0 \end{array} \right]
+\left[ \begin{array}{c} Q^T \\ R^T \end{array} \right]
+\end{array}
+\end{equation}
+\begin{equation}
+\label{spectral_of_S}
+\begin{array}{ccc}
+S & = & [Q \;\; R] \left[ \begin{array}{cc} 0 & 0 \\ 0 & \Omega \end{array} \right]
+\left[ \begin{array}{c} Q^T \\ R^T \end{array} \right]
+\end{array}
+\end{equation}
+hold.
+\end{theorem}
+The diagonal matrices $\Lambda$, $\Omega$ contain the nonzero eigenvalues of $X$ and $S$ in the
+spectral decompositions (\ref{spectral_of_X}) and (\ref{spectral_of_S}) respectively.
+Also $P = [Q \;\; R]$ is an orthogonal matrix that contains the common set of eigenvectors.
+Note that we are assuming that strict complementarity holds here (\cite{ali_hab_overton}).
+
+We get an upper bound on $r$, using the following theorem \ref{pataki_lemma}, due to \inlinecite{pataki}
+(also see \inlinecite{ali_hab_overton}), on the rank of extreme matrices $X$ in $(SDP)$.
+\begin{theorem}
+\label{pataki_lemma}
+There exists an optimal solution $X^{*}$ with rank $r$ satisfying the inequality $\frac{r(r+1)}{2} \le pc$,
+where $pc$ is the number of constraints in $(SDP)$.
+\end{theorem}
+Theorem \ref{pataki_lemma} suggests that there is an optimal matrix $X$ that satisfies the upper
+bound, whose rank is around $O(\sqrt{pc})$.
+
+\begin{theorem}
+\label{exact_lp_relaxation}
+Let $X^* = Q \Lambda Q^T$, and let $q_i$, $i=1,\ldots,r$ be the columns of $Q$. Then
+the optimal solution to $(SDP)$ and $(SDD)$ is given by the optimal
+solution to (\ref{exact_discretization_of_sdd}), and its dual
+(\ref{exact_discretization_of_sdp}).
+\begin{equation}
+\label{exact_discretization_of_sdd}
+\begin{array}{lrccc}
+\max & b^Ty \\
+\mbox{s.t.} & \sum_{j=1}^{pc}(q_i^TA_jq_i)y_j & \le & q_i^TCq_i, & i=1,\ldots,r
+\end{array}
+\end{equation}
+with dual
+\begin{equation}
+\label{exact_discretization_of_sdp}
+\begin{array}{lrccc}
+\min & \sum_{i=1}^r(q_i^TCq_i)x_i \\
+\mbox{s.t.} & \sum_{i=1}^r(q_i^TA_jq_i)x_i & = & b_j & j=1,\ldots,pc \\
+& x & \ge & 0
+\end{array}
+\end{equation}
+\end{theorem}
+\begin{proof}
+Since (\ref{exact_discretization_of_sdd}) is a discretization to $(SDD)$, its dual
+(\ref{exact_discretization_of_sdp}) is a constrained version of $(SDP)$.
+Thus its optimal value gives an upper bound on the optimal value of $(SDP)$. Thus an optimal
+solution to $(SDP)$ is also optimal in (\ref{exact_discretization_of_sdd}),
+provided it is feasible in it. The optimal
+solution to $(SDP)$ is given by $X =  Q \Lambda Q^T = \sum_{i=1}^r \lambda_iq_iq_i^T$, where
+$\lambda_i > 0$, $i=1,\ldots,r$, and $q_i$, $i=1,\ldots,r$ are the corresponding eigenvectors.
+This is clearly feasible in $(\ref{exact_discretization_of_sdp})$, with $x = \lambda$.
+This corresponds to $(LDR)$ with $d_i = q_i$, $i=1,\ldots,r$.
+\end{proof}
+Theorem \ref{exact_lp_relaxation} tells us precisely what constraints we should look for in our
+LP relaxations, namely those in the {\em null space of the optimal dual slack matrix~$S$}.
+
+We conclude this section with noting that (\ref{exact_discretization_of_sdp}) can be rewritten as
+\begin{equation}
+\label{exact_discretization_of_sdp_1}
+\begin{array}{lrccc}
+\min & C \bullet (QMQ^T) \\
+\mbox{s.t.} & A_j \bullet (QMQ^T) & = & b_j & j=1,\ldots,pc \\
+& M & \succeq & 0 \\
+& M & \mbox{diagonal}
+\end{array}
+\end{equation}
+Here $M \in \mathcal{S}^m$. Choosing $m = r$ gives the formulation in (\ref{exact_discretization_of_sdp}).
+Although the constraint set in (\ref{exact_discretization_of_sdp}) is an overdetermined system,
+we still have a solution.
+
+In the LP approach, the number of columns of columns in $Q$ can get arbitrarily large.
+However when this number is more than $n$, we could instead perform
+a spectral factorization of $X = QMQ^T = P \Lambda P^T$, and replace the columns of $Q$
+with the set of eigenvectors in $P$.
+
+\section{Nonpolyhedral cutting plane models \\ for semidefinite programming}
+
+\label{nlp_formulations_of_sdp}
+We discuss extensions to the polyhedral model presented in section \ref{lp_formulations_of_sdp}.
+These are primarily motivated by (\ref{exact_discretization_of_sdp_1}). A natural relaxation of
+(\ref{exact_discretization_of_sdp_1}) is to drop
+the requirement that $M$ be diagonal, giving rise to (\ref{exact_discretization_of_sdp_2}).
+\begin{equation}
+\label{exact_discretization_of_sdp_2}
+\begin{array}{lrccc}
+\min & C \bullet (QMQ^T) \\
+\mbox{s.t.} & A_j \bullet (QMQ^T) & = & b_j & j=1,\ldots,pc \\
+& M & \succeq & 0
+\end{array}
+\end{equation}
+with dual
+\begin{equation}
+\label{exact_discretization_of_sdd_2}
+\begin{array}{lrcc}
+\min & b^Ty \\
+\mbox{s.t.} & S & = & Q^T(C-\mathcal{A}^Ty)Q \\
+& S & \succeq & 0
+\end{array}
+\end{equation}
+where $M \in \mathcal{S}^m$. Incidentally, this is a constrained version of $(SDP)$ for
+$m \le n$. However, (\ref{exact_discretization_of_sdp_2}) is equivalent to $(SDP)$,
+when the columns of $Q$ are $p_i$ from Theorem (\ref{exact_lp_relaxation}).
+Typically, we would like $m = r = O(\sqrt{pc})$, where $pc$ is the number of constraints
+in $(SDP)$, since we interested only in the set of optimal solutions.
+
+It appears from (\ref{exact_discretization_of_sdp_2}) that we are solving an SDP
+by solving a sequence of smaller SDP's. We would like to think of solving
+(\ref{exact_discretization_of_sdp_2}) as a {\em primal active set} method for
+the SDP.
+\begin{enumerate}
+\item Consider a subset $X = QMQ^T$ of the primal feasible matrices, with
+$M \in \mathcal{S}^{pc}$. We are exploiting Theorem \ref{pataki_lemma} on the rank
+of basic feasible $X$ matrices here. 
+\item This amounts to relaxing $S \succeq 0$ to
+$Q^T(C-\mathcal{A}^Ty)Q \succeq 0$ in (\ref{exact_discretization_of_sdd_2}).
+Compute the most negative eigenvalue $\lambda_{min}(S)$ together with an associated
+eigenvector $v$. If $S$ is psd, we stop with optimality.
+\item Update $Q$ to include the new vector $v$, and using some strategy to keep
+the number of columns in $Q$ constant. This corresponds to another basic feasible solution,
+with hopefully with a better objective value. We return to step 1.
+\end{enumerate}
+We shall retun to (\ref{exact_discretization_of_sdp_2}) when we consider the spectral bundle
+method (Algorithm~4), and a primal active set method for SDP (Algorithm~5) in
+section~\ref{nlp_cutting_plane_methods_for_sdp}.
+
+There is another formulation (\ref{exact_discretization_of_sdp_3}), which is in between
+(\ref{exact_discretization_of_sdp_1}) and (\ref{exact_discretization_of_sdp_2}).
+\begin{equation}
+\label{exact_discretization_of_sdp_3}
+\begin{array}{lrccc}
+\min & C \bullet (QMQ^T) \\
+\mbox{s.t.} & A_j \bullet (QMQ^T) & = & b_j & j=1,\ldots,pc \\
+& M & \succeq & 0 \\
+& M & \mbox{block diagonal}
+\end{array}
+\end{equation}
+We will later relate (\ref{exact_discretization_of_sdp_3}) with the analytic center cutting plane
+method incorporating semidefinite cuts due to
+\inlinecite{oskoorouchi_goffin} and \inlinecite{oskoorouchi}.
+
+\section{Cutting plane algorithms for  semidefinite programming}
+
+\label{lp_cutting_plane_methods_for_sdp}
+We now present a preliminary LP cutting plane algorithm for the SDP based on a semi-infinite formulation of $(LDD)$.
+The method is originally due to \inlinecite{cheney_goldstein},
+and \inlinecite{kelley}.
+This is also the exchange scheme discussed in \inlinecite{hettich_kortanek}.
+We shall henceforth refer to this as Algorithm~1
+and it is presented below.
+
+\begin{figure}
+\caption{Algorithm~1: Cutting plane algorithm for the SDP}
+\fbox{%
+\begin{minipage}{\textwidth}
+%{\bf Algorithm~1: Cutting plane algorithm for the SDP}
+\begin{enumerate}
+\item Choose an {\bf initial set} of constraints for $(LDR)$. Choose termination parameters
+$\epsilon_1, \epsilon_2 > 0$. Set the current upper and lower bounds to be $\mbox{UB} = \infty$,
+and $\mbox{LB} = -\infty$ respectively.
+\item In the $k$th iteration we solve a discretization $(LDR)$, and its dual $(LPR)$ for a solution
+$\bar{y}^k$ where
+\begin{displaymath}
+\begin{array}{lccclr}
+\max & b^Ty \\
+\mbox{subject to} &  d_id_i^T \bullet \mathcal{A}^T y & \leq & d_id_i^T \bullet C &
+     \mbox{for } i=1,\ldots,m^k.  & \qquad (LDR)
+\end{array}
+\end{displaymath}
+with dual
+\begin{displaymath}
+\begin{array}{lrclr}
+\min & C \bullet (\sum_{i=1}^{m^k}x_id_id_i^T)  \\
+\mbox{subject to} & \mathcal{A} (\sum_{i=1}^{m^k}x_id_id_i^T) & = & b & \qquad (LPR)  \\
+& x & \geq & 0.
+\end{array}
+\end{displaymath}
+Update the upper bound: $\mbox{UB} = \min \{\mbox{UB}, b^T\bar{y}^k\}$.
+\item Solve the subproblem
+\begin{equation}
+\label{cutting_plane_subproblem}
+\begin{array}{lrcc}
+\min & d^T(C-\mathcal{A}^T\bar{y}^k)d \\
+\mbox{s.t.} & ||d||_2 & \le & 1
+\end{array}
+\end{equation}
+The optimal objective value to (\ref{cutting_plane_subproblem}) is $\lambda_{min}(C-\mathcal{A}^T\bar{y}^k)$.
+Update the lower bound: $\mbox{LB} = \max \{\mbox{LB},b^T(\bar{y}^k + \lambda \hat{y})\}$, where
+$\lambda = |\lambda_{min}(C-\mathcal{A}^T\bar{y}^k)|$, and $\hat{y}$ satisfies Theorem
+\ref{constant_trace_corollary}. If $|\mbox{LB} - \mbox{UB}| \le \epsilon_1$, or
+$\lambda \le \epsilon_2$, go to step 5.
+\item Any eigenvector $d$ corresponding to this eigenvalue $\lambda_{min}(C-\mathcal{A}^T\bar{y}^k)$ gives
+a valid cutting plane. 
+\begin{displaymath}
+\begin{array}{ccc}
+dd^T \bullet \mathcal{A}^Ty & \le & dd^T \bullet C
+\end{array}
+\end{displaymath}
+Add this cutting plane to $(LDR)$. Set $k = k+1$, and return to step 2.
+\item The current solution $(x^k,y^k)$ gives an optimal solution $(X,y)$ for $(SDP)$, and
+$(SDD)$ respectively, where $X = \sum_{i=1}^{m^k}{x_i}^kd_id_i^T$, and $y=y^k$.
+\end{enumerate}
+\end{minipage}
+}  \\
+\end{figure}
+
+
+We wish to emphasize a few points with regard to Algorithm~1.
+\begin{itemize}
+\item An initial set of constraints is obtained by requiring that the diagonal entries
+of $S$ be non-negative. This amounts to setting $d=e_i$, $i=1,\ldots,n$.
+\item We solve subproblem (\ref{cutting_plane_subproblem}) cheaply. Typically,
+the most negative eigenvalue $\lambda_{min}(S)$, and its associated eigenvector is estimated
+by an iterative method like the {\em Lanczos} scheme.
+\item Any $d$ which gives a negative objective value in (\ref{cutting_plane_subproblem})
+gives a valid cutting plane. In particular, this includes all eigenvectors corresponding
+to negative eigenvalues.
+\item We could choose a different norm for $d$ in (\ref{cutting_plane_subproblem}). The
+reason for choosing the $2$ norm is that (\ref{cutting_plane_subproblem}) can be
+solved efficiently, thanks to the variational characterization of the minimum eigenvalue
+function. 
+\end{itemize}
+There is another way to motivate this cutting plane approach, which is based on the
+eigenvalue optimization model (\ref{sdp_as_eig_opt_2}).
+
+Now assume that we have a set of
+points $y = y^1,\ldots,y^m$, and we know the function values $f(y^i)$, $i=1,\ldots,m$,
+and subgradients $(b-\mathcal{A}(p_ip_i^T))$, $i=1,\ldots,m$ (where $p_i$ is
+a normalized eigenvector corresponding to $\lambda_{min}(C-\mathcal{A}^Ty^i)$)
+at these points.
+
+We can construct the following overestimate $\hat{f}_m(y)$ for $f(y)$.
+\begin{displaymath}
+\begin{array}{ccc}
+\hat{f}_m(y) & = & \min_{i=1,\ldots,m} p_ip_i^T \bullet (C-\mathcal{A}^Ty) + b^Ty \\
+& \ge & f(y)
+\end{array}
+\end{displaymath}
+To see this note that since the $p_i$ are normalized, we have
+\begin{displaymath}
+\begin{array}{ccc}
+\lambda_{min}(C-\mathcal{A}^Ty) & \le & p_i^T(C-\mathcal{A}^Ty)p_i, \hspace*{0.25cm} i=1,\ldots,m \\
+& = & p_ip_i^T \bullet (C-\mathcal{A}^Ty), \hspace*{0.25cm} i=1,\ldots,m
+\end{array}
+\end{displaymath}
+We now maximize this overestimate instead, i.e.
+\begin{displaymath}
+\begin{array}{ccc}
+\max_y \hat{f}_m(y) & = & \max_y \{b^Ty + \min_{i=1,\ldots,m} \{p_ip_i^T \bullet (C-\mathcal{A}^Ty) \} \}
+\end{array}
+\end{displaymath}
+which can be recast as the following linear program
+\begin{equation}
+\label{lp_subproblem_dual}
+\begin{array}{lrcc}
+\max & b^Ty + v \\
+\mbox{s.t.} & v & \le & p_ip_i^T \bullet (C-\mathcal{A}^Ty), \hspace*{0.25cm} i=1,\ldots,m
+\end{array}
+\end{equation}
+with dual
+\begin{equation}
+\label{lp_subproblem_primal}
+\begin{array}{lrccc}
+\min & \sum_{i=1}^m(p_i^TCp_i)x_i \\
+\mbox{s.t.} & \sum_{i=1}^m(p_i^TA_jp_i)x_i & = & b_j, & j=1,\ldots,pc \\
+& \sum_{i=1}^mx_i & = & 1 \\
+& x & \ge & 0
+\end{array}
+\end{equation}
+This is exactly the problem obtained by considering a discretization of $(SDD)$. Here
+$v$ is the dual variable corresponding to the constraint $\sum_{i=1}^mx_i=1$,
+which is implicitly satisfied by any solution $x$ to $(LPR)$ (since we assumed that any feasible
+$X$ in $(SDP)$ satisfies $\mbox{Trace}(X) = 1$, and $(LPR)$ is a constrained version of $(SDP)$).
+Thus, we can set $v=0$ without any loss of generality. In fact we must mention that
+(\ref{lp_subproblem_dual}) has an infinite number of solutions, since we added the redundant
+constraint $\sum_{i=1}^mx_i = 1$ in (\ref{lp_subproblem_primal}) corresponding to
+$\mbox{Trace}(X) = 1$ in Assumption \ref{constant_trace}. The solution $(v,y)$ with $v = 0$ is the one corresponding
+to $(LDR)$.
+
+Unfortunately Algorithm~1 has a very poor rate of convergence.
+For instance we observed
+that a simplex implementation performed very badly
+\cite{krishnan_mitchell,krishnan}.
+Primarily,
+minimizing $\hat{f}_m$ to find $y^{m+1}$ makes sense only if $\hat{f}_m \approx f$, near $y^m$, this is one of the
+reasons for the slow convergence for the cutting plane scheme. \inlinecite{lemarechal} discusses some
+convergence estimates for such an algorithm.
+Secondly the number of constraints in Algorithm~1
+gets prohibitively large. One way to overcome this is to utilize the refactorization idea we mentioned at the
+end of section \ref{lp_formulations_of_sdp}.
+
+There are two ways of addressing the shortcoming of slow convergence:
+\begin{itemize}
+\item Utilize an interior point cutting plane scheme that solves $(LDR)$ and $(LPR)$ approximately, i.e.
+to some tolerance on the duality gap $\frac{x^Ts}{n}$. As the algorithm proceeds, we gradually tighten
+this tolerance. This is the interior point LP cutting plane scheme discussed in \inlinecite{krishnan_mitchell}.
+(See also \inlinecite{mitchell}, \inlinecite{mitchell_ramass}, and
+\inlinecite{goffin_vial} for more discussions on interior point cutting plane algorithms).
+It is hard to prescribe explicit rules for updating this tolerance. A rough rule of thumb would be lower the tolerance
+if the cutting plane algorithm seems to be doing well, and actually increase this if the algorithm seems to be hopelessly
+stuck somewhere. We wish to relate these two stages with the serious and null steps carried out in the proximal bundle
+scheme discussed below.
+\item The second idea is to utilize the proximal bundle idea as discussed in \inlinecite{lemarechal} and
+\inlinecite{kiwiel_monograph}. We present a short discussion on the proximal bundle scheme below. The rough idea here
+is to maximize $\hat{f}_m(y) - \frac{u}{2}||y-y^m||^2$ (for some chosen $u > 0$). The second term acts as a regularization
+term which penalizes us from going too far from the current iterate $y^m$. The idea is to lower $u$ if we are
+making progress, i.e. taking serious steps, and actually increase $u$ if we perform a null step. As \inlinecite{lemarechal}
+remarks, choosing this parameter $u$ is an art in itself. The regularization penalty term $\frac{u}{2}||y-y^m||^2$
+acts as a trust region constraint $||y-y^m||^2 \le \sigma_m$, and helps to keep the solution bounded. Thus we
+can dispense with choosing an initial set of constraints to keep the subproblems bounded, as in Algorithm~1. For numerical
+reasons, it is better to introduce the regularization term into the objective function, rather than as a trust region
+constraint. This keeps the feasible region polyhedral, but we now have a quadratic objective.
+Also, this entails the choice of a good $u > 0$.
+\end{itemize}
+
+We now present a discussion of the proximal bundle scheme. Some excellent references include
+\inlinecite{urruty_lemarechal}, the monograph by \inlinecite{kiwiel_monograph},
+and the survey article by \inlinecite{lemarechal}. We begin from where we left off
+from the cutting plane scheme.
+To simplify our notation, we assume that $y^m$ is the iterate where $f(y)$ is a maximum,
+i.e. $f(y^m) \ge f(y^i)$, $i=1,\ldots,m-1$. Let us also introduce some notation here.
+Let
+\begin{displaymath}
+\begin{array}{ccc}
+q_i & = & b^T(y^m-y^i) + (\lambda_{min}(C-\mathcal{A}^Ty^m) - \lambda_{min}(C-\mathcal{A}^Ty^i)) \\
+& & -(b - \mathcal{A}(p_ip_i^T))^T(y^m-y^i) \\
+d & = & y - y^m
+\end{array}
+\end{displaymath}
+Here $q_i$ refers to the linearization error due to the subgradient $(b-\mathcal{A}(p_ip_i^T))$
+(computed at $y^i$), at the current iterate $y^m$. Since we are dealing with a concave function,
+$q_i \le 0$, $i=1,\ldots,m-1$. Using the above notation, we can write $\hat{f}_m(y)$ as follows:
+\begin{equation}
+\label{define_hat_f_m}
+\begin{array}{ccc}
+\hat{f}_m(y) & = & f(y^m) + \min \{-q_i + (b-\mathcal{A}(p_ip_i^T))^Td, i=1,\ldots,m\}
+\end{array}
+\end{equation}
+with $q_m = 0$. The final problem we solve to obtain the search direction $d$ is then
+\begin{equation}
+\label{bundle_subproblem_dual}
+\begin{array}{lrcc}
+\max & v - \frac{1}{2}ud^Td \\
+\mbox{s.t.} & v & \le & -q_i + (b-\mathcal{A}(p_ip_i^T))^Td, \hspace*{0.25cm} i=1,\ldots,m
+\end{array}
+\end{equation}
+If we set $u=0$ in (\ref{bundle_subproblem_dual}) we identically have (\ref{lp_subproblem_dual}).
+The dual to this subproblem is (\ref{bundle_subproblem_primal}). Due to strong duality the two
+problems (\ref{bundle_subproblem_dual}) and (\ref{bundle_subproblem_primal}) are identical.
+\begin{equation}
+\label{bundle_subproblem_primal}
+\begin{array}{lrcc}
+\min & \frac{1}{2u} ||b - \mathcal{A}(\sum_{i=1}^mx_ip_ip_i^T)||^2 - \sum_{i=1}^mx_iq_i \\
+\mbox{s.t.} & \sum_{i=1}^mx_i & = & 1 \\
+& x & \ge & 0
+\end{array}
+\end{equation}
+The first term is obtained by noting that $(b - \mathcal{A}(\sum_{i=1}^mx_ip_ip_i^T))^Td
+- \frac{u}{2}d^Td$ is a strictly concave function and attains its maximum when
+\begin{equation}
+\label{search_direction_in_bundle}
+\begin{array}{ccc}
+d & = & \frac{1}{u}(b - \mathcal{A}(\sum_{i=1}^{m-1}x_ip_ip_i^T))
+\end{array}
+\end{equation}
+We describe the polyhedral bundle method for the SDP below,
+in Algorithm~2.
+
+\begin{figure}
+\caption{Algorithm~2: Polyhedral bundle method for SDP}
+\fbox{%
+\begin{minipage}{\textwidth}
+\begin{enumerate}
+\item Start with $y^1 \in \real^{pc}$, let $p^1 \in \real^n$ be a normalized eigenvector
+corresponding to $\lambda_{min}(C-\mathcal{A}^Ty^1)$. Also choose the weight $u > 0$, an improvement
+parameter $\nu_1$ satisfying $0 < \nu_1 < 1$, and finally a termination parameter $\epsilon > 0$.
+\item In the $k$ iteration, compute the search direction $d^k$ using (\ref{search_direction_in_bundle}),
+where $x$ solves (\ref{bundle_subproblem_primal}).
+\item If $||d^k|| < \epsilon$, then stop.
+\item Perform a line search along the direction $d^k$, and set 
+$\bar{y}^{k+1} = 
+y^k + td^k$.
+Compute $p^{k+1}$, a normalized eigenvector corresponding to
+$\lambda_{min}(C-\mathcal{A}^T\bar{y}^{k+1})$.
+\item If the actual increase is not much smaller than the increase predicted by the model (sufficient increase), i.e.
+\begin{displaymath}
+\begin{array}{ccc}
+f(\bar{y}^{k+1}) - f(y^k) & \ge & \nu_1t(\hat{f}_k(\bar{y}^{k+1}) - f(y^k))
+\end{array}
+\end{displaymath}
+then perform a serious step, i.e. $y^{k+1} = \bar{y}^{k+1}$. Here $\hat{f}_k(\bar{y}^{k+1})$ is the 
+objective value of (\ref{bundle_subproblem_primal}).
+Set $q_{k+1} = 0$, and adjust $q_i$, $i=1,\ldots,k$ as follows
+\begin{displaymath}
+\begin{array}{ccc}
+q_i & = & q_i + f(y^{k+1}) - f(y^k) - t(b - \mathcal{A}(p_ip_i^T))^Td^k
+\end{array}
+\end{displaymath}
+\item Else, perform a null step, i.e. $y^{k+1} = y^k$.
+\item Return to step (2).
+\end{enumerate}
+\end{minipage}
+}  \\
+\end{figure}
+
+A few points are now in order:
+We are considering a subset of the positive semidefinite matrices $X$ in $(SDP)$ with trace one.
+To see this note that $X = \sum_{i=1}^mx_ip_ip_i^T$ is positive semidefinite, with trace one since
+$\sum_{i=1}^mx_i = 1$.
+When the method converges to the optimal solution, i.e. $d = 0$, we get
+primal feasibility, since in addition to $X \succeq 0$ we have $\mathcal{A}(X) = b$.
+
+We refer to the collection of subgradients $(b-\mathcal{A}(p_i{p_i}^T))$ as the bundle. The size
+of this bundle $r$ is the number of these subgradients. It appears
+that this size grows indefinitely with iteration count $k$ in the above algorithm. We can however
+keep the bundle size bounded, by introducing an aggregate subgradient matrix $\bar{W}$. We illustrate one possibility for
+this for the $(k+1)$ iteration in the above algorithm as follows:
+\begin{enumerate}
+\item Aggregate all the information from the previous iterates in an {\em aggregate subgradient} $\bar{W}$
+as follows:
+\begin{displaymath}
+\begin{array}{ccc}
+\bar{W}^k & = & \sum_{i=1}^mx_ip_ip_i^T
+\end{array}
+\end{displaymath}
+\item Thus in the $(k+1)$th iteration, the bundle consists of only two elements $(b - \mathcal{A}(\bar{W}^k))$, and
+$(b - \mathcal{A}(p^{k+1}{p^{k+1}}^T))$. 
+\item For the aggregation considered above, we are considering a subset of the positive semidefinite matrices
+$X$ with trace one. This subset $\mathcal{W}^{k+1}$ is given by
+\begin{equation}
+\label{subset_of_primal_X_in_proximal}
+\begin{array}{ccc}
+\mathcal{W}^{k+1} & = & \mbox{conv}\{\bar{W}^k,p^{k+1}{p^{k+1}}^T\}
+\end{array}
+\end{equation}
+\end{enumerate}
+
+If we define $\epsilon_k = - \sum_{i=1}^mx_iq_i$ (which appears in the objective function), then
+this implies the subgradients $(b - \mathcal{A}(p_ip_i^T))$, $ i=1,\ldots,m$,
+corresponding to nonzero $x_i$ are $\epsilon_m$ subgradients of the 
+minimum eigenvalue function at the current point $y^k$. This tolerance controls the radius of the ball
+in which we consider the bundle model to be a good approximation of the objective function $f(y)$.
+We can think of the weight parameter $u$ to be the dual multiplier associated with the
+constraint $- \sum_{i=1}^mx_iq_i \le \epsilon_k$. The main difficulty in the bundle method is in choosing
+the weight $u > 0$, or equivalently fixing the tolerance $\epsilon_k$.
+
+The polyhedral bundle scheme constructs the following polyhedral
+approximation $\mathcal{P}^k$ of $\partial f(y^k)$ in the $k$th iteration.
+\begin{equation}
+\label{polyhedral_approx_of_epsilon_subgradient}
+\begin{array}{rcl}
+\mathcal{P}^k & = & \{ b - \mathcal{A}(pp^T) : p = 
+\sum_{i=1}^mx_ip_ip_i^T, 
+-\sum_{i=1}^mx_iq_i \le \epsilon_k, \\
+&& \qquad \sum_{i=1}^mx_i = 1, x \ge 0 \}
+\end{array}
+\end{equation}
+This follows from setting $q_i = 0, \forall i$ in (\ref{polyhedral_approx_of_epsilon_subgradient}). To be
+technically more precise we must say that $\mathcal{P}^k$ attempts to be a good approximation of
+$\partial_{\epsilon} f(y^k)$. We omit these details, and they can be found in
+\inlinecite{lemarechal} and \inlinecite{makela_neittaanmaki}. In fact, this is needed
+for the actual convergence of the algorithm. 
+Thus we are able to construct a good approximation to $\partial_{\epsilon_m}f(y^k)$ despite using the
+knowledge of only one subgradient in every iteration.
+
+We will now replace (\ref{bundle_subproblem_primal}) with the following problem 
+(\ref{bundle_subproblem_primal_1}) in the $k$th iteration using the explanation below, where
+\begin{equation}
+\label{bundle_subproblem_primal_1}
+\begin{array}{lrcc}
+\min & \frac{1}{2}||b - \mathcal{A}(X)||^2 \\
+\mbox{s.t.} & X & = & \sum_{i=1}^mx_ip_ip_i^T \\
+& \sum_{i=1}^mx_i & = & 1 \\
+& x & \ge & 0
+\end{array}
+\end{equation}
+This can be interpreted as utilizing the subgradient $(b - \mathcal{A}(pp^T))$ in computing the search
+direction $d$, where $pp^T$ is given the convex combination of the $p_ip_i^T$, and pretending that
+they belong to $\partial f(y^k)$, i.e. $q_i = 0$. In a practical implementation, this is saying that
+we choose the $p_i$, whose $q_i$ are quite small. We shall hereafter refer to (\ref{bundle_subproblem_primal_1})
+as the subproblem handled by the bundle method in each iteration. In any case, this is handled via an appropriate
+choice of the weight parameter $u >0$.
+
+\section{Non-polyhedral cutting plane models for the SDP}
+
+\label{nlp_cutting_plane_methods_for_sdp}
+In this section, we discuss non-polyhedral cutting plane models for the SDP. 
+We discuss two of them:
+\begin{itemize}
+\item The analytic center cutting plane method, which
+employs semidefinite cuts \cite{oskoorouchi_goffin,oskoorouchi}.
+This method is an extension of Algorithm~1; however the primal subproblem solved in every iteration is no longer an LP,
+but an SDP with a block diagonal structure. We discuss this scheme in section \ref{goffin_oskoorouchi_scheme}.
+\item The spectral bundle method \cite{helmberg_rendl,helmberg_hab,helmberg_kiwiel,
+helmberg_oustry,oustry}.This method is an extension of Algorithm~2, which utilizes the non-polyhedral expression
+for the subdifferential of $\lambda_{min}(S)$. We discuss this in section \ref{spectral_bundle_scheme}.
+\end{itemize}
+
+\subsection{A nonpolyhedral cutting plane algorithm for SDP}
+
+\label{goffin_oskoorouchi_scheme}
+We begin our discussion with the first scheme. More details can be found in
+\inlinecite{oskoorouchi_goffin} and \inlinecite{ oskoorouchi}.
+We shall henceforth
+refer to the scheme as Algorithm~3, shown below.
+It is a natural extension of Algorithm~1.
+
+\begin{figure}
+\caption{Algorithm~3: Non-polyhedral cutting plane algorithm for SDP}
+\fbox{%
+\begin{minipage}{\textwidth}
+\begin{enumerate}
+\item Choose an {\bf initial set} of constraints for $(LDR)$, i.e.
+\begin{displaymath}
+\begin{array}{cccc}
+\sum_{i=1}^{pc}y_i(d_j^TA_id_j) & \le & d_j^TCd_j, & j=1,\ldots,m
+\end{array}
+\end{displaymath}
+Set $D = [d_1,\ldots,d_m]$.
+\item In the $k$th iteration solve the following pair of SDP's
+for $(X^k,y^k)$.
+\begin{equation}
+\label{goffin_osko_primal}
+\begin{array}{lrccc}
+\max & b^Ty \\
+\mbox{s.t.} & \sum_{i=1}^{pc}y_i(d_j^TA_id_j) & \le & d_j^TCd_j, & j=1,\ldots,m \\
+& \sum_{i=1}^{pc}y_i(D_j^TA_iD_j) & \preceq & D_j^TCD_j, & j=1,\ldots,m^k 
+\end{array}
+\end{equation}
+with dual
+\begin{equation}
+\label{goffin_osko_dual}
+\begin{array}{lrccc}
+\min & C \bullet (DXD^T) \\
+\mbox{s.t.} & A_i \bullet (DXD^T) & = & b_i, & i=1,\ldots,pc \\
+& x_i & \ge & 0, & i=1,\ldots,m \\
+& X_i & \succeq & 0, &i=1,\ldots,k 
+\end{array}
+\end{equation}
+where  
+\begin{displaymath}
+\begin{array}{ccc}
+X & = & \left[\begin{array}{cccccc} x_1 & & & & & \\ & \ddots & & & & \\ & & x_m & & & \\ & & & X_1 & & \\ & & & & \ddots & \\
+& & & & & X_k \end{array} \right]
+\end{array}
+\end{displaymath}
+\item Compute $\lambda_{min}(C-\mathcal{A}^Ty^k)$, and an associated set of
+eigenvectors $d_i^k$, $i=1,\ldots,r^k$. Here $r^k$ is the multiplicity of this eigenvalue.
+Typically $r^k \le O(\sqrt{pc})$.  Also, update the lower and upper bounds as in Algorithm~1.
+If $\lambda_{min}(C-\mathcal{A}^Ty^k)$ is small, or the difference between the computed
+bounds is less than the specified tolerance go to step 4. Else,
+set $D_k = [d_1^k,\ldots,d_{r^k}^k]$. This gives the valid cutting plane
+\begin{displaymath}
+\begin{array}{lrcc}
+\sum_{i=1}^{pc}y_i(D_k^TA_iD_k) & \preceq & D_k^TCD_k
+\end{array}
+\end{displaymath}
+Add this SDP constraint to (\ref{goffin_osko_primal}), and update
+$D = [D; D_k]$. Set $k=k+1$, and return to step 2.
+\item The current solution $(X^k,y^k)$ is optimal for $(SDP)$, and $(SDD)$ with
+$X^* = DX^kD^T$, and $y^* = y^k$ respectively.
+\end{enumerate}
+\end{minipage}
+}  \\
+\end{figure}
+Subproblem (\ref{goffin_osko_dual}) involves solving a conic optimization problem over the intersection of
+linear and SDP blocks. Each SDP block is no bigger than $O(\sqrt{pc})$. 
+This is the formulation (\ref{exact_discretization_of_sdp_3})
+we discussed in section \ref{nlp_formulations_of_sdp}. 
+It is imperative to keep the size of $X$ small, so that this
+SDP can be solved quickly. 
+
+\subsection{The spectral bundle method for SDP}
+
+\label{spectral_bundle_scheme}
+The spectral bundle method is based on the same ideas as the proximal bundle method discussed 
+in the previous section, the only difference being the bundle method operates with the second
+expression in (\ref{subdiff_for_f}) for the subdifferential of the minimum eigenvalue function.
+Note that this set is no longer polyhedral, but is actually an ellipsoid. Thus the spectral bundle
+method constitutes a non-polyhedral cutting plane scheme for solving the SDP. We present
+a cursory version of the spectral bundle method below (Algorithm~4). For more details we refer
+the reader to \inlinecite{helmberg_rendl}, \inlinecite{helmberg_hab}, 
+\inlinecite{helmberg_kiwiel}, \inlinecite{helmberg_oustry}, and
+\inlinecite{oustry}.
+
+\begin{figure}
+\caption{Algorithm~4: The spectral bundle method for SDP}
+\fbox{%
+\begin{minipage}{\textwidth}
+\begin{enumerate}
+\item Start with $y^1 \in \real^k$, let $p^1 \in \real^n$ be a normalized eigenvector
+corresponding to $\lambda_{min}(C-\mathcal{A}^Ty^1)$. Also choose the weight $u > 0$, an improvement
+parameter $\nu_1$ satisfying $0 < \nu_1 < 1$, and finally a termination parameter $\epsilon > 0$.
+Also, let $P^1 = p^1$, and $\bar{W}^1 = p^1{p^1}^T$.
+\item In the $k$th iteration, solve the following subproblem (\ref{spectral_bundle_subproblem})
+for $(\alpha^k,V^k,X^k)$.
+\begin{equation}
+\label{spectral_bundle_subproblem}
+\begin{array}{lrcc}
+\min & \frac{1}{2}||b - \mathcal{A}(X)||^2 \\
+\mbox{s.t.} & X & = & \alpha \bar{W}^k + P^kV(P^k)^T \\
+& \alpha + \mbox{Trace}(V) & = & 1 \\
+& V & \succeq & 0 \\
+& \alpha & \ge & 0
+\end{array}
+\end{equation}
+Compute the search direction $d^k = \frac{1}{u}(b-\mathcal{A}(X^k))$.
+\item If $||d^k|| < \epsilon$, then stop.
+\item Compute $\bar{y}^{k+1} = y^k + d^k$, $\lambda_{min}(C-\mathcal{A}^T\bar{y}^{k+1})$, and
+an associated eigenvector $p^{k+1}$.
+\item If the actual increase is not much smaller than the increase predicted by the model, i.e.
+\begin{displaymath}
+\begin{array}{ccc}
+f(\bar{y}^{k+1}) - f(y^k) & \ge & \nu_1t(\hat{f}_k(\bar{y}^{k+1}) - f(y^k))
+\end{array}
+\end{displaymath}
+then perform a serious step, i.e. $y^{k+1} = \bar{y}^{k+1}$. Here $\hat{f}_k(\bar{y}^{k+1})$ is the
+objective value of (\ref{spectral_bundle_subproblem}).
+\item Else, set $y^{k+1} = y^k$.
+\item Compute $V^k = Q \Lambda Q^T$. Split $Q=[Q_1,Q_2]$, where $Q_1$, and $Q_2$ contain the eigenvectors
+corresponding to the large ($\Lambda_1$), and small ($\Lambda_2$) eigenvalues of $V^k$ respectively. 
+Finally update the bundle $P$, and the aggregate matrix $\bar{W}$ as follows:
+\begin{equation}
+\label{update_bundle_agg}
+\begin{array}{ccc}
+P^{k+1} & = & \mbox{orth}([P^kQ_1,v^{k+1}]) \\
+\bar{W}^{k+1} & =  & \frac{1}{\alpha^k + \mbox{Trace}(\Lambda_2)}
+(\alpha^k \bar{W}^k + P^kQ_2\Lambda_2(P^kQ_2)^T)
+\end{array}
+\end{equation}
+\item Set $k=k+1$, and return to step 2.
+\end{enumerate}
+\end{minipage}
+}  \\
+\end{figure}
+The subproblem (\ref{spectral_bundle_subproblem}) the bundle solves in every iteration bears
+a close similarity to (\ref{exact_discretization_of_sdp_2}) we discussed in section \ref{nlp_formulations_of_sdp}.
+(without the quadratic regularization term).
+The only difference between the spectral bundle, and the polyhedral bundle method is in the
+bundle subproblem that is solved in each iteration: for the polyhedral bundle this is 
+(\ref{bundle_subproblem_primal_1}), for the spectral bundle method this is (\ref{spectral_bundle_subproblem})
+an SDP with a quadratic objective function.
+When the number of columns in $P$ becomes large, then solving (\ref{spectral_bundle_subproblem}) is
+almost as difficult as solving the original SDP. To overcome this difficulty, the less important
+subgradient information is aggregated in $\bar{W}$ which plays the role of an aggregate subgradient.
+This helps to keep the number of columns $r$ in $P$ small, and still guarantee the convergence
+of the algorithm.
+The matrix $P$ is the bundle here, and contains the more important subgradients $(b - \mathcal{A}(p_ip_i^T))$,
+where $p_i$, $i=1,\ldots,r$ are the columns of $P$. 
+
+On comparing (\ref{spectral_bundle_subproblem}) with (\ref{bundle_subproblem_primal_1}) we note the following:
+\begin{itemize}
+\item In (\ref{bundle_subproblem_primal_1}) we have to solve a quadratic programming problem over a polyhedral region.
+In (\ref{spectral_bundle_subproblem}) we have an SDP with a quadratic objective function.
+\item For the extreme case in the spectral bundle method, where we maintain only the latest subgradient in the
+bundle $P$, and aggregate all the previous information in the matrix $\bar{W}$, the two methods are
+exactly the same. In the $(k+1)$th iteration this corresponds to choosing an $X$ from the set $\mathcal{W}^k$,
+given in (\ref{subset_of_primal_X_in_proximal}).
+\item The spectral bundle method affords other means of aggregation, in order to keep the number of columns in $P$
+small. This is described in step 7 of Algorithm~4. Note that $X = PVP^T$ is not a spectral decomposition of $X$,
+since $V$ is not diagonal. The actual decomposition is $ X = (PQ)\Lambda(PQ)^T$, where $V = Q \Lambda Q^T$.
+The aggregation is crucial to the spectral
+bundle scheme, since we have to solve a quadratic SDP in each iteration.
+\item Let $\mathcal{W}_{sb}^k$ denote the feasible region of the spectral
+bundle subproblem (\ref{spectral_bundle_subproblem}), and 
+$\mathcal{W}_{pb}^k$ the feasible region of the polyhedral bundle
+subproblem (\ref{bundle_subproblem_primal_1}) in the $k$th iteration of each method. We always have
+\begin{displaymath}
+\begin{array}{ccc}
+\mathcal{W}_{pb}^k & \subseteq & \mathcal{W}_{sb}^k
+\end{array}
+\end{displaymath}
+This can be easily explained by noting that we need an infinite number
+of terms in $\mathcal{W}_{pb}^k$ to capture the smoothness inherent in $\mathcal{W}_{sb}^k$.
+\end{itemize}
+
+We close this paper with a final non-polyhedral cutting plane algorithm
+for the SDP, Algorithm~5 below.
+
+\begin{figure}
+\caption{Algorithm~5: A primal active set method for SDP}
+\fbox{%
+\begin{minipage}{\textwidth}
+\begin{enumerate}
+\item Choose $\bar{W}^1 \in \mathcal{S}^n $ to be any feasible matrix in $(SDP)$, and any $y^1
+\in \real^{pc}$.
+\item In the $k$th iteration solve (\ref{alg5_primal}), and its dual (\ref{alg5_dual})
+for $(\alpha^k,V^k,y^k) \in \real \times \mathcal{S}^r \times \real^{pc}$.
+\begin{equation}
+\label{alg5_primal}
+\begin{array}{lrccc}
+\min & C \bullet (\alpha \bar{W}^k + P^kV{P^k}^T) \\
+\mbox{s.t.} & A_i \bullet (\alpha \bar{W}^k + P^kV{P^k}^T) & = & b_i, & i=1,\ldots,pc \\
+& \alpha & \ge & 0 \\
+& V & \succeq & 0
+\end{array}
+\end{equation}
+with dual
+\begin{equation}
+\label{alg5_dual}
+\begin{array}{lrcc}
+\max & b^Ty \\
+\mbox{s.t.} & \sum_{i=1}^{pc}y_i({P^k}^TA_iP^k) & \preceq & {P^k}^TCP^k \\
+& \sum_{i=1}^{pc}y_i(A_i \bullet \bar{W}^k) & \le & C \bullet \bar{W}^k
+\end{array}
+\end{equation}
+\item Compute $\lambda_{min}(C-\mathcal{A}^Ty^k)$, and its associated eigenvector
+$v^k$. Update the lower and upper bounds as discussed in Algorithm~1. If
+$\lambda_{min}(C-\mathcal{A}^Ty^k)$ is small, or the difference between the upper
+and lower bounds is less than the specified tolerance go to step 4.
+Else compute the spectral factorization $V^k=Q\Lambda Q^T$,
+with $0\leq\lambda_1\leq\ldots\leq\lambda_r$.
+Let $q_1$ denote the first column of $Q$ and let $Q(2:r)$ denote the remaining columns of~$Q$,
+so $V^k=\lambda_1 q_1q_1^T + Q(2:r) \Lambda(2:r) Q(2:r)^T$,
+with $\Lambda(2:r)$ defined appropriately.
+Set:
+\begin{displaymath}
+\begin{array}{ccc}
+P^{k+1} & = & \mbox{orth}([P^kQ(2:r) , \; v]) \\
+\bar{W}^{k+1} & = & \frac{1}{(\alpha^k + \lambda_1)}(\alpha^k \bar{W}^k + \lambda_1P^kq_1q_1{P^k}^T),
+\end{array}
+\end{displaymath}
+where $\mbox{orth}(M)$ denotes the elements of an orthogonal basis of the range of~$M$.
+Return to Step 2.
+\item The current solution $(\alpha^k,V^k,y^k)$ is optimal for $(SDP)$, and $(SDD)$ with
+$X^* = \alpha^k \bar{W}^k + {P^k}^TV^kP^k \approx {P^k}^TV^kP^k$, and $y^* = y^k$
+respectively.
+\end{enumerate}
+\end{minipage}
+}  \\
+\end{figure}
+Algorithm~5 resembles the primal active set method for LP. We are always primal feasible
+(unlike the spectral bundle method in Algorithm~4). Also we are solving a linear SDP,
+unlike a quadratic SDP in Algorithm~4. We are dual feasible only at optimality.
+In fact a negative eigenvalue in Step 3 is like a negative reduced cost in the primal simplex method.
+To speed up Algorithm~5, we add more than just one eigenvector corresponding to a negative
+eigenvalue in Step 3. The convergence, and computational aspects of Algorithm~5 are
+discussed in a forthcoming paper \cite{krishnan_mitchell_2}. We hope
+this will lead eventually to simplex-like methods for the SDP (see
+\inlinecite{pataki_simplex} for an alternative derivation of a simplex-type
+method for SDP).
+
+We close the discussion by reiterating an important advantage of 
+non-polyhedral algorithms such as Algorithms 4 and~5 based
+on (\ref{exact_discretization_of_sdp_2}) over polyhedral
+Algorithms 1 and~2 which work with
+(\ref{exact_discretization_of_sdp_1}).
+
+We terminate in the non-polyhedral algorithms when we have the right subspace $P$
+over which the dual slack matrix $S$ is required to be psd. In fact this subspace provides a basis
+for the eigenvectors corresponding to the strictly positive eigenvalues of optimal primal matrix $X^*$.
+(note $X^* = PVP^T = (PQ) \Lambda (PQ)^T$).
+
+On the other hand, the polyhedral approaches require the exact eigenvectors
+corresponding to the strictly positive eigenvalues of $X^*$, which is a more stringent
+requirement, and hence more difficult to achieve.
+
+\section{Conclusions}
+
+We present an accessible and unified introduction to various cutting plane
+methods that have appeared in the literature. We discuss five algorithms in all,
+of increasing complexity, that build on their predecessors. In fact,
+Algorithms 2, 3, 4, and~5
+arise as natural enhancements of the primordial LP cutting plane algorithm (Algorithm~1)
+based on a semi-infinite LP formulation of the SDP.
+
+The five algorithms are summarized in the table below:
+\begin{table}[htbp]
+\begin{tabular}{cccc} \hline
+Name & Name & Model & Subproblem \\ \hline
+Algorithm~1 & LP cutting plane & Polyhedral & LP \\
+Algorithm~2 & Polyhedral bundle & Polyhedral & QP \\
+Algorithm~3 & SDP cutting plane & Non-polyhedral & SDP \\
+Algorithm~4 & Spectral bundle & Non-polyhedral & Quadratic SDP \\
+Algorithm~5 & Primal active set & Non-polyhedral & SDP \\ 
+& method for SDP & & \\ \hline
+\end{tabular}
+\caption{Cutting plane algorithms for semidefinite programming}
+\end{table}
+
+We conclude with the following observations:
+\begin{itemize}
+\item Theorem \ref{exact_lp_relaxation} implies that solving an SDP is equivalent to
+solving an LP, provided we know the null space of optimal dual slack matrix $S$.
+This is a difficult requirement, and explains the poor convergence of Algorithm~1.
+Solving $(LDR)$ and $(LPR)$ approximately with an interior point method in Step 2
+of Algorithm~1 does improve the performance of the algorithm somewhat.
+On the other hand, the non-polyhedral cutting plane algorithms, especially Algorithms~4 and~5,
+work around this requirement by identifying an appropriate subspace over which the
+dual slack matrix $S$ is required to be psd. This is more practical than the
+stringent requirements of Theorem \ref{exact_lp_relaxation}. 
+\item The spectral bundle method (Algorithm~4) appears to the most efficient of all
+the algorithms in practice. As an aside we must mention that the computational aspects
+of Algorithm~5 have not been completely tested, and we hope that it will emerge as a serious
+competitor to the spectral bundle method in practice.
+\item On the other hand Algorithms 1 and~3 have proven polynomial time complexities,
+which compare well with the worst case complexity of interior point methods for SDP.
+\item It would be nice to have a cutting plane algorithm with proven worst case polynomial complexity
+that is also very efficient in practice.
+\end{itemize}
+
+\begin{thebibliography}{55}
+
+\bibitem[\protect\citeauthoryear{Alizadeh et al.}{1997}]{ali_hab_overton}
+F. Alizadeh, J.P.A. Haeberly and M.L. Overton,
+Complementarity and Nondegeneracy in Semidefinite Programming,
+{\em Mathematical Programming}, 77, 111-128, 1997.
+
+\bibitem[\protect\citeauthoryear{Cheney and Goldstein}{1959}]{cheney_goldstein}
+E.W. Cheney and A.A. Goldstein,
+Newton's method for convex programming,
+{\em Numerische Mathematik}, 1, 253-268, 1959.
+
+\bibitem[\protect\citeauthoryear{Goffin and Vial}{2002}]{goffin_vial}
+J.-L. Goffin and J.-P. Vial,
+Convex nondifferentiable optimization: a survey focussed on the
+analytic center cutting plane method,
+{\em Optimization Methods and Software}, 17, 805-867, 2002.
+
+\bibitem[\protect\citeauthoryear{Gr\"otschel et al.}{1993}]{grotschel_lovasz_schrijver}
+M. Gr\"otschel, L. Lovasz and A. Schrijver,
+{\em Geometric Algorithms and Combinatorial Optimization},
+Springer Verlag, Berlin, 1993.
+
+\bibitem[\protect\citeauthoryear{Helmberg}{1996}]{sdp_webpage}
+C. Helmberg,
+http://www-user.tu-chemnitz.de/\til helmberg/semidef.html
+{\em Semidefinite Programming Homepage}, 1996.
+
+\bibitem[\protect\citeauthoryear{Helmberg}{2000}]{helmberg_hab} C. Helmberg,
+{\em Semidefinite Programming for Combinatorial Optimization},
+Habilitationsschrift,
+ZIB-Report ZR-00-34, Konrad-Zuse-Zentrum Berlin,
+October 2000.
+
+\bibitem[\protect\citeauthoryear{Helmberg and Kiwiel}{1999}]{helmberg_kiwiel}
+C. Helmberg and K.C. Kiwiel,
+A Spectral Bundle Method with bounds,
+ZIB Preprint SC-99-37, Konrad-Zuse-Zentrum Berlin,
+December 1999.
+
+\bibitem[\protect\citeauthoryear{Helmberg and Oustry}{2000}]{helmberg_oustry}
+C. Helmberg and F. Oustry,
+Bundle methods to minimize the maximum eigenvalue function,
+in
+{\em Handbook of Semidefinite Programming},
+(H. Wolkowicz, R. Saigal, and L. Vandenberghe, eds.),
+Kluwer Academic Publishers, Boston-Dordrect-London, 307-337, 2000.
+
+\bibitem[\protect\citeauthoryear{Helmberg and Rendl}{2000}]{helmberg_rendl}
+C. Helmberg and F. Rendl,
+A Spectral Bundle Method for Semidefinite Programming,
+{\em SIAM Journal on Optimization}, 10, 673--696, 2000.
+
+\bibitem[\protect\citeauthoryear{Hettich and Kortanek}{1993}]{hettich_kortanek}
+R. Hettich and K.O. Kortanek,
+Semi-Infinite Programming: Theory, Methods, and Applications,
+{\em SIAM Review} 35(3), 380-429, 1993.
+
+\bibitem[\protect\citeauthoryear{Hiriart-Urruty and Lemarechal}{1993}]{urruty_lemarechal}
+J.B. Hiriart-Urruty and C. Lemarechal,
+{\em Convex Analysis and Minimization Algorithms II}, Springer Verlag, Berlin
+Heidelberg, 1993.
+
+\bibitem[\protect\citeauthoryear{Horn and Johnson}{1990}]{horn_johnson1}
+R.A. Horn and C.R. Johnson,
+{\em Matrix Analysis}, Cambridge University Press, New York, 1990.
+
+\bibitem[\protect\citeauthoryear{Kelley}{1960}]{kelley} J.E. Kelley,
+The cutting plane method for solving convex programs,
+{\em Journal of the SIAM}, 8, 703-712, 1960.
+
+\bibitem[\protect\citeauthoryear{Kiwiel}{1985}]{kiwiel_monograph} K.C. Kiwiel,
+{\em Methods of Descent for Nondifferentiable Optimization},
+Lecture Notes in Mathematics, 1133, Springer Verlag Berlin, 1985.
+
+\bibitem[\protect\citeauthoryear{Krishnan}{2002}]{krishnan} K. Krishnan,
+{\em Linear Programming Approaches for Semidefinite Programming Problems},
+Ph.D. thesis, Dept. of Mathematical Sciences, Rensselaer Polytechnic Institute, July 2002.
+
+\bibitem[\protect\citeauthoryear{Krishnan and Mitchell}{2001}]{krishnan_mitchell}
+K. Krishnan and J.E. Mitchell,
+A Linear Programming Approach to Semidefinite Programming Problems,
+Technical Report, Dept. of Mathematical Sciences, Rensselaer Polytechnic
+Institute, May 2001.
+
+\bibitem[\protect\citeauthoryear{Krishnan and Mitchell}{2003}]{krishnan_mitchell_2}
+K. Krishnan and J.E. Mitchell, Primal active set
+approaches for semidefinite programming problems, under preparation.
+
+\bibitem[\protect\citeauthoryear{Lemarechal}{1989}]{lemarechal} C. Lemarechal,
+Nondifferentiable Optimization, in
+{\em Optimization},
+(G.L. Nemhauser, A.H.G. Rinnooy Kan, and M.J. Todd, eds.),
+North-Holland, Amsterdam-New York-Oxford-Tokyo, 529--572, 1989.
+
+\bibitem[\protect\citeauthoryear{Makela and Neittaanmaki}{1992}]{makela_neittaanmaki}
+M.M. Makela and P. Neittaanmaki,
+{\em Nonsmooth Optimization:
+Analysis and Algorithms with Applications to Optimal Control}, World Scientific Publishing Co.,
+1992.
+
+\bibitem[\protect\citeauthoryear{Mitchell}{2000}]{mitchell} J.E. Mitchell,
+Computational Experience with an Interior Point Cutting Plane Algorithm,
+{\em SIAM Journal on Optimization}, 10(4), 1212--1227, 2000.
+
+\bibitem[\protect\citeauthoryear{Mitchell}{2001}]{mitchell_survey}
+J.E. Mitchell,
+Polynomial interior point cutting plane methods,
+Technical Report, Dept. of Mathematical Sciences,
+Rensselaer Polytechnic Institute, July 2001.
+
+\bibitem[\protect\citeauthoryear{Mitchell and Ramaswamy}{2000}]{mitchell_ramass}
+J.E. Mitchell and S. Ramaswamy,
+A Long-Step, Cutting Plane Algorithm for Linear and Convex Programming,
+{\em Annals of OR}, 99, 95--122, 2000.
+
+\bibitem[\protect\citeauthoryear{Oskoorouchi}{2002}]{oskoorouchi}
+M. Oskoorouchi,
+{\em The Analytic Center Cutting Plane Method with Semidefinite Cuts},
+Ph.D. thesis,
+Faculty of Management, McGill University, Montreal, Canada, May 2002.
+
+\bibitem[\protect\citeauthoryear{Oskoorouchi and Goffin}{2002}]{oskoorouchi_goffin}
+M. Oskoorouchi and J. L. Goffin,
+The Analytic Center Cutting Plane Method with Semidefinite Cuts,
+GERAD Technical Report G--2000--32, February 2002.
+
+\bibitem[\protect\citeauthoryear{Oustry}{2000}]{oustry} F. Oustry,
+A second order bundle method to minimize the maximum eigenvalue function,
+{\em Mathematical Programming} 89(1), 1-33, 2000.
+
+\bibitem[\protect\citeauthoryear{Overton}{1992}]{overton} M.L. Overton,
+Large-Scale Optimization of Eigenvalues,
+{\em SIAM Journal on Optimization},
+2(1), 88--120, 1992.
+
+\bibitem[\protect\citeauthoryear{Pataki}{1996}]{pataki_simplex} G. Pataki,
+Cone-LP's and Semidefinite Programs: Geometry and a Simplex-type Method,
+{\em Proceedings of the Fifth IPCO Conference},
+(W. H. Cunningham, S. T. McCormick, and M. Queyranne, eds.),
+Springer Verlag 1996.
+
+\bibitem[\protect\citeauthoryear{Pataki}{1998}]{pataki} G. Pataki,
+On the Rank of Extreme Matrices in Semidefinite Programs and the
+Multiplicity of Optimal Eigenvalues,
+{\em Mathematics of Operations Research}, 23(2), 339--358, 1998.
+
+\bibitem[\protect\citeauthoryear{Todd}{2001}]{todd}
+M.J. Todd, Semidefinite Optimization,
+{\em Acta Numerica} 10, 515-560, 2001.
+
+\bibitem[\protect\citeauthoryear{Vandenberghe and Boyd}{1996}]{vandenberghe_boyd}
+L. Vandenberghe and S. Boyd,
+Semidefinite Programming, {\em SIAM Review}, 38, 49-95, 1996.
+
+\bibitem[\protect\citeauthoryear{Wolkowicz et al.}{2000}]{sdp_handbook}
+H. Wolkowicz, R. Saigal and L. Vandenberghe,
+{\em Handbook on Semidefinite Programming}, Kluwer Academic Publishers, 2000.
+\end{thebibliography}
+\end{article}
+\end{document}

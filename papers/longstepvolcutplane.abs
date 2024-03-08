@@ -1,0 +1,50 @@
+  
+  
+   A Long Step Cutting Plane Algorithm That Uses the Volumetric Barrier
+ 
+
+                            Srinivasan Ramaswamy  
+                               ramass@rpi.edu   
+                   Dept. of Decision Sciences & Engg. Systems  
+                       Rensselaer Polytechnic Institute  
+                               Troy, NY 12180  
+
+                              John E. Mitchell  
+                               mitchj@rpi.edu   
+                     Department of Mathematical Sciences  
+                       Rensselaer Polytechnic Institute   
+                              Troy,  NY  12180   
+ 
+                            DSES Technical Report 
+ 
+                                June 20, 1995
+ 
+
+                                  ABSTRACT
+				  --------
+
+A cutting plane method for linear/convex programming is described. It
+is based on the volumetric barrier, introduced by Vaidya. The
+algorithm is a long step one, and has a complexity of O(n^{1.5}L) 
+Newton steps. This is better than the O(n\sqrt{m}L) complexity of
+non-cutting plane long step methods based on the volumetric barrier,
+but it is however worse than Vaidya's original O(nL) result (which
+is not a long step algorithm). Major features of our algorithm are
+that when adding cuts we add them right through the current point, and
+when seeking progress in the objective, the duality gap is reduced by
+a constant factor (not true for Vaidya's original algorithm). Further, we
+generate primal as well as dual iterates, making this applicable in
+the column generation context as well, and allowing early termination. 
+Vaidya's algorithm has been used as a subroutine to obtain the best 
+complexity for several combinatorial optimization problems -- e.g, the 
+Held-Karp lower bound for the Traveling Salesperson Problem. While our 
+complexity result is weaker, this long step cutting plane algorithm is 
+likely to be computationally more promising on such combinatorial 
+optimization problems with an exponential number of constraints. We also 
+discuss a multiple cuts version --- where upto p<=n  `selectively
+orthonormalized' cuts are added through the current point at each
+stage where cuts are identified by the oracle. This has a
+complexity of O(n^{1.5}L p log p)  quasi Newton steps.
+
+
+ 

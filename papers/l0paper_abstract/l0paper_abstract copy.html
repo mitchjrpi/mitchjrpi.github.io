@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Complementarity Formulations of &#x2113;0-norm Optimization Problems</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="l0paper_abstract.tex"> 
+<meta name="date" content="2013-09-24 10:49:00"> 
+<link rel="stylesheet" type="text/css" href="l0paper_abstract.css"> 
+</head><body 
+>
+<div class="maketitle">
+                                                                                         
+                                                                                         
+                                                                                         
+                                                                                         
+
+<h2 class="titleHead"><a href=l0paper2013_09_25optonline.pdf><img src=../../images/pdficon_small.png> Complementarity Formulations of &#x2113;<sub>0</sub>-norm Optimization Problems</a> (pdf)</h2>
+<div class="author" ><span 
+class="cmr-12">Mingbin Feng</span><span class="thank-mark"><a 
+href="#tk-1"><span 
+class="cmsy-10x-x-120">*</span></a></span><span 
+class="cmr-12">, <a href=http://www.rpi.edu/~mitchj>John E.</span><span 
+class="cmr-12">&#x00A0;Mitchell</span></a><span class="thank-mark"><a 
+href="#tk-2"><span 
+class="cmsy-10x-x-120">&#8224;</span></a></span><span 
+class="cmr-12">, Jong-Shi Pang</span><span class="thank-mark"><a 
+href="#tk-3"><span 
+class="cmsy-10x-x-120">&#8225;</span></a></span><span 
+class="cmr-12">, Xin Shen</span><span class="thank-mark"><a 
+href="#tk-4"><span 
+class="cmsy-10x-x-120">&#167;</span></a></span><span 
+class="cmr-12">, and <a href=http://users.iems.northwestern.edu/~andreasw/>Andreas W</span><span 
+class="cmr-12">&#228;chter</span></a><span class="thank-mark"><a 
+href="#tk-5"><span 
+class="cmsy-10x-x-120">&#182;</span></a></span></div>
+<br />
+<div class="date" ><span 
+class="cmr-12">September 23, 2013</span></div>
+<div class="thanks" ><br /><a 
+ id="tk-1"></a><span class="thank-mark"><span 
+class="cmsy-10x-x-109">*</span></span> Department of Industrial Engineering and Management Sciences, Northwestern University, Evanston, IL
+60208, USA. This author is supported by National Science Foundation grant DMS-1216920. E-Mail:
+<span 
+class="cmtt-10x-x-109"><a href=mailto:mingbinfeng2011@u.northwestern.edu>mingbinfeng2011@...</a></span><br /><a 
+ id="tk-2"></a><span class="thank-mark"><span 
+class="cmsy-10x-x-109">&#8224;</span></span>Department of Mathematical Sciences, Rensselaer Polytechnic
+Institute, Troy, NY 12180, USA. This author was supported by the National Science Foundation under
+Grant Number CMMI-1334327 and by the Air Force Office of Scientific Research under Grant Number
+FA9550-11-1-0260. E-Mail: <span 
+class="cmtt-10x-x-109"><a href=mailto:mitchj@rpi.edu>mitchj@...</a></span><br /><a 
+ id="tk-3"></a><span class="thank-mark"><span 
+class="cmsy-10x-x-109">&#8225;</span></span>Department of Industrial and Systems
+Engineering, University of Southern California, Los Angeles, CA 90089, USA. This author was
+supported by the National Science Foundation under Grant Number CMMI-1333902 and by
+the Air Force Office of Scientific Research under Grant Number FA9550-11-1-0151. E-Mail:
+<span 
+class="cmtt-10x-x-109"><a href=mailto:jongship@usc.edu>jongship@...</a></span><br /><a 
+ id="tk-4"></a><span class="thank-mark"><span 
+class="cmsy-10x-x-109">&#167;</span></span>Department of Mathematical Sciences, Rensselaer Polytechnic Institute,
+Troy, NY 12180, USA. This author was supported by the National Science Foundation under
+Grant Number CMMI-1334327 and by the Air Force Office of Scientific Research under Grant
+Number FA9550-11-1-0260. E-Mail: <span 
+class="cmtt-10x-x-109"><a href=mailto:shenx5@rpi.edu>shenx5@...</a></span><br /><a 
+ id="tk-5"></a><span class="thank-mark"><span 
+class="cmsy-10x-x-109">&#182;</span></span>Department of Industrial Engineering and
+Management Sciences, Northwestern University, Evanston, IL 60208, USA. This author was
+supported by National Science Foundation grant DMS-1216920 and grant CMMI-1334639. Email:
+<span 
+class="cmtt-10x-x-109"><a href=mailto:andreas.waechter@northwestern.edu>andreas.waechter@...</a></span></div></div>
+<div 
+class="abstract" 
+>
+<div class="center" 
+>
+<!--l. 162--><p class="noindent" >
+<!--l. 162--><p class="noindent" ><span 
+class="cmbx-10">Abstract</span></div>
+     <!--l. 163--><p class="indent" >    <span 
+class="cmr-10">In  a  number  of  application  areas,  it  is  desirable  to  obtain  sparse  solutions.  Minimizing</span>
+     <span 
+class="cmr-10">the number of nonzeroes of the solution (its </span><span 
+class="cmmi-10">&#x2113;</span><sub><span 
+class="cmr-7">0</span></sub><span 
+class="cmr-10">-norm) is a difficult nonconvex optimization</span>
+     <span 
+class="cmr-10">problem,  and  is  often  approximated  by  the  convex  problem  of  minimizing  the  </span><span 
+class="cmmi-10">&#x2113;</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmr-10">-norm.  In</span>
+     <span 
+class="cmr-10">contrast,  we  consider  exact  formulations  as  mathematical  programs  with  complementarity</span>
+     <span 
+class="cmr-10">constraints and their reformulations as smooth nonlinear programs. We discuss properties of</span>
+     <span 
+class="cmr-10">the various formulations and their connections to the original </span><span 
+class="cmmi-10">&#x2113;</span><sub><span 
+class="cmr-7">0</span></sub><span 
+class="cmr-10">-minimization problem in terms</span>
+                                                                                         
+                                                                                         
+     <span 
+class="cmr-10">of stationarity conditions, as well as local and global optimality. Numerical experiments using</span>
+     <span 
+class="cmr-10">randomly generated problems show that standard nonlinear programming solvers, applied to</span>
+     <span 
+class="cmr-10">the smooth but nonconvex equivalent reformulations, are often able to find sparser solutions</span>
+     <span 
+class="cmr-10">than those obtained by the convex </span><span 
+class="cmmi-10">&#x2113;</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmr-10">-approximation. </span><br 
+class="newline" /><span 
+class="cmbx-10">Keywords: </span><span 
+class="cmmi-10">&#x2113;</span><sub><span 
+class="cmr-7">0</span></sub><span 
+class="cmr-10">-norm minimization, complementarity constraints, nonlinear programming</span>
+</div>
+
+<hr>
+
+<a href=l0paper2013_09_25optonline.pdf>Download the paper (pdf)</a> |
+<a href=http://www.optimization-online.org/DB_HTML/2013/09/4053.html>Optimization Online listing</a> |
+<a href=../../chrono.html>Return to my list of papers</a> |
+<a href=http://www.rpi.edu/~mitchj>John E. Mitchell</a>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-39407322-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+ 
+</body></html> 
+
+                                                                                         
+
+

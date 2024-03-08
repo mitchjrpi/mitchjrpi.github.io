@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Interdependent Network Restoration: On the Value of
+Information-Sharing</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="InfoSharing-IIRabs.tex"> 
+<meta name="date" content="2014-07-21 13:10:00"> 
+<link rel="stylesheet" type="text/css" href="InfoSharing-IIRabs.css"> 
+</head><body 
+>
+   <div class="maketitle">
+
+
+
+<h2 class="titleHead"><a href=InfoSharing-IIR.pdf>Interdependent Network Restoration:
+On the Value of Information-Sharing</a> (pdf)</h2>
+<div class="author" ><span 
+class="ptmr7t-x-x-120"><a href=http://www.rpi.edu/~sharkt>Thomas
+C. Sharkey</a></span><span class="thank-mark"><a 
+href="#tk-1"><span 
+class="ptmr7t-x-x-120">1</span></a></span> <span class="thank-mark"><a 
+href="#tk-2"><span 
+class="ptmr7t-x-x-120">2</span></a></span> <br class="and" /><span 
+class="ptmr7t-x-x-120"><a href=http://www.isikun.edu.tr/akademik/muhendislik-fakultesi/endustri-muhendisligi/Burak-Cavdaroglu>Burak Cavdaroglu</a></span><span class="thank-mark"><a 
+href="#tk-3"><span 
+class="ptmr7t-x-x-120">3</span></a></span> <br class="and" /><span 
+class="ptmr7t-x-x-120">Huy Nguyen</span><sup><span 
+class="cmr-8">2</span></sup> <br class="and" /><span 
+class="ptmr7t-x-x-120">Jonathan Holman</span><span class="thank-mark"><a 
+href="#tk-4"><span 
+class="ptmr7t-x-x-120">4</span></a></span> <br class="and" /><span 
+class="ptmr7t-x-x-120"><a href=http://www.rpi.edu/~mitchj>John
+E. Mitchell</a></span><sup><span 
+class="cmr-8">4</span></sup><br class="and" /><span 
+class="ptmr7t-x-x-120"><a href=http://faculty.rpi.edu/node/1050>William A. Wallace</a></span><sup><span 
+class="cmr-8">2</span></sup> </div>
+<br />
+<div class="date" ><span 
+class="ptmr7t-x-x-120">
+<a href=http://www.sciencedirect.com/science/article/pii/S0377221714010698>European
+Journal of Operational Research</a>,
+244(1), pages 309-321, 2015.</span></div>
+   <div class="thanks" ><br /><a 
+ id="tk-1"></a><span class="thank-mark">1</span>Corresponding Author, e-mail:
+<a href=mailto:sharkt@rpi.edu>sharkt...</a><br /><a 
+ id="tk-2"></a><span class="thank-mark">2</span>Department of Industrial and Systems Engineering,
+Rensselaer Polytechnic Institute, 110 8th St, Troy, NY 12180.<br /><a 
+ id="tk-3"></a><span class="thank-mark">3</span>Industrial Engineering Department, Isik University,
+Istanbul, Turkey.<br /><a 
+ id="tk-4"></a><span class="thank-mark">4</span>Department of Mathematical Sciences, Rensselaer Polytechnic Institute, 110 8th St, Troy, NY
+12180.</div></div>
+   <div 
+class="abstract" 
+>
+<div class="center" 
+>
+<!--l. 63--><p class="noindent" >
+<!--l. 63--><p class="noindent" ><span 
+class="ptmb7t-">Abstract</span></div>
+     <!--l. 64--><p class="indent" >      <span 
+class="ptmr7t-">We  consider  restoring  multiple  interdependent  infrastructure  networks  after  a  disaster  damages</span>
+     <span 
+class="ptmr7t-">components in them and disrupts the services provided by them. Our particular focus is on interdependent</span>
+     <span 
+class="ptmr7t-">infrastructure restoration where both the </span><span 
+class="ptmri7t-">operations </span><span 
+class="ptmr7t-">and the </span><span 
+class="ptmri7t-">restoration </span><span 
+class="ptmr7t-">of the infrastructures are linked</span>
+     <span 
+class="ptmr7t-">across systems. We provide new mathematical formulations of </span><span 
+class="ptmri7t-">restoration interdependencies </span><span 
+class="ptmr7t-">in order</span>
+     <span 
+class="ptmr7t-">to incorporate them into an interdepedent integrated network design and scheduling (IINDS) problem.</span>
+     <span 
+class="ptmr7t-">The interdependent infrastructure restoration efforts resulting from solving this IINDS problem model</span>
+     <span 
+class="ptmr7t-">a  centralized  decision-making  environment  where  a  single  decision-maker  controls  the  resources  of</span>
+     <span 
+class="ptmr7t-">all  infrastructures.  In  reality,  individual  infrastructures  often  determine  their  restoration  efforts  in  an</span>
+     <span 
+class="ptmr7t-">independent, decentralized manner with little communication among them. We provide algorithms to</span>
+     <span 
+class="ptmr7t-">model various levels of decentralization in interdependent infrastructure restoration. These algorithms</span>
+     <span 
+class="ptmr7t-">are applied to realistic damage scenarios for interdependent infrastructure systems in order to determine</span>
+     <span 
+class="ptmr7t-">the loss in restoration effectiveness resulting from decentralized decision-making. Our computational</span>
+     <span 
+class="ptmr7t-">tests demonstrate that this loss can be greatly mitigated by having infrastructures </span><span 
+class="ptmri7t-">share information </span><span 
+class="ptmr7t-">about</span>
+     <span 
+class="ptmr7t-">their planned restoration efforts.</span>
+
+</div>
+<!--l. 67--><p class="noindent" ><span 
+class="ptmb7t-x-x-109">Keywords: </span>OR in societal problem analysis, OR in disaster relief, Interdependent infrastructure restoration
+    
+<hr>
+
+<a href=InfoSharing-IIR.pdf>Download the paper (pdf)</a> |
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/chrono.html>Return
+to my list of papers</a> |
+<a href=http://www.rpi.edu/~mitchj>John E. Mitchell</a>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-39407322-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+ 
+</body></html>
+
+

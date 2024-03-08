@@ -1,0 +1,64 @@
+<TITLE>An interior-point SQP Parallel B&B Algorithm</TITLE>
+<H2>
+Computational experience of an interior-point SQP algorithm in a parallel
+branch-and-bound framework</H2>
+
+<B>Download the paper</B>:
+<A HREF=hpopt_paper.ps>postscript</A> or <A HREF=hpopt_paper.pdf>pdf</A>.
+
+<H3>Authors:</H3>
+<B><A HREF="http://akula.isye.gatech.edu/~evakylee">Eva K. Lee</A></B>
+<BR>
+<A HREF="http://www.isye.gatech.edu">
+School of Industrial and Systems Engineering </A><br>
+<A HREF="http://www.gatech.edu">
+Georgia Institute of Technology</A><br> 
+Atlanta, GA 30332-0205
+<BR><A HREF="mailto:evakylee@isye.gatech.edu">
+evakylee@isye.gatech.edu</A>
+
+<P>
+<B><A HREF="http://www.math.rpi.edu/~mitchj">John E. Mitchell</A></B>
+<BR><A HREF="http://www.math.rpi.edu">Department of Mathematical Sciences</A>
+<BR><A HREF="http://www.rpi.edu">Rensselaer Polytechnic Institute</A>
+<BR>Troy,  NY  12180 USA
+<BR><A HREF="mailto:mitchj@rpi.edu">mitchj@rpi.edu</A>
+
+
+<H3>September 15, 1997. Revised: December, 1998.</H3>
+
+<H3>Abstract:</H3>
+An interior point algorithm within a parallel branch-and-bound framework
+for solving nonlinear mixed integer programming problems is described.
+The nonlinear programming relaxations at each node are solved using an
+interior point SQP method. In contrast to solving the relaxation to
+optimality at each tree node, the relaxation is only solved to
+near-optimality. Analogous to employing advanced bases in simplex-based
+linear MIP solvers, a ``dynamic'' collection of warmstart vectors is
+kept to provide ``advanced warmstarts'' at each branch-and-bound node. The
+code has the capability to run in both shard-memory and distributed-memory
+parallel environments. Preliminary computational results on various classes
+of linear mixed integer programs and quadratic portfolio problems are
+presented.
+
+<H3>Publication details:</H3>
+Appeared as Chapter 13, pages 329-347, of <I>High Performance Optimization</I>,
+edited by H. Frenk <I>et al.</I>, Kluwer Academic Publishers, 2000.
+
+
+<P>
+
+
+<B>Download the paper</B>:
+<A HREF=hpopt_paper.ps>postscript</A> or <A HREF=hpopt_paper.pdf>pdf</A>.
+
+<P>
+Return to my <A HREF=../papers.html>list of papers.</A>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-924637-6";
+urchinTracker();
+</script>
+

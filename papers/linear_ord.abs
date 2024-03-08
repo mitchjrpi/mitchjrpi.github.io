@@ -1,0 +1,42 @@
+TITLE:
+Solving Real-World Linear Ordering Problems Using
+                 a Primal-Dual Interior Point Cutting Plane Method
+
+AUTHORS:
+John E. Mitchell
+Department of Mathematical Sciences
+Rensselaer Polytechnic Institute
+Troy,  NY  12180
+mitchj@rpi.edu
+
+and
+
+Brian Borchers
+Department of Mathematics
+New Mexico Tech
+Socorro,  NM  87801
+borchers@nmt.edu
+
+NUMBER:
+R.P.I. Mathematical Sciences Technical Report No. 207
+
+DATE:
+March 8, 1993.  Revised April 28, 1995.
+
+ABSTRACT:
+Cutting plane methods require the solution of a sequence of linear
+programs, where the solution to one provides a warm start to the next.
+A cutting plane algorithm for solving the linear ordering problem
+is described.
+This algorithm uses the primal-dual interior point method to solve the
+linear programming relaxations.
+A point which is a good warm start for a simplex-based cutting plane
+algorithm is generally not a good starting point for an interior
+point method.
+Techniques used to improve the warm start include
+attempting to identify cutting planes early
+and storing an old feasible point, which is used to help recenter
+when cutting planes are added.
+Computational results are described for some real-world problems;
+the algorithm appears to be competitive with a simplex-based
+cutting plane algorithm.

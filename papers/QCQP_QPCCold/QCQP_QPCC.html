@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>On QPCCs, QCQPs and Completely Positive Programs </title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="QCQP_QPCC.tex"> 
+<meta name="date" content="2014-01-26 17:20:00"> 
+<link rel="stylesheet" type="text/css" href="QCQP_QPCC.css"> 
+</head><body 
+>
+   <div class="maketitle">
+                                                                                         
+                                                                                         
+                                                                                         
+                                                                                         
+
+<h2 class="titleHead"><a href=QCQP_QPCC.pdf>On QPCCs, QCQPs and Completely Positive Programs</a>
+<span class="thank-mark"><a 
+href="#tk-1">*</a></span></h2>
+<div class="author" ><span 
+class="cmr-12x-x-120">Lijie Bai</span><span class="thank-mark"><a 
+href="#tk-2"><span 
+class="cmsy-10x-x-144">&#8224;</span></a></span><span 
+class="cmr-12x-x-120">, John E.Mitchell</span><span class="thank-mark"><a 
+href="#tk-3"><span 
+class="cmsy-10x-x-144">&#8225;</span></a></span> <span 
+class="cmr-12x-x-120">and Jong-Shi Pang</span><span class="thank-mark"><a 
+href="#tk-4"><span 
+class="cmsy-10x-x-144">§</span></a></span></div><br />
+<div class="date" ><span 
+class="cmr-12x-x-120">January 26, 2014</span></div>
+   <div class="thanks" ><br /><a 
+ id="tk-1"></a><span class="thank-mark"><span 
+class="cmsy-10x-x-120">*</span></span>The work of Bai and Mitchell was supported by the Air Force Office of Sponsored Research
+under grant FA9550-11-1-0260 and by the National Science Foundation under Grant Number
+CMMI-1334327. The work of Pang was supported by the National Science Foundation under Grant
+Number CMMI-1333902 and by the Air Force Office of Scientific Research under Grant Number
+FA9550-11-1-0151.<br /><a 
+ id="tk-2"></a><span class="thank-mark"><span 
+class="cmsy-10x-x-120">&#8224;</span></span> Department of Mathematical Sciences, Rensselaer Polytechnic Institute, Troy,
+NY 12180, U.S.A. E-mail: <span 
+class="cmtt-12">bail.rpi@gmail.com</span><br /><a 
+ id="tk-3"></a><span class="thank-mark"><span 
+class="cmsy-10x-x-120">&#8225;</span></span> Department of Mathematical Sciences,
+Rensselaer Polytechnic Institute, Troy, NY 12180, U.S.A. E-mail: <span 
+class="cmtt-12">mitchj@rpi.edu</span><br /><a 
+ id="tk-4"></a><span class="thank-mark"><span 
+class="cmsy-10x-x-120">§</span></span> Department of
+Industrial and Systems Engineering, University of Southern California, Los Angeles, CA 90089,
+USA. E-mail: <span 
+class="cmtt-12">jongship@usc.edu</span></div></div>
+   <div 
+class="abstract" 
+>
+<div class="center" 
+>
+<!--l. 106--><p class="noindent" >
+<!--l. 106--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Abstract</span></div>
+      <!--l. 107--><p class="indent" >    <span 
+class="cmr-10x-x-109">We  derive  equivalent  convex  completely  positive  reformulations  for  several</span>
+      <span 
+class="cmr-10x-x-109">classes  of  nonconvex  optimization  problems  defined  over  convex  cones,  including</span>
+      <span 
+class="cmr-10x-x-109">rank-constrained  semidefinite  programs  and  quadratically  constrained  quadratic</span>
+      <span 
+class="cmr-10x-x-109">programs (QCQPs). The first stage in the reformulation is to cast the problem as a</span>
+      <span 
+class="cmr-10x-x-109">conic QCQP with just one nonconvex constraint </span><span 
+class="cmmi-10x-x-109">q</span><span 
+class="cmr-10x-x-109">(</span><span 
+class="cmmi-10x-x-109">x</span><span 
+class="cmr-10x-x-109">) </span><span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmr-10x-x-109">0, where </span><span 
+class="cmmi-10x-x-109">q</span><span 
+class="cmr-10x-x-109">(</span><span 
+class="cmmi-10x-x-109">x</span><span 
+class="cmr-10x-x-109">) is nonnegative</span>
+      <span 
+class="cmr-10x-x-109">over the (convex) conic and linear constraints, so the problem fails the Slater constraint</span>
+      <span 
+class="cmr-10x-x-109">qualification (CQ). A quadratic program with (linear) complementarity constraints</span>
+      <span 
+class="cmr-10x-x-109">(or QPCC) has such a structure; we prove the converse, namely that any QCQP can</span>
+      <span 
+class="cmr-10x-x-109">be expressed as an equivalent QPCC. The second stage of the reformulation lifts the</span>
+      <span 
+class="cmr-10x-x-109">problem to a completely positive program, and exploits and generalizes a result of</span>
+                                                                                         
+                                                                                         
+      <span 
+class="cmr-10x-x-109">Burer. We also show that a Frank-Wolfe type result holds for a subclass of this class</span>
+      <span 
+class="cmr-10x-x-109">of QCQPs. Another subclass is equivalent to a class of QPCCs. Our results do not</span>
+      <span 
+class="cmr-10x-x-109">make any boundedness assumptions on the feasible regions of the various problems</span>
+      <span 
+class="cmr-10x-x-109">considered. </span><br 
+class="newline" /><span 
+class="cmbx-10x-x-109">Keywords: </span><span 
+class="cmr-10x-x-109">QCQP,  QPCC,  Completely  Positive  Representation,  rank-constrained</span>
+      <span 
+class="cmr-10x-x-109">SDP, Local Optimality</span>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+<hr>
+
+<a href=QCQP_QPCC.pdf>Download the paper (pdf)</a> |
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/chrono.html>Return
+to my list of papers</a> |
+<a href=http://www.rpi.edu/~mitchj>John E. Mitchell</a>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-39407322-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+ 
+</body></html> 
+

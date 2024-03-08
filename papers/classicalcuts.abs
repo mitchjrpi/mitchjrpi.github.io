@@ -1,0 +1,39 @@
+TITLE:
+Fixing Variables and Generating Classical Cutting Planes
+  when using an Interior Point Branch and Cut Method
+  to solve Integer Programming Problems
+
+John E. Mitchell
+Department of Mathematical Sciences
+Rensselaer Polytechnic Institute
+Troy,  NY  12180
+mitchj@rpi.edu
+
+NUMBER:
+R.P.I. Mathematical Sciences Technical Report No. 216
+
+DATE:
+October 12, 1994
+
+ABSTRACT:
+Branch and cut methods for integer programming problems solve a sequence
+of linear programming problems.
+Traditionally, these linear programming relaxations have been solved using the
+simplex method.
+The reduced costs available at the optimal solution to a relaxation
+may make it possible to fix variables at zero or one.
+If the solution to a relaxation is fractional,
+additional constraints can be generated which cut off the solution
+to the relaxation, but do not cut off any feasible integer points.
+Gomory cutting planes and other classes of cutting planes
+are generated from the final tableau.
+In this paper, we consider using an interior point method to solve
+the linear programming relaxations. We
+show that it is still possible to generate Gomory cuts and other
+cuts without having to recreate a tableau,
+and we also show how variables can be fixed without using the
+optimal reduced costs.
+The procedures we develop do not require that the current relaxation be
+solved to optimality; this is useful for an interior point method because
+early termination of the current relaxation results in an improved starting
+point for the next relaxation.

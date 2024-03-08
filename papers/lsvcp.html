@@ -1,0 +1,66 @@
+<TITLE>A cutting plane algorithm that uses the volumetric barrier</TITLE>
+
+<H2><B>A cutting plane algorithm that uses the volumetric barrier</B></H2>
+
+<B>Download the paper</B>,
+<A HREF=lsvcp.ps>postscript</A> or <A HREF=lsvcp.pdf>pdf</A>.
+
+<P>
+<A HREF="http:../../~mitchj"><B>John E. Mitchell</B></A>
+<BR>Mathematics Department,
+<BR>Rensselaer Polytechnic Institute,
+<BR>Troy, NY 12180.
+<BR>email: <A HREF="mailto:mitchj@rpi.edu">mitchj@rpi.edu</A>
+
+<P>
+<B>Srinivasan Ramaswamy</B>
+<BR>Information Services Division,
+<BR>Research and Development,
+<BR>United Airlines,
+<BR>1200 E. Algonquin Road,
+<BR>Elk Grove Village, IL 60007.
+<BR>email: <A HREF="mailto:Srini.Ramaswamy@ual.com">Srini.Ramaswamy@ual.com</A>
+
+<P>
+Technical report, 1995.
+
+<P>
+<B>Abstract:</B>
+A cutting plane method for linear/convex programming is described. It
+is based on the volumetric barrier, introduced by Vaidya. The
+algorithm is a long step one, and has a complexity of O(n^{1.5}L)
+Newton steps. This is better than the O(n\sqrt{m}L) complexity of
+non-cutting plane long step methods based on the volumetric barrier,
+but it is however worse than Vaidya's original O(nL) result (which
+is not a long step algorithm). Major features of our algorithm are
+that when adding cuts we add them right through the current point, and
+when seeking progress in the objective, the duality gap is reduced by
+a constant factor (not true for Vaidya's original algorithm). Further, we
+generate primal as well as dual iterates, making this applicable in
+the column generation context as well, and allowing early termination.
+Vaidya's algorithm has been used as a subroutine to obtain the best
+complexity for several combinatorial optimization problems -- e.g, the
+Held-Karp lower bound for the Traveling Salesperson Problem. While our
+complexity result is weaker, this long step cutting plane algorithm is
+likely to be computationally more promising on such combinatorial
+optimization problems with an exponential number of constraints. We also
+discuss a multiple cuts version --- where upto p<=n  `selectively
+orthonormalized' cuts are added through the current point at each
+stage where cuts are identified by the oracle. This has a
+complexity of O(n^{1.5}L p log p)  quasi Newton steps.
+
+<P>
+
+<B>Download the paper</B>,
+<A HREF=lsvcp.ps>postscript</A> or <A HREF=lsvcp.pdf>pdf</A>.
+
+<P>
+Return to my <A HREF=../papers.html>list of papers.</A>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-924637-6";
+urchinTracker();
+</script>
+

@@ -1,0 +1,20 @@
+TITLE: Interior Point Methods for Combinatorial Optimization
+
+To appear in ``Interior Point Methods in Mathematical Programming'',
+edited by Tamas Terlaky, Kluwer Academic Publisher, 1995.
+
+AUTHOR: John E. Mitchell
+        Department of Mathematical Sciences
+        Rensselaer Polytechnic Institute
+        Troy,  NY  12180
+
+ABSTRACT:
+Research on using interior point algorithms to solve
+combinatorial optimization and integer programming problems is surveyed.
+This paper discusses
+branch and cut methods for integer programming problems,
+a potential reduction method based on transforming an integer programming
+problem to an equivalent nonconvex quadratic programming problem,
+interior point methods for solving network flow problems,
+and methods for solving multicommodity flow problems, including an
+interior point column generation algorithm.
