@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw8.tex"> 
+<meta name="date" content="2022-11-18 11:03:00"> 
+<link rel="stylesheet" type="text/css" href="hw8.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 27--><p class="noindent" >
+<!--l. 29--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12">MATP 4700 Math Models of Operations Research</span></a><br />
+<span 
+class="cmbx-12">Homework 8</span></div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 36--><p class="noindent" >
+ This homework will not be collected or graded.</div>
+<!--l. 49--><p class="noindent" >The first three questions concern the following linear program
+   <table 
+class="equation"><tr><td><a 
+ id="x1-2r1"></a>
+   <center class="math-display" >
+<img 
+src="hw80x.png" alt="minx&#x2208;&#x211D;3            2x2  +  x3
+subject to - x1  +  2x2  +  x3  =   4
+                            xi &#x2265;   0 i = 1,...,3
+" class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+<!--l. 57--><p class="nopar" >
+which has dual problem
+   <table 
+class="equation"><tr><td><a 
+ id="x1-3r2"></a>
+   <center class="math-display" >
+<img 
+src="hw81x.png" alt="max      3   4y
+subyje&#x2208;c&#x211D;t,s&#x2208;to&#x211D;   - y  +  s   =  0
+             2y  +  s1  =  2
+              y  +  s2  =  1
+                    s3  &#x2265;  0  i = 1,...,3
+                     i
+" class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+<!--l. 67--><p class="nopar" >
+     <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+  1. </dt><dd 
+class="enumerate-enumitem">Let <span 
+class="cmmi-10">r &#x003E; </span>0 and <span 
+class="cmmi-10">&#x03BC; </span>= <img 
+src="hw82x.png" alt="4r1(1++3rr)"  class="frac" align="middle">. Show that <span 
+class="cmmi-10">x</span>(<span 
+class="cmmi-10">r</span>) := (4<span 
+class="cmmi-10">r,</span>1 + <span 
+class="cmmi-10">r,</span>2 + 2<span 
+class="cmmi-10">r</span>) solves the barrier problem
+     <table 
+class="equation"><tr><td><a 
+ id="x1-5r3"></a>
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="hw83x.png" alt="                                    &#x2211;3
+minx&#x2208;&#x211D;3            2x1  +  x3  -  &#x03BC;   i=1 ln(xi)
+subject to  - x1  +  2x2  +  x3  =  4
+                           xi  &#x2265;  0  i = 1,...,3
+     " class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+     <!--l. 79--><p class="nopar" >
+     for any <span 
+class="cmmi-10">r &#x003E; </span>0. (Hint: this is equivalent to showing that <span 
+class="cmmi-10">x</span>(<span 
+class="cmmi-10">r</span>) is on the central path. You need to find
+     dual feasible (<span 
+class="cmmi-10">y</span>(<span 
+class="cmmi-10">r</span>)<span 
+class="cmmi-10">,s</span>(<span 
+class="cmmi-10">r</span>)) so that (<span 
+class="cmmi-10">x</span>(<span 
+class="cmmi-10">r</span>)<span 
+class="cmmi-10">,y</span>(<span 
+class="cmmi-10">r</span>)<span 
+class="cmmi-10">,s</span>(<span 
+class="cmmi-10">r</span>)) satisfy the central path conditions.) (Lecture
+     25)
+     </dd><dt class="enumerate-enumitem">
+  2. </dt><dd 
+class="enumerate-enumitem">Find <span class="bar-css"><span 
+class="cmmi-10">x</span></span> := lim<sub><span 
+class="cmmi-7">r</span><span 
+class="cmsy-7">&#x2192;</span><span 
+class="cmr-7">0</span></sub><span 
+class="cmmi-10">x</span>(<span 
+class="cmmi-10">r</span>). Use duality to prove that this limit point <span class="bar-css"><span 
+class="cmmi-10">x</span></span> is optimal for&#x00A0;(<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.primal --></a>). (Lecture
+     25)
+     </dd><dt class="enumerate-enumitem">
+  3. </dt><dd 
+class="enumerate-enumitem">Show that <span class="bar-css"><span 
+class="cmmi-10">x</span></span> is not a basic feasible solution for&#x00A0;(<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.primal --></a>). How can we have an optimal solution to the standard form
+     problem&#x00A0;(<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.primal --></a>) that is not a basic feasible solution? (Lecture 25)
+     </dd><dt class="enumerate-enumitem">
+  4. </dt><dd 
+class="enumerate-enumitem"><span 
+class="cmbx-10">Knapsack Gomory: </span>Consider the knapsack problem
+     <center class="math-display" >
+     <img 
+src="hw84x.png" alt="maxx &#x2208;&#x211D;4  3x1 + 4x2 + 5x3 + 6x4
+subject to 2x1 + 3x2 + 5x3 + 8x4 &#x2264; 9
+          xj binary, j = 1,...,4
+     " class="math-display" ></center>
+     <!--l. 105--><p class="nopar" >
+     Valid constraints for the LP relaxation include <div class="eqnarray">
+     <center class="math-display" >
+     <img 
+src="hw85x.png" alt="x + x  +x   &#x2264;   2                                  (4)
+ 1   2    3
+    x1 +x4  &#x2264;   1                                  (5)
+    x2 +x4  &#x2264;   1                                  (6)
+    x3 +x4  &#x2264;   1                                  (7)
+     " class="math-display" ><a 
+ id="x1-9r4"></a><a 
+ id="x1-9r7"></a></center>
+     </div>The point <span class="bar-css"><span 
+class="cmmi-10">x</span></span> = (<img 
+src="hw86x.png" alt="2
+3"  class="frac" align="middle"><span 
+class="cmmi-10">,</span><img 
+src="hw87x.png" alt="2
+3"  class="frac" align="middle"><span 
+class="cmmi-10">,</span><img 
+src="hw88x.png" alt="3
+5"  class="frac" align="middle"><span 
+class="cmmi-10">,</span><img 
+src="hw89x.png" alt="1
+3"  class="frac" align="middle">)<sup><span 
+class="cmmi-7">T</span></sup> is feasible in the LP relaxation of the knapsack problem, and it also satisfies
+                                                                                         
+                                                                                         
+     constraints (<a 
+href="#x1-9r4">4<!--tex4ht:ref: knap1 --></a>)&#8211;(<a 
+href="#x1-9r7">7<!--tex4ht:ref: knap4 --></a>). Find nonnegative multipliers <span 
+class="cmmi-10">t</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmmi-10">,t</span><sub><span 
+class="cmr-7">2</span></sub><span 
+class="cmmi-10">,t</span><sub><span 
+class="cmr-7">3</span></sub><span 
+class="cmmi-10">,t</span><sub><span 
+class="cmr-7">4</span></sub> for the constraints (<a 
+href="#x1-9r4">4<!--tex4ht:ref: knap1 --></a>)&#8211;(<a 
+href="#x1-9r7">7<!--tex4ht:ref: knap4 --></a>) and add them
+     together to give a constraint <span 
+class="cmex-10">&#x2211;</span>
+  <sub><span 
+class="cmmi-7">j</span><span 
+class="cmr-7">=1</span></sub><sup><span 
+class="cmr-7">4</span></sup><span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">j</span></sub><span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">j</span></sub> <span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">b</span>, and then round down each <span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">j</span></sub> and <span 
+class="cmmi-10">b </span>to give a
+     valid constraint <span 
+class="cmex-10">&#x2211;</span>
+  <sub><span 
+class="cmmi-7">j</span><span 
+class="cmr-7">=1</span></sub><sup><span 
+class="cmr-7">4</span></sup><span 
+class="cmsy-10">&#x230A;</span><span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">j</span></sub><span 
+class="cmsy-10">&#x230B;</span><span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">j</span></sub> <span 
+class="cmsy-10">&#x2264;&#x230A;</span><span 
+class="cmmi-10">b</span><span 
+class="cmsy-10">&#x230B; </span>for the knapsack problem which is violated by&#x00A0;<span class="bar-css"><span 
+class="cmmi-10">x</span></span>. (Hint: try
+     to choose <span 
+class="cmmi-10">t</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmmi-10">,t</span><sub><span 
+class="cmr-7">2</span></sub><span 
+class="cmmi-10">,t</span><sub><span 
+class="cmr-7">3</span></sub><span 
+class="cmmi-10">,t</span><sub><span 
+class="cmr-7">4</span></sub> so that each component&#x00A0;<span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">j</span></sub> is integral, while <span 
+class="cmmi-10">b </span>is not integral.) (Lecture
+     23)
+                                                                                         
+                                                                                         
+     </dd><dt class="enumerate-enumitem">
+  5. </dt><dd 
+class="enumerate-enumitem">(Lecture 26) Note that all arcs point from a lower-numbered node to a higher-numbered node in the
+     network below, which can be exploited to design dynamic programming algorithms to answer the questions
+     below.
+     <div class="center" 
+>
+<img src=q5.png>
+</div>
+         <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+      (a) </dt><dd 
+class="enumerate-enumitem">Use dynamic programming to find all the shortest paths from node 1 to node 12 in the graph.
+         </dd><dt class="enumerate-enumitem">
+     (b) </dt><dd 
+class="enumerate-enumitem">Use dynamic programming to find all the longest paths from node 1 to node 12 in the graph.</dd></dl>
+     </dd></dl>
+<!--l. 193--><p class="noindent" >In addition, read Sections 1.8, 21.1 and 7.8 from the text.
+<!--l. 205--><p class="noindent" >Solving the homework problems (and other problems from the text) will improve your understanding of the
+material.
+<!--l. 211--><p class="noindent" >Working out the problems yourself will greatly improve your understanding of the material and help you on the
+exams. You can ask questions on piazza, in addition to using office hours or email.
+<!--l. 225--><p class="noindent" >Exam 3 will be on Friday December 9 and will cover integer programming, interior point methods, and dynamic
+programming. There is no final exam.
+                                                                                         
+                                                                                         
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                             </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           x6915.                                                                                        </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           Tuesday 2.30&#8211;4pm in AE 325;                                                         </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           Thursday 1&#8211;3pm webex: <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-10">https://rensselaer.webex.com/meet/mitchj</span></a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-7-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;                                                                                                           </td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

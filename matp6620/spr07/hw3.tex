@@ -1,0 +1,382 @@
+\documentclass[12pt]{article}
+
+\usepackage{fullpage}
+
+\pagestyle{empty}
+
+%\oddsidemargin -.5in
+%\textwidth 7.5in
+%\textheight 10in
+%\topmargin -30pt
+%\headsep 0in
+%\headheight 0in
+
+\newcommand{\til}{\char '176}
+\newcommand{\re}{I\!\!R}
+
+
+\begin{document}
+
+\begin{center}
+  \begin{large}
+     MATP6620 / DSES6760 Combinatorial Optimization and Integer Programming \\
+       Homework 3.
+  \end{large}
+\end{center}
+
+\begin{flushright}
+   Due:  Friday, March 2, 2007.  \\
+Penalty for late homeworks: 10\% for each day or part of a day.
+\end{flushright}
+
+%\vspace{\baselineskip}
+
+%The MAXCUT problem is the subject of questions
+%\ref{q.ineq}, \ref{q.4cycle}, and \ref{q.comp}.
+%It is defined on a graph $G=(V,E)$
+%with edge weights~$c_e$.
+%The vertices are partitioned into two sets with the objective of
+%maximizing the total weight of the edges with one endpoint in each set.
+%This can be modeled as an integer programming problem
+%by introducing binary variables $x_e$ to indicate whether an edge is
+%in the cut.
+
+Each of the three questions on this homework is worth 20 points.
+
+The following graph $G=(V,E)$ is used in questions \ref{q.nodepack} and~\ref{q.matching}.
+
+\begin{center}
+\begin{picture}(340,180)(-10,-10)
+\put(0,0){\circle{20}}
+\put(-4,-4){A}
+\put(0,160){\circle{20}}
+\put(-4,156){B}
+\put(320,0){\circle{20}}
+\put(316,-4){E}
+\put(320,160){\circle{20}}
+\put(316,156){D}
+\put(160,0){\circle{20}}
+\put(156,-4){F}
+\put(160,160){\circle{20}}
+\put(156,156){C}
+\put(80,80){\circle{20}}
+\put(76,76){G}
+\put(160,80){\circle{20}}
+\put(156,76){H}
+\put(240,80){\circle{20}}
+\put(236,76){J}
+
+\put(0,10){\line(0,1){140}}
+\put(320,10){\line(0,1){140}}
+\put(10,0){\line(1,0){140}}
+\put(170,0){\line(1,0){140}}
+\put(10,160){\line(1,0){140}}
+\put(170,160){\line(1,0){140}}
+\put(90,80){\line(1,0){60}}
+\put(170,80){\line(1,0){60}}
+\put(160,10){\line(0,1){60}}
+\put(160,90){\line(0,1){60}}
+
+\put(7,7){\line(1,1){66}}
+\put(313,7){\line(-1,1){66}}
+\put(313,153){\line(-1,-1){66}}
+\put(153,153){\line(-1,-1){66}}
+\put(167,153){\line(1,-1){66}}
+\put(87,73){\line(1,-1){66}}
+\end{picture}
+\end{center}
+
+
+\begin{enumerate}
+\item  \label{q.nodepack}
+Consider a node packing problem on the above graph, with each vertex having weight~1.
+The LP relaxation includes the clique constraints $\sum_{v \in C} x_v \leq 1$
+for each maximal clique~$C$ in the graph.
+The point $x_A=0.4$, $x_B=0.6$, $x_C=0.4$, $x_D=0.5$, $x_E=0.4$,
+$x_F=0.5$, $x_G=0.1$, $x_H=0.4$, and $x_J=0.1$
+is feasible in the LP relaxation.
+\begin{enumerate}
+\item Show that the given point is not in the convex hull of feasible solutions,
+by giving a valid constraint that is violated by this point.
+\item Find an optimal solution to the node packing problem for this graph.
+Prove your solution is optimal.
+\end{enumerate}
+
+\item \label{q.matching}
+Consider a matching problem on the graph above.
+The LP relaxation consists of nonnegativity together with the constraints
+$\sum_{e \in \delta(v)}x_e \leq 1$ for each vertex~$v$.
+A feasible solution to the LP relaxation is to take
+$x_{AB}=0.5$, $x_{AF}=0$, $x_{AG}=0.5$, $x_{BC}=0.5$, $x_{CD}=0$, $x_{CG}=0$,
+$x_{CH}=0.4$, $x_{CJ}=0.1$, $x_{DE}=0.2$, $x_{DJ}=0.8$,
+$x_{EF}=0.8$, $x_{EJ}=0$, $x_{FH}=0.2$, $x_{GH}=0.4$, and $x_{HJ}=0$.
+\begin{enumerate}
+\item Find a valid constraint for the matching problem that is violated by this solution.
+\item Assume the six diagonal edges each have weight two and the remaining 10 edges each
+have weight one.
+What is the maximum weight matching?
+Prove your solution is optimal.
+\end{enumerate}
+
+\item Consider the integer programming problem
+\begin{displaymath}
+\begin{array}{lrcrcl}
+\max & x_1 & + & 4x_2  \\
+\mbox{subject to} & 2x_1 & + & 2x_2 & \geq & 3 \\
+& -x_1 & + & 2x_2 & \leq & 5  \\
+& 3x_1 & - & x_2 & \leq & 3  \\
+& \multicolumn{3}{r}{x_1, x_2} & \geq & 0, \mbox{ integer} 
+\end{array}
+\end{displaymath}
+Let $S$ be the set of feasible solutions to this problem.
+\begin{enumerate}
+\item Give an inequality description of the convex hull of~$S$.
+\item What is the Chvatal rank of each of the facet-defining inequalities
+of the convex hull of~$S$?
+\item Solve the LP relaxation of this problem.
+What is the Gomory cutting plane given by the objective function?
+What is the strong Gomory cutting plane given by the objective function,
+using the Gomory mixed integer cut?
+Express the constraints in terms of the original variables~$x_1$ and $x_2$.
+(You may want to use AMPL to solve the LP relaxation.
+You can then get the reduced costs directly.)
+\end{enumerate}
+
+%  \item
+%         An instance $d$ of a feasibility problem $X \in NP$
+%         depends upon two positive integer parameters $m$ and $n$.
+%         Assume $d$ requires storage $m2^n$ in binary, and that we
+%         know an algorithm $A$ which solves $d$ in time $2^{m+n}$.
+%         \begin{enumerate}
+%           \item Can we conclude $X$ is in $P$?
+%           \item Assume we know in addition that $m\leq n$ for every
+%             instance $d$ of $X$.  What can we conclude now?
+%         \end{enumerate}
+%  \item
+%  Consider the constraints
+%  \begin{displaymath}
+%  \begin{array}{rcl}
+%  t_1 & \geq & | x_1 - x_2 |  \\
+%  t_2 & \geq & | x_1+x_2 - 1|  \\
+%  t_1,t_2 && \mbox{integer}  \\
+%  x_1,x_2&& \mbox{binary}
+%  \end{array}
+%  \end{displaymath}
+%  \begin{enumerate}
+%  \item By considering the different possibilities for $x$, show that $t_1+t_2 \geq 1$.
+%  \item The constraints can be modeled equivalently as
+%  \begin{displaymath}
+%  \begin{array}{rcrcrcc}
+%  t_1 & \geq &  x_1 & - & x_2   \\
+%  t_1 & \geq &  -x_1 & + & x_2   \\
+%  t_2 & \geq & x_1 & + & x_2 & - &  1  \\
+%  t_2 & \geq & -x_1 & - & x_2 & + & 1  \\
+%  t_1,t_2 && \multicolumn{5}{l}{\mbox{integer}}  \\
+%  x_1,x_2&& \multicolumn{5}{l}{\mbox{binary}}
+%  \end{array}
+%  \end{displaymath}
+%Show that the valid constraint $t_1+t_2 \geq 1$ has Chvatal rank equal to 2.
+%  \end{enumerate}
+ 
+%   \item
+%           Let $P=\{x\in {\re}_+^2: x_1-x_2\leq 1, 4x_1 + x_2 \leq 28,
+%                      x_1 + 4x_2 \leq 27 \}$ and $S=P \cap Z_+^2$.
+%           \begin{enumerate}
+%              \item  Find an inequality description of conv($S$).
+%              \item  Find the extreme points of conv($S$).
+%              \item  Derive each of the facets of conv($S$) as a
+%                C-G inequality.
+%              \item  What is the Chvatal rank of the facets of conv($S$)?
+%                (Hint: To get a lower bound for the difficult one,
+%                ask yourself {\em ``What is the best inequality of the form
+%                $x_1+2x_2\leq \pi_0$ which is valid for $P$?''}
+%                To get an upper bound, consider
+%                $x_1+\alpha x_2 \leq \alpha_0$ for various values
+%                of~$\alpha$.)
+%           \end{enumerate}
+%   \item
+%The MAXCUT problem is defined on a graph $G=(V,E)$
+%with edge weights~$c_e$.
+%The vertices are partitioned into two sets with the objective of
+%maximizing the total weight of the edges with one endpoint in each set.
+%This can be modeled as an integer programming problem
+%by introducing binary variables $x_e$ to indicate whether an edge is
+%in the cut.
+%Assume $G$ is a complete graph.
+%Let $i$ and $j$ be two vertices.
+%Show that if $x_{ij}=1$ then we must have $x_{ik}+x_{jk}=1$ for
+%any other vertex $k\in V$.
+%  \item \label{q.ineq}
+%  Let $C$ denote the edges of a particular cycle in a graph G=(V,E).
+%  It is a standard result in graph theory that the intersection of
+%   a cycle and a cut consists of an even number of edges.
+%   \begin{enumerate}
+%   \item \label{q.ineq.1edge}
+%   Let $e$ be an edge of the cycle~$C$.
+%   Construct a linear constraint on the variable $x$ used in the MAXCUT
+%   problem to prevent the infeasible solution corresponding to  using only
+%   the edge $e$ from~$C$.
+%   (Hint: look at the difference between $x_e$ and $x$ for the other edges in~$C$.)
+%   \item Let $e_1$, $e_2$, and $e_3$ be three edges from the cycle~$C$.
+%   Construct a linear constraint on the variable $x$ used in the MAXCUT
+%   problem to prevent the infeasible solution corresponding to  using only
+%   edges $e_1$, $e_2$, and $e_3$ from~$C$.
+%   \end{enumerate}
+%   \item \label{q.4cycle}
+%   Let $G=(V,E)$ be a complete graph.
+%   Let $C$ be a cycle of length 4 and let $e$ be an edge of~$C$.
+%   Show that your inequality for $C$ from question~\ref{q.ineq.1edge}
+%   is implied by two inequalities corresponding to cycles of length~3.
+%   \item
+%           Let $P=\{x\in {\re}_+^2: x_1-x_2\leq 1, 4x_1 + x_2 \leq 28,
+%                      x_1 + 4x_2 \leq 27 \}$ and $S=P \cap Z_+^2$.
+%          Consider the integer program
+%          $\max \{ 2x_1 + 3x_2: x \in S \}$.  %, where $S$ is given in
+%          %question~\ref{question.S}.
+%          Solve this problem by using the following two-step procedure:
+%          \begin{itemize}
+%            \item Solve the LP relaxation
+%            \item If necessary, add one of the inequalities from the polyhedral
+%              description of the convex hull of the feasible region
+%          \end{itemize}
+%          and repeating.
+%          (You may want to use AMPL or a similar package to solve
+%          the LP relaxations.
+%          See the course webpage for details on how to use AMPL.
+%          If you need more help, see me.
+%          The initial AMPL file is
+%          in http://www.rpi.edu/\til mitchj/matp6620/hw3/hw3q4.mod0.)
+
+%{\flushright{/ over}}
+
+%\pagebreak
+
+%\item \label{q.comp}
+%Let $G=(V,E)$ be a complete graph with five vertices.
+%The edge lengths $c_e$ for this graph are in Table~\ref{table.lengths}.
+%\begin{table}
+%\begin{center}
+%\begin{tabular}{l|ccccc}
+%& $v_1$ & $v_2$ & $v_3$ & $v_4$ & $v_5$ \\ \hline
+%$v_1$ & --- &  9  &  1 &  2 &  8\\
+%$v_2$ & --- & --- & 8  & 3  & 2 \\
+%$v_3$ & --- & --- & --- & 7 & 1  \\
+%$v_4$ & --- & --- & --- & --- &  9 \\
+%$v_5$ & --- & --- & --- & --- & ---
+%\end{tabular}
+%\end{center}
+%\caption{Edge lengths for Question~\ref{q.comp}
+%\label{table.lengths}}
+%\end{table}
+%Take the unit box as the initial LP relaxation.
+%          Solve this problem by using the following two-step procedure:
+%          \begin{itemize}
+%            \item Solve the LP relaxation
+%            \item If necessary, add one or more of the inequalities from question~\ref{q.ineq}
+%            corresponding to cycles of length~3 that are violated by the solution to the LP
+%            relaxation.
+%          \end{itemize}
+%          and repeating.
+
+%          (You may want to use AMPL or a similar package to solve
+%          the LP relaxations.
+%          See the course webpage for details on how to use AMPL.
+%          If you need more help, see me.
+%          The initial AMPL model and data file are
+%          in
+%          \begin{quote}
+%          http://www.rpi.edu/\til mitchj/matp6620/hw3/hw3q4.mod  \\
+%          and  \\
+%          http://www.rpi.edu/\til mitchj/matp6620/hw3/hw3q4.dat
+%          \end{quote}
+%          respectively.)
+
+%   \item  Consider the maximum weight matching problem on a graph $G=(V,E)$,
+%          where all edge weights are nonnegative.
+%          One possible separation routine is to search for connected
+%          components in the graph $G=(V,E')$, where $E'$ consists of all
+%          edges in $E$ with $x_e>0$ in the
+%          optimal solution to the LP-relaxation,
+%          and see if those components violate the odd set constraints.
+%          Use this in a cutting plane algorithm to solve the
+%          maximum weight matching problem on the graph below.
+%          Edge $e_i$ has weight~$i$.
+
+%%\begin{picture}(540,90)(270,0)
+%\begin{picture}(540,90)(40,0)
+%  \put(20,20){\line(1,0){100}}
+%  \put(20,20){\line(0,1){60}}
+%  \put(120,20){\line(0,1){60}}
+%  \put(20,80){\line(1,0){100}}
+%  \put(120,20){\line(3,1){90}}
+%  \put(120,80){\line(3,-1){90}}
+%  \put(120,20){\line(1,0){280}}
+%  \put(210,50){\line(1,0){100}}
+%  \put(310,50){\line(3,1){90}}
+%  \put(310,50){\line(3,-1){90}}
+%  \put(400,20){\line(1,0){100}}
+%  \put(400,20){\line(0,1){60}}
+%  \put(500,20){\line(0,1){60}}
+%  \put(400,80){\line(1,0){100}}
+
+%
+
+%  \put(20,20){\circle*{5}}
+%  \put(20,80){\circle*{5}}
+%  \put(120,20){\circle*{5}}
+%  \put(120,80){\circle*{5}}
+%  \put(210,50){\circle*{5}}
+%  \put(310,50){\circle*{5}}
+%  \put(400,20){\circle*{5}}
+%  \put(400,80){\circle*{5}}
+%  \put(500,20){\circle*{5}}
+%  \put(500,80){\circle*{5}}
+
+%
+%  \put(260,55){1}
+%  \put(260,25){2}
+%  \put(490,47){3}
+%  \put(65,25){4}
+%  \put(25,47){5}
+%  \put(450,25){6}
+%  \put(450,70){7}
+%  \put(65,70){8}
+%  \put(110,47){9}
+%  \put(350,37){10}
+%  \put(405,47){11}
+%  \put(155,37){12}
+%  \put(345,70){13}
+%  \put(165,70){14}
+
+%  \put(10,75){1}
+%  \put(10,15){2}
+%  \put(110,25){3}
+%  \put(110,70){4}
+%  \put(210,55){5}
+%  \put(300,55){6}
+%  \put(405,70){7}
+%  \put(505,75){8}
+%  \put(505,15){9}
+%  \put(405,25){10}
+%\end{picture}
+%          (Again, you may want to use AMPL to solve the LP relaxations.
+%          The initial AMPL model file is
+%          in http://www.rpi.edu/\til mitchj/matp6620/hw3/hw3q5.mod0
+%          and the data file is in  \\
+%          http://www.rpi.edu/\til mitchj/matp6620/hw3/hw3q5.dat0)
+
+\end{enumerate}
+
+\vfill
+
+\begin{tabular}{@{\hspace{.5in}}l}
+   John Mitchell  \\
+   Amos Eaton 325  \\
+   x6915.  \\
+   mitchj@rpi.edu  \\
+   Office hours:
+   Tuesday 2pm -- 3pm, Wednesday 11am -- noon.
+\end{tabular}
+
+
+\end{document}

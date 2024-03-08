@@ -1,0 +1,24 @@
+ampl: model standard.mod;
+ampl: data standard4.dat;
+ampl: solve;
+CPLEX 12.7.1.0: CPXPARAM_Simplex_Display                         0
+CPXPARAM_MIP_Display                             0
+CPXPARAM_Barrier_Display                         0
+optimal solution; objective 3
+3 dual simplex iterations (2 in phase I)
+ampl: display x;
+x [*] :=
+x1  20
+x2   1
+x3   0
+x4   0
+x5   5
+;
+
+ampl: display resourcelimit;
+resourcelimit [*] :=
+c1   1
+c2  -1
+c3   0
+;
+

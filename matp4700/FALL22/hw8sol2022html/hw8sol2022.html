@@ -1,0 +1,656 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw8sol2022.tex"> 
+<meta name="date" content="2022-12-07 21:39:00"> 
+<link rel="stylesheet" type="text/css" href="hw8sol2022.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 27--><p class="noindent" >
+<!--l. 29--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12">Math Models of Operations Research</span></a><br />
+<a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12">MATP 4700 </span></a><br /><br />
+<span 
+class="cmbx-12">Homework 8</span></div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 36--><p class="noindent" >
+ This homework will not be collected or graded.</div>
+<!--l. 46--><p class="noindent" >The first three questions concern the following linear program
+   <table 
+class="equation"><tr><td><a 
+ id="x1-2r1"></a>
+   <center class="math-display" >
+<img 
+src="hw8sol20220x.png" alt="minx&#x2208;&#x211D;3             2x2  +   x3
+subject to - x1 +   2x2  +   x3  =  4
+                             xi  &#x2265;  0  i = 1,...,3
+" class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+<!--l. 54--><p class="nopar" >
+has dual problem
+   <table 
+class="equation"><tr><td><a 
+ id="x1-3r2"></a>
+   <center class="math-display" >
+<img 
+src="hw8sol20221x.png" alt="maxy&#x2208; &#x211D;,s&#x2208;&#x211D;3  4y
+subject to    - y +   s1  =  0
+             2y  +   s2  =  2
+              y  +   s   =  1
+                      3
+                     si  &#x2265;  0  i = 1,...,3
+" class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+                                                                                         
+                                                                                         
+<!--l. 64--><p class="nopar" >
+     <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+   1. </dt><dd 
+class="enumerate-enumitem">Let <span 
+class="cmmi-10x-x-109">r &#x003E; </span>0 and <span 
+class="cmmi-10x-x-109">&#x03BC; </span>= <img 
+src="hw8sol20222x.png" alt="4r1(1++3rr)"  class="frac" align="middle">. Show that <span 
+class="cmmi-10x-x-109">x</span>(<span 
+class="cmmi-10x-x-109">r</span>) := (4<span 
+class="cmmi-10x-x-109">r,</span>1 + <span 
+class="cmmi-10x-x-109">r,</span>2 + 2<span 
+class="cmmi-10x-x-109">r</span>) solves the barrier problem
+     <table 
+class="equation"><tr><td><a 
+ id="x1-5r3"></a>
+     <center class="math-display" >
+     <img 
+src="hw8sol20223x.png" alt="min    3            2x   +   x   -  &#x03BC; &#x2211;3   ln(x)
+   x&#x2208;&#x211D;                1       3         i=1    i
+subject to - x1  +  2x2  +   x3  =  4
+                             xi  &#x2265;  0  i = 1,...,3
+     " class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+     <!--l. 76--><p class="nopar" >
+     for any <span 
+class="cmmi-10x-x-109">r &#x003E; </span>0. (Hint: this is equivalent to showing that <span 
+class="cmmi-10x-x-109">x</span>(<span 
+class="cmmi-10x-x-109">r</span>) is on the central path. You need to find
+     dual feasible (<span 
+class="cmmi-10x-x-109">y</span>(<span 
+class="cmmi-10x-x-109">r</span>)<span 
+class="cmmi-10x-x-109">,s</span>(<span 
+class="cmmi-10x-x-109">r</span>)) so that (<span 
+class="cmmi-10x-x-109">x</span>(<span 
+class="cmmi-10x-x-109">r</span>)<span 
+class="cmmi-10x-x-109">,y</span>(<span 
+class="cmmi-10x-x-109">r</span>)<span 
+class="cmmi-10x-x-109">,s</span>(<span 
+class="cmmi-10x-x-109">r</span>)) satisfy the central path conditions.) (Lecture
+     25)
+     </dd><dt class="enumerate-enumitem">
+   2. </dt><dd 
+class="enumerate-enumitem">Find <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> := lim<sub><span 
+class="cmmi-8">r</span><span 
+class="cmsy-8">&#x2192;</span><span 
+class="cmr-8">0</span></sub><span 
+class="cmmi-10x-x-109">x</span>(<span 
+class="cmmi-10x-x-109">r</span>). Use duality to prove that this limit point <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> is optimal for&#x00A0;(<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.primal --></a>). (Lecture
+     25)
+     </dd><dt class="enumerate-enumitem">
+   3. </dt><dd 
+class="enumerate-enumitem">Show that <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> is not a basic feasible solution for&#x00A0;(<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.primal --></a>). How can we have an optimal solution to the
+     standard form problem&#x00A0;(<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.primal --></a>) that is not a basic feasible solution? (Lecture 25)
+     </dd><dt class="enumerate-enumitem">
+   4. </dt><dd 
+class="enumerate-enumitem"><span 
+class="cmbx-10x-x-109">Knapsack Gomory: </span>Consider the knapsack problem
+     <center class="math-display" >
+     <img 
+src="hw8sol20224x.png" alt="maxx &#x2208;&#x211D;4   3x1 + 4x2 + 5x3 + 6x4
+subject to  2x1 + 3x2 + 5x3 + 8x4 &#x2264; 9
+           xj binary, j = 1,...,4
+     " class="math-display" ></center>
+     <!--l. 102--><p class="nopar" >
+     Valid constraints for the LP relaxation include <div class="eqnarray">
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="hw8sol20225x.png" alt="x1 + x2 + x3 &#x2264;   2                                 (4)
+
+    x1 + x4  &#x2264;   1                                 (5)
+    x2 + x4  &#x2264;   1                                 (6)
+    x  + x   &#x2264;   1                                 (7)
+      3   4
+     " class="math-display" ><a 
+ id="x1-9r4"></a><a 
+ id="x1-9r5"></a><a 
+ id="x1-9r7"></a></center>
+     </div>The point <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> = (<img 
+src="hw8sol20226x.png" alt="2
+3"  class="frac" align="middle"><span 
+class="cmmi-10x-x-109">,</span><img 
+src="hw8sol20227x.png" alt="2
+3"  class="frac" align="middle"><span 
+class="cmmi-10x-x-109">,</span><img 
+src="hw8sol20228x.png" alt="3
+5"  class="frac" align="middle"><span 
+class="cmmi-10x-x-109">,</span><img 
+src="hw8sol20229x.png" alt="1
+3"  class="frac" align="middle">)<sup><span 
+class="cmmi-8">T</span> </sup> is feasible in the LP relaxation of the knapsack problem, and it also
+     satisfies constraints (<a 
+href="#x1-9r4">4<!--tex4ht:ref: knap1 --></a>)&#8211;(<a 
+href="#x1-9r7">7<!--tex4ht:ref: knap4 --></a>). Find nonnegative multipliers <span 
+class="cmmi-10x-x-109">t</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,t</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-10x-x-109">,t</span><sub><span 
+class="cmr-8">3</span></sub><span 
+class="cmmi-10x-x-109">,t</span><sub><span 
+class="cmr-8">4</span></sub> for the constraints (<a 
+href="#x1-9r4">4<!--tex4ht:ref: knap1 --></a>)&#8211;(<a 
+href="#x1-9r7">7<!--tex4ht:ref: knap4 --></a>) and
+     add them together to give a constraint <span 
+class="cmex-10x-x-109">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">j</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmr-8">4</span></sup><span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmmi-8">j</span></sub><span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmmi-10x-x-109">b</span>, and then round down each <span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmmi-8">j</span></sub> and <span 
+class="cmmi-10x-x-109">b </span>to give a
+     valid constraint <span 
+class="cmex-10x-x-109">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">j</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmr-8">4</span></sup><span 
+class="cmsy-10x-x-109">&#x230A;</span><span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmmi-8">j</span></sub><span 
+class="cmsy-10x-x-109">&#x230B;</span><span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-109">&#x2264;&#x230A;</span><span 
+class="cmmi-10x-x-109">b</span><span 
+class="cmsy-10x-x-109">&#x230B; </span>for the knapsack problem which is violated by&#x00A0;<span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span>. (Hint: try to
+     choose <span 
+class="cmmi-10x-x-109">t</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,t</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-10x-x-109">,t</span><sub><span 
+class="cmr-8">3</span></sub><span 
+class="cmmi-10x-x-109">,t</span><sub><span 
+class="cmr-8">4</span></sub> so that each component&#x00A0;<span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmmi-8">j</span></sub> is integral, while <span 
+class="cmmi-10x-x-109">b </span>is not integral.) (Lecture
+     23)
+     </dd><dt class="enumerate-enumitem">
+   5. </dt><dd 
+class="enumerate-enumitem">(Lecture 26) Note that all arcs point from a lower-numbered node to a higher-numbered node in the
+     network below, which can be exploited to design dynamic programming algorithms to answer the
+     questions below.
+     <div class="center" >
+<img src=q5.png>
+</div>
+          <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+      (a) </dt><dd 
+class="enumerate-enumitem">Use dynamic programming to find all the shortest paths from node 1 to node 12 in the
+          graph.
+          </dd><dt class="enumerate-enumitem">
+      (b) </dt><dd 
+class="enumerate-enumitem">Use dynamic programming to find all the longest paths from node 1 to node 12 in the
+          graph.</dd></dl>
+     </dd></dl>
+<!--l. 189--><p class="noindent" >In addition, read Sections 1.8, 21.1 and 7.8 from the text.
+<!--l. 201--><p class="noindent" >Solving the homework problems (and other problems from the text) will improve your understanding of
+the material.
+<!--l. 207--><p class="noindent" >Working out the problems yourself will greatly improve your understanding of the material and
+help you on the exams. You can ask questions on piazza, in addition to using office hours or
+email.
+<!--l. 221--><p class="noindent" >Exam 3 will be on Friday December 9 and will cover integer programming, interior point methods, and
+dynamic programming. There is no final exam.
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                             </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                                                        </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Tuesday 2.30&#8211;4pm in AE 325;                                                         </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Thursday 1&#8211;3pm webex: <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-10x-x-109">https://rensselaer.webex.com/meet/mitchj</span></a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-7-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;                                                                                                          </td> </tr></table></div>
+<!--l. 254--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solutions</span>
+                                                                                         
+                                                                                         
+     <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+   1. </dt><dd 
+class="enumerate-enumitem">We must have <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-10x-x-109">r</span>)<span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-10x-x-109">r</span>) = <span 
+class="cmmi-10x-x-109">&#x03BC;</span>(<span 
+class="cmmi-10x-x-109">r</span>) for <span 
+class="cmmi-10x-x-109">i </span>= 1<span 
+class="cmmi-10x-x-109">,</span>2<span 
+class="cmmi-10x-x-109">,</span>3. This implies <span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-10x-x-109">r</span>) = <span 
+class="cmmi-10x-x-109">&#x03BC;</span>(<span 
+class="cmmi-10x-x-109">r</span>)<span 
+class="cmmi-10x-x-109">&#x2215;x</span><sub><span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-10x-x-109">r</span>) for <span 
+class="cmmi-10x-x-109">i </span>= 1<span 
+class="cmmi-10x-x-109">,</span>2<span 
+class="cmmi-10x-x-109">,</span>3. We
+     get:
+          <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+      (a) </dt><dd 
+class="enumerate-enumitem"><span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmr-8">1</span></sub> = <img 
+src="hw8sol202210x.png" alt="4r(1+r)-
+4r(1+3r)"  class="frac" align="middle"> = <img 
+src="hw8sol202211x.png" alt="-1+r-
+(1+3r)"  class="frac" align="middle">, which implies <span 
+class="cmmi-10x-x-109">y </span>= <span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmr-8">1</span></sub> = <img 
+src="hw8sol202212x.png" alt="1+r-
+1+3r"  class="frac" align="middle">.
+          </dd><dt class="enumerate-enumitem">
+      (b) </dt><dd 
+class="enumerate-enumitem"><span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmr-8">2</span></sub> = <img 
+src="hw8sol202213x.png" alt="  4r(1+r)
+(1+r)(1+3r)-"  class="frac" align="middle"> = <img 
+src="hw8sol202214x.png" alt="  4r
+(1+3r)"  class="frac" align="middle">, which implies <span 
+class="cmmi-10x-x-109">y </span>= 1 <span 
+class="cmsy-10x-x-109">-</span><img 
+src="hw8sol202215x.png" alt="1
+2"  class="frac" align="middle"><span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmr-8">2</span></sub> = 1 <span 
+class="cmsy-10x-x-109">-</span><img 
+src="hw8sol202216x.png" alt="  2r
+(1+3r)"  class="frac" align="middle"> = <img 
+src="hw8sol202217x.png" alt="1+r
+1+3r"  class="frac" align="middle">.
+          </dd><dt class="enumerate-enumitem">
+      (c) </dt><dd 
+class="enumerate-enumitem"><span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmr-8">3</span></sub> = <img 
+src="hw8sol202218x.png" alt="--4r(1+r)--
+(2+2r)(1+3r)"  class="frac" align="middle"> = <img 
+src="hw8sol202219x.png" alt="--2r--
+(1+3r)"  class="frac" align="middle">, which implies <span 
+class="cmmi-10x-x-109">y </span>= 1 <span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmr-8">3</span></sub> = 1 <span 
+class="cmsy-10x-x-109">-</span><img 
+src="hw8sol202220x.png" alt="--2r-
+(1+3r)"  class="frac" align="middle"> = <img 
+src="hw8sol202221x.png" alt="1+r-
+1+3r"  class="frac" align="middle">.</dd></dl>
+     <!--l. 268--><p class="noindent" >Since all three components lead to the same value <span 
+class="cmmi-10x-x-109">y </span>= <img 
+src="hw8sol202222x.png" alt="1+r-
+1+3r"  class="frac" align="middle">, we have a point that satisfies the
+     central path conditions, so <span 
+class="cmmi-10x-x-109">x</span>(<span 
+class="cmmi-10x-x-109">r</span>) solves the barrier problem.
+     </dd><dt class="enumerate-enumitem">
+   2. </dt><dd 
+class="enumerate-enumitem"><span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> = (0<span 
+class="cmmi-10x-x-109">,</span>1<span 
+class="cmmi-10x-x-109">,</span>2), which has value&#x00A0;4.
+     <!--l. 274--><p class="noindent" >We also have a dual feasible solution <span 
+class="cmmi-10x-x-109">y </span>= 1 with dual value&#x00A0;4. Since the primal and dual values
+     agree, we are optimal.
+     </dd><dt class="enumerate-enumitem">
+   3. </dt><dd 
+class="enumerate-enumitem">Since problem&#x00A0;(<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.primal --></a>) only has one equality constraint, any basic feasible solution will have at
+     most one positive component. The point <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> has 2 positive components, so it cannot be a
+     BFS.
+     <!--l. 282--><p class="noindent" >Problem&#x00A0;(<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.primal --></a>) has multiple optimal solutions. The limit point <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> is in the interior of the optimal
+     face.
+     </dd><dt class="enumerate-enumitem">
+   4. </dt><dd 
+class="enumerate-enumitem">There are many possible choices, any of which is an acceptable solution:
+          <ul class="itemize1">
+          <li class="itemize"><span 
+class="cmmi-10x-x-109">t </span>= <img 
+src="hw8sol202223x.png" alt="1
+3"  class="frac" align="middle">(2<span 
+class="cmmi-10x-x-109">,</span>1<span 
+class="cmmi-10x-x-109">,</span>1<span 
+class="cmmi-10x-x-109">,</span>1)<sup><span 
+class="cmmi-8">T</span> </sup>:
+          <!--l. 290--><p class="noindent" >Adding together (<a 
+href="#x1-9r4">4<!--tex4ht:ref: knap1 --></a>)&#8211;(<a 
+href="#x1-9r7">7<!--tex4ht:ref: knap4 --></a>) with these multipliers gives
+          <center class="math-display" >
+          <img 
+src="hw8sol202224x.png" alt="x  + x +  x + x  &#x2264; 21-,
+ 1    2    3   4    3
+          " class="math-display" ></center>
+          <!--l. 293--><p class="nopar" >
+          and rounding down gives the valid constraint for the knapsack problem that cuts off&#x00A0;<span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span>
+          of:
+          <table 
+class="equation"><tr><td><a 
+ id="x1-20r8"></a>
+                                                                                         
+                                                                                         
+          <center class="math-display" >
+          <img 
+src="hw8sol202225x.png" alt="x1 + x2 + x3 + x4 &#x2264; 2.
+          " class="math-display" ></center></td><td class="equation-label">(8)</td></tr></table>
+          <!--l. 298--><p class="nopar" >
+          </li>
+          <li class="itemize"><span 
+class="cmmi-10x-x-109">t </span>= <img 
+src="hw8sol202226x.png" alt="13"  class="frac" align="middle">(2<span 
+class="cmmi-10x-x-109">,</span>1<span 
+class="cmmi-10x-x-109">,</span>1<span 
+class="cmmi-10x-x-109">,</span>4)<sup><span 
+class="cmmi-8">T</span> </sup>:
+          <!--l. 302--><p class="noindent" >Adding together (<a 
+href="#x1-9r4">4<!--tex4ht:ref: knap1 --></a>)&#8211;(<a 
+href="#x1-9r7">7<!--tex4ht:ref: knap4 --></a>) with these multipliers gives
+          <center class="math-display" >
+          <img 
+src="hw8sol202227x.png" alt="                      1
+x1 + x2 + 2x3 + 2x4 &#x2264; 3-,
+                      3
+          " class="math-display" ></center>
+          <!--l. 305--><p class="nopar" >
+          and rounding down gives the valid constraint for the knapsack problem that cuts off&#x00A0;<span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span>
+          of:
+          <center class="math-display" >
+          <img 
+src="hw8sol202228x.png" alt="x  + x + 2x  + 2x  &#x2264; 3.
+ 1    2     3    4
+          " class="math-display" ></center>
+          <!--l. 310--><p class="nopar" >
+          Using <span 
+class="cmmi-10x-x-109">t </span>= <img 
+src="hw8sol202229x.png" alt="1
+3"  class="frac" align="middle">(2<span 
+class="cmmi-10x-x-109">,</span>1<span 
+class="cmmi-10x-x-109">,</span>4<span 
+class="cmmi-10x-x-109">,</span>1)<sup><span 
+class="cmmi-8">T</span> </sup> and <span 
+class="cmmi-10x-x-109">t </span>= <img 
+src="hw8sol202230x.png" alt="1
+3"  class="frac" align="middle">(2<span 
+class="cmmi-10x-x-109">,</span>4<span 
+class="cmmi-10x-x-109">,</span>1<span 
+class="cmmi-10x-x-109">,</span>1)<sup><span 
+class="cmmi-8">T</span> </sup> lead to
+          <center class="math-display" >
+          <img 
+src="hw8sol202231x.png" alt="x1 + 2x2 + x3 + 2x4 &#x2264; 3
+          " class="math-display" ></center>
+          <!--l. 315--><p class="nopar" >
+          and
+          <center class="math-display" >
+          <img 
+src="hw8sol202232x.png" alt="2x1 + x2 + x3 + 2x4 &#x2264; 3,
+          " class="math-display" ></center>
+          <!--l. 319--><p class="nopar" >
+          respectively. Note that these inequalities are implied by (<a 
+href="#x1-20r8">8<!--tex4ht:ref: knap1111 --></a>) with one of (<a 
+href="#x1-9r5">5<!--tex4ht:ref: knap2 --></a>)&#8211;(<a 
+href="#x1-9r7">7<!--tex4ht:ref: knap4 --></a>).
+          </li>
+          <li class="itemize"><span 
+class="cmmi-10x-x-109">t </span>= <img 
+src="hw8sol202233x.png" alt="1
+3"  class="frac" align="middle">(1<span 
+class="cmmi-10x-x-109">,</span>2<span 
+class="cmmi-10x-x-109">,</span>2<span 
+class="cmmi-10x-x-109">,</span>2)<sup><span 
+class="cmmi-8">T</span> </sup>:
+                                                                                         
+                                                                                         
+          <!--l. 325--><p class="noindent" >Adding together (<a 
+href="#x1-9r4">4<!--tex4ht:ref: knap1 --></a>)&#8211;(<a 
+href="#x1-9r7">7<!--tex4ht:ref: knap4 --></a>) with these multipliers gives
+          <center class="math-display" >
+          <img 
+src="hw8sol202234x.png" alt="                     2
+x1 + x2 + x3 + 2x4 &#x2264; 23,
+          " class="math-display" ></center>
+          <!--l. 328--><p class="nopar" >
+          and rounding down gives the valid constraint for the knapsack problem that cuts off&#x00A0;<span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span>
+          of:
+          <table 
+class="equation"><tr><td><a 
+ id="x1-21r9"></a>
+          <center class="math-display" >
+          <img 
+src="hw8sol202235x.png" alt="x1 + x2 + x3 + 2x4 &#x2264; 2.
+          " class="math-display" ></center></td><td class="equation-label">(9)</td></tr></table>
+          <!--l. 333--><p class="nopar" >
+          Note that (<a 
+href="#x1-20r8">8<!--tex4ht:ref: knap1111 --></a>) is implied by (<a 
+href="#x1-21r9">9<!--tex4ht:ref: knap1112 --></a>), so (<a 
+href="#x1-21r9">9<!--tex4ht:ref: knap1112 --></a>) is the strongest inequality presented here.</li></ul>
+     </dd><dt class="enumerate-enumitem">
+   5. </dt><dd 
+class="enumerate-enumitem">In both parts, we have six stages:
+          <ul class="itemize1">
+          <li class="itemize">Stage 0: find shortest/longest path to node 1.
+          </li>
+          <li class="itemize">Stage 1: find shortest/longest path to nodes 2 and 3.
+          </li>
+          <li class="itemize">Stage 2: find shortest/longest path to nodes 4, 5 and 6.
+          </li>
+          <li class="itemize">Stage 2: find shortest/longest path to nodes 7, 8 and 9.
+          </li>
+          <li class="itemize">Stage 2: find shortest/longest path to nodes 10 and 11.
+          </li>
+          <li class="itemize">Stage 2: find shortest/longest path to node 12.</li></ul>
+     <!--l. 348--><p class="noindent" >The nodes are our states. We let <span 
+class="cmmi-10x-x-109">f</span><sub><span 
+class="cmmi-8">n</span></sub>(<span 
+class="cmmi-10x-x-109">s</span>) denote the shortest/longest path to node&#x00A0;<span 
+class="cmmi-10x-x-109">s </span>in stage&#x00A0;<span 
+class="cmmi-10x-x-109">n</span>. Note
+     that <span 
+class="cmmi-10x-x-109">f</span><sub><span 
+class="cmr-8">0</span></sub>(1) = 0 in both problems. We let <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">n</span></sub> denote the possible predecessors of node&#x00A0;<span 
+class="cmmi-10x-x-109">s</span>. The
+     recursion is
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="hw8sol202236x.png" alt="fn(s,xn) = fk(xn )+ c(xn,s)
+     " class="math-display" ></center>
+     <!--l. 355--><p class="nopar" >
+     where <span 
+class="cmmi-10x-x-109">c</span>(<span 
+class="cmmi-10x-x-109">u,v</span>) denotes the edge cost and <span 
+class="cmmi-10x-x-109">k </span>is the stage for the predecessor&#x00A0;<span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">n</span></sub>. For the shortest path,
+     we have
+     <center class="math-display" >
+     <img 
+src="hw8sol202237x.png" alt="fn(s) =        min       {fn(s,xn)}
+       xn predecessor of s
+     " class="math-display" ></center>
+     <!--l. 361--><p class="nopar" >
+     and for the longest path, we have
+     <center class="math-display" >
+     <img 
+src="hw8sol202238x.png" alt="fn(s) =       max        {fn(s,xn)}.
+        xn predecessor of s
+     " class="math-display" ></center>
+     <!--l. 365--><p class="nopar" >
+          <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+      (a) </dt><dd 
+class="enumerate-enumitem">Shortest paths:
+          <!--l. 370--><p class="noindent" >Stage 1: We get
+          <center class="math-display" >
+          <img 
+src="hw8sol202239x.png" alt="f1(2)  =  5,predecessor 1
+f1(3)  =  2,predecessor 1
+          " class="math-display" ></center>
+          <!--l. 376--><p class="nopar" >
+          <!--l. 378--><p class="noindent" >Stage 2: We get
+          <center class="math-display" >
+          <img 
+src="hw8sol202240x.png" alt="f2(4)  =  5 + 5 = 10,predecessor 2
+f2(5)  =  min {5+ 3,8,2 + 5} = 7,predecessor 3
+f2(6)  =  2 + 4 = 6,predecessor 3
+          " class="math-display" ></center>
+          <!--l. 385--><p class="nopar" >
+                                                                                         
+                                                                                         
+          <!--l. 387--><p class="noindent" >Stage 3: We get
+          <center class="math-display" >
+          <img 
+src="hw8sol202241x.png" alt="f3(7)  =  min {10+ 3,5 + 7,7+  6} = 12,predecessor 2
+f (8)  =  min {7+ 3,2 + 9,6+  5,11 } = 10,predecessor 5
+ 3
+f3(9)  =  6 + 2 = 8,predecessor 6
+          " class="math-display" ></center>
+          <!--l. 394--><p class="nopar" >
+          <!--l. 396--><p class="noindent" >Stage 4: We get
+          <center class="math-display" >
+          <img 
+src="hw8sol202242x.png" alt="f4(10 ) =   min{12 + 2,5+  10,7+ 7,10 + 5} = 14,predecessor 5 or 7
+f4(11 ) =   min{10 + 4,2+  12,6+ 9,8 + 5} = 13,predecessor 9
+          " class="math-display" ></center>
+          <!--l. 402--><p class="nopar" >
+          <!--l. 404--><p class="noindent" >Stage 5: We get
+          <center class="math-display" >
+          <img 
+src="hw8sol202243x.png" alt="f5(12) =   min{14 + 2,7 + 11,10+ 8,13 + 5} = 16,predecessor 10
+          " class="math-display" ></center>
+          <!--l. 409--><p class="nopar" >
+          <!--l. 411--><p class="noindent" >Hence the shortest path has length 16.
+          <!--l. 413--><p class="noindent" >Backtracking through the tables shows that the shortest paths are:
+          <center class="math-display" >
+          <img 
+src="hw8sol202244x.png" alt="1 - 3- 5 - 10-  12,1- 2 - 7- 10 - 12.
+          " class="math-display" ></center>
+          <!--l. 416--><p class="nopar" >
+          </dd><dt class="enumerate-enumitem">
+      (b) </dt><dd 
+class="enumerate-enumitem">Longest paths:
+          <!--l. 420--><p class="noindent" >Stage 1: We get
+          <center class="math-display" >
+          <img 
+src="hw8sol202245x.png" alt="f1(2)  =  5,predecessor 1
+f1(3)  =  2,predecessor 1
+          " class="math-display" ></center>
+                                                                                         
+                                                                                         
+          <!--l. 426--><p class="nopar" >
+          <!--l. 428--><p class="noindent" >Stage 2: We get
+          <center class="math-display" >
+          <img 
+src="hw8sol202246x.png" alt="f2(4)  =  5 + 5 = 10,predecessor 2
+f2(5)  =  max {5 + 3,8,2+ 5} = 8,predecessors 1 or 2
+f2(6)  =  2 + 4 = 6,predecessor 3
+          " class="math-display" ></center>
+          <!--l. 435--><p class="nopar" >
+          <!--l. 437--><p class="noindent" >Stage 3: We get
+          <center class="math-display" >
+          <img 
+src="hw8sol202247x.png" alt="f3(7)  =   max {10+ 3,5 + 7,8+ 6} = 14,predecessor 5
+f3(8)  =   max {8+ 3,2 + 9,6+ 5,11} = 11,predecessor 1 or 3 or 5 or 6
+f (9)  =   6+ 2 = 8,predecessor 6
+ 3
+          " class="math-display" ></center>
+          <!--l. 444--><p class="nopar" >
+          <!--l. 446--><p class="noindent" >Stage 4: We get
+          <center class="math-display" >
+          <img 
+src="hw8sol202248x.png" alt="f4(10)  =   max{14 + 2,5 + 10,8+ 7,11 + 5} = 16,predecessor 5 or 8
+f4(11)  =   max{11 + 4,2 + 12,6+ 9,8 + 5} = 15,predecessor 8 or 6
+          " class="math-display" ></center>
+          <!--l. 452--><p class="nopar" >
+          <!--l. 454--><p class="noindent" >Stage 5: We get
+          <center class="math-display" >
+          <img 
+src="hw8sol202249x.png" alt="f5(12)  =   max {16+ 2,8 + 11,11+ 8,15 + 5} = 20,predecessor 11
+          " class="math-display" ></center>
+          <!--l. 459--><p class="nopar" >
+          <!--l. 461--><p class="noindent" >Hence the longest path has length 20.
+          <!--l. 463--><p class="noindent" >Backtracking through the tables shows that the longest paths are:
+          <center class="math-display" >
+          <img 
+src="hw8sol202250x.png" alt="1- 8 - 11- 12,1 - 3- 8 - 11- 12,1 - 3- 6-  8- 11-  12,1- 5- 8 - 11- 12,1 - 3- 6 - 11- 12.
+          " class="math-display" ></center>
+          <!--l. 466--><p class="nopar" >
+          </dd></dl>
+     </dd></dl>
+    
+</body></html> 
+
+                                                                                         
+
+

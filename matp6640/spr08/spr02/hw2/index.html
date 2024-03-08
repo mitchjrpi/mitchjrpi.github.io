@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Homework 2</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="hw2">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="hw2.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+     <A HREF=..>MATP6640/DSES6770 Linear Programming</A>, Homework 2.
+  </FONT>
+</DIV>
+
+<P>
+
+<DIV ALIGN="RIGHT">
+   Due:  Thursday, February 14, 2002.
+
+</DIV>
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>Show that a convex cone has at most one extreme point,
+namely the origin.
+<DT>2.
+<DD>Let the polyhedron <!-- MATH: $Q=\{x \in {I \!\! R}^2: x_1+x_2 \geq 2, x_1 - 2x_2 \leq
+            2,  x_1 \geq 1, x_1 - x_2 \leq 3 \}$ -->
+<IMG
+ WIDTH="509" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$Q=\{x \in {I \!\! R}^2: x_1+x_2 \geq 2, x_1 - 2x_2 \leq
+2, x_1 \geq 1, x_1 - x_2 \leq 3 \}$">.
+            Graph this polyhedron, and hence find matrices <I>B</I> and <I>C</I> such that
+            <!-- MATH: $Q = \{x \in {I \!\! R}^2: x = By + Cz,
+                      y \geq 0, z \geq 0, \sum_i z_i = 1  \}$ -->
+<IMG
+ WIDTH="434" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$Q = \{x \in {I \!\! R}^2: x = By + Cz,
+y \geq 0, z \geq 0, \sum_i z_i = 1 \}$">.
+<DT>3.
+<DD>Construct a linear programming problem in the standard form
+            <!-- MATH: $\min\{c^Tx:Ax=b, x\geq 0\}$ -->
+<IMG
+ WIDTH="211" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\min\{c^Tx:Ax=b, x\geq 0\}$">
+which has an optimal basis,
+            but, for this basis, not all the reduced costs are nonnegative.
+<DT>4.
+<DD>Consider the linear programming problem
+           <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcrcrcl}
+      \min          & 4x_1 & + & x_2 &   &    & + & x_4 & - & 5x_5 \\
+      \mbox{s.t. }  & 2x_1 & + & x_2 &   &    & + & x_4 & - & 2x_5 & = & 3 \\
+                    & -x_1 & + & x_2 & + & x_3&   &     &   &      & = & 3 \\
+                    &  x_1 &   &     &   &    & + & x_4 & - &  x_5 & = & 1 \\
+                    &      &   &     &   & x_i& \geq & 0, & & i & = & 1,...5.
+             \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="444" HEIGHT="122"
+ SRC="img4.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcrcrcl}
+\min &amp; 4x_1 &amp; + &amp; x_2 &amp; &amp; &amp; + ...
+...\\
+&amp; &amp; &amp; &amp; &amp; x_i&amp; \geq &amp; 0, &amp; &amp; i &amp; = &amp; 1,...5.
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Show that this problem has unbounded objective function value by
+         using the revised simplex algorithm starting from the basic feasible
+         solution <!-- MATH: $x = [0,2,1,1,0]^T$ -->
+<I>x</I> = [0,2,1,1,0]<SUP><I>T</I></SUP>. Use the eta factorization of the
+         inverse, so you should first factorize the initial basis <I>B</I> as
+         <I>LB</I>=<I>U</I>, where <I>L</I> is lower triangular and <I>U</I> is upper triangular.
+         On subsequent iterations, update the basis matrix by using eta
+         matrices.  What is the ray that you find?
+         (Hint: you should find the ray on the second iteration.)
+  <DT>5.
+<DD>The
+<A HREF=http://eaton.math.rpi.edu/CourseMaterials/spring02/MATP6640/hw1q5.pdf>next sheet</A>
+is part of a paper which was submitted to
+    <EM>Mathematical Programming</EM>. The authors propose an algorithm for linear
+    programming and then make some claims about the performance of this
+    algorithm. Do these claims seem reasonable? Justify your answer.
+</DL>
+
+<P>
+
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD></TD><TD ALIGN="LEFT"><A HREF=../..>John Mitchell</A></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Amos Eaton 325</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">x6915.</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT"><A HREF=mailto:mitchj@rpi.edu>mitchj@rpi.edu</A>
+</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Office hours: Wednesday: 10am - 12 noon.</TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<A HREF=../..>John Mitchell</A>
+<BR><I>2002-02-04</I>
+</ADDRESS>
+</BODY>
+</HTML>

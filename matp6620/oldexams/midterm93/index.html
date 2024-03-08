@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Midterm Exam 1993</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="midterm93">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="midterm93.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  <a href=..>67.612
+Combinatorial Optimization and Integer Programming, Spring 93.</a>
+
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER">
+  Midterm Exam, Monday, March 29, 1993.
+
+</DIV>
+
+<P>
+Please do all four problems. Show all work. No books or calculators allowed.
+You may use any result from class, the homeworks, or the texts.
+You may use one sheet of handwritten notes.
+The exam lasts two hours.
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>(20 points)
+Find the shortest path from vertex 1 to vertex 6 in the following
+      graph. Edge lengths are indicated on the edges.
+   <DT>2.
+<DD>(20 points)
+      For each of the following graphs, find the maximum cardinality matching
+      and give a short proof that it realy does contain the largest possible
+      number of edges.
+   <DT>3.
+<DD>(40 points)
+      <DL COMPACT>
+<DT>(a)
+<DD>(35 points; each part is worth five points.) <A NAME="particular">&#160;</A>Consider the binary knapsack problem:
+            <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcrcrcl}
+     \max        & 10x_1 & + & 8x_2 & + & 5x_3 & + & 2x_4 & + & x_5 \\
+     \mbox{st }  &  2x_1 & + & 4x_2 & + & 5x_3 & + & 3x_4 & + & 4x_5 & \leq & 10
+                                 \qquad \qquad (KP)  \\
+                 &&&&&&&&& x_i && \mbox{binary.}
+              \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="567" HEIGHT="76"
+ SRC="img1.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcrcrcl}
+\max &amp; 10x_1 &amp; + &amp; 8x_2 &amp; + &amp; ...
+... \qquad (KP) \\
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp; x_i &amp;&amp; \mbox{binary.}
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Let <!-- MATH: $P=\{x \in {\Re}^5_+:2x_1+4x_2+5x_3+3x_4+4x_5\leq 10,
+                    0 \leq x_i \leq 1\}$ -->
+<IMG
+ WIDTH="506" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$P=\{x \in {\Re}^5_+:2x_1+4x_2+5x_3+3x_4+4x_5\leq 10,
+0 \leq x_i \leq 1\}$">
+and&nbsp;<!-- MATH: $S=P\cap{\cal Z}^5$ -->
+<IMG
+ WIDTH="100" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$S=P\cap{\cal Z}^5$">.
+            <DL COMPACT>
+<DT>i.
+<DD>Solve the LP-relaxation
+<!-- MATH: $\max\{10x_1+8x_2+5x_3+2x_4+x_5 : x \in P \}$ -->
+<IMG
+ WIDTH="352" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\max\{10x_1+8x_2+5x_3+2x_4+x_5 : x \in P \}$">.
+              <DT>ii.
+<DD>What is the dimension of <I>S</I>?
+              <DT>iii.
+<DD>Prove that <!-- MATH: $x_1+x_2+x_3 \leq 2$ -->
+<IMG
+ WIDTH="139" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$x_1+x_2+x_3 \leq 2$">
+is a valid inequality for&nbsp;<I>S</I>.
+              <DT>iv.
+<DD>Prove that <!-- MATH: $x_1+x_2+x_3 \leq 2$ -->
+<IMG
+ WIDTH="139" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$x_1+x_2+x_3 \leq 2$">
+is a facet of conv(<I>S</I>),
+                 the convex hull of&nbsp;<I>S</I>.
+              <DT>v.
+<DD>What is the Chvatal-Gomory rank of the inequality
+                 <!-- MATH: $x_1+x_2+x_3 \leq 2$ -->
+<IMG
+ WIDTH="139" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$x_1+x_2+x_3 \leq 2$">?
+              <DT>vi.
+<DD>Prove that <!-- MATH: $x_3+x_4+x_5 \leq 2$ -->
+<IMG
+ WIDTH="139" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$x_3+x_4+x_5 \leq 2$">
+is a valid inequality for&nbsp;<I>S</I>.
+              <DT>vii.
+<DD>Show that the inequality <!-- MATH: $x_3+x_4+x_5 \leq 2$ -->
+<IMG
+ WIDTH="139" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$x_3+x_4+x_5 \leq 2$">
+can be lifted
+                 to give a stronger valid inequality for&nbsp;<I>S</I>.
+            </DL>
+         <DT>(b)
+<DD>(5 points)
+            Consider the general binary knapsack problem:
+            <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcl}
+                \max          & \sum_{i=1}^n c_ix_i \\
+                \mbox{s.t. }  & \sum_{i=1}^n a_ix_i & \leq & b \\
+                              &            x_i  && \mbox{binary.}
+              \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="226" HEIGHT="76"
+ SRC="img7.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcl}
+\max &amp; \sum_{i=1}^n c_ix_i \\
+\mbox{...
+...^n a_ix_i &amp; \leq &amp; b \\
+&amp; x_i &amp;&amp; \mbox{binary.}
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Generalize the results of part&nbsp;<A HREF="midterm93.html#particular">3a</A> to give a class of
+            valid inequalities for this problem.
+      </DL>
+   <DT>4.
+<DD>(20 points) The <EM>max clique</EM> feasibility problem can be described
+     as follows:
+     <BLOCKQUOTE>
+       An <EM>instance</EM> consists of a graph <I>G</I>=(<I>V</I>,<I>E</I>) and an integer <I>k</I>.
+       The answer is <EM>YES</EM> if the graph contains a clique with at
+       least <I>k</I> vertices; otherwise, the answer is&nbsp;<EM>NO</EM>.
+     
+</BLOCKQUOTE>
+     Show that the <EM>max clique</EM> problem is <I>NP</I>-complete.
+     (Hint: You may want to look at the <EM>complement</EM> of <I>G</I>=(<I>V</I>,<I>E</I>),
+     that is, the graph <I>G</I>=(<I>V</I>,<I>E</I>') where <I>e</I> is in <I>E</I>' if and only if
+     it is not in&nbsp;<I>E</I>.)
+</DL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2005-12-09</I>
+</ADDRESS>
+</BODY>
+</HTML>

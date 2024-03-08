@@ -1,0 +1,20 @@
+ampl: model curvefit.mod;
+ampl: data curvefit.dat;
+ampl: solve;
+CPLEX 6.6.0: 
+CPLEX 6.6.0: optimal solution; objective 0
+0 simplex iterations (0 in phase I)
+ampl: display curve;
+curve [*] :=
+0  11
+1  -8
+2   2
+;
+
+ampl: display error;
+error [*] :=
+1  0
+2  0
+3  0
+;
+

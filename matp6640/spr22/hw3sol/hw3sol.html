@@ -1,0 +1,1516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw3sol.tex"> 
+<meta name="date" content="2022-02-23 13:11:00"> 
+<link rel="stylesheet" type="text/css" href="hw3sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 27--><p class="noindent" >
+<!--l. 30--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12x-x-120">MATP6640/DSES6770 Linear Programming</span></a><span 
+class="cmr-12x-x-120">, Homework 3.</span><br />
+<span 
+class="cmr-12x-x-120">Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 34--><p class="noindent" >
+ Due: 11.59pm on Friday, February 18, 2022 on LMS.<br />
+10% penalty for each day late.</div>
+<!--l. 41--><p class="noindent" >Dantzig-Wolfe decomposition solves the linear programming problem
+   <center class="math-display" >
+<img 
+src="hw3sol0x.png" alt="min   cTx
+s.t.  Ax   =   b                                          (P )
+        x  &#x2208;   X := {x  &#x2208; IRn : Hx =  h,x &#x2265; 0 }
+" class="math-display" ></center>
+<!--l. 50--><p class="nopar" >
+where <span 
+class="cmmi-12">X </span>is a polyhedron and <span 
+class="cmmi-12">A </span>is <span 
+class="cmmi-12">m </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n</span>. The procedure solves subproblems of the
+form
+   <center class="math-display" >
+<img 
+src="hw3sol1x.png" alt="        T    T
+min   (c  - &#x03C0;  A)x
+s.t.        x       &#x2208;   X            (SP (&#x03C0;))
+" class="math-display" ></center>
+<!--l. 62--><p class="nopar" >
+where (<span 
+class="cmmi-12">&#x03C0;,&#x03C3;</span>) <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">I</span><span style="margin-left:0.3em" class="thinspace"></span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">R</span><sup><span 
+class="cmmi-8">m</span><span 
+class="cmr-8">+1</span></sup> is the current dual solution to the Master Problem. Questions&#x00A0;<a 
+href="#x1-373">3<!--tex4ht:ref: q.DW1 --></a> and&#x00A0;<a 
+href="#x1-394">4<!--tex4ht:ref: q.DW2 --></a>
+concern Dantzig-Wolfe decomposition.
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">Let <span 
+class="cmmi-12">Q </span>be the polyhedron
+      <center class="math-display" >
+      <img 
+src="hw3sol2x.png" alt="                      [   ]      [   ]     [   ]      [   ]
+Q  :=  {x &#x2208; IR2 :  x =   1   y1 +   2  y2 +   2   z1 +   1   z2,
+                        3          1         1          1
+
+                  y1 &#x2265; 0,y2 &#x2265; 0,z1 &#x2265; 0,z2 &#x2265; 0,y1 + y2 = 1}.
+      " class="math-display" ></center>
+                                                                                         
+                                                                                         
+      <!--l. 146--><p class="nopar" >
+      Use the proof of the affine Weyl theorem (so use Fourier-Motzkin elimination explicitly) to
+      construct constraints <span 
+class="cmmi-12">Ax </span><span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">b </span>such that
+      <center class="math-display" >
+      <img 
+src="hw3sol3x.png" alt="             2
+Q =  {x &#x2208; IR  : Ax &#x2265;  b}.
+      " class="math-display" ></center>
+      <!--l. 152--><p class="nopar" >
+      (Note that the <span 
+class="cmmi-12">y </span>variables correspond to the extreme points and the <span 
+class="cmmi-12">z </span>variables correspond to
+      the rays.)
+      <!--l. 156--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 159--><p class="noindent" >The initial system of linear equalities and inequalities is <div class="subequations">
+      <table 
+class="alignat">
+                                       <tr><td 
+class="align-odd"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                     <td 
+class="align-even"></td>                                                     <td 
+class="align-odd"></td>                                                         <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>                 <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                       <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>                 <td 
+class="align-odd">2<span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub></td>                                                     <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>                 <td 
+class="align-odd">2<span 
+class="cmmi-12">z</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                     <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>                 <td 
+class="align-odd"><span 
+class="cmmi-12">z</span><sub><span 
+class="cmr-8">2</span></sub></td>                                                     <td 
+class="align-even"> =</td>                                       <td 
+class="align-odd">0</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-label">                                 <a 
+ id="x1-5r1"></a>(1a)
+                                       </td></tr><tr><td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                       <td 
+class="align-odd"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub></td>                                                     <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>                 <td 
+class="align-odd">3<span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                     <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>                 <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub></td>                                                       <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>                 <td 
+class="align-odd"><span 
+class="cmmi-12">z</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                       <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>                 <td 
+class="align-odd"><span 
+class="cmmi-12">z</span><sub><span 
+class="cmr-8">2</span></sub></td>                                                     <td 
+class="align-even"> =</td>                                       <td 
+class="align-odd">0</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-label">                                 <a 
+ id="x1-6r2"></a>(1b)
+                                       </td></tr><tr><td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                         <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                       <td 
+class="align-even">+</td>                                       <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub></td>                                                       <td 
+class="align-even"></td>                                                         <td 
+class="align-odd"></td>                                                           <td 
+class="align-even"></td>                                                         <td 
+class="align-odd"></td>                                                         <td 
+class="align-even"> =</td>                                       <td 
+class="align-odd">1</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-label">                                 <a 
+ id="x1-7r3"></a>(1c)
+                                       </td></tr><tr><td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                         <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                       <td 
+class="align-even"></td>                                                         <td 
+class="align-odd"></td>                                                           <td 
+class="align-even"></td>                                                         <td 
+class="align-odd"></td>                                                           <td 
+class="align-even"></td>                                                         <td 
+class="align-odd"></td>                                                         <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>                 <td 
+class="align-odd">0</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-label">                                 <a 
+ id="x1-8r4"></a>(1d)
+                                       </td></tr><tr><td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                         <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                         <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub></td>                                                       <td 
+class="align-even"></td>                                                         <td 
+class="align-odd"></td>                                                           <td 
+class="align-even"></td>                                                         <td 
+class="align-odd"></td>                                                         <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>                 <td 
+class="align-odd">0</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-label">                                 <a 
+ id="x1-9r5"></a>(1e)
+                                       </td></tr><tr><td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                         <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                         <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                         <td 
+class="align-odd"><span 
+class="cmmi-12">z</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                       <td 
+class="align-even"></td>                                                         <td 
+class="align-odd"></td>                                                         <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>                 <td 
+class="align-odd">0</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-label">                                  <a 
+ id="x1-10r6"></a>(1f)
+                                       </td></tr><tr><td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                         <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                         <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                         <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                         <td 
+class="align-odd"><span 
+class="cmmi-12">z</span><sub><span 
+class="cmr-8">2</span></sub></td>                                                     <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>                 <td 
+class="align-odd">0</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-label">                                 <a 
+ id="x1-11r7"></a>(1g)                                       </td></tr></table>
+      </div>
+      <!--l. 171--><p class="noindent" >Eliminating <span 
+class="cmmi-12">z</span><sub><span 
+class="cmr-8">2</span></sub> by taking (<a 
+href="#x1-6r2">1b<!--tex4ht:ref: eq.1b --></a>)-(<a 
+href="#x1-5r1">1a<!--tex4ht:ref: eq.1a --></a>) and (<a 
+href="#x1-11r7">1g<!--tex4ht:ref: eq.1g --></a>)+(<a 
+href="#x1-5r1">1a<!--tex4ht:ref: eq.1a --></a>) gives the system <div class="subequations">
+                                                                                         
+                                                                                         
+      <table 
+class="alignat">
+                                       <tr><td 
+class="align-odd"> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                      <td 
+class="align-even">+</td>                                       <td 
+class="align-odd"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub></td>                                                      <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>                 <td 
+class="align-odd">2<span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                      <td 
+class="align-even">+</td>                                       <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub></td>                                                        <td 
+class="align-even">+</td>                                       <td 
+class="align-odd"><span 
+class="cmmi-12">z</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                        <td 
+class="align-even"></td>                                                      <td 
+class="align-odd"></td>                                                      <td 
+class="align-even"> =</td>                                       <td 
+class="align-odd">0</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-label">                                 <a 
+ id="x1-13r1"></a>(2a)
+                                       </td></tr><tr><td 
+class="align-odd"></td>                                             <td 
+class="align-even"></td>                                         <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                         <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                        <td 
+class="align-even">+</td>                                       <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub></td>                                                        <td 
+class="align-even"></td>                                                         <td 
+class="align-odd"></td>                                                           <td 
+class="align-even"></td>                                                      <td 
+class="align-odd"></td>                                                      <td 
+class="align-even"> =</td>                                       <td 
+class="align-odd">1</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-label">                                 <a 
+ id="x1-14r2"></a>(2b)
+                                       </td></tr><tr><td 
+class="align-odd"></td>                                             <td 
+class="align-even"></td>                                         <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                         <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                        <td 
+class="align-even"></td>                                                         <td 
+class="align-odd"></td>                                                            <td 
+class="align-even"></td>                                                         <td 
+class="align-odd"></td>                                                           <td 
+class="align-even"></td>                                                      <td 
+class="align-odd"></td>                                                      <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>                 <td 
+class="align-odd">0</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-label">                                  <a 
+ id="x1-15r3"></a>(2c)
+                                       </td></tr><tr><td 
+class="align-odd"></td>                                             <td 
+class="align-even"></td>                                         <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                         <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                         <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub></td>                                                        <td 
+class="align-even"></td>                                                         <td 
+class="align-odd"></td>                                                           <td 
+class="align-even"></td>                                                      <td 
+class="align-odd"></td>                                                      <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>                 <td 
+class="align-odd">0</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-label">                                 <a 
+ id="x1-16r4"></a>(2d)
+                                       </td></tr><tr><td 
+class="align-odd"></td>                                             <td 
+class="align-even"></td>                                         <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                         <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                         <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                         <td 
+class="align-odd"><span 
+class="cmmi-12">z</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                        <td 
+class="align-even"></td>                                                      <td 
+class="align-odd"></td>                                                      <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>                 <td 
+class="align-odd">0</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-label">                                  <a 
+ id="x1-17r5"></a>(2e)
+                                       </td></tr><tr><td 
+class="align-odd"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                           <td 
+class="align-even"></td>                                                         <td 
+class="align-odd"></td>                                                          <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>                 <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                        <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>                 <td 
+class="align-odd">2<span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub></td>                                                      <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>                 <td 
+class="align-odd">2<span 
+class="cmmi-12">z</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                      <td 
+class="align-even"></td>                                                      <td 
+class="align-odd"></td>                                                      <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>                 <td 
+class="align-odd">0</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-odd"></td>                                       <td 
+class="align-even"></td>                                       <td 
+class="align-label">                                  <a 
+ id="x1-18r6"></a>(2f)                                       </td></tr></table>
+      </div>
+      <!--l. 184--><p class="noindent" >Eliminating <span 
+class="cmmi-12">z</span><sub><span 
+class="cmr-8">1</span></sub> by taking (<a 
+href="#x1-17r5">2e<!--tex4ht:ref: eq.2e --></a>)-(<a 
+href="#x1-13r1">2a<!--tex4ht:ref: eq.2a --></a>) and (<a 
+href="#x1-18r6">2f<!--tex4ht:ref: eq.2f --></a>)+2(<a 
+href="#x1-13r1">2a<!--tex4ht:ref: eq.2a --></a>) gives the system <div class="subequations">
+      <table 
+class="alignat">
+                                          <tr><td 
+class="align-odd"></td>                                                 <td 
+class="align-even"></td>                                            <td 
+class="align-odd"></td>                                              <td 
+class="align-even"></td>                                            <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                            <td 
+class="align-even">+</td>                                          <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub></td>                                                          <td 
+class="align-even"></td>                                                          <td 
+class="align-odd"></td>                                                          <td 
+class="align-even"></td>                                                          <td 
+class="align-odd"></td>                                                          <td 
+class="align-even"> =</td>                                          <td 
+class="align-odd">1</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-label">                                     <a 
+ id="x1-20r1"></a>(3a)
+                                          </td></tr><tr><td 
+class="align-odd"></td>                                                 <td 
+class="align-even"></td>                                            <td 
+class="align-odd"></td>                                              <td 
+class="align-even"></td>                                            <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                            <td 
+class="align-even"></td>                                                             <td 
+class="align-odd"></td>                                                              <td 
+class="align-even"></td>                                                          <td 
+class="align-odd"></td>                                                          <td 
+class="align-even"></td>                                                          <td 
+class="align-odd"></td>                                                          <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>                  <td 
+class="align-odd">0</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-label">                                    <a 
+ id="x1-21r2"></a>(3b)
+                                          </td></tr><tr><td 
+class="align-odd"></td>                                                 <td 
+class="align-even"></td>                                            <td 
+class="align-odd"></td>                                              <td 
+class="align-even"></td>                                            <td 
+class="align-odd"></td>                                              <td 
+class="align-even"></td>                                            <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub></td>                                                          <td 
+class="align-even"></td>                                                          <td 
+class="align-odd"></td>                                                          <td 
+class="align-even"></td>                                                          <td 
+class="align-odd"></td>                                                          <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>                  <td 
+class="align-odd">0</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-label">                                     <a 
+ id="x1-22r3"></a>(3c)
+                                          </td></tr><tr><td 
+class="align-odd"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                               <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>                  <td 
+class="align-odd"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub></td>                                                            <td 
+class="align-even">+</td>                                          <td 
+class="align-odd">2<span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                          <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>                  <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub></td>                                                          <td 
+class="align-even"></td>                                                          <td 
+class="align-odd"></td>                                                          <td 
+class="align-even"></td>                                                          <td 
+class="align-odd"></td>                                                          <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>                  <td 
+class="align-odd">0</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-label">                                    <a 
+ id="x1-23r4"></a>(3d)
+                                          </td></tr><tr><td 
+class="align-odd"> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                          <td 
+class="align-even">+</td>                                          <td 
+class="align-odd">2<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub></td>                                                          <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>                  <td 
+class="align-odd">5<span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                          <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>                  <td 
+class="align-odd"></td>                   <td 
+class="align-even"></td>                  <td 
+class="align-odd"></td>                  <td 
+class="align-even"></td>                  <td 
+class="align-odd"></td>                  <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2265;</span></td>                  <td 
+class="align-odd">0</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-odd"></td>                                          <td 
+class="align-even"></td>                                          <td 
+class="align-label">                                     <a 
+ id="x1-24r5"></a>(3e)                                          </td></tr></table>
+                                                                                         
+                                                                                         
+      </div>
+      <!--l. 196--><p class="noindent" >Eliminating <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub> by taking (<a 
+href="#x1-22r3">3c<!--tex4ht:ref: eq.3c --></a>)-(<a 
+href="#x1-20r1">3a<!--tex4ht:ref: eq.3a --></a>) and (<a 
+href="#x1-23r4">3d<!--tex4ht:ref: eq.3d --></a>)+(<a 
+href="#x1-20r1">3a<!--tex4ht:ref: eq.3a --></a>) gives the system <div class="subequations">
+      <table 
+class="alignat">
+                                           <tr><td 
+class="align-odd"></td>                                                  <td 
+class="align-even"></td>                                              <td 
+class="align-odd"></td>                                                <td 
+class="align-even"></td>                                              <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                              <td 
+class="align-even"></td>                                                            <td 
+class="align-odd"></td>                                                            <td 
+class="align-even"></td>                                                            <td 
+class="align-odd"></td>                                                            <td 
+class="align-even"></td>                                                            <td 
+class="align-odd"></td>                                                            <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>                   <td 
+class="align-odd">0</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-label">                                      <a 
+ id="x1-26r1"></a>(4a)
+                                           </td></tr><tr><td 
+class="align-odd"></td>                                                  <td 
+class="align-even"></td>                                              <td 
+class="align-odd"></td>                                                <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>                   <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                              <td 
+class="align-even"></td>                                                            <td 
+class="align-odd"></td>                                                            <td 
+class="align-even"></td>                                                            <td 
+class="align-odd"></td>                                                            <td 
+class="align-even"></td>                                                            <td 
+class="align-odd"></td>                                                            <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>                   <td 
+class="align-odd"><span 
+class="cmsy-10x-x-120">- </span>1</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-label">                                      <a 
+ id="x1-27r2"></a>(4b)
+                                           </td></tr><tr><td 
+class="align-odd"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                                 <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>                   <td 
+class="align-odd"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub></td>                                                              <td 
+class="align-even">+</td>                                           <td 
+class="align-odd">3<span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                            <td 
+class="align-even"></td>                                                            <td 
+class="align-odd"></td>                                                            <td 
+class="align-even"></td>                                                            <td 
+class="align-odd"></td>                                                            <td 
+class="align-even"></td>                                                            <td 
+class="align-odd"></td>                                                            <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>                   <td 
+class="align-odd">1</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-label">                                      <a 
+ id="x1-28r3"></a>(4c)
+                                           </td></tr><tr><td 
+class="align-odd"> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                            <td 
+class="align-even">+</td>                                           <td 
+class="align-odd">2<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub></td>                                                            <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>                   <td 
+class="align-odd">5<span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub></td>                                                            <td 
+class="align-even"></td>                                                            <td 
+class="align-odd"></td>                                                            <td 
+class="align-even"></td>                                                            <td 
+class="align-odd"></td>                                                            <td 
+class="align-even"></td>                                                            <td 
+class="align-odd"></td>                                                            <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>                   <td 
+class="align-odd">0</td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-odd"></td>                                           <td 
+class="align-even"></td>                                           <td 
+class="align-label">                                      <a 
+ id="x1-29r4"></a>(4d)                                           </td></tr></table>
+      </div>
+      <!--l. 207--><p class="noindent" >The variable <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> only appears in inequalities, and with a mixture of signs, so we need to take
+      combinations of inequalities: <div class="subequations">
+                                                                                         
+                                                                                         
+      <table 
+class="alignat">
+              <tr><td 
+class="align-odd">(<a 
+href="#x1-26r1">4<span 
+class="cmmi-12">a</span><!--tex4ht:ref: eq.4a --></a>)<span 
+class="cmmi-12">, </span>(<a 
+href="#x1-27r2">4<span 
+class="cmmi-12">b</span><!--tex4ht:ref: eq.4b --></a>) :</td>              <td 
+class="align-even"></td>                <td 
+class="align-odd"></td>                   <td 
+class="align-even"></td>                <td 
+class="align-odd"></td>                   <td 
+class="align-even"></td>              <td 
+class="align-odd">1</td>              <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>      <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub></td>                   <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>      <td 
+class="align-odd"></td>          <td 
+class="align-even"></td>       <td 
+class="align-odd"></td>        <td 
+class="align-even"></td>       <td 
+class="align-odd">0</td>               <td 
+class="align-even"><span style="margin-left:3.26288pt" class="tmspace"></span><img 
+src="hw3sol4x.png" alt="                                                                                                                       = &#x21D2;"  class="Longrightarrow" ><span style="margin-left:3.26288pt" class="tmspace"></span></td>      <td 
+class="align-odd"></td>         <td 
+class="align-even"></td>       <td 
+class="align-odd">1</td>                 <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>      <td 
+class="align-odd">0</td>                                                                                                                                                                                                                                                                                                          <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-label">         <a 
+ id="x1-31r1"></a>(5a)
+              </td></tr><tr><td 
+class="align-odd">(<a 
+href="#x1-26r1">4<span 
+class="cmmi-12">a</span><!--tex4ht:ref: eq.4a --></a>)<span 
+class="cmmi-12">, </span>(<a 
+href="#x1-29r4">4<span 
+class="cmmi-12">d</span><!--tex4ht:ref: eq.4d --></a>) :</td>              <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>      <td 
+class="align-odd"><img 
+src="hw3sol5x.png" alt="1-
+5"  class="frac" align="middle"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub></td>                   <td 
+class="align-even">+</td>              <td 
+class="align-odd"><img 
+src="hw3sol6x.png" alt="2-
+5"  class="frac" align="middle"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub></td>                   <td 
+class="align-even"></td>                   <td 
+class="align-odd"></td>                      <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>      <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub></td>                   <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>      <td 
+class="align-odd"></td>          <td 
+class="align-even"></td>       <td 
+class="align-odd"></td>        <td 
+class="align-even"></td>       <td 
+class="align-odd">0</td>               <td 
+class="align-even"><span style="margin-left:3.26288pt" class="tmspace"></span><img 
+src="hw3sol7x.png" alt="                                                                                                                       = &#x21D2;"  class="Longrightarrow" ><span style="margin-left:3.26288pt" class="tmspace"></span></td>      <td 
+class="align-odd"><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub></td>                   <td 
+class="align-even">+</td>              <td 
+class="align-odd">2<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub></td>                   <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>      <td 
+class="align-odd">0</td>                                                                                                                                                                                                                                                                                                          <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-label">         <a 
+ id="x1-32r2"></a>(5b)
+              </td></tr><tr><td 
+class="align-odd">(<a 
+href="#x1-27r2">4<span 
+class="cmmi-12">b</span><!--tex4ht:ref: eq.4b --></a>)<span 
+class="cmmi-12">, </span>(<a 
+href="#x1-28r3">4<span 
+class="cmmi-12">c</span><!--tex4ht:ref: eq.4c --></a>) :</td>               <td 
+class="align-even"></td>                <td 
+class="align-odd"></td>                   <td 
+class="align-even"></td>                <td 
+class="align-odd"></td>                   <td 
+class="align-even"></td>              <td 
+class="align-odd">1</td>              <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>      <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub></td>                   <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>      <td 
+class="align-odd"><span 
+class="cmsy-10x-x-120">-</span><img 
+src="hw3sol8x.png" alt="                                                      1
+                                                      --
+                                                      3"  class="frac" align="middle"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub></td>                   <td 
+class="align-even">+</td>              <td 
+class="align-odd"><img 
+src="hw3sol9x.png" alt="                                                                                1
+                                                                                --
+                                                                                3"  class="frac" align="middle"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub></td>                   <td 
+class="align-even">+</td>              <td 
+class="align-odd"><img 
+src="hw3sol10x.png" alt="                                                                                                           1
+                                                                                                           --
+                                                                                                           3"  class="frac" align="middle"></td>              <td 
+class="align-even"><span style="margin-left:3.26288pt" class="tmspace"></span><img 
+src="hw3sol11x.png" alt="                                                                                                                       = &#x21D2;"  class="Longrightarrow" ><span style="margin-left:3.26288pt" class="tmspace"></span></td>      <td 
+class="align-odd"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub></td>                         <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>      <td 
+class="align-odd"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub></td>                      <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>      <td 
+class="align-odd"><span 
+class="cmsy-10x-x-120">- </span>2</td>                                                                                                                                                                                                                                                                                                      <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-label">         <a 
+ id="x1-33r3"></a>(5c)
+              </td></tr><tr><td 
+class="align-odd">(<a 
+href="#x1-28r3">4<span 
+class="cmmi-12">c</span><!--tex4ht:ref: eq.4c --></a>)<span 
+class="cmmi-12">, </span>(<a 
+href="#x1-29r4">4<span 
+class="cmmi-12">d</span><!--tex4ht:ref: eq.4d --></a>) :</td>              <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">-</span></td>      <td 
+class="align-odd"><img 
+src="hw3sol12x.png" alt="1-
+5"  class="frac" align="middle"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub></td>                   <td 
+class="align-even">+</td>              <td 
+class="align-odd"><img 
+src="hw3sol13x.png" alt="2-
+5"  class="frac" align="middle"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub></td>                   <td 
+class="align-even"></td>                   <td 
+class="align-odd"></td>                      <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>      <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub></td>                   <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>      <td 
+class="align-odd"><span 
+class="cmsy-10x-x-120">-</span><img 
+src="hw3sol14x.png" alt="                                                      1-
+                                                      3"  class="frac" align="middle"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub></td>                   <td 
+class="align-even">+</td>              <td 
+class="align-odd"><img 
+src="hw3sol15x.png" alt="                                                                                1-
+                                                                                3"  class="frac" align="middle"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub></td>                   <td 
+class="align-even">+</td>              <td 
+class="align-odd"><img 
+src="hw3sol16x.png" alt="                                                                                                           1-
+                                                                                                           3"  class="frac" align="middle"></td>              <td 
+class="align-even"><span style="margin-left:3.26288pt" class="tmspace"></span><img 
+src="hw3sol17x.png" alt="                                                                                                                       = &#x21D2;"  class="Longrightarrow" ><span style="margin-left:3.26288pt" class="tmspace"></span></td>      <td 
+class="align-odd">2<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub></td>                       <td 
+class="align-even">+</td>              <td 
+class="align-odd"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub></td>                      <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265;</span></td>      <td 
+class="align-odd">5</td>                                                                                                                                                                                                                                                                                                          <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-odd"></td>              <td 
+class="align-even"></td>              <td 
+class="align-label">         <a 
+ id="x1-34r4"></a>(5d)              </td></tr></table>
+      </div>
+      <!--l. 222--><p class="noindent" >Thus,
+      <center class="math-display" >
+      <img 
+src="hw3sol18x.png" alt="Q = {x &#x2208;  IR2 : - x + 2x  &#x2265; 0, x - x  &#x2265;  - 2, 2x + x &#x2265;  5}.
+                  1     2       1    2         1    2
+      " class="math-display" ></center>
+      <!--l. 225--><p class="nopar" >
+      <div class="center" 
+>
+<!--l. 227--><p class="noindent" >
+                                                                                         
+                                                                                         
+<!--l. 262--><p class="noindent" >
+<img src=hw3q1.png>
+</div>
+      </li>
+      <li 
+  class="enumerate" id="x1-36x2">Suppose we are given the extreme points and extreme rays of a pointed polyhedron
+      <span 
+class="cmmi-12">P </span><span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="cmmi-12">I</span><span style="margin-left:0.3em" class="thinspace"></span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">R</span><sup><span 
+class="cmmi-8">n</span></sup>. Let <img 
+src="hw3sol19x.png" alt="&#x02C6;x"  class="circ" > <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">I</span><span style="margin-left:0.3em" class="thinspace"></span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">R</span><sup><span 
+class="cmmi-8">n</span></sup>. Construct a linear programming problem whose solution
+      provides us with an inequality <span 
+class="cmmi-12">g</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x &#x003E; g</span><sup><span 
+class="cmmi-8">T</span> </sup><img 
+src="hw3sol20x.png" alt="x&#x02C6;"  class="circ" > that is satisfied by all <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">P </span>and violated
+      by&#x00A0;<img 
+src="hw3sol21x.png" alt="x&#x02C6;"  class="circ" >, or allows us to conclude that no such inequality exists. What is the dual of
+      your LP? Give an interpretation of the dual LP. (Such an inequality defines a
+      separating hyperplane that separates <img 
+src="hw3sol22x.png" alt="&#x02C6;x"  class="circ" > from&#x00A0;<span 
+class="cmmi-12">P</span>. Note that the variables in the LP will
+      include&#x00A0;<span 
+class="cmmi-12">g</span>.)
+      <!--l. 278--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 281--><p class="noindent" >Let the extreme points of <span 
+class="cmmi-12">P </span>be <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x</span><sup><span 
+class="cmmi-8">j</span></sup> : <span 
+class="cmmi-12">j </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">J</span><span 
+class="cmsy-10x-x-120">}</span>. Let the extreme rays of <span 
+class="cmmi-12">P </span>be <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">d</span><sup><span 
+class="cmmi-8">k</span></sup> : <span 
+class="cmmi-12">k </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">K</span><span 
+class="cmsy-10x-x-120">}</span>. The
+      LP is
+      <center class="math-display" >
+      <img 
+src="hw3sol23x.png" alt="maxg &#x2208;IRn,t&#x2208;IR                    t
+subject to      - gT (xj - &#x02C6;x) +  t  &#x2264;   0  &#x2200;j &#x2208; J        (P )
+                     - gT dk        &#x2264;   0  &#x2200;k &#x2208; K
+      " class="math-display" ></center>
+      <!--l. 290--><p class="nopar" >
+      Note that <span 
+class="cmmi-12">g </span>= 0, <span 
+class="cmmi-12">t </span>= 0 is always feasible in (<span 
+class="cmmi-12">P</span>). If the optimal value is strictly positive then it
+      is unbounded, because this is a conic LP: all the right hand side terms are zero. If the
+      optimal value is unbounded then any ray (<span class="bar-css"><span 
+class="cmmi-12">g</span></span><span 
+class="cmmi-12">,</span><span class="bar-css"><span 
+class="cmmi-12">t</span></span>) with <span class="bar-css"><span 
+class="cmmi-12">t</span></span> <span 
+class="cmmi-12">&#x003E; </span>0 gives <span class="bar-css"><span 
+class="cmmi-12">g</span></span> that defines a separating
+                                                                                         
+                                                                                         
+      hyperplane.
+      <!--l. 298--><p class="noindent" >The dual problem is
+      <center class="math-display" >
+      <img 
+src="hw3sol24x.png" alt="maxy,w        &#x2211;        j    0      &#x2211;         k
+subject to  -    j&#x2208;J yj(x&#x2211; - &#x02C6;x)  -     k&#x2208;K wkd    =  0       (D )
+                        j&#x2208;J yj                  =  1
+                           y,               w   &#x2265;  0
+      " class="math-display" ></center>
+      <!--l. 306--><p class="nopar" >
+      The first constraint in (<span 
+class="cmmi-12">D</span>) can be written as
+      <center class="math-display" >
+      <img 
+src="hw3sol25x.png" alt="&#x2211;         &#x2211;           &#x2211;
+    y xj +    w  dk =     y &#x02C6;x = &#x02C6;x,
+     j          k          j
+j&#x2208;J       k&#x2208;K          j&#x2208;J
+      " class="math-display" ></center>
+      <!--l. 310--><p class="nopar" >
+      from the second constraint in&#x00A0;(<span 
+class="cmmi-12">D</span>). Thus, the dual problem searches for a convex combination
+      of the extreme points and a nonnegative combination of the extreme rays that gives the
+      point&#x00A0;<img 
+src="hw3sol26x.png" alt="&#x02C6;x"  class="circ" >.
+      </li>
+      <li 
+  class="enumerate" id="x1-38x3"><a 
+ id="x1-373"></a> When using Dantzig-Wolfe decomposition, assume the current subproblem has an optimal
+      solution <span class="bar-css"><span 
+class="cmmi-12">x</span></span> with value <span 
+class="cmmi-12">v</span>. Can you give a lower bound on the optimal value of&#x00A0;(<span 
+class="cmmi-12">P</span>)? What does
+      your lower bound become if the current dual solution (<span 
+class="cmmi-12">&#x03C0;,&#x03C3;</span>) to the master problem is dual
+      feasible?
+      <!--l. 410--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>The dual to (<span 
+class="cmmi-12">P</span>) is
+      <center class="math-display" >
+      <img 
+src="hw3sol27x.png" alt="maxw,z       bTw   +   hT z
+subject to  AT w   +  HT  z  &#x2264;  c         (D )
+
+              w,          z     free
+      " class="math-display" ></center>
+      <!--l. 419--><p class="nopar" >
+      The dual to the subproblem (<span 
+class="cmmi-12">SP</span>(<span 
+class="cmmi-12">&#x03C0;</span>) is
+      <center class="math-display" >
+      <img 
+src="hw3sol28x.png" alt="maxt         hTt
+subject to  HT t  &#x2264;   c - AT &#x03C0;      (DSP  (&#x03C0;))
+               t      free
+      " class="math-display" ></center>
+      <!--l. 427--><p class="nopar" >
+      which has optimal value <span 
+class="cmmi-12">h</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">t </span>= <span 
+class="cmmi-12">v </span>from strong duality. We get a feasible solution to (<span 
+class="cmmi-12">D</span>) by
+      setting <span 
+class="cmmi-12">w </span>= <span 
+class="cmmi-12">&#x03C0;</span>, <span 
+class="cmmi-12">z </span>= <span 
+class="cmmi-12">t</span>, with value <span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">&#x03C0; </span>+ <span 
+class="cmmi-12">h</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">t </span>= <span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">&#x03C0; </span>+ <span 
+class="cmmi-12">v</span>. Thus, we have the valid lower bound
+      <span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">&#x03C0; </span>+ <span 
+class="cmmi-12">v</span>.
+      <!--l. 433--><p class="noindent" >If the current dual solution (<span 
+class="cmmi-12">&#x03C0;,&#x03C3;</span>) to the master problem is dual feasible then <span 
+class="cmmi-12">v </span>= <span 
+class="cmmi-12">&#x03C3; </span>and the
+      lower bound becomes the optimal value <span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">&#x03C0; </span>+ <span 
+class="cmmi-12">&#x03C3;</span>.
+      </li>
+      <li 
+  class="enumerate" id="x1-40x4"><a 
+ id="x1-394"></a> Suppose (<span 
+class="cmmi-12">P</span>) has been solved using Dantzig-Wolfe decomposition. How would you find the
+      optimal dual solution to the original problem&#x00A0;(<span 
+class="cmmi-12">P</span>)?
+      <!--l. 444--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>We look again at the problems (<span 
+class="cmmi-12">D</span>) and (<span 
+class="cmmi-12">DSP</span>(<span 
+class="cmmi-12">&#x03C0;</span>)) from the solution to
+      Question&#x00A0;<a 
+href="#x1-373">3<!--tex4ht:ref: q.DW1 --></a>. If (<span 
+class="cmmi-12">&#x03C0;,&#x03C3;</span>) is optimal for the dual of the Master Problem then the dual solution
+      given in Question&#x00A0;<a 
+href="#x1-373">3<!--tex4ht:ref: q.DW1 --></a> is optimal for&#x00A0;(<span 
+class="cmmi-12">D</span>): it is feasible from the argument in Question&#x00A0;<a 
+href="#x1-373">3<!--tex4ht:ref: q.DW1 --></a> and it
+      has value equal to the optimal value <span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">&#x03C0; </span>+ <span 
+class="cmmi-12">&#x03C3;</span>.
+      </li>
+      <li 
+  class="enumerate" id="x1-42x5">Consider the standard form polyhedron <span 
+class="cmmi-12">P </span>= <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">I</span><span style="margin-left:0.3em" class="thinspace"></span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">R</span><sup><span 
+class="cmmi-8">n</span></sup> : <span 
+class="cmmi-12">Ax </span>= <span 
+class="cmmi-12">b,x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmsy-10x-x-120">} </span>where <span 
+class="cmmi-12">b </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">I</span><span style="margin-left:0.3em" class="thinspace"></span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">R</span><sup><span 
+class="cmmi-8">m</span></sup>
+      and <span 
+class="cmmi-12">A </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">I</span><span style="margin-left:0.3em" class="thinspace"></span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">R</span><sup><span 
+class="cmmi-8">m</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup> of rank <span 
+class="cmmi-12">m</span>. Prove or give counterexamples to the following two
+      statements:
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-44x1">If <span 
+class="cmmi-12">n </span>= <span 
+class="cmmi-12">m </span>+ 1 then <span 
+class="cmmi-12">P </span>has at most two basic feasible solutions.
+           </li>
+           <li 
+  class="enumerate" id="x1-46x2">Consider the problem of minimizing max<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x,d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x</span><span 
+class="cmsy-10x-x-120">} </span>over <span 
+class="cmmi-12">P</span>, where <span 
+class="cmmi-12">c,d </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">I</span><span style="margin-left:0.3em" class="thinspace"></span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">R</span><sup><span 
+class="cmmi-8">n</span></sup>. If
+           this problem has an optimal solution, it has an optimal solution that is an extreme
+           point of&#x00A0;<span 
+class="cmmi-12">P</span>.</li></ol>
+      <!--l. 482--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-48x1"><span 
+class="cmbx-12">True: </span>The dimension of the affine space <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">I</span><span style="margin-left:0.3em" class="thinspace"></span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">R</span><sup><span 
+class="cmmi-8">n</span></sup> : <span 
+class="cmmi-12">Ax </span>= <span 
+class="cmmi-12">b</span><span 
+class="cmsy-10x-x-120">} </span>is <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">m </span>= 1, so <span 
+class="cmmi-12">P</span>
+           is a line segment, so it has at most two extreme points.
+           </li>
+           <li 
+  class="enumerate" id="x1-50x2"><span 
+class="cmbx-12">False: </span>Consider the problem
+           <center class="math-display" >
+           <img 
+src="hw3sol29x.png" alt="minx &#x2208;IR2   max {x1,x2}
+subject to  x1  +    x2  =   2
+            x1,      x2  &#x2265;   0
+           " class="math-display" ></center>
+           <!--l. 496--><p class="nopar" >
+           The unique optimal solution to this problem is <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> = (1<span 
+class="cmmi-12">, </span>1), which is not a
+           BFS.</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-52x6">The <span 
+class="cmbx-12">Project: </span><br 
+class="newline" />Along with your solutions to this homework, hand in a brief description of what you
+      would like to do for the project part of this course. Your project can be one of the
+      following:
+           <ul class="itemize1">
+           <li class="itemize">a topic arising in your research that fits well with the topics covered in the course.
+           You would work on your own on such a project.
+           </li>
+           <li class="itemize">another project you suggest or I suggest. You can work in groups of up to three
+           people on such a project. All group members should contribute equally to the
+           project. Each individual should turn in a one-page description of their contribution
+           to the project along with the group report.</li></ul>
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                                                         </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                                                                    </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Thursday 11am&#8211;1pm., on webex <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-12">https://rensselaer.webex.com/meet/mitchj</span></a></td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

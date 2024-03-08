@@ -1,0 +1,566 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw6sol.tex"> 
+<meta name="date" content="2016-05-07 14:15:00"> 
+<link rel="stylesheet" type="text/css" href="hw6sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 15--><p class="noindent" >
+<!--l. 17--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12">MATP6640/DSES6770 Linear Programming</span></a><span 
+class="cmr-12">, Homework 6.</span><br />
+<span 
+class="cmbx-12">Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 21--><p class="noindent" >
+ Due: Friday, May 6, 2016.<br />
+10% penalty for each day late.</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1">Let <span 
+class="cmmi-10x-x-109">K </span>be a cone. A function <span 
+class="cmmi-10x-x-109">f </span>: int(<span 
+class="cmmi-10x-x-109">K</span>) <span 
+class="cmsy-10x-x-109">&#x2192; </span><span 
+class="msbm-10x-x-109">&#x211D; </span>is <span 
+class="cmti-10x-x-109">logarithmically homogeneous </span>if there exists
+     a constant &#x0398; such that <span 
+class="cmmi-10x-x-109">f</span>(<span 
+class="cmmi-10x-x-109">tx</span>) = <span 
+class="cmmi-10x-x-109">f</span>(<span 
+class="cmmi-10x-x-109">x</span>) <span 
+class="cmsy-10x-x-109">- </span>&#x0398;ln(<span 
+class="cmmi-10x-x-109">t</span>) for all <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208;</span> int(<span 
+class="cmmi-10x-x-109">K</span>) and <span 
+class="cmmi-10x-x-109">t &#x003E; </span>0. (Here, int(<span 
+class="cmmi-10x-x-109">K</span>)
+     denotes the interior of&#x00A0;<span 
+class="cmmi-10x-x-109">K</span>.) Show that the barrier function for the second order cone, namely
+     <span 
+class="cmmi-10x-x-109">f</span>(<span 
+class="cmmi-10x-x-109">&#x03BE;,x</span>) = <span 
+class="cmsy-10x-x-109">-</span>ln(<span 
+class="cmmi-10x-x-109">&#x03BE;</span><sup><span 
+class="cmr-8">2</span></sup><span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">x</span>), is logarithmically homogeneous, where <span 
+class="cmmi-10x-x-109">&#x03BE; </span>is a nonnegative scalar, <span 
+class="cmmi-10x-x-109">x </span>is
+     an <span 
+class="cmmi-10x-x-109">n</span>-vector, and <span 
+class="cmmi-10x-x-109">K </span>= <span 
+class="cmsy-10x-x-109">{</span>(<span 
+class="cmmi-10x-x-109">&#x03BE;,x</span>) : <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmmi-10x-x-109">&#x03BE;</span><sup><span 
+class="cmr-8">2</span></sup><span 
+class="cmsy-10x-x-109">}</span>. Show also the barrier function for the semidefinite
+     cone, namely <span 
+class="cmmi-10x-x-109">f</span>(<span 
+class="cmmi-10x-x-109">X</span>) = <span 
+class="cmsy-10x-x-109">-</span>lndet(<span 
+class="cmmi-10x-x-109">X</span>), is logarithmically homogeneous.
+     <!--l. 190--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution: </span>For the second order cone, we have, for positive constant <span 
+class="cmmi-10x-x-109">t </span>and feasible (<span 
+class="cmmi-10x-x-109">&#x03BE;,x</span>):
+     <div class="eqnarray">
+     <center class="math-display" >
+     <img 
+src="hw6sol0x.png" alt="f(t&#x03BE;,tx)  =  - ln((t&#x03BE;)2 - (tx )T (tx))
+                 ( 2 2   2 T )
+          =  - ln t &#x03BE; - t x x
+          =  - ln(&#x03BE;2 - xTx )- 2ln(t),
+     " class="math-display" ></center>
+     </div>so it is logarithmically homogeneous with parameter &#x0398; = 2.
+     <!--l. 200--><p class="noindent" >For the semidefinite cone and with <span 
+class="cmmi-10x-x-109">X </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">n</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup>, we have <div class="eqnarray">
+     <center class="math-display" >
+                                                                                         
+                                                                                         
+     <img 
+src="hw6sol1x.png" alt="f(tX ) =   - ln det(tX )
+       =   - ln (tndet(X ))   from  properties of det
+
+       =   - ln det(X )- n ln(t)
+     " class="math-display" ></center>
+     </div>so the barrier function is logarithmically homogeneous, with barrier parameter&#x00A0;<span 
+class="cmmi-10x-x-109">n</span>.
+     </li>
+     <li 
+  class="enumerate" id="x1-7x2">Show that the standard dual form max<span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmmi-10x-x-109">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">y </span>: <span 
+class="cmmi-10x-x-109">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">y </span>+ <span 
+class="cmmi-10x-x-109">s </span>= <span 
+class="cmmi-10x-x-109">c,s </span><span 
+class="cmsy-10x-x-109">&#x2265; </span>0<span 
+class="cmsy-10x-x-109">} </span>is equivalent to a problem of the
+     form min<span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmmi-10x-x-109">g</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">s </span>: <span 
+class="cmmi-10x-x-109">Ms </span>= <span 
+class="cmmi-10x-x-109">Mc,s </span><span 
+class="cmsy-10x-x-109">&#x2265; </span>0<span 
+class="cmsy-10x-x-109">} </span>for some matrix <span 
+class="cmmi-10x-x-109">M </span>and some vector&#x00A0;<span 
+class="cmmi-10x-x-109">g</span>. You may assume the rows
+     of <span 
+class="cmmi-10x-x-109">A </span>are linearly independent.
+     <!--l. 252--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution: </span>Let <span 
+class="cmmi-10x-x-109">A </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">m</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup>, so rank(<span 
+class="cmmi-10x-x-109">A</span>) = <span 
+class="cmmi-10x-x-109">m</span>. The dimension of the null space of&#x00A0;<span 
+class="cmmi-10x-x-109">A </span>is <span 
+class="cmmi-10x-x-109">n </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">m</span>. Define
+     the (<span 
+class="cmmi-10x-x-109">n </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">m</span>) <span 
+class="cmsy-10x-x-109">&#x00D7; </span><span 
+class="cmmi-10x-x-109">n </span>matrix <span 
+class="cmmi-10x-x-109">M </span>to have <span 
+class="cmmi-10x-x-109">n </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">m </span>rows comprising a basis for the null space of&#x00A0;<span 
+class="cmmi-10x-x-109">A</span>. The
+     matrix
+     <center class="math-display" >
+     <img 
+src="hw6sol2x.png" alt="     [    ]
+P =   -A---
+       M
+     " class="math-display" ></center>
+     <!--l. 261--><p class="nopar" >
+     is an invertible <span 
+class="cmmi-10x-x-109">n</span><span 
+class="cmsy-10x-x-109">&#x00D7;</span><span 
+class="cmmi-10x-x-109">n </span>matrix. It follows that the set of solutions to <span 
+class="cmmi-10x-x-109">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">y </span>+ <span 
+class="cmmi-10x-x-109">s </span>= <span 
+class="cmmi-10x-x-109">c </span>is equivalent to the
+     set of solutions to
+     <center class="math-display" >
+     <img 
+src="hw6sol3x.png" alt="    T
+P(A  y + s) = P c
+     " class="math-display" ></center>
+     <!--l. 267--><p class="nopar" >
+     or equivalently
+     <center class="math-display" >
+     <img 
+src="hw6sol4x.png" alt="[    T ]     [    ]     [     ]
+ -AA---- y +  -A---s =   -Ac---.
+    0          M          M c
+     " class="math-display" ></center>
+     <!--l. 273--><p class="nopar" >
+     The matrix <span 
+class="cmmi-10x-x-109">AA</span><sup><span 
+class="cmmi-8">T</span> </sup> is invertible, so for any choice of <span 
+class="cmmi-10x-x-109">s </span>we can take
+     <center class="math-display" >
+     <img 
+src="hw6sol5x.png" alt="y = (AAT  )-1(Ac-  As),
+                                                                                         
+                                                                                         
+     " class="math-display" ></center>
+     <!--l. 277--><p class="nopar" >
+     so
+     <center class="math-display" >
+     <img 
+src="hw6sol6x.png" alt="bT y = bT (AAT )-1Ac - (AT (AAT )-1b)T s.
+     " class="math-display" ></center>
+     <!--l. 281--><p class="nopar" >
+     The term <span 
+class="cmmi-10x-x-109">b</span><sup><span 
+class="cmmi-8">T</span> </sup>(<span 
+class="cmmi-10x-x-109">AA</span><sup><span 
+class="cmmi-8">T</span> </sup>)<sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sup><span 
+class="cmmi-10x-x-109">Ac </span>is constant, so we get an equivalent LP of the form in the question by
+     taking <span 
+class="cmmi-10x-x-109">g </span>= <span 
+class="cmmi-10x-x-109">A</span><sup><span 
+class="cmmi-8">T</span> </sup>(<span 
+class="cmmi-10x-x-109">AA</span><sup><span 
+class="cmmi-8">T</span> </sup>)<sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sup><span 
+class="cmmi-10x-x-109">b</span>.
+     </li>
+     <li 
+  class="enumerate" id="x1-9x3"><a 
+ id="x1-83"></a> Let
+     <center class="math-display" >
+     <img 
+src="hw6sol7x.png" alt="     [      ]         [       ]          [      ]       [    ]
+C :=    0  0  ,  A  :=   1   0   ,  A  :=   0  1  ,  b :=    3
+       0  9       1     0  - 1       2     1  2            6
+     " class="math-display" ></center>
+     <!--l. 413--><p class="nopar" >
+     The primal and dual semidefinite programs are
+     <center class="math-display" >
+     <img 
+src="hw6sol8x.png" alt="min   trace(CX )                               max         bTy
+s.t.  trace(AiX )  =  bi  i = 1,...,m    (P)    s.t.   &#x2211;m   Aiyi  +  S   =  C     (D)
+              X   &#x227D;  0                                 i=1         S   &#x227D;  0
+     " class="math-display" ></center>
+     <!--l. 422--><p class="nopar" >
+     with <span 
+class="cmmi-10x-x-109">m </span>= 2. Show that (<span 
+class="cmmi-10x-x-109">P</span>) has an optimal value of&#x00A0;9. Show (<span 
+class="cmmi-10x-x-109">D</span>) is strictly feasible. What do you
+     conclude about the optimal dual value, and the relationship of the optimal dual slack
+     matrix <span 
+class="cmmi-10x-x-109">S </span>to the optimal primal matrix&#x00A0;<span 
+class="cmmi-10x-x-109">X</span>? Use these observations to solve the dual
+     problem.
+     <!--l. 433--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution: </span>The primal problem can be written
+     <center class="math-display" >
+     <img 
+src="hw6sol9x.png" alt="min              9X22
+subject to     X11 - X22      =  3
+           X1[2 + X21 + 2X]22  =  6
+              X11   X12
+              X21   X22      &#x227D;  0.
+     " class="math-display" ></center>
+     <!--l. 443--><p class="nopar" >
+     Note for any choice of <span 
+class="cmmi-10x-x-109">X</span><sub><span 
+class="cmr-8">22</span></sub>, we must have <span 
+class="cmmi-10x-x-109">X</span><sub><span 
+class="cmr-8">11</span></sub> = 3 + <span 
+class="cmmi-10x-x-109">X</span><sub><span 
+class="cmr-8">22</span></sub> and <span 
+class="cmmi-10x-x-109">X</span><sub><span 
+class="cmr-8">12</span></sub> = <span 
+class="cmmi-10x-x-109">X</span><sub><span 
+class="cmr-8">21</span></sub> = 3 <span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">X</span><sub><span 
+class="cmr-8">22</span></sub>. Thus, we
+     have
+     <center class="math-display" >
+     <img 
+src="hw6sol10x.png" alt="     [                  ]
+X =    3+ X22   3- X22   .
+       3- X22     X22
+     " class="math-display" ></center>
+     <!--l. 448--><p class="nopar" >
+     The diagonal entries are nonnegative provided <span 
+class="cmmi-10x-x-109">X</span><sub><span 
+class="cmr-8">22</span></sub> <span 
+class="cmsy-10x-x-109">&#x2265; </span>0. The determinant of <span 
+class="cmmi-10x-x-109">X </span>is
+     <center class="math-display" >
+     <img 
+src="hw6sol11x.png" alt="det(X ) = (3 + X22)X22 - (3 - X22)2 = 9X22 - 9.
+     " class="math-display" ></center>
+     <!--l. 454--><p class="nopar" >
+     Thus, <span 
+class="cmmi-10x-x-109">X </span>is feasible provided <span 
+class="cmmi-10x-x-109">X</span><sub><span 
+class="cmr-8">22</span></sub> <span 
+class="cmsy-10x-x-109">&#x2265; </span>1. It is then clear from the objective function that the optimal
+     solution is to take <span 
+class="cmmi-10x-x-109">X</span><sub><span 
+class="cmr-8">22</span></sub> = 1, and the optimal primal solution is
+     <center class="math-display" >
+     <img 
+src="hw6sol12x.png" alt="      [      ]    [   ] [     ]
+X * =   4  2   =    2    2  1
+        2  1        1
+     " class="math-display" ></center>
+     <!--l. 462--><p class="nopar" >
+     with value&#x00A0;9.
+     <!--l. 465--><p class="noindent" >For dual feasibility we require
+     <center class="math-display" >
+     <img 
+src="hw6sol13x.png" alt="        [ 0  0 ]      [ 1   0 ]     [  0 1 ]    [ - y      - y      ]
+0 &#x227C; S =          - y1           - y2          =      1        2      .
+          0  9          0  - 1         1 2        - y2  9+ y1 - 2y2
+     " class="math-display" ></center>
+     <!--l. 484--><p class="nopar" >
+     We get <span 
+class="cmmi-10x-x-109">S </span>positive definite if, for example, <span 
+class="cmmi-10x-x-109">y</span><sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmsy-10x-x-109">-</span>4 and <span 
+class="cmmi-10x-x-109">y</span><sub><span 
+class="cmr-8">2</span></sub> = 0.
+     <!--l. 487--><p class="noindent" >Since we have strict dual feasibility, the primal and dual optimal values agree, and the optimal
+                                                                                         
+                                                                                         
+     primal matrix <span 
+class="cmmi-10x-x-109">X</span><sup><span 
+class="cmsy-8">*</span></sup> and optimal dual slack matrix <span 
+class="cmmi-10x-x-109">S</span><sup><span 
+class="cmsy-8">*</span></sup> are simultaneously diagonalizable. It follows
+     from the structure of <span 
+class="cmmi-10x-x-109">X</span><sup><span 
+class="cmsy-8">*</span></sup> that we must have
+     <center class="math-display" >
+     <img 
+src="hw6sol14x.png" alt="       [    ]               [         ]
+S* = &#x03B2;    1   [ 1  - 2 ] = &#x03B2;    1  - 2
+         - 2                  - 2   4
+     " class="math-display" ></center>
+     <!--l. 495--><p class="nopar" >
+     for some <span 
+class="cmmi-10x-x-109">&#x03B2; </span><span 
+class="cmsy-10x-x-109">&#x2265; </span>0. We then get
+     <center class="math-display" >
+     <img 
+src="hw6sol15x.png" alt="[                   ]     [         ]
+  - y1      - y2             1  - 2
+  - y2  9+ y1 - 2y2   = &#x03B2;   - 2   4
+     " class="math-display" ></center>
+     <!--l. 504--><p class="nopar" >
+     so <span 
+class="cmmi-10x-x-109">y</span><sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">&#x03B2; </span>and <span 
+class="cmmi-10x-x-109">y</span><sub><span 
+class="cmr-8">2</span></sub> = 2<span 
+class="cmmi-10x-x-109">&#x03B2;</span>. Comparing the two values for <span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">22</span></sub><sup><span 
+class="cmsy-8">*</span></sup> then gives
+     <center class="math-display" >
+     <img 
+src="hw6sol16x.png" alt="9 - &#x03B2; - 4&#x03B2; = 4&#x03B2;
+     " class="math-display" ></center>
+     <!--l. 509--><p class="nopar" >
+     so <span 
+class="cmmi-10x-x-109">&#x03B2; </span>= 1, giving the optimal solutions:
+     <center class="math-display" >
+     <img 
+src="hw6sol17x.png" alt="     [     ]             [         ]
+y* =   - 1    and   S* =     1  - 2  .
+         2                 - 2    4
+     " class="math-display" ></center>
+     <!--l. 514--><p class="nopar" >
+     We do indeed get <span 
+class="cmmi-10x-x-109">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">y</span><sup><span 
+class="cmsy-8">*</span></sup> = 9.
+     </li>
+     <li 
+  class="enumerate" id="x1-11x4">Let <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span><sub><span 
+class="cmr-8">+</span></sub><sup><span 
+class="cmmi-8">n</span></sup>. Show that the constraint 1 <span 
+class="cmsy-10x-x-109">&#x2264; </span>&#x03A0;<sub><span 
+class="cmmi-8">i</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmmi-8">n</span></sup><span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">i</span></sub> is equivalent to a collection of <span 
+class="cmmi-10x-x-109">O</span>(<span 
+class="cmmi-10x-x-109">n</span>) rotated
+     second order cone constraints.
+     <!--l. 531--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution: </span>We assume <span 
+class="cmmi-10x-x-109">n </span>is odd. (The case where <span 
+class="cmmi-10x-x-109">n </span>is even is easier.) Let <span 
+class="cmmi-10x-x-109">k </span>= <img 
+src="hw6sol18x.png" alt="n+1-
+ 2"  class="frac" align="middle">. The
+     system
+     <center class="math-display" >
+     <img 
+src="hw6sol19x.png" alt="1 &#x2264; &#x03A0;n  xi,  x &#x2208; &#x211D;n
+     i=1          +
+     " class="math-display" ></center>
+                                                                                         
+                                                                                         
+     <!--l. 538--><p class="nopar" >
+     is equivalent to the system
+     <center class="math-display" >
+     <img 
+src="hw6sol20x.png" alt="1 &#x2264; &#x03A0;kj=1yj,  y &#x2208; &#x211D;k+,   x &#x2208; &#x211D;n+, x2j-1x2j &#x2265; y2j for j = 1,...,k - 1, xn &#x2265; y2k.
+     " class="math-display" ></center>
+     <!--l. 544--><p class="nopar" >
+     This system has <span 
+class="cmmi-10x-x-109">k </span>rotated second order cone constraints plus one constraint of the original form
+     involving a product of <span 
+class="cmmi-10x-x-109">k </span>nonnegative variables.
+     <!--l. 548--><p class="noindent" >By repeating this construction <span 
+class="cmmi-10x-x-109">O</span>(ln(<span 
+class="cmmi-10x-x-109">n</span>)) times, we can obtain a system equivalent to the original one
+     consisting of <span 
+class="cmmi-10x-x-109">O</span>(<span 
+class="cmmi-10x-x-109">n</span>) rotated second order constraints in approximately 2<span 
+class="cmmi-10x-x-109">n </span>nonnegative
+     variables.
+     </li>
+     <li 
+  class="enumerate" id="x1-13x5">Most semidefinite relaxations of combinatorial optimization problems result in a linear constraint on
+     the trace of the primal matrix&#x00A0;<span 
+class="cmmi-10x-x-109">X</span>. For example, in the relaxation of MaxCut, the diagonal entries
+     are all required to equal one, so the trace must equal the number of nodes. The relaxation of the
+     combinatorial optimization problem gives a primal SDP of the form (<span 
+class="cmmi-10x-x-109">P</span>) in question&#x00A0;<a 
+href="#x1-83">3<!--tex4ht:ref: q.sdpexample --></a>;
+     assume this primal SDP and its dual are feasible. Assume further that there exists a
+     strictly feasible primal solution&#x00A0;<span class="bar-css"><span 
+class="cmmi-10x-x-109">X</span></span>. Show that if the constraints of the primal problem
+     imply that any feasible solution must satisfy trace(<span 
+class="cmmi-10x-x-109">X</span>) = <span 
+class="cmmi-10x-x-109">a </span>for some positive constant <span 
+class="cmmi-10x-x-109">a</span>
+     then the feasible region for the dual is unbounded, and strictly feasible dual solutions
+     exist.
+     <!--l. 598--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution: </span>We prove by contradiction that there must exist a solution <span 
+class="cmmi-10x-x-109">&#x03BB; </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">m</span></sup> satisfying
+     <table 
+class="equation"><tr><td><a 
+ id="x1-14r1"></a>
+     <center class="math-display" >
+     <img 
+src="hw6sol21x.png" alt="m&#x2211;
+   &#x03BB;iAi = I,
+i=1
+     " class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+     <!--l. 604--><p class="nopar" >
+     under the assumptions of the question. Note that this is a linear system of equations in the
+     variables&#x00A0;<span 
+class="cmmi-10x-x-109">&#x03BB;</span>, and it is saying that <span 
+class="cmmi-10x-x-109">I </span>is in the span of the matrices&#x00A0;<span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmmi-10x-x-109">A</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmsy-10x-x-109">}</span>. If (<a 
+href="#x1-14r1">1<!--tex4ht:ref: eq.sumA --></a>) does not hold then
+     <span 
+class="cmmi-10x-x-109">I </span>is not in the span of the set of matrices, so (by standard linear algebra results on
+     null spaces and ranges) there must be a matrix <span 
+class="cmmi-10x-x-109">M </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">n</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup> making inner product of
+     0 with each of the <span 
+class="cmmi-10x-x-109">A</span><sub><span 
+class="cmmi-8">i</span></sub> and inner product of 1 with&#x00A0;<span 
+class="cmmi-10x-x-109">I</span>. Thus, there exists a matrix <span 
+class="cmmi-10x-x-109">M</span>
+                                                                                         
+                                                                                         
+     satisfying
+     <center class="math-display" >
+     <img 
+src="hw6sol22x.png" alt="trace(M Ai ) = 0,i = 1,...,m,  trace(M I) = trace(M ) = 1
+     " class="math-display" ></center>
+     <!--l. 615--><p class="nopar" >
+     For values of <span 
+class="cmmi-10x-x-109">&#x03B2; </span>close to zero, we have <span class="bar-css"><span 
+class="cmmi-10x-x-109">X</span></span> + <span 
+class="cmmi-10x-x-109">&#x03B2;M </span>is feasible in the primal SDP with
+     <center class="math-display" >
+     <img 
+src="hw6sol23x.png" alt="trace( ¯X + &#x03B2;M ) = a + &#x03B2; &#x2044;= a,
+     " class="math-display" ></center>
+     <!--l. 620--><p class="nopar" >
+     a contradiction. Hence, (<a 
+href="#x1-14r1">1<!--tex4ht:ref: eq.sumA --></a>) must hold for some&#x00A0;<span class="bar-css"><span 
+class="cmmi-10x-x-109">&#x03BB;</span></span>.
+     <!--l. 624--><p class="noindent" >Let <span class="bar-css"><span 
+class="cmmi-10x-x-109">y</span></span> be dual feasible and let <span class="bar-css"><span 
+class="cmmi-10x-x-109">S</span></span> = <span 
+class="cmmi-10x-x-109">C </span><span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmex-10x-x-109">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">i</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmmi-8">m</span></sup><span class="bar-css"><span 
+class="cmmi-10x-x-109">y</span></span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-10x-x-109">A</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-109">&#x227D; </span>0. By taking <span 
+class="cmmi-10x-x-109">y </span>= <span class="bar-css"><span 
+class="cmmi-10x-x-109">y</span></span><span 
+class="cmsy-10x-x-109">-</span><span class="bar-css"><span 
+class="cmmi-10x-x-109">&#x03BB;</span></span>, we get a dual feasible
+     solution with dual slack matrix <span 
+class="cmmi-10x-x-109">S </span>= <span class="bar-css"><span 
+class="cmmi-10x-x-109">S</span></span> + <span 
+class="cmmi-10x-x-109">I</span>, which is positive definite. Hence, strictly feasible dual
+     solutions exist.
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                        </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                                  </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours: Tuesday: 2&#8211;4pm, Wednesday: 12noon&#8211;2pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

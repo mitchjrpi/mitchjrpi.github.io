@@ -1,0 +1,74 @@
+<TITLE>An analytic center cutting plane method in conic programming</TITLE>
+
+<H1>An analytic center cutting plane method in conic programming</H1>
+
+<H2>Vasile (Luc) Basescu</H2>
+
+<H3>PhD Thesis, August 2003</H3>
+
+<H4><a href=http://www.math.rpi.edu>Mathematical Sciences</a></H4>
+<H4><a href=http://www.rpi.edu>Rensselaer Polytechnic Institute</a></H4>
+<H4>Advisor: <a href=../..>John Mitchell</a></H4>
+
+
+<B>Download the thesis</B>,
+in <A HREF=rpithes.pdf>pdf</A>
+
+<H4>Abstract:</H4>
+
+<p>
+Conic programming has been lately one of the most dynamic area of the optimization field. Although a lot of
+attention was focused on designing and analyzing interior-point algorithms for solving optimization problems,
+the class of analytic center cutting plane methods was less investigated. These methods are designed to solve
+feasibility problems by finding points which are interior to different sets of interest. Although these methods
+can be used by themselves to solve optimization problems, most of the time they are used as an initial step in a
+larger interior-point scheme employed in solving optimization problems.
+
+<p>
+There are many advantages in using this class of algorithms. For these methods to work there is no need to have
+before hand a complete description of the set of interest. All we need is an oracle that describes the set. This
+feature is especially useful when such a description is either missing or it is too large to be practical.
+
+<p>
+In this thesis we present a general analytic center cutting plane method for solving feasibility problems in the
+context of conic programming. The set of interest is convex, bounded, fully dimensional. It is described by an
+oracle that either recognizes that a point is interior to the set or returns a set of constraints violated by
+the current point but verified by all the points of the set of interest. These violated constraints are also
+known as cuts.
+
+<p>
+Our approach is an extension to the analytic center methods used in linear programming, second order cone
+programming or semidefinite programming. We prove that our algorithm can solve any feasibility problem with a
+convex, bounded, fully dimensional set of interest. We derive an upper bound for the total number of iterations
+the algorithm requires to get the solution. Also, we analyze how expensive each iteration is.
+
+<p>
+The performance of the algorithm is analyzed by solving some feasibility problems derived from the set of
+problems proposed in ``The Seventh DIMACS Implementation Challenge Semidefinite and Related Optimization
+Problems". We consider feasibility problems with the sets described only by linear and second order conic
+constraints. We will also present an algorithm for solving optimization problems that incorporates our analytic
+center cutting plane method. In the last part of this thesis we analyze the linear programming version of this
+algorithm and prove that it converges. Complexity results are also presented.
+
+
+
+
+
+<P>
+
+<a href=http://opac.lib.rpi.edu/search/abasescu>Library
+listing</a>.
+
+<p>
+
+<B>Download the thesis</B>,
+in <A HREF=rpithes.pdf>pdf</A>.
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-924637-1";
+_udn ="rpi.edu";
+urchinTracker();
+</script>
+

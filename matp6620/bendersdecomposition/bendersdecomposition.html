@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="bendersdecomposition.tex"> 
+<meta name="date" content="2017-04-13 20:34:00"> 
+<link rel="stylesheet" type="text/css" href="bendersdecomposition.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 113--><p class="noindent" >
+<!--l. 114--><p class="noindent" ><span 
+class="cmbx-12x-x-172">Benders Decomposition</span><br />
+<a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a></div>
+<!--l. 118--><p class="noindent" >See Nemhauser and Wolsey, section II.3.7 and III.5.4, for more information.
+<!--l. 122--><p class="indent" >   Benders Decomposition reduces a mixed integer optimization problem with <span 
+class="cmmi-12">p </span>continuous
+variables and <span 
+class="cmmi-12">n </span>integer variables to one with just one continuous variable, and still <span 
+class="cmmi-12">n </span>integer
+variables, but typically with an enormous number of constraints.
+<!--l. 129--><p class="indent" >   The initial problem is
+   <table 
+class="equation"><tr><td><a 
+ id="x1-2r1"></a>
+   <center class="math-display" >
+<img 
+src="bendersdecomposition0x.png" alt="maxx,y      cTx  +   hTy
+subject to  Ax   +    Gy  &#x2264;   b
+                          n       p
+              x  &#x2208; X  &#x2286; &#x2124; +,y &#x2208; &#x211D; +
+" class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+<!--l. 136--><p class="nopar" >
+where <span 
+class="cmmi-12">b </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">m</span></sup> and <span 
+class="cmmi-12">c</span>, <span 
+class="cmmi-12">h</span>, <span 
+class="cmmi-12">A</span>, and <span 
+class="cmmi-12">G </span>are all dimensioned appropriately.
+<!--l. 139--><p class="indent" >   For each possible choice of <span class="bar-css"><span 
+class="cmmi-12">x</span></span> <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">X</span>, we could find the best choice for&#x00A0;<span 
+class="cmmi-12">y </span>by solving a linear
+program, so we could regard <span 
+class="cmmi-12">y </span>as a function of&#x00A0;<span 
+class="cmmi-12">x</span>. We can then replace the contribution of <span 
+class="cmmi-12">y </span>to the
+objective by a scalar variable representing the value of the best choice for a given&#x00A0;<span class="bar-css"><span 
+class="cmmi-12">x</span></span>. We start out
+with a crude approximation to this value, and then generate a sequence of dual solutions to tighten
+up the approximation.
+<!--l. 146--><p class="indent" >   Let <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">X</span>. We denote the value of the best choice for <span 
+class="cmmi-12">y </span>by <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">LP</span> </sub>(<span 
+class="cmmi-12">x</span>). We have
+   <table 
+class="equation"><tr><td><a 
+ id="x1-3r2"></a>
+   <center class="math-display" >
+<img 
+src="bendersdecomposition1x.png" alt="zLP(x) :=  maxy        hTy
+           subject to   Gy   &#x2264;   b - Ax
+                                 p
+                         y  &#x2208;   &#x211D;+
+" class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+<!--l. 155--><p class="nopar" >
+By LP duality, we can also write
+   <table 
+class="equation"><tr><td><a 
+ id="x1-4r3"></a>
+   <center class="math-display" >
+<img 
+src="bendersdecomposition2x.png" alt="                               T
+zLP (x) =  minu       (b - Ax )Tu
+           subject to        G  u  &#x2265;   h
+                                u  &#x2208;   &#x211D;m+
+" class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+<!--l. 164--><p class="nopar" >
+Note that the feasible region <span 
+class="cmmi-12">Q </span>for the dual problem does not depend on&#x00A0;<span 
+class="cmmi-12">x</span>. We denote the extreme
+points and extreme rays of <span 
+class="cmmi-12">Q </span>as <span 
+class="cmmi-12">K </span>and <span 
+class="cmmi-12">J </span>respectively: <div class="eqnarray">
+   <center class="math-display" >
+<img 
+src="bendersdecomposition3x.png" alt="extreme  points:  uk,  k &#x2208; K
+  extreme  rays:  rj,  j &#x2208; J
+" class="math-display" ></center>
+</div>
+<!--l. 172--><p class="indent" >   If the inner product between (<span 
+class="cmmi-12">b </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">Ax</span>) and any ray <span 
+class="cmmi-12">r</span><sup><span 
+class="cmmi-8">j</span></sup> is negative then <span 
+class="cmmi-12">z</span><sub>
+<span 
+class="cmmi-8">LP</span> </sub>(<span 
+class="cmmi-12">x</span>) = <span 
+class="cmsy-10x-x-120">-&#x221E;</span>.
+Equivalently, in this situation, problem (<a 
+href="#x1-3r2">2<!--tex4ht:ref: eq.zprimal --></a>) is infeasible, so <span 
+class="cmmi-12">x </span>does not allow a feasible solution to
+the original problem&#x00A0;(<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.mip --></a>). Thus, we have the valid constraints
+   <table 
+class="equation"><tr><td><a 
+ id="x1-6r4"></a>
+                                                                                         
+                                                                                         
+   <center class="math-display" >
+<img 
+src="bendersdecomposition4x.png" alt="(b - Ax )Trj &#x2265; 0  for j &#x2208; J
+" class="math-display" ></center></td><td class="equation-label">(4)</td></tr></table>
+<!--l. 179--><p class="nopar" >
+that must be satisfied by any <span 
+class="cmmi-12">x </span>that is feasible in&#x00A0;(<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.mip --></a>).
+<!--l. 182--><p class="indent" >   If <span 
+class="cmmi-12">x </span>satisfies (<a 
+href="#x1-6r4">4<!--tex4ht:ref: eq.raycut --></a>) then the value of <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">LP</span> </sub>(<span 
+class="cmmi-12">x</span>) is given by
+   <center class="math-display" >
+<img 
+src="bendersdecomposition5x.png" alt="                       T k
+zLP (x) = mki&#x2208;nK (b - Ax ) u .
+" class="math-display" ></center>
+<!--l. 185--><p class="nopar" >
+<!--l. 187--><p class="indent" >   Thus, problem (<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.mip --></a>) can be written equivalently as
+   <table 
+class="equation"><tr><td><a 
+ id="x1-7r5"></a>
+   <center class="math-display" >
+<img 
+src="bendersdecomposition6x.png" alt="                  T
+maxx,t           c x + t
+subject to  (b - Ax )T uk  &#x2265;  t   for k &#x2208; K
+            (b - Ax )Trj  &#x2265;  0   for j &#x2208; J
+                t &#x2208; &#x211D;, x  &#x2208;  X
+" class="math-display" ></center></td><td class="equation-label">(5)</td></tr></table>
+<!--l. 195--><p class="nopar" >
+<!--l. 197--><p class="indent" >   This problem has fewer variables than the original formulation (<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.mip --></a>), but it may have a
+huge number of constraints. Thus, these constraints are generated as needed, as cutting
+planes.
+<!--l. 201--><p class="indent" >   Let <img 
+src="bendersdecomposition7x.png" alt="&#x02C6;K"  class="circ" > <span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="cmmi-12">K </span>and <span 
+class="cmmi-12">&#x0134;</span> <span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="cmmi-12">J </span>denote the current known extreme points and extreme rays of&#x00A0;<span 
+class="cmmi-12">Q</span>,
+respectively. The current relaxation of (<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.mip --></a>) and (<a 
+href="#x1-7r5">5<!--tex4ht:ref: eq.benders --></a>) is then
+   <table 
+class="equation"><tr><td><a 
+ id="x1-8r6"></a>
+                                                                                         
+                                                                                         
+   <center class="math-display" >
+<img 
+src="bendersdecomposition8x.png" alt="maxx,t           cTx + t
+subject to  (b - Ax )T uk  &#x2265;  t   for k &#x2208; &#x02C6;K
+                     T j                 &#x02C6;
+            (b - Ax ) r   &#x2265;  0   for j &#x2208; J
+                t &#x2208; &#x211D;, x  &#x2208;  X
+" class="math-display" ></center></td><td class="equation-label">(6)</td></tr></table>
+<!--l. 211--><p class="nopar" >
+The scalar variable <span 
+class="cmmi-12">t </span>represents an estimate of <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">LP</span> </sub>(<span 
+class="cmmi-12">x</span>).
+<!--l. 216--><p class="indent" >   The algorithm can then be written:
+      <dl class="enumerate"><dt class="enumerate">
+   1. </dt><dd 
+class="enumerate">Determine (possibly empty) initial sets <img 
+src="bendersdecomposition9x.png" alt=" &#x02C6;
+K"  class="circ" > of extreme points and <span 
+class="cmmi-12">&#x0134;</span> of extreme rays
+      of&#x00A0;<span 
+class="cmmi-12">Q</span>.
+      </dd><dt class="enumerate">
+   2. </dt><dd 
+class="enumerate">Solve problem (<a 
+href="#x1-8r6">6<!--tex4ht:ref: eq.bendersrelax --></a>), giving solution&#x00A0;<span class="bar-css"><span 
+class="cmmi-12">x</span></span> and corresponding&#x00A0;<span class="bar-css"><span 
+class="cmmi-12">t</span></span>.
+      </dd><dt class="enumerate">
+   3. </dt><dd 
+class="enumerate">Determine <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">LP</span> </sub>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span>) by solving (<a 
+href="#x1-4r3">3<!--tex4ht:ref: eq.zdual --></a>).
+      </dd><dt class="enumerate">
+   4. </dt><dd 
+class="enumerate">If <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">LP</span> </sub>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span>) = <span 
+class="cmsy-10x-x-120">-&#x221E;</span>, an extreme ray of&#x00A0;<span 
+class="cmmi-12">Q </span>has been found. Add the extreme ray to <span 
+class="cmmi-12">&#x0134;</span> and
+      return to Step&#x00A0;2.
+      </dd><dt class="enumerate">
+   5. </dt><dd 
+class="enumerate">If <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">LP</span> </sub>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span>) <span 
+class="cmmi-12">&#x003C;</span> <span class="bar-css"><span 
+class="cmmi-12">t</span></span> and finite, an extreme point of&#x00A0;<span 
+class="cmmi-12">Q </span>has been found. Add the extreme point
+      to <img 
+src="bendersdecomposition10x.png" alt="&#x02C6;K"  class="circ" > and return to Step&#x00A0;2.
+      </dd><dt class="enumerate">
+   6. </dt><dd 
+class="enumerate">If <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">LP</span> </sub>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span>) = <span class="bar-css"><span 
+class="cmmi-12">t</span></span> then <span class="bar-css"><span 
+class="cmmi-12">x</span></span> solves (<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.mip --></a>), with optimal <span 
+class="cmmi-12">y </span>equal to the solution to (<a 
+href="#x1-3r2">2<!--tex4ht:ref: eq.zprimal --></a>) with <span 
+class="cmmi-12">x </span>= <span class="bar-css"><span 
+class="cmmi-12">x</span></span>.</dd></dl>
+    
+</body></html> 
+
+                                                                                         
+
+

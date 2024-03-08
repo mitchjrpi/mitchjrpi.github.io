@@ -1,0 +1,556 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw5sol2022.tex"> 
+<meta name="date" content="2022-04-03 20:26:00"> 
+<link rel="stylesheet" type="text/css" href="hw5sol2022.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 12--><p class="noindent" >
+<!--l. 15--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12x-x-120">MATP6640/DSES6770 Linear Programming</span></a><span 
+class="cmr-12x-x-120">, Homework 5.</span><br />
+<span 
+class="cmr-12x-x-120">Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 19--><p class="noindent" >
+ Due: 11.59pm on Friday, April 1, 2022 on LMS.<br />
+10% penalty for each day late.</div>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">Let a stochastic program have a finite set <span 
+class="cmmi-12">S </span>of scenarios <span 
+class="cmmi-12">&#x03BE;</span><sup><span 
+class="cmmi-8">s</span></sup>, each with probability&#x00A0;<span 
+class="cmmi-12">p</span><sub>
+<span 
+class="cmmi-8">s</span></sub>. Let the
+      first stage decision variables be <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sub><span 
+class="cmr-8">+</span></sub><sup><span 
+class="cmmi-8">n</span></sup> and assume the problem has complete
+      recourse for any first stage decision. Let 0 <span 
+class="cmmi-12">&#x003C; &#x03B1; &#x003C; </span>1. For any feasible first stage
+      decision&#x00A0;<span 
+class="cmmi-12">x</span>, the Conditional Value at Risk <span 
+class="cmmi-12">&#x03C1;</span>(<span 
+class="cmmi-12">x</span>) can be calculated by solving the
+      problem
+      <center class="math-display" >
+      <img 
+src="hw5sol20220x.png" alt="&#x03C1;(x) :=   min            &#x03B7;  +   1&#x2211;     p v
+            y,&#x03B7;,v               &#x03B1;   s&#x2208;S  s s
+         subject to W  ys  =  hs - T sx  &#x2200;s &#x2208; S
+                    qT ys  &#x2264;  &#x03B7; + vs     &#x2200;s &#x2208; S
+                       ys  &#x2265;  0          &#x2200;s &#x2208; S
+      " class="math-display" ></center>
+      <!--l. 64--><p class="nopar" >
+      Prove that <span 
+class="cmmi-12">&#x03C1;</span>(<span 
+class="cmmi-12">x</span>) is a convex function of&#x00A0;<span 
+class="cmmi-12">x</span>.
+      <!--l. 67--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 70--><p class="noindent" >Let <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">(1)</span></sup> and <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">(2)</span></sup> be feasible first stage decisions. Since the problem has complete
+      recourse, there are optimal second stage solutions (<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">s</span><span 
+class="cmr-8">(</span><span 
+class="cmmi-8">i</span><span 
+class="cmr-8">)</span></sup><span 
+class="cmmi-12">.&#x03B7;</span><sup><span 
+class="cmr-8">(</span><span 
+class="cmmi-8">i</span><span 
+class="cmr-8">)</span></sup><span 
+class="cmmi-12">,v</span><sub>
+<span 
+class="cmmi-8">s</span></sub><sup><span 
+class="cmr-8">(</span><span 
+class="cmmi-8">i</span><span 
+class="cmr-8">)</span></sup>) <span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">s </span>for the first stage
+      decisions <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">(</span><span 
+class="cmmi-8">i</span><span 
+class="cmr-8">)</span></sup>, <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">, </span>2. Let <span 
+class="cmmi-12">&#x03BB; </span><span 
+class="cmsy-10x-x-120">&#x2208; </span>[0<span 
+class="cmmi-12">, </span>1] and define <span class="bar-css"><span 
+class="cmmi-12">x</span></span> = <span 
+class="cmmi-12">&#x03BB;x</span><sup><span 
+class="cmr-8">(1)</span></sup> + (1 <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03BB;</span>)<span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">(2)</span></sup>. Define
+      <span class="bar-css"><span 
+class="cmmi-12">y</span></span><sup><span 
+class="cmmi-8">s</span></sup> = <span 
+class="cmmi-12">&#x03BB;y</span><sup><span 
+class="cmmi-8">s</span><span 
+class="cmr-8">(1)</span></sup> + (1 <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03BB;</span>)<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">s</span><span 
+class="cmr-8">(2)</span></sup> <span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">s</span>, <span class="bar-css"><span 
+class="cmmi-12">&#x03B7;</span></span> = <span 
+class="cmmi-12">&#x03BB;&#x03B7;</span><sup><span 
+class="cmr-8">(1)</span></sup> + (1 <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03BB;</span>)<span 
+class="cmmi-12">&#x03B7;</span><sup><span 
+class="cmr-8">(2)</span></sup>, and <span class="bar-css"><span 
+class="cmmi-12">v</span></span><sub>
+<span 
+class="cmmi-8">s</span></sub> = <span 
+class="cmmi-12">&#x03BB;v</span><sub><span 
+class="cmmi-8">s</span></sub><sup><span 
+class="cmr-8">(1)</span></sup> + (1 <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03BB;</span>)<span 
+class="cmmi-12">v</span><sub>
+<span 
+class="cmmi-8">s</span></sub><sup><span 
+class="cmr-8">(2)</span></sup> <span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">s</span>.
+      Then (<span class="bar-css"><span 
+class="cmmi-12">y</span></span><sup><span 
+class="cmmi-8">s</span></sup><span 
+class="cmmi-12">,</span><span class="bar-css"><span 
+class="cmmi-12">&#x03B7;</span></span><span 
+class="cmmi-12">,</span><span class="bar-css"><span 
+class="cmmi-12">v</span></span><sub>
+<span 
+class="cmmi-8">s</span></sub>) <span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">s </span>is a feasible second stage decision for the first stage decision&#x00A0;<span class="bar-css"><span 
+class="cmmi-12">x</span></span>.
+      Thus,
+      <center class="math-display" >
+      <img 
+src="hw5sol20221x.png" alt="           1-&#x2211;              (1)              (2)
+&#x03C1;(¯x) &#x2264; ¯&#x03B7; + &#x03B1;     ps¯vs = &#x03BB;&#x03C1;(x   ) + (1 - &#x03BB;)&#x03C1;(x  ),
+             s&#x2208;S
+      " class="math-display" ></center>
+                                                                                         
+                                                                                         
+      <!--l. 83--><p class="nopar" >
+      so <span 
+class="cmmi-12">&#x03C1;</span>(<span 
+class="cmmi-12">x</span>) is convex.
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2"><a 
+ id="x1-42"></a> Assume we have a stochastic program with finite number of scenarios and complete recourse.
+      A weighted combination of the standard stochastic program expectation objective with
+      CVaR can be written
+      <table 
+class="equation"><tr><td><a 
+ id="x1-6r1"></a>
+      <center class="math-display" >
+      <img 
+src="hw5sol20222x.png" alt="                 T       &#x2211;           s     (    1-&#x2211;      )
+minx,v,&#x03B7;         c x  +     s psQ(x, &#x03BE; ) + &#x03BC; &#x03B7; + &#x03B1;   spsvs
+subject to       Ax          =   b
+            Q (x, &#x03BE;s) -    &#x03B7;  &#x2264;   vs  &#x2200;s
+                         vs  &#x2265;   0  &#x2200;s
+
+                  x          &#x2265;   0
+      " class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+      <!--l. 101--><p class="nopar" >
+      Here, we&#8217;ve weighted the CVaR by <span 
+class="cmmi-12">&#x03BC; </span>to trade it off with the expected return.
+      We saw the <span 
+class="cmmi-12">L</span>-shaped method for solving stochastic programming problems in
+      class. At iteration <span 
+class="cmmi-12">K</span>, a disaggregated Master Problem for problem&#x00A0;(<a 
+href="#x1-6r1">1<!--tex4ht:ref: eq.CVaR3 --></a>) has the
+      form
+      <table 
+class="equation"><tr><td><a 
+ id="x1-7r2"></a>
+      <center class="math-display" >
+      <img 
+src="hw5sol20223x.png" alt="                        &#x2211;            (      &#x2211;       )
+minx,t,&#x03BC;,v     cT x  +     Ss=1psts + &#x03BC; &#x03B7; +  1&#x03B1;-  spsvs
+subject to     Ax              =   b
+     (&#x03B6;k)T(x - xk)  +       t  &#x2265;   Q (xk,&#x03BE;s)  for s = 1,...,S, k = 1,2,...,K  - 1
+       sk T      k            s         k  s
+     (&#x03B6;s) (x - x )  +   &#x03B7; + vs &#x2265;   Q (x ,&#x03BE; )  for s = 1,...,S, k = 1,2,...,K  - 1
+                 x             &#x2265;   0
+                           vs  &#x2265;   0          for s = 1,...,S
+      " class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+      <!--l. 127--><p class="nopar" >
+      where <span 
+class="cmmi-12">Q</span>(<span 
+class="cmmi-12">x</span><sup><span 
+class="cmmi-8">k</span></sup><span 
+class="cmmi-12">,&#x03BE;</span><sup><span 
+class="cmmi-8">s</span></sup>) is the optimal value of the second stage problem with first stage decision <span 
+class="cmmi-12">x</span><sup><span 
+class="cmmi-8">k</span></sup>
+      and scenario&#x00A0;<span 
+class="cmmi-12">&#x03BE;</span><sup><span 
+class="cmmi-8">s</span></sup>, and the subgradient vector <span 
+class="cmmi-12">&#x03B6;</span><sub>
+<span 
+class="cmmi-8">s</span></sub><sup><span 
+class="cmmi-8">k</span></sup> has the form
+      <center class="math-display" >
+      <img 
+src="hw5sol20224x.png" alt=" k       s T s
+&#x03B6;s = T (&#x03BE; ) &#x03C0;k
+      " class="math-display" ></center>
+      <!--l. 133--><p class="nopar" >
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-9x1">Exploit the relationships between <span 
+class="cmmi-12">&#x03B7; </span>+ <span 
+class="cmmi-12">v</span><sub><span 
+class="cmmi-8">s</span></sub>, <span 
+class="cmmi-12">Q</span>(<span 
+class="cmmi-12">x,&#x03BE;</span><sup><span 
+class="cmmi-8">s</span></sup>), and&#x00A0;<span 
+class="cmmi-12">t</span><sub>
+<span 
+class="cmmi-8">s</span></sub> to derive an equivalent
+           formulation  with  fewer  constraints.  (Hint:  formulation  (<a 
+href="#x1-7r2">2<!--tex4ht:ref: eq.disagg --></a>)  has  2<span 
+class="cmmi-12">S</span>(<span 
+class="cmmi-12">K </span><span 
+class="cmsy-10x-x-120">- </span>1)
+           subgradient  inequalities.  Can  you  construct  an  equivalent  formulation  with
+           approximately <span 
+class="cmmi-12">SK </span>constraints to represent the subgradient information?)
+           </li>
+           <li 
+  class="enumerate" id="x1-11x2">Assume (<span class="bar-css"><span 
+class="cmmi-12">x</span></span><span 
+class="cmmi-12">,</span><span class="bar-css"><span 
+class="cmmi-12">t</span></span><span 
+class="cmmi-12">,</span><span class="bar-css"><span 
+class="cmmi-12">&#x03BC;</span></span><span 
+class="cmmi-12">,</span><span class="bar-css"><span 
+class="cmmi-12">v</span></span>) is optimal in&#x00A0;(<a 
+href="#x1-7r2">2<!--tex4ht:ref: eq.disagg --></a>). How would you find upper and lower bounds
+           on the optimal value of&#x00A0;(<a 
+href="#x1-6r1">1<!--tex4ht:ref: eq.CVaR3 --></a>)?</li></ol>
+      <!--l. 148--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-13x1">For any feasible choice of <span 
+class="cmmi-12">x </span>and <span 
+class="cmmi-12">&#x03B7; </span>in (<a 
+href="#x1-7r2">2<!--tex4ht:ref: eq.disagg --></a>), the best choice for <span 
+class="cmmi-12">t</span><sub><span 
+class="cmmi-8">s</span></sub> and <span 
+class="cmmi-12">v</span><sub><span 
+class="cmmi-8">s</span></sub> for each <span 
+class="cmmi-12">s</span>
+           is:
+           <center class="math-display" >
+           <img 
+src="hw5sol20225x.png" alt="                  k  s     k T       k
+ts  =   maxk {Q (x  ,&#x03BE; ) - (&#x03B6;ks)s(x - xk T)}   k
+vs  =   max {0, maxk {Q(x  ,&#x03BE;) - (&#x03B6;s) (x - x )} - &#x03B7;} =  max {0,ts - &#x03B7;}
+           " class="math-display" ></center>
+           <!--l. 161--><p class="nopar" >
+           Hence, we can use the constraint
+           <table 
+class="equation"><tr><td><a 
+ id="x1-14r3"></a>
+                                                                                         
+                                                                                         
+           <center class="math-display" >
+           <img 
+src="hw5sol20226x.png" alt="&#x03B7; + vs &#x2265; ts  for s = 1,...,S.
+           " class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+           <!--l. 165--><p class="nopar" >
+           These <span 
+class="cmmi-12">S </span>constraints can replace the constraints
+           <center class="math-display" >
+           <img 
+src="hw5sol20227x.png" alt="(&#x03B6;ks)T(x - xk) + &#x03B7; + vs &#x2265; Q(xk,&#x03BE;s)  for s = 1,...,S,k =  1,2,...,K  - 1.
+           " class="math-display" ></center>
+           <!--l. 176--><p class="nopar" >
+           It is clear from the construction that any optimal solution to (<a 
+href="#x1-7r2">2<!--tex4ht:ref: eq.disagg --></a>) must satisfy&#x00A0;(<a 
+href="#x1-14r3">3<!--tex4ht:ref: eq.vsts --></a>).
+           <!--l. 186--><p class="noindent" >Conversely, given <span 
+class="cmmi-12">x </span>and <span 
+class="cmmi-12">t</span>, if <span 
+class="cmmi-12">&#x03B7; </span>and <span 
+class="cmmi-12">v </span>satisfy (<a 
+href="#x1-14r3">3<!--tex4ht:ref: eq.vsts --></a>) then
+           <center class="math-display" >
+           <img 
+src="hw5sol20228x.png" alt="&#x03B7; + vs &#x2265; ts &#x2265; Q (xk,&#x03BE;s) - (&#x03B6;ks)T(x - xk)  for s = 1,...,S,k = 1, 2,...,K -  1
+           " class="math-display" ></center>
+           <!--l. 190--><p class="nopar" >
+           so the solution is feasible in&#x00A0;(<a 
+href="#x1-7r2">2<!--tex4ht:ref: eq.disagg --></a>).
+           </li>
+           <li 
+  class="enumerate" id="x1-16x2">Problem (<a 
+href="#x1-7r2">2<!--tex4ht:ref: eq.disagg --></a>) is a relaxation of (<a 
+href="#x1-6r1">1<!--tex4ht:ref: eq.CVaR3 --></a>), so the optimal value of (<a 
+href="#x1-7r2">2<!--tex4ht:ref: eq.disagg --></a>) gives a lower bound on the
+           optimal value of&#x00A0;(<a 
+href="#x1-6r1">1<!--tex4ht:ref: eq.CVaR3 --></a>).
+           <!--l. 197--><p class="noindent" >To find an upper bound, we need to find a feasible solution to&#x00A0;(<a 
+href="#x1-6r1">1<!--tex4ht:ref: eq.CVaR3 --></a>). We take <span 
+class="cmmi-12">x </span>= <span class="bar-css"><span 
+class="cmmi-12">x</span></span> and
+           then we choose <span 
+class="cmmi-12">&#x03B7; </span>and <span 
+class="cmmi-12">v </span>to solve the linear program
+           <center class="math-display" >
+           <img 
+src="hw5sol20229x.png" alt="             (      &#x2211;      )
+minv,&#x03B7;     &#x03BC;  &#x03B7; + 1&#x03B1;-  s psvs
+subject to vs  +    &#x03B7;  &#x2265;  Q (¯x,&#x03BE;s)  &#x2200;s
+                   v   &#x2265;  0   &#x2200;s
+                    s
+           " class="math-display" ></center>
+           <!--l. 207--><p class="nopar" >
+           This is feasible in&#x00A0;(<a 
+href="#x1-6r1">1<!--tex4ht:ref: eq.CVaR3 --></a>).
+           <!--l. 210--><p class="noindent" >Note that the LP can be solved very easily. For example, we can set up the dual
+           problem and exploit complementary slackness, and all that is required is to order the
+                                                                                         
+                                                                                         
+           values of&#x00A0;<span 
+class="cmmi-12">Q</span>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span><span 
+class="cmmi-12">,&#x03BE;</span><sup><span 
+class="cmmi-8">s</span></sup>).
+           </li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-18x3"><a 
+ id="x1-173"></a> Consider the capacity expansion problem considered in class, but with 30 scenarios. The
+      ampl data file is here: <a 
+href="http://www.rpi.edu/~mitchj/matp6640/hw5html/cap_exp.dat" class="url" ><span 
+class="cmtt-12">http://www.rpi.edu/</span><span 
+class="cmtt-12">~</span><span 
+class="cmtt-12">mitchj/matp6640/hw5html/cap_exp.dat</span></a>
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-20x1">Solve the formulation (<a 
+href="#x1-6r1">1<!--tex4ht:ref: eq.CVaR3 --></a>) using a direct formulation using ampl, with <span 
+class="cmmi-12">&#x03B1; </span>= <span 
+class="cmmi-12">&#x03BC; </span>= 0<span 
+class="cmmi-12">.</span>1. Hand
+           in the optimal value and the optimal first stage decisions. A model file and a data file
+           with the data specific to the CVaR formulation are available:
+               <ol  class="enumerate3" >
+               <li 
+  class="enumerate" id="x1-22x1">model                                                                                        file:
+               <a 
+href="http://www.rpi.edu/~mitchj/matp6640/hw5html/cap_expCVaR.mod" class="url" ><span 
+class="cmtt-10x-x-109">http://www.rpi.edu/</span><span 
+class="cmtt-10x-x-109">~</span><span 
+class="cmtt-10x-x-109">mitchj/matp6640/hw5html/cap_expCVaR.mod</span></a>
+               </li>
+               <li 
+  class="enumerate" id="x1-24x2">data file: <a 
+href="http://www.rpi.edu/~mitchj/matp6640/hw5html/cap_expCVaR.dat" class="url" ><span 
+class="cmtt-10x-x-109">http://www.rpi.edu/</span><span 
+class="cmtt-10x-x-109">~</span><span 
+class="cmtt-10x-x-109">mitchj/matp6640/hw5html/cap_expCVaR.dat</span></a></li></ol>
+           <!--l. 238--><p class="noindent" >You will need to load in both data files.
+           </li>
+           <li 
+  class="enumerate" id="x1-26x2">Solve the formulation (<a 
+href="#x1-6r1">1<!--tex4ht:ref: eq.CVaR3 --></a>) using the L-shaped formulation you derived in
+           Question&#x00A0;<a 
+href="#x1-42">2<!--tex4ht:ref: q.Lshaped --></a>(b). Hand in the optimal value and the optimal first stage decisions.
+           Also hand in something to convince me you did solve the problem using an
+           L-shaped method! For example, highlight the changes you made to the model
+           and run files, and show some of the output reflecting the progress of the
+           algorithm.
+           <!--l. 248--><p class="noindent" >Model and run files for minimizing the expectation using ampl are available:
+               <ol  class="enumerate3" >
+               <li 
+  class="enumerate" id="x1-28x1">run                                                                                           file:
+               <a 
+href="http://www.rpi.edu/~mitchj/matp6640/hw5html/cap_expLshaped.run" class="url" ><span 
+class="cmtt-10x-x-109">http://www.rpi.edu/</span><span 
+class="cmtt-10x-x-109">~</span><span 
+class="cmtt-10x-x-109">mitchj/matp6640/hw5html/cap_expLshaped.run</span></a>
+               </li>
+               <li 
+  class="enumerate" id="x1-30x2">model                                                                                        file:
+               <a 
+href="http://www.rpi.edu/~mitchj/matp6640/hw5html/cap_expLshaped.mod" class="url" ><span 
+class="cmtt-10x-x-109">http://www.rpi.edu/</span><span 
+class="cmtt-10x-x-109">~</span><span 
+class="cmtt-10x-x-109">mitchj/matp6640/hw5html/cap_expLshaped.mod</span></a></li></ol>
+           <!--l. 255--><p class="noindent" >You will need to modify these files to handle the formulation in Question&#x00A0;<a 
+href="#x1-42">2<!--tex4ht:ref: q.Lshaped --></a></li></ol>
+      <!--l. 259--><p class="noindent" ><span 
+class="cmbx-12">Solutions:</span>
+      <!--l. 261--><p class="noindent" >The same problem is solved in both parts, so they give the same solution with value 156<img 
+src="hw5sol202210x.png" alt="23"  class="frac" align="middle">
+      with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">rt</span></sub> = 2, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ru</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">rv</span></sub> = 12, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">tu</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">tv</span></sub> = 0. In the notation of Question <a 
+href="#x1-42">2<!--tex4ht:ref: q.Lshaped --></a>, the optimal
+      solution has <span 
+class="cmmi-12">&#x03B7; </span>= 156, with unmet demand in scenarios 2 and&#x00A0;30.
+      <!--l. 266--><p class="noindent" >Here is the <a 
+href="https://www.rpi.edu/~mitchj/matp6640/hw5sol2022/cap_expCVaR.out" >output for part (a)</a>.
+      <!--l. 270--><p class="noindent" >Here is the <a 
+href="https://www.rpi.edu/~mitchj/matp6640/hw5sol2022/cap_expLshapedCVaR.mod" >modified model file for part (b)</a>.
+      <!--l. 274--><p class="noindent" >Here is the <a 
+href="https://www.rpi.edu/~mitchj/matp6640/hw5sol2022/cap_expLshapedCVaR.run" >modified run file for part (b)</a>.
+      <!--l. 278--><p class="noindent" >Here is the <a 
+href="https://www.rpi.edu/~mitchj/matp6640/hw5sol2022/cap_expLshapedCVaR.out" >output for part (b)</a>.
+                                                                                         
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-32x4">Consider the LP:
+      <center class="par-math-display" >
+      <img 
+src="hw5sol202211x.png" alt="min   2x1  +   6x2  +  3x3
+s.t.    x1  +    x2  +    x3  =  6
+
+       x1  -   2x2  +  4x3   =  9
+                         xi  &#x2265;  0  i = 1,...,3
+      " class="par-math-display" ></center>
+      <!--l. 450--><p class="nopar" >
+      <!--l. 452--><p class="noindent" >Show that <span 
+class="cmmi-12">x </span>= (3<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">, </span>2) is on the central path for this problem.
+      <!--l. 454--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 457--><p class="noindent" >The point <span 
+class="cmmi-12">y </span>= (0<span 
+class="cmmi-12">, </span>0), <span 
+class="cmmi-12">s </span>= (2<span 
+class="cmmi-12">, </span>6<span 
+class="cmmi-12">, </span>3) is dual feasible, and then <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">i</span></sub> = 6 =: <span 
+class="cmmi-12">&#x03BC; </span>for <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">, </span>2<span 
+class="cmmi-12">, </span>3.
+      </li>
+      <li 
+  class="enumerate" id="x1-34x5">Pick three problems from the netlib LP test suite, at <a 
+href="http://www.netlib.org/lp" class="url" ><span 
+class="cmtt-12">http://www.netlib.org/lp</span></a> including
+      the problem <span 
+class="cmtt-12">boeing1</span>. Solve each problem using both a simplex algorithm and an
+      interior point algorithm. Do you get the same primal solution with each algorithm?
+      What if you don&#8217;t crossover to get a BFS? (Differences less than 10<sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">8</span></sup> can be
+      ignored.)
+      <!--l. 485--><p class="noindent" >(Most of the problems are also available in AMPL format and MATLAB format and
+      uncompressed MPS format at <a 
+href="http://clas.ufl.edu/users/hager/coap/format.html" class="url" ><span 
+class="cmtt-12">http://clas.ufl.edu/users/hager/coap/format.html</span></a> with
+      an AMPL model file available both at <a 
+href="http://clas.ufl.edu/users/hager/coap/m2a" class="url" ><span 
+class="cmtt-12">http://clas.ufl.edu/users/hager/coap/m2a</span></a> and
+      at <a 
+href="http://www.netlib.org/ampl/models/mps.mod" class="url" ><span 
+class="cmtt-12">http://www.netlib.org/ampl/models/mps.mod</span></a>
+      <!--l. 496--><p class="noindent" >Alternatively, you can run cplex directly, without using ampl, in which case you would read
+      in the MPS file. Useful commands in cplex include <span 
+class="cmtt-12">read</span>, <span 
+class="cmtt-12">optimize</span>, and <span 
+class="cmtt-12">display</span>. You can
+      choose the solver in cplex by issuing the command <span 
+class="cmtt-12">set lpmethod </span>at the prompt. You can
+      change options in the barrier solver (including the use of crossover) with the command <span 
+class="cmtt-12">set</span>
+      <span 
+class="cmtt-12">barrier</span>. You can use these options in ampl with the syntax <span 
+class="cmtt-12">option cplex</span><span 
+class="cmtt-12">_options</span>
+      <span 
+class="cmtt-12">&#8217;...&#8217;;</span>)
+      <!--l. 506--><p class="noindent" >Hand in the primal solution for each problem, and discuss whether the three solutions differ
+      for each of the models you chose. If the solutions have too many variables it is fine to select a
+      few variables to display.
+      <!--l. 511--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 514--><p class="noindent" >The problem <span 
+class="cmtt-12">boeing1 </span>should give three different solutions. For example, you can look at the
+      variable <span 
+class="cmtt-12">PLAXSEA8 </span>in these <a 
+href="boeing.out" >solutions</a>.
+      </li>
+      <li 
+  class="enumerate" id="x1-36x6"><span 
+class="cmbx-12">Hand in a progress report </span>of your work to date on the course project.
+                                                                                         
+                                                                                         
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                                                         </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                                                                    </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Thursday 11am&#8211;1pm., on webex <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-12">https://rensselaer.webex.com/meet/mitchj</span></a></td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

@@ -1,0 +1,986 @@
+<TITLE> MATP6640 / ISYE6770 Linear Programming.</TITLE>
+
+<div align=center>
+<font size="+2"><b>MATP6640 / ISYE6770 Linear and Conic Optimization</b></font>
+</div>
+
+<div align="right"> Spring 2024</div>
+
+<p>
+    <B><A HREF =outline/outline.html>
+       Course outline</A></B>.
+
+<p>
+Grades, software, notes, and other material will be posted on
+<a href=http://lms.rpi.edu>LMS</a>.
+
+<p>
+<b>Piazza:</b> the piazza page for the class is
+<a href=https://piazza.com/rpi/spring2024/matp6640>here</a>.
+This term we will be using Piazza for class discussion.
+The system is highly catered to getting you help fast and efficiently
+from classmates, the TA, and myself. Rather than emailing questions to me,
+I encourage you to post your questions on Piazza.
+If you have any problems or feedback for the developers, email team@piazza.com.
+
+<!--
+<p>
+<b>Box:</b>
+In addition to <a href=http://lms.rpi.edu>LMS</a>,
+class material should be posted in this
+<a href=https://rpi.box.com/s/pfv00d68eotf341onnk0j5c3f9yhxsli>Box</a> folder.
+Instructions to set up your box account are here:
+<a href=https://itssc.rpi.edu/hc/en-us/articles/360004742212-Box-Overview-Registering-for-an-RPI-Box-Account>RPI Box account information</a>.
+-->
+
+
+
+<p>
+<b>Office hours:</b>
+<!--
+On Webex
+ on Thursdays 11am-1pm, or by appointment.
+<a href=https://rensselaer.webex.com/meet/mitchj>https://rensselaer.webex.com/meet/mitchj</a>
+-->
+<!--
+  <p> <B><A HREF=https://guides.lib.rpi.edu/er.php?course_id=54131>Material
+on reserve</A></B> in the library.
+-->
+
+<!--
+  <li> <B>Some SDP references:</b>
+<a href=http://www.stanford.edu/~boyd/cvxbook/>Convex Optimization</a>,
+a book by Boyd and Vandenberghe.
+<a href=http://eaton.math.rpi.edu/CourseMaterials/spring02/MATP6640/boyd.pdf>Vandenberghe
+and Boyd</a> and
+<a href=http://eaton.math.rpi.edu/CourseMaterials/spring02/MATP6640/farid.pdf>Alizadeh</a>.
+  <li> <b><a href=http://epubs.siam.org/sam-bin/dbq/article/29020>Nesterov
+and Todd</a></b> article on algorithms for self-scaled cones.
+<b><a href=http://www.corc.ieor.columbia.edu/reports/techreports/tr-2002-02.ps>Alizadeh
+and Goldfarb</a></b> survey of second order cone programming
+(published in
+<a href=http://www.mathprog.org/sub/journal.htm>Mathematical Programming</a>,
+volume 95(1), 2003, pages 3-51).
+-->
+
+<p>
+<b>Scores</b> will be available on <a href=http://lms.rpi.edu>LMS</a>
+<ul>
+</ul>
+
+<p>
+<b>Projects:</b>
+
+<!--
+Here is <a href=presentation_info/project3.html>some information</a>
+about the requirements for your project reports and presentations.
+<img src=../images/new.gif>
+-->
+
+<p>
+  <b> Midterm Exam: </b>
+In class on Friday, March 15.
+<br>It will cover everything seen in class through Tuesday, March 12
+(Lecture 16).  <!-- normally lecture 16, but there was one snow day -->
+<br>You can bring one sheet of handwritten notes, no larger
+  than 8.5" x 11". You can write on both sides.
+<!--
+<br>Here are the <a href=midterm22sol/midterm22sol.html>solutions</a>.
+Mean: 60.6%, median 65%, StDev 20.3.
+-->
+
+<p><b>Old exams</b>:
+
+Solutions from 2014 and earlier are only available
+if you are logged into the RPI VPN.
+<ul>
+<li>
+  The <a href=midterm22/midterm22.html>midterm exam from 2022</a>.
+Here are the
+<a href=midterm22sol/midterm22sol.html>solutions</a>.
+Mean: 61%, median 65%, StDev 20.3.
+<li>
+  The <a href=midterm20/midterm20.html>midterm exam from 2020</a>.
+Here are the
+<a href=midterm20sol/midterm20sol.html>solutions</a>.
+Here are the robust ampl
+<a href=midterm20sol/midterm20q3gen_robust.mod>model</a>
+and
+<a href=midterm20sol/midterm20q3gen_robust.run>run file</a>
+for genenerating the instance in question 3,
+where you can just change the seed.
+Here are the robust ampl
+<a href=midterm20sol/midterm20q3robust.mod>model</a>
+and
+<a href=midterm20sol/midterm20q3robust.run>run file</a>,
+which require the use of a
+<a href=midterm20sol/midterm20q3.dat>data file</a>
+containing the matrix A.
+Mean: 81%. Median: 82%. StDev: 11.3.
+
+<li>
+  The <a href=midterm18/midterm18.html>midterm exam from 2018</a>.
+Here are the
+<a href=midterm18sol/midterm18sol.html>solutions</a>.
+Mean: 75%. Median: 75%. StDev: 15.7.
+<li>
+  The <a href=midterm16/midterm16.html>midterm exam from 2016</a>.
+Here are the
+<a href=midterm16sol/midterm16sol.html>solutions</a>.
+The mean was 74%.
+<li>
+  The <a href=midterm14/midterm14.html>midterm exam from 2014</a>.
+Here are the
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/midterm14sol.pdf>solutions</a>.
+The mean was 69%.
+<li>
+  The <a href=midterm12html/midterm12html.html>midterm exam from 2012</a>.
+Here are the
+<a href=http://eaton.math.rpi.edu/CourseMaterials/Spring12/MATP6640/midterm12sol.pdf>solutions</a>.
+The mean was 66%.
+  <li> The <a href=midterm2010html/midterm10s.html>midterm exam from 2010</a>.
+Mean: 71%.
+Here are the
+<a href=http://eaton.math.rpi.edu/CourseMaterials/Spring2010/JM6640/midterm10sol.pdf>solutions</a>.
+  <li> The <a href=midterm08html/midterm08.html>midterm exam from 2008</a>.
+Mean: 68%.
+Here are the
+<a href=http://eaton.math.rpi.edu/CourseMaterials/Spring08/JM6640/midtermsoln.pdf>solutions</a>.
+  <li> The
+<A HREF=http://eaton.math.rpi.edu/CourseMaterials/Spring08/JM6640/midterm06short.pdf>midterm exam from 2006</a>. Mean: 69%.
+Here are the
+<A HREF=http://eaton.math.rpi.edu/CourseMaterials/Spring06/JM6640/midtermsoln.pdf>solutions</a>.
+  <li> The take home
+<A HREF=http://eaton.math.rpi.edu/CourseMaterials/Spring08/JM6640/midterm04.pdf>midterm exam from 2004</a>.
+Here are the
+<A HREF=http://eaton.math.rpi.edu/CourseMaterials/Spring04/JM6640/midterm.pdf>solutions</a>.
+  <li> The take home
+<A HREF=http://eaton.math.rpi.edu/CourseMaterials/Spring08/JM6640/midterm02.pdf>midterm exam from 2002</a>.
+Here are the
+<A HREF=http://eaton.math.rpi.edu/CourseMaterials/spring02/MATP6640/midterm.pdf>solutions</a>.
+  <li> The take home
+<A HREF=http://eaton.math.rpi.edu/CourseMaterials/Spring08/JM6640/midterm00.pdf>midterm exam from 2000</a>.
+Here are the
+<A HREF=http://eaton.math.rpi.edu/CourseMaterials/spring2000/MATH6640JM/midterm.pdf>solutions</a>.
+</ul>
+
+<p>
+  <b> Homework:</b>
+    <ul>
+     <li>  <a href=hw1html/hw1.html>Homework 1</a>.
+Solutions are available on LMS.
+<!--
+Here are the <a href=hw1sol/hw1sol.html>solutions</a>.
+-->
+     <li>  <a href=hw2html/hw2.html>Homework 2</a>.
+Solutions are available on LMS.
+<!--
+Here are the <a href=hw2sol/hw2sol.html>solutions</a>.
+-->
+
+     <li>  <a href=hw3html/hw3.html>Homework 3</a>.
+Solutions are available on LMS.
+<img src=../images/new.gif>
+<!--
+Here are the <a href=hw3sol/hw3sol.html>solutions</a>.
+-->
+
+     <li>  <a href=hw4html/hw4.html>Homework 4</a>.
+<img src=../images/new.gif>
+<!--
+Here are the <a href=hw4sol/hw4sol.html>solutions</a>.
+-->
+<!--
+<b>Note</b>: You do not need to hand in a solution to Question 6.
+You still need to hand in solutions to Questions 1 through 5.
+The homework is still due on Friday, March 9.
+-->
+<!--
+     <li>  <a href=hw5html/hw5.html>Homework 5</a>.
+Here are the <a href=hw5sol2022/hw5sol2022.html>solutions</a>.
+
+
+     <li>  <a href=hw6html/hw6.html>Homework 6</a>.
+Here are the <a href=hw6sol2022/hw6sol2022.html>solutions</a>.
+<img src=../images/new.gif>
+<!--
+     <li>  <a href=hw7html/hw7.html>Homework 7</a>,
+including instructions on the project.
+Here are the <a href=hw7sol/hw7sol.html>solutions</a>.
+<img src=../images/new.gif>
+-->
+    </ul>
+
+
+<p>
+  <b>Information about
+<a href=http://www.rpi.edu/~mitchj/ampldetails.html>AMPL</a></b>.
+The software and instructions will be available on LMS.
+<!--
+A version of AMPL along with current versions of solvers
+(including cplex 12.6) is available
+<a href=https://www.dropbox.com/sh/phaj484sx8lab6a/aXt20pJXvv>here</a>.
+<img src=../images/new.gif>
+-->
+
+
+<p>
+
+<b><u>Notes:</u></b>
+
+These are typed pdf notes.
+Most of them are only available if you are logged into the RPI VPN
+(this includes all files on the server eaton.math).
+<!--
+Handwritten scanned copies of my notes from previous semesters
+can be found <a href=handwrittennotes.html>here</a>.
+-->
+
+<ul>
+<li><b>Introduction, basic feasible solutions,
+duality, and the simplex algorithm</b>.
+<ul>
+<li> Lecture 1: Introduction.
+ <ul>
+  <li> Some examples:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/01a_examples.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/01a_examplesbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/01a_examplesbeameripad.pdf>ipad</a>.
+  <li> Standard form:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/01b_standardform.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/01b_standardformbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/01b_standardformbeameripad.pdf>ipad</a>.
+  <li> Linear algebra background:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/01c_linalg.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/01c_linalgbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/01c_linalgbeameripad.pdf>ipad</a>.
+  <li> Affine sets:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/01d_affine.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/01d_affinebeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/01d_affinebeameripad.pdf>ipad</a>.
+  <li> Faces:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/01e_faces.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/01e_facesbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/01e_facesbeameripad.pdf>ipad</a>.
+on webex</a>.
+  <li>Link to the
+<a href=webex/lec01webexlinks/lec01webexlinks.html>recorded lecture</a>
+ </ul>
+<li> Lecture 2:
+Basic feasible solutions, degeneracy:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/02a_bfs.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/02a_bfsbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/02a_bfs_beameripad.pdf>ipad</a>.
+  Link to the
+<a href=webex/lec02webexlinks/lec02webexlinks.html>recorded lecture</a>
+
+<li> Lecture 3: Duality.
+<ul>
+<li> Motivation:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/03a_duality_motivation.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/03a_duality_motivationbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/03a_duality_motivationbeameripad.pdf>ipad</a>.
+<li> Constructing a dual problem::
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/03b_dual_construction.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/03b_dual_constructionbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/03b_dual_constructionbeameripad.pdf>ipad</a>.
+  <li> Duality theorems:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/03c_duality_theorems.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/03c_duality_theoremsbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/03c_duality_theoremsbeameripad.pdf>ipad</a>.
+  <li> The Farkas Lemma:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/03d_farkas.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/03d_farkasbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/03d_farkasbeameripad.pdf>ipad</a>.
+  <li>Link to the
+<a href=webex/lec03webexlinks/lec03webexlinks.html>recorded lecture</a>
+</ul>
+
+<li> Lecture 4: The simplex algorithm.
+<ul>
+<li> An example:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/04a_simplex.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/04a_simplexslides.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/04a_simplexslidesipad.pdf>ipad</a>.
+  <li> An iteration:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/04b_simplexiterinfo.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/04b_simplexiterinfobeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/04b_simplexiterinfobeameripad.pdf>ipad</a>.
+  <li> Strong duality:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/04c_strong_duality.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/04c_strong_dualitybeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/04c_strongdualitybeameripad.pdf>ipad</a>.
+  <li> The simplex algorithm:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/04d_simplexalgo.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/04d_simplexalgoipad.pdf>ipad</a>.
+  <li> More discussion of simplex:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/04e_simplexmoreinfo.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/04e_simplexmoreinfobeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/04e_simplexmoreinfobeameripad.pdf>ipad</a>.
+  <li>Link to the
+<a href=webex/lec04webexlinks/lec04webexlinks.html>recorded lecture</a>
+</ul>
+
+<li> Lecture 5:
+<ul>
+  <li> Handling upper bounds:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/05a_upperbounds.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/05a_upperboundsbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/05a_upperboundsbeameripad.pdf>ipad</a>.
+  <li> Multiple optimal solutions and degeneracy:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/05b_multiple_optima.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/05b_multiple_optimabeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/05b_multiple_optimabeameripad.pdf>ipad</a>.
+<!--
+  <li>Link to the
+<a href=webex/lec04webexlinks/lec04webexlinks.html>recorded lecture</a>
+-->
+</ul>
+</ul>
+
+<li><b>Revised simplex, resolution</b>.
+<ul>
+<li>Lecture 6:
+<ul>
+<li> Revised simplex method:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/06a_revised_simplex.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/06a_revised_simplexbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/06a_revised_simplexbeameripad.pdf>ipad</a>.
+<li> More on revised simplex:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/06b_revised_simplex2.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/06b_revised_simplex2beamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/06b_revised_simplex2beameripad.pdf>ipad</a>.
+<!--
+-->
+<li>Introduction to
+<a href=http://www.rpi.edu/~mitchj/ampldetails.html>AMPL</a>:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/06d_ampl_overview.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/06d_ampl_overviewbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/06e_brew_standard.pdf>some examples</a>.
+</ul>
+
+<li>Lecture 7:
+<ul>
+<li> Dual simplex method:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/06c_dualsimplex.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/06c_dualsimplexbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/06c_dualsimplexbeameripad.pdf>ipad</a>.
+  <li> The Klee-Minty cube:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/07a_kleeminty.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/07a_kleemintybeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/07a_kleemintybeameripad.pdf>ipad</a>.
+  <li> Fourier-Motzkin elimination:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/07b_fourier_motzkin.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/07b_fourier_motzkinbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/07b_fourier_motzkinbeameripad.pdf>ipad</a>.
+  <li> Using Farkas to prove strong duality:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/07c_farkas_strongduality.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/07c_farkas_strongdualitybeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/07c_farkas_strongdualitybeameripad.pdf>ipad</a>.
+  <li> Resolution:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/07d_resolutionA.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/07d_resolutionAbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/07d_resolutionAbeameripad.pdf>ipad</a>.
+</ul>
+
+<li>Lecture 8:
+The Weyl and Minkowski theorems:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/08a_resolutionB.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/08a_resolutionBbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/08a_resolutionBbeameripad.pdf>ipad</a>.
+</ul>
+
+
+<li><b>Column generation methods</b>.
+<ul>
+<li>Lecture 9:
+<ul>
+<li>
+The ellipsoid algorithm:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/09A_ellipsoid.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/09A_ellipsoidbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/09A_ellipsoidbeameripad.pdf>ipad</a>.
+<br>
+Here is the
+<a href=http://www.nytimes.com/1979/11/07/archives/a-soviet-discovery-rocks-world-of-mathematics-russians-surprise.html>New York Times page on the
+discovery of the ellipsoid algorithm</a> from November 27, 1979.
+<li>
+Introduction to Dantzig-Wolfe decomposition:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/09B_dw_intro.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/09B_dw_introbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/09B_dw_introbeameripad.pdf>ipad</a>.
+<li>
+An example of Dantzig-Wolfe decomposition:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/09C_egdcmp.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/09C_egdcmpbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/09C_egdcmpbeameripad.pdf>ipad</a>.
+</ul>
+
+<li>Lecture 10:
+<ul>
+<li>
+Exploiting block angular structure with Dantzig-Wolfe decomposition:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/10A_dw_more_info.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/10A_dw_more_infobeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/10A_dw_more_infobeameripad.pdf>ipad</a>.
+<li>
+Lagrangian relaxation:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/11B_lagrangian.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/11B_lagrangianbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/11B_lagrangianbeameripad.pdf>ipad</a>.
+<li>
+A cutting plane method for solving a Lagrangian relaxation:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/11C_ldeg.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/11C_ldegbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/11C_ldegbeameripad.pdf>ipad</a>.
+(Delayed until Lecture 12.)
+<li>
+See also
+<a href=http://www.blisworthhouse.co.uk/OR/Decomposition/tebboth.pdf>a
+computational study of Dantzig-Wolfe decomposition</a>
+from 2001.
+</ul>
+
+<li>Lecture 11:
+<ul>
+<li>
+The cutting stock problem:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/10B_cutting_stock.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/10B_cutting_stockbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/10B_cutting_stockbeameripad.pdf>ipad</a>.
+<li>
+Crew scheduling:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/11A_crewscheduling.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/11A_crewschedulingbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/11A_crewschedulingbeameripad.pdf>ipad</a>.
+</ul>
+</ul>
+<!--
+<li><a href=
+http://eaton.math.rpi.edu/CourseMaterials/Spring08/JM6640/02r_gametheory.PDF>Game
+theory</a>: February 26.
+-->
+
+<li><b>Problems on graphs and networks</b>.
+<ul>
+<li>Lecture 12:
+<ul>
+<li>
+Graph theory:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/12A_graph.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/12A_graphbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/12A_graphbeameripad.pdf>ipad</a>.
+<li>
+LP formulations of network flow problems:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/12B_networkflows.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/12B_networkflowsbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/12B_networkflowsbeameripad.pdf>ipad</a>.
+</ul>
+
+<li>Lecture 13:
+<ul>
+<li>
+Network simplex:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/13A_networksimplex.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/13A_networksimplexbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/13A_networksimplexbeameripad.pdf>ipad</a>.
+<li>
+Multicommodity network flows:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/13B_multicommodity.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/13B_multicommoditybeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/13B_multicommoditybeameripad.pdf>ipad</a>.
+</ul>
+
+<li>Lecture 14:
+<ul>
+<li>
+A network interdiction problem:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/14A_interdiction.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/14A_interdictionbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/14A_interdictionbeameripad.pdf>ipad</a>.
+</ul>
+</ul>
+
+<li><b>Stochastic programming</b>.
+<ul>
+<li> Lecture 14:
+<ul>
+<li>
+Introductory material:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/14B_stochasticintro.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/14B_stochasticintrobeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/14B_stochasticintrobeameripad.pdf>ipad</a>.
+<li>
+The newsvendor problem:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/14C_newsvendor.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/14C_newsvendorbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/14C_newsvendorbeameripad.pdf>ipad</a>.
+</ul>
+
+<li> Lecture 15:
+<ul>
+<li>
+The L-shaped decomposition method:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/15A_LShaped.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/15A_LShapedbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/15A_LShapedbeameripad.pdf>ipad</a>.
+<li>
+An example of the L-shaped decomposition method:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/15B_Lshapedexample.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/15B_Lshapedexamplebeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/15B_Lshapedexamplebeameripad.pdf>ipad</a>.
+</ul>
+
+<li> Lecture 17:
+<ul>
+<li>
+Sample average approximation:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/16A_saa.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/16A_saabeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/16A_saabeameripad.pdf>ipad</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/webex2020/16A_saa_webex.mp4>mp4 audio with screen capture</a>.
+<li>
+Risk measures:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/16B_risk.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/16B_riskbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/16B_riskbeameripad.pdf>ipad</a>.
+<li>
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/webex2020/16webexlinks/16webexlinks.html>Links to the webex files from 2020</a>.
+<li>
+Some AMPL files for stochastic programming for a capacity expansion problem:
+<ul>
+<li>
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/stochastic/cap_exp.mod>model file</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/stochastic/cap_exp.dat>data file for 10 scenarios</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/stochastic/cap_exp_rand.dat>data file for random number of scenarios</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/stochastic/cap_exp_rand.run>run file for random number of scenarios</a>.
+<li>CVaR:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/stochastic/cap_expCVAR.mod>model file</a>,
+use with both a data file from above
+and a data file with the
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/stochastic/cap_expCVaR.dat>CVaR parameters</a>.
+<li>L-shaped:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/stochastic/cap_expLshaped.mod>model file</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/stochastic/cap_expLshaped_rand.run>run file for random number of scenarios</a>
+(uses the 
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/stochastic/cap_exp_rand.dat>data file for random number of scenarios</a>
+from above).
+<li>Robust:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes2018/risk/robust/robust.mod>model file</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes2018/risk/robust/robust.dat>data file</a>
+to find the robust solution of an LP;
+here is the
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes2018/risk/robust/robust.out>output</a>.
+</ul>
+</ul>
+
+<li> Lecture 18:
+<ul>
+<li>
+Robust optimization:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/16C_robust.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/16C_robustbeamer.pdf>slides</a>,
+<!--
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/16C_robustbeameripad.pdf>ipad</a>.
+-->
+</ul>
+
+<li>
+The results on sample average approximation can be found
+in a
+<a href=http://www2.isye.gatech.edu/people/faculty/Alex_Shapiro/TutorialSP.pdf>tutorial on stochastic programming</a>
+by Shapiro and Philpott.
+
+</ul>
+
+
+<li><b>Interior point methods.</b>
+
+<ul>
+<li>Lecture 18:
+<ul>
+<li>
+Strict complementarity:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/19A_strictcomplementarity.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/19A_strictcomplementaritybeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/19A_strictcomplementaritybeameripad.pdf>ipad</a>.
+<li>
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/webex2020/19webexlinks/19webexlinks.html>Links to the webex files from 2020</a>.
+</ul>
+
+
+<li>Lecture 19: The primal affine method:
+<ul>
+<li>
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/18A_affine1.pdf>handout for part 1</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/18B_affine2.pdf>handout for part 2</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/18_interiorbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/18_interiorbeameripad.pdf>ipad</a>.
+<li>
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/webex2020/18webexlinks/18webexlinks.html>Links to the webex files from 2020</a>.
+<li>
+See also Sections 9.1 and 9.2 in the Bertsimas and Tsitsiklis text.
+</ul>
+
+<li>Lecture 20:
+<ul>
+<li>
+The central path:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/19B_centralpath.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/19B_centralpathbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/19B_centralpathbeameripad.pdf>ipad</a>.
+<li>
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/webex2020/19webexlinks/19webexlinks.html>Links to the webex files from 2020</a>.
+<li>
+See also Chapter 2 of the Wright text.
+<li>
+Primal-dual interior point methods:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/20A_interiorPD1.pdf>handout (part 1)</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/20B_interiorPD2.pdf>handout (part 2)</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/20AB_interiorPDbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/20AB_interiorPDbeameripad.pdf>ipad</a>.
+<li>
+Complexity:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/20C_complexity.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/20C_complexitybeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/20C_complexitybeameripad.pdf>ipad</a>.
+<li>
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/webex2020/20webexlinks/20webexlinks.html>Links to the webex files from 2020</a>.
+<li>
+See also Chapters 1 and 3 of the Wright text.
+<li>
+See also Section 9.5 in the Bertsimas and Tsitsiklis text.
+</ul>
+
+<li>Lecture 21:
+<ul>
+<li>
+Short step path following methods:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/21A_shortstep.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/21A_shortstepbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/21A_shortstepbeameripad.pdf>ipad</a>.
+<li>
+Predictor-corrector methods, part 1:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/21B_predictorcorrector1.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/21B_predictorcorrector1beamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/21B_predictorcorrector1beameripad.pdf>ipad</a>.
+<li>
+Predictor-corrector methods, part 2:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/21C_predictorcorrector2.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/21C_predictorcorrector2beamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/21C_predictorcorrector2beameripad.pdf>ipad</a>.
+<li>
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/webex2020/21webexlinks/21webexlinks.html>Links to the webex files from 2020</a>.
+<li>
+See also Chapters 5 and 10 of the Wright text.
+</ul>
+
+<li>Lecture 22:
+<ul>
+<li>
+Limit points
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/22A_limitpoints.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/22A_limitpointsbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/22A_limitpointsbeameripad.pdf>ipad</a>.
+<li>
+Homogeneous self-dual formulation:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/22B_homogselfdual.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/22B_homogselfdualbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/22B_homogselfdualbeameripad.pdf>ipad</a>.
+<li>
+Interior point cutting plane methods:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/22C_intptcuts1.pdf>handout (part 1)</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/22C_intptcuts2.pdf>handout (part 2)</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/22C_intptcutsbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/22C_intptcutsbeameripad.pdf>ipad</a>.
+This material is based on a
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/papers/JEMtutORial.html>paper</a>.
+<li>
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/webex2020/22webexlinks/22webexlinks.html>Links to the webex files from 2020</a>.
+<li>
+See also Chapters 5 and 9 of the Wright text.
+</ul>
+
+</ul>
+
+<li><b>SDP and SOCP.</b>
+
+<ul>
+<li>Lecture 23:
+<ul>
+<li>
+An SDP relaxation of MaxCut:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/23A_maxcut2sdp.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/23A_maxcut2sdpbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/23A_maxcut2sdpbeameripad.pdf>ipad</a>.
+<li>
+Duals of semidefinite programs:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/23B_SDPdual.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/23B_SDPdualbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/23B_SDPdualbeameripad.pdf>ipad</a>.
+<li>
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/webex2020/23webexlinks/23webexlinks.html>Links to the webex files from 2020</a>.
+<li>
+See also pages 168-171 of the Wright text.
+</ul>
+
+<li>Lecture 24:
+<ul>
+<li>
+Examples of duals of semidefinite programs:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/23C_SDPdualexamples.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/23C_SDPdualexamplesbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/23C_SDPdualexamplesbeameripad.pdf>ipad</a>.
+<li>
+Barrier methods for SDP:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/24A_SDPbarrier.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/24A_SDPbarrierbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/24A_SDPbarrierbeameripad.pdf>ipad</a>.
+<li>
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/webex2020/24webexlinks/24webexlinks.html>Links to the webex files from 2020</a>.
+<li>
+See also pages 168-171 of the Wright text.
+</ul>
+
+<li>Lecture 25:
+<ul>
+<li>
+Simultaneous diagonalization:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/24B_SDPsimdiag.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/24B_SDPsimdiagbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/24B_SDPsimdiagbeameripad.pdf>ipad</a>.
+<li>
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/webex2020/24webexlinks/24webexlinks.html>Links to the webex files from 2020</a>.
+<li>
+More on SDP:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/25A_SDPmore.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/25A_SDPmorebeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/25A_SDPmorebeameripad.pdf>ipad</a>.
+<li>
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/webex2020/25webexlinks/25webexlinks.html>Links to the webex files from 2020</a>.
+</ul>
+
+<li>Lecture 26:
+<ul>
+<li>
+Second order cone programs:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/25B_socp.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/25B_socpbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/25B_socpbeameripad.pdf>ipad</a>.
+<li>
+More on robust programming:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/25C_robust.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/25C_robustbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/25C_robustbeameripad.pdf>ipad</a>.
+<li>
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/webex2020/25webexlinks/25webexlinks.html>Links to the webex files from 2020</a>.
+</ul>
+
+<li>Lecture 27:
+<ul>
+<li>
+Conic optimization:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/26A_conicduals.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/26A_conicdualsbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/26A_conicdualsbeameripad.pdf>ipad</a>.
+<li>
+Completely positive programming:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/26B_cpp.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/26B_cppbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/26B_cppbeameripad.pdf>ipad</a>.
+<li>
+Sensor location and rank minimization:
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/26C_sensors.pdf>handout</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/26C_sensorsbeamer.pdf>slides</a>,
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/ipad2022/26C_sensorsbeameripad.pdf>ipad</a>.
+<li>
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6640/notes/webex2020/26webexlinks/26webexlinks.html>Links to the webex files from 2020</a>.
+</ul>
+
+
+
+
+
+<!--
+<li>
+<strike>Lecture 28:
+<ul>
+Pages 35/72 to 53/72 and 67/72 to 69/72 from this
+<a href=http://www.rpi.edu/~mitchj/talks/JEM_INFORMS2009.pdf>talk
+on interior point cutting plane methods</a> should be covered.
+It is based on a
+<a href=http://www.rpi.edu/~mitchj/papers/JEMtutORial.html>paper</a>.</strike>
+<br>The book
+<a href=http://www.stanford.edu/~boyd/cvxbook/>Convex Optimization</a>,
+by Boyd and Vandenberghe, contains a wealth of material on SDP, SOCP,
+and conic programming.
+
+<li><strike>The material on linear programs with complementarity constraints
+in Lecture 28 is from two talks:
+slides 4/54 to 14/54 from
+<a href=http://www.rpi.edu/~mitchj/talks/waterlooEO.pdf>this one</a>
+and slides 12/41 to 24/41 from
+<a href=http://www.rpi.edu/~mitchj/talks/afosrJEM2010.pdf>this one</a>.
+</strike>
+</ul>
+-->
+
+</ul>
+
+
+</ul>
+
+<p>
+<a name=handouts>
+<b><u>Handouts:</u></b>
+
+
+
+    <OL>
+     <LI> <A HREF=../handouts/linalg/linalg.html>Linear
+algebra.</A> (Lecture 1.)
+     <LI> <A HREF=../handouts/affine>Subspaces,
+affine sets, convex sets, and cones</A>. (Lecture 1.)
+     <LI> <A HREF=../handouts/faces>Dimension, polyhedra, and
+faces.</A> (Lecture 1.)
+     <LI> <a name=simplexhandouts>
+<a href=../handouts/simplex>An iteration of the simplex algorithm</a>
+and
+<a href=../handouts/simplexalgo/simplexalgo.html>the algorithm</a>. (Lecture 4.)
+     <LI> <a name=upperboundshandout>
+<a href=../handouts/upperbounds>Handling upper bounds in
+the simplex algorithm.</a> (Lecture 5.)
+     <LI> <A HREF=../handouts/dualsimplex>The dual simplex
+algorithm.</A> (Lecture 6.)
+     <LI> <A HREF=../handouts/extreme/extreme.html>Extreme points
+and extreme rays of polyhedra.</A> (Lecture 8.)
+     <LI> <A HREF=../handouts/egdcmp>An example of Dantzig-Wolfe decomposition.</A> (Lecture 9.)
+<!--
+     <LI> <A HREF=readings>Interior point readings.</A>
+Unless you choose something else, your presentation will be of one or two
+papers from this list.
+     <LI> <A HREF=../handouts/knapsack>Solving a knapsack problem.</A>
+-->
+<!--
+     <LI> <A HREF="http:handouts/graph/graph.html">Graph theory.</A>
+     <LI> <A HREF="http:handouts/gomory/gomory.html">Facets of the convex hull
+- an example.</A>
+-->
+    </OL>
+
+  <p>
+<B>Papers and resources:</B>
+<ul>
+<li>
+An electronic copy of the textbook for the second half of the course is
+available for free through the library:
+<a href=https://epubs-siam-org.libproxy.rpi.edu/doi/book/10.1137/1.9781611971453>S. Wright, Primal-dual Interior Point Methods, SIAM, 1997.</a>
+Note: more generally,
+<a href=http://epubs-siam-org.libproxy.rpi.edu/ebooks/>SIAM e-books</a>
+are free to RPI students through the library.
+In addition,
+<a href=http://www.siam.org/membership/individual/free.php>SIAM membership
+is free for RPI students</a>, and SIAM books are
+<a href=http://bookstore.siam.org/ot54/>discounted 30%</a>
+for members if you buy directly from SIAM.
+
+<li>
+The book
+<a href=https://sites.google.com/site/jonleewebpage/home/publications/#book>A 
+First Course in Linear Optimization, Third Edition, Reex Press, 2013-17</a>
+by
+<a href=https://sites.google.com/site/jonleewebpage/home/>Jon Lee</a>
+is available online. 
+
+<li>The book
+<a href=http://www.stanford.edu/~boyd/cvxbook/>Convex Optimization</a>,
+by Boyd and Vandenberghe, contains a wealth of material on SDP, SOCP,
+and conic programming.
+<li><a href=http://site.ebrary.com/lib/rpi/Doc?id=10002165><i>Introduction to
+Stochastic Programming</i> by Birge and Louveaux</a>
+is available online via the RPI library.
+<!--
+<li>
+The
+<a href=../stochprog/kallwallace.html>stochastic programming text
+by Kall and Wallace</a> is available online.
+-->
+<li>
+<a href=http://www.blisworthhouse.co.uk/OR/Decomposition/tebboth.pdf>A
+computational study of Dantzig-Wolfe decomposition</a>,
+the doctoral thesis of James Tebboth.
+<!--
+<li>A paper on a
+<a href=../papers/Price.html>column generation approach to a clustering
+problem</a>.
+<LI>
+Here is some further reading about the Weyl-Minkowski theorems showing that
+<A HREF=http://eaton.math.rpi.edu/CourseMaterials/PreviousSemesters/Spring2000/MATH6640JM/schriver1.pdf>constrained
+polyhedra are generated polyhedra</A> and vice versa.
+This material is taken from the book
+<I>Theory of Linear and Integer Programming,</I> by
+<A HREF=http://dbs.cwi.nl:8080/cwwwi/owa/cwwwi.print_people?ID=781>Alexander
+Schrijver</A>.
+This is an excellent text for the more theoretical
+aspects of linear programming, and it is available in paperback: check
+<A HREF=http://www.bestbookbuys.com/cgi-bin/bbb.cgi?ISBN=0471982326>
+bestbookbuys.com</A> or
+<A HREF=http://evenbetter7.evenbetter.com/evenbetterbin/nph-evenbetter8.cgi?type=1&acses_item=0471982326&list_price=54.95&idcode=1672399&info_1=Theory+of+Linear+%26+Integer+Programming&info_2=Author%3A+Schrijver%2C+Alexander&info_3=Paper+Text&info_4=Wiley%2C+John+%26+Sons%2C+Incorporated&info_5=06%2F1998&location=3&state=NY&currency=1&SUBMIT=Start+Price+Comparison>evenbetter.com</A>.
+<LI><a href=http://www.ilog.com/products/optimization/tech/researchpapers.cfm#LinearProgram>Solving
+real world linear programs</a>,
+a survey paper by
+<a href=http://www.caam.rice.edu/~bixby/default.htm>Bob Bixby</a>,
+the author of the original simplex code in
+<a href=../packages.html>CPLEX</a>.
+-->
+<!--
+<LI><A HREF=http://glossary.computing.society.informs.org/index.php?page=myths.html>Myths
+and counterexamples in linear programming
+(and other areas of optimization)</A>. This site shows that you have
+to be careful about your assumptions when you state some things that are
+"obvious" in linear programming.
+-->
+<li>
+<a href=http://mathopt.org/Optima-Issues/optima87.pdf>Issue 87</a>
+of the Mathematical Optimization Society newsletter
+<a href=http://mathopt.org/?nav=optima_newsletter>Optima</a>,
+discussing the geometry of polyhedra and simplex pivoting rules.
+</UL>
+
+
+<HR>
+
+<!--
+<IMG SRC="http://eaton.math.rpi.edu/CourseMaterials/up.arrow.gif"
+alt="Return to">
+-->
+Return to
+<A HREF=..>John Mitchell's homepage.</A>
+
+
+
+<hr>
+
+<script
+  type="text/JavaScript"
+  language="JavaScript">
+<!--
+//
+// get last modified date of the
+// current document.
+//
+
+document.write(
+  "Last updated: " +
+   document.lastModified );
+
+// -->
+</script>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-924637-1";
+_udn ="rpi.edu";
+urchinTracker();
+</script>

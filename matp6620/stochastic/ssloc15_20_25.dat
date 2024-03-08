@@ -1,0 +1,21 @@
+param nSERVERS = 15;
+param nCUSTOMERS = 20;
+param nSCENARIOS = 25;
+
+for {i in SERVERS} {
+  let capacity[i] := floor(10+10*Uniform01());
+  let opencost[i] := floor(20+capacity[i]*(4+2*Uniform01()));
+  let shortfallcost[i] := floor(10+10*Uniform01());
+  for {j in CUSTOMERS} {
+     let revenue[i,j] := floor(5+5*Uniform01());  
+  }
+}
+
+let openlimit := 4;
+
+for {s in SCENARIOS} {
+  let prob[s] := 1/nSCENARIOS;
+  for {j in CUSTOMERS} {
+     let demand[j,s] := floor(2+2*Uniform01());
+  }
+}

@@ -1,0 +1,325 @@
+\batchmode
+\documentclass[12pt]{article}
+\RequirePackage{ifthen}
+
+
+
+
+\usepackage[myheadings]{fullpage}
+
+
+\markboth{Math Models of OR, Exam 2B, Fall 2004}
+   {Math Models of OR, Exam 2B, Fall 2004}
+
+
+
+
+\usepackage[dvips]{color}
+
+
+\pagecolor[gray]{.7}
+
+\usepackage[]{inputenc}
+
+
+
+\makeatletter
+
+\makeatletter
+\count@=\the\catcode`\_ \catcode`\_=8 
+\newenvironment{tex2html_wrap}{}{}%
+\catcode`\<=12\catcode`\_=\count@
+\newcommand{\providedcommand}[1]{\expandafter\providecommand\csname #1\endcsname}%
+\newcommand{\renewedcommand}[1]{\expandafter\providecommand\csname #1\endcsname{}%
+  \expandafter\renewcommand\csname #1\endcsname}%
+\newcommand{\newedenvironment}[1]{\newenvironment{#1}{}{}\renewenvironment{#1}}%
+\let\newedcommand\renewedcommand
+\let\renewedenvironment\newedenvironment
+\makeatother
+\let\mathon=$
+\let\mathoff=$
+\ifx\AtBeginDocument\undefined \newcommand{\AtBeginDocument}[1]{}\fi
+\newbox\sizebox
+\setlength{\hoffset}{0pt}\setlength{\voffset}{0pt}
+\addtolength{\textheight}{\footskip}\setlength{\footskip}{0pt}
+\addtolength{\textheight}{\topmargin}\setlength{\topmargin}{0pt}
+\addtolength{\textheight}{\headheight}\setlength{\headheight}{0pt}
+\addtolength{\textheight}{\headsep}\setlength{\headsep}{0pt}
+\setlength{\textwidth}{349pt}
+\newwrite\lthtmlwrite
+\makeatletter
+\let\realnormalsize=\normalsize
+\global\topskip=2sp
+\def\preveqno{}\let\real@float=\@float \let\realend@float=\end@float
+\def\@float{\let\@savefreelist\@freelist\real@float}
+\def\liih@math{\ifmmode$\else\bad@math\fi}
+\def\end@float{\realend@float\global\let\@freelist\@savefreelist}
+\let\real@dbflt=\@dbflt \let\end@dblfloat=\end@float
+\let\@largefloatcheck=\relax
+\let\if@boxedmulticols=\iftrue
+\def\@dbflt{\let\@savefreelist\@freelist\real@dbflt}
+\def\adjustnormalsize{\def\normalsize{\mathsurround=0pt \realnormalsize
+ \parindent=0pt\abovedisplayskip=0pt\belowdisplayskip=0pt}%
+ \def\phantompar{\csname par\endcsname}\normalsize}%
+\def\lthtmltypeout#1{{\let\protect\string \immediate\write\lthtmlwrite{#1}}}%
+\newcommand\lthtmlhboxmathA{\adjustnormalsize\setbox\sizebox=\hbox\bgroup\kern.05em }%
+\newcommand\lthtmlhboxmathB{\adjustnormalsize\setbox\sizebox=\hbox to\hsize\bgroup\hfill }%
+\newcommand\lthtmlvboxmathA{\adjustnormalsize\setbox\sizebox=\vbox\bgroup %
+ \let\ifinner=\iffalse \let\)\liih@math }%
+\newcommand\lthtmlboxmathZ{\@next\next\@currlist{}{\def\next{\voidb@x}}%
+ \expandafter\box\next\egroup}%
+\newcommand\lthtmlmathtype[1]{\gdef\lthtmlmathenv{#1}}%
+\newcommand\lthtmllogmath{\dimen0\ht\sizebox \advance\dimen0\dp\sizebox
+  \ifdim\dimen0>.95\vsize
+   \lthtmltypeout{%
+*** image for \lthtmlmathenv\space is too tall at \the\dimen0, reducing to .95 vsize ***}%
+   \ht\sizebox.95\vsize \dp\sizebox\z@ \fi
+  \lthtmltypeout{l2hSize %
+:\lthtmlmathenv:\the\ht\sizebox::\the\dp\sizebox::\the\wd\sizebox.\preveqno}}%
+\newcommand\lthtmlfigureA[1]{\let\@savefreelist\@freelist
+       \lthtmlmathtype{#1}\lthtmlvboxmathA}%
+\newcommand\lthtmlpictureA{\bgroup\catcode`\_=8 \lthtmlpictureB}%
+\newcommand\lthtmlpictureB[1]{\lthtmlmathtype{#1}\egroup
+       \let\@savefreelist\@freelist \lthtmlhboxmathB}%
+\newcommand\lthtmlpictureZ[1]{\hfill\lthtmlfigureZ}%
+\newcommand\lthtmlfigureZ{\lthtmlboxmathZ\lthtmllogmath\copy\sizebox
+       \global\let\@freelist\@savefreelist}%
+\newcommand\lthtmldisplayA{\bgroup\catcode`\_=8 \lthtmldisplayAi}%
+\newcommand\lthtmldisplayAi[1]{\lthtmlmathtype{#1}\egroup\lthtmlvboxmathA}%
+\newcommand\lthtmldisplayB[1]{\edef\preveqno{(\theequation)}%
+  \lthtmldisplayA{#1}\let\@eqnnum\relax}%
+\newcommand\lthtmldisplayZ{\lthtmlboxmathZ\lthtmllogmath\lthtmlsetmath}%
+\newcommand\lthtmlinlinemathA{\bgroup\catcode`\_=8 \lthtmlinlinemathB}
+\newcommand\lthtmlinlinemathB[1]{\lthtmlmathtype{#1}\egroup\lthtmlhboxmathA
+  \vrule height1.5ex width0pt }%
+\newcommand\lthtmlinlineA{\bgroup\catcode`\_=8 \lthtmlinlineB}%
+\newcommand\lthtmlinlineB[1]{\lthtmlmathtype{#1}\egroup\lthtmlhboxmathA}%
+\newcommand\lthtmlinlineZ{\egroup\expandafter\ifdim\dp\sizebox>0pt %
+  \expandafter\centerinlinemath\fi\lthtmllogmath\lthtmlsetinline}
+\newcommand\lthtmlinlinemathZ{\egroup\expandafter\ifdim\dp\sizebox>0pt %
+  \expandafter\centerinlinemath\fi\lthtmllogmath\lthtmlsetmath}
+\newcommand\lthtmlindisplaymathZ{\egroup %
+  \centerinlinemath\lthtmllogmath\lthtmlsetmath}
+\def\lthtmlsetinline{\hbox{\vrule width.1em \vtop{\vbox{%
+  \kern.1em\copy\sizebox}\ifdim\dp\sizebox>0pt\kern.1em\else\kern.3pt\fi
+  \ifdim\hsize>\wd\sizebox \hrule depth1pt\fi}}}
+\def\lthtmlsetmath{\hbox{\vrule width.1em\kern-.05em\vtop{\vbox{%
+  \kern.1em\kern0.8 pt\hbox{\hglue.17em\copy\sizebox\hglue0.8 pt}}\kern.3pt%
+  \ifdim\dp\sizebox>0pt\kern.1em\fi \kern0.8 pt%
+  \ifdim\hsize>\wd\sizebox \hrule depth1pt\fi}}}
+\def\centerinlinemath{%
+  \dimen1=\ifdim\ht\sizebox<\dp\sizebox \dp\sizebox\else\ht\sizebox\fi
+  \advance\dimen1by.5pt \vrule width0pt height\dimen1 depth\dimen1 
+ \dp\sizebox=\dimen1\ht\sizebox=\dimen1\relax}
+
+\def\lthtmlcheckvsize{\ifdim\ht\sizebox<\vsize 
+  \ifdim\wd\sizebox<\hsize\expandafter\hfill\fi \expandafter\vfill
+  \else\expandafter\vss\fi}%
+\providecommand{\selectlanguage}[1]{}%
+\makeatletter \tracingstats = 1 
+
+
+\begin{document}
+\pagestyle{empty}\thispagestyle{empty}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength hsize=\the\hsize}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength vsize=\the\vsize}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength hoffset=\the\hoffset}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength voffset=\the\voffset}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength topmargin=\the\topmargin}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength topskip=\the\topskip}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength headheight=\the\headheight}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength headsep=\the\headsep}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength parskip=\the\parskip}\lthtmltypeout{}%
+\lthtmltypeout{latex2htmlLength oddsidemargin=\the\oddsidemargin}\lthtmltypeout{}%
+\makeatletter
+\if@twoside\lthtmltypeout{latex2htmlLength evensidemargin=\the\evensidemargin}%
+\else\lthtmltypeout{latex2htmlLength evensidemargin=\the\oddsidemargin}\fi%
+\lthtmltypeout{}%
+\makeatother
+\setcounter{page}{1}
+\onecolumn
+
+% !!! IMAGES START HERE !!!
+
+{\newpage\clearpage
+\lthtmlpictureA{picture12}%
+\begin{picture}(300,200)%(-25,-25)
+\par
+\put(50,100){\circle{20}}
+\put(150,150){\circle{20}}
+\put(150,50){\circle{20}}
+\put(250,100){\circle{20}}
+\par
+\put(47,96){1}
+\put(147,146){2}
+\put(147,46){3}
+\put(247,96){4}
+\par
+\put(57,103){\vector(2,1){86}}
+\put(57,97){\vector(2,-1){86}}
+\put(150,140){\vector(0,-1){80}}
+\put(157,147){\vector(2,-1){84}}
+\put(157,53){\vector(2,1){84}}
+\par
+\put(20,95){-50}
+\put(145,165){0}
+\put(145,25){40}
+\put(265,95){10}
+\par
+\put(70,135){(2,50,10)}
+\put(70,60){(6,60,40)}
+\put(155,95){(1,15,0)}
+\put(190,135){(12,$\infty$,10)}
+\put(190,60){(3,40,0)}
+\end{picture}%
+\lthtmlpictureZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline152}%
+$\{(1,2),(1,3),2,4)\}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline154}%
+$\lambda$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath40}%
+\begin{displaymath}
+  \begin{array}{lrcrcrcrclr}
+  \min & c_1x_1 & + & c_2x_2  \\
+  \mbox{subject to} & 5x_1 & + & 2x_2 & + & x_3 & && = & 45 & \qquad (P) \\
+  & 2x_1 & + & x_2 &&& + & x_4 & = & 20 \\
+  & \multicolumn{7}{r}{x_1,x_2,x_3,x_4} & \geq & 0
+  \end{array}
+  \end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath49}%
+\begin{displaymath}
+  \begin{array}{|r|rrrr|}
+  \hline
+  -z & 0 & 0 & 3 & 2 \\\hline
+  5 & 1 & 0 & 1 & -2 \\
+  10 & 0 & 1 & -2 & 5 \\\hline
+  \end{array}
+  \end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline156}%
+$c_1$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline158}%
+$c_2$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath56}%
+\begin{displaymath}
+\begin{array}{lrcrcrcl}
+\min & 2x_1 & - &3x_2 & + & x_3 \\
+\mbox{subject to} & 2x_1 &  + & 3x_2 & - & 5x_3 & \geq & 2 \\
+& -x_1 & + & 4x_2 & + & x_3 & \leq & 10 \\
+& x_1 & \multicolumn{1}{l}{ \leq 0,} &  x_2 & \mbox{ free, } & x_3 & \geq & 0
+\end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath66}%
+\begin{displaymath}
+\begin{array}{|r|rrrrrr|}
+\hline
+3 & 0 & 0 & 8 & 7 & 6 & 5 \\\hline
+-2 & 1 & 0 &  1 & -1 & 1 & -1 \\
+11 & 0 & 1 & 3 & 2 & 2 & 3 \\\hline
+\end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline160}%
+$G=(V,A)$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlpictureA{picture72}%
+\begin{picture}(300,200)%(-25,-25)
+\par
+\put(50,150){\circle{20}}
+\put(50,50){\circle{20}}
+\put(150,100){\circle{20}}
+\put(250,150){\circle{20}}
+\put(250,50){\circle{20}}
+\par
+\put(47,146){1}
+\put(47,46){2}
+\put(147,96){3}
+\put(247,146){4}
+\put(247,46){5}
+\par
+\put(60,150){\vector(1,0){180}}
+\put(60,50){\vector(1,0){180}}
+\put(50,140){\vector(0,-1){80}}
+\put(250,140){\vector(0,-1){80}}
+\put(58,145){\vector(2,-1){84}}
+\put(142,95){\vector(-2,-1){84}}
+\put(158,105){\vector(2,1){84}}
+\put(158,95){\vector(2,-1){84}}
+\par
+\put(0,100){(5,40,20)}
+\put(130,155){($c_{14}$,10,0)}
+\put(100,125){(2,30,30)}
+\put(75,85){(5,30,0)}
+\put(130,55){(4,40,20)}
+\put(190,110){(1,50,30)}
+\put(190,85){(8,20,0)}
+\put(255,100){(4,40,30)}
+\end{picture}%
+\lthtmlpictureZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline164}%
+$c_{14}$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath105}%
+\begin{displaymath}
+     \begin{tabular}{r|llll|}
+      \multicolumn{1}{l}{\quad} & 20 & 30 & 30 & \multicolumn{1}{l}{40} \\
+      \cline{2-5}
+      40 & $2^{20}$\  & 4 & 8 & $2^{20}$\  \\
+      30 & 9 & $4^{30}$\  & 4 & 4 \\
+      30 & 7 & 9 & $5^{30}$\  & 4 \\
+      20 & 9 & 5 & 6 & $2^{20}$\  \\\cline{2-5}
+     \end{tabular}      
+    \end{displaymath}%
+\lthtmldisplayZ
+\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline176}%
+$x$%
+\lthtmlinlinemathZ
+\lthtmlcheckvsize\clearpage}
+
+
+\end{document}

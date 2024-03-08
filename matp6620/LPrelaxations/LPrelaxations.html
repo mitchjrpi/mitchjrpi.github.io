@@ -1,0 +1,661 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="LPrelaxations.tex"> 
+<meta name="date" content="2015-02-13 13:58:00"> 
+<link rel="stylesheet" type="text/css" href="LPrelaxations.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 111--><p class="noindent" >
+<!--l. 112--><p class="noindent" ><span 
+class="cmbx-12x-x-172">LP Relaxations of Mixed Integer Programs</span><br />
+<a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a></div>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>LP Relaxations</h3>
+<!--l. 119--><p class="noindent" >We want to solve an integer program by solving a sequence of linear programs. We can relax the
+integrality constraints to give an <span 
+class="cmbx-12">LP relaxation</span>. Let <div class="eqnarray">
+   <center class="math-display" >
+<img 
+src="LPrelaxations0x.png" alt="       S  :=   {x &#x2208; &#x2124;n  : Ax &#x2265; b, x &#x2265; 0}
+                n
+           =   &#x2124;  &#x2229;  P
+where  P  :=   {x &#x2208; &#x211D;n  : Ax &#x2265; b, x &#x2265; 0}.
+" class="math-display" ></center>
+</div>Since we restrict <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0, the polyhedron <span 
+class="cmmi-12">P </span>has extreme points if it is nonempty.
+   <div class="newtheorem">
+<!--l. 129--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Theorem</span><span 
+class="cmbx-12">&#x00A0;1</span> </span><span 
+class="cmti-12">The convex hull of </span><span 
+class="cmmi-12">S </span><span 
+class="cmti-12">is a polyhedron.</span>
+   </div>
+<!--l. 132--><p class="noindent" >The proof is in Nemhauser and Wolsey. It is important to note that the <span 
+class="cmti-12">extreme rays of conv(</span><span 
+class="cmmi-12">S</span><span 
+class="cmti-12">) are</span>
+<span 
+class="cmti-12">the extreme rays of</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">P</span>.
+<!--l. 137--><p class="noindent" >Our integer program of interest is
+   <center class="math-display" >
+<img 
+src="LPrelaxations1x.png" alt="min{cT x : x &#x2208; S}         (IP ).
+" class="math-display" ></center>
+                                                                                         
+                                                                                         
+<!--l. 141--><p class="nopar" >
+We relate this to the <span 
+class="cmti-12">linear program</span>
+   <center class="math-display" >
+<img 
+src="LPrelaxations2x.png" alt="min{cT x : x &#x2208; conv(S )}          (CIP  ).
+" class="math-display" ></center>
+<!--l. 145--><p class="nopar" >
+We don&#8217;t know the constraints of the linear program (<span 
+class="cmmi-12">CIP</span>) explicitly.
+   <div class="newtheorem">
+<!--l. 148--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Theorem</span><span 
+class="cmbx-12">&#x00A0;2</span> </span><span 
+class="cmti-12">For any </span><span 
+class="cmmi-12">c </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sup><span 
+class="cmmi-8">n</span></sup><span 
+class="cmti-12">, we have:</span>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-1005x1"><span 
+class="cmti-12">The objective value of </span>(<span 
+class="cmmi-12">IP</span>) <span 
+class="cmti-12">is unbounded below if and only if the objective value of</span>
+      (<span 
+class="cmmi-12">CIP</span>) <span 
+class="cmti-12">is unbounded below.</span>
+      </li>
+      <li 
+  class="enumerate" id="x1-1007x2"><span 
+class="cmti-12">If </span>(<span 
+class="cmmi-12">CIP</span>) <span 
+class="cmti-12">has a bounded optimal value then it has an optimal solution that is an optimal</span>
+      <span 
+class="cmti-12">solution to </span>(<span 
+class="cmmi-12">IP</span>)<span 
+class="cmti-12">. This optimal solution is an extreme point of conv(</span><span 
+class="cmmi-12">S</span><span 
+class="cmti-12">).</span>
+      </li>
+      <li 
+  class="enumerate" id="x1-1009x3"><span 
+class="cmti-12">If </span><span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">0</span></sup> <span 
+class="cmti-12">is an optimal solution to </span>(<span 
+class="cmmi-12">IP</span>) <span 
+class="cmti-12">then it is an optimal solution to</span><span 
+class="cmti-12">&#x00A0;</span>(<span 
+class="cmmi-12">CIP</span>)<span 
+class="cmti-12">.</span></li></ol>
+</div>
+<!--l. 158--><p class="indent" >   The proof is in the text. It relies on the fact that the minimizer of a concave function over a
+convex set is at an extreme point.
+   <div class="newtheorem">
+<!--l. 161--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Corollary</span><span 
+class="cmbx-12">&#x00A0;1</span> </span>(<span 
+class="cmmi-12">IP</span>) <span 
+class="cmti-12">is either unbounded or infeasible or has an optimal solution.</span>
+   </div>
+<!--l. 167--><p class="noindent" >So in principle, could solve (<span 
+class="cmmi-12">IP</span>) by solving the <span 
+class="cmbx-12">linear program </span>(<span 
+class="cmmi-12">CIP</span>). But we don&#8217;t know a
+polyhedral description of conv(<span 
+class="cmmi-12">S</span>).
+<!--l. 173--><p class="noindent" >Look at the <span 
+class="cmbx-12">LP relaxation</span>
+   <center class="math-display" >
+<img 
+src="LPrelaxations3x.png" alt="      T                                  T
+min {c  x : Ax &#x2265;  b, x &#x2265; 0}  =    min  {c x : x &#x2208; P }.        (LP  )
+" class="math-display" ></center>
+                                                                                         
+                                                                                         
+<!--l. 177--><p class="nopar" >
+<!--l. 179--><p class="noindent" >We can relate (<span 
+class="cmmi-12">LP</span>) to (<span 
+class="cmmi-12">IP</span>) in the following theorem. The proof exploits the fact that <span 
+class="cmmi-12">S </span><span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="cmmi-12">P</span>.
+<div class="newtheorem">
+<!--l. 182--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Theorem</span><span 
+class="cmbx-12">&#x00A0;3</span> </span><span 
+class="cmti-12">Let </span><span 
+class="cmmi-12">z</span><sup><span 
+class="cmmi-8">LP</span> </sup> <span 
+class="cmti-12">and </span><span 
+class="cmmi-12">z</span><sup><span 
+class="cmmi-8">IP</span> </sup> <span 
+class="cmti-12">be the optimal values of </span>(<span 
+class="cmmi-12">LP</span>) <span 
+class="cmti-12">and </span>(<span 
+class="cmmi-12">IP</span>) <span 
+class="cmti-12">respectively.</span>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-1013x1"><span 
+class="cmti-12">If </span><span 
+class="cmmi-12">P </span>= <span 
+class="cmsy-10x-x-120">&#x2205; </span><span 
+class="cmti-12">then </span><span 
+class="cmmi-12">S </span>= <span 
+class="cmsy-10x-x-120">&#x2205;</span><span 
+class="cmti-12">.</span>
+      </li>
+      <li 
+  class="enumerate" id="x1-1015x2"><span 
+class="cmti-12">If </span><span 
+class="cmmi-12">z</span><sup><span 
+class="cmmi-8">LP</span> </sup> <span 
+class="cmti-12">is finite then either </span><span 
+class="cmmi-12">S </span>= <span 
+class="cmsy-10x-x-120">&#x2205; </span><span 
+class="cmti-12">or </span><span 
+class="cmmi-12">z</span><sup><span 
+class="cmmi-8">IP</span> </sup> <span 
+class="cmti-12">is finite. If </span><span 
+class="cmmi-12">S</span><span 
+class="cmmi-12">&#x2260;</span><span 
+class="cmsy-10x-x-120">&#x2205; </span><span 
+class="cmti-12">then </span><span 
+class="cmmi-12">z</span><sup><span 
+class="cmmi-8">IP</span> </sup> <span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">z</span><sup><span 
+class="cmmi-8">LP</span> </sup><span 
+class="cmti-12">.</span>
+      </li>
+      <li 
+  class="enumerate" id="x1-1017x3"><span 
+class="cmti-12">If </span><span 
+class="cmmi-12">x</span><sup><span 
+class="cmmi-8">LP</span> </sup> <span 
+class="cmti-12">is optimal for </span>(<span 
+class="cmmi-12">LP</span>) <span 
+class="cmti-12">and if </span><span 
+class="cmmi-12">x</span><sup><span 
+class="cmmi-8">LP</span> </sup> <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120">&#x2124;</span><sup><span 
+class="cmmi-8">n</span></sup> <span 
+class="cmti-12">then </span><span 
+class="cmmi-12">x</span><sup><span 
+class="cmmi-8">LP</span> </sup> <span 
+class="cmti-12">is optimal for</span><span 
+class="cmti-12">&#x00A0;</span>(<span 
+class="cmmi-12">IP</span>)<span 
+class="cmti-12">.</span></li></ol>
+</div>
+<!--l. 195--><p class="noindent" >An integer program has <span 
+class="cmbx-12">many LP relaxations</span>. The aim of a cutting plane approach is to
+add linear constraints to the original LP relaxation in order to <span 
+class="cmbx-12">tighten up </span>the LP
+relaxation. These linear constraints are satisfied by every point in&#x00A0;<span 
+class="cmmi-12">S </span>but they might
+not be satisfied by every point in&#x00A0;<span 
+class="cmmi-12">P</span>. Adding these constraints gives an <span 
+class="cmbx-12">improved LP</span>
+<span 
+class="cmbx-12">relaxation </span>of the integer program. We would like to improve the relaxation so that it
+resembles conv(<span 
+class="cmmi-12">S</span>) in some sense, at least in the neighborhood of an optimal solution
+to&#x00A0;(<span 
+class="cmmi-12">IP</span>).
+                                                                                         
+                                                                                         
+<!--l. 209--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-20002"></a>Describing Polyhedra by Facets</h3>
+<!--l. 211--><p class="noindent" >We would like to get a polyhedral description of conv(<span 
+class="cmmi-12">S</span>). We&#8217;d like as compact a description as
+possible. We first set up some notation. Given a matrix <span 
+class="cmmi-12">A </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sup><span 
+class="cmmi-8">m</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup> and a vector <span 
+class="cmmi-12">b </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sup><span 
+class="cmmi-8">m</span></sup>, we
+construct the polyhedron
+   <center class="math-display" >
+<img 
+src="LPrelaxations4x.png" alt="Q  :=  {x &#x2208; &#x211D;n  : Ax &#x2265;  b}.
+" class="math-display" ></center>
+<!--l. 218--><p class="nopar" >
+<span 
+class="cmbx-12">Note</span>: We have changed notation from Section&#x00A0;<a 
+href="#x1-10001">1<!--tex4ht:ref: sec:LPrelax --></a>. In particular, any nonnegativity constraints are
+included in the system <span 
+class="cmmi-12">Ax </span><span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">b</span>.
+<!--l. 223--><p class="noindent" >We construct three sets of indices: <div class="eqnarray">
+   <center class="math-display" >
+<img 
+src="LPrelaxations5x.png" alt=" M    :=   {1,...,m }
+  =                  T
+M     :=   {i &#x2208; M  : Ai x = bi&#x2200;x &#x2208; Q }
+M &#x2265;   :=   M  \ M =
+" class="math-display" ></center>
+</div>
+<!--l. 231--><p class="noindent" >We also use the notation <span 
+class="cmmi-12">A</span><sup><span 
+class="cmr-8">=</span></sup>, <span 
+class="cmmi-12">A</span><sup><span 
+class="cmsy-8">&#x2265;</span></sup>, <span 
+class="cmmi-12">b</span><sup><span 
+class="cmr-8">=</span></sup> and <span 
+class="cmmi-12">b</span><sup><span 
+class="cmsy-8">&#x2265;</span></sup> in an analogous way.
+   <div class="newtheorem">
+<!--l. 235--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Definition</span><span 
+class="cmbx-12">&#x00A0;1</span> </span><span 
+class="cmti-12">The inequality </span><span 
+class="cmmi-12">&#x03C0;</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">&#x03C0;</span><sub>
+<span 
+class="cmr-8">0</span></sub>  <span 
+class="cmti-12">is a </span>valid inequality <span 
+class="cmti-12">for </span><span 
+class="cmmi-12">Q </span><span 
+class="cmti-12">if it is satisfied by all</span>
+<span 
+class="cmti-12">points in</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">Q</span><span 
+class="cmti-12">. We also represent the inequality using the pair </span>(<span 
+class="cmmi-12">&#x03C0;,&#x03C0;</span><sub><span 
+class="cmr-8">0</span></sub>)<span 
+class="cmti-12">.</span>
+   </div>
+   <div class="newtheorem">
+<!--l. 241--><p class="noindent" ><span class="head">
+                                                                                         
+                                                                                         
+<span 
+class="cmbx-12">Definition</span><span 
+class="cmbx-12">&#x00A0;2</span> </span><span 
+class="cmti-12">Let </span><span 
+class="cmmi-12">&#x03C0;</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">&#x03C0;</span><sub>
+<span 
+class="cmr-8">0</span></sub>  <span 
+class="cmti-12">be a valid inequality for</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">Q</span><span 
+class="cmti-12">. Let </span><span 
+class="cmmi-12">H </span>= <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sup><span 
+class="cmmi-8">n</span></sup>  : <span 
+class="cmmi-12">&#x03C0;</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>= <span 
+class="cmmi-12">&#x03C0;</span><sub>
+<span 
+class="cmr-8">0</span></sub><span 
+class="cmsy-10x-x-120">} </span><span 
+class="cmti-12">so</span>
+<span 
+class="cmmi-12">F </span>:= <span 
+class="cmmi-12">Q </span><span 
+class="cmsy-10x-x-120">&#x2229; </span><span 
+class="cmmi-12">H </span><span 
+class="cmti-12">is a face of</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">Q</span><span 
+class="cmti-12">. Then </span>(<span 
+class="cmmi-12">&#x03C0;,&#x03C0;</span><sub><span 
+class="cmr-8">0</span></sub>) represents<span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">F</span><span 
+class="cmti-12">. If </span><span 
+class="cmmi-12">F</span><span 
+class="cmmi-12">&#x2260;</span><span 
+class="cmsy-10x-x-120">&#x2205; </span><span 
+class="cmti-12">then </span>(<span 
+class="cmmi-12">&#x03C0;,&#x03C0;</span><sub><span 
+class="cmr-8">0</span></sub>) supports<span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">Q</span><span 
+class="cmti-12">.</span>
+   </div>
+<!--l. 247--><p class="noindent" >We extend the notation <span 
+class="cmmi-12">M</span><sup><span 
+class="cmr-8">=</span></sup>, <span 
+class="cmmi-12">M</span><sup><span 
+class="cmsy-8">&#x2265;</span></sup> to the face <span 
+class="cmmi-12">F </span>using the notation <span 
+class="cmmi-12">M</span><sub>
+<span 
+class="cmmi-8">F</span> </sub><sup><span 
+class="cmr-8">=</span></sup>, <span 
+class="cmmi-12">M</span><sub>
+<span 
+class="cmmi-8">F</span> </sub><sup><span 
+class="cmsy-8">&#x2265;</span></sup>.
+   <div class="newtheorem">
+<!--l. 250--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Proposition</span><span 
+class="cmbx-12">&#x00A0;1</span> </span><span 
+class="cmti-12">If </span><span 
+class="cmmi-12">F </span><span 
+class="cmti-12">is a nonempty face of </span><span 
+class="cmmi-12">Q </span><span 
+class="cmti-12">then </span><span 
+class="cmmi-12">F </span><span 
+class="cmti-12">is a polyhedron and</span>
+   <center class="math-display" >
+<img 
+src="LPrelaxations6x.png" alt="            n    T              =   T             &#x2265;
+F  = {x &#x2208; &#x211D;   : ai x = bi&#x2200;i &#x2208; M F , ai x &#x2265; bi&#x2200;i &#x2208; M F },
+" class="math-display" ></center>
+<!--l. 254--><p class="nopar" >
+<span 
+class="cmti-12">where </span><span 
+class="cmmi-12">M</span><sub><span 
+class="cmmi-8">F</span> </sub><sup><span 
+class="cmr-8">=</span></sup> <span 
+class="cmsy-10x-x-120">&#x2287; </span><span 
+class="cmmi-12">M</span><sup><span 
+class="cmr-8">=</span></sup> <span 
+class="cmti-12">and </span><span 
+class="cmmi-12">M</span><sub>
+<span 
+class="cmmi-8">F</span> </sub><sup><span 
+class="cmsy-8">&#x2265;</span></sup> <span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="cmmi-12">M</span><sup><span 
+class="cmsy-8">&#x2265;</span></sup><span 
+class="cmti-12">.</span>
+   </div>
+   <div class="newtheorem">
+<!--l. 258--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Proposition</span><span 
+class="cmbx-12">&#x00A0;2</span> </span><span 
+class="cmti-12">If </span><span 
+class="cmmi-12">F </span><span 
+class="cmti-12">is a facet of </span><span 
+class="cmmi-12">Q </span><span 
+class="cmti-12">then there exists some inequality </span><span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">k</span></sub><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">b</span><sub>
+<span 
+class="cmmi-8">k</span></sub> <span 
+class="cmti-12">with </span><span 
+class="cmmi-12">k </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">M</span><sup><span 
+class="cmsy-8">&#x2265;</span></sup>
+<span 
+class="cmti-12">that represents</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">F</span><span 
+class="cmti-12">.</span>
+   </div>
+<!--l. 263--><p class="noindent" ><span 
+class="cmbx-12">Proof. </span>Now dim(<span 
+class="cmmi-12">F</span>) = dim(<span 
+class="cmmi-12">P</span>)-1, so rank(<span 
+class="cmmi-12">A</span><sub><span 
+class="cmmi-8">F</span> </sub><sup><span 
+class="cmr-8">=</span></sup><span 
+class="cmmi-12">,b</span><sub>
+<span 
+class="cmmi-8">F</span> </sub><sup><span 
+class="cmr-8">=</span></sup>) = rank(<span 
+class="cmmi-12">A</span><sup><span 
+class="cmr-8">=</span></sup><span 
+class="cmmi-12">,b</span><sup><span 
+class="cmr-8">=</span></sup>) + 1. Therefore,
+we only need one inequality in <span 
+class="cmmi-12">M</span><sup><span 
+class="cmsy-8">&#x2265;</span></sup> that is in <span 
+class="cmmi-12">M</span><sub>
+<span 
+class="cmmi-8">F</span> </sub><sup><span 
+class="cmr-8">=</span></sup>, and this inequality represents the
+facet.                                                                                                              <span 
+class="msam-10x-x-120">&#x25A1;</span>
+   <div class="newtheorem">
+<!--l. 272--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Proposition</span><span 
+class="cmbx-12">&#x00A0;3</span> </span><span 
+class="cmti-12">For each facet </span><span 
+class="cmmi-12">F </span><span 
+class="cmti-12">of </span><span 
+class="cmmi-12">Q</span><span 
+class="cmti-12">, one of the inequalities representing </span><span 
+class="cmmi-12">F </span><span 
+class="cmti-12">is necessary</span>
+<span 
+class="cmti-12">in the description of</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">Q</span><span 
+class="cmti-12">.</span>
+   </div>
+   <div class="newtheorem">
+<!--l. 276--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Proposition</span><span 
+class="cmbx-12">&#x00A0;4</span> </span><span 
+class="cmti-12">Every inequality </span><span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">b</span><sub>
+<span 
+class="cmmi-8">i</span></sub>  <span 
+class="cmti-12">for </span><span 
+class="cmmi-12">i </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">M</span><sup><span 
+class="cmsy-8">&#x2265;</span></sup> <span 
+class="cmti-12">that represents a face of</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">Q </span><span 
+class="cmti-12">of</span>
+<span 
+class="cmti-12">dimension less than dim</span>(<span 
+class="cmmi-12">Q</span>) <span 
+class="cmsy-10x-x-120">- </span>1 <span 
+class="cmti-12">is irrelevant to the description of</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">Q</span><span 
+class="cmti-12">.</span>
+                                                                                         
+                                                                                         
+   </div>
+<!--l. 282--><p class="noindent" >Thus, later we will emphasize finding <span 
+class="cmbx-12">facets of the convex hull </span>of&#x00A0;<span 
+class="cmmi-12">S</span>.
+<!--l. 287--><p class="noindent" >With these propositions, we can now state a theorem showing how a polyhedron can be minimally
+represented using linear equalities and inequalities.
+   <div class="newtheorem">
+<!--l. 292--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Theorem</span><span 
+class="cmbx-12">&#x00A0;4</span> </span>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-2010x1"><span 
+class="cmti-12">A full dimensional polyhedron </span><span 
+class="cmmi-12">Q </span><span 
+class="cmti-12">has a unique (to within scalar multiplication) minimal</span>
+      <span 
+class="cmti-12">representation by a finite set of linear inequalities. In particular, for each facet </span><span 
+class="cmmi-12">F</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmti-12">of </span><span 
+class="cmmi-12">Q </span><span 
+class="cmti-12">with</span>
+      <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,t</span><span 
+class="cmti-12">, there is an inequality </span><span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">b</span><sub>
+<span 
+class="cmmi-8">i</span></sub> <span 
+class="cmti-12">(unique to within scalar multiplication)</span>
+      <span 
+class="cmti-12">representing </span><span 
+class="cmmi-12">F</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmti-12">and</span>
+      <center class="math-display" >
+      <img 
+src="LPrelaxations7x.png" alt="            n    T
+Q  =  {x &#x2208; &#x211D;   : ai x &#x2265; bi, i = 1,...,t}.
+      " class="math-display" ></center>
+      <!--l. 301--><p class="nopar" >
+      </li>
+      <li 
+  class="enumerate" id="x1-2012x2"><span 
+class="cmti-12">If dim</span>(<span 
+class="cmmi-12">Q</span>) = <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">k </span><span 
+class="cmti-12">with </span><span 
+class="cmmi-12">k &#x003E; </span>0 <span 
+class="cmti-12">then let </span><span 
+class="cmmi-12">t </span><span 
+class="cmti-12">be the number of facets </span><span 
+class="cmmi-12">F</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmti-12">of </span><span 
+class="cmmi-12">Q</span><span 
+class="cmti-12">, and we</span>
+      <span 
+class="cmti-12">have</span>
+      <center class="math-display" >
+      <img 
+src="LPrelaxations8x.png" alt="            n    T                         T
+Q  =  {x &#x2208; &#x211D;  : ai x = bi for i = 1,...,k, a i x &#x2265; bi for i = k + 1,...,k + t}.
+      " class="math-display" ></center>
+      <!--l. 307--><p class="nopar" >
+      <span 
+class="cmti-12">The set </span><span 
+class="cmsy-10x-x-120">{</span>(<span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">,b</span><sub><span 
+class="cmmi-8">i</span></sub>) : <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,k</span><span 
+class="cmsy-10x-x-120">} </span><span 
+class="cmti-12">is a maximal set of linearly independent rows of </span>(<span 
+class="cmmi-12">A</span><sup><span 
+class="cmr-8">=</span></sup><span 
+class="cmmi-12">,b</span><sup><span 
+class="cmr-8">=</span></sup>)<span 
+class="cmti-12">. For</span>
+      <span 
+class="cmmi-12">i </span>= <span 
+class="cmmi-12">k </span>+ 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,k </span>+ <span 
+class="cmmi-12">t</span><span 
+class="cmti-12">, </span>(<span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">,b</span><sub><span 
+class="cmmi-8">i</span></sub>) <span 
+class="cmti-12">is any inequality from the equivalence class of inequalities</span>
+      <span 
+class="cmti-12">representing the facet</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">F</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmti-12">of</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">Q</span><span 
+class="cmti-12">.</span></li></ol>
+</div>
+<!--l. 314--><p class="noindent" >The aim in a cutting plane approach is to try to develop a minimal description of the polyhedron
+conv(<span 
+class="cmmi-12">S</span>), at least in the neighborhood of an optimal point to&#x00A0;(<span 
+class="cmmi-12">IP</span>). This theorem tells us that it is
+enough to determine all the facets of conv(<span 
+class="cmmi-12">S</span>), as well as a description of the affine hull of
+conv(<span 
+class="cmmi-12">S</span>).
+    
+</body></html> 
+
+                                                                                         
+
+

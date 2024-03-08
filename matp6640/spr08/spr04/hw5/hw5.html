@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Homework 5</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="hw5">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="hw5.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+     <a href=..>MATP6640/DSES6770 Linear Programming</a>, Homework 5.
+  </FONT>
+</DIV>
+
+<P>
+
+<DIV ALIGN="RIGHT">
+   Due:  <b>Monday, April 19, 2004</b>.
+
+</DIV>
+
+<P>
+
+<BR>
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>Consider the linear programming problem (<I>P</I>)
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcr}
+        \min        & 9x_1 & + & 6x_2 & - & 7x_3 \\
+        \mbox{s.t.} &  x_1 & + & 2x_2 & + & 3x_3 & = & 6  \\
+                    && x_1,& x_2,& x_3 & \geq & 0.
+      \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="290" HEIGHT="76"
+ SRC="img1.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcr}
+\min &amp; 9x_1 &amp; + &amp; 6x_2 &amp; - &amp; 7x_3 ...
+... 3x_3 &amp; = &amp; 6 \\
+&amp;&amp; x_1,&amp; x_2,&amp; x_3 &amp; \geq &amp; 0.
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Assume the current point is <I>e</I>=(1,1,1)<SUP><I>T</I></SUP>.
+    Calculate the affine descent direction -<I>P</I><SUB><I>A</I></SUB><I>c</I> and the centering direction
+    <I>P</I><SUB><I>A</I></SUB><I>e</I>.  We wish to move in the direction <!-- MATH: $d=-P_Ac+\beta P_Ae$ -->
+<IMG
+ WIDTH="151" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$d=-P_Ac+\beta P_Ae$">
+for some
+    <IMG
+ WIDTH="50" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\beta \geq 0$">.
+Show that by choosing <IMG
+ WIDTH="15" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\beta$">
+appropriately, we can find
+    a steplength <IMG
+ WIDTH="51" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$\alpha \geq 0$">
+such that <IMG
+ WIDTH="57" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$e+\alpha d$">
+is optimal for
+    the linear program.
+    (Note: For this problem use the primal rescaling matrix&nbsp;<I>X</I>.
+    For the given point, we have <I>X</I>=<I>I</I>, the identity matrix.
+    The projection matrix <!-- MATH: $P_A=I-A^T(AA^T)^{-1}A$ -->
+<I>P</I><SUB><I>A</I></SUB>=<I>I</I>-<I>A</I><SUP><I>T</I></SUP>(<I>AA</I><SUP><I>T</I></SUP>)<SUP>-1</SUP><I>A</I>.)
+  <DT>2.
+<DD>Assume the standard form linear programming problem
+    <!-- MATH: $\min\{c^Tx: Ax=b, x \geq 0\}$ -->
+<IMG
+ WIDTH="211" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\min\{c^Tx: Ax=b, x \geq 0\}$">
+    has a bounded set of optimal solutions.
+Let <i>x</i> be a strictly feasible solution.
+    Let <IMG
+ WIDTH="49" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$\mu &gt; 0$">.
+    Let <I>s</I><SUP>*</SUP> solve the problem <!-- MATH: $\min \{|| Xs - \mu e ||^2 : A^Ty +s = c \}$ -->
+<IMG
+ WIDTH="267" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$\min \{\vert\vert Xs - \mu e \vert\vert^2 : A^Ty +s = c \}$">.
+    Find&nbsp;<I>s</I><SUP>*</SUP>. Show that if the optimal value is smaller than <IMG
+ WIDTH="15" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$\mu$">
+    then <I>s</I><SUP>*</SUP> &gt; 0.
+  <DT>3.
+<DD>For the problem (<I>P</I>) in question&nbsp;1, with the given primal point <I>x</I>=<I>e</I>,
+    find the choice of <I>y</I><SUP>*</SUP>, <I>s</I><SUP>*</SUP>, and <IMG
+ WIDTH="23" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.gif"
+ ALT="$\mu^*$">
+which minimizes
+    <!-- MATH: $\{|| Xs - \mu e ||^2 : A^Ty +s = c \}$ -->
+<IMG
+ WIDTH="236" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.gif"
+ ALT="$\{\vert\vert Xs - \mu e \vert\vert^2 : A^Ty +s = c \}$">.
+     Verify that the optimal value is smaller than&nbsp;<IMG
+ WIDTH="23" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.gif"
+ ALT="$\mu^*$">.
+  <DT>4.
+<DD>Show that the standard dual form <!-- MATH: $\max\{b^Ty: A^Ty+s=c, s \geq 0\}$ -->
+<IMG
+ WIDTH="253" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\max\{b^Ty: A^Ty+s=c, s \geq 0\}$">
+    is equivalent to a problem of the form
+    <!-- MATH: $\min\{g^Ts : Ms = Mc, s \geq 0\}$ -->
+<IMG
+ WIDTH="233" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$\min\{g^Ts : Ms = Mc, s \geq 0\}$">
+    for some matrix <I>M</I> and
+some vector <i>g</i>.
+You may assume the rows of <i>A</i> are linearly independent.
+  <DT>5.
+<DD>Wright, Chapter 5, page 105, question 7.
+  <DT>6.
+<DD>Let <I>X</I> be a symmetric real <I>n</I>  x  <I>n</I> matrix.
+    Show that <I>X</I> is positive semidefinite if and only if
+    <!-- MATH: $\mbox{trace}(MX) \geq 0$ -->
+<IMG
+ WIDTH="131" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.gif"
+ ALT="$\mbox{trace}(MX) \geq 0$">
+for all symmetric positive semidefinite
+    <I>n</I>  x  <I>n</I> real matrices&nbsp;<I>M</I>.
+    (Hint: <I>M</I> is a symmetric positive semidefinite matrix
+    if and only if it has a
+    Cholesky factorization <I>M</I>=<I>LL</I><SUP><I>T</I></SUP> for a real lower triangular
+    matrix&nbsp;<I>L</I>.)
+</DL>
+
+<P>
+
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD></TD><TD ALIGN="LEFT"><a href=../..>John Mitchell</a></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Amos Eaton 325</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">x6915.</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT"><a href=mailto:mitchj@rpi.edu>mitchj@rpi.edu</a></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Office hours: Thursday: 2pm - 4pm.</TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2004-04-05</I>
+</ADDRESS>
+</BODY>
+</HTML>

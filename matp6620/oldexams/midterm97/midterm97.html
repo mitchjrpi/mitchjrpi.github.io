@@ -1,0 +1,301 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Midterm Exam 1997</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="midterm97">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="midterm97.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  <FONT SIZE="+1">
+  <a href=..>67.612/92.672 
+<BR>
+  <B>Combinatorial Optimization and Integer Programming </B> 
+</a>
+<BR>
+Spring 97</FONT>
+
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER">
+  Midterm Exam, Wednesday, April 9, 1997.
+
+</DIV>
+
+<P>
+Please do all three problems. Show all work. No books or calculators allowed.
+You may use any result from class, the homeworks, or the texts, except where
+stated.
+You may use one sheet of handwritten notes.
+The exam lasts two hours.
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>(25 points)
+The <EM>max clique</EM> feasibility problem can be described
+     as follows:
+     <BLOCKQUOTE>
+       An <EM>instance</EM> consists of a graph <I>G</I>=(<I>V</I>,<I>E</I>) and an integer <I>k</I>.
+       The answer is <EM>YES</EM> if the graph contains a clique with at
+       least <I>k</I> vertices; otherwise, the answer is&nbsp;<EM>NO</EM>.
+     
+</BLOCKQUOTE>
+     Show that the <EM>max clique</EM> problem is <I>NP</I>-complete.
+     (Hint: You may assume the following problems are <I>NP</I>-complete:
+     S<SMALL>ATISFIABILITY</SMALL>, 3-S<SMALL>ATISFIABILITY</SMALL>,
+     N<SMALL>ODE </SMALL>P<SMALL>ACKING</SMALL>, H<SMALL>AMILTONIAN </SMALL>P<SMALL>ATH</SMALL>, H<SMALL>AMILTONIAN </SMALL>C<SMALL>IRCUIT</SMALL>.
+     It should be possible to use one of these in a reduction.
+     Instances of these problems are defined as follows:
+     <BLOCKQUOTE>
+       S<SMALL>ATISFIABILITY:</SMALL> Given a set of boolean variables
+        and a set of clauses consisting of
+        literals (each of which is a variable or a negated variable)
+        does there exist
+        an assignment for the variables so that at least one literal
+        in each clause is <EM>true</EM>?  
+<BR>
+3-S<SMALL>ATISFIABILITY:</SMALL>
+        An instance of satisfiability where each clause contains exactly
+        three literals.  
+<BR>
+N<SMALL>ODE </SMALL>P<SMALL>ACKING:</SMALL>
+        Given a graph <I>G</I>=(<I>V</I>,<I>E</I>) and a integer <I>k</I>,
+        does there exist a subset <IMG
+ WIDTH="59" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$U \subseteq V$">
+        with <!-- MATH: $\mid \! U \! \mid = k$ -->
+<IMG
+ WIDTH="64" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\mid \! U \! \mid = k$">
+        where no two of the vertices in <I>U</I> share an edge?  
+<BR>
+H<SMALL>AMILTONIAN </SMALL>P<SMALL>ATH:</SMALL>
+        Given a graph <I>G</I>=(<I>V</I>,<I>E</I>), does there exist a path which visits
+        every vertex?  
+<BR>
+H<SMALL>AMILTONIAN </SMALL>C<SMALL>IRCUIT:</SMALL>
+        Given a graph <I>G</I>=(<I>V</I>,<I>E</I>), does there exist a circuit which visits
+        every vertex?)
+     
+</BLOCKQUOTE>
+  <DT>2.
+<DD>(50 points)
+      <DL COMPACT>
+<DT>(a)
+<DD>(42 points; each part is worth six points.) <A NAME="particular">&#160;</A>Consider the binary knapsack problem:
+            <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lccrcrcrcrcrcl}
+     \max  & z & :=      & 10x_1 & + & 8x_2 & + & 5x_3 & + & 2x_4 & + & x_5 \\
+     \mbox{st }  &&&  2x_1 & + & 4x_2 & + & 5x_3 & + & 3x_4 & + & 4x_5 &
+                                 \leq & 10
+                                 \qquad \qquad (KP)  \\
+                 &&&&&&&&& x_i && \mbox{binary.}
+              \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="657" HEIGHT="76"
+ SRC="img3.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lccrcrcrcrcrcl}
+\max &amp; z &amp; := &amp; 10x_1 &amp; + &amp; ...
+... \qquad (KP) \\
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp; x_i &amp;&amp; \mbox{binary.}
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Let <!-- MATH: $P=\{x \in {\Re}^5_+:2x_1+4x_2+5x_3+3x_4+4x_5\leq 10,
+                    0 \leq x_i \leq 1\}$ -->
+<IMG
+ WIDTH="506" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$P=\{x \in {\Re}^5_+:2x_1+4x_2+5x_3+3x_4+4x_5\leq 10,
+0 \leq x_i \leq 1\}$">
+and&nbsp;<!-- MATH: $S=P\cap{\cal Z}^5$ -->
+<IMG
+ WIDTH="100" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.gif"
+ ALT="$S=P\cap{\cal Z}^5$">.
+            <DL COMPACT>
+<DT>i.
+<DD>Solve the LP-relaxation
+<!-- MATH: $\max\{z : x \in P \}$ -->
+<IMG
+ WIDTH="132" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\max\{z : x \in P \}$">.
+                 (Hint: You can solve the relaxation by ordering the variables
+                 in decreasing order of <I>c</I><SUB><I>j</I></SUB>/<I>a</I><SUB><I>j</I></SUB> and then successively
+                 using as much as
+                 possible of the next available variable until all of the
+                 resource <I>b</I> is consumed. Here, <I>c</I><SUB><I>j</I></SUB> are
+                 the objective function coefficients, <I>a</I><SUB><I>j</I></SUB> are the
+                 constraint coefficients, and <I>b</I> is the right hand side
+                 of the constraint.)
+              <DT>ii.
+<DD>What is the dimension of <I>S</I>?
+              <DT>iii.
+<DD>Prove that <!-- MATH: $x_1+x_2+x_3 \leq 2$ -->
+<IMG
+ WIDTH="139" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$x_1+x_2+x_3 \leq 2$">
+is a valid inequality for&nbsp;<I>S</I>.
+              <DT>iv.
+<DD>Prove that <!-- MATH: $x_1+x_2+x_3 \leq 2$ -->
+<IMG
+ WIDTH="139" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$x_1+x_2+x_3 \leq 2$">
+is a facet of conv(<I>S</I>),
+                 the convex hull of&nbsp;<I>S</I>.
+              <DT>v.
+<DD>What is the Chvatal-Gomory rank of the inequality
+                 <!-- MATH: $x_1+x_2+x_3 \leq 2$ -->
+<IMG
+ WIDTH="139" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$x_1+x_2+x_3 \leq 2$">?
+              <DT>vi.
+<DD>Prove that <!-- MATH: $x_3+x_4+x_5 \leq 2$ -->
+<IMG
+ WIDTH="139" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$x_3+x_4+x_5 \leq 2$">
+is a valid inequality for&nbsp;<I>S</I>.
+              <DT>vii.
+<DD>Show that the inequality <!-- MATH: $x_3+x_4+x_5 \leq 2$ -->
+<IMG
+ WIDTH="139" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$x_3+x_4+x_5 \leq 2$">
+can be lifted
+                 to give a stronger valid inequality for&nbsp;<I>S</I>.
+            </DL>
+         <DT>(b)
+<DD>(8 points)
+            Consider the general binary knapsack problem:
+            <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcl}
+                \max          & \sum_{i=1}^n c_ix_i \\
+                \mbox{s.t. }  & \sum_{i=1}^n a_ix_i & \leq & b \\
+                              &            x_i  && \mbox{binary,}
+              \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="226" HEIGHT="76"
+ SRC="img9.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcl}
+\max &amp; \sum_{i=1}^n c_ix_i \\
+\mbox{...
+...^n a_ix_i &amp; \leq &amp; b \\
+&amp; x_i &amp;&amp; \mbox{binary,}
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <I>b</I>&gt;0, and <I>a</I><SUB><I>i</I></SUB>&gt;0, <I>c</I><SUB><I>i</I></SUB>&gt;0 for <IMG
+ WIDTH="98" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$i=1,\ldots,n$">.
+            Generalize the results of part&nbsp;<A HREF="midterm97.html#particular">2a</A> to give a class of
+            valid inequalities for this problem.
+      </DL>
+  <DT>3.
+<DD>(25 points)
+          Consider the 0-1 equality knapsack problem
+          <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\max \{-x_{n+1} : 2x_1 + 2x_2 + \ldots + 2x_n + x_{n+1} = n,
+                         x \in B^n \},  \qquad\qquad (KE)
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="554" HEIGHT="33"
+ SRC="img11.gif"
+ ALT="\begin{displaymath}
+\max \{-x_{n+1} : 2x_1 + 2x_2 + \ldots + 2x_n + x_{n+1} = n,
+x \in B^n \}, \qquad\qquad (KE)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <I>n</I> is an odd integer.
+          We wish to solve this problem using a branch and bound algorithm
+          with linear programming relaxations.
+       <DL COMPACT>
+<DT>(a)
+<DD>(5 points)
+Show that <I>x</I><SUB><I>n</I>+1</SUB>=1 in any feasible solution to&nbsp;(<I>KE</I>). 
+         <DT>(b)
+<DD>(10 points)
+          Assume
+          we always separate using variable dichotomies
+          (ie, add the constraints <I>x</I><SUB><I>i</I></SUB> = 0 or <I>x</I><SUB><I>i</I></SUB> = 1 for some <I>i</I>).
+          Show that if no more than <!-- MATH: $\lfloor n/2 \rfloor$ -->
+<IMG
+ WIDTH="51" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.gif"
+ ALT="$\lfloor n/2 \rfloor$">
+          of the variables <!-- MATH: $x_1,\ldots,x_n$ -->
+<IMG
+ WIDTH="84" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$x_1,\ldots,x_n$">
+          have been fixed at 0 or 1 then the relaxation has value&nbsp;0.
+          Hence show that an exponential number of nodes of the
+          branch and bound tree must be considered to solve the problem.
+         <DT>(c)
+<DD>(10 points)
+          What is the minimum number of nodes we need if we can separate
+          using <EM>any</EM> linear inequality?
+          (Assume that you obtain an extreme point optimal solution to any
+          relaxation that you set up, provided such a solution exists.)
+       </DL></DL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2005-11-28</I>
+</ADDRESS>
+</BODY>
+</HTML>

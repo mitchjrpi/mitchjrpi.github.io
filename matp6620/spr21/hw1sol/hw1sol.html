@@ -1,0 +1,511 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw1sol.tex"> 
+<meta name="date" content="2021-02-08 11:54:00"> 
+<link rel="stylesheet" type="text/css" href="hw1sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 27--><p class="noindent" >
+<!--l. 30--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6620" ><span 
+class="cmbx-12">MATP6620/ISYE6760 Combinatorial Optimization &amp; Integer Programming</span></a><br />
+<span 
+class="cmbx-12">Homework 1.</span><br />
+<span 
+class="cmbx-12">Solutions </span></div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 36--><p class="noindent" >
+ Due: Thursday, February 4, 2021, by end of day.<br />
+Penalty for late homeworks: 10% for each day or part of a day.</div>
+<!--l. 65--><p class="noindent" >This homework is concerned with a symmetric traveling salesman problem on eleven vertices
+(indexed from 0 to 10), with the costs given in the following table:
+   <center class="math-display" >
+<img 
+src="hw1sol0x.png" alt="   |
+---|-0---1---2---3---4--5---6---7---8---9--10--
+  0| 0  63  64  62  35 64  61  60  92  93  63
+  1|63   0  62  65  62 63  63  60  13  92  91
+  2|64  62   0  63  64 61  62  60  93  15  92
+  3|62  65  63   0  63 64  62  60  96  93  14
+  4|35  62  64  63   0  2   3  64  93  95  93
+  5|64  63  61  64   2  0   3  62  94  93  92
+  6|61  63  62  62   3  3   0  43  95  95  91
+  7|60  60  60  60  64 62  43   0  94  93  93
+  8|92  13  93  96  93 94  95  94   0  62  62
+  9|93  92  15  93  95 93  95  93  62   0  63
+ 10 63  91  92  14  93 92  91  93  62  63  0
+" class="math-display" ></center>
+<!--l. 84--><p class="nopar" >
+<!--l. 104--><p class="indent" >   You will solve this problem using AMPL and CPLEX. The packages are available on LMS and
+Box. More on these packages can be found at <a 
+href="http://www.rpi.edu/~mitchj/ampldetails.html" class="url" ><span 
+class="cmtt-12">http://www.rpi.edu/</span><span 
+class="cmtt-12">~</span><span 
+class="cmtt-12">mitchj/ampldetails.html</span></a>
+and also on LMS and in Box.
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1"><a 
+ id="x1-21"></a> The LP relaxation <a 
+href="tsplp.mod" >model</a> and <a 
+href="tsp.dat" >data</a> files are available online. Solve the LP relaxation
+      of the problem, so each <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">e</span></sub> satisfies 0 <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">e</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>1. Show that this does not give an optimal
+      solution to the TSP.
+      <!--l. 182--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 184--><p class="noindent" >Optimal solution to the relaxation is fractional, so it clearly is not a solution to the
+      TSP, which has binary variables.
+      <!--l. 187--><p class="noindent" ><img 
+src="q1sol.png" alt="PIC"  
+>
+                                                                                         
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2">Improve the <span 
+class="cmbx-12">LP relaxation </span>by adding in the subtour elimination constraints
+      <center class="math-display" >
+      <img 
+src="hw1sol1x.png" alt=" &#x2211;    x  &#x2264; |U | - 1
+       e
+e&#x2208;E(U)
+      " class="math-display" ></center>
+      <!--l. 192--><p class="nopar" >
+      for all subsets <span 
+class="cmmi-12">U </span><span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="cmmi-12">V </span>of cardinality 3 or 4, where <span 
+class="cmmi-12">E</span>(<span 
+class="cmmi-12">U</span>) is the set of edges with
+      both endpoints in&#x00A0;<span 
+class="cmmi-12">U</span>. Show that this still does not give an optimal solution to the
+      TSP.
+      <!--l. 197--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 199--><p class="noindent" >We add the subtour constraints to the model using the lines
+                                                                                         
+                                                                                         
+      <div class="verbatim" id="verbatim-1">
+      subject&#x00A0;to&#x00A0;subtour3&#x00A0;{i&#x00A0;in&#x00A0;0..p,&#x00A0;j&#x00A0;in&#x00A0;i+1..p,&#x00A0;k&#x00A0;in&#x00A0;j+1..p}:
+      &#x00A0;<br />&#x00A0;&#x00A0;x[i,j]&#x00A0;+&#x00A0;x[i,k]&#x00A0;+&#x00A0;x[j,k]&#x00A0;&#x003C;=&#x00A0;2;
+      &#x00A0;<br />
+      &#x00A0;<br />subject&#x00A0;to&#x00A0;subtour4&#x00A0;{i&#x00A0;in&#x00A0;0..p,&#x00A0;j&#x00A0;in&#x00A0;i+1..p,&#x00A0;k&#x00A0;in&#x00A0;j+1..p,&#x00A0;l&#x00A0;in&#x00A0;k+1..p}:
+      &#x00A0;<br />&#x00A0;&#x00A0;x[i,j]&#x00A0;+&#x00A0;x[i,k]&#x00A0;+&#x00A0;x[j,k]&#x00A0;+&#x00A0;x[i,l]&#x00A0;+&#x00A0;x[j,l]&#x00A0;+&#x00A0;x[k,l]&#x00A0;&#x003C;=&#x00A0;3;
+</div>
+      <!--l. 207--><p class="nopar" >
+      <!--l. 209--><p class="noindent" >Optimal solution to the relaxation is still fractional, so it clearly is not a solution to the TSP,
+      which has binary variables.
+      <!--l. 213--><p class="noindent" ><img 
+src="q2sol.png" alt="PIC"  
+>
+      </li>
+      <li 
+  class="enumerate" id="x1-7x3"><a 
+ id="x1-63"></a> Now require that the solution be binary, in addition to satisfying just the degree constraints.
+      Show that this does not give an optimal solution to the TSP. (Note: The default solver in
+      AMPL is <span 
+class="cmtt-12">minos</span>, which is a continuous solver. To solve an integer program you have to tell
+      AMPL to use an appropriate solver such as <span 
+class="cmtt-12">CPLEX </span>or <span 
+class="cmtt-12">gurobi</span>, using the command <span 
+class="cmtt-12">option</span>
+      <span 
+class="cmtt-12">solver cplex;</span>)
+      <!--l. 224--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 226--><p class="noindent" >AMPL output is
+      <!--l. 228--><p class="noindent" ><img 
+src="q3sol.png" alt="PIC"  
+>
+      <!--l. 230--><p class="noindent" >This is binary, but not a tour. The solution consists of 3 subtours:
+      <center class="par-math-display" >
+      <img 
+src="hw1sol2x.png" alt="0 - 7 - 3 - 10 - 0,  1 - 2 - 9 - 8 - 1,  4 - 5 - 6 - 4.
+      " class="par-math-display" ></center>
+      <!--l. 234--><p class="nopar" >
+      </li>
+      <li 
+  class="enumerate" id="x1-9x4"><a 
+ id="x1-84"></a> Show that an optimal solution to the TSP can be found by adding two particular subtour
+      elimination constraints to the formulation in Question&#x00A0;<a 
+href="#x1-63">3<!--tex4ht:ref: q.integer --></a>, one with <span 
+class="cmsy-10x-x-120">|</span><span 
+class="cmmi-12">U</span><span 
+class="cmsy-10x-x-120">| </span>= 3 and one with
+      <span 
+class="cmsy-10x-x-120">|</span><span 
+class="cmmi-12">U</span><span 
+class="cmsy-10x-x-120">| </span>= 4.
+      <!--l. 244--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 246--><p class="noindent" >We add subtour elimination constraints for <span 
+class="cmmi-12">U </span>= <span 
+class="cmsy-10x-x-120">{</span>4<span 
+class="cmmi-12">, </span>5<span 
+class="cmmi-12">, </span>6<span 
+class="cmsy-10x-x-120">} </span>and <span 
+class="cmmi-12">U </span>= <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmmi-12">, </span>2<span 
+class="cmmi-12">, </span>8<span 
+class="cmmi-12">, </span>9<span 
+class="cmsy-10x-x-120">} </span>using the
+      lines
+                                                                                         
+                                                                                         
+      <div class="verbatim" id="verbatim-2">
+      subject&#x00A0;to&#x00A0;subtour4564:
+      &#x00A0;<br />&#x00A0;&#x00A0;x[4,5]&#x00A0;+&#x00A0;x[4,6]&#x00A0;+&#x00A0;x[5,6]&#x00A0;&#x003C;=&#x00A0;2;
+      &#x00A0;<br />
+      &#x00A0;<br />subject&#x00A0;to&#x00A0;subtour12981:
+      &#x00A0;<br />&#x00A0;&#x00A0;x[1,2]&#x00A0;+&#x00A0;x[1,8]&#x00A0;+&#x00A0;x[1,9]&#x00A0;+&#x00A0;x[2,8]&#x00A0;+&#x00A0;x[2,9]&#x00A0;+&#x00A0;x[8,9]&#x00A0;&#x003C;=&#x00A0;3;
+</div>
+      <!--l. 255--><p class="nopar" >
+      <!--l. 257--><p class="noindent" >The solution is then
+      <!--l. 259--><p class="noindent" ><img 
+src="q4sol.png" alt="PIC"  
+>
+      <!--l. 261--><p class="noindent" >The solution to the relaxation is a tour, so it solves the TSP. Optimal solution is the tour
+      0 <span 
+class="cmsy-10x-x-120">- </span>4 <span 
+class="cmsy-10x-x-120">- </span>5 <span 
+class="cmsy-10x-x-120">- </span>6 <span 
+class="cmsy-10x-x-120">- </span>7 <span 
+class="cmsy-10x-x-120">- </span>1 <span 
+class="cmsy-10x-x-120">- </span>8 <span 
+class="cmsy-10x-x-120">- </span>9 <span 
+class="cmsy-10x-x-120">- </span>2 <span 
+class="cmsy-10x-x-120">- </span>3 <span 
+class="cmsy-10x-x-120">- </span>10 <span 
+class="cmsy-10x-x-120">- </span>0 with length 373.
+      </li>
+      <li 
+  class="enumerate" id="x1-11x5">Model the following scheduling problem as a mixed integer programming problem:
+           <div class="quote">
+           <!--l. 273--><p class="noindent" >A set of <span 
+class="cmmi-12">n </span>jobs must be carried out on a single machine that can only do
+           one job at a time. Each job <span 
+class="cmmi-12">j </span>takes <span 
+class="cmmi-12">p</span><sub><span 
+class="cmmi-8">j</span></sub> hours to complete. Given job weights
+           <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">j</span></sub> for <span 
+class="cmmi-12">j </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span>, in what order should the jobs be carried out in order to
+           minimize the weighted sum of their completion times?</div>
+      <!--l. 281--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 283--><p class="noindent" >We give 3 different formulations. The first one is quadratic, the second one involves both
+      binary and continuous variables, and the third one requires <span 
+class="cmmi-12">O</span>(<span 
+class="cmmi-12">n</span><sup><span 
+class="cmr-8">3</span></sup>) constraints.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-13x1"><span 
+class="cmbx-12">Quadratic assignment problem</span>
+           <!--l. 290--><p class="noindent" >Let
+           <center class="math-display" >
+           <img 
+src="hw1sol3x.png" alt="      {
+x  =     1  if job i is the kth job completed
+ ik      0  otherwise
+           " class="math-display" ></center>
+           <!--l. 297--><p class="nopar" >
+           Then job <span 
+class="cmmi-12">i </span>is finished at time <span 
+class="cmmi-12">t</span><sub><span 
+class="cmmi-8">i</span></sub>, with job <span 
+class="cmmi-12">i </span>the <span 
+class="cmmi-12">k</span>th completed job:
+                                                                                         
+                                                                                         
+           <center class="math-display" >
+           <img 
+src="hw1sol4x.png" alt="t  =   p +  &#x2211;n        &#x2211;k - 1p x
+ i      i      j = 1    l=1  j jl
+               j &#x2044;= i
+           " class="math-display" ></center>
+           <!--l. 304--><p class="nopar" >
+           So total weighted completion time is
+           <center class="math-display" >
+           <img 
+src="hw1sol5x.png" alt="            (            (                  ) )
+
+     &#x2211; n    ||      &#x2211;n    ||   &#x2211;n    k&#x2211;- 1     || ||
+T  =     wi || pi +    xik||             pjxjl|| ||
+      i=1    |      k=1   |          l=1      | |
+            (            (  j = 1           ) )
+                             j &#x2044;= i
+           " class="math-display" ></center>
+           <!--l. 311--><p class="nopar" >
+           The complete formulation is
+           <center class="math-display" >
+           <img 
+src="hw1sol6x.png" alt="      &#x2211;n           &#x2211;n   &#x2211;n         &#x2211;n         &#x2211;k -1
+min     i=1wipi +    i=1   k=1 wixik    j = 1    l=1 pjxjl
+                                       j &#x2044;= i
+      &#x2211;n
+s.t.  &#x2211; i=1xik = 1   for k = 1,...,n
+        nk=1 xik = 1  for i = 1,...,n
+
+      xikbinary for i,k = 1,...,n
+           " class="math-display" ></center>
+           <!--l. 323--><p class="nopar" >
+           </li>
+           <li 
+  class="enumerate" id="x1-15x2"><span 
+class="cmbx-12">Mixed integer linear program</span>
+           <!--l. 327--><p class="noindent" >Let <span 
+class="cmmi-12">t</span><sub><span 
+class="cmmi-8">i</span></sub> be the time at which job <span 
+class="cmmi-12">i </span>is finished.
+           <!--l. 329--><p class="noindent" >Let
+           <center class="math-display" >
+           <img 
+src="hw1sol7x.png" alt="      {
+x  =     1  if job i is scheduled before job j
+ ij      0  otherwise
+           " class="math-display" ></center>
+                                                                                         
+                                                                                         
+           <!--l. 336--><p class="nopar" >
+           <!--l. 338--><p class="noindent" >We need
+           <center class="math-display" >
+           <img 
+src="hw1sol8x.png" alt="{  t &#x2265; t +  p  if x  = 0
+    i   j    i     ij
+   ti &#x2265; pi     otherwise
+           " class="math-display" ></center>
+           <!--l. 344--><p class="nopar" >
+           <!--l. 346--><p class="noindent" >Let <span 
+class="cmmi-12">T </span>= <span 
+class="cmex-10x-x-120">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">i</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmmi-8">n</span></sup><span 
+class="cmmi-12">p</span><sub>
+<span 
+class="cmmi-8">i</span></sub>, the time the last job finishes. We then have the formulation
+           <center class="math-display" >
+           <img 
+src="hw1sol9x.png" alt="min     &#x2211;n   w t
+    x,t    i=1  ii
+s.t.     ti &#x2265; pi + tj - T xij,  i = 1, ...,n
+        ti &#x2265; pi,  i = 1,...,n
+        xij + xji = 1, i,j = 1,...,n,i &#x2044;= j
+        xijbinary for i,j = 1,...,n,i &#x2044;= j
+           " class="math-display" ></center>
+           <!--l. 356--><p class="nopar" >
+           </li>
+           <li 
+  class="enumerate" id="x1-17x3"><span 
+class="cmbx-12">Linear ordering formulation</span>
+           <!--l. 360--><p class="noindent" >Let
+           <center class="math-display" >
+           <img 
+src="hw1sol10x.png" alt="      {
+x  =     1  if job i is scheduled before job j
+ ij      0  otherwise
+           " class="math-display" ></center>
+           <!--l. 367--><p class="nopar" >
+           Then the time to finish job <span 
+class="cmmi-12">j </span>is
+           <center class="math-display" >
+           <img 
+src="hw1sol11x.png" alt="            &#x2211;n
+tj = pj +        pixij
+
+           i = 1
+           i &#x2044;= j
+           " class="math-display" ></center>
+                                                                                         
+                                                                                         
+           <!--l. 372--><p class="nopar" >
+           This gives the formulation
+           <center class="math-display" >
+           <img 
+src="hw1sol12x.png" alt="               (               )
+
+      &#x2211;n       | &#x2211;n            |
+minx     j=1wj |(    i = 1  pixij|)
+                    i &#x2044;= j
+
+s.t.   xij + xji = 1    i,j = 1,...,n,i &#x2044;= j
+      xij + xjk + xki &#x2264; 2    i,j,k = 1,...,n,i &#x2044;= j,i &#x2044;= k,j &#x2044;= k
+      x   binary
+           " class="math-display" ></center>
+           <!--l. 383--><p class="nopar" >
+           Note that the triangle constraints <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ij</span></sub> + <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">jk</span></sub> + <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ki</span></sub><span style="margin-left:0.3em" class="thinspace"></span> <span 
+class="cmsy-10x-x-120">&#x2264;</span><span style="margin-left:0.3em" class="thinspace"></span>2 are necessary to prevent solutions
+           where <span 
+class="cmmi-12">i </span>is before <span 
+class="cmmi-12">j</span>, and <span 
+class="cmmi-12">j </span>is before <span 
+class="cmmi-12">k</span>, and <span 
+class="cmmi-12">k </span>is before&#x00A0;<span 
+class="cmmi-12">i</span>. This formulation is a linear
+           ordering problem.</li></ol>
+      <!--l. 392--><p class="noindent" >Note that the problem can be solved very simply using Smith&#8217;s algorithm:
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-19x1">Reorder jobs so that
+           <center class="math-display" >
+           <img 
+src="hw1sol13x.png" alt="w     w        w
+--1 &#x2265; --2 &#x2265; ...--n
+ p1    p2       pn
+           " class="math-display" ></center>
+           <!--l. 397--><p class="nopar" >
+           </li>
+           <li 
+  class="enumerate" id="x1-21x2">Perform jobs in the reorder: 1<span 
+class="cmmi-12">, </span>2<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span>.</li></ol>
+      <!--l. 400--><p class="noindent" >The more complicated formulations come in to play when there are side constraints, for
+      example precedence constraints.
+      </li>
+      <li 
+  class="enumerate" id="x1-23x6">Let <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">I</span><span style="margin-left:0.3em" class="thinspace"></span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">B</span><sup><span 
+class="cmmi-8">n</span></sup>, where <span 
+class="cmmi-12">I</span><span style="margin-left:0.3em" class="thinspace"></span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">B</span><sup><span 
+class="cmmi-8">n</span></sup> := <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">I</span><span style="margin-left:0.3em" class="thinspace"></span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">R</span><sup><span 
+class="cmmi-8">n</span></sup> : <span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmmi-8">i</span></sub> = 0 or 1<span style="margin-left:3.26288pt" class="tmspace"></span><span style="margin-left:3.26288pt" class="tmspace"></span><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">i</span><span 
+class="cmsy-10x-x-120">}</span>. What, if anything, is implied by the
+      following?
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-25x1"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> + <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>1 and <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub>.
+           </li>
+           <li 
+  class="enumerate" id="x1-27x2"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub> and <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> + <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub> + <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">k</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>1.</li></ol>
+                                                                                         
+                                                                                         
+      <!--l. 451--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-29x1">Note that if <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub> = 0 then we must have <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> = 0 from the second constraint, which
+           violates the first constraint. So we must have <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub> = 1. Note that either choice of
+           <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> is feasible with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub> = 1.
+           </li>
+           <li 
+  class="enumerate" id="x1-31x2">Note that if <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> = 1 then <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub> = 1 from the first constraint, but we then violate the
+           second constraint. So we must have <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> = 0. The second constraint then becomes
+           <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub> + <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">k</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>1.</li></ol>
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                      </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                 </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Monday and Thursday 1pm&#8211;2pm.           </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         webex: <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-12">https://rensselaer.webex.com/meet/mitchj</span></a></td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

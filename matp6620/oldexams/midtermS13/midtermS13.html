@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="midtermS13.tex"> 
+<meta name="date" content="2015-03-23 15:15:00"> 
+<link rel="stylesheet" type="text/css" href="midtermS13.css"> 
+</head><body 
+>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"><col 
+id="TBL-1-2"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td11">&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                                                                          </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-2"  
+class="td11">Name:</td> </tr></table>
+</div>
+<div class="center" 
+>
+<!--l. 36--><p class="noindent" >
+<!--l. 38--><p class="noindent" ><span 
+class="cmr-12x-x-120">MATP6620/ISYE6770</span><br />
+<span 
+class="cmbx-12x-x-120">Combinatorial Optimization and Integer Programming </span><br />
+<span 
+class="cmr-12x-x-120">Spring 2013</span></div>
+<div class="center" 
+>
+<!--l. 43--><p class="noindent" >
+<!--l. 44--><p class="noindent" >Midterm Exam, Friday, April 19, 2013.</div>
+<!--l. 47--><p class="noindent" >Please do all four problems. Show all work. No books or calculators allowed. You may use any
+result from class, the homeworks, or the texts, except where stated. You may use one sheet of
+handwritten notes. The exam lasts 110 minutes.
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">(30 points; each part is worth 10 points)
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-5x1"><a 
+ id="x1-41"></a> The binary variables <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub>, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub>, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub>, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">4</span></sub>, and <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">5</span></sub> must satisfy the knapsack constraint
+           <table 
+class="equation"><tr><td>
+           <center class="math-display" >
+           <img 
+src="midtermS130x.png" alt="3x1 + 4x2 + 5x3 + 6x4 + 4x5  &#x2264; 11.
+           " class="math-display" ><a 
+ id="x1-6r1"></a></center></td><td class="equation-label">(1)</td></tr></table>
+           <!--l. 99--><p class="nopar" >
+           Show that the valid cover inequality
+                                                                                         
+
+                                                                                         
+           <center class="math-display" >
+           <img 
+src="midtermS131x.png" alt="x1 +  x2 + x3 &#x2264;  2
+           " class="math-display" ></center>
+           <!--l. 103--><p class="nopar" >
+           has Chvatal rank equal to one. (Note: You will need to use the valid inequalities <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>1
+           in your derivation.)
+           </li>
+           <li 
+  class="enumerate" id="x1-8x2">The binary variables <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub>, <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n </span>must satisfy the knapsack constraint
+           <table 
+class="equation"><tr><td>
+           <center class="math-display" >
+           <img 
+src="midtermS132x.png" alt="n&#x2211;
+   aixi &#x2264;  b
+i=1
+           " class="math-display" ><a 
+ id="x1-9r2"></a></center></td><td class="equation-label">(2)</td></tr></table>
+           <!--l. 113--><p class="nopar" >
+           where <span 
+class="cmmi-12">b </span>and <span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">i</span></sub>, <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n </span>are positive scalars. Assume <span 
+class="cmmi-12">b &#x003E; a</span><sub><span 
+class="cmmi-8">i</span></sub> for <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span>. Assume
+           further that there exists a subset <span 
+class="cmmi-12">J </span><span 
+class="cmsy-10x-x-120">&#x2286;{</span>1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span><span 
+class="cmsy-10x-x-120">} </span>with
+           <table 
+class="equation"><tr><td>
+           <center class="math-display" >
+           <img 
+src="midtermS133x.png" alt="&#x2211;
+   ai &#x003E;  b.
+i&#x2208;J
+           " class="math-display" ><a 
+ id="x1-10r3"></a></center></td><td class="equation-label">(3)</td></tr></table>
+           <!--l. 120--><p class="nopar" >
+                                                                                         
+
+                                                                                         
+               <ol  class="enumerate3" >
+               <li 
+  class="enumerate" id="x1-12x1">Give a valid cover inequality constraint.
+               </li>
+               <li 
+  class="enumerate" id="x1-14x2">Show that your cover inequality has Chvatal rank equal to one.</li></ol>
+           </li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-16x2">(20 points)
+      <!--l. 138--><p class="noindent" >The <span 
+class="cmcsc-10x-x-120">N<span 
+class="small-caps">o</span><span 
+class="small-caps">d</span><span 
+class="small-caps">e</span> P<span 
+class="small-caps">a</span><span 
+class="small-caps">c</span><span 
+class="small-caps">k</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">g</span> </span>and <span 
+class="cmcsc-10x-x-120">M<span 
+class="small-caps">a</span><span 
+class="small-caps">x</span> C<span 
+class="small-caps">l</span><span 
+class="small-caps">i</span><span 
+class="small-caps">q</span><span 
+class="small-caps">u</span><span 
+class="small-caps">e</span> </span>feasibility problems can be described as
+      follows:
+           <div class="quote">
+           <!--l. 141--><p class="noindent" ><span 
+class="cmcsc-10x-x-120">N<span 
+class="small-caps">o</span><span 
+class="small-caps">d</span><span 
+class="small-caps">e</span> P<span 
+class="small-caps">a</span><span 
+class="small-caps">c</span><span 
+class="small-caps">k</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">g</span>: </span>Given a graph <span 
+class="cmmi-12">G </span>= (<span 
+class="cmmi-12">V,E</span>) and a integer <span 
+class="cmmi-12">k</span>, does there exist
+           a subset <span 
+class="cmmi-12">U </span><span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="cmmi-12">V  </span>with <span 
+class="cmsy-10x-x-120">&#x2223;</span> <span 
+class="cmmi-12">U</span><span 
+class="cmsy-10x-x-120">&#x2223;</span> <span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">k </span>where no two of the vertices in <span 
+class="cmmi-12">U </span>share an
+           edge? <br 
+class="newline" /><span 
+class="cmcsc-10x-x-120">M<span 
+class="small-caps">a</span><span 
+class="small-caps">x</span> C<span 
+class="small-caps">l</span><span 
+class="small-caps">i</span><span 
+class="small-caps">q</span><span 
+class="small-caps">u</span><span 
+class="small-caps">e</span>: </span>Given a graph <span 
+class="cmmi-12">G </span>= (<span 
+class="cmmi-12">V,E</span>) and an integer <span 
+class="cmmi-12">p</span>, does there exist
+           a clique <span 
+class="cmmi-12">W </span><span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="cmmi-12">V </span>with with <span 
+class="cmsy-10x-x-120">&#x2223;</span> <span 
+class="cmmi-12">W</span><span 
+class="cmsy-10x-x-120">&#x2223;</span> <span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">p</span>?</div>
+      <!--l. 150--><p class="noindent" ><span 
+class="cmti-12">Using the fact that </span><span 
+class="cmcsc-10x-x-120">N<span 
+class="small-caps">o</span><span 
+class="small-caps">d</span><span 
+class="small-caps">e</span> P<span 
+class="small-caps">a</span><span 
+class="small-caps">c</span><span 
+class="small-caps">k</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">g</span> </span><span 
+class="cmti-12">is NP-Complete</span>, show that the <span 
+class="cmcsc-10x-x-120">M<span 
+class="small-caps">a</span><span 
+class="small-caps">x</span> C<span 
+class="small-caps">l</span><span 
+class="small-caps">i</span><span 
+class="small-caps">q</span><span 
+class="small-caps">u</span><span 
+class="small-caps">e</span> </span>problem is
+      <span 
+class="cmmi-12">NP</span>-complete.
+      </li>
+      <li 
+  class="enumerate" id="x1-18x3">(30 points; each part is worth 10 points)
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-20x1"><a 
+ id="x1-191"></a> Assume the nonnegative scalar integer variable <span 
+class="cmmi-12">y </span>and the nonnegative scalar continuous
+           variable <span 
+class="cmmi-12">x </span>satisfy the inequality
+           <table 
+class="equation"><tr><td>
+           <center class="math-display" >
+           <img 
+src="midtermS134x.png" alt="x +  y &#x2265;  b
+           " class="math-display" ><a 
+ id="x1-21r4"></a></center></td><td class="equation-label">(4)</td></tr></table>
+                                                                                         
+
+                                                                                         
+           <!--l. 162--><p class="nopar" >
+           where <span 
+class="cmmi-12">b </span>is a non-integral scalar parameter. Let <span 
+class="cmmi-12">f </span>be the fractional part of <span 
+class="cmmi-12">b</span>, so
+           <span 
+class="cmmi-12">b </span>= <span 
+class="cmsy-10x-x-120">&#x230A;</span><span 
+class="cmmi-12">b</span><span 
+class="cmsy-10x-x-120">&#x230B; </span>+ <span 
+class="cmmi-12">f </span>and 0 <span 
+class="cmmi-12">&#x003C; f &#x003C; </span>1. Prove that the inequality
+           <table 
+class="equation"><tr><td>
+           <center class="math-display" >
+           <img 
+src="midtermS135x.png" alt="1-x +  y &#x2265;  &#x2308;b&#x2309;
+f
+           " class="math-display" ><a 
+ id="x1-22r5"></a></center></td><td class="equation-label">(5)</td></tr></table>
+           <!--l. 169--><p class="nopar" >
+           is valid.
+           </li>
+           <li 
+  class="enumerate" id="x1-24x2">The optimal solution of the LP relaxation of the mixed integer program
+           <center class="math-display" >
+           <img 
+src="midtermS136x.png" alt="min         2x1  +  5x2   +    y1  +  y2
+subject to   x1           +    y1         &#x2265;   2.5
+
+             x1  +  2x2   +   3y1  +  y2  &#x2265;   8.5
+
+                    3x2            +  y2  &#x2265;   1.2
+             xi  &#x2265;    0,  i = 1, 2    yi  &#x2265;   0, integral, i = 1,2
+           " class="math-display" ></center>
+           <!--l. 182--><p class="nopar" >
+           is <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> = 0, <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> = 2<span 
+class="cmmi-12">.</span>5, <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub> = 1<span 
+class="cmmi-12">.</span>2.
+               <ol  class="enumerate3" >
+               <li 
+  class="enumerate" id="x1-26x1">Give three valid inequalities of the type in part <a 
+href="#x1-191">3a<!--tex4ht:ref: q.mip_parta --></a> that are violated by the
+               solution to the LP relaxation.
+               </li>
+               <li 
+  class="enumerate" id="x1-28x2">Show that none of your inequalities is implied by the other two.</li></ol>
+           </li></ol>
+                                                                                         
+
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-30x4">(20 points)
+      <!--l. 217--><p class="noindent" >Show that the shortest Hamiltonian cycle in the following graph has length&#x00A0;50. Make sure to
+      prove your solution is optimal.
+      <div class="center" 
+>
+<img src=midtermS13q4.jpg>
+<!--l. 223--><p class="noindent" >
+</div>
+      </li></ol>
+    
+</body></html> 
+
+                                                                                         
+
+

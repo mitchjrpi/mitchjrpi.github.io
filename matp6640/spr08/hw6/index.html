@@ -1,0 +1,340 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Homework 6</TITLE>
+<META NAME="description" CONTENT="hw6">
+<META NAME="keywords" CONTENT="hw6">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="hw6.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+
+<P>
+<DIV ALIGN="CENTER">
+</DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1"><a href=..>MATP6640/DSES6770
+Linear Programming</a>, Homework 6.
+     &nbsp;&nbsp;&nbsp;&nbsp;Updated April 17.
+  </FONT>
+</DIV>
+
+<P>
+<DIV ALIGN="RIGHT">
+Due:  Monday, April 28, 2008. 
+<BR>
+10% penalty for each day late.
+
+</DIV>
+
+<P>
+
+<OL>
+<LI>Assume <IMG
+ WIDTH="51" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$r_b \neq 0$">, <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$S$"> and <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$X$"> are positive definite diagonal matrices,
+and <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$A$"> is <IMG
+ WIDTH="51" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$m \times n$"> with rank&nbsp;<IMG
+ WIDTH="20" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.png"
+ ALT="$m$">.
+Let <!-- MATH
+ $g \in I \!\! R^n$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$g \in I \!\! R^n$"> satisfy <!-- MATH
+ $AS^{-1}g \neq r_b$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$AS^{-1}g \neq r_b$">.
+Let <!-- MATH
+ $(\Delta x, \Delta y, \Delta s)$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$(\Delta x, \Delta y, \Delta s)$"> solve
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\left[ \begin{array}{lll}0&A^T&I\\A&0&0\\S&0&X \end{array} \right]
+\left[ \begin{array}{c}\Delta x \\\Delta y \\\Delta s \end{array} \right]
+=
+\left[ \begin{array}{c} 0 \\-r_b \\-g \end{array} \right].
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="275" HEIGHT="73" BORDER="0"
+ SRC="img10.png"
+ ALT="\begin{displaymath}
+\left[ \begin{array}{lll}0&amp;A^T&amp;I\\ A&amp;0&amp;0\\ S&amp;0&amp;X \end{array}...
+...=
+\left[ \begin{array}{c} 0 \\ -r_b \\ -g \end{array} \right].
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+What must <IMG
+ WIDTH="13" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$g$"> satisfy to ensure that <!-- MATH
+ $\Delta x^T \Delta s \neq 0$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$\Delta x^T \Delta s \neq 0$">?
+
+<P>
+</LI>
+<LI>Let <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$K$"> be a cone. A function <!-- MATH
+ $f:\mbox{int}(K) \rightarrow I \!\! R$
+ -->
+<IMG
+ WIDTH="123" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$f:\mbox{int}(K) \rightarrow I \!\! R$"> is
+<EM>logarithmically homogeneous</EM> if there exists a constant <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$\Theta$">
+such that <!-- MATH
+ $f(tx)=f(x)-\Theta\ln(t)$
+ -->
+<IMG
+ WIDTH="174" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$f(tx)=f(x)-\Theta\ln(t)$"> for all <!-- MATH
+ $x\in\mbox{int}(K)$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$x\in\mbox{int}(K)$"> and <IMG
+ WIDTH="42" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$t&gt;0$">.
+(Here, <IMG
+ WIDTH="55" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$\mbox{int}(K)$"> denotes the interior of&nbsp;<IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$K$">.)
+Show that the barrier function for
+the second order cone, namely <!-- MATH
+ $f(\xi,x) = - \ln(\xi^2 - x^Tx)$
+ -->
+<IMG
+ WIDTH="190" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.png"
+ ALT="$f(\xi,x) = - \ln(\xi^2 - x^Tx)$">,
+is logarithmically homogeneous, where <IMG
+ WIDTH="13" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$\xi$"> is a nonnegative scalar
+and <IMG
+ WIDTH="14" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.png"
+ ALT="$x$"> is an <IMG
+ WIDTH="15" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$n$">-vector.
+</LI>
+<LI>Let
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+C := \left[
+\begin{array}{rrr}
+0&0&0\\0&0&0\\0&0&2
+\end{array} \right],  \quad
+A_1 := \left[
+\begin{array}{rrr}
+1&0&0\\0&-1&0\\0&0&0
+\end{array} \right],  \quad
+A_2 := \left[
+\begin{array}{rrr}
+0&0&1\\0&0&1\\1&1&1
+\end{array} \right],  \quad
+b := \left[
+\begin{array}{r}
+1\\3
+\end{array} \right]
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="596" HEIGHT="73" BORDER="0"
+ SRC="img24.png"
+ ALT="\begin{displaymath}
+C := \left[
+\begin{array}{rrr}
+0&amp;0&amp;0\\ 0&amp;0&amp;0\\ 0&amp;0&amp;2
+\end{ar...
+..., \quad
+b := \left[
+\begin{array}{r}
+1\\ 3
+\end{array} \right]
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The primal and dual semidefinite programs are
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lrcllrlrcrclr}
+\min & \mbox{trace}(CX) &&&&& \max & b^Ty  \\
+\mbox{s.t.} & \mbox{trace}(A_iX) & = & b_i & \; i=1,2 & \quad (P) \quad
+& \mbox{s.t.} & \sum_{i=1}^2 A_i y_i & + & S & = & C & \quad (D)  \\
+& X & \succeq & 0 &&&&&& S & \succeq & 0 \\
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="657" HEIGHT="72" BORDER="0"
+ SRC="img25.png"
+ ALT="\begin{displaymath}
+\begin{array}{lrcllrlrcrclr}
+\min &amp; \mbox{trace}(CX) &amp;&amp;&amp;&amp;&amp; \...
+...D) \\
+&amp; X &amp; \succeq &amp; 0 &amp;&amp;&amp;&amp;&amp;&amp; S &amp; \succeq &amp; 0 \\
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Show that both <IMG
+ WIDTH="31" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$(P)$"> and <IMG
+ WIDTH="33" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$(D)$"> are feasible, but that the
+optimal value of <IMG
+ WIDTH="31" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$(P)$"> is not achieved.
+</LI>
+<LI>Let <!-- MATH
+ $x \in I \!\! R^n_+$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$x \in I \!\! R^n_+$">.
+Show that the constraint <!-- MATH
+ $1 \leq \Pi_{i=1}^n x_i$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$1 \leq \Pi_{i=1}^n x_i$"> is
+   equivalent to a collection of
+<!--
+<IMG
+ WIDTH="67" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$O(\log n)$">
+-->
+<i>O(n)</i>
+second order cone constraints.
+</LI>
+<LI>Most semidefinite relaxations of combinatorial optimization problems
+    result in a linear constraint on the trace of the primal matrix&nbsp;<IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$X$">.
+    For example, in the relaxation of MaxCut, the diagonal entries are
+    all required to equal one, so the trace must equal the number of nodes.
+    Show that if the primal problem contains a constraint of the form
+    trace<IMG
+ WIDTH="66" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.png"
+ ALT="$(X)=a$"> for some constant <IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img32.png"
+ ALT="$a$"> then the feasible region
+    for the dual is unbounded.
+    (Hint: trace<IMG
+ WIDTH="52" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.png"
+ ALT="$(X)= $"> trace<IMG
+ WIDTH="43" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.png"
+ ALT="$(IX)$">.)
+
+<P>
+</LI>
+</OL>
+
+<P>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT"><a href=http://www.rpi.edu/~mitchj>John Mitchell</a></TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT">Amos Eaton 325</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT">x6915.</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT"><A href=mailto:mitchj@rpi.edu>mitchj at rpi dot edu</a></TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT">Office hours:
+   Mondays, 1pm - 2pm.
+   Thursdays, 1pm - 3pm.</TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL>
+<LI><A NAME="tex2html3"
+  HREF="node1.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John Mitchell</a>
+<br>2008-04-14
+</ADDRESS>
+</BODY>
+</HTML>

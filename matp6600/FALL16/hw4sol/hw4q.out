@@ -1,0 +1,15 @@
+% amplc
+ampl: model hw4q.run;
+CPLEX 12.6.2.0: optimal solution; objective -3.460431245
+11 barrier iterations
+No basis.
+x1 = -3.46043
+x2 = 1.00317
+conQ = -0.102386
+conM = -0.0115053
+conQ.slack = 3.79088e-09
+conM.slack = 2.00378e-08
+
+c1 - conM*(M11*x1 + M12*x2) - conQ*(Q11*x1 + Q12*x2) = 0
+
+c2 - conM*(M21*x1 + M22*x2) - conQ*(Q21*x1 + Q22*x2) = -9.71445e-17

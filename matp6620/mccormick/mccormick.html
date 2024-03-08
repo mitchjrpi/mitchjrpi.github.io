@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="mccormick.tex"> 
+<meta name="date" content="2015-05-05 20:20:00"> 
+<link rel="stylesheet" type="text/css" href="mccormick.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 128--><p class="noindent" >
+<!--l. 129--><p class="noindent" ><span 
+class="cmbx-12x-x-172">McCormick Cuts</span><br />
+<a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a></div>
+<!--l. 136--><p class="noindent" >Products of variables can be replaced by new variables, with the new variables and old variables
+linked using linear constraints. These constraints can be tight, especially if at least one of the old
+variables is binary.
+<!--l. 142--><p class="indent" >   Assume the two variables <span 
+class="cmmi-12">x </span>and <span 
+class="cmmi-12">y </span>satisfy the bounds
+   <table 
+class="equation"><tr><td><a 
+ id="x1-2r1"></a>
+   <center class="math-display" >
+<img 
+src="mccormick0x.png" alt="lx &#x2264; x &#x2264; ux   and  ly &#x2264; y &#x2264; uy.
+" class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+<!--l. 145--><p class="nopar" >
+Then their product satisfies the four constraints: <div class="eqnarray">
+   <center class="math-display" >
+<img 
+src="mccormick1x.png" alt="xy  &#x2264;   lyx + uxy -  lyux                               (2)
+xy  &#x2264;   lxy + uyx -  lxuy                               (3)
+xy  &#x2265;   lx + l y - l l                                (4)
+        y     x     xy
+xy  &#x2265;   uyx + uxy - uxuy.                             (5)
+" class="math-display" ><a 
+ id="x1-3r3"></a></center>
+</div>These inequalities can be proved by looking at quadratic products. For example, we
+have
+                                                                                         
+                                                                                         
+   <center class="math-display" >
+<img 
+src="mccormick2x.png" alt="0 &#x2264;  (x -  lx)(uy - y) =  - xy + uyx + lxy - lxuy
+" class="math-display" ></center>
+<!--l. 157--><p class="nopar" >
+which can be rearranged to give&#x00A0;(<a 
+href="#x1-3r3">3<!--tex4ht:ref: eq:lxuy --></a>).
+<!--l. 162--><p class="indent" >   A quadratic term <span 
+class="cmmi-12">xy </span>in an optimization problem can be replaced by a new variables <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">xy</span></sub> with
+linear constraints <div class="eqnarray">
+   <center class="math-display" >
+<img 
+src="mccormick3x.png" alt="&#x03D5;xy   &#x2264;  lyx + uxy - lyux                              (6)
+&#x03D5;     &#x2264;  l y + u x - l u                               (7)
+  xy      x     y     x y
+&#x03D5;xy   &#x2265;  lyx + lxy - lxly                               (8)
+&#x03D5;xy   &#x2265;  uyx + uxy -  uxuy.                            (9)
+" class="math-display" ></center>
+</div>This is the <span 
+class="cmbx-12">convex envelope </span>of <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">xy</span></sub> over the box given by&#x00A0;(<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq:box --></a>); it is also known as the McCormick
+envelope&#x00A0;<span class="cite">[<a 
+href="#XGPMccormick2">2</a>,&#x00A0;<a 
+href="#Xalkhayyal2">1</a>]</span>.
+<!--l. 175--><p class="indent" >   When the variables are binary, the constraints become
+   <center class="math-display" >
+<img 
+src="mccormick4x.png" alt="&#x03D5;xy &#x2265; 0,&#x03D5;xy &#x2264;  x,&#x03D5;xy &#x2264; y,&#x03D5;xy &#x2265; x +  y - 1.
+" class="math-display" ></center>
+<!--l. 178--><p class="nopar" >
+The variable <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">xy</span></sub> is also binary and is given exactly by the constraints when <span 
+class="cmmi-12">x </span>and <span 
+class="cmmi-12">y </span>are binary.
+The linear programming relaxation may not be exact. For example, if <span 
+class="cmmi-12">x </span>= <span 
+class="cmmi-12">y </span>= 0<span 
+class="cmmi-12">.</span>5 then the linear
+constraints only force 0 <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">xy</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>0<span 
+class="cmmi-12">.</span>5.
+                                                                                         
+                                                                                         
+<!--l. 186--><p class="noindent" ><span 
+class="cmbx-12">A strengthening</span>
+<!--l. 189--><p class="indent" >   If there are additional constraints on <span 
+class="cmmi-12">x </span>and <span 
+class="cmmi-12">y</span>, it may be possible to get a tighter convex
+envelope for&#x00A0;<span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">xy</span></sub>. For any scalar <span 
+class="cmmi-12">&#x03B1;</span>, we have the equality
+   <table 
+class="equation"><tr><td><a 
+ id="x1-5r10"></a>
+   <center class="math-display" >
+<img 
+src="mccormick5x.png" alt="        2           2
+(x +  &#x03B1;y)  = (x - &#x03B1;y)  + 4&#x03B1;xy.
+" class="math-display" ></center></td><td class="equation-label">(10)</td></tr></table>
+<!--l. 194--><p class="nopar" >
+<!--l. 196--><p class="indent" >   Assume
+   <center class="math-display" >
+<img 
+src="mccormick6x.png" alt="&#x03B1;l &#x2264; x - &#x03B1;y &#x2264;  &#x03B1;u
+" class="math-display" ></center>
+<!--l. 199--><p class="nopar" >
+for any feasible <span 
+class="cmmi-12">x </span>and&#x00A0;<span 
+class="cmmi-12">y</span>. We can construct a linear overestimator for (<span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03B1;y</span>)<sup><span 
+class="cmr-8">2</span></sup>:
+<div class="center" 
+>
+<!--l. 202--><p class="noindent" >
+<!--l. 224--><p class="noindent" >
+<img src=convex.jpg>
+</div>
+<!--l. 226--><p class="noindent" >The slope of the line is
+                                                                                         
+                                                                                         
+   <center class="math-display" >
+<img 
+src="mccormick7x.png" alt="         &#x03B1;2 - &#x03B1;2
+slope =  -u-----l=  &#x03B1;u + &#x03B1;l
+         &#x03B1;u - &#x03B1;l
+" class="math-display" ></center>
+<!--l. 229--><p class="nopar" >
+and the intercept is
+   <center class="math-display" >
+<img 
+src="mccormick8x.png" alt="              2
+intercept  = &#x03B1; l - &#x03B1;l(&#x03B1;u + &#x03B1;l) = - &#x03B1;l&#x03B1;u.
+" class="math-display" ></center>
+<!--l. 233--><p class="nopar" >
+This gives
+   <table 
+class="equation"><tr><td><a 
+ id="x1-6r11"></a>
+   <center class="math-display" >
+<img 
+src="mccormick9x.png" alt="(x - &#x03B1;y )2 &#x2264; (&#x03B1;l + &#x03B1;u )(x - &#x03B1;y ) - &#x03B1;l&#x03B1;u
+" class="math-display" ></center></td><td class="equation-label">(11)</td></tr></table>
+<!--l. 237--><p class="nopar" >
+and so we have the valid inequality to get a lower bound on <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">xy</span></sub>:
+   <table 
+class="equation"><tr><td><a 
+ id="x1-7r12"></a>
+   <center class="math-display" >
+<img 
+src="mccormick10x.png" alt="(x + &#x03B1;y )2 &#x2264; 4&#x03B1;&#x03D5;xy + (&#x03B1;l + &#x03B1;u)(x - &#x03B1;y ) - &#x03B1;l&#x03B1;u.
+" class="math-display" ></center></td><td class="equation-label">(12)</td></tr></table>
+<!--l. 241--><p class="nopar" >
+This is a convex constraint in the three variables <span 
+class="cmmi-12">x</span>, <span 
+class="cmmi-12">y</span>, and&#x00A0;<span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">xy</span></sub>.
+<!--l. 244--><p class="indent" >   For more details, see&#x00A0;<span class="cite">[<a 
+href="#XJEMPYu_QCQP">3</a>]</span>.
+                                                                                         
+                                                                                         
+   <h3 class="likesectionHead"><a 
+ id="x1-1000"></a>References</h3>
+<!--l. 1--><p class="noindent" >
+   <div class="thebibliography">
+   <p class="bibitem" ><span class="biblabel">
+ [1]<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
+ id="Xalkhayyal2"></a>F.&#x00A0;A.  Al-Khayyal  and  J.&#x00A0;E.  Falk.    Jointly  constrained  biconvex  programming.
+   <span 
+class="cmti-12">Mathematics of Operations Research</span>, 8(2):273&#8211;286, 1983.
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+ [2]<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
+ id="XGPMccormick2"></a>G.&#x00A0;P.  McCormick.    Computability  of  global  solutions  to  factorable  nonconvex
+   programs:  part  I  &#8212;  convex  underestimating  problems.   <span 
+class="cmti-12">Mathematical Programming</span>,
+   10:147&#8211;175, 1976.
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+ [3]<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
+ id="XJEMPYu_QCQP"></a>J.&#x00A0;E. Mitchell, J.S. Pang, and B.&#x00A0;Yu.  Convex quadratic relaxations of nonconvex
+   quadratically  constrained  quadratic  programs.   <span 
+class="cmti-12">Optimization  Methods  and  Software</span>,
+   29(1):120&#8211;136, 2014.
+</p>
+   </div>
+    
+</body></html> 
+
+                                                                                         
+
+

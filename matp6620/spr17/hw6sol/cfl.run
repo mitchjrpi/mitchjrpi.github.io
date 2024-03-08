@@ -1,0 +1,18 @@
+reset;
+
+display _total_solve_elapsed_time;
+
+model cfl.mod;
+data cfl.dat;
+
+problem LPrelax: x,y,obj,D,C,B,S;
+
+problem IP: x,y,z,obj,D,C,B,S,I;
+
+problem zSC: x,y,z,zSCobj,D,B,I;
+
+solve LPrelax;
+
+solve IP;
+
+solve zSC;

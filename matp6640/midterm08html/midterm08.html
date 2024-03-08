@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="midterm08.tex"> 
+<meta name="date" content="2010-03-16 14:36:00"> 
+<link rel="stylesheet" type="text/css" href="midterm08.css"> 
+</head><body 
+>
+<!--l. 18--><p class="noindent" >
+
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"><col 
+id="TBL-1-2"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td11">&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                                                                          </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-2"  
+class="td11">Name:</td> </tr></table>
+</div>
+<div class="center" 
+>
+<!--l. 25--><p class="noindent" >
+<!--l. 27--><p class="noindent" ><span 
+class="cmr-12x-x-120">MATP6640/DSES6770</span><br />
+<span 
+class="cmbx-12x-x-120">Linear Programming </span><br />
+<span 
+class="cmr-12x-x-120">Spring 2008</span></div>
+<div class="center" 
+>
+<!--l. 31--><p class="noindent" >
+<!--l. 32--><p class="noindent" >Midterm Exam, Thursday, April 3, 2008.</div>
+<!--l. 35--><p class="indent" >   Please do all three problems. Show all work. No books or calculators allowed. You may use any
+result from class, the homeworks, or the texts, except where stated. You may use one sheet of
+handwritten notes. The exam lasts 110 minutes.
+<div class="center" 
+>
+<!--l. 45--><p class="noindent" >
+<div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><colgroup id="TBL-2-2g"><col 
+id="TBL-2-2"><col 
+id="TBL-2-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-1"  
+class="td10"> Q1 &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-1-3"  
+class="td11"> /40</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-1"  
+class="td10"> Q2  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-2-3"  
+class="td11"> /30</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-1"  
+class="td10"> Q3  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-3-3"  
+class="td11"> /30</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-1"  
+class="td10">Total&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-4-3"  
+class="td11">/100</td></tr></table>
+</div></div>
+
+<!--l. 56--><p class="indent" >   Throughout, the standard primal-dual LP pair is
+   <center class="math-display" >
+<img 
+src="midterm080x.png" alt="       T                                T
+min   c x                       max    bTy
+s.t.   Ax   =   b    (P )        s.t.   A  y  +   s  =  c    (D )
+        x  &#x2265;   0                                s  &#x2265;  0
+" class="math-display" ></center>
+<!--l. 64--><p class="nopar" >
+where <span 
+class="cmmi-12">A </span>is <span 
+class="cmmi-12">m </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>and the vectors are dimensioned appropriately.
+
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">(40 points)
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-5x1">(20 points) <a 
+ id="x1-41"></a><span 
+class="cmbx-12">Use complementary slackness </span>to show that <span 
+class="cmmi-12">y </span>= (10<span 
+class="cmmi-12">, </span>5) solves the linear
+           program
+           <center class="math-display" >
+           <img 
+src="midterm081x.png" alt="max   11y1  +      8y2
+s.t.    5y1              &#x2264;   50
+                   5y2  &#x2264;   50      (D4 )
+       3y1  +      4y2  &#x2264;   50
+      2.5y1  +   4.33y2  &#x2264;   50
+           " class="math-display" ></center>
+           <!--l. 85--><p class="nopar" >
+           (Hint: 2<span 
+class="cmmi-12">.</span>5 <span 
+class="cmsy-10x-x-120">&#x00D7; </span>10 + 4<span 
+class="cmmi-12">.</span>33 <span 
+class="cmsy-10x-x-120">&#x00D7; </span>5 = 46<span 
+class="cmmi-12">.</span>65.)
+           </li>
+           <li 
+  class="enumerate" id="x1-7x2">(20 points) The problem in part&#x00A0;(<a 
+href="#x1-41">1a<!--tex4ht:ref: parta --></a>) is a relaxation of the true problem,
+           <center class="math-display" >
+           <img 
+src="midterm082x.png" alt="maxy   11y1  +    8y2                          2    2
+s.t.    w1y1  +   w2y2  &#x2264;   50  &#x2200;w  satisfying w1 + w 2 &#x2264; 25.      (D &#x221E;)
+           " class="math-display" ></center>
+           <!--l. 95--><p class="nopar" >
+           Show that <span 
+class="cmmi-12">y </span>= (10<span 
+class="cmmi-12">, </span>5) is not feasible in the true problem. Give a valid linear constraint
+           that is violated by <span 
+class="cmmi-12">y </span>= (10<span 
+class="cmmi-12">, </span>5) and that could be added to&#x00A0;(<span 
+class="cmmi-12">D</span><sub><span 
+class="cmr-8">4</span></sub>).
+           </li></ol>
+
+      <!--l. 107--><p class="noindent" >(this page intentionally left blank)
+
+      <!--l. 114--><p class="noindent" >(this page intentionally left blank)
+
+      </li>
+      <li 
+  class="enumerate" id="x1-9x2">(30 points) <br 
+class="newline" />Two systems of equations are: <div class="eqnarray">
+      <center class="math-display" >
+      <img 
+src="midterm083x.png" alt=" (I)      Ad  = 0, cTd = 0, eTd = 1, d &#x2265; 0
+(II)      AT v &#x003C; tc, t and v free
+      " class="math-display" ></center>
+      </div>where <span 
+class="cmmi-12">e </span>is the <span 
+class="cmmi-12">n</span>-vector of ones and <span 
+class="cmmi-12">t </span>is a scalar.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-12x1">(10 points) Show that exactly one of the two systems has a solution.
+           </li>
+           <li 
+  class="enumerate" id="x1-14x2">(10 points) Assume (<span 
+class="cmmi-12">P</span>) and (<span 
+class="cmmi-12">D</span>) are both feasible. Show that if (<span 
+class="cmmi-12">I</span>) is consistent
+           then (<span 
+class="cmmi-12">P</span>) has an unbounded set of optimal solutions.
+           </li>
+           <li 
+  class="enumerate" id="x1-16x3">(10 points) Assume (<span 
+class="cmmi-12">D</span>) is feasible. Show that if (<span 
+class="cmmi-12">II</span>) is consistent then (<span 
+class="cmmi-12">D</span>) has a
+           strictly feasible solution.</li></ol>
+
+      <!--l. 145--><p class="noindent" >(this page intentionally left blank)
+
+      </li>
+      <li 
+  class="enumerate" id="x1-18x3">(30 points) <br 
+class="newline" />Let (<img 
+src="midterm084x.png" alt="&#x02C6;x"  class="circ" ><span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x0177;</span><span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x015D;</span>) be strictly feasible solutions to (<span 
+class="cmmi-12">P</span>) and (<span 
+class="cmmi-12">D</span>). Let <img 
+src="midterm085x.png" alt="&#x02C6;&#x03BC;"  class="circ" > = <img 
+src="midterm086x.png" alt="x&#x02C6;"  class="circ" ><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">&#x015D;</span><span 
+class="cmmi-12">&#x2215;n</span>. Assume the current
+      iterate is reasonably well centered, so <img 
+src="midterm087x.png" alt=" &#x02C6;
+X"  class="circ" ><span 
+class="cmmi-12">&#x015C;</span><span 
+class="cmmi-12">e </span><span 
+class="cmsy-10x-x-120">&#x2248;</span><img 
+src="midterm088x.png" alt="&#x02C6;&#x03BC;"  class="circ" ><span 
+class="cmmi-12">e</span>, with the diagonal matrices <img 
+src="midterm089x.png" alt="&#x02C6;
+X"  class="circ" > and <span 
+class="cmmi-12">&#x015C;</span> defined
+      in the usual manner. Assume rank(<span 
+class="cmmi-12">A</span>) = <span 
+class="cmmi-12">m</span>.
+      <!--l. 158--><p class="noindent" >Assume we add an extra variable <span 
+class="cmmi-12">w </span>to (<span 
+class="cmmi-12">P</span>), with corresponding column&#x00A0;<span 
+class="cmmi-12">g</span>, giving the
+      modified problem
+      <center class="math-display" >
+      <img 
+src="midterm0810x.png" alt="       T
+min   c x  +   hw
+s.t.   Ax  +   gw   =   c    (Pw )
+              x, w  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 166--><p class="nopar" >
+      where <span 
+class="cmmi-12">h </span>is a scalar. The point <span 
+class="cmmi-12">x </span>= <img 
+src="midterm0811x.png" alt="&#x02C6;x"  class="circ" >, <span 
+class="cmmi-12">w </span>= 0 is feasible for (<span 
+class="cmmi-12">Pw</span>) but not strictly feasible. It is
+      necessary to increase <span 
+class="cmmi-12">w </span>to get a strictly feasible point.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-20x1">(15 points) Ignoring the additional dual constraint <span 
+class="cmmi-12">g</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">h</span>, how would you try to
+           find a strictly feasible solution to (<span 
+class="cmmi-12">Pw</span>) while also keeping <span 
+class="cmmi-12">XSe </span><span 
+class="cmsy-10x-x-120">&#x2248;</span><img 
+src="midterm0812x.png" alt="&#x02C6;&#x03BC;"  class="circ" ><span 
+class="cmmi-12">e</span>? (Hint: set
+           up conditions to be satisfied by primal directions (&#x0394;<span 
+class="cmmi-12">x, </span>&#x0394;<span 
+class="cmmi-12">w</span>) and dual directions
+           (&#x0394;<span 
+class="cmmi-12">y, </span>&#x0394;<span 
+class="cmmi-12">s</span>).)
+           </li>
+           <li 
+  class="enumerate" id="x1-22x2">(15 points) Now assume you&#8217;ve found a strictly feasible primal solution (<img 
+src="midterm0813x.png" alt="¯x"  class="bar" ><span 
+class="cmmi-12">,</span><img 
+src="midterm0814x.png" alt="¯w"  class="bar" >) and
+           a new dual solution <img 
+src="midterm0815x.png" alt="¯y"  class="bar" > with <img 
+src="midterm0816x.png" alt="¯s"  class="bar" > = <span 
+class="cmmi-12">c </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><img 
+src="midterm0817x.png" alt="¯y"  class="bar" > <span 
+class="cmmi-12">&#x003E; </span>0. If you could pick the scalar <span 
+class="cmmi-12">h</span>, how
+           would you select it? (Aside: an algorithm could work from an incorrect <span 
+class="cmmi-12">h </span>and
+           gradually modify it to achieve the correct value.)</li></ol>
+
+      <!--l. 190--><p class="noindent" >(this page intentionally left blank)
+      </li></ol>
+    
+</body></html> 
+
+
+

@@ -1,0 +1,90 @@
+<TITLE>Gomory Cutting Plane Algorithm Using Exact Arithmetic</TITLE>
+
+<H1>Gomory Cutting Plane Algorithm Using Exact Arithmetic</H1>
+
+<H2>Kristin Farwell</H2>
+
+<H3>PhD Thesis, January 2006</H3>
+
+<H4><a href=http://www.math.rpi.edu>Mathematical Sciences</a></H4>
+<H4><a href=http://www.rpi.edu>Rensselaer Polytechnic Institute</a></H4>
+<H4>Advisor: <a href=../..>John Mitchell</a></H4>
+
+
+<B>Download the thesis</B>,
+in <A HREF=krisfarwell.pdf>pdf</A>
+
+<H4>Abstract:</H4>
+
+<p>
+In the field of Operations Research (OR) we solve problems dealing with
+optimization. One of the most studied problems in OR is linear programming
+problems. 
+These are problems that are maximization or minimization of a linear objective
+function subject to linear constraints.
+If we have the added burden of having restrictions on some of the variables
+that must also be integral then we have a Mixed 
+Integer Programming Problem.
+If all of the variables must be integral then this is a 
+Pure Integer Programming Problem. These are the types of problems that we are 
+going to be studying more in depth.
+One method used to solve Integer Programming 
+Problems are known as cutting planes. There are many different types of cutting 
+planes. One type of cutting plane is known as Gomory cutting planes. Gomory 
+cutting planes have been studied in depth and utilized in various commercial
+codes. 
+We will show that by using exact arithmetic rather than floating point
+arithmetic, we can produce better cuts.
+The main reason for this is the addition of slack variables to the Gomory
+inequalities. For exact arithmetic, this slack variable has to 
+itself be integral whereas for floating point arithmetic,
+the slack could be a floating point number. 
+</p>
+
+<p>
+What we have done is write an exact arithmetic simplex program which
+incorporates some of the recent advances like LU factorization of the
+basis matrix and steepest edge pivoting rule.
+We have explored the size of the certain key vectors in 
+the simplex algorithm.
+We also wrote code that finds the all of the various forms of 
+Gomory cutting planes in exact arithmetic and adds them to the simplex tableau 
+and reoptimizes using dual simplex. We also wrote code that drops certain
+Gomory cuts when they are not useful anymore.
+We explored the size of the Gomory cutting 
+planes and how it relates to the size of vectors in the simplex algorithm.
+Since the majority of the time is spent reoptimizing,
+we wanted to find a way to utilize the 
+power of CPLEX solver and our exact Gomory cutting planes. 
+</p>
+
+<p>
+Another use for exact arithmetic is when we have dual degeneracy or in other 
+words, alternate optima for two dimensional problems. We pivoted to these
+alternate optima and cut off this additional solution which reduced
+the number of total 
+Gomory iterations by performing just one extra simplex pivot.
+</p>
+
+
+
+
+<P>
+
+<a href=http://opac.lib.rpi.edu/search/Y?SEARCH=farwell+kristin>
+Library
+listing</a>.
+
+<p>
+
+<B>Download the thesis</B>,
+in <A HREF=krisfarwell.pdf>pdf</A>.
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-924637-1";
+_udn ="rpi.edu";
+urchinTracker();
+</script>
+

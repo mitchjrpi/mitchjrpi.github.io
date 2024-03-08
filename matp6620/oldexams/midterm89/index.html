@@ -1,0 +1,357 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Midterm Exam 1989</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="midterm89">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="midterm89.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+   <a href=..>67.612 Integer Programming and Combinatorial Optimization</a>
+
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER">
+   Thursday, March 16, 1989.    2 hours.
+
+</DIV>
+
+<P>
+Answer all questions.
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>(20 points.)
+Find the minimum weight spanning tree in the graph below.
+          Specify the algorithm you use and the order in which you
+          construct your tree.
+
+<P>
+
+<P>
+
+<DT>2.
+<DD>(15 points.)
+          Consider using the Bellman-Ford algorithm to find the shortest
+          path from <I>s</I> to <I>t</I> in a graph with edge lengths as follows:
+
+<P>
+
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER" COLSPAN=4>&nbsp;</TD>
+<TD ALIGN="RIGHT">TO</TD>
+<TD ALIGN="CENTER" COLSPAN=3>&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=2>&nbsp;</TD>
+<TD ALIGN="CENTER" COLSPAN=1>s</TD>
+<TD ALIGN="CENTER" COLSPAN=1>1</TD>
+<TD ALIGN="CENTER" COLSPAN=1>2</TD>
+<TD ALIGN="CENTER" COLSPAN=1>3</TD>
+<TD ALIGN="CENTER" COLSPAN=1>4</TD>
+<TD ALIGN="CENTER" COLSPAN=1>t</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="CENTER">s</TD>
+<TD ALIGN="RIGHT">--</TD>
+<TD ALIGN="RIGHT">3</TD>
+<TD ALIGN="RIGHT">2</TD>
+<TD ALIGN="RIGHT">100</TD>
+<TD ALIGN="RIGHT">100</TD>
+<TD ALIGN="RIGHT">100</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="RIGHT">100</TD>
+<TD ALIGN="RIGHT">--</TD>
+<TD ALIGN="RIGHT">-2</TD>
+<TD ALIGN="RIGHT">3</TD>
+<TD ALIGN="RIGHT">100</TD>
+<TD ALIGN="RIGHT">100</TD>
+</TR>
+<TR><TD ALIGN="LEFT">FROM</TD>
+<TD ALIGN="CENTER">2</TD>
+<TD ALIGN="RIGHT">100</TD>
+<TD ALIGN="RIGHT">4</TD>
+<TD ALIGN="RIGHT">--</TD>
+<TD ALIGN="RIGHT">2</TD>
+<TD ALIGN="RIGHT">6</TD>
+<TD ALIGN="RIGHT">100</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="CENTER">3</TD>
+<TD ALIGN="RIGHT">100</TD>
+<TD ALIGN="RIGHT">100</TD>
+<TD ALIGN="RIGHT">100</TD>
+<TD ALIGN="RIGHT">--</TD>
+<TD ALIGN="RIGHT">3</TD>
+<TD ALIGN="RIGHT">-4</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="CENTER">4</TD>
+<TD ALIGN="RIGHT">100</TD>
+<TD ALIGN="RIGHT">100</TD>
+<TD ALIGN="RIGHT">-4</TD>
+<TD ALIGN="RIGHT">100</TD>
+<TD ALIGN="RIGHT">--</TD>
+<TD ALIGN="RIGHT">-8</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="CENTER">t</TD>
+<TD ALIGN="RIGHT">100</TD>
+<TD ALIGN="RIGHT">100</TD>
+<TD ALIGN="RIGHT">100</TD>
+<TD ALIGN="RIGHT">100</TD>
+<TD ALIGN="RIGHT">100</TD>
+<TD ALIGN="RIGHT">--</TD>
+</TR>
+</TABLE>
+
+<P>
+
+(So, for example, the length of the arc from node <I>s</I> to node 2 is 2.
+`--' indicates the corresponding edge does not exist.)
+
+<P>
+Let <I>a</I><SUB><I>i</I></SUB><SUP><I>k</I></SUP> be the length of the shortest path from <I>s</I> to <I>i</I> which uses
+at most <I>k</I> edges. How would you calculate <I>a</I><SUB><I>i</I></SUB><SUP><I>k</I>+1</SUP>?
+
+<P>
+We find <I>a</I><SUB><I>s</I></SUB><SUP>3</SUP>=0, <I>a</I><SUB>1</SUB><SUP>3</SUP>=3, <I>a</I><SUB>2</SUB><SUP>3</SUP>=1, <I>a</I><SUB>3</SUB><SUP>3</SUP>=3, <I>a</I><SUB>4</SUB><SUP>3</SUP>=7, and
+<I>a</I><SUB><I>t</I></SUB><SUP>3</SUP>=0.  What are <I>a</I><SUB><I>i</I></SUB><SUP>4</SUP>, <I>i</I>=<I>s</I>,1,2,3,4,<I>t</I>?
+
+<P>
+
+<P>
+
+<DT>3.
+<DD>(20 points.)
+          Consider the problem of finding the maximum cardinality matching
+          in a bipartite graph.
+       <DL COMPACT>
+<DT>(a)
+<DD>Express this problem as a linear programming problem&nbsp;P.
+<DT>(b)
+<DD>What is the dual linear program D to&nbsp;P?
+          <DT>(c)
+<DD>How do node covers relate to feasible solutions to&nbsp;D?
+          <DT>(d)
+<DD>What are the complementary slackness conditions for the
+                 dual pair of linear programming problems D and&nbsp;P?
+       </DL>
+
+<P>
+
+<P>
+
+<DT>4.
+<DD>(30 points.)
+          Let <I>T</I> be a finite set.
+          Let <!-- MATH: $S_i\subseteq{T}$ -->
+<IMG
+ WIDTH="60" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$S_i\subseteq{T}$">,
+<!-- MATH: $i=1,2,\ldots,m$ -->
+<IMG
+ WIDTH="121" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$i=1,2,\ldots,m$">,
+and let
+          <!-- MATH: $\Sigma=\{S_1,S_2,\ldots,S_m\}$ -->
+<IMG
+ WIDTH="174" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Sigma=\{S_1,S_2,\ldots,S_m\}$">.
+          A list <!-- MATH: $(f_1,f_2,\ldots,f_m)$ -->
+<IMG
+ WIDTH="124" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$(f_1,f_2,\ldots,f_m)$">
+of distinct elements
+          of <I>T</I> which satisfy 
+          <!-- MATH: $f_i{\in}S_i,i=1,\ldots,m$ -->
+<IMG
+ WIDTH="156" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$f_i{\in}S_i,i=1,\ldots,m$">
+          is called a <EM>system of distinct representatives</EM> (SDR)
+          of <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\Sigma$">.
+
+<P>
+For example:
+          <BLOCKQUOTE>
+             Let <!-- MATH: $T=\{a,b,c,d,e\}$ -->
+<I>T</I>={a,<I>b</I>,<I>c</I>,<I>d</I>,<I>e</I>}.
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+If <!-- MATH: $\Sigma=\{\{a,b,c\},\{a,d,e\},\{a,d,e\},\{a,e\}\}$ -->
+<IMG
+ WIDTH="322" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\Sigma=\{\{a,b,c\},\{a,d,e\},\{a,d,e\},\{a,e\}\}$">
+then
+               (<I>c</I>,<I>d</I>,<I>e</I>,<I>a</I>) is an SDR for <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\Sigma$">.
+</BLOCKQUOTE>
+<P>
+<BLOCKQUOTE>
+However, if 
+             <!-- MATH: $\Sigma=\{\{a,b,c\},\{a,d,e\},\{a,d,e\},\{a,e\},\{d,e\}\}$ -->
+<IMG
+ WIDTH="377" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$\Sigma=\{\{a,b,c\},\{a,d,e\},\{a,d,e\},\{a,e\},\{d,e\}\}$">
+then
+             there does not exist an SDR for <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\Sigma$">.
+          
+</BLOCKQUOTE>
+
+<P>
+
+<DL COMPACT>
+<DT>(a)
+<DD>Show that if there exists an SDR for <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\Sigma$">
+then every
+<!-- MATH: ${\Sigma}'=\{S_{i_1},\ldots,S_{i_k}\}\subseteq\Sigma$ -->
+<IMG
+ WIDTH="195" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="${\Sigma}'=\{S_{i_1},\ldots,S_{i_k}\}\subseteq\Sigma$">
+                 must contain at least <I>k</I>
+                 distinct elements of <I>T</I>, ie, the cardinality of
+                 <!-- MATH: ${\cup}_{j=1}^k S_{i_j}$ -->
+<IMG
+ WIDTH="64" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="${\cup}_{j=1}^k S_{i_j}$">
+is greater than or equal to <I>k</I>.
+          <DT>(b)
+<DD>Use the max-flow/min-cut theorem to show that if every
+                 <!-- MATH: ${\Sigma}'=\{S_{i_1},\ldots,S_{i_k}\}\subseteq\Sigma$ -->
+<IMG
+ WIDTH="195" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="${\Sigma}'=\{S_{i_1},\ldots,S_{i_k}\}\subseteq\Sigma$">
+                 contains at least <I>k</I>
+                 distinct elements of <I>T</I> then there exists an SDR of
+                 <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\Sigma$">.
+                 (Hint:  Construct a bipartite graph with bipartition
+                 (<I>W</I><SUB>1</SUB>,<I>W</I><SUB>2</SUB>).  Let the elements of <I>W</I><SUB>1</SUB> correspond to the
+                 elements of <I>T</I>. Let the elements of <I>W</I><SUB>2</SUB> correspond to the
+                 elements of <IMG
+ WIDTH="17" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\Sigma$">.
+                 Show that if there exists a flow of size <I>m</I> then there
+                 exists an SDR.
+                 What can you conclude about the value of the maximum flow
+                 if there does not exist an SDR?
+                 If there exists a cut of size less than <I>m</I>, consider the
+                 elements of <I>W</I><SUB>2</SUB> that are not reachable from <I>s</I> with
+                 respect to the optimal flow.)
+        </DL>
+
+<P>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;
+
+<P>
+
+<DT>5.
+<DD>(15 points.)
+          For each of the questions below, answer either yes or no and give
+          a short justification for your answer.
+      <DL COMPACT>
+<DT>(a)
+<DD>Is the flow in the following graph maximum?
+(The pair of numbers on each edge <I>e</I> is (<I>x</I>(<I>e</I>),<I>c</I>(<I>e</I>)),
+                where <I>x</I>(<I>e</I>) is the flow on edge <I>e</I> and <I>c</I>(<I>e</I>) is the
+                capacity of edge <I>e</I>.)
+            <BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+          <DT>(b)
+<DD>Is the node cover in the following graph minimum?
+            <BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+          <DT>(c)
+<DD>Is the matching in the following graph maximum?
+                (Squiggly lines indicate matched edges.)
+      </DL>
+
+<P>
+</DL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2005-12-09</I>
+</ADDRESS>
+</BODY>
+</HTML>

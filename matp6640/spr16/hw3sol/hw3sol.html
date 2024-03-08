@@ -1,0 +1,372 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw3sol.tex"> 
+<meta name="date" content="2016-03-07 15:54:00"> 
+<link rel="stylesheet" type="text/css" href="hw3sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 23--><p class="noindent" >
+<!--l. 26--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12">MATP6640/DSES6770 Linear Programming</span></a><span 
+class="cmr-12">, Homework 3.</span><br />
+<span 
+class="cmr-12">Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 30--><p class="noindent" >
+ Due: Friday, March 4, 2016.<br />
+10% penalty for each day late.</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1">Let <span 
+class="cmmi-10">Q </span>be the polyhedron
+     <center class="math-display" >
+     <img 
+src="hw3sol0x.png" alt="                 [   ]    [   ]     [  ]
+           2       1        1         0
+Q := {x &#x2208; IR : x =  1  y1 +  0  z1 +   1  z2,y1 &#x2265; 0,z1 &#x2265; 0,z2 &#x2265; 0,z1 + z2 = 1}.
+     " class="math-display" ></center>
+     <!--l. 134--><p class="nopar" >
+     Use the proof of the affine Weyl theorem (so use Fourier-Motzkin elimination explicitly) to construct
+     constraints <span 
+class="cmmi-10">Ax </span><span 
+class="cmsy-10">&#x2265; </span><span 
+class="cmmi-10">b </span>such that
+     <center class="math-display" >
+     <img 
+src="hw3sol1x.png" alt="          2
+Q = {x &#x2208; IR  : Ax &#x2265; b}.
+     " class="math-display" ></center>
+     <!--l. 140--><p class="nopar" >
+     <!--l. 142--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 145--><p class="noindent" >We define <div class="eqnarray">
+     <center class="math-display" >
+     <img 
+src="hw3sol2x.png" alt="        ( &#x230A; x  &#x230B;  &#x230A; x  &#x230B;   &#x230A; 1  1  0 &#x230B;&#x230A; y  &#x230B;                       )
+Q &#x2032; :=  { &#x2308; x1 &#x2309; :&#x2308; x1 &#x2309; - &#x2308; 1  0  1 &#x2309;&#x2308; z1 &#x2309; =  0, y &#x2265; 0,z &#x2265; 0,z &#x2265; 0}
+        (   x2      x2       0  1  1    z1         1     1     2   )
+             3       3                   2
+    =   {x &#x2208; IR3 : x1 - z1 &#x2265; 0,x2 - x1 + z1 - z2 = 0,x3 - z1 - z2 = 0,z1 &#x2265; 0,z2 &#x2265; 0}
+
+            from using the first equality to eliminate y1
+    =   {x &#x2208; IR3 : x - z &#x2265; 0,x - x + z &#x2265; 0,x + x - x - 2z = 0,z  &#x2265; 0}
+                  2   2     1   2   2      2   3   1    2     2
+            from using the first equality to eliminate z1
+    =   {x &#x2208; IR3 : x2 - x3 + x1 &#x2265; 0,x1 - x2 + x3 &#x2265; 0,x2 + x3 - x1 &#x2265; 0}
+
+            from using the equality to eliminate z2.
+     " class="math-display" ></center>
+     </div>We have <div class="eqnarray">
+     <center class="math-display" >
+     <img 
+src="hw3sol3x.png" alt="       (        &#x230A;    &#x230B;           )
+       { [    ]    x1            }
+Q   =      x1  :&#x2308;  x2&#x2309; &#x2208; Q &#x2032;,x3 = 1
+       (   x2      x3            )
+       { [   ]                                    }
+    =      x1  : x2 + x1 &#x2265; 1,x1 - x2 &#x2265; - 1,x2 - x1 &#x2265; - 1 .
+           x2
+     " class="math-display" ></center>
+     </div>
+     </li>
+     <li 
+  class="enumerate" id="x1-7x2">Let <span 
+class="cmmi-10">K</span><sub><span 
+class="cmr-7">1</span></sub> and <span 
+class="cmmi-10">K</span><sub><span 
+class="cmr-7">2</span></sub> be two finitely generated convex cones in <span 
+class="cmmi-10">IR</span><sup><span 
+class="cmmi-7">n</span></sup>. Prove that <span 
+class="cmmi-10">K</span><sub><span 
+class="cmr-7">1</span></sub> <span 
+class="cmsy-10">&#x2229; </span><span 
+class="cmmi-10">K</span><sub><span 
+class="cmr-7">2</span></sub> is a finitely generated
+     convex cone.
+     <!--l. 183--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 186--><p class="noindent" >Since <span 
+class="cmmi-10">K</span><sub><span 
+class="cmr-7">1</span></sub> and <span 
+class="cmmi-10">K</span><sub><span 
+class="cmr-7">2</span></sub> are finitely generated, they are also finitely constrained, by Weyl&#8217;s theorem. So we can find
+     matrices <span 
+class="cmmi-10">B </span>and <span 
+class="cmmi-10">C </span>such that
+     <center class="math-display" >
+     <img 
+src="hw3sol4x.png" alt="           n                          n
+K1 = {x &#x2208; IR  : Bx &#x2265; 0},   K2  = {x &#x2208; IR : Cx &#x2265; 0}.
+     " class="math-display" ></center>
+     <!--l. 191--><p class="nopar" >
+     Then
+     <center class="math-display" >
+     <img 
+src="hw3sol5x.png" alt="                 n
+K1 &#x2229; K2 =  {x &#x2208; IR  : Bx &#x2265; 0, Cx &#x2265; 0}.
+     " class="math-display" ></center>
+     <!--l. 195--><p class="nopar" >
+     This is a finitely constrained convex cone, so by Minkowski&#8217;s theorem it is also finitely generated.
+     </li>
+     <li 
+  class="enumerate" id="x1-9x3">Let <span 
+class="cmmi-10">P </span>be a polyhedron with at least one extreme point. Let <span class="bar-css"><span 
+class="cmmi-10">x</span></span> <span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">P</span>. Can <span class="bar-css"><span 
+class="cmmi-10">x</span></span> always be expressed as a convex
+     combination of extreme points of <span 
+class="cmmi-10">P </span>together with a nonnegative multiple of a <span 
+class="cmti-10">single </span>extreme ray of&#x00A0;<span 
+class="cmmi-10">P</span>? Prove
+     or give a counterexample.
+     <!--l. 237--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 240--><p class="noindent" >Taking <span 
+class="cmmi-10">P </span>equal to the nonnegative orthant in <span 
+class="cmmi-10">IR</span><sup><span 
+class="cmmi-7">n</span></sup> with <span 
+class="cmmi-10">n </span><span 
+class="cmsy-10">&#x2265; </span>2 is a counterexample. The only extreme point is
+     the origin. The extreme rays are the unit vectors. The vector of ones is in <span 
+class="cmmi-10">P </span>but is not equal to the origin plus
+     a single unit vector.
+     </li>
+     <li 
+  class="enumerate" id="x1-11x4">Let the ellipsoid <span 
+class="cmmi-10">E </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">IR</span><sup><span 
+class="cmmi-7">n</span></sup> be defined using a symmetric positive definite <span 
+class="cmmi-10">n </span><span 
+class="cmsy-10">&#x00D7; </span><span 
+class="cmmi-10">n </span>matrix <span 
+class="cmmi-10">M </span>and an <span 
+class="cmmi-10">n</span>-vector&#x00A0;<span 
+class="cmmi-10">z</span>
+     as
+     <center class="math-display" >
+     <img 
+src="hw3sol6x.png" alt="E := {x &#x2208; IRn : (x - z)TM - 1(x - z) &#x2264; 1}.
+     " class="math-display" ></center>
+     <!--l. 264--><p class="nopar" >
+     Let <span 
+class="cmmi-10">a </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">IR</span><sup><span 
+class="cmmi-7">n</span></sup>. Define updated values of <span 
+class="cmmi-10">M </span>and <span 
+class="cmmi-10">z </span>as
+     <center class="math-display" >
+     <img 
+src="hw3sol7x.png" alt="¯       -n2-      2MaaT-M--
+M   :=   n2- 1(M  -  (n+1)aT Ma)
+ ¯z  :=   z - (n+1M)a&#x221A;aTMa-.
+     " class="math-display" ></center>
+     <!--l. 271--><p class="nopar" >
+     Assume <span 
+class="cmmi-10">a</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x </span>= <span 
+class="cmmi-10">a</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">z </span>and (<span 
+class="cmmi-10">x</span><span 
+class="cmsy-10">-</span><span 
+class="cmmi-10">z</span>)<sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">M</span><sup><span 
+class="cmsy-7">-</span><span 
+class="cmr-7">1</span></sup>(<span 
+class="cmmi-10">x</span><span 
+class="cmsy-10">-</span><span 
+class="cmmi-10">z</span>) = 1, so <span 
+class="cmmi-10">x </span>is on the intersection of the cutting hyperplane and the
+     boundary of the original ellipsoid. Show that (<span 
+class="cmmi-10">x</span><span 
+class="cmsy-10">-</span><span class="bar-css"><span 
+class="cmmi-10">z</span></span>)<sup><span 
+class="cmmi-7">T</span></sup><span class="bar-css"><span 
+class="cmmi-10">M</span></span><sup><span 
+class="cmsy-7">-</span><span 
+class="cmr-7">1</span></sup>(<span 
+class="cmmi-10">x</span><span 
+class="cmsy-10">-</span><span class="bar-css"><span 
+class="cmmi-10">z</span></span>) = 1, so <span 
+class="cmmi-10">x </span>is also on the boundary of the new
+     ellipsoid. (Hint: You may assume <span class="bar-css"><span 
+class="cmmi-10">M</span></span><sup><span 
+class="cmsy-7">-</span><span 
+class="cmr-7">1</span></sup>  = <img 
+src="hw3sol8x.png" alt="n2--1
+ n2"  class="frac" align="middle">(<span 
+class="cmmi-10">M</span><sup><span 
+class="cmsy-7">-</span><span 
+class="cmr-7">1</span></sup> + <span 
+class="cmmi-10">&#x03B2;aa</span><sup><span 
+class="cmmi-7">T</span></sup>) for some parameter&#x00A0;<span 
+class="cmmi-10">&#x03B2;</span>. You can find <span 
+class="cmmi-10">&#x03B2; </span>by
+     solving <span class="bar-css"><span 
+class="cmmi-10">M</span></span><span class="bar-css"><span 
+class="cmmi-10">M</span></span><sup><span 
+class="cmsy-7">-</span><span 
+class="cmr-7">1</span></sup> = <span 
+class="cmmi-10">I</span>.)
+     <!--l. 280--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 283--><p class="noindent" >With the given formula for <span class="bar-css"><span 
+class="cmmi-10">M</span></span><sup><span 
+class="cmsy-7">-</span><span 
+class="cmr-7">1</span></sup> we get <div class="eqnarray">
+     <center class="math-display" >
+     <img 
+src="hw3sol9x.png" alt="           n2 - 1
+¯M ¯M -1  =  ---2--M¯(M -1 + &#x03B2;aaT)
+            2n      2  (            T    )
+        =  n---2-1-2n--- M  -  -2M-aaTM---- (M - 1 + &#x03B2;aaT)
+             n   n - 1        (n + 1)a  M a
+                    T    --2M-aaT----  2&#x03B2;M-aaT-(aT-M-a)
+        =  I + &#x03B2;M aa  -  (n + 1)aTM a -   (n + 1)aTM a
+                     (  (     2  )         2     )
+        =  I + M aaT  &#x03B2;  1- n-+-1  -  (n-+-1)aTM-a-
+                     (  (     )               )
+        =  I + M aaT  &#x03B2;  n---1  - -----2------
+                         n + 1    (n + 1)aTM  a
+        =  I   if &#x03B2; = -----2------
+                     (n- 1)aTM a
+     " class="math-display" ></center>
+     </div>We then get <div class="eqnarray">
+     <center class="math-display" >
+     <img 
+src="hw3sol10x.png" alt="                      n2 - 1(             M a     )T             (             M a     )
+(x- ¯z)TM¯-1(x- ¯z)  =  ---2--  x- z + ------&#x221A;------   (M -1 + &#x03B2;aaT) x- z + ------&#x221A;------
+                        n   (        (n + 1) aTM a                         (n+ 1) aT M a
+                      n2 - 1       (        )                            M a
+                   =  --n2--  1+ &#x03B2; aT (x - z)2 + 2(x - z)T (M - 1 + &#x03B2;aaT)-----&#x221A;--T----
+                                                                    (n+ 1)) a M a
+                                    ----aTM------   -1     T -----M-a-----
+                                  + (n+ 1)&#x221A;aT-M-a(M   + &#x03B2;aa )(n + 1)&#x221A;aT-M-a-
+
+                      n2 - 1(         aTM                       M a     )
+                   =  ---2--  1+ ------&#x221A;--T---(M -1 +&#x03B2;aaT )------&#x221A;-T----
+                        n        (n + 1)  a M a             (n+ 1) a  M a
+                              since aT(x - z) = 0
+                      n2 - 1(       1      &#x03B2;aTM a )
+                   =  --n2--  1+ (n-+1)2 + (n-+-1)2
+                        2   (                           )
+                   =  n----1  1+ ---1--- + ------2------    from value of &#x03B2;
+                        n2       (n +1)2   (n - 1)(n + 1)2
+                      (n2---1)((n--1)(n+-1)2 +-n-- 1-+-2)
+                   =           n2(n - 1)(n + 1)2
+                      (n + 1)(n2 - 1 + 1)
+                   =  ------2---------     since (n - 1)(n + 1) = n2 - 1
+                          n (n + 1)
+                   =  1
+     " class="math-display" ></center>
+                                                                                         
+                                                                                         
+     </div>as desired.
+     </li>
+     <li 
+  class="enumerate" id="x1-15x5">Consider applying Dantzig-Wolfe decomposition to the standard form LP min<span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">c</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x </span>: <span 
+class="cmmi-10">Ax </span>= <span 
+class="cmmi-10">b,x </span><span 
+class="cmsy-10">&#x2265; </span>0<span 
+class="cmsy-10">}</span>. Choose
+     <span 
+class="cmmi-10">X </span>= <span 
+class="cmmi-10">IR</span><sub><span 
+class="cmr-7">+</span></sub><sup><span 
+class="cmmi-7">n</span></sup>. What are the extreme point(s) and extreme ray(s) of&#x00A0;<span 
+class="cmmi-10">X</span>? What is the Master Problem? How does
+     Dantzig-Wolfe decomposition compare with the simplex algorithm?
+     <!--l. 350--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 353--><p class="noindent" >The only extreme point is the origin, which leads to <span 
+class="cmmi-10">c</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x</span><sup><span 
+class="cmmi-7">j</span></sup> = 0 and <span 
+class="cmmi-10">Ax</span><sup><span 
+class="cmmi-7">j</span></sup> = 0 for the extreme point. The <span 
+class="cmmi-10">n </span>unit
+     vectors are the extreme rays. The product of <span 
+class="cmmi-10">A </span>and the <span 
+class="cmmi-10">j</span>th unit vector is the <span 
+class="cmmi-10">j</span>th column of&#x00A0;<span 
+class="cmmi-10">A</span>, so the Master
+     Problem is
+     <center class="math-display" >
+     <img 
+src="hw3sol11x.png" alt="min&#x03BB;0,&#x03BC;             cT &#x03BC;
+subject to   0  +    A &#x03BC;  =  b
+          &#x03BB;0            =  1
+                 &#x03BB;0, &#x03BC;  &#x2265;  0.
+     " class="math-display" ></center>
+     <!--l. 364--><p class="nopar" >
+     The Master Problem is the original LP, so the Master Problem dual is the original dual, and the <span 
+class="cmmi-10">&#x03C0;</span>
+     we get is the standard simplex dual vector <span 
+class="cmmi-10">y </span>= <span 
+class="cmmi-10">B</span><sup><span 
+class="cmsy-7">-</span><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">c</span><sub><span 
+class="cmmi-7">B</span></sub>. In the subproblem we are looking for
+     violated dual constraints, which corresponds to finding a negative reduced cost in the simplex
+     algorithm.
+     </li>
+     <li 
+  class="enumerate" id="x1-17x6">The <span 
+class="cmbx-10">Project: </span><br 
+class="newline" />Along with your solutions to this homework, hand in a brief description of what you would like to do for the
+     project part of this course. Your project can be one of the following:
+         <ul class="itemize1">
+         <li class="itemize">a topic arising in your research that fits well with the topics covered in the course. You would
+         work on your own on such a project.
+         </li>
+         <li class="itemize">another project you suggest or I suggest. You can work in groups of up to three people on such a
+         project. All group members should contribute equally to the project. Each individual should turn
+         in a one-page description of their contribution to the project along with the group report.</li></ul>
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                     </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           x6915.                                                               </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           Office hours: Tuesday: 2&#8211;4pm, Wednesday: noon&#8211;2pm.</td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

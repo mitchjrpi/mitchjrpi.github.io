@@ -1,0 +1,587 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw5sol19.tex"> 
+<meta name="date" content="2019-04-17 12:45:00"> 
+<link rel="stylesheet" type="text/css" href="hw5sol19.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 30--><p class="noindent" >
+<!--l. 33--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6620" ><span 
+class="cmr-12x-x-120">MATP6620 / ISYE6760</span><br />
+<span 
+class="cmr-12x-x-120">Integer and Combinatorial Optimization</span></a><br />
+<span 
+class="cmr-12x-x-120">Homework 5.</span><br />
+<span 
+class="cmbx-12x-x-120">Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 38--><p class="noindent" >
+ Due: Friday, April 12, 2019.<br />
+Penalty for late homeworks: 10% for each day or part of a day.</div>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">What is the dual problem to the SDP formulation of the <span 
+class="cmcsc-10x-x-120">M<span 
+class="small-caps">a</span><span 
+class="small-caps">x</span>C<span 
+class="small-caps">u</span><span 
+class="small-caps">t</span> </span>problem? Show
+      that both the primal and dual semidefinite programs are strictly feasible.
+      <!--l. 97--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 99--><p class="noindent" >Primal problem is
+      <center class="math-display" >
+      <img 
+src="hw5sol190x.png" alt="maxX  &#x2208;Sn+    14&#x27E8;LG, X &#x27E9;
+subject to       Xjj   =  1   for j = 1,...,n
+                   X  &#x227D;   0
+      " class="math-display" ></center>
+      <!--l. 106--><p class="nopar" >
+      where <span 
+class="cmmi-12">L</span><sub><span 
+class="cmmi-8">G</span></sub> is the Laplacian matrix. The dual problem is then
+      <center class="math-display" >
+      <img 
+src="hw5sol191x.png" alt="                   &#x2211;
+miny &#x2208;&#x211D;n,S&#x2208;Sn+        ni=1 yi
+subject to     diag(y) - S  =   1L
+                                4  G
+                         S  &#x227D;   0
+      " class="math-display" ></center>
+      <!--l. 115--><p class="nopar" >
+      where diag(<span 
+class="cmmi-12">y</span>) denotes the diagonal matrix with diagonal entries&#x00A0;<span 
+class="cmmi-12">y</span>.
+      <!--l. 118--><p class="noindent" >The primal is strictly feasible: take <span 
+class="cmmi-12">X </span>= <span 
+class="cmmi-12">I</span>, the identity matrix.
+      <!--l. 120--><p class="noindent" >The dual is strictly feasible: let <span 
+class="cmmi-12">&#x03BB; </span>be the largest eigenvalue of <span 
+class="cmmi-12">L</span><sub><span 
+class="cmmi-8">G</span></sub> and take each <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmmi-12">&#x003E;</span> <img 
+src="hw5sol192x.png" alt="1
+4"  class="frac" align="middle"><span 
+class="cmmi-12">&#x03BB;</span>.
+      Then <span 
+class="cmmi-12">S </span>is positive definite.
+                                                                                         
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2">Let <span 
+class="cmmi-12">G </span>= (<span 
+class="cmmi-12">V,E</span>) be the complete graph on <span 
+class="cmmi-12">n </span>vertices, and let the edge weights be <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">e</span></sub> = 1 for
+      all <span 
+class="cmmi-12">e </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">E</span>. Prove that the optimal value of the SDP relaxation of <span 
+class="cmcsc-10x-x-120">M<span 
+class="small-caps">a</span><span 
+class="small-caps">x</span>C<span 
+class="small-caps">u</span><span 
+class="small-caps">t</span> </span>is
+      <img 
+src="hw5sol193x.png" alt="(n-)
+  2"  class="left" align="middle"><sup><span 
+class="cmr-8">2</span></sup>. What is the value of the <span 
+class="cmcsc-10x-x-120">M<span 
+class="small-caps">a</span><span 
+class="small-caps">x</span>C<span 
+class="small-caps">u</span><span 
+class="small-caps">t</span> </span>problem itself if <span 
+class="cmmi-12">n </span>is even? What if <span 
+class="cmmi-12">n </span>is
+      odd?
+      <!--l. 130--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 132--><p class="noindent" >Each diagonal entry of <span 
+class="cmmi-12">L</span><sub><span 
+class="cmmi-8">G</span></sub> is equal to <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">- </span>1, and each off-diagonal entry is equal
+      to&#x00A0;<span 
+class="cmsy-10x-x-120">-</span>1.
+      <!--l. 134--><p class="noindent" >We get a primal feasible solution by taking
+      <center class="math-display" >
+      <img 
+src="hw5sol194x.png" alt="      {
+           1    if i = j
+Xij =    - n1-1- if i &#x2044;= j
+      " class="math-display" ></center>
+      <!--l. 140--><p class="nopar" >
+      This is positive semidefinite since it is diagonally dominant. Objective function value
+      is
+      <center class="math-display" >
+      <img 
+src="hw5sol195x.png" alt="              (                    )
+1           1              n(n - 1)      n2
+4&#x27E8;LG, X &#x27E9; = 4- n (n - 1) + -n---1---  =  4--
+      " class="math-display" ></center>
+      <!--l. 146--><p class="nopar" >
+      as required, where the first term in the sum corresponds to the <span 
+class="cmmi-12">n </span>diagonal entries and the
+      second term corresponds to the <span 
+class="cmmi-12">n</span>(<span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">- </span>1) off-diagonal entries.
+      <!--l. 151--><p class="noindent" >We need to find a dual feasible solution that also achieves this same value in order to
+      conclude we have the optimal value. We take
+      <center class="math-display" >
+      <img 
+src="hw5sol196x.png" alt="y  = n-  for j = 1,...,n
+ j    4
+      " class="math-display" ></center>
+      <!--l. 156--><p class="nopar" >
+      so the objective function value is <img 
+src="hw5sol197x.png" alt="n2
+4"  class="frac" align="middle"> as required. The dual slack matrix is then
+      <center class="math-display" >
+      <img 
+src="hw5sol198x.png" alt="                          (      &#x230A;                           &#x230B;)
+                                    n - 1   - 1   ...   - 1
+                          ||      ||   - 1   n - 1        - 1  ||||
+S = diag (y) - 14LG  =   14 | nI - |    .           .      .   ||
+                          (      &#x2308;    ..            ..    ..   &#x2309;)
+                                     - 1    - 1   ...  n - 1
+
+                          &#x230A;              &#x230B;
+                            1  1  ...  1
+                        1 || 1  1       1 ||
+                    =   4 |&#x2308; ...     ...  ... |&#x2309;
+
+                            1  1  ...  1
+      " class="math-display" ></center>
+      <!--l. 178--><p class="nopar" >
+      a psd matrix with rank equal to one. Thus, our proposed dual solution is feasible. The primal
+      and dual values both equal <img 
+src="hw5sol199x.png" alt="n2
+-4"  class="frac" align="middle">, so this is the optimal value.
+      <!--l. 183--><p class="noindent" >If <span 
+class="cmmi-12">n </span>is even: Put exactly half the vertices on each side of the cut. The number of cut edges is
+      <img 
+src="hw5sol1910x.png" alt="(n-)
+  2"  class="left" align="middle"><sup><span 
+class="cmr-8">2</span></sup>, which is also equal to the value of the SDP relaxation.
+      <!--l. 188--><p class="noindent" >If <span 
+class="cmmi-12">n </span>is odd: place <span 
+class="cmsy-10x-x-120">&#x230A;</span><img 
+src="hw5sol1911x.png" alt="n
+2"  class="frac" align="middle"><span 
+class="cmsy-10x-x-120">&#x230B; </span>= <img 
+src="hw5sol1912x.png" alt="n-1-
+ 2"  class="frac" align="middle"> vertices on one side and <span 
+class="cmsy-10x-x-120">&#x2308;</span><img 
+src="hw5sol1913x.png" alt="n
+2"  class="frac" align="middle"><span 
+class="cmsy-10x-x-120">&#x2309; </span>= <img 
+src="hw5sol1914x.png" alt="n+1-
+  2"  class="frac" align="middle"> on the other side. The value
+      of the optimal cut is therefore
+      <center class="math-display" >
+      <img 
+src="hw5sol1915x.png" alt="n - 1 n + 1    (n )2
+------------&#x003C;   --
+  2     2       2
+      " class="math-display" ></center>
+      <!--l. 194--><p class="nopar" >
+      so the SDP value overestimates the true value.
+      <!--l. 197--><p class="noindent" >When <span 
+class="cmmi-12">n </span>= 3, the ratio of values is
+      <center class="math-display" >
+      <img 
+src="hw5sol1916x.png" alt="                 (    )  (   )2
+maxcut--value-=    24-  /  3-   =  8-&#x003E; 0.87856
+  sdp value        22      2       9
+      " class="math-display" ></center>
+      <!--l. 202--><p class="nopar" >
+      The ratio is larger for larger values of <span 
+class="cmmi-12">n</span>.
+      </li>
+      <li 
+  class="enumerate" id="x1-7x3">An instance of the symmetric traveling salesman problem on the complete graph <span 
+class="cmmi-12">K</span><sub><span 
+class="cmmi-8">n</span></sub> on <span 
+class="cmmi-12">n</span>
+      vertices has edge weights <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">e</span></sub> for each edge&#x00A0;<span 
+class="cmmi-12">e</span>. Let <span 
+class="cmmi-12">W </span>be the <span 
+class="cmmi-12">n</span><span 
+class="cmsy-10x-x-120">&#x00D7;</span><span 
+class="cmmi-12">n </span>matrix of edge weights, so
+      <span 
+class="cmmi-12">W </span>is symmetric and the diagonal terms of <span 
+class="cmmi-12">W </span>are all zero. Let <span 
+class="cmmi-12">C </span>be the <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>adjacency
+      matrix of the standard cycle on <span 
+class="cmmi-12">K</span><sub><span 
+class="cmmi-8">n</span></sub>, so
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="hw5sol1917x.png" alt="      {  1  if |i - j| = 1 or |i - j| = n - 1
+Cij =
+         0  otherwise
+      " class="math-display" ></center>
+      <!--l. 216--><p class="nopar" >
+      Let <span 
+class="cmmi-12">X </span>be an <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>permutation matrix, so it has exactly one &#8220;1&#8221; in each row and
+      each column, with the rest of the entries being zero. Given a Hamiltonian tour on
+      <span 
+class="cmmi-12">K</span><sub><span 
+class="cmmi-8">n</span></sub>, show that a permutation matrix <span 
+class="cmmi-12">X </span>can be selected so that the value of the
+      tour is equal to the trace of the <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>matrix <span id="textcolor1"><img 
+src="hw5sol1918x.png" alt="12"  class="frac" align="middle"></span><span 
+class="cmmi-12">WXCX</span><sup><span 
+class="cmmi-8">T</span> </sup>. Conversely, show that
+      if <span 
+class="cmmi-12">X </span>is a permutation matrix then the trace of <span id="textcolor2"><img 
+src="hw5sol1919x.png" alt="1
+2"  class="frac" align="middle"></span><span 
+class="cmmi-12">WXCX</span><sup><span 
+class="cmmi-8">T</span> </sup> gives the value of a
+      tour. (This result is the basis for an SDP relaxation of the traveling salesman
+      problem.)
+      <!--l. 226--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 228--><p class="noindent" >Each city is mapped to a position in the tour: city 1 is in position&#x00A0;<span 
+class="cmmi-12">i</span>, city 2 is in position&#x00A0;<span 
+class="cmmi-12">j</span>,
+      etc. We define a permutation matrix to represent this map, so
+      <center class="math-display" >
+      <img 
+src="hw5sol1920x.png" alt="      {
+         1  if city i is mapped to position k
+Xik =    0  otherwise
+      " class="math-display" ></center>
+      <!--l. 238--><p class="nopar" >
+      for 1 <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">i,j </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">n</span>. Then
+      <center class="math-display" >
+      <img 
+src="hw5sol1921x.png" alt="                        &#x2211;     &#x2211;    &#x2211;     &#x2211;
+trace( 12W XCXT   )  =   12   ni=1   nj=1   nk=1   nl=1 WijXjkCklXil
+                       &#x2211;    &#x2211;         ( &#x2211;     &#x2211;              )
+                   =     ni=1   nj=1 Wij  12   nk=1   nl=1 XjkCklXil
+      " class="math-display" ></center>
+      <!--l. 247--><p class="nopar" >
+      Note that
+      <center class="math-display" >
+      <img 
+src="hw5sol1922x.png" alt="           &#x2211;n    &#x2211;n
+&#x0394;ij   :=   12   k=1   l=1 XjkCklXil
+          {
+            1  if i and j mapped  to indices k, l, with Ckl = Clk = 1
+      =     0  otherwise
+
+          { 1  if i and j are consecutive in the tour
+      =
+            0  otherwise
+      " class="math-display" ></center>
+      <!--l. 262--><p class="nopar" >
+      Thus
+      <center class="math-display" >
+      <img 
+src="hw5sol1923x.png" alt="      1        T       &#x2211;n   &#x2211;n
+trace (2W XCX    )  =     i=1   j=1 Wij&#x0394;ij
+      " class="math-display" ></center>
+      <!--l. 269--><p class="nopar" >
+      is equal to the value of the tour.
+      <!--l. 272--><p class="noindent" >Conversely, given a permutation matrix, we can define a tour:
+           <div class="quote">
+           <!--l. 274--><p class="noindent" >If <span 
+class="cmmi-12">X</span><sub><span 
+class="cmmi-8">ik</span></sub> = 1 then city <span 
+class="cmmi-12">i </span>is placed in position <span 
+class="cmmi-12">k </span>in the tour.</div>
+      <!--l. 276--><p class="noindent" >From the equalities above, the value of this tour is given by the trace of <img 
+src="hw5sol1924x.png" alt="1
+2"  class="frac" align="middle"><span 
+class="cmmi-12">WXCX</span><sup><span 
+class="cmmi-8">T</span> </sup>.
+      </li>
+      <li 
+  class="enumerate" id="x1-9x4">Consider the integer programming problem
+      <center class="math-display" >
+      <img 
+src="hw5sol1925x.png" alt="min         c1x1  +   c2x2  +  c3x3  +   c4x4  +   c5x5
+subject to    2x1  +     x2           +    5x4  -   3x5    =   1
+           - 2x1            +    x3  -    6x4  +   4x5    =   1
+                                            x  &#x2265;     0,  and  integer
+      " class="math-display" ></center>
+      <!--l. 349--><p class="nopar" >
+      One feasible integral solution is <span 
+class="cmmi-12">x </span>= (0<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>0), which has value&#x00A0;5. The linear
+      programming relaxation of this problem is obtained by ignoring the condition that
+      the variables <span 
+class="cmmi-12">x </span>should be integral. The optimal tableau for the LP relaxation
+      is
+      <center class="math-display" >
+      <img 
+src="hw5sol1926x.png" alt="min        2x1   +  ¯c2x2  +    ¯c3x3                 +   3.5
+subject to  x1   +   2x2  +   1.5x3  +  x4          =   3.5
+            x1   +   3x2  +   2.5x3         +   x5  =   5.5
+
+                                                 x  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 363--><p class="nopar" >
+      with <span class="bar-css"><span 
+class="cmmi-12">c</span></span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0, <span class="bar-css"><span 
+class="cmmi-12">c</span></span><sub><span 
+class="cmr-8">3</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0. Show that any feasible solution to the LP relaxation with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>1 has
+      value at least 5.5. What can you say about the value of <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> in any optimal solution to the
+      integer program?
+      <!--l. 386--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 388--><p class="noindent" >The objective function value of any solution is at least 3<span 
+class="cmmi-12">.</span>5 + 2<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> since <span class="bar-css"><span 
+class="cmmi-12">c</span></span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0 and <span class="bar-css"><span 
+class="cmmi-12">c</span></span><sub><span 
+class="cmr-8">3</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0.
+      With <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>1, we get a value of at least&#x00A0;5.5.
+      <!--l. 392--><p class="noindent" >Since this is worse than our known feasible integral solution, we can <span 
+class="cmbx-12">fix </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> = 0 <span 
+class="cmbx-12">using the</span>
+      <span 
+class="cmbx-12">reduced costs</span>.
+      </li>
+      <li 
+  class="enumerate" id="x1-11x5">Given a graph <span 
+class="cmmi-12">G </span>= (<span 
+class="cmmi-12">V,E</span>) with <span 
+class="cmmi-12">n </span>vertices, define the convex set
+      <center class="math-display" >
+      <img 
+src="hw5sol1927x.png" alt="              n&#x00D7;n                          &#x2211;m     T                 n
+CG := {X  &#x2208; &#x211D;     : Xij = 0&#x2200;(i,j) &#x2208; E, X =     ykyk for some  yk &#x2208; &#x211D; +,trace(X ) = 1}.
+                                           k=1
+      " class="math-display" ></center>
+      <!--l. 475--><p class="nopar" >
+      How are extreme points of <span 
+class="cmmi-12">C</span><sub><span 
+class="cmmi-8">G</span></sub> related to node packings in&#x00A0;<span 
+class="cmmi-12">G</span>? Can you formulate the node
+      packing problem using&#x00A0;<span 
+class="cmmi-12">C</span><sub><span 
+class="cmmi-8">G</span></sub>? (Hint: Note that if <span 
+class="cmmi-12">X </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">C</span><sub><span 
+class="cmmi-8">G</span></sub> then
+      <center class="math-display" >
+      <img 
+src="hw5sol1928x.png" alt="                     (         )
+                       &#x2211;m            &#x2211;m       (    )    &#x2211;m       (    )    &#x2211;m
+1 = trace(X ) = trace      ykyTk   =     trace  ykyTk  =      trace  yTk yk =      yTk yk,
+                       k=1           k=1                k=1                k=1
+      " class="math-display" ></center>
+      <!--l. 485--><p class="nopar" >
+      the sum of the squares of the 2-norms of the vectors <span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>.)
+      <!--l. 488--><p class="noindent" ><span 
+class="cmbx-12">Solution</span>
+      <!--l. 490--><p class="noindent" >Any solution with more than one nonzero vector <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">k</span></sub> is not extreme. In particular, assume we
+      have <span 
+class="cmmi-12">m </span>nonzero vectors&#x00A0;<span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">k</span></sub>. Let
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="hw5sol1929x.png" alt="  k     1     T
+X   = --T--ykyk .
+      yk yk
+      " class="math-display" ></center>
+      <!--l. 495--><p class="nopar" >
+      Note that
+      <center class="math-display" >
+      <img 
+src="hw5sol1930x.png" alt="        k    --1--     (    T)   --1--     (  T  )    -1--- T
+trace(X  ) = yT y trace ykyk   = yT y trace y k yk =  yTy yk yk = 1,
+              k  k                 k k                 k k
+      " class="math-display" ></center>
+      <!--l. 502--><p class="nopar" >
+      so <span 
+class="cmmi-12">X</span><sup><span 
+class="cmmi-8">k</span></sup> <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">C</span><sub>
+<span 
+class="cmmi-8">G</span></sub>. Further,
+      <center class="math-display" >
+      <img 
+src="hw5sol1931x.png" alt="     &#x2211;m     T    m&#x2211;  ( T   )  k
+X =      ykyk =      yk yk X  .
+     k=1         k=1
+      " class="math-display" ></center>
+      <!--l. 508--><p class="nopar" >
+      From the string of equalities given in the question, this is a convex combination of the
+      matrices&#x00A0;<span 
+class="cmmi-12">X</span><sup><span 
+class="cmmi-8">K</span></sup>, so <span 
+class="cmmi-12">X </span>is not an extreme point of&#x00A0;<span 
+class="cmmi-12">C</span><sub>
+<span 
+class="cmmi-8">G</span></sub>.
+      <!--l. 513--><p class="noindent" >Thus, the only extreme points are matrices of the form
+      <center class="math-display" >
+      <img 
+src="hw5sol1932x.png" alt="       T         T            n
+X  = yy    with y y =  1,y &#x2208; &#x211D;+.
+      " class="math-display" ></center>
+      <!--l. 516--><p class="nopar" >
+      Note that <span 
+class="cmmi-12">X</span><sub><span 
+class="cmmi-8">ij</span></sub> = <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">j</span></sub>, so if (<span 
+class="cmmi-12">i,j</span>) <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">E </span>then either <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">i</span></sub> = 0 or <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">j</span></sub> = 0. Thus, <span 
+class="cmbx-12">the support of </span><span 
+class="cmmi-12">y </span><span 
+class="cmbx-12">is</span>
+      <span 
+class="cmbx-12">a node packing.</span>
+      <!--l. 520--><p class="noindent" >We use the objective function of maximizing the sum of all entries in&#x00A0;<span 
+class="cmmi-12">X</span>. Let <span 
+class="cmmi-12">M </span>denote the
+      matrix of ones. So our formulation is
+      <table 
+class="equation"><tr><td><a 
+ id="x1-12r1"></a>
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="hw5sol1933x.png" alt="mXa&#x2208;xCG &#x27E8;M, X &#x27E9;
+      " class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+      <!--l. 525--><p class="nopar" >
+      Since the objective function is linear and the feasible region is compact, there is an optimal
+      solution that is an extreme point of&#x00A0;<span 
+class="cmmi-12">C</span><sub><span 
+class="cmmi-8">G</span></sub>. When <span 
+class="cmmi-12">X </span>is an extreme point, so <span 
+class="cmmi-12">X </span>= <span 
+class="cmmi-12">yy</span><sup><span 
+class="cmmi-8">T</span> </sup> for some
+      <span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sub><span 
+class="cmr-8">+</span></sub><sup><span 
+class="cmmi-8">n</span></sup>, we have
+      <center class="math-display" >
+      <img 
+src="hw5sol1934x.png" alt="&#x27E8;M, X &#x27E9; = &#x27E8;M, yyT &#x27E9; = yTM  y = ||y||21,
+      " class="math-display" ></center>
+      <!--l. 533--><p class="nopar" >
+      the square of the 1-norm of&#x00A0;<span 
+class="cmmi-12">y</span>. Maximizing the 1-norm subject to the 2-norm being (no larger
+      than)&#x00A0;1 has the optimal solution where every nonzero component of <span 
+class="cmmi-12">y </span>is equal to 1<span 
+class="cmmi-12">&#x2215;</span><img 
+src="hw5sol1935x.png" alt="&#x221A; --
+  p"  class="sqrt" >,
+      where <span 
+class="cmmi-12">p </span>is the number of nonzero components. Thus, for a given support, the optimal <span 
+class="cmmi-12">y </span>is to
+      take every nonzero component to be the same, and then the objective function value is equal
+      to the number of nonzero components.
+      <!--l. 541--><p class="noindent" >Thus, the node packing problem is <span 
+class="cmbx-12">equivalent </span>to the completely positive program&#x00A0;(<a 
+href="#x1-12r1">1<!--tex4ht:ref: eq.copos --></a>).
+      </li>
+      <li 
+  class="enumerate" id="x1-14x6">Give a progress report on your project. Your report should be at least a couple of
+      paragraphs long. It doesn&#8217;t need to repeat anything from your initial report from
+      February&#x00A0;22.
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                             </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                        </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Tuesdays 10am-12pm, Wednesdays, 11am&#8211;1pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

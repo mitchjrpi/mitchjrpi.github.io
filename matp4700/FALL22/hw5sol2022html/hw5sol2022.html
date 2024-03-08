@@ -1,0 +1,442 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw5sol2022.tex"> 
+<meta name="date" content="2022-10-28 17:47:00"> 
+<link rel="stylesheet" type="text/css" href="hw5sol2022.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 48--><p class="noindent" >
+<!--l. 50--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12x-x-120">Math Models of Operations Research</span></a><br />
+<a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12x-x-120">MATP 4700 </span></a><br /><br />
+<span 
+class="cmbx-12x-x-120">Homework 5</span><br /><br />
+<span 
+class="cmbx-12x-x-120">Solutions</span></div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 58--><p class="noindent" >
+ This homework will not be collected or graded.</div>
+<!--l. 64--><p class="noindent" >Questions from Kupferschmid, Chapters 5 and 6 (available on LMS):
+      <ul class="itemize1">
+      <li class="itemize">5.5.47 (lecture 14)
+      </li>
+      <li class="itemize">5.5.60 (lecture 15) Note: the initial tableau <span 
+class="cmmi-12">T</span>, the optimal tableau&#x00A0;<span 
+class="cmmi-12">T</span><sup><span 
+class="cmsy-8">*</span></sup>, and the pivot
+      matrix&#x00A0;<span 
+class="cmmi-12">P </span>are all on page 197.
+      </li>
+      <li class="itemize">5.5.61 (lecture 15)
+      </li>
+      <li class="itemize">6.6.24 (lecture 16)
+      </li>
+      <li class="itemize">6.6.32 (lecture 16)</li></ul>
+<!--l. 81--><p class="noindent" >In addition, read Sections 5.3, 5.4, 6.1, and 6.2 from the text.
+<!--l. 94--><p class="noindent" >Solving the homework problems (and other problems from the text) will improve your
+understanding of the material.
+<!--l. 100--><p class="noindent" >Working out the problems yourself will greatly improve your understanding of the material and
+help you on the exams.
+<!--l. 109--><p class="noindent" >You can ask questions on piazza, in addition to using office hours or email.
+                                                                                         
+                                                                                         
+      <ul class="itemize1">
+      <li class="itemize"><span 
+class="cmbx-12">5.5.47</span>
+      <center class="math-display" >
+      <img 
+src="hw5sol20220x.png" alt="          x1  x2   x3  x4   x5  x6
+     |- 10|0----0---3---1----2---0-|
+     |----|------------------------|
+     | - 5|1    0  - 1  0   - 1  0 |
+     |  2 |0    0   2   3    0   1 |
+-&#x2192;   |-- 7-0----1---2--&#x25CB;-1---- 1--0--
+     |
+      " class="math-display" ></center>
+      <!--l. 127--><p class="nopar" >
+      <center class="math-display" >
+      <img 
+src="hw5sol20221x.png" alt="                                   |-----x1---x2---x3--x4--x5---x6-|
+                                   |- 17 |0    1    5   0    1   0 |
+- R  thenR   - R  ,R  - 3R          |---5-|1----0----1---0----1---0-|
+----3------0----1---2-----3        |     |                         |
+            -&#x2192;                 -&#x2192;  |- 19 |0    3    8   0  &#x25CB;-3    1 |
+                                   |---7--0----1----2---1----1---0-|
+                                   |
+      " class="math-display" ></center>
+      <!--l. 138--><p class="nopar" >
+      <center class="math-display" >
+      <img 
+src="hw5sol20222x.png" alt="                                           |-----x1--x2----x3--x4--x5---x6-|
+                                           |- 730 |0   2    233   0   0    13 |
+  1                                        |---4-|---------11------------1-|
+--3R2thenR0----R2,-R1-+-R---2,-R3---R2--   |   3 |1  - 1 -  3   0   0  - 3 |
+                 - &#x2192;                       |  19 |0  - 1  - 8   0   1  - 1 |
+                                           |  3  |          3            3 |
+                                           |---23--0---0-----23---1---0----13--
+                                           |
+      " class="math-display" ></center>
+      <!--l. 149--><p class="nopar" >
+      Optimal solution is <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> = (<img 
+src="hw5sol20223x.png" alt="43"  class="frac" align="middle"><span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">,</span><img 
+src="hw5sol20224x.png" alt="23"  class="frac" align="middle"><span 
+class="cmmi-12">,</span><img 
+src="hw5sol20225x.png" alt="193"  class="frac" align="middle"><span 
+class="cmmi-12">, </span>0), with value&#x00A0;<img 
+src="hw5sol20226x.png" alt="703"  class="frac" align="middle">.
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">5.5.60 </span>The pivot matrix is P on page 197 in section 5.4.1 of the text.
+                                                                                         
+                                                                                         
+      <!--l. 156--><p class="noindent" >The change in the final tableau is to modify the final reduced costs by the 4 given
+      parameters. The optimal tableau to the original brewery problem is Tableau T3c on page 66
+      of the text. The prices become 90 + <span 
+class="cmmi-12">&#x03C1;</span>, 150 + <span 
+class="cmmi-12">&#x03C3;</span>, 60 + <span 
+class="cmmi-12">&#x03BB;</span>, 70 + <span 
+class="cmmi-12">&#x03B1;</span>, so the costs in the
+      initial tableay T0 are the negatives of these. Thus, the modified final tableau
+      is
+      <center class="math-display" >
+      <img 
+src="hw5sol20227x.png" alt="|-----|------------------------------------------------------|
+|2325-|0---&#x03C1;--0---&#x03C3;--18.75---&#x03BB;--76.25---&#x03B1;-----7.5--0---18.75-|
+|   5 |   1&#x25CB;       0       2.75        2.25     0.5  0  - 1.25 |
+| 7.5 |    0      0       1.62      - 0.12    0.25  1  - 1.38 |
+|  12 |    0     1&#x25CB;       - 1.12     - 0.38  - 0.25  0    0.88 |
+|-----|-------------------------------------------------------
+|     |
+      " class="math-display" ></center>
+      <!--l. 171--><p class="nopar" >
+      Pivoting on the indicated positions gives a canonical form tableau:
+      <center class="math-display" >
+      <img 
+src="hw5sol20228x.png" alt="|2325|0--0--18.75- &#x03BB;-+2.75&#x03C1;- 1.12&#x03C3;-76.25- &#x03B1;-+2.25&#x03C1;-- 0.38&#x03C3;-7.5+-0.5&#x03C1;- 0.25&#x03C3;-0-18.75- 1.25&#x03C1;+0.88&#x03C3;
+| 7.55|10  00               21.7.652              -20.2.152          00..255 01            --11.2.358|
+|-12|0--1---------------1.12---------------0.38----------0.25-0-------------0.88-
+      " class="math-display" ></center>
+      <!--l. 184--><p class="nopar" >
+      Thus, to still be in optimal form, we require
+      <center class="math-display" >
+      <img 
+src="hw5sol20229x.png" alt="18.75 - &#x03BB; + 2.75&#x03C1; - 1.12&#x03C3;  &#x2265;   0
+76.25 - &#x03B1; + 2.25&#x03C1; - 0.38&#x03C3;  &#x2265;   0
+
+        7.5 + 0.5&#x03C1; - 0.25&#x03C3; &#x2265;   0
+    18.75 - 1.25&#x03C1; + 0.88&#x03C3;  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 194--><p class="nopar" >
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">5.5.61</span>
+           <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+        a. </dt><dd 
+class="enumerate-enumitem">We introduce slacks for constraints <span 
+class="cmmi-12">A</span>-<span 
+class="cmmi-12">E </span>and put the problem in standard form. We
+           have
+           <center class="math-display" >
+           <img 
+src="hw5sol202210x.png" alt="     |----|--x1----x2---x3---x4--x5--x6--x7-|
+     | 40 |- 12  - 10    0    0   0   0   0 |
+     |-20-|--1&#x25CB;2-----0----1----0---0---0---0-|
+     |    |                                 |
+T0 = | 60 |   0    1&#x25CB;0    0  - 1   0   0   0 |
+     | 12 |   1     1    0    0   1   0   0 |
+     | 60 |  12     0    0    0   0   1   0 |
+     |100 |   0    10    0    0   0   0   1 |
+     |----|---------------------------------
+     |    |
+           " class="math-display" ></center>
+           <!--l. 216--><p class="nopar" >
+           </dd><dt class="enumerate-enumitem">
+        b. </dt><dd 
+class="enumerate-enumitem">Pivoting on the 2 circled entries gives a canonical form tableau:
+           <center class="math-display" >
+           <img 
+src="hw5sol202211x.png" alt="|----x1--x2----x3----x4--x5--x6--x7--|
+|120-|0---0-----1-----1---0---0----0-|
+|  53 |1   0  - 112     0   0   0    0 |
+|  6 |0   1     0  - 0.1   0   0    0 |
+| 13 |0   0    1-    0.1   1   0    0 |
+|  3 |         12                    |
+| 40 |0   0     1     0   0   1    0 |
+|-40-|0---0-----0-----1---0---0----1-|
+|    |
+           " class="math-display" ></center>
+           <!--l. 233--><p class="nopar" >
+           Bring <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> into the basis. By the minimum ratio rule, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">6</span></sub> leaves the basis.
+           <center class="math-display" >
+           <img 
+src="hw5sol202212x.png" alt="     x   x   x      x   x    x   x
+|----|1---2---3------4---5-----6---7-|
+|160-|0---0---0------1---0----11----0-|
+|  5 |1   0   0      0   0    12   0 |
+|  6 |0   1   0  - 0.1   0    0    0 |
+|  1 |0   0   0    0.1   1  - 1-   0 |
+| 40 |0   0   1      0   0    112   0 |
+|    |                               |
+|-40-|0---0---0------1---0----0----1-|
+|    |
+           " class="math-display" ></center>
+           <!--l. 249--><p class="nopar" >
+           Bring <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">4</span></sub> into the basis. By the minimum ratio rule, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">5</span></sub> leaves the basis. This gives the
+           optimal tableau&#x00A0;<span 
+class="cmmi-12">T</span><sup><span 
+class="cmsy-8">*</span></sup>:
+                                                                                         
+                                                                                         
+           <center class="math-display" >
+           <img 
+src="hw5sol202213x.png" alt="           x1  x2  x3  x4    x5    x6  x7
+      |----|------------------------1-----|
+      |170-|0---0---0---0----10-----61---0-|
+      |  5 |1   0   0   0     0    12   0 |
+  *   |  7 |0   1   0   0     1  - 112   0 |
+T  =  | 10 |0   0   0   1    10   - 5   0 |
+      | 40 |0   0   1   0     0     61   0 |
+      |    |                        5     |
+      |-30-|0---0---0---0----10-----6---1--
+      |    |
+           " class="math-display" ></center>
+           <!--l. 266--><p class="nopar" >
+           </dd><dt class="enumerate-enumitem">
+        c. </dt><dd 
+class="enumerate-enumitem">The pivot matrix is not quite the last 5 columns of <span 
+class="cmmi-12">T</span><sup><span 
+class="cmsy-8">*</span></sup>, because the <span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmr-8">3</span></sub> and <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">4</span></sub> columns
+           have the wrong sign in&#x00A0;<span 
+class="cmmi-12">T</span><sub><span 
+class="cmr-8">0</span></sub>. Nonetheless, all we have to do to the last 5 columns is
+           change the sign of the <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> and&#x00A0;<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">4</span></sub> columns, and append the first identity column at the
+           beginning:
+           <center class="math-display" >
+           <img 
+src="hw5sol202214x.png" alt="     &#x230A;                       1    &#x230B;
+        1   0    0    10     6  0
+     ||  0   0    0     0    112  0 ||
+     |  0   0    0     1  - 112  0 |
+P  = ||  0   0  - 1    10   - 5  0 ||
+     ||                       6    ||
+     |  0  - 1   0     0     15  0 |
+     &#x2308;  0   0    0  - 10     6  1 &#x2309;
+           " class="math-display" ></center>
+           <!--l. 284--><p class="nopar" >
+           It can be checked that <span 
+class="cmmi-12">PT</span><sub><span 
+class="cmr-8">0</span></sub> = <span 
+class="cmmi-12">T</span><sup><span 
+class="cmsy-8">*</span></sup>.
+           </dd><dt class="enumerate-enumitem">
+        d. </dt><dd 
+class="enumerate-enumitem">Initial tableau becomes
+           <center class="math-display" >
+           <img 
+src="hw5sol202215x.png" alt="     |----|--x1----x2---x3---x4--x5--x6--x7-|
+     | 40 |- 12  - 10    0    0   0   0   0 |
+     |-25-|--12-----0----1----0---0---0---0-|
+     |    |                                 |
+&#x02DC;T0 = | 65 |   0    10    0  - 1   0   0   0 |
+     | 12 |   1     1    0    0   1   0   0 |
+     | 60 |  12     0    0    0   0   1   0 |
+     |100 |   0    10    0    0   0   0   1 |
+     |----|---------------------------------
+     |    |
+           " class="math-display" ></center>
+           <!--l. 302--><p class="nopar" >
+           Premultiplying <span 
+class="cmmi-12">P</span><img 
+src="hw5sol202216x.png" alt="&#x02DC;T"  class="tilde" ><sub><span 
+class="cmr-8">0</span></sub> gives the modified final tableau under the more stringent
+           conditions:
+           <center class="math-display" >
+           <img 
+src="hw5sol202217x.png" alt="            |----x1--x2---x3--x4----x5---x6--x7-|
+            |170 |0    0   0   0    10    1   0 |
+            |----|------------------------61-----|
+            |  5 |1    0   0   0     0    121-  0 |
+&#x02DC;T* = P &#x02DC;T  = |  7 |0    1   0   0     1  - 12   0 |
+        0   |  5 |0    0   0   1    10  - 56   0 |
+            | 35 |0    0   1   0     0    1   0 |
+            | 30 |0    0   0   0  - 10    5   1 |
+            |----|------------------------6------
+            |    |
+           " class="math-display" ></center>
+           <!--l. 319--><p class="nopar" >
+           Since the tableau is still in optimal form, the optimal point is still the previously found
+           <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> = (5<span 
+class="cmmi-12">, </span>7)<sup><span 
+class="cmmi-8">T</span> </sup>.</dd></dl>
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">6.6.24 </span>Pivots consist of pushing flow around cycles. If the current flow is integral and if the
+      bounds on the flows on each edge are integral, then the maximum additional flow that can be
+      pushed around the cycle is integral. Thus, the flow remains integral after each pivot. If a
+      linear program has an optimal solution then the simplex algorithm will find that solution, so
+      in the case of a transportation problem, the optimal solution <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> returned by the algorithm
+      must be integral.
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">6.6.32</span>
+           <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+        a. </dt><dd 
+class="enumerate-enumitem">You have supply of 10 at the factory each month from manufacturing product.
+           You have customer demand each month. The warehouse is at the factory (different
+           from my hint). Can calculate the cost to produce in one month and supply in
+                                                                                         
+                                                                                         
+           another as the inventory cost to get to the delivery month and then ship in
+           the delivery month. So, eg, to produce in January and deliver in March costs
+           $(2+1+1)=$4 per unit.
+           <div class="center" 
+>
+<img src=q32a.png>
+</div></dd><dt class="enumerate-enumitem">
+        b. </dt><dd 
+class="enumerate-enumitem">
+           <!--l. 438--><p class="noindent" >Give the missing arcs high cost of 100. Transportation tableau:
+           <center class="math-display" >
+           <img 
+src="hw5sol202218x.png" alt="                            demand
+
+                  |b15=-5--b25-=-10--b3-=-15-|
+supply  a1 = 10   |1       4        4       |
+        a2 = 10   |100     25       25      |
+        a3 = 10   |100     100      110     |
+                  |-------------------------
+                  |
+           " class="math-display" ></center>
+           <!--l. 449--><p class="nopar" >
+           Solution obtained by NW corner rule is shown.
+           </dd><dt class="enumerate-enumitem">
+        c. </dt><dd 
+class="enumerate-enumitem">Can solve as a transportation problem. Find dual variables satisfying <span 
+class="cmmi-12">u</span><sub><span 
+class="cmmi-8">i</span></sub> + <span 
+class="cmmi-12">v</span><sub><span 
+class="cmmi-8">j</span></sub> = <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub> for
+           basic edges:
+           <center class="math-display" >
+           <img 
+src="hw5sol202219x.png" alt="                            demand
+                  |b1-=-5--b2-=-10--b3-=-15-|
+        a1 = 10   |15      45       4       |u1 =  0
+supply            |          5        5     |
+        a2 = 10   |100     2        2 10     |u2 =  - 2
+        a3 = 10   -100-----100------1--------u3 =  - 3
+                   v1 = 1  v2 = 4   v3 = 4
+           " class="math-display" ></center>
+           <!--l. 466--><p class="nopar" >
+           Calculate reduced costs <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">u</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">v</span><sub><span 
+class="cmmi-8">j</span></sub>:
+           <center class="math-display" >
+           <img 
+src="hw5sol202220x.png" alt="                            demand
+
+                  |b15=-5--b25=-10--b3-=-15-|
+supply  a1 = 10   |0       0        0       |u1 =  0
+        a2 = 10   |101     05       05      |u2 =  - 2
+        a3 = 10   |102     99       010     |u3 =  - 3
+                  -v--=-1--v--=-4---v--=-4---
+                    1       2        3
+           " class="math-display" ></center>
+           <!--l. 479--><p class="nopar" >
+           Solution:
+           <div class="center" 
+>
+<img src=q32c.png>
+</div></dd><dt class="enumerate-enumitem">
+        d. </dt><dd 
+class="enumerate-enumitem">Since arc (1<span 
+class="cmmi-12">, </span>3) has reduced cost 0, we can introduce it into the basis to get alternative
+           optimal solutions:
+           <div class="center" 
+>
+<img src=q32d1.png>
+</div><!--l. 566--><p class="noindent" >Taking <span 
+class="cmmi-12">t </span>= 5 gives the alternative optimal BFS:
+           <div class="center" 
+>
+<img src=q32d2.png>
+</div></dd></dl>
+      </li></ul>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                             </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                                        </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Tuesday 2.30&#8211;4pm in AE 325;                                                         </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Thursday 1&#8211;3pm webex: <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-12">https://rensselaer.webex.com/meet/mitchj</span></a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-7-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;                                                                                                         </td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

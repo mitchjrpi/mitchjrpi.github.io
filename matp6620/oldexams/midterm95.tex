@@ -1,0 +1,139 @@
+\documentstyle[12pt]{article}
+
+\oddsidemargin -.5in
+\textwidth 7.5in
+\textheight 9in
+\topmargin -30pt
+
+\begin{document}
+
+
+\begin{center}
+  {\large
+  67.612/92.672/66.612 \\
+  {\bf Combinatorial Optimization and Integer Programming } \\
+  Spring 95}
+\end{center}
+
+\begin{center}
+  Midterm Exam, Monday, April 3, 1995.
+\end{center}
+
+Please do all four problems. Show all work. No books or calculators allowed.
+You may use any result from class, the homeworks, or the texts, except where
+stated.
+You may use one sheet of handwritten notes.
+The exam lasts two hours.
+
+
+\begin{enumerate}
+  \item (25 points)
+    Consider a bipartite graph $G=(V,E)$, where $V$ can be broken into
+    two parts $U$ and $W$, and every edge in $E$ has one endpoint in $U$
+    and one in~$W$.
+    (Formally, $V=U\cup W$, $U\cap W =\emptyset$, and $e \in E$ implies that
+    $e=(i,j)$, where $i\in U$ and $j\in W$.)
+    Let $k=\mid\!U\!\mid$ and $l=\mid\!W\!\mid$.
+    Note that we have not assumed %that $\mid\!U\!\mid=\mid\!W\!\mid$, or
+    that every vertex in $U$ is adjacent to every vertex in~$W$.
+    Because this is a bipartite graph, the maximum cardinality matching
+    problem can be solved by solving its linear programming relaxation
+    \begin{displaymath}
+      \begin{array}{lrclrr}
+        \max & \sum_{(i,j) \in E} x_{ij} \\
+        \mbox{subject to } & \sum_{j:(i,j) \in E} x_{ij}
+                                & \leq & 1, & i=1,...,k & \qquad (P) \\
+                           & \sum_{i:(i,j) \in E} x_{ij}
+                                & \leq & 1, & j=1,...,l \\
+                           & x_{ij} & \geq & 0, & (i,j) \in E
+      \end{array}
+    \end{displaymath}
+    where $x_{ij}$ is one if edge $(i,j)$ is in the matching,
+    and zero otherwise.
+    Every basic feasible solution to both $(P)$ and its dual $(D)$ is integral.
+    \begin{enumerate}
+      \item (5 points)
+        What is the dual $(D)$ to the linear program~$(P)$?
+        (Hint: The dual of a linear program of the form
+        $\max\{c^Tx:Ax\leq b,x\geq 0\}$ is $\min\{b^Ty:A^Ty\geq c, y\geq 0\}$.)
+      \item (10 points)
+        A {\em node cover} of $G$ is a subset $S$ of $V$ such that every
+        edge in $E$ is incident to at least one vertex in~$S$.
+        What do the integral solutions to $(D)$ correspond to?
+        What do you conclude from strong duality?
+      \item (10 points)
+        What are the complementary slackness conditions for the
+        pair $(P)$ and $(D)$? Interpret these conditions.
+    \end{enumerate}
+  \item (25 points)
+    An instance of the {\em Hamiltonian Circuit} problem is given by:
+    \begin{quote}
+      Given a graph $G=(V,E)$, does there exist a circuit that visits
+      every vertex in~$V$?
+    \end{quote}
+    We saw in class that the Hamiltonian circuit problem is NP-Complete.
+    An instance of the {\em Hamiltonian Path} problem is given by:
+    \begin{quote}
+      Given a graph $G=(V,E)$, does there exist a path that visits
+      every vertex in~$V$?
+    \end{quote}
+    Use the fact that the Hamiltonian circuit problem is NP-Complete
+    to show that the Hamiltonian path problem is NP-Complete.
+\pagebreak
+  \item (25 points)
+    Consider the node packing problem on the graph $G=(V,E)$.
+    This can be written
+    \begin{displaymath}
+      \begin{array}{lrcll}
+        \max & \sum_{i\in V} x_i \\
+        \mbox{subject to } & x_i + x_j & \leq & 1, & (i,j) \in E \\
+            & x_i & = & 0 \mbox{ or } 1, & i \in V
+      \end{array}
+    \end{displaymath}
+    \begin{enumerate}
+      \item (10 points)
+        We saw in class that if the vertices $v_1,...,v_{2k+1}$
+        ($k\geq 1$, $k$ integer)
+        give a circuit then the {\em odd hole inequality}
+        \begin{displaymath}
+          \sum_{i=1}^{2k+1} x_i \leq k
+        \end{displaymath}
+        is valid for the node packing polytope.
+        What is the Chvatal rank of this inequality?
+      \item (15 points)
+        We saw in class that if the vertices $v_1,...,v_{2k+1}$
+        ($k\geq 1$, $k$ integer)
+        form a clique then the {\em clique inequality}
+        \begin{displaymath}
+          \sum_{i=1}^{2k+1} x_i \leq 1
+        \end{displaymath}
+        is a facet of the node packing polytope.
+        What is the Chvatal rank of this inequality when $k=1$?
+        Show that the Chvatal rank of this inequality is no more than 2 if
+        $k=2$.
+    \end{enumerate}
+  \item (25 points)
+    Let $G=(V,E)$ be a complete graph on $m$ vertices, and let $n=m(m-1)/2$ be
+    the number of edges.
+    The set of matchings on $G$ is
+    \begin{displaymath}
+       S=\{x\in\Re^n:\sum_{e\in\delta(v)}x_e \leq 1 \mbox{ for } v=1,...,m
+          \mbox{ and } x_e = 0 \mbox{ or } 1 \mbox{ for } e=1,...,n\},
+    \end{displaymath}
+    where $\delta(v)$ is the set of vertices adjacent to vertex~$v$.
+    \begin{enumerate}
+      \item (10 points)
+        Show that the dimension of $S$ is~$n$.
+      \item (15 points)
+        An odd set constraint has the form
+        \begin{displaymath}
+          \sum_{e \in E(U)} x_e \leq (\mid\!U\!\mid-1)/2
+        \end{displaymath}
+        where $U$ is a subset of $V$ of odd cardinality
+        and $E(U)$ is the edges in $E$ that have both endpoints in~$U$.
+        We saw in class that this inequality is valid for~$S$.
+        Show that it is a {\em facet} of~$S$ when $\mid\!U\!\mid=3$.
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}

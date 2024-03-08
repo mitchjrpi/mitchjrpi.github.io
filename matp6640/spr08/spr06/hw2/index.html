@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>hw2</TITLE>
+<META NAME="description" CONTENT="hw2">
+<META NAME="keywords" CONTENT="hw2">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="hw2.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+
+<P>
+<DIV ALIGN="CENTER">
+</DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1"><a href=..>MATP6640/DSES6770
+Linear Programming</a>, Homework 2.
+  </FONT>
+</DIV>
+
+<P>
+<DIV ALIGN="RIGHT">
+Due:  Friday, February 17, 2006.
+
+</DIV>
+
+<P>
+
+<OL>
+<LI>Let the polyhedron <!-- MATH
+ $Q=\{x \in {I \!\! R}^2: x_1+x_2 \geq 2, x_1 - 2x_2 \leq
+            2,  x_1 \geq 1, x_1 - x_2 \leq 3 \}$
+ -->
+<IMG
+ WIDTH="510" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$Q=\{x \in {I \!\! R}^2: x_1+x_2 \geq 2, x_1 - 2x_2 \leq
+2, x_1 \geq 1, x_1 - x_2 \leq 3 \}$">.
+            Graph this polyhedron, and hence find matrices <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$B$"> and <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$C$"> such that
+            <!-- MATH
+ $Q = \{x \in {I \!\! R}^2: x = By + Cz,
+                      y \geq 0, z \geq 0, \sum_i z_i = 1  \}$
+ -->
+<IMG
+ WIDTH="435" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$Q = \{x \in {I \!\! R}^2: x = By + Cz,
+y \geq 0, z \geq 0, \sum_i z_i = 1 \}$">.
+</LI>
+<LI>Consider the linear programming problem  <A NAME="q.ray"></A>           <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lrcrcrcrcrcl}
+      \min          & 4x_1 & + & x_2 &   &    & + & x_4 & - & 5x_5 \\
+      \mbox{s.t. }  & 2x_1 & + & x_2 &   &    & + & x_4 & - & 2x_5 & = & 3 \\
+                    & -x_1 & + & x_2 & + & x_3&   &     &   &      & = & 3 \\
+                    &  x_1 &   &     &   &    & + & x_4 & - &  x_5 & = & 1 \\
+                    &      &   &     &   & x_i& \geq & 0, & & i & = & 1,...,5.
+             \end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="451" HEIGHT="122" BORDER="0"
+ SRC="img5.png"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcrcrcl}
+\min &amp; 4x_1 &amp; + &amp; x_2 &amp; &amp; &amp; + ...
+...\
+&amp; &amp; &amp; &amp; &amp; x_i&amp; \geq &amp; 0, &amp; &amp; i &amp; = &amp; 1,...,5.
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Show that this problem has unbounded objective function value by
+         using the revised simplex algorithm starting from the basic feasible
+         solution <!-- MATH
+ $x = [0,2,1,1,0]^T$
+ -->
+<IMG
+ WIDTH="142" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$x = [0,2,1,1,0]^T$">. Use the eta factorization of the
+         inverse, so you should first factorize the initial basis <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$B$"> as
+         <IMG
+ WIDTH="73" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$LB=U$">, where <IMG
+ WIDTH="18" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$L$"> is lower triangular and <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="$U$"> is upper triangular.
+         On subsequent iterations, update the basis matrix by using eta
+         matrices.  What is the ray that you find?
+         (Hint: you should find the ray on the second iteration.)
+</LI>
+<LI>Use
+<B><a href=http://www.rpi.edu/~mitchj/ampldetails.html>AMPL</a></B>
+or another linear programming package to solve the linear
+programming problem
+           <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lrcrcrcrcrcl}
+      \min          & 4x_1 & + & 4x_2 &   &    & + & x_4 & + & 5x_5 \\
+      \mbox{s.t. }  & 2x_1 & + & x_2 &   &    & + & x_4 & - & 2x_5 & = & 3 \\
+                    & -x_1 & + & x_2 & + & x_3&   &     &   &      & = & 3 \\
+                    &  x_1 &   &     &   &    & + & x_4 & - &  x_5 & = & 1 \\
+                    &      &   &     &   & x_i& \geq & 0, & & i & = & 1,...,5.
+             \end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="460" HEIGHT="122" BORDER="0"
+ SRC="img10.png"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcrcrcl}
+\min &amp; 4x_1 &amp; + &amp; 4x_2 &amp; &amp; &amp; +...
+...\
+&amp; &amp; &amp; &amp; &amp; x_i&amp; \geq &amp; 0, &amp; &amp; i &amp; = &amp; 1,...,5.
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+           (See the course webpage for more information on
+<B><a href=http://www.rpi.edu/~mitchj/ampldetails.html>AMPL</a></B>.)
+</LI>
+<LI>Give an example of a linear programming problem that has a degenerate
+  optimal solution and for which the dual problem has a unique solution.
+</LI>
+<LI>Show how the ray you found for the linear programming problem in
+  question&nbsp;<A HREF="#q.ray">2</A> can be used to construct a linear combination of the dual
+  constraints that is infeasible.
+</LI>
+<LI>The
+<a href=http://www.math.rpi.edu/CourseMaterials/Spring06/JM6640/LPalgo.pdf>next
+sheet</a> is part of a paper which was submitted to
+    <EM>Mathematical Programming</EM>. The authors propose an algorithm for linear
+    programming and then claim the algorithm is polynomial.
+    Does this claim seem reasonable? Justify your answer.
+    (Note that the algorithm is stated in terms of an LP of the form
+    <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lrcl}
+    \max & c^Tx \\
+    \mbox{subject to} & Ax & \leq & b
+    \end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="181" HEIGHT="53" BORDER="0"
+ SRC="img11.png"
+ ALT="\begin{displaymath}
+\begin{array}{lrcl}
+\max &amp; c^Tx \\
+\mbox{subject to} &amp; Ax &amp; \leq &amp; b
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+which is the dual problem in our standard dual pair.
+    The notation <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$a_i$"> represents the <IMG
+ WIDTH="11" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$i$">th row of&nbsp;<IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.png"
+ ALT="$A$">.
+    A restriction on the sign of the variables is included in the <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.png"
+ ALT="$A$"> matrix.)
+</LI>
+</OL>
+
+<P>
+
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT"><a href=../..>John
+Mitchell</a></TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT">Amos Eaton 325</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT">x6915.</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT"><a href=mailto:mitchj@rpi.edu>mitchj at rpi dot edu</a></TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT">Office hours: Tuesday: 2 - 3.30pm.</TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL>
+<LI><A NAME="tex2html3"
+  HREF="node1.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<br>
+2006-02-07
+</ADDRESS>
+</BODY>
+</HTML>

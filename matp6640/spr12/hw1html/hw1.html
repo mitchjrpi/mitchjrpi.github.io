@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw1.tex"> 
+<meta name="date" content="2012-01-27 11:18:00"> 
+<link rel="stylesheet" type="text/css" href="hw1.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 21--><p class="noindent" >
+<!--l. 23--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12">MATP6640/ISYE6770 Linear Programming</span></a><span 
+class="cmr-12">, Homework 1.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 28--><p class="noindent" >
+ Due: Friday, February 3, 2012.</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1">Let (<span 
+class="cmmi-10x-x-109">P</span>) be the standard form LP, min<span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmmi-10x-x-109">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">x </span>: <span 
+class="cmmi-10x-x-109">Ax </span>= <span 
+class="cmmi-10x-x-109">b, x </span><span 
+class="cmsy-10x-x-109">&#x2265; </span>0<span 
+class="cmsy-10x-x-109">}</span>. In class, we saw that if a
+     problem of the form (<span 
+class="cmmi-10x-x-109">P</span>) has a feasible solution then it has a basic feasible solution. Construct
+     a similar proof to show that if (<span 
+class="cmmi-10x-x-109">P</span>) has an optimal solution, it has a basic feasible solution
+     that is optimal.
+     </li>
+     <li 
+  class="enumerate" id="x1-5x2">Assume it is known that the fractional linear program
+     <center class="math-display" >
+     <img 
+src="hw10x.png" alt="             cTx+g-
+min          dTx+h
+subject to  Ax  &#x2265;   b
+     " class="math-display" ></center>
+     <!--l. 64--><p class="nopar" >
+     has an optimal value in the range [<span 
+class="cmmi-10x-x-109">&#x03B1;,&#x03B2;</span>]. In addition, assume that any <span 
+class="cmmi-10x-x-109">x </span>satisfying <span 
+class="cmmi-10x-x-109">Ax </span><span 
+class="cmsy-10x-x-109">&#x2265; </span><span 
+class="cmmi-10x-x-109">b </span>also
+     satisfies <span 
+class="cmmi-10x-x-109">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">x </span>+ <span 
+class="cmmi-10x-x-109">h &#x003E; </span>0. Develop a procedure that uses linear programming as a subroutine to find the
+     optimal value of the fractional linear program, to within any desired tolerance. (<span 
+class="cmti-10x-x-109">Hint:</span>
+     Consider the problem of determining whether the optimal value is above or below a given
+     threshold&#x00A0;<span 
+class="cmmi-10x-x-109">&#x03C4;</span>.)
+     </li>
+     <li 
+  class="enumerate" id="x1-7x3">What is the dual of the following linear programming problem?
+     <center class="math-display" >
+     <img 
+src="hw11x.png" alt="min  3x1  -   5x2   +    8x3
+s.t.   x1            -     x3  =    6
+              2x2   -     x3  &#x2265;  - 5
+      x1  +    x2             &#x2264;    6
+               x2  &#x2264; 0,   x3  &#x2265;   0.
+     " class="math-display" ></center>
+                                                                                         
+                                                                                         
+     <!--l. 134--><p class="nopar" >
+     Use complementary slackness to show that <span 
+class="cmmi-10x-x-109">x </span>= (6<span 
+class="cmmi-10x-x-109">,</span>0<span 
+class="cmmi-10x-x-109">,</span>0) is optimal for this problem. Find two
+     different dual optimal solutions.
+     </li>
+     <li 
+  class="enumerate" id="x1-9x4">Let <span 
+class="cmmi-10x-x-109">A </span>be a <span 
+class="cmmi-10x-x-109">p </span><span 
+class="cmsy-10x-x-109">&#x00D7; </span><span 
+class="cmmi-10x-x-109">n </span>matrix and <span 
+class="cmmi-10x-x-109">B </span>be a <span 
+class="cmmi-10x-x-109">q </span><span 
+class="cmsy-10x-x-109">&#x00D7; </span><span 
+class="cmmi-10x-x-109">n </span>matrix. Show that exactly one of the following systems
+     has a solution:
+          <div class="quote">
+          <!--l. 224--><p class="noindent" ><span 
+class="cmbx-10x-x-109">System 1: </span><span 
+class="cmmi-10x-x-109">Ax &#x003C; </span>0, <span 
+class="cmmi-10x-x-109">Bx </span>= 0 for some <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">IR</span><sup><span 
+class="cmmi-8">n</span></sup>. <br 
+class="newline" /><span 
+class="cmbx-10x-x-109">System 2: </span><span 
+class="cmmi-10x-x-109">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">u </span>+ <span 
+class="cmmi-10x-x-109">B</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">v </span>= 0 for some <span 
+class="cmmi-10x-x-109">u </span><span 
+class="cmsy-10x-x-109"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">IR</span><sup><span 
+class="cmmi-8">p</span></sup>, <span 
+class="cmmi-10x-x-109">v </span><span 
+class="cmsy-10x-x-109"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">IR</span><sup><span 
+class="cmmi-8">q</span></sup>, with <span 
+class="cmmi-10x-x-109">u </span><span 
+class="cmsy-10x-x-109">&#x2265; </span>0 and <span 
+class="cmmi-10x-x-109">u</span><span 
+class="cmmi-10x-x-109">&#x2260;</span>0.</div>
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                          </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                                    </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours: Tuesday 12noon &#8211; 2pm; Wednesday 2 &#8211; 4pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

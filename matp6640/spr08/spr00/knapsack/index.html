@@ -1,0 +1,309 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Solving a Knapsack Problem</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="knapsack">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="knapsack.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+   <A HREF=..>MATP6640/DSES6780 Linear Programming</A>
+
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER">
+  <B><FONT SIZE="+1"><B>Solving a Knapsack Problem</B></FONT></B>
+
+</DIV>
+
+<P>
+Consider the knapsack problem
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcl}
+    \min & -3x_1 & - & 4x_2 & - & 6x_3 \\
+   \mbox{subject to} & x_1 & + & 3x_2 & + & 5x_3 & \leq & 7 \\
+         &&& x_i & = & 0,1 && i=1,...,3
+  \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="417" HEIGHT="76"
+ SRC="img1.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcl}
+\min &amp; -3x_1 &amp; - &amp; 4x_2 &amp; - &amp; 6x_3...
+...x_3 &amp; \leq &amp; 7 \\
+&amp;&amp;&amp; x_i &amp; = &amp; 0,1 &amp;&amp; i=1,...,3
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+This is an <B>integer</B> programming problem.
+We solve it by solving a sequence of <B>linear programming relaxations</B> of
+the problem.
+The initial relaxation is
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcl}
+    \min & -3x_1 & - & 4x_2 & - & 6x_3 \\
+   \mbox{subject to} & x_1 & + & 3x_2 & + & 5x_3 & \leq & 7 \\
+         & 0 & \leq & x_i & \leq & 1 && i=1,...,3
+  \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="417" HEIGHT="76"
+ SRC="img2.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcl}
+\min &amp; -3x_1 &amp; - &amp; 4x_2 &amp; - &amp; 6x_3...
+... &amp; 7 \\
+&amp; 0 &amp; \leq &amp; x_i &amp; \leq &amp; 1 &amp;&amp; i=1,...,3
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The simplex tableau for this problem is
+       <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+M =
+         \begin{array}{|r|rrrrrrr|}
+            \multicolumn{1}{c}{\quad} & x_1 & x_2 & x_3 & s_4 & s_5 & s_6 &
+                \multicolumn{1}{c}{s_7} \\\hline
+             0 & -3 & -4 & -6 & 0 & 0 & 0 & 0 \\\hline
+             7 & 1 & 3 & 5 & 1 & 0 & 0 & 0 \\
+             1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+             1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 \\
+             1 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \\\hline
+         \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="329" HEIGHT="147"
+ SRC="img3.gif"
+ ALT="\begin{displaymath}
+M =
+\begin{array}{\vert r\vert rrrrrrr\vert}
+\multicolumn...
+... &amp; 0 \\
+1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\ \hline
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The optimal tableau for this relaxation is
+       <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+M^1 =
+         \begin{array}{|r|rrrrrrr|}
+            \multicolumn{1}{c}{\quad} & x_1 & x_2 & x_3 & s_4 & s_5 & s_6 &
+                \multicolumn{1}{c}{s_7} \\\hline
+             10.6 & 0 & 0 & 0 & 1.2 & 1.8 & 0.4 & 0 \\\hline
+             0.6 & 0 & 0 & 1 & 0.2 & -0.2 & -0.6 & 0 \\
+             1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+             1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 \\
+             0.4 & 0 & 0 & 0 & -0.2 & 0.2 & 0.6 & 1 \\\hline
+         \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="400" HEIGHT="147"
+ SRC="img4.gif"
+ ALT="\begin{displaymath}
+M^1 =
+\begin{array}{\vert r\vert rrrrrrr\vert}
+\multicolu...
+... 0.4 &amp; 0 &amp; 0 &amp; 0 &amp; -0.2 &amp; 0.2 &amp; 0.6 &amp; 1 \\ \hline
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Thus, the optimal solution to the initial relaxation is
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+x_1=1, \quad x_2=1, \quad x_3=0.6
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="226" HEIGHT="32"
+ SRC="img5.gif"
+ ALT="\begin{displaymath}
+x_1=1, \quad x_2=1, \quad x_3=0.6
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+This does obviously not solve the original relaxation,
+because it has <I>x</I><SUB>3</SUB>=0.6.
+Notice that no feasible solution to the integer programming problem
+can have both <I>x</I><SUB>2</SUB>=1 and <I>x</I><SUB>3</SUB>=1.
+Thus, every solution satisfies
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+x_2 + x_3 \leq 1
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="91" HEIGHT="31"
+ SRC="img6.gif"
+ ALT="\begin{displaymath}
+x_2 + x_3 \leq 1
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+We can add this constraint to <I>M</I><SUP>1</SUP>, giving the tableau
+       <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+M^2 =
+         \begin{array}{|r|rrrrrrrr|}
+            \multicolumn{1}{c}{\quad} & x_1 & x_2 & x_3 & s_4 & s_5 & s_6 &
+                s_7 & \multicolumn{1}{c}{s_8} \\\hline
+             10.6 & 0 & 0 & 0 & 1.2 & 1.8 & 0.4 & 0 & 0 \\\hline
+             0.6 & 0 & 0 & 1 & 0.2 & -0.2 & -0.6 & 0 & 0 \\
+             1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+             1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+             0.4 & 0 & 0 & 0 & -0.2 & 0.2 & 0.6 & 1 & 0 \\
+             1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 1 \\\hline
+         \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="433" HEIGHT="170"
+ SRC="img7.gif"
+ ALT="\begin{displaymath}
+M^2 =
+\begin{array}{\vert r\vert rrrrrrrr\vert}
+\multicol...
+... \\
+1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\ \hline
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Pivoting to get an identity, we obtain
+       <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+M^3 =
+         \begin{array}{|r|rrrrrrrr|}
+            \multicolumn{1}{c}{\quad} & x_1 & x_2 & x_3 & s_4 & s_5 & s_6 &
+                s_7 & \multicolumn{1}{c}{s_8} \\\hline
+             10.6 & 0 & 0 & 0 & 1.2 & 1.8 & 0.4 & 0 & 0 \\\hline
+             0.6 & 0 & 0 & 1 & 0.2 & -0.2 & -0.6 & 0 & 0 \\
+             1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+             1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+             0.4 & 0 & 0 & 0 & -0.2 & 0.2 & 0.6 & 1 & 0 \\
+             -0.6 & 0 & 0 & 0 & -0.2 & 0.2 & -0.4 & 0 & 1 \\\hline
+         \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="438" HEIGHT="170"
+ SRC="img8.gif"
+ ALT="\begin{displaymath}
+M^3 =
+\begin{array}{\vert r\vert rrrrrrrr\vert}
+\multicol...
+...&amp; 0 &amp; 0 &amp; 0 &amp; -0.2 &amp; 0.2 &amp; -0.4 &amp; 0 &amp; 1 \\ \hline
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Solving this tableau using the <B>dual simplex</B> method gives
+       <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+M^3 =
+         \begin{array}{|r|rrrrrrrr|}
+            \multicolumn{1}{c}{\quad} & x_1 & x_2 & x_3 & s_4 & s_5 & s_6 &
+                s_7 & \multicolumn{1}{c}{s_8} \\\hline
+             9 & 0 & 2 & 0 & 0 & 3 & 0 & 0 & 6 \\\hline
+             1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 \\
+             1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+             1 & 0 & -2 & 0 & 1 & -1 & 0 & 0 & -5 \\
+             0 & 0 & -1 & 0 & 0 & 0 & 0 & 1 & -1 \\
+             1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\\hline
+         \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="373" HEIGHT="170"
+ SRC="img9.gif"
+ ALT="\begin{displaymath}
+M^3 =
+\begin{array}{\vert r\vert rrrrrrrr\vert}
+\multicol...
+... \\
+1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ \hline
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+So, the solution to the modified relaxation is
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+x_1=1, \quad x_2=0, \quad x_3=1
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="209" HEIGHT="32"
+ SRC="img10.gif"
+ ALT="\begin{displaymath}
+x_1=1, \quad x_2=0, \quad x_3=1
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+This is integral, so it solves the original integer program.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<A HREF=../..>John E Mitchell</A>
+<BR><I>2000-03-06</I>
+</ADDRESS>
+</BODY>
+</HTML>

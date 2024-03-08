@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="ddd_sensi.tex"> 
+<meta name="date" content="2010-10-25 14:46:00"> 
+<link rel="stylesheet" type="text/css" href="ddd_sensi.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 24--><p class="noindent" >
+<!--l. 26--><p class="noindent" ><span class="underline"><span 
+class="cmbx-12x-x-144">Case Study:</span></span>
+<!--l. 28--><p class="noindent" ><span class="underline"><span 
+class="cmbx-12x-x-144">Drug Design and Development Inc</span></span><br />
+<span class="underline"><span 
+class="cmbx-12x-x-144">Sensitivity Analysis</span></span> </div>
+<div class="center" 
+>
+<!--l. 34--><p class="noindent" >
+<!--l. 36--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmr-12x-x-120">MATP4700/ DSES4770 Math Models of Operations Research</span></a>
+<!--l. 38--><p class="noindent" ><span 
+class="cmr-12x-x-120">Fall 2010</span>
+</div>
+<!--l. 43--><p class="noindent" ><span 
+class="cmti-12">Students may work in groups of up to three people. You may consult only your textbooks, your</span>
+<span 
+class="cmti-12">notes, online information about AMPL, and me.</span>
+<!--l. 48--><p class="indent" >   Due: <span 
+class="cmbx-12">Friday, November 12. </span>(40 points) <br 
+class="newline" />DDD&#8217;s model included data for responses to 40 compounds, and values for two parameters <span 
+class="cmmi-12">C</span>
+and&#x00A0;<span 
+class="cmmi-12">&#x03F5;</span>. It would like to know how the solution found in <a 
+href="http://www.rpi.edu/~mitchj/matp4700/project/ddd.html" >Part 1</a> depends on the precise values of the
+proportions and responses for the compounds, and on the parameter choices. Use sensitivity
+analysis to answer the following questions. Answer them without re-solving the linear program.
+Include printouts of relevant parts of your AMPL output. Assume that each part is independent of
+the others. Procedures for obtaining shadow prices and other relevant information are given
+below. If you prefer to use them, my <a 
+href="http://www.rpi.edu/~mitchj/matp4700/project/curvefitCV.mod" >model</a> and <a 
+href="http://www.rpi.edu/~mitchj/matp4700/project/curveCV.run" >run file</a> are available on the course
+website.
+<!--l. 67--><p class="indent" >   Note: You may want to solve a modified problem to check your answer, or to try to determine
+where to look for sensitivity information. That is OK, but I don&#8217;t want to see those results! You
+must give me the information using only sensitivity analysis.
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">Let <span 
+class="cmmi-12">C </span>= 0<span 
+class="cmmi-12">.</span>1, <span 
+class="cmmi-12">&#x03F5; </span>= 0<span 
+class="cmmi-12">.</span>05, and use all 40 samples to find <span 
+class="cmmi-12">w </span>and&#x00A0;<span 
+class="cmmi-12">b</span>. What do you estimate
+      the optimal value to be if <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">14</span></sub> = <span 
+class="cmsy-10x-x-120">-</span>11<span 
+class="cmmi-12">.</span>509? What if <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">14</span></sub> = <span 
+class="cmsy-10x-x-120">-</span>11<span 
+class="cmmi-12">.</span>5? Now set <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">14</span></sub> = <span 
+class="cmsy-10x-x-120">-</span>11<span 
+class="cmmi-12">.</span>5
+      and solve the problem; you should get an answer different from your estimate &#8212; how
+      do you explain this?
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2">Let <span 
+class="cmmi-12">C </span>= 0<span 
+class="cmmi-12">.</span>1, <span 
+class="cmmi-12">&#x03F5; </span>= 0<span 
+class="cmmi-12">.</span>05, and use all 40 samples to find <span 
+class="cmmi-12">w </span>and&#x00A0;<span 
+class="cmmi-12">b</span>. What do you estimate
+      the optimal value to be if <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span><span 
+class="cmmi-8">,</span><span 
+class="cmr-8">1</span></sub> = 5<span 
+class="cmmi-12">.</span>351?
+                                                                                         
+
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-7x3">Let <span 
+class="cmmi-12">C </span>= 0<span 
+class="cmmi-12">.</span>1, <span 
+class="cmmi-12">&#x03F5; </span>= 0<span 
+class="cmmi-12">.</span>05, and use all 40 samples to find <span 
+class="cmmi-12">w </span>and&#x00A0;<span 
+class="cmmi-12">b</span>. Assume <span 
+class="cmmi-12">C </span>is increased
+      to 0<span 
+class="cmmi-12">.</span>101. What is your estimate of the change in the optimal value?
+      </li>
+      <li 
+  class="enumerate" id="x1-9x4">Let <span 
+class="cmmi-12">C </span>= 0<span 
+class="cmmi-12">.</span>1, <span 
+class="cmmi-12">&#x03F5; </span>= 0<span 
+class="cmmi-12">.</span>05, and use all 40 samples to find <span 
+class="cmmi-12">w </span>and&#x00A0;<span 
+class="cmmi-12">b</span>. Assume <span 
+class="cmmi-12">&#x03F5; </span>is increased
+      to 0<span 
+class="cmmi-12">.</span>051. What is your estimate of the change in the optimal value?
+      </li>
+      <li 
+  class="enumerate" id="x1-11x5">Let <span 
+class="cmmi-12">C </span>= 0<span 
+class="cmmi-12">.</span>1, <span 
+class="cmmi-12">&#x03F5; </span>= 0<span 
+class="cmmi-12">.</span>05, and use all 40 samples to find <span 
+class="cmmi-12">w </span>and&#x00A0;<span 
+class="cmmi-12">b</span>. DDD have tested a new
+      compound containing each factor with a proportion value <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ij</span></sub> equal to 5<span 
+class="cmmi-12">.</span>5.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-13x1">The first time DDD tested the compound, the response was <span 
+class="cmmi-12">y </span>=  <span 
+class="cmsy-10x-x-120">-</span>10<span 
+class="cmmi-12">.</span>6. Use
+           sensitivity analysis to show that this extra result does not change the optimal
+           solution.
+           </li>
+           <li 
+  class="enumerate" id="x1-15x2">DDD measured the response again and got a value of <span 
+class="cmmi-12">y </span>= <span 
+class="cmsy-10x-x-120">-</span>10<span 
+class="cmmi-12">.</span>7. Use sensitivity
+           analysis to show that this may result in a change to the optimal solution. If the
+           optimal value changes, will it increase or decrease?</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-17x6">Let <span 
+class="cmmi-12">C </span>= 0 and <span 
+class="cmmi-12">&#x03F5; </span>= 0<span 
+class="cmmi-12">.</span>3. Let the training data be samples 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">, </span>20, and so the training problem
+      then has optimal value&#x00A0;0. Can you use sensitivity analysis to conclude that there are
+      alternative optimal solutions to the problem?
+      <!--l. 113--><p class="noindent" >Can you construct an argument based on degrees of freedom? (To keep the optimal value
+      equal to zero with a small change &#x0394;<span 
+class="cmmi-12">w</span>, &#x0394;<span 
+class="cmmi-12">b</span>, what must the changes in the errors <span 
+class="cmmi-12">&#x03BD;</span><sub><span 
+class="cmmi-8">i</span></sub>
+      satisfy?)
+      </li>
+      <li 
+  class="enumerate" id="x1-19x7">Let <span 
+class="cmmi-12">C </span>= 0 and <span 
+class="cmmi-12">&#x03F5; </span>= 0<span 
+class="cmmi-12">.</span>3, and use all 40 samples to find <span 
+class="cmmi-12">w </span>and&#x00A0;<span 
+class="cmmi-12">b</span>. The problem then has
+      optimal value&#x00A0;0. It may be possible to decrease <span 
+class="cmmi-12">&#x03F5; </span>and still obtain an optimal value of&#x00A0;0. Can
+      you use sensitivity analysis to get a lower bound on how far <span 
+class="cmmi-12">&#x03F5; </span>could be decreased while still
+      getting an optimal value of&#x00A0;0?
+      <!--l. 125--><p class="noindent" >How does your answer change if you use an <span 
+class="cmti-12">interior point method </span>to solve the linear progam,
+      which gives a solution in the center of the face of optimal solutions? To use the interior point
+      solver in cplex, enter the commands: <div class="verse">
+              <!--l. 128--><p class="noindent" > ampl: <span 
+class="cmtt-12">option cplex</span><span 
+class="cmtt-12">_options &#8217;baropt&#8217;;</span><br />
+              ampl: <span 
+class="cmtt-12">option cplex</span><span 
+class="cmtt-12">_options &#8217;crossover = 0&#8217;;</span>
+                                                                                         
+
+                                                                                         
+</div>
+      and then <span 
+class="cmtt-12">solve </span>the problem.</li></ol>
+<!--l. 135--><p class="indent" >   <span 
+class="cmbx-12x-x-120">AMPL hints</span>:
+      <ul class="itemize1">
+      <li class="itemize">To find the value of a dual variable corresponding to a constraint called <span 
+class="cmtt-12">fabcap</span>,
+      type
+           <div class="quote">
+           <!--l. 142--><p class="noindent" ><span 
+class="cmtt-12">display fabcap;</span></div>
+      <!--l. 143--><p class="noindent" >To find the slack in the constraint, type
+           <div class="quote">
+           <!--l. 144--><p class="noindent" ><span 
+class="cmtt-12">display fabcap.slack;</span></div>
+      </li>
+      <li class="itemize">To find the reduced cost of a variable called SELL in the optimal tableau, type
+           <div class="quote">
+           <!--l. 148--><p class="noindent" ><span 
+class="cmtt-12">display SELL.rc;</span></div>
+      </li>
+      <li class="itemize">If you want to read in a new model file <span 
+class="cmtt-12">chips.mod </span>and data file <span 
+class="cmtt-12">chips.dat</span>, you can use the
+      <span 
+class="cmtt-12">reset </span>command: <div class="verse">
+              <!--l. 153--><p class="noindent" > ampl: <span 
+class="cmtt-12">reset;</span><br />
+              ampl: <span 
+class="cmtt-12">model chips.mod;</span><br />
+              ampl: <span 
+class="cmtt-12">data chips.dat;</span>
+</div>
+      </li>
+      <li class="itemize">If you want to reset the whole data file and read in a new data file <span 
+class="cmtt-12">chips.dat</span>, but you want
+      to keep the model file as before, you can type <div class="verse">
+                                                                                         
+
+                                                                                         
+              <!--l. 163--><p class="noindent" > ampl: <span 
+class="cmtt-12">reset data;</span><br />
+              ampl: <span 
+class="cmtt-12">data chips.dat;</span>
+</div>
+      </li>
+      <li class="itemize">If you want to change one parameter, you can use the <span 
+class="cmbx-12">let </span>command as follows:
+      <div class="verse">
+              <!--l. 170--><p class="noindent" > (<span 
+class="cmmi-12">OS</span>)<span 
+class="cmmi-12">&#x00A0;</span><span 
+class="cmtt-12">ampl</span><br />
+              ampl: <span 
+class="cmtt-12">model sample/steel.mod;</span><br />
+              ampl: <span 
+class="cmtt-12">data sample/steel.dat;</span><br />
+              ampl: <span 
+class="cmtt-12">solve;</span><br />
+              MINOS 5.4: optimal solution found.<br />
+              2 iterations, objective 192000<br />
+              ampl: <span 
+class="cmtt-12">let rate["bands"]:=250;</span><br />
+              ampl: <span 
+class="cmtt-12">solve;</span><br />
+              MINOS 5.4: optimal solution found.<br />
+              1 iterations, objective 217200
+</div>
+      This changes the rate for bands and then resolves the problem.
+      </li>
+      <li class="itemize">One way to find bounds on parameters in AMPL is to use the cplex option of sensitivity.
+      This will let you find ranges in which parameters can be changed without the
+      set of optimal basic variables changing. First make sure CPLEX is the solver:
+      <div class="verse">
+              <!--l. 191--><p class="noindent" > ampl: <span 
+class="cmtt-12">option solver cplex;</span>
+</div>
+      Once you&#8217;ve established cplex as the solver, enter the following command:
+<div class="verse">
+                                                                                         
+
+                                                                                         
+              <!--l. 198--><p class="noindent" > ampl: <span 
+class="cmtt-12">option cplex</span><span 
+class="cmtt-12">_options &#8217;sensitivity&#8217;;</span>
+</div>
+      Solve the problem again, and then you can then use the suffices <span 
+class="cmtt-12">up </span>and <span 
+class="cmtt-12">down </span>on variable
+      names, as described for reduced costs and slacks.
+      </li>
+      <li class="itemize">All the variables and their reduced costs can be displayed simultaneously by using the
+      command
+           <div class="quote">
+                                                                                         
+
+                                                                                         
+           <div class="verbatim">
+display&#x00A0;{j&#x00A0;in&#x00A0;1.._nvars}&#x00A0;(_varname[j],_var[j],_var[j].rc);
+</div>
+           <!--l. 210--><p class="nopar" ></div>
+      <!--l. 212--><p class="noindent" >(See page 249 of the AMPL text.)
+      <!--l. 214--><p class="noindent" >All the constraints and their shadow prices can be displayed simultaneously by using the
+      command
+           <div class="quote">
+                                                                                         
+
+                                                                                         
+           <div class="verbatim">
+display&#x00A0;{j&#x00A0;in&#x00A0;1.._ncons}&#x00A0;(_conname[j],_con[j]);
+</div>
+           <!--l. 218--><p class="nopar" ></div>
+      <!--l. 220--><p class="noindent" >(Again, see page 249 of the AMPL text.)
+      <!--l. 222--><p class="noindent" >These commands can be used with the other suffices available when using the cplex
+      sensitivity option.
+      </li>
+      <li class="itemize">You can use <span 
+class="cmtt-12">sum </span>and other AMPL commands after solving the problem to find values of
+      various combinations of the primal and dual variables and the parameters.</li></ul>
+    
+</body></html> 
+
+                                                                                         
+
+

@@ -1,0 +1,45 @@
+ampl: option solver knitro; model hw4q.run;
+KNITRO 9.1.0: Locally optimal solution.
+objective -2.000000006; feasibility error 1.46e-07
+6 iterations; 13 function evaluations
+x1 = 5.47993e-08
+x2 = -2
+conQ = -0.105263
+conM = -0.0263158
+conQ.slack = -1.45611e-07
+conM.slack = 3.54365e-07
+
+c1 - conM*(M11*x1 + M12*x2) - conQ*(Q11*x1 + Q12*x2) = -8.33527e-09
+
+c2 - conM*(M21*x1 + M22*x2) - conQ*(Q21*x1 + Q22*x2) = -1.26511e-08
+
+ampl: option solver snopt; model hw4q.run;
+SNOPT 7.5-1.2 : Optimal solution found.
+4 iterations, objective -2
+Nonlin evals: constrs = 5, Jac = 4.
+x1 = 0
+x2 = -2
+conQ = -0.105263
+conM = -0.0263158
+conQ.slack = 0
+conM.slack = 0
+
+c1 - conM*(M11*x1 + M12*x2) - conQ*(Q11*x1 + Q12*x2) = 0
+
+c2 - conM*(M21*x1 + M22*x2) - conQ*(Q21*x1 + Q22*x2) = 0
+
+ampl: option solver minos;
+ampl: model hw4q.run;
+MINOS 5.51: optimal solution found.
+67 iterations, objective -2
+Nonlin evals: constrs = 188, Jac = 187.
+x1 = -8.1379e-11
+x2 = -2
+conQ = -0.105263
+conM = -0.0263158
+conQ.slack = -2.11926e-10
+conM.slack = -1.52529e-09
+
+c1 - conM*(M11*x1 + M12*x2) - conQ*(Q11*x1 + Q12*x2) = -1.56428e-09
+
+c2 - conM*(M21*x1 + M22*x2) - conQ*(Q21*x1 + Q22*x2) = -9.12275e-10

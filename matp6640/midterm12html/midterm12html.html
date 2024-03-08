@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="midterm12html.tex"> 
+<meta name="date" content="2014-03-31 16:55:00"> 
+<link rel="stylesheet" type="text/css" href="midterm12html.css"> 
+</head><body 
+>
+<!--l. 18--><p class="noindent" >
+
+<div class="center" 
+>
+<!--l. 21--><p class="noindent" >
+<!--l. 23--><p class="noindent" ><span 
+class="cmr-12x-x-120">MATP6640/DSES6770</span><br />
+<span 
+class="cmbx-12x-x-120">Linear Programming </span><br />
+<span 
+class="cmr-12x-x-120">Spring 2012</span></div>
+<div class="center" 
+>
+<!--l. 27--><p class="noindent" >
+<!--l. 28--><p class="noindent" >Midterm Exam, Friday, April 20, 2012.</div>
+<!--l. 31--><p class="indent" >   Please do all four problems. Show all work. No books or calculators allowed. You may use any
+result from class, the homeworks, or the texts, except where stated. You may use one sheet of
+handwritten notes. The exam lasts 110 minutes.
+<!--l. 40--><p class="indent" >   Throughout, the standard primal-dual LP pair is
+   <center class="math-display" >
+<img 
+src="midterm12html0x.png" alt="       T                                T
+min   c x                       max    bTy
+s.t.   Ax   =  b    (P )        s.t.  A  y  &#x2264;   c    (D )
+        x  &#x2265;   0
+" class="math-display" ></center>
+<!--l. 48--><p class="nopar" >
+where <span 
+class="cmmi-12">A </span>is <span 
+class="cmmi-12">m </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>and the vectors are dimensioned appropriately. The dual slack variables are
+defined as <span 
+class="cmmi-12">s </span>:= <span 
+class="cmmi-12">c </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y</span>.
+
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">(20 points) <br 
+class="newline" />Assume  (<span 
+class="cmmi-12">P</span>)  and  (<span 
+class="cmmi-12">D</span>)  are  both  feasible.  Let  <span 
+class="cmmi-12">i  </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> {</span>1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span><span 
+class="cmsy-10x-x-120">}</span>.  Show  that  either  <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub>  is
+      unbounded in the set of primal feasible solutions, or the dual slack <span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">i</span></sub> is unbounded in
+      the set of dual feasible solutions, but not both.
+
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2">(35 points) <br 
+class="newline" />Let the LP (<span 
+class="cmmi-12">P</span>) be
+      <center class="math-display" >
+      <img 
+src="midterm12html1x.png" alt="min         - 6x   -   6x            +  3x    +  c x
+                1        2                 4      5 5
+subject to    2x1  +   2x2           -   x4            =   6
+              2x1           +  3x3   -   x4            =   6
+              2x1  +   2x2                   -    2x5  =   6
+                                                   xi  &#x2265;   0,  i = 1,...,5
+      " class="math-display" ></center>
+      <!--l. 83--><p class="nopar" >
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-7x1">(5 points) Does there does exist a basic feasible solution with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub>, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub>, and <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> basic.
+           </li>
+           <li 
+  class="enumerate" id="x1-9x2">(5 points) Find the basic feasible solution with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub>, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub>, and <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">5</span></sub> basic.
+           </li>
+           <li 
+  class="enumerate" id="x1-11x3">(7 points) <a 
+ id="x1-103"></a>Find the basic feasible solution with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub>, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub>, and <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">4</span></sub> basic. What would
+           be the corresponding dual solution when using the simplex algorithm?
+           </li>
+           <li 
+  class="enumerate" id="x1-13x4">Now assume the basic feasible solution in part&#x00A0;<a 
+href="#x1-103">2c<!--tex4ht:ref: partc --></a> is optimal.
+               <ol  class="enumerate3" >
+               <li 
+  class="enumerate" id="x1-15x1">(5 points) What can you say about <span 
+class="cmmi-12">c</span><sub><span 
+class="cmr-8">5</span></sub>?
+               </li>
+               <li 
+  class="enumerate" id="x1-17x2">(5 points) Assume <span 
+class="cmmi-12">c</span><sub><span 
+class="cmr-8">5</span></sub>  = 0. Show that the set of primal optimal solutions is
+               unbounded.
+               </li>
+               <li 
+  class="enumerate" id="x1-19x3">(8 points) Assume <span 
+class="cmmi-12">c</span><sub><span 
+class="cmr-8">5</span></sub> = 4. Show there exist multiple dual optimal solutions.
+               Which primal variables <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> can be positive in an optimal solution? Which dual
+               slacks <span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">i</span></sub> can be positive in an optimal solution?</li></ol>
+           </li></ol>
+
+      </li>
+      <li 
+  class="enumerate" id="x1-21x3">(10 points) <br 
+class="newline" />Every polyhedron <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /> </span>is the feasible region for an LP, for example min<span 
+class="cmsy-10x-x-120">{</span>0<sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>: <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" />}</span>. Every
+      linear programming problem can be converted to an equivalent one in the standard
+      form&#x00A0;(<span 
+class="cmmi-12">P</span>). Every LP in standard form has an extreme point. Does it follow that every
+      polyhedron has an extreme point? Prove or give a counterexample.
+
+      </li>
+      <li 
+  class="enumerate" id="x1-23x4">(35 points.) <br 
+class="newline" />The linear program
+      <center class="math-display" >
+      <img 
+src="midterm12html2x.png" alt="min         cT x  +   dTw
+
+subject to  Ax   +   Gw    =  b    (P F )
+               x &#x2265; 0, w free
+      " class="math-display" ></center>
+      <!--l. 140--><p class="nopar" >
+      has free variables. Splitting the variables leads to an equivalent linear program of the form
+      (<span 
+class="cmmi-12">P</span>):
+      <center class="math-display" >
+      <img 
+src="midterm12html3x.png" alt="min         cTx   +  dT u  -  dT v
+subject to   Ax   +   Gu   -   Gv   =   b    (P S)
+                            x, u,v  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 149--><p class="nopar" >
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-25x1">(10 points) <a 
+ id="x1-241"></a>Assume (<span 
+class="cmmi-12">PF</span>) has an optimal solution (<span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup><span 
+class="cmmi-12">,w</span><sup><span 
+class="cmsy-8">*</span></sup>). Show that (<span 
+class="cmmi-12">PS</span>) has
+           an unbounded set of optimal solutions.
+           </li>
+           <li 
+  class="enumerate" id="x1-27x2">(10 points) What is the dual problem to (<span 
+class="cmmi-12">PS</span>)? (Your dual problem should be of
+           the form (<span 
+class="cmmi-12">D</span>), with free variables and inequality constraints.)
+           </li>
+           <li 
+  class="enumerate" id="x1-29x3">(10 points) What does the result of part <a 
+href="#x1-241">4a<!--tex4ht:ref: item.unbdd --></a> imply about the set of feasible solutions
+           to the dual problem to (<span 
+class="cmmi-12">PS</span>)? Verify this conclusion for your formulation of the
+           dual.
+           </li>
+           <li 
+  class="enumerate" id="x1-31x4">(5  points)  Would  you  advise  applying  an  interior  point  method  to  solve  the
+           reformulation&#x00A0;(<span 
+class="cmmi-12">PS</span>)? Justify your answer.</li></ol>
+
+      </li></ol>
+    
+</body></html> 
+
+
+

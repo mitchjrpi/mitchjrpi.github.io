@@ -1,0 +1,277 @@
+\documentclass[12pt]{article}
+
+\oddsidemargin -.5in
+\textwidth 7.5in
+\textheight 9in
+\topmargin -30pt
+
+\pagestyle{myheadings}
+
+\markboth{COIP Midterm 2001}{COIP Midterm 2001}
+
+\begin{document}
+
+\setcounter{page}{0}
+
+\begin{tabular}{cl}
+  \hspace{5in} & Name:
+\end{tabular}
+
+\begin{center}
+  {\large
+  MATP6620/DSES6770 \\
+  {\bf Combinatorial Optimization and Integer Programming } \\
+  Spring 2001}
+\end{center}
+
+\begin{center}
+  Midterm Exam, Thursday, March 8, 2001.
+\end{center}
+
+Please do all five problems. Show all work. No books or calculators allowed.
+You may use any result from class, the homeworks, or the texts, except where
+stated.
+You may use one sheet of handwritten notes.
+The exam lasts two hours.
+
+\vspace{2in}
+
+\begin{center}
+\begin{tabular}{c|@{\hspace*{1in}}c}
+  Q1 & \qquad \\ \hline
+  Q2 & \qquad \\ \hline
+  Q3 & \qquad \\ \hline
+  Q4 & \qquad \\ \hline
+  Q5 & \qquad \\ \hline \hline
+  Total &
+\end{tabular}
+\end{center}
+
+\pagebreak
+
+\begin{enumerate}
+%  \item (20 points)
+%You wish to choose from a set of possible investments $\{1,\ldots,7\}$,
+%subject to the following constraints:
+%\begin{enumerate}
+%\item You cannot invest in all of them.
+%\item Investment 1 must be chosen if investment 3 is chosen.
+%\item Investment 5 can be chosen only if investment 2 is also chosen.
+%\item You must choose either both investments 1 and 6 or neither.
+%\item You must choose either at least one of the investments 1,2,3,
+%and/or at least two investments from 2,5,6,7.
+%\end{enumerate}
+%Model this as a 0-1 integer programming feasibility problem.
+  \item (20 points)
+         An instance $d$ of a feasibility problem $X \in NP$
+         depends upon two positive integer parameters $m$ and $n$.
+         Assume $d$ requires storage $m2^n$ in binary, and that we
+         know an algorithm $A$ which solves $d$ in time $2^{m+n}$.
+         \begin{enumerate}
+           \item (10 points) Can we conclude $X$ is in $P$?
+           \item (10 points) Assume we know in addition that $m\leq n$ for every
+             instance $d$ of $X$.  What can we conclude now?
+         \end{enumerate}
+  \newpage
+  \setcounter{page}{1}  \quad \vspace*{\fill}  \quad
+  \newpage
+\item (20 points)
+   Using the {\em Hamiltonian path} problem, or otherwise,
+           show that the following
+           problem is ${\cal N}{\cal P}$-complete.
+           \begin{quote}
+              Given a graph $G=(V,E)$ and an integer $k$, is there a
+              spanning tree $T$ of $G$ that has exactly $k$ leaves?
+           \end{quote}
+           (A {\em leaf} of a tree is a vertex of degree 1.
+           The Hamiltonian path problem is: Given a graph $G=(V,E)$, does there
+           exist a path which visits all the vertices of $G$ exactly once?
+           You may assume that this problem is
+           \begin{math}{\cal N}{\cal P}\end{math}-complete.)
+  \newpage
+  \setcounter{page}{2}  \quad \vspace*{\fill}  \quad
+  \newpage
+\item
+  Let $S:= \{ x \in I\!\!B^3: -x_1+x_2+3x_3 \leq 2\}$.
+Let $S^0:=S \cap \{ x \in I\!\!B^3: x_1=0\}$.
+\begin{enumerate}
+\item (5 points) Show that $x_2 \leq 1$ defines a facet of the convex
+hull of~$S^0$.
+\label{part_S0}
+\item \label{part_lift}
+(5 points) Derive a valid inequality for $S$ by lifting the
+valid inequality for $S^0$ given in part~\ref{part_S0}.
+\item (5 points) Show that the inequality you derived in
+part~\ref{part_lift} does not define a facet of the convex
+hull of~$S$.
+\item (5 points) Give an inequality description of the convex
+hull of~$S$.
+\end{enumerate}
+%   \item (20 points) Consider the set of points $S$ given by
+%     \begin{displaymath}
+%       \begin{array}{rrrrrrcl}
+%         x_1 & + x_2 & &&&& \geq & 1 \\
+%         x_1 && + x_3 & &&& \geq & 1 \\
+%         & x_2& + x_3 & &&& \geq & 1 \\
+%         x_1  &&& + x_4 & + x_5 && \geq & 1 \\
+%         & x_2 && + x_4 && + x_6 & \geq & 1 \\
+%         && x_3 && + x_5 & + x_6 & \geq & 1 \\
+%                       &&&&& x_i && \mbox{binary}
+%       \end{array}
+%     \end{displaymath}
+%     \begin{enumerate}
+%       \item (10 points) Show that the convex hull of $S$, $conv(S)$,
+%         has dimension 6.
+%         (Hint: Note that the point $x_i=1$, $i=1,\ldots,6$, is feasible.)
+%       \item (10 points) The point  
+%$x^*=(\frac{2}{3},\frac{2}{3},\frac{2}{3},
+%      \frac{1}{4},\frac{1}{4},\frac{1}{4})$
+%         satisfies all the inequalities above.
+%         Show that it is not in $conv(S)$.
+%     \end{enumerate}
+  \newpage
+  \setcounter{page}{3}  \quad \vspace*{\fill}  \quad
+  \newpage
+\item (20 points)
+We wish to solve the MAXCUT problem on
+a graph $G=(V,E)$ with edge weights~$c_e$.
+Recall that we modeled this as an integer programming problem
+by introducing binary variables $x_e$ to indicate whether an edge is
+in the cut.
+Let $S$ be the set of incidence vectors corresponding to cuts.
+These variables satisfied the constraints
+\begin{equation}
+\label{eqn_maxcut}
+x(F)-x(C\setminus F) \leq |F|-1
+\end{equation}
+for any chordless cycle $C$, where $F$ is a subset of $C$ of odd cardinality.
+We are going to restrict our attention to~$K_5$,
+the complete graph on 5 vertices.
+\begin{enumerate}
+\item (5 points)
+Argue from first principles that any maxcut on $K_5$ uses at most
+6 of the edges of~$K_5$.
+\item (10 points)
+\label{part_maxcut}
+Show that the point $x_e=\frac{2}{3}$ for all edges $e$
+satisfies~(\ref{eqn_maxcut}) for all chordless cycles $C$ and corresponding
+subsets~$F$.
+Show further that this point is not in the convex hull of the set of
+incidence vectors of cuts.
+What constraint does this suggest?
+\item
+(5 points)
+How would you try to show that the constraint you defined in
+part~\ref{part_maxcut}
+gives a facet of the convex hull of cuts?
+(Note: I do not want you to show that it is a facet;
+instead, I want you to tell me what points you might consider,
+and what you might try to do with those points.
+You may assume $S$ is full dimensional.)
+\end{enumerate}
+%  \item (20 points)
+%    Consider the node packing problem on the graph $G=(V,E)$.
+%    This can be written
+%    \begin{displaymath}
+%      \begin{array}{lrcll}
+%        \max & \sum_{i\in V} x_i \\
+%        \mbox{subject to } & x_i + x_j & \leq & 1, & (i,j) \in E \\
+%            & x_i & = & 0 \mbox{ or } 1, & i \in V
+%      \end{array}
+%    \end{displaymath}
+%    \begin{enumerate}
+%      \item (10 points)
+%        We saw in class that if the vertices $v_1,...,v_{2k+1}$
+%        ($k\geq 1$, $k$ integer)
+%        give a cycle then the {\em odd hole inequality}
+%        \begin{displaymath}
+%          \sum_{i=1}^{2k+1} x_i \leq k
+%        \end{displaymath}
+%        is valid for the node packing polytope.
+%        What is the Chvatal rank of this inequality?
+%      \item (10 points)
+%        We saw in class that if the vertices $v_1,...,v_5$
+%        form a clique then the {\em clique inequality}
+%        \begin{displaymath}
+%          \sum_{i=1}^5 x_i \leq 1
+%        \end{displaymath}
+%        is a facet of the node packing polytope.
+%        Show that the Chvatal rank of this inequality is no more than 2.
+%        (Hint: A clique of size 3 is also a cycle of length~3.)
+%    \end{enumerate}
+  \newpage
+  \setcounter{page}{4}  \quad  \vspace*{\fill}   \quad
+  \newpage
+  \setcounter{page}{4}  \quad  \vspace*{\fill}   \quad
+\newpage
+\item (20 points)
+  {\em Resolution} is a technique used in logic to try to solve instances
+  of SATISFIABILITY. It works by combining two clauses to generate an
+extra clause that must be satisfied by any solution to the instance.
+For example, consider the two clauses $x_1 \vee \bar{x}_2 \vee x_3$
+and $\bar{x}_2 \vee \bar{x}_3 \vee x_4$.
+If $x_3$ takes the value true then either $x_2$ must be false or $x_4$ must be
+true in order for the second clause to be satisfied. If $x_3$ is false
+then either $x_1$ must be true or $x_2$ must be false
+in order for the first clause to be satisfied. It follows that
+any truth assignment satisfying the clauses $x_1 \vee \bar{x}_2 \vee x_3$
+and $\bar{x}_2 \vee \bar{x}_3 \vee x_4$
+must also satisfy the clause $x_1 \vee \bar{x}_2 \vee x_4$.
+We say in this case that the two clauses were {\em resolved using~$x_3$.}
+
+In general, to resolve two clauses using variable $x_i$, the clauses have
+the forms:
+\begin{eqnarray}
+\label{eqn_preres1}
+x_i & \vee & ( \bigvee_{j \in C_1^+} x_j ) \vee
+ ( \bigvee_{j \in C_1^-} \bar{x}_j )
+\\
+\label{eqn_preres2}
+\bar{x}_i
+    & \vee & ( \bigvee_{j \in C_2^+} x_j ) \vee
+ ( \bigvee_{j \in C_2^-} \bar{x}_j ).
+\end{eqnarray}
+Any solution to these two clauses must also satisfy the {\em resolved clause}
+\begin{equation}
+\label{eqn_resolved}
+( \bigvee_{j \in C_1^+ \cup C_2^+} x_j ) \vee
+( \bigvee_{j \in C_1^- \cup C_2^-} \bar{x}_j ).
+\end{equation}
+Note that it is not necessary that the four sets of indices
+$C_1^+$, $C_1^-$, $C_2^+$, and $C_2^-$ be distinct.
+
+In this question, we are going to investigate the representation of
+SATISFIABILITY as an integer programming problem.
+Thus, we introduce a 0-1 variable $y_i$ for each logical variable $x_i$
+and we introduce an inequality for each clause.
+The clauses can be satisfied simultaneously if and only if the
+inequalities can be satisfied simultaneously.
+
+\begin{enumerate}
+\item (5 points)
+Assume the four sets $C_1^+$, $C_1^-$, $C_2^+$, and $C_2^-$ are distinct.
+Show that the inequality corresponding to (\ref{eqn_resolved})
+is implied by the inequalities corresponding to equations (\ref{eqn_preres1})
+and~(\ref{eqn_preres2}).
+\item (10 points)
+Now assume that $C_i^+ \cap C_j^- = \emptyset$
+for any combination of $i$ and $j$,
+but that either $C_1^+ \cap C_2^+ \neq \emptyset$
+and/or $C_1^- \cap C_2^- \neq \emptyset$.
+Show that the resolved clause can be derived using one step of the
+Chvatal-Gomory rounding procedure.
+\item (5 points)
+Find a fractional point that satisfies the inequalities corresponding
+to the clauses
+$x_1 \vee \bar{x}_2 \vee x_3$
+and $\bar{x}_2 \vee \bar{x}_3 \vee x_4$
+but which violates the inequality corresponding to
+the clause $x_1 \vee \bar{x}_2 \vee x_4$.
+\end{enumerate}
+  \newpage
+  \setcounter{page}{5}  \quad  \vspace*{\fill}   \quad
+  \newpage
+  \setcounter{page}{5}  \quad  \vspace*{\fill}   \quad
+\end{enumerate}
+
+\end{document}

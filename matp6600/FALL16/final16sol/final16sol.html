@@ -1,0 +1,668 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="final16sol.tex"> 
+<meta name="date" content="2016-12-11 12:07:00"> 
+<link rel="stylesheet" type="text/css" href="final16sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 56--><p class="noindent" >
+<!--l. 58--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6600" >Nonlinear Programming, MATP6600/ISYE6780</a><br />
+Final Exam, Thursday, December 8, 2016.<br /><br />
+<span 
+class="cmbx-12">Solutions</span></div>
+<!--l. 63--><p class="noindent" >Please do all three problems. You must show all work to obtain full credit. Results from class or
+the text may be used if properly stated. No books allowed. The exam lasts one hour and 50
+minutes.
+      <dl class="enumerate"><dt class="enumerate">
+   1. </dt><dd 
+class="enumerate">(40 points; each part is worth 10 points) <br 
+class="newline" />Consider the problem
+      <center class="math-display" >
+      <img 
+src="final16sol0x.png" alt="min        f (x) :=    12x21  +   12(x2 - 3)2
+subject to h (x) :=  - 1x2  +      x       =   0
+                       2 1           2
+                        x1                 &#x2265;   0.
+      " class="math-display" ></center>
+      <!--l. 97--><p class="nopar" >
+           <dl class="enumerate"><dt class="enumerate">
+       (a) </dt><dd 
+class="enumerate">Show this problem has exactly two KKT points.
+           </dd><dt class="enumerate">
+      (b) </dt><dd 
+class="enumerate">What do the second order conditions tell you about the two KKT points?
+           </dd><dt class="enumerate">
+       (c) </dt><dd 
+class="enumerate">A Lagrangian dual function can be constructed as
+           <center class="math-display" >
+           <img 
+src="final16sol1x.png" alt="                                         (          )
+&#x03B8; (v ) = minx &#x2208;&#x211D;2    12x21 + 12(x2 - 3 )2 + v  - 12x21 + x2
+        subject to  x1 &#x2265; 0.
+           " class="math-display" ></center>
+           <!--l. 113--><p class="nopar" >
+           Find <span 
+class="cmmi-12">&#x03B8;</span>(<span 
+class="cmmi-12">v</span>) for <span 
+class="cmmi-12">v </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span>.
+                                                                                         
+
+                                                                                         
+           </dd><dt class="enumerate">
+      (d) </dt><dd 
+class="enumerate">Solve the Lagrangian dual. Is there a duality gap for this nonconvex problem?</dd></dl>
+      <!--l. 121--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <dl class="enumerate"><dt class="enumerate">
+       (a) </dt><dd 
+class="enumerate">The KKT conditions are <div class="eqnarray">
+           <center class="math-display" >
+           <img 
+src="final16sol2x.png" alt="x1 - vx1 - u1  =   0                                (1)
+
+   x2 - 3 + v  =   0                                (2)
+   - 1x2 + x   =   0                                (3)
+     2 1    2
+           x1  &#x2265;   0                                (4)
+
+           u1  &#x2265;   0                                (5)
+         u1x1  =   0.                               (6)
+           " class="math-display" ><a 
+ id="x1-8r1"></a><a 
+ id="x1-8r2"></a><a 
+ id="x1-8r3"></a><a 
+ id="x1-8r4"></a><a 
+ id="x1-8r5"></a><a 
+ id="x1-8r6"></a></center>
+           </div>The only feasible point where the inequality constraint is active is <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">1</span></sup> = (0<span 
+class="cmmi-12">, </span>0). This
+           satisfies the KKT conditions with <span 
+class="cmmi-12">u</span><sub><span 
+class="cmr-8">1</span></sub> = 0, <span 
+class="cmmi-12">v </span>= 3.
+           <!--l. 137--><p class="noindent" >At any other KKT point, we must have <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0, so <span 
+class="cmmi-12">u</span><sub><span 
+class="cmr-8">1</span></sub> = 0 from&#x00A0;(<a 
+href="#x1-8r6">6<!--tex4ht:ref: eq:q1KKT6 --></a>). From (<a 
+href="#x1-8r1">1<!--tex4ht:ref: eq:q1KKT1 --></a>), we get
+           <span 
+class="cmmi-12">v </span>= 1, then from (<a 
+href="#x1-8r2">2<!--tex4ht:ref: eq:q1KKT2 --></a>) we get <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> = 2, and then from (<a 
+href="#x1-8r3">3<!--tex4ht:ref: eq:q1KKT3 --></a>) we get <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> = 2. This gives the
+           second KKT point, <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">2</span></sup> = (2<span 
+class="cmmi-12">, </span>2).
+           </dd><dt class="enumerate">
+      (b) </dt><dd 
+class="enumerate">The Hessian of the Lagrangian is
+           <center class="math-display" >
+           <img 
+src="final16sol3x.png" alt="                [ 1  0 ]     [ - 1  0 ]    [ 1 - v  0 ]
+&#x2207;2xxL(x,u, v) =          +  v           =               .
+                  0  1           0  0            0  1
+           " class="math-display" ></center>
+           <!--l. 148--><p class="nopar" >
+           At <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">2</span></sup> = (2<span 
+class="cmmi-12">, </span>2), we have <span 
+class="cmmi-12">v </span>= 1, so <span 
+class="cmsy-10x-x-120">&#x2207;</span><sub>
+<span 
+class="cmmi-8">xx</span></sub><sup><span 
+class="cmr-8">2</span></sup><span 
+class="cmmi-12">L</span>(<span 
+class="cmmi-12">x,u,v</span>) is positive semidefinite so immediately
+                                                                                         
+
+                                                                                         
+           we get that <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">2</span></sup> satisfies the second order necessary conditions. To check the sufficient
+           conditions, we need to examine directions satisfying <span 
+class="cmmi-12">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmsy-10x-x-120">&#x2207;</span><span 
+class="cmmi-12">h</span>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span>) = 0, since <span 
+class="cmmi-12">v</span><span 
+class="cmmi-12">&#x2260;</span>0. Thus we
+           need
+           <center class="math-display" >
+           <img 
+src="final16sol4x.png" alt="       (       )       (     )             (    )
+      T   - x1       T   - 2                  1
+0 =  d       1    = d      1      so   d = t   2
+           " class="math-display" ></center>
+           <!--l. 158--><p class="nopar" >
+           in which case
+           <center class="math-display" >
+           <img 
+src="final16sol5x.png" alt="dT &#x2207;2xxL (x,u,v )d =  t2 &#x003E; 0   for t &#x2044;= 0
+           " class="math-display" ></center>
+           <!--l. 162--><p class="nopar" >
+           so it is a local minimizer.
+           <!--l. 165--><p class="noindent" >At <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">1</span></sup> = (0<span 
+class="cmmi-12">, </span>0), we have <span 
+class="cmmi-12">v </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>3, so <span 
+class="cmsy-10x-x-120">&#x2207;</span><sub>
+<span 
+class="cmmi-8">xx</span></sub><sup><span 
+class="cmr-8">2</span></sup><span 
+class="cmmi-12">L</span>(<span 
+class="cmmi-12">x,u,v</span>) is indefinite. We need to consider the
+           directions <span 
+class="cmmi-12">d </span>orthogonal to the gradients of the active constraints with nonzero
+           multiplier, and making nonpositive inner product with the gradients of the active
+           constraints. So we need <span 
+class="cmmi-12">d </span>to satisfy:
+           <center class="math-display" >
+           <img 
+src="final16sol6x.png" alt="     (       )
+0 =   &#x2207;h (x1) T d = (0,1)Td = d2,  and   d1 &#x2265; 0.
+           " class="math-display" ></center>
+           <!--l. 172--><p class="nopar" >
+           So <span 
+class="cmmi-12">d </span>= (<span 
+class="cmmi-12">t, </span>0) for any <span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0. For any such nonzero <span 
+class="cmmi-12">d</span>, we have <span 
+class="cmmi-12">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmsy-10x-x-120">&#x2207;</span><sub>
+<span 
+class="cmmi-8">xx</span></sub><sup><span 
+class="cmr-8">2</span></sup><span 
+class="cmmi-12">L</span>(<span 
+class="cmmi-12">x,u,v</span>)<span 
+class="cmmi-12">d &#x003C; </span>0, so
+           the second order necessary conditions are violated. Note also that the gradients of the
+           active constraints are linearly independent at&#x00A0;<span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">1</span></sup>, so CQ holds, so we can conclude <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">1</span></sup> is
+           <span 
+class="cmti-12">not a local minimizer</span>.
+           </dd><dt class="enumerate">
+       (c) </dt><dd 
+class="enumerate">We have <div class="eqnarray">
+           <center class="math-display" >
+                                                                                         
+
+                                                                                         
+           <img 
+src="final16sol7x.png" alt="                  2    1 2   1        2    (  1  2    )
+&#x03B8; (v ) =    minx &#x2208;&#x211D;     2x1 + 2(x2 - 3) +  v - 2x 1 + x2
+           subject to  x1 &#x2265; 0.
+              1                 1                       1
+      =   min --(1 - v)x21 + min --(x2 - (3 - v))2 + 3v - -v2
+          x1&#x2265;02              x2 2                       2
+          {
+             3v - 1v2  if v &#x2264; 1, achieved by x = (0,3 - v)
+      =      - &#x221E;  2    if v &#x003E; 1  since can drive x  &#x2192;  &#x221E;.
+                                                 1
+           " class="math-display" ></center>
+           </div>
+           </dd><dt class="enumerate">
+      (d) </dt><dd 
+class="enumerate">Dual problem is
+           <center class="math-display" >
+           <img 
+src="final16sol8x.png" alt="                 1 2
+maxv        3v - 2v
+subject to  v &#x2264; 1
+           " class="math-display" ></center>
+           <!--l. 206--><p class="nopar" >
+           Note that <img 
+src="final16sol9x.png" alt="d&#x03B8;
+dv"  class="frac" align="middle"> <span 
+class="cmmi-12">&#x003E; </span>0 for <span 
+class="cmmi-12">v </span><span 
+class="cmsy-10x-x-120">&#x2264; </span>1, so the optimal solution is to take <span 
+class="cmmi-12">v </span>= 1, giving
+           optimal dual value&#x00A0;2<img 
+src="final16sol10x.png" alt="1
+2"  class="frac" align="middle">. The known primal local minimizer is <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">2</span></sup>, which has
+           value&#x00A0;2<img 
+src="final16sol11x.png" alt="1
+2"  class="frac" align="middle">. So the optimal primal and dual values agree, so there is no duality
+           gap.
+           </dd></dl>
+      </dd><dt class="enumerate">
+   2. </dt><dd 
+class="enumerate">(40 points) <br 
+class="newline" />One choice for a trust region method to solve the unconstrained problem
+      <table 
+class="equation"><tr><td><a 
+ id="x1-14r7"></a>
+      <center class="math-display" >
+      <img 
+src="final16sol12x.png" alt="min f (x )
+x&#x2208;&#x211D;n
+      " class="math-display" ></center></td><td class="equation-label">(7)</td></tr></table>
+      <!--l. 256--><p class="nopar" >
+      is to update the current iterate <span class="bar-css"><span 
+class="cmmi-12">x</span></span> at each iteration by solving the subproblem
+      <table 
+class="equation"><tr><td><a 
+ id="x1-15r8"></a>
+      <center class="math-display" >
+      <img 
+src="final16sol13x.png" alt="minx &#x2208;&#x211D;n      &#x2207;f  (x¯)T(x - ¯x)
+subject to  (x - ¯x)TQ (x - ¯x)  &#x2264;  r2
+      " class="math-display" ></center></td><td class="equation-label">(8)</td></tr></table>
+      <!--l. 264--><p class="nopar" >
+      where <span 
+class="cmmi-12">Q </span>is a symmetric positive definite matrix and <span 
+class="cmmi-12">r </span>is a positive parameter. Assume
+      <span 
+class="cmmi-12">f </span>: <span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup> <span 
+class="cmsy-10x-x-120">&#x2192; </span><span 
+class="msbm-10x-x-120">&#x211D; </span>is smooth and <span 
+class="cmsy-10x-x-120">&#x2207;</span><span 
+class="cmmi-12">f</span>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span>)<span 
+class="cmmi-12">&#x2260;</span>0.
+           <dl class="enumerate"><dt class="enumerate">
+       (a) </dt><dd 
+class="enumerate">(20 points) Prove the point
+           <table 
+class="equation"><tr><td><a 
+ id="x1-17r9"></a>
+           <center class="math-display" >
+           <img 
+src="final16sol14x.png" alt="        ----------r---------- -1
+&#x02C6;x = ¯x - &#x2218; &#x2207;f--(¯x)TQ--1&#x2207;f-(¯x)Q   &#x2207;f  (x¯)
+           " class="math-display" ></center></td><td class="equation-label">(9)</td></tr></table>
+           <!--l. 274--><p class="nopar" >
+           is the unique global minimizer to&#x00A0;(<a 
+href="#x1-15r8">8<!--tex4ht:ref: eq:trsubprob --></a>).
+                                                                                         
+
+                                                                                         
+           </dd><dt class="enumerate">
+      (b) </dt><dd 
+class="enumerate">(10 points) Assume (<a 
+href="#x1-14r7">7<!--tex4ht:ref: eq:uncon --></a>) has a global minimizer&#x00A0;<span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> and that the Hessian of <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) is
+           positive definite in a neighborhood of&#x00A0;<span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup>. The parameter <span 
+class="cmmi-12">r </span>and the matrix&#x00A0;<span 
+class="cmmi-12">Q </span>can be
+           updated every time the iterate&#x00A0;<span class="bar-css"><span 
+class="cmmi-12">x</span></span> is updated. How could you choose to update <span 
+class="cmmi-12">Q </span>and <span 
+class="cmmi-12">r</span>
+           to try to obtain quadratic convergence to&#x00A0;<span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup>?
+           </dd><dt class="enumerate">
+       (c) </dt><dd 
+class="enumerate">(10 points) Let <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmr-8">2</span></sup> and let
+           <table 
+class="equation"><tr><td><a 
+ id="x1-20r10"></a>
+           <center class="math-display" >
+           <img 
+src="final16sol15x.png" alt="f (x) = x4+  x4+  3x x  - x2x  + x  - 2x .
+         1    2     1 2    1 2    1     2
+           " class="math-display" ></center></td><td class="equation-label">(10)</td></tr></table>
+           <!--l. 288--><p class="nopar" >
+           Initialize with
+           <center class="math-display" >
+           <img 
+src="final16sol16x.png" alt="     [   ]         [ 1    ]
+¯x =    0  ,   Q =    2  0   .
+       0             0  1
+           " class="math-display" ></center>
+           <!--l. 293--><p class="nopar" >
+           The <span 
+class="cmti-12">predicted change </span>in <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) is the optimal value of&#x00A0;(<a 
+href="#x1-15r8">8<!--tex4ht:ref: eq:trsubprob --></a>). The <span 
+class="cmti-12">actual change </span>is
+           <span 
+class="cmmi-12">f</span>(<img 
+src="final16sol17x.png" alt="&#x02C6;x"  class="circ" >) <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">f</span>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span>). The trust region radius&#x00A0;<span 
+class="cmmi-12">r </span>is updated based in part upon a comparison of
+           the predicted and actual changes.
+               <dl class="enumerate"><dt class="enumerate">
+            <span class="roman-numeral">i</span>. </dt><dd 
+class="enumerate">Assume  <span 
+class="cmmi-12">r  </span>=  <img 
+src="final16sol18x.png" alt="&#x2218; --
+  32"  class="sqrt" >.  Show  <img 
+src="final16sol19x.png" alt="x&#x02C6;"  class="circ" >  =  (<span 
+class="cmsy-10x-x-120">-</span>1<span 
+class="cmmi-12">, </span>1).  Would  you  suggest  increasing  or
+               decreasing&#x00A0;<span 
+class="cmmi-12">r</span>, or leaving it unchanged?
+               </dd><dt class="enumerate">
+            <span class="roman-numeral">ii</span>. </dt><dd 
+class="enumerate">Assume  <span 
+class="cmmi-12">r  </span>=  <img 
+src="final16sol20x.png" alt="&#x221A; --
+  6"  class="sqrt" >.  Show  <img 
+src="final16sol21x.png" alt="&#x02C6;x"  class="circ" >  =  (<span 
+class="cmsy-10x-x-120">-</span>2<span 
+class="cmmi-12">, </span>2).  Would  you  suggest  increasing  or
+               decreasing&#x00A0;<span 
+class="cmmi-12">r</span>, or leaving it unchanged?</dd></dl>
+           </dd></dl>
+                                                                                         
+
+                                                                                         
+      <!--l. 307--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <dl class="enumerate"><dt class="enumerate">
+       (a) </dt><dd 
+class="enumerate">The feasible region of (<a 
+href="#x1-15r8">8<!--tex4ht:ref: eq:trsubprob --></a>) is bounded and the objective function is continuous, so a
+           global minimizer exists by Weierstrass. The constraint is convex and strictly satisfied by
+           <span 
+class="cmmi-12">x </span>= <span class="bar-css"><span 
+class="cmmi-12">x</span></span>, so the Slater CQ holds, so any local minimizer is a KKT point. The KKT
+           conditions are <div class="eqnarray">
+           <center class="math-display" >
+           <img 
+src="final16sol22x.png" alt="     &#x2207;f (¯x) + 2uQ (x - ¯x)  =   0                         (11)
+ (                      )
+u r2 - (x - ¯x)TQ (x - ¯x)   =   0                         (12)
+                        u  &#x2265;   0                         (13)
+  2   (       T         )
+ r -   (x - ¯x) Q (x - ¯x)   &#x2265;   0.                        (14)
+           " class="math-display" ><a 
+ id="x1-24r11"></a><a 
+ id="x1-24r12"></a><a 
+ id="x1-24r13"></a><a 
+ id="x1-24r14"></a></center>
+           </div>Since <span 
+class="cmsy-10x-x-120">&#x2207;</span><span 
+class="cmmi-12">f</span>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span>)<span 
+class="cmmi-12">&#x2260;</span>0, it follows from (<a 
+href="#x1-24r11">11<!--tex4ht:ref: eq:q2KKT1 --></a>) that <span 
+class="cmmi-12">u &#x003E; </span>0 and
+           <table 
+class="equation"><tr><td><a 
+ id="x1-25r15"></a>
+           <center class="math-display" >
+           <img 
+src="final16sol23x.png" alt="x = x¯-  1-Q -1&#x2207;f  (x¯).
+         2u
+           " class="math-display" ></center></td><td class="equation-label">(15)</td></tr></table>
+           <!--l. 326--><p class="nopar" >
+           It then follows from (<a 
+href="#x1-24r12">12<!--tex4ht:ref: eq:q2KKT2 --></a>) that
+           <table 
+class="equation"><tr><td><a 
+ id="x1-26r16"></a>
+                                                                                         
+
+                                                                                         
+           <center class="math-display" >
+           <img 
+src="final16sol24x.png" alt="     &#x2218; &#x2207;f-(¯x)T-Q--1&#x2207;f-(¯x)
+u =  --------------------,
+              r
+           " class="math-display" ></center></td><td class="equation-label">(16)</td></tr></table>
+           <!--l. 330--><p class="nopar" >
+           as in (<a 
+href="#x1-17r9">9<!--tex4ht:ref: eq:q2KKTsoln --></a>). Since this is the only KKT point and since any global minimizer must be a
+           KKT point, and a global minimizer exists, it follows that <img 
+src="final16sol25x.png" alt="&#x02C6;x"  class="circ" > is the unique global
+           minimizer.
+           </dd><dt class="enumerate">
+      (b) </dt><dd 
+class="enumerate">We want to be taking the Newton step, so we want to pick <span 
+class="cmmi-12">Q </span>= <span 
+class="cmsy-10x-x-120">&#x2207;</span><sub><span 
+class="cmmi-8">xx</span></sub><sup><span 
+class="cmr-8">2</span></sup><span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) and
+           <span 
+class="cmmi-12">r </span>= <img 
+src="final16sol26x.png" alt="&#x2218; ------------------
+  &#x2207;f (¯x )T Q- 1&#x2207;f (¯x)"  class="sqrt" >.
+           </dd><dt class="enumerate">
+       (c) </dt><dd 
+class="enumerate">We have
+           <center class="math-display" >
+           <img 
+src="final16sol27x.png" alt="          [     ]                [      ]
+&#x2207;f (¯x) =     1     and   Q -1 =    2  0  ,
+            - 2                    0  1
+           " class="math-display" ></center>
+           <!--l. 345--><p class="nopar" >
+           giving
+           <center class="math-display" >
+           <img 
+src="final16sol28x.png" alt="              [   2 ]
+Q -1&#x2207;f (¯x ) =           and   &#x2207;f (¯x)TQ -1&#x2207;f (¯x) = 6.
+                - 2
+           " class="math-display" ></center>
+           <!--l. 351--><p class="nopar" >
+               <dl class="enumerate"><dt class="enumerate">
+            <span class="roman-numeral">i</span>. </dt><dd 
+class="enumerate">When <span 
+class="cmmi-12">r </span>= <img 
+src="final16sol29x.png" alt="&#x2218; --
+  3
+  2"  class="sqrt" >, we obtain
+               <center class="math-display" >
+               <img 
+src="final16sol30x.png" alt="    [     ]
+       - 1                                       T
+&#x02C6;x =     1   ,  f (x&#x02C6;) - f (¯x) = - 5,  and   &#x2207;f (¯x) (&#x02C6;x - ¯x) =  - 3.
+               " class="math-display" ></center>
+               <!--l. 359--><p class="nopar" >
+               Since we&#8217;ve underestimated the actual improvement, the trust region radius <span 
+class="cmmi-12">r </span>can
+               either remain unaltered or increased.
+               </dd><dt class="enumerate">
+            <span class="roman-numeral">ii</span>. </dt><dd 
+class="enumerate">When <span 
+class="cmmi-12">r </span>= <img 
+src="final16sol31x.png" alt="&#x221A;6-"  class="sqrt" >, we obtain
+               <center class="math-display" >
+               <img 
+src="final16sol32x.png" alt="     [     ]
+       - 2                                     T
+&#x02C6;x =      2  ,   f(&#x02C6;x) - f(¯x) = 6,   and  &#x2207;f  (x¯) (&#x02C6;x - ¯x) = -  6.
+               " class="math-display" ></center>
+               <!--l. 368--><p class="nopar" >
+               The function <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) got worse, so we should decrease&#x00A0;<span 
+class="cmmi-12">r</span>.</dd></dl>
+           </dd></dl>
+      </dd><dt class="enumerate">
+   3. </dt><dd 
+class="enumerate">(20 points; 10 points for each part)
+           <dl class="enumerate"><dt class="enumerate">
+       (a) </dt><dd 
+class="enumerate">Let <span 
+class="cmmi-12">C </span><span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="msbm-10x-x-120">&#x211D;  </span>be a nonempty convex set. Let <span 
+class="cmmi-12">f  </span>:  <span 
+class="cmmi-12">C </span><span 
+class="cmsy-10x-x-120">&#x2192; </span><span 
+class="msbm-10x-x-120">&#x211D;  </span>be a smooth convex
+           nondecreasing function and let <span 
+class="cmmi-12">g </span>: <span 
+class="msbm-10x-x-120">&#x211D; </span><span 
+class="cmsy-10x-x-120">&#x2192; </span><span 
+class="cmmi-12">C </span>be a smooth convex function. Prove
+           <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">g</span>(<span 
+class="cmmi-12">x</span>)) is a convex function for <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span>.
+           </dd><dt class="enumerate">
+      (b) </dt><dd 
+class="enumerate">The result of part (a) also holds in the <span 
+class="cmmi-12">n</span>-dimensional case with convex set <span 
+class="cmmi-12">C </span><span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup>,
+           namely <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">g</span>(<span 
+class="cmmi-12">x</span>)) is a convex function if <span 
+class="cmmi-12">f </span>: <span 
+class="cmmi-12">C </span><span 
+class="cmsy-10x-x-120">&#x2192; </span><span 
+class="msbm-10x-x-120">&#x211D; </span>is a smooth convex nondecreasing
+           function and <span 
+class="cmmi-12">g </span>: <span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup> <span 
+class="cmsy-10x-x-120">&#x2192; </span><span 
+class="cmmi-12">C </span>is a smooth convex function. <span 
+class="cmti-12">Use this result </span>to show that the
+           function
+           <center class="math-display" >
+           <img 
+src="final16sol33x.png" alt="       (  2             2) x2-4x1x2+5x2
+h(x) =  x 1 - 4x1x2 + 5x2 e 1         2
+           " class="math-display" ></center>
+           <!--l. 406--><p class="nopar" >
+           is convex over <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmr-8">2</span></sup>.</dd></dl>
+      <!--l. 411--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+                                                                                         
+
+                                                                                         
+           <dl class="enumerate"><dt class="enumerate">
+       (a) </dt><dd 
+class="enumerate">From the chain rule, we have
+           <center class="math-display" >
+           <img 
+src="final16sol34x.png" alt="df-   dg-df-||
+dx  = dx dt  t=g(x)
+           " class="math-display" ></center>
+           <!--l. 418--><p class="nopar" >
+           and
+           <center class="math-display" >
+           <img 
+src="final16sol35x.png" alt="d2f    d2g df |        ( dg )2 d2f |
+---2 = --2----|t=g(x) +   ---   --2-|t=g(x) &#x2265; 0&#x2200;x &#x2208;  &#x211D;
+dx     dx  dt            dx    dt
+           " class="math-display" ></center>
+           <!--l. 424--><p class="nopar" >
+           since from the assumptions we have
+           <center class="math-display" >
+           <img 
+src="final16sol36x.png" alt="d2g-       df-||             d2f-||
+dx2 &#x2265; 0,   dt t=g(x) &#x2265; 0,   dt2 t=g(x) &#x2265; 0.
+           " class="math-display" ></center>
+           <!--l. 429--><p class="nopar" >
+           </dd><dt class="enumerate">
+      (b) </dt><dd 
+class="enumerate">Let <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">t</span>) = <span 
+class="cmmi-12">te</span><sup><span 
+class="cmmi-8">t</span></sup>. We have
+           <center class="math-display" >
+           <img 
+src="final16sol37x.png" alt="df           t     d2f           t
+dt-= (t + 1)e,     dt2-=  (t + 2)e ,
+           " class="math-display" ></center>
+           <!--l. 435--><p class="nopar" >
+           so <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">t</span>) is nondecreasing if <span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120">&#x2265;-</span>1 and it is convex if <span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120">&#x2265;-</span>2.
+           <!--l. 438--><p class="noindent" >Let <span 
+class="cmmi-12">g</span>(<span 
+class="cmmi-12">x</span>) = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmr-8">2</span></sup> <span 
+class="cmsy-10x-x-120">- </span>4<span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> + 5<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub><sup><span 
+class="cmr-8">2</span></sup>. Note that
+           <center class="math-display" >
+           <img 
+src="final16sol38x.png" alt="                                                   [          ]
+                 2    2           2       2            2  - 4
+g(x) = (x1 - 2x2)  + x2 &#x2265; 0&#x2200;x &#x2208; &#x211D;  ,     &#x2207; g(x ) =   - 4   10  ,
+           " class="math-display" ></center>
+           <!--l. 442--><p class="nopar" >
+           so <span 
+class="cmmi-12">g</span>(<span 
+class="cmmi-12">x</span>) is convex. By taking <span 
+class="cmmi-12">C </span>= <span 
+class="msbm-10x-x-120">&#x211D;</span><sub><span 
+class="cmr-8">+</span></sub>, the conditions are satisfied, so the function <span 
+class="cmmi-12">h</span>(<span 
+class="cmmi-12">x</span>) is
+           convex.</dd></dl>
+      </dd></dl>
+    
+</body></html> 
+
+                                                                                         
+
+

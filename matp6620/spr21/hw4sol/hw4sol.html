@@ -1,0 +1,569 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw4sol.tex"> 
+<meta name="date" content="2021-03-22 20:59:00"> 
+<link rel="stylesheet" type="text/css" href="hw4sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 25--><p class="noindent" >
+<!--l. 28--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6620" ><span 
+class="cmr-12">MATP6620 / ISYE6760 Integer and Combinatorial Optimization</span></a><br />
+<span 
+class="cmr-12">Homework 4.</span><br />
+<span 
+class="cmr-12">Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 33--><p class="noindent" >
+ Due: Thursday, March 18, 2021, by end of day.<br />
+Penalty for late homeworks: 10% for each day or part of a day.</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1">Let <span 
+class="cmmi-10">S </span>be the set of binary variables <span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="msbm-10">B</span><sup><span 
+class="cmr-7">4</span></sup> satisfying
+     <table 
+class="equation"><tr><td><a 
+ id="x1-4r1"></a>
+     <center class="math-display" >
+     <img 
+src="hw4sol0x.png" alt="7x1 - 4x2 +6x3 + 4x4 &#x2264; 9.
+     " class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+     <!--l. 205--><p class="nopar" >
+     <a 
+ id="x1-21"></a> <span 
+class="cmbx-10">When</span> <span 
+class="cmbx-10">x</span><sub><span 
+class="cmbx-7">2</span></sub> = <span 
+class="cmbx-10">1</span>, we have the valid constraint
+     <table 
+class="equation"><tr><td><a 
+ id="x1-5r2"></a>
+     <center class="math-display" >
+     <img 
+src="hw4sol1x.png" alt="x1 + x3 + x4 &#x2264; 2.
+     " class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+     <!--l. 209--><p class="nopar" >
+     Lift the inequality to give a valid inequality for&#x00A0;<span 
+class="cmmi-10">S</span>. (Hint: consider a change of variables <span 
+class="cmmi-10">z</span><sub><span 
+class="cmr-7">2</span></sub> := 1 <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub>. Make
+     sure you convert your constraint back to the <span 
+class="cmmi-10">x </span>variables.)
+     <!--l. 214--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 216--><p class="noindent" >With the given change of variables, (<a 
+href="#x1-21">1<!--tex4ht:ref: eq.q2orig --></a>) is equivalent to the constraint
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="hw4sol2x.png" alt="7x1 - 4(1- z2)+ 6x3 + 4x4 &#x2264; 9
+     " class="math-display" ></center>
+     <!--l. 220--><p class="nopar" >
+     or equivalently
+     <table 
+class="equation"><tr><td><a 
+ id="x1-6r3"></a>
+     <center class="math-display" >
+     <img 
+src="hw4sol3x.png" alt="7x1 + 4z2 + 6x3 + 4x4 &#x2264; 13.
+     " class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+     <!--l. 224--><p class="nopar" >
+     This is now in our framework for lifting: we have a valid constraint (<a 
+href="#x1-5r2">2<!--tex4ht:ref: eq.q2cut --></a>) in <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub>, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub>, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">4</span></sub> when <span 
+class="cmmi-10">z</span><sub><span 
+class="cmr-7">2</span></sub> = 0. To find the
+     lifting coefficient, we solve:
+     <center class="math-display" >
+     <img 
+src="hw4sol4x.png" alt="&#x03B6; :=  max{x1 + x3 + x4 : 7x1 +4z2 +6x3 + 4x4 &#x2264; 13,z2 = 1,x1,z2,x3,x4 binary} = 1,
+     " class="math-display" ></center>
+     <!--l. 232--><p class="nopar" >
+     achieved by multiple solutions including <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> = 0, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub> = 1, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">4</span></sub> = 0, <span 
+class="cmmi-10">z</span><sub><span 
+class="cmr-7">2</span></sub> = 0. Hence the lifting coefficient is
+     2 <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">&#x03B6; </span>= 1, so the lifted constraint is
+     <center class="math-display" >
+     <img 
+src="hw4sol5x.png" alt="x1 + z2 + x3 + x4 &#x2264; 2.
+     " class="math-display" ></center>
+     <!--l. 237--><p class="nopar" >
+     Expressing this in terms of the original variables, we have the valid constraint
+     <center class="math-display" >
+     <img 
+src="hw4sol6x.png" alt="x1 + (1 - x2)+ x3 + x4 &#x2264; 2,
+     " class="math-display" ></center>
+     <!--l. 241--><p class="nopar" >
+     or equivalently
+     <center class="math-display" >
+     <img 
+src="hw4sol7x.png" alt="x1 - x2 +x3 + x4 &#x2264; 1.
+     " class="math-display" ></center>
+                                                                                         
+                                                                                         
+     <!--l. 245--><p class="nopar" >
+     </li>
+     <li 
+  class="enumerate" id="x1-8x2"><a 
+ id="x1-72"></a> The <span 
+class="cmti-10">multiple choice </span>knapsack problem is a knapsack problem with the additional restriction that at
+     most one item can be picked from <span 
+class="cmmi-10">k </span>disjoint subsets <span 
+class="cmmi-10">N</span><sub><span 
+class="cmmi-7">i</span></sub> of the items&#x00A0;<span 
+class="cmmi-10">N </span>= <span 
+class="cmsy-10">{</span>1<span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x2026;</span><span 
+class="cmmi-10">,n</span><span 
+class="cmsy-10">}</span>. This can be
+     written
+     <center class="math-display" >
+     <img 
+src="hw4sol8x.png" alt="                T
+max            cTx
+subject to &#x2211;   a x  &#x2264;   b
+             j&#x2208;Ni xj &#x2264;   1n  for i = 1,...,k
+                 x  &#x2208;   B
+     " class="math-display" ></center>
+     <!--l. 272--><p class="nopar" >
+     where <span 
+class="cmmi-10">a,c </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="msbm-10">&#x2124;</span><sub><span 
+class="cmr-7">+</span></sub><sup><span 
+class="cmmi-7">n</span></sup>. Assume <span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">j</span></sub> <span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">b </span>for <span 
+class="cmmi-10">j </span>= 1<span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x2026;</span><span 
+class="cmmi-10">,n</span>. Let <span 
+class="cmmi-10">S </span>denote the set of feasible solutions.
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-10x1">Prove that the convex hull of&#x00A0;<span 
+class="cmmi-10">S </span>has dimension&#x00A0;<span 
+class="cmmi-10">n</span>.
+         </li>
+         <li 
+  class="enumerate" id="x1-12x2">Give a condition on the entries of <span 
+class="cmmi-10">a </span>that guarantees that the inequality <span 
+class="cmex-10">&#x2211;</span>
+  <sub><span 
+class="cmmi-7">j</span><span 
+class="cmsy-7">&#x2208;</span><span 
+class="cmmi-7">N</span><sub><span 
+class="cmmi-5">i</span></sub></sub><span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">j</span></sub> <span 
+class="cmsy-10">&#x2264; </span>1 defines a
+         facet of the convex hull of&#x00A0;<span 
+class="cmmi-10">S</span>. Prove it is a facet when your condition is satisfied.</li></ol>
+     <!--l. 283--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-14x1">Feasible solutions to the knapsack problem include the empty set and the <span 
+class="cmmi-10">n </span>sets consisting of just
+         one item. Hence the convex hull of&#x00A0;<span 
+class="cmmi-10">S </span>is full-dimensional.
+         </li>
+         <li 
+  class="enumerate" id="x1-16x2">There are <span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">N</span><sub><span 
+class="cmmi-7">i</span></sub><span 
+class="cmsy-10">| </span>packings that satisfy the constraint at equality, namely the packings consisting of exactly
+         one item from&#x00A0;<span 
+class="cmmi-10">N</span><sub><span 
+class="cmmi-7">i</span></sub>. Let
+         <center class="math-display" >
+         <img 
+src="hw4sol9x.png" alt="¯ai := min{aj : j &#x2208; Ni}, and ki &#x2208; argmin{aj : j &#x2208; Ni },
+         " class="math-display" ></center>
+         <!--l. 296--><p class="nopar" >
+         so <span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">k</span></sub> = <span class="bar-css"><span 
+class="cmmi-10">a</span></span><sub><span 
+class="cmmi-7">i</span></sub>, <span 
+class="cmmi-10">k </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">N</span><sub><span 
+class="cmmi-7">i</span></sub>.
+         <!--l. 299--><p class="noindent" ><span 
+class="cmbx-10">Assume </span><span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">j</span></sub> <span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">b </span><span 
+class="cmsy-10">-</span><span class="bar-css"><span 
+class="cmmi-10">a</span></span><sub><span 
+class="cmmi-7">i</span></sub> for every <span 
+class="cmmi-10">j </span><span 
+class="cmsy-10">&#x2044;&#x2208; </span><span 
+class="cmmi-10">N</span><sub><span 
+class="cmmi-7">i</span></sub>. Then each <span 
+class="cmmi-10">j </span><span 
+class="cmsy-10">&#x2044;&#x2208; </span><span 
+class="cmmi-10">N</span><sub><span 
+class="cmmi-7">i</span></sub> is in the valid solution <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">j,k</span><span 
+class="cmsy-10">}</span>.
+         <!--l. 302--><p class="noindent" >The incidence vectors of the given <span 
+class="cmmi-10">n </span>packings are linearly independent, so they are affinely independent,
+         so the given constraint defines a facet provided the assumption holds.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-18x3">Let <span 
+class="cmmi-10">C </span>be a minimal cover for the multiple choice knapsack problem of Question&#x00A0;<a 
+href="#x1-72">2<!--tex4ht:ref: q.mcknap --></a>, with <span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">C </span><span 
+class="cmsy-10">&#x2229; </span><span 
+class="cmmi-10">N</span><sub><span 
+class="cmmi-7">i</span></sub><span 
+class="cmsy-10">|&#x2264; </span>1 for
+     <span 
+class="cmmi-10">i </span>= 1<span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x2026;</span><span 
+class="cmmi-10">,k</span>. The inequality
+     <table 
+class="equation"><tr><td><a 
+ id="x1-19r4"></a>
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="hw4sol10x.png" alt="&#x2211;
+   xj &#x2264; |C|- 1
+j&#x2208;C
+     " class="math-display" ></center></td><td class="equation-label">(4)</td></tr></table>
+     <!--l. 314--><p class="nopar" >
+     is a valid inequality. Let <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">j</span>(<span 
+class="cmmi-10">i</span>)<span 
+class="cmsy-10">} </span>= <span 
+class="cmmi-10">C </span><span 
+class="cmsy-10">&#x2229; </span><span 
+class="cmmi-10">N</span><sub><span 
+class="cmmi-7">i</span></sub> when <span 
+class="cmmi-10">C </span><span 
+class="cmsy-10">&#x2229; </span><span 
+class="cmmi-10">N</span><sub><span 
+class="cmmi-7">i</span></sub><span 
+class="cmmi-10">&#x2260;</span><span 
+class="cmsy-10">&#x2205;</span>. Prove the following inequality is also
+     valid:
+     <center class="math-display" >
+     <img 
+src="hw4sol11x.png" alt="       (             )
+  &#x2211;         &#x2211;
+       (           xj) &#x2264; |C|- 1
+i:C&#x2229;Ni&#x2044;=&#x2205;  j&#x2208;Ni:aj&#x2265;aj(i)
+     " class="math-display" ></center>
+     <!--l. 321--><p class="nopar" >
+     <!--l. 323--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 325--><p class="noindent" >Because of the constraint that at most one item can be picked from each subset, we must have
+     <center class="math-display" >
+     <img 
+src="hw4sol12x.png" alt="       (             )           (       )
+  &#x2211;          &#x2211;              &#x2211;      &#x2211;
+       (           xj)  &#x2264;        (     xj) &#x2264; |C|,
+i:C&#x2229;Ni&#x2044;=&#x2205;  j&#x2208;Ni:aj&#x2265;aj(i)       i:C&#x2229;Ni&#x2044;=&#x2205;  j&#x2208;Ni
+     " class="math-display" ></center>
+     <!--l. 332--><p class="nopar" >
+     with equality only if exactly one item <span 
+class="cmmi-10">j </span>with <span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">j</span></sub> <span 
+class="cmsy-10">&#x2265; </span><span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">j</span><span 
+class="cmr-7">(</span><span 
+class="cmmi-7">i</span><span 
+class="cmr-7">)</span></sub> is chosen from each set&#x00A0;<span 
+class="cmmi-10">N</span><sub><span 
+class="cmmi-7">i</span></sub>.
+     <!--l. 335--><p class="noindent" >If exactly one such item is picked from each set <span 
+class="cmmi-10">N</span><sub><span 
+class="cmmi-7">i</span></sub> with <span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">C </span><span 
+class="cmsy-10">&#x2229; </span><span 
+class="cmmi-10">N</span><sub><span 
+class="cmmi-7">i</span></sub><span 
+class="cmsy-10">| </span>= 1 then
+     <center class="math-display" >
+     <img 
+src="hw4sol13x.png" alt="       (               )
+  &#x2211;          &#x2211;                &#x2211;           &#x2211;
+       (           ajxj) &#x2265;         aj(i) =    aj &#x003E; b,
+i:C&#x2229;Ni&#x2044;=&#x2205;  j&#x2208;Ni:aj&#x2265;aj(i)         i:C&#x2229;Ni&#x2044;=&#x2205;      j&#x2208;C
+     " class="math-display" ></center>
+     <!--l. 340--><p class="nopar" >
+     since <span 
+class="cmmi-10">C </span>is a cover. Hence it is not possible to pick exactly one item from each set <span 
+class="cmmi-10">N</span><sub><span 
+class="cmmi-7">i</span></sub> with the item <span 
+class="cmmi-10">j </span>from set
+     <span 
+class="cmmi-10">N</span><sub><span 
+class="cmmi-7">i</span></sub> satisfying <span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">j</span></sub> <span 
+class="cmsy-10">&#x2265; </span><span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">j</span><span 
+class="cmr-7">(</span><span 
+class="cmmi-7">i</span><span 
+class="cmr-7">)</span></sub>, so the constraint in the question is valid.
+     </li>
+     <li 
+  class="enumerate" id="x1-21x4">For each of the following binary knapsack problems, solve the linear programming relaxation, give a valid cover
+     inequality violated by the solution to the relaxation, and lift the inequality to give a facet defining
+     inequality.
+                                                                                         
+                                                                                         
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-23x1">
+         <center class="math-display" >
+         <img 
+src="hw4sol14x.png" alt="max   20x1  +  30x2  +  40x3  +  42x4
+s.t.    x1  +   3x2  +   5x3  +   6x4  &#x2264;  7
+                                   xi  binary
+         " class="math-display" ></center>
+         <!--l. 708--><p class="nopar" >
+         </li>
+         <li 
+  class="enumerate" id="x1-25x2">
+         <center class="math-display" >
+         <img 
+src="hw4sol15x.png" alt="max  4x1  +   15x2 +   22x3 +   42x4
+s.t.   x1  +    3x2 +    5x3 +    6x4  &#x2264;  7
+                                  xi  binary
+         " class="math-display" ></center>
+         <!--l. 716--><p class="nopar" >
+         </li>
+         <li 
+  class="enumerate" id="x1-27x3">
+         <center class="math-display" >
+         <img 
+src="hw4sol16x.png" alt="max   13x   +  25x   +  18x   +  27x
+s.t.   2x1  +   5x2  +   3x3  +   6x4  &#x2264;  7
+         1        2        3       x4  binary
+                                     i
+         " class="math-display" ></center>
+         <!--l. 724--><p class="nopar" >
+         </li></ol>
+     <!--l. 727--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-29x1">Solution to LP relaxation is <span 
+class="cmmi-10">x </span>= (1<span 
+class="cmmi-10">,</span>1<span 
+class="cmmi-10">,</span>0<span 
+class="cmmi-10">.</span>6<span 
+class="cmmi-10">,</span>0). This leads to the minimal cover <span 
+class="cmsy-10">{</span>2<span 
+class="cmmi-10">,</span>3<span 
+class="cmsy-10">} </span>and the minimal
+         cover inequality
+         <center class="math-display" >
+         <img 
+src="hw4sol17x.png" alt="x2 + x3 &#x2264; 1.
+         " class="math-display" ></center>
+         <!--l. 734--><p class="nopar" >
+         Lifting on <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> and then <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">4</span></sub> gives the facet defining inequality
+         <center class="math-display" >
+         <img 
+src="hw4sol18x.png" alt="x2 +x3 + x4 &#x2264; 1.
+         " class="math-display" ></center>
+                                                                                         
+                                                                                         
+         <!--l. 738--><p class="nopar" >
+         Lifting in the other order gives the same inequality.
+         </li>
+         <li 
+  class="enumerate" id="x1-31x2">Solution to LP relaxation is <span 
+class="cmmi-10">x </span>= (0<span 
+class="cmmi-10">,</span><img 
+src="hw4sol19x.png" alt="13"  class="frac" align="middle"><span 
+class="cmmi-10">,</span>0<span 
+class="cmmi-10">,</span>1). This leads to the minimal cover <span 
+class="cmsy-10">{</span>2<span 
+class="cmmi-10">,</span>4<span 
+class="cmsy-10">} </span>and the minimal cover
+         inequality
+         <center class="math-display" >
+         <img 
+src="hw4sol20x.png" alt="x2 + x4 &#x2264; 1.
+         " class="math-display" ></center>
+         <!--l. 745--><p class="nopar" >
+         Lifting on <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> and then <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub> gives the facet defining inequality
+         <center class="math-display" >
+         <img 
+src="hw4sol21x.png" alt="x2 +x3 + x4 &#x2264; 1.
+         " class="math-display" ></center>
+         <!--l. 749--><p class="nopar" >
+         Lifting in the other order gives the same inequality.
+         </li>
+         <li 
+  class="enumerate" id="x1-33x3">Solution to LP relaxation is <span 
+class="cmmi-10">x </span>= (1<span 
+class="cmmi-10">,</span>0<span 
+class="cmmi-10">.</span>4<span 
+class="cmmi-10">,</span>1<span 
+class="cmmi-10">,</span>0). This leads to the minimal cover <span 
+class="cmsy-10">{</span>1<span 
+class="cmmi-10">,</span>2<span 
+class="cmmi-10">,</span>3<span 
+class="cmsy-10">} </span>and the minimal
+         cover inequality
+         <center class="math-display" >
+         <img 
+src="hw4sol22x.png" alt="x2 + x3 &#x2264; 1.
+         " class="math-display" ></center>
+         <!--l. 756--><p class="nopar" >
+         Lifting on <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> and then <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">4</span></sub> gives the facet defining inequality
+         <center class="math-display" >
+         <img 
+src="hw4sol23x.png" alt="x2 +x3 + x4 &#x2264; 1.
+         " class="math-display" ></center>
+         <!--l. 760--><p class="nopar" >
+         Lifting in the other order gives the same inequality.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-35x5">The linearly dependent vectors <span 
+class="cmmi-10">x</span><sup><span 
+class="cmr-7">1</span></sup><span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x2026;</span><span 
+class="cmmi-10">,x</span><sup><span 
+class="cmmi-7">m</span></sup> in <span 
+class="msbm-10">&#x211D;</span><sup><span 
+class="cmmi-7">n</span></sup> are all on the hyperplane <span 
+class="cmmi-10">a</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x </span>= <span 
+class="cmmi-10">b</span>, where <span 
+class="cmmi-10">b</span><span 
+class="cmmi-10">&#x2260;</span>0. Show that they
+     are affinely dependent.
+     <!--l. 770--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 772--><p class="noindent" >There exist multipliers <span 
+class="cmmi-10">&#x03BB;</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x2026;</span><span 
+class="cmmi-10">,&#x03BB;</span><sub><span 
+class="cmmi-7">m</span></sub>, not all zero, with
+     <center class="math-display" >
+     <img 
+src="hw4sol24x.png" alt="&#x2211;m    i
+   &#x03BB;ix = 0.
+i=1
+     " class="math-display" ></center>
+     <!--l. 775--><p class="nopar" >
+     It follows that
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="hw4sol25x.png" alt="       m         m            m
+0 = aT(&#x2211;  &#x03BB;ixi) = &#x2211;  &#x03BB;iaTxi = b&#x2211; &#x03BB;i.
+       i=1        i=1          i=1
+     " class="math-display" ></center>
+     <!--l. 780--><p class="nopar" >
+     Hence, <span 
+class="cmex-10">&#x2211;</span>
+  <sub><span 
+class="cmmi-7">i</span><span 
+class="cmr-7">=1</span></sub><sup><span 
+class="cmmi-7">m</span></sup><span 
+class="cmmi-10">&#x03BB;</span><sub><span 
+class="cmmi-7">i</span></sub> = 0 so the vectors are affinely dependent.
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                      </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           x6915.                                                                </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           Office hours: Monday and Thursday 1pm&#8211;2pm.           </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           webex: <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-10">https://rensselaer.webex.com/meet/mitchj</span></a></td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

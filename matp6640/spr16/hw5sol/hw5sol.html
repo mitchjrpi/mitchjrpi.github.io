@@ -1,0 +1,586 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw5sol.tex"> 
+<meta name="date" content="2016-04-26 10:54:00"> 
+<link rel="stylesheet" type="text/css" href="hw5sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 12--><p class="noindent" >
+<!--l. 15--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12x-x-120">MATP6640/DSES6770 Linear Programming</span></a><span 
+class="cmr-12x-x-120">, Homework 5.</span><br />
+<span 
+class="cmbx-12x-x-120">Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 19--><p class="noindent" >
+ Due: Friday, April 22, 2016, in class.<br />
+10% penalty for each day late.</div>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">The Monteiro-Adler short step algorithm presented in class (Algorithm SPF on page 86
+      of <span 
+class="cmti-12">Wright</span>) could be used as an infeasible interior point method, starting with <span 
+class="cmmi-12">x </span>= <span 
+class="cmmi-12">s </span>= <span 
+class="cmmi-12">e</span>,
+      <span 
+class="cmmi-12">y </span>= 0, and <span 
+class="cmmi-12">&#x03BC; </span>= 1. Give an example to show that we may not get &#x0394;<span 
+class="cmmi-12">x</span><sup><span 
+class="cmmi-8">T</span> </sup>&#x0394;<span 
+class="cmmi-12">s </span>= 0, even
+      if&#x00A0;<span 
+class="cmmi-12">r</span><sub><span 
+class="cmmi-8">c</span></sub> = 0. (Note: We solve (1.20) to find the directions given in (1.25) at each iteration.
+      Hint: you only need look at <span 
+class="cmbx-12">small </span>examples.)
+      <!--l. 118--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 121--><p class="noindent" >Consider the 1-variable, 1-constraint primal problem with its dual:
+      <center class="math-display" >
+      <img 
+src="hw5sol0x.png" alt="min         x                     max        2y
+subject to   x  =  2     (P )       subject to   y  +   s  =   1    (D )
+            x  &#x2265;  0                                  s  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 128--><p class="nopar" >
+      With <span 
+class="cmmi-12">y </span>= 0 and <span 
+class="cmmi-12">x </span>= <span 
+class="cmmi-12">s </span>= 1, we have <span 
+class="cmmi-12">r</span><sub><span 
+class="cmmi-8">c</span></sub> = 0, <span 
+class="cmmi-12">r</span><sub><span 
+class="cmmi-8">b</span></sub> = <span 
+class="cmsy-10x-x-120">-</span>1, and <span 
+class="cmmi-12">&#x03BC; </span>= 1. We get <span 
+class="cmmi-12">&#x03C3; </span>= 0<span 
+class="cmmi-12">.</span>6. The
+      direction satisfies
+      <center class="math-display" >
+      <img 
+src="hw5sol1x.png" alt="&#x230A;          &#x230B; &#x230A;     &#x230B;    &#x230A;       &#x230B;
+   0  1  1     &#x0394;x             0
+|&#x2308;  1  0  0 |&#x2309; |&#x2308; &#x0394;y  |&#x2309; =  |&#x2308;     1 |&#x2309;,
+   1  0  1     &#x0394;s         - 0.4
+      " class="math-display" ></center>
+      <!--l. 145--><p class="nopar" >
+      giving &#x0394;<span 
+class="cmmi-12">x </span>= 1, &#x0394;<span 
+class="cmmi-12">s </span>= <span 
+class="cmsy-10x-x-120">-</span>1<span 
+class="cmmi-12">.</span>4, and &#x0394;<span 
+class="cmmi-12">y </span>= 1<span 
+class="cmmi-12">.</span>4 and so &#x0394;<span 
+class="cmmi-12">x</span>&#x0394;<span 
+class="cmmi-12">s </span>= <span 
+class="cmsy-10x-x-120">-</span>1<span 
+class="cmmi-12">.</span>4<span 
+class="cmmi-12">&#x2260;</span>0.
+                                                                                         
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2">The problems (<span 
+class="cmmi-12">P</span>) and (<span 
+class="cmmi-12">D</span>) are
+      <center class="math-display" >
+      <img 
+src="hw5sol2x.png" alt="min        cT x                     max         bTy
+subject to   Ax   =   b    (P)       subject to AT y  +   s  =   c    (D )
+
+              x  &#x2265;   0                                   s  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 158--><p class="nopar" >
+      where <span 
+class="cmmi-12">x</span>, <span 
+class="cmmi-12">s</span>, and <span 
+class="cmmi-12">c </span>are <span 
+class="cmmi-12">n</span>-vectors, <span 
+class="cmmi-12">b </span>and <span 
+class="cmmi-12">y </span>are <span 
+class="cmmi-12">m</span>-vectors, and <span 
+class="cmmi-12">A </span>is an <span 
+class="cmmi-12">m </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>matrix. Let
+      <img 
+src="hw5sol3x.png" alt="&#x02C6;
+b"  class="circ" > = <span 
+class="cmmi-12">b</span><span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">Ae </span>and <span 
+class="cmmi-12">&#x0109;</span> = <span 
+class="cmmi-12">c</span><span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">e</span>, where <span 
+class="cmmi-12">e </span>denotes the vector where every component is equal to one.
+      Let <img 
+src="hw5sol4x.png" alt="&#x02C6;d"  class="circ" >= <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">e </span>+ 1. Now consider the linear programming problem
+      <center class="math-display" >
+      <img 
+src="hw5sol5x.png" alt="min                                     (n + 1)w
+subject to              Ax  -   bt  +      &#x02C6;bw     =   0
+            - AT y          +   ct  -      &#x02C6;cw     &#x2265;   0    (HLP   )
+               T        T                  &#x02C6;
+              b y  -   c x          +      dw     &#x2265;   0
+            - &#x02C6;bTy  +   &#x02C6;cTx  -   d&#x02C6;t                =   - (n + 1)
+                       x, t &#x2265;   0,        y,w         free,
+      " class="math-display" ></center>
+      <!--l. 176--><p class="nopar" >
+      where <span 
+class="cmmi-12">t </span>and <span 
+class="cmmi-12">w </span>are scalars. Show that if <span 
+class="cmmi-12">t </span>= 0 in a strictly complementary optimal solution to
+      (<span 
+class="cmmi-12">HLP</span>) then either there exists a vector <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0 with <span 
+class="cmmi-12">Ax </span>= 0 and <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x &#x003C; </span>0 or there exists a
+      vector <span 
+class="cmmi-12">y </span>with <span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2264; </span>0 and <span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y &#x003E; </span>0. What do you conclude?
+      <!--l. 187--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 190--><p class="noindent" >The dual to (<span 
+class="cmmi-12">HLP</span>) is (after changing the signs of the constraints):
+      <center class="math-display" >
+      <img 
+src="hw5sol6x.png" alt="max                                     - (n + 1)&#x03C9;
+subject to              A&#x03BE;  -   b&#x03C4;  +       &#x02C6;b&#x03C9;      =   0
+            - AT &#x03B7;          +   c&#x03C4;  -       &#x02C6;c&#x03C9;      &#x2265;   0    (HLD   )
+              bT&#x03B7;  -   cT&#x03BE;          +       &#x02C6;d&#x03C9;      &#x2265;   0
+              &#x02C6;T        T       &#x02C6;
+            - b &#x03B7;  +   &#x02C6;c &#x03BE;  -   d&#x03C4;                  =   - (n + 1 )
+                       &#x03BE;,&#x03C4;  &#x2265;    0,        &#x03B7;,&#x03C9;          free,
+      " class="math-display" ></center>
+      <!--l. 200--><p class="nopar" >
+      If (<span 
+class="cmmi-12">x,y,t,w</span>) is feasible in (<span 
+class="cmmi-12">HLP</span>) then (<span 
+class="cmmi-12">&#x03BE;,&#x03B7;,&#x03C4;,&#x03C9;</span>) = (<span 
+class="cmmi-12">x,y,t,w</span>) is feasible in (<span 
+class="cmmi-12">HLD</span>), with the
+                                                                                         
+                                                                                         
+      objective function value negated. So, if (<span 
+class="cmmi-12">HLP</span>) had negative optimal value then (<span 
+class="cmmi-12">HLD</span>)
+      would have positive optimal value, violating weak duality. Further, if (<span 
+class="cmmi-12">HLP</span>) had positive
+      optimal value then (<span 
+class="cmmi-12">HLD</span>) would have negative optimal value, violating strong duality.
+      Therefore (<span 
+class="cmmi-12">HLP</span>) has an <span 
+class="cmbx-12">optimal value of zero</span>.
+      <!--l. 209--><p class="noindent" >The problem (<span 
+class="cmmi-12">HLP</span>) is self-dual: if we change the max in the dual to a min, we get back
+      exactly (<span 
+class="cmmi-12">HLP</span>). Thus, an optimal strictly complementary solution to (<span 
+class="cmmi-12">HLP</span>) is strictly
+      complementary <span 
+class="cmbx-12">to itself</span>, in the sense that (i) <span 
+class="cmmi-12">x </span>and the slacks <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span>+ <span 
+class="cmmi-12">ct</span><span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">&#x0109;</span><span 
+class="cmmi-12">w </span>and (ii) <span 
+class="cmmi-12">t </span>and
+      the slack <span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>+ <img 
+src="hw5sol7x.png" alt="&#x02C6;d"  class="circ" > <span 
+class="cmmi-12">w </span>are strictly complementary.
+      <!--l. 216--><p class="noindent" >So, <span 
+class="cmmi-12">w </span>= 0 at optimality, and by assumption <span 
+class="cmmi-12">t </span>= 0, so we have
+      <center class="math-display" >
+      <img 
+src="hw5sol8x.png" alt="                     T                T     T
+x  &#x2265; 0, Ax  =  0,  A  y &#x2264;  0,  and   b y - c x  &#x003E; 0.
+      " class="math-display" ></center>
+      <!--l. 219--><p class="nopar" >
+      It follows from the strict inequality that either <span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y &#x003E; </span>0 and/or <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x &#x003C; </span>0. Hence either <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0,
+      <span 
+class="cmmi-12">Ax </span>= 0 and <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x &#x003C; </span>0 or <span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2264; </span>0 and <span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y &#x003E; </span>0.
+      <!--l. 223--><p class="noindent" >If <span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2264; </span>0 and <span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y &#x003E; </span>0 then (<span 
+class="cmmi-12">P</span>) is infeasible, by Farkas with the standard systems.
+      <!--l. 226--><p class="noindent" >If <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0, <span 
+class="cmmi-12">Ax </span>= 0 and <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x &#x003C; </span>0 then (<span 
+class="cmmi-12">D</span>) is infeasible, by Farkas, with the two
+      systems
+      <center class="math-display" >
+      <img 
+src="hw5sol9x.png" alt="(I )   Ax &#x2265;  0, - Ax &#x2265; 0, x &#x2265; 0, cTx &#x003C; 0
+(II )  AT u - AT v + s = c, u,v,s &#x2265; 0.
+      " class="math-display" ></center>
+      <!--l. 233--><p class="nopar" >
+      </li>
+      <li 
+  class="enumerate" id="x1-7x3">Consider the standard form linear programming problem min<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>: <span 
+class="cmmi-12">Ax </span>= <span 
+class="cmmi-12">b,x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmsy-10x-x-120">}</span>. Assume
+      <span 
+class="cmmi-12">A </span>is an <span 
+class="cmmi-12">m </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>matrix of rank&#x00A0;<span 
+class="cmmi-12">m</span>. Let <span 
+class="cmmi-12">&#x03BC; &#x003E; </span>0 and let <span 
+class="cmmi-12">x </span>be a given strictly feasible
+      solution. Let <span 
+class="cmmi-12">X </span>denote the diagonal matrix with <span 
+class="cmmi-12">X</span><sub><span 
+class="cmmi-8">ii</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> for <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span>. Let <span 
+class="cmmi-12">y</span><sup><span 
+class="cmsy-8">*</span></sup><span 
+class="cmmi-12">,s</span><sup><span 
+class="cmsy-8">*</span></sup>
+      solve the problem min <sub><span 
+class="cmmi-8">y,s</span></sub><span 
+class="cmsy-10x-x-120">{||</span><span 
+class="cmmi-12">Xs </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03BC;e</span><span 
+class="cmsy-10x-x-120">||</span><sup><span 
+class="cmr-8">2</span></sup> : <span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span>+ <span 
+class="cmmi-12">s </span>= <span 
+class="cmmi-12">c</span><span 
+class="cmsy-10x-x-120">}</span>, where <span 
+class="cmmi-12">e </span>denotes the vector
+      of ones. Find <span 
+class="cmmi-12">y</span><sup><span 
+class="cmsy-8">*</span></sup> and&#x00A0;<span 
+class="cmmi-12">s</span><sup><span 
+class="cmsy-8">*</span></sup>. Show that if the optimal value is smaller than <span 
+class="cmmi-12">&#x03BC;</span><sup><span 
+class="cmr-8">2</span></sup> then
+      <span 
+class="cmmi-12">s</span><sup><span 
+class="cmsy-8">*</span></sup> <span 
+class="cmmi-12">&#x003E; </span>0; what can you conclude about the set of optimal primal solutions in this
+      situation?
+      <!--l. 248--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 251--><p class="noindent" >Let 2<span 
+class="cmmi-12">&#x03BB; </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup> be the vector of KKT multipliers for the equality constraints in the quadratic
+      program. Then <span 
+class="cmmi-12">y</span><sup><span 
+class="cmsy-8">*</span></sup>, <span 
+class="cmmi-12">s</span><sup><span 
+class="cmsy-8">*</span></sup>, <span 
+class="cmmi-12">&#x03BB; </span>must satisfy
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="hw5sol10x.png" alt="AT y*  +      s*          =   c
+             2 *
+           X  s  -     &#x03BB;  =   &#x03BC;Xe  =  &#x03BC;x
+                     A &#x03BB;  =   0
+      " class="math-display" ></center>
+      <!--l. 259--><p class="nopar" >
+      Adding together:
+      <center class="math-display" >
+      <img 
+src="hw5sol11x.png" alt="   2
+AX  (first equation) -  A(second equation ) - (third equation)
+      " class="math-display" ></center>
+      <!--l. 263--><p class="nopar" >
+      gives:
+      <center class="math-display" >
+      <img 
+src="hw5sol12x.png" alt="    2  T *        2
+AX   A  y  =  AX   c - &#x03BC;Ax,
+      " class="math-display" ></center>
+      <!--l. 267--><p class="nopar" >
+      so
+      <center class="math-display" >
+      <img 
+src="hw5sol13x.png" alt="  *        2 T  -1     2
+y   = (AX   A  )  (AX   c - &#x03BC;Ax ).
+      " class="math-display" ></center>
+      <!--l. 271--><p class="nopar" >
+      It follows that
+      <center class="math-display" >
+      <img 
+src="hw5sol14x.png" alt=" *          T *          T      2 T -1     2
+s  =  c - A  y  =  c -  A  (AX  A  )   (AX  c -  &#x03BC;AXe  ).
+      " class="math-display" ></center>
+      <!--l. 275--><p class="nopar" >
+      The KKT multipliers are <div class="eqnarray">
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="hw5sol15x.png" alt="         2 *
+&#x03BB;   =  X(  s  -  &#x03BC;x                     )      (                              )
+    =   X2c  -  X2AT  (AX2AT  )- 1AX2c    - &#x03BC;  Xe  -  X2AT  (AX2AT   )-1AXe
+      " class="math-display" ></center>
+      </div>and it is easy to verify that <span 
+class="cmmi-12">A&#x03BB; </span>= 0.
+      <!--l. 286--><p class="noindent" >If the optimal value is smaller than <span 
+class="cmmi-12">&#x03BC;</span><sup><span 
+class="cmr-8">2</span></sup>:
+      <!--l. 288--><p class="noindent" >Objective function is
+      <center class="math-display" >
+      <img 
+src="hw5sol16x.png" alt="                       n&#x2211;
+&#x03BC;2 &#x003E;  ||Xs * - &#x03BC;e ||2 =     (xis*i - &#x03BC; )2
+                       i=1
+      " class="math-display" ></center>
+      <!--l. 291--><p class="nopar" >
+      so we must have <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> <span 
+class="cmmi-12">&#x003E; </span>0 for each component&#x00A0;<span 
+class="cmmi-12">i</span>. Since <span 
+class="cmmi-12">x &#x003E; </span>0, it follows that <span 
+class="cmmi-12">s</span><sup><span 
+class="cmsy-8">*</span></sup> <span 
+class="cmmi-12">&#x003E; </span>0.
+      <!--l. 295--><p class="noindent" >Thus, there exists a strictly feasible dual solution, so the primal problem has a bounded set
+      of optimal solutions.
+      </li>
+      <li 
+  class="enumerate" id="x1-10x4">Consider the LP:
+      <center class="par-math-display" >
+      <img 
+src="hw5sol17x.png" alt="max   17y1   +   y2
+s.t.     y1  +  3y2  &#x2264;   3
+         y1  -   y2  &#x2264;   3
+         y   +   y   &#x2264;   2
+          1       2
+      " class="par-math-display" ></center>
+      <!--l. 316--><p class="nopar" >
+      <!--l. 318--><p class="noindent" >Show that <span 
+class="cmmi-12">y </span>= (1<span 
+class="cmmi-12">,</span><span 
+class="cmsy-10x-x-120">-</span>1) is on the central trajectory for this problem.
+      <!--l. 320--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 323--><p class="noindent" >If we think of this as the dual problem, the vector of dual slacks for the given&#x00A0;<span 
+class="cmmi-12">y </span>is
+      <span 
+class="cmmi-12">s </span>= (5<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">, </span>2). The corresponding primal problem is
+      <center class="math-display" >
+      <img 
+src="hw5sol18x.png" alt="min         3x1  +   3x2  +  2x2
+subject to   x1  +    x2  +   x3   =  17
+            3x1  -    x2  +   x3   =  1
+
+                       x1, x2, x3  &#x2265;  0.
+      " class="math-display" ></center>
+      <!--l. 332--><p class="nopar" >
+      To be on the central path, we need to find a strictly feasible&#x00A0;<span 
+class="cmmi-12">x </span>and a corresponding&#x00A0;<span 
+class="cmmi-12">&#x03BC;</span>
+      satisfying
+      <center class="math-display" >
+      <img 
+src="hw5sol19x.png" alt="5x1 =  x2 =  2x3  = &#x03BC;.
+      " class="math-display" ></center>
+      <!--l. 338--><p class="nopar" >
+      Taking <span 
+class="cmmi-12">x </span>= (2<span 
+class="cmmi-12">, </span>10<span 
+class="cmmi-12">, </span>5) and <span 
+class="cmmi-12">&#x03BC; </span>= 10 works.
+      </li>
+      <li 
+  class="enumerate" id="x1-12x5">What happens if an interior point method is applied to the LP
+      <center class="math-display" >
+      <img 
+src="hw5sol20x.png" alt="                                 2
+min {x2  : x1 &#x2264; x2, x2 &#x2265; 0, x &#x2208; IR }?
+      " class="math-display" ></center>
+      <!--l. 367--><p class="nopar" >
+      What is the set of optimal solutions?
+      <!--l. 370--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 373--><p class="noindent" >The set of optimal solutions is
+      <center class="math-display" >
+      <img 
+src="hw5sol21x.png" alt="  *           2
+X   =  {x &#x2208; IR   : x1 &#x2264; 0, x2 = 0 },
+      " class="math-display" ></center>
+      <!--l. 376--><p class="nopar" >
+      which is unbounded. Hence, <span 
+class="cmmi-12">X</span><sup><span 
+class="cmsy-8">*</span></sup> doesn&#8217;t have an analytic center, so an interior point method
+      will diverge.
+      <!--l. 381--><p class="noindent" >The dual of the given problem is
+      <center class="math-display" >
+      <img 
+src="hw5sol22x.png" alt="max  {0y : - y = 0, y + s = 1, y &#x2265; 0, s  &#x2265; 0}.
+                         2             2
+                                                                                         
+                                                                                         
+      " class="math-display" ></center>
+      <!--l. 384--><p class="nopar" >
+      The constraints force the nonnegative variable <span 
+class="cmmi-12">y </span>to be zero, so the dual does not have a
+      strictly feasible solution. (A similar conclusion is obtained if the primal problem is first put
+      into standard form.)
+      </li>
+      <li 
+  class="enumerate" id="x1-14x6">Pick three problems from the netlib LP test suite, at <a 
+href="http://www.netlib.org/lp" class="url" ><span 
+class="cmtt-12">http://www.netlib.org/lp</span></a> including
+      the problem <span 
+class="cmtt-12">boeing1</span>. Solve each problem using both a simplex algorithm and an
+      interior point algorithm. Do you get the same primal solution with each algorithm?
+      What if you don&#8217;t crossover to get a BFS? (Differences less than 10<sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">8</span></sup> can be
+      ignored.)
+      <!--l. 399--><p class="noindent" >(Most of the problems are also available in AMPL format and MATLAB format and
+      uncompressed MPS format at <a 
+href="http://clas.ufl.edu/users/hager/coap/format.html" class="url" ><span 
+class="cmtt-12">http://clas.ufl.edu/users/hager/coap/format.html</span></a> with
+      an AMPL model file available both at <a 
+href="http://clas.ufl.edu/users/hager/coap/m2a" class="url" ><span 
+class="cmtt-12">http://clas.ufl.edu/users/hager/coap/m2a</span></a> and
+      at <a 
+href="http://www.netlib.org/ampl/models/mps.mod" class="url" ><span 
+class="cmtt-12">http://www.netlib.org/ampl/models/mps.mod</span></a>
+      <!--l. 410--><p class="noindent" >Alternatively, you can run cplex directly, without using ampl, in which case you would read
+      in the MPS file. Useful commands in cplex include <span 
+class="cmtt-12">read</span>, <span 
+class="cmtt-12">optimize</span>, and <span 
+class="cmtt-12">display</span>. You can
+      choose the solver in cplex by issuing the command <span 
+class="cmtt-12">set lpmethod </span>at the prompt. You can
+      change options in the barrier solver (including the use of crossover) with the command <span 
+class="cmtt-12">set</span>
+      <span 
+class="cmtt-12">barrier</span>. You can use these options in ampl with the syntax <span 
+class="cmtt-12">option cplex</span><span 
+class="cmtt-12">_options</span>
+      <span 
+class="cmtt-12">&#8217;...&#8217;;</span>)
+      <!--l. 370--><p class="noindent" ><span
+class="cmbx-12">Solution:</span>
+      <!--l. 373--><p class="noindent" >Here is <a href=boeing.out>output for
+boeing1</a>.
+      </li>
+      <li 
+  class="enumerate" id="x1-16x7"><span 
+class="cmbx-12">Hand in a progress report </span>of your work to date on the course project.
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                         </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                                   </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr 
+class="vspace" style="font-size:5.0pt"><td 
+>&nbsp;</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Tuesday Apr 12: 2&#8211;4pm, Wednesday Apr 13: noon&#8211;2pm.</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;                           Tuesday Apr 19: 2&#8211;<span 
+class="cmbx-12">3pm</span>, <span 
+class="cmbx-12">Thursday Apr 21: 2&#8211;4pm</span>. </td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

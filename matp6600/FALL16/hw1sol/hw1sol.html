@@ -1,0 +1,661 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw1sol.tex"> 
+<meta name="date" content="2016-09-12 09:56:00"> 
+<link rel="stylesheet" type="text/css" href="hw1sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 23--><p class="noindent" >
+<!--l. 25--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6600" ><span 
+class="cmr-12">MATP6600/ISYE6780 Nonlinear Programming</span></a><span 
+class="cmr-12">, Homework 1. Solutions</span>
+</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1">Let <span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmmi-8">i</span></sup><span 
+class="cmmi-10x-x-109">,</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10x-x-109">i </span>= 1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,m </span>be given vectors in <span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup>, let <span 
+class="cmmi-10x-x-109">b</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-10x-x-109">,</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10x-x-109">i </span>= 1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,m </span>be given scalars, and let <span 
+class="cmmi-10x-x-109">d </span>be a given
+     scalar. Define the function
+     <center class="math-display" >
+     <img 
+src="hw1sol0x.png" alt="                         {
+f (z ) := max {0,|z|- d} =   |z|- d   if |z | &#x003E; d
+                              0     if |z | &#x2264; d
+     " class="math-display" ></center>
+     <!--l. 46--><p class="nopar" >
+     for scalars&#x00A0;<span 
+class="cmmi-10x-x-109">z</span>. Show that the nonlinear program
+     <center class="math-display" >
+     <img 
+src="hw1sol1x.png" alt="     &#x2211;m         T
+mxi&#x2208;n&#x211D;n    f (bi - ai x )
+     i=1
+     " class="math-display" ></center>
+     <!--l. 51--><p class="nopar" >
+     is equivalent to a linear programming problem.
+     <!--l. 54--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution: </span><br 
+class="newline" />We introduce variables <span 
+class="cmmi-10x-x-109">y </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">m</span></sup> to represent each of the summands. We let <span 
+class="cmmi-10x-x-109">e </span>denote the vector of
+     ones in&#x00A0;<span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">m</span></sup>. The <span 
+class="cmmi-10x-x-109">i</span>th row of the matrix <span 
+class="cmmi-10x-x-109">A </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">m</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup> is the vector&#x00A0;<span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmmi-8">i</span></sup>, <span 
+class="cmmi-10x-x-109">i </span>= 1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,m</span>. The problem can
+     then be written as the following equivalent linear program
+     <center class="par-math-display" >
+     <img 
+src="hw1sol2x.png" alt="minx,y,z          eTy
+subject to  Ax         +   z  =    b
+                   y  -   z  &#x2265;  - de
+                   y  +   z  &#x2265;  - de
+                   y         &#x2265;    0
+     " class="par-math-display" ></center>
+     <!--l. 70--><p class="nopar" >
+     where <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup> and <span 
+class="cmmi-10x-x-109">y</span>, <span 
+class="cmmi-10x-x-109">z </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">m</span></sup>.
+                                                                                         
+                                                                                         
+     </li>
+     <li 
+  class="enumerate" id="x1-5x2">Let <span 
+class="cmmi-10x-x-109">S </span>be a convex set in <span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">m</span></sup> and let <span 
+class="cmmi-10x-x-109">A </span>be an <span 
+class="cmmi-10x-x-109">m</span><span 
+class="cmsy-10x-x-109">&#x00D7;</span><span 
+class="cmmi-10x-x-109">n </span>matrix. Show that the set <span 
+class="cmmi-10x-x-109">C </span>:= <span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup> : <span 
+class="cmmi-10x-x-109">Ax </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">S</span><span 
+class="cmsy-10x-x-109">} </span>is
+     convex. (Hint: Consider two points <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">1</span></sup> and <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">2</span></sup> in <span 
+class="cmmi-10x-x-109">C</span>. Let <span 
+class="cmmi-10x-x-109">z </span>be a convex combination of <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">1</span></sup> and <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">2</span></sup>.
+     Show that <span 
+class="cmmi-10x-x-109">z </span>is also in <span 
+class="cmmi-10x-x-109">C</span>.)
+     <!--l. 92--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution: </span><br 
+class="newline" />Consider two points <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">1</span></sup> and <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">2</span></sup> in <span 
+class="cmmi-10x-x-109">C</span>. We have <span 
+class="cmmi-10x-x-109">y</span><sup><span 
+class="cmr-8">1</span></sup> := <span 
+class="cmmi-10x-x-109">Ax</span><sup><span 
+class="cmr-8">1</span></sup> <span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">S </span>and <span 
+class="cmmi-10x-x-109">y</span><sup><span 
+class="cmr-8">2</span></sup> := <span 
+class="cmmi-10x-x-109">Ax</span><sup><span 
+class="cmr-8">2</span></sup> <span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">S</span>, from the
+     definition of&#x00A0;<span 
+class="cmmi-10x-x-109">C</span>. Let <span 
+class="cmmi-10x-x-109">z </span>= <span 
+class="cmmi-10x-x-109">&#x03BB;x</span><sup><span 
+class="cmr-8">1</span></sup> + (1 <span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">&#x03BB;</span>)<span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">2</span></sup> for some <span 
+class="cmmi-10x-x-109">&#x03BB; </span><span 
+class="cmsy-10x-x-109">&#x2208; </span>(0<span 
+class="cmmi-10x-x-109">,</span>1). We show that <span 
+class="cmmi-10x-x-109">z </span>is also in
+     <span 
+class="cmmi-10x-x-109">C</span>.
+     <!--l. 99--><p class="noindent" >Note that
+     <center class="math-display" >
+     <img 
+src="hw1sol3x.png" alt="          1          2       1            2     1          2
+Az = A (&#x03BB;x  + (1 - &#x03BB;)x ) = &#x03BB;Ax  + (1- &#x03BB;)Ax   = &#x03BB;y +  (1 - &#x03BB;)y  &#x2208; S
+     " class="math-display" ></center>
+     <!--l. 103--><p class="nopar" >
+     since <span 
+class="cmmi-10x-x-109">S </span>is convex. Hence <span 
+class="cmmi-10x-x-109">z </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">C</span>.
+     </li>
+     <li 
+  class="enumerate" id="x1-7x3">Let <span 
+class="cmmi-10x-x-109">M </span>be a nonempty affine set.
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-9x1">Let <span 
+class="cmmi-10x-x-109">a </span>be a point in <span 
+class="cmmi-10x-x-109">M</span>. Show that the set
+          <center class="math-display" >
+          <img 
+src="hw1sol4x.png" alt="S(a) :=  M - a := {x &#x2208; &#x211D;n : x = y - a for some y &#x2208; M }
+          " class="math-display" ></center>
+          <!--l. 113--><p class="nopar" >
+          is a subspace of&#x00A0;<span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup>. (Hint: An <span 
+class="cmti-10x-x-109">affine combination </span>of points <span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmr-8">1</span></sup><span 
+class="cmmi-10x-x-109">,...,a</span><sup><span 
+class="cmmi-8">k</span></sup> is a point <span 
+class="cmmi-10x-x-109">z </span>= <span 
+class="cmex-10x-x-109">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">i</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmmi-8">k</span></sup><span 
+class="cmmi-10x-x-109">&#x03BB;</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmmi-8">i</span></sup>
+          with <span 
+class="cmex-10x-x-109">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">i</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmmi-8">k</span></sup><span 
+class="cmmi-10x-x-109">&#x03BB;</span><sub><span 
+class="cmmi-8">i</span></sub> = 1. You may assume that a set is affine if and only if every affine combination
+          of points in the set is also in the set.)
+          </li>
+          <li 
+  class="enumerate" id="x1-11x2">Let <span 
+class="cmmi-10x-x-109">a </span>and <span 
+class="cmmi-10x-x-109">b </span>be two points in <span 
+class="cmmi-10x-x-109">M</span>. Show that the two subspaces <span 
+class="cmmi-10x-x-109">S</span>(<span 
+class="cmmi-10x-x-109">a</span>) and <span 
+class="cmmi-10x-x-109">S</span>(<span 
+class="cmmi-10x-x-109">b</span>) are
+          identical.</li></ol>
+     <!--l. 124--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution: </span><br 
+class="newline" />
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-13x1">Let <span 
+class="cmmi-10x-x-109">u,v </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">S</span>(<span 
+class="cmmi-10x-x-109">a</span>). Let <span 
+class="cmmi-10x-x-109">&#x03BB;,&#x03BC; </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span>. To show <span 
+class="cmmi-10x-x-109">S</span>(<span 
+class="cmmi-10x-x-109">a</span>) is a subspace, it suffices to show that
+          <span 
+class="cmmi-10x-x-109">&#x03BB;u </span>+ <span 
+class="cmmi-10x-x-109">&#x03BC;v </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">S</span>(<span 
+class="cmmi-10x-x-109">a</span>). From the definition of <span 
+class="cmmi-10x-x-109">S</span>(<span 
+class="cmmi-10x-x-109">a</span>), there exist two points <span 
+class="cmmi-10x-x-109">w,z </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">M </span>with <span 
+class="cmmi-10x-x-109">u </span>= <span 
+class="cmmi-10x-x-109">w </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">a</span>
+          and <span 
+class="cmmi-10x-x-109">v </span>= <span 
+class="cmmi-10x-x-109">z </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">a</span>. We have
+          <center class="math-display" >
+          <img 
+src="hw1sol5x.png" alt="&#x03BB;u+ &#x03BC;v =  &#x03BB;(w - a)+ &#x03BC;(z - a) = &#x03BB;w + &#x03BC;z + (1- &#x03BB; - &#x03BC;)a - a = g - a
+                                                                                         
+                                                                                         
+          " class="math-display" ></center>
+          <!--l. 135--><p class="nopar" >
+          with <span 
+class="cmmi-10x-x-109">g </span>= <span 
+class="cmmi-10x-x-109">&#x03BB;w </span>+ <span 
+class="cmmi-10x-x-109">&#x03BC;z </span>+ (1 <span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">&#x03BB;</span><span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">&#x03BC;</span>)<span 
+class="cmmi-10x-x-109">a</span>. Note that <span 
+class="cmmi-10x-x-109">g </span>is an affine combination of the three points <span 
+class="cmmi-10x-x-109">w</span>, <span 
+class="cmmi-10x-x-109">z</span>,
+          and <span 
+class="cmmi-10x-x-109">a</span>, which are all in&#x00A0;<span 
+class="cmmi-10x-x-109">M</span>, so <span 
+class="cmmi-10x-x-109">g </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">M</span>. It follows that <span 
+class="cmmi-10x-x-109">&#x03BB;u </span>+ <span 
+class="cmmi-10x-x-109">&#x03BC;v </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">S</span>(<span 
+class="cmmi-10x-x-109">a</span>), so <span 
+class="cmmi-10x-x-109">S</span>(<span 
+class="cmmi-10x-x-109">a</span>) is a
+          subspace.
+          </li>
+          <li 
+  class="enumerate" id="x1-15x2">Let <span 
+class="cmmi-10x-x-109">u </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">S</span>(<span 
+class="cmmi-10x-x-109">a</span>), so <span 
+class="cmmi-10x-x-109">u </span>= <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">a </span>for some <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">M</span>. We show <span 
+class="cmmi-10x-x-109">u </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">S</span>(<span 
+class="cmmi-10x-x-109">b</span>):
+          <center class="math-display" >
+          <img 
+src="hw1sol6x.png" alt="u = x - a = x- a + b- b = y - b
+          " class="math-display" ></center>
+          <!--l. 144--><p class="nopar" >
+          with <span 
+class="cmmi-10x-x-109">y </span>= <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">a </span>+ <span 
+class="cmmi-10x-x-109">b</span>. Since <span 
+class="cmmi-10x-x-109">y </span>is an affine combination of points in&#x00A0;<span 
+class="cmmi-10x-x-109">M</span>, we have <span 
+class="cmmi-10x-x-109">y </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">M</span>, and so
+          <span 
+class="cmmi-10x-x-109">u </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">S</span>(<span 
+class="cmmi-10x-x-109">b</span>).
+          <!--l. 148--><p class="noindent" >Thus, <span 
+class="cmmi-10x-x-109">S</span>(<span 
+class="cmmi-10x-x-109">a</span>) <span 
+class="cmsy-10x-x-109">&#x2286; </span><span 
+class="cmmi-10x-x-109">S</span>(<span 
+class="cmmi-10x-x-109">b</span>). Similarly, <span 
+class="cmmi-10x-x-109">S</span>(<span 
+class="cmmi-10x-x-109">b</span>) <span 
+class="cmsy-10x-x-109">&#x2286; </span><span 
+class="cmmi-10x-x-109">S</span>(<span 
+class="cmmi-10x-x-109">a</span>), so the two sets are equal.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-17x4">Consider the following five points in <span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmr-8">2</span></sup>:
+     <center class="math-display" >
+     <img 
+src="hw1sol7x.png" alt="     (   )       (    )      (     )       (     )       (     )
+x1 =   0   ,x2 =    1   ,x3 =     3   ,x4 =     2   ,x5 =   - 1   .
+       0            1           - 1           - 2            1
+     " class="math-display" ></center>
+     <!--l. 177--><p class="nopar" >
+     Let <span 
+class="cmmi-10x-x-109">x </span>:= <img 
+src="hw1sol8x.png" alt="1
+5"  class="frac" align="middle"> <span 
+class="cmex-10x-x-109">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">i</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmr-8">5</span></sup><span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmmi-8">i</span></sup>. <span 
+class="cmti-10x-x-109">Use the method given in the proof of Carath</span><span 
+class="cmti-10x-x-109">éodory&#8217;s theorem </span>to express <span 
+class="cmmi-10x-x-109">x </span>as a
+     convex combination of three of the points <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">1</span></sup><span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,x</span><sup><span 
+class="cmr-8">5</span></sup>.
+     <!--l. 183--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution: </span><br 
+class="newline" />Initially, <span 
+class="cmmi-10x-x-109">&#x03BB;</span><sub><span 
+class="cmmi-8">i</span></sub> = <img 
+src="hw1sol9x.png" alt="15"  class="frac" align="middle"> for <span 
+class="cmmi-10x-x-109">i </span>= 1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,</span>5. We have <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmmi-8">j</span></sup> <span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">1</span></sup> = <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmmi-8">j</span></sup> for <span 
+class="cmmi-10x-x-109">j </span>= 2<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,</span>5. Taking <span 
+class="cmmi-10x-x-109">&#x03BC;</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmmi-10x-x-109">&#x03BC;</span><sub><span 
+class="cmr-8">3</span></sub> = 0, <span 
+class="cmmi-10x-x-109">&#x03BC;</span><sub><span 
+class="cmr-8">4</span></sub> = 1,
+     <span 
+class="cmmi-10x-x-109">&#x03BC;</span><sub><span 
+class="cmr-8">5</span></sub> = 2 and then <span 
+class="cmmi-10x-x-109">&#x03BC;</span><sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmsy-10x-x-109">-</span>3 gives
+     <center class="math-display" >
+     <img 
+src="hw1sol10x.png" alt=" 5               5
+&#x2211;  &#x03BC; xi = 0,    &#x2211;  &#x03BC;  = 0.
+     i               i
+i=1             i=1
+     " class="math-display" ></center>
+     <!--l. 190--><p class="nopar" >
+     With <span 
+class="cmmi-10x-x-109">&#x03B1; </span>= <img 
+src="hw1sol11x.png" alt="110"  class="frac" align="middle">, we have <span 
+class="cmmi-10x-x-109">&#x03BB;</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">&#x03B1;</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-10x-x-109">&#x03BC;</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-109">&#x2265; </span>0 <span 
+class="cmsy-10x-x-109">&#x2200;</span><span 
+class="cmmi-10x-x-109">i </span>and <span 
+class="cmmi-10x-x-109">&#x03BB;</span><sub><span 
+class="cmr-8">5</span></sub> <span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">&#x03B1;&#x03BC;</span><sub><span 
+class="cmr-8">5</span></sub> = 0. The updated convex combination
+     is
+     <center class="math-display" >
+     <img 
+src="hw1sol12x.png" alt="    1     1     1      1
+x = -x1 + --x2 +--x3 + --x4.
+    2     5     5      10
+                                                                                         
+                                                                                         
+     " class="math-display" ></center>
+     <!--l. 195--><p class="nopar" >
+     Taking <span 
+class="cmmi-10x-x-109">&#x03BC;</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmsy-10x-x-109">-</span>1, <span 
+class="cmmi-10x-x-109">&#x03BC;</span><sub><span 
+class="cmr-8">3</span></sub> = 1, <span 
+class="cmmi-10x-x-109">&#x03BC;</span><sub><span 
+class="cmr-8">4</span></sub> = <span 
+class="cmsy-10x-x-109">-</span>1 and then <span 
+class="cmmi-10x-x-109">&#x03BC;</span><sub><span 
+class="cmr-8">1</span></sub> = 1 gives an appropriate combination of the four
+     remaining vectors. Choosing <span 
+class="cmmi-10x-x-109">&#x03B1; </span>= <img 
+src="hw1sol13x.png" alt="1
+5"  class="frac" align="middle"> gives the convex combination
+     <center class="math-display" >
+     <img 
+src="hw1sol14x.png" alt="    -3- 1  2- 2  -3- 4
+x = 10x  + 5x  + 10 x
+     " class="math-display" ></center>
+     <!--l. 201--><p class="nopar" >
+     which only uses three of the points. As a check, all three expressions give <span 
+class="cmmi-10x-x-109">x </span>= (1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmsy-10x-x-109">-</span><img 
+src="hw1sol15x.png" alt="1
+5"  class="frac" align="middle">)<sup><span 
+class="cmmi-8">T</span> </sup>.
+     <!--l. 205--><p class="noindent" >Note: there are many other possible solutions. For example, we have <div class="eqnarray">
+     <center class="math-display" >
+     <img 
+src="hw1sol16x.png" alt="       2     2      1
+x   =  --x2 +--x4 + -x5
+       52     52     57
+    =  --x3 +---x4 + ---
+       5     15      15
+    =  3-x1 +-1-x2 + 3-x3
+       5     10      10
+    =  2-x1 + 2-x3 + 1x5.
+       5     5      5
+     " class="math-display" ></center>
+     </div>
+     </li>
+     <li 
+  class="enumerate" id="x1-20x5">Let <span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">1</span></sub> and <span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">2</span></sub> be nonempty subsets in <span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup>. Show that conv(<span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-109">&#x2229; </span><span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">2</span></sub>) <span 
+class="cmsy-10x-x-109">&#x2286;</span> conv(<span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">1</span></sub>) <span 
+class="cmsy-10x-x-109">&#x2229;</span> conv(<span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">2</span></sub>)<span 
+class="cmmi-10x-x-109">.</span>
+     Give an example where conv(<span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-109">&#x2229; </span><span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">2</span></sub>)<span 
+class="cmmi-10x-x-109">&#x2260;</span>conv(<span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">1</span></sub>) <span 
+class="cmsy-10x-x-109">&#x2229;</span> conv(<span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">2</span></sub>)<span 
+class="cmmi-10x-x-109">.</span>
+     (Hint: If <span 
+class="cmmi-10x-x-109">x </span>is in conv(<span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-109">&#x2229; </span><span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">2</span></sub>) then it can be represented as a convex combination of points which
+     are in both <span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">1</span></sub> and <span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">2</span></sub>.)
+     <!--l. 261--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution: </span><br 
+class="newline" />For the first result, let <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208;</span> conv(<span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-109">&#x2229; </span><span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">2</span></sub>), so
+     <center class="math-display" >
+     <img 
+src="hw1sol17x.png" alt="     k
+x = &#x2211;   &#x03BB; xi
+         i
+     i=1
+                                                                                         
+                                                                                         
+     " class="math-display" ></center>
+     <!--l. 266--><p class="nopar" >
+     for positive multipliers <span 
+class="cmmi-10x-x-109">&#x03BB;</span><sub><span 
+class="cmmi-8">i</span></sub> satisfying <span 
+class="cmex-10x-x-109">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">i</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmmi-8">n</span></sup><span 
+class="cmmi-10x-x-109">&#x03BB;</span><sub><span 
+class="cmmi-8">i</span></sub> = 1 and points <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmmi-8">i</span></sup> <span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-109">&#x2229; </span><span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">2</span></sub>. Since each <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmmi-8">i</span></sup> <span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">1</span></sub> and
+     <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmmi-8">i</span></sup> <span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">2</span></sub>, we immediately get that <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208;</span> conv(<span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">1</span></sub>) and <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208;</span> conv(<span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">2</span></sub>), so <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208;</span> conv(<span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">1</span></sub>) <span 
+class="cmsy-10x-x-109">&#x2229;</span> conv(<span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">2</span></sub>).
+     <!--l. 273--><p class="noindent" >For the counterexample, it suffices to take <span 
+class="cmmi-10x-x-109">n </span>= 1. Let <span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmsy-10x-x-109">{</span>0<span 
+class="cmmi-10x-x-109">,</span>2<span 
+class="cmsy-10x-x-109">} </span>and <span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmsy-10x-x-109">{</span>1<span 
+class="cmmi-10x-x-109">,</span>3<span 
+class="cmsy-10x-x-109">}</span>. Then
+     conv(<span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-109">&#x2229; </span><span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">2</span></sub>) = conv(<span 
+class="cmsy-10x-x-109">&#x2205;</span>) = <span 
+class="cmsy-10x-x-109">&#x2205;</span>, but conv(<span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">1</span></sub>) <span 
+class="cmsy-10x-x-109">&#x2229;</span> conv(<span 
+class="cmmi-10x-x-109">S</span><sub><span 
+class="cmr-8">2</span></sub>) = [1<span 
+class="cmmi-10x-x-109">,</span>2].
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                    </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915                                                                </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours: Monday 2.0 &#8211; 4.0, Wednesday 11.0 &#8211; 1.0.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

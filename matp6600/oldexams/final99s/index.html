@@ -1,0 +1,418 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Final Exam</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="final99s">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="final99s.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+<a href=..>Nonlinear Programming, MATP6600/DSES6780</a>
+<BR>
+Final Exam, Monday, December 13, 1999.
+
+</DIV>
+
+<P>
+Please do all five problems.
+You must show all work to obtain full credit.
+Results from class or the text may be used if properly stated.
+No books or calculators allowed.
+The exam lasts three hours.
+
+<P>
+In order that I can display grades, please write a 4 digit code
+number on the front of your solution set.
+The grades will be available from the course web page.
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>(15 points)  
+<BR>
+For given differentiable functions <!-- MATH: $f_1,\ldots,f_n : I\!\! R\rightarrow I\!\! R$ -->
+<IMG
+ WIDTH="162" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$f_1,\ldots,f_n : I\!\! R\rightarrow I\!\! R$">,
+consider the optimization problem:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lcrcll}
+\min & f(x) := & \sum_{i=1}^n f_i(x_i) \\
+\mbox{subject to}
+     && \sum_{i=1}^n x_i & = & 1 \\
+&& x_i & \geq & 0 & \mbox{ for all } i=1,\ldots,n
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="490" HEIGHT="76"
+ SRC="img2.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lcrcll}
+\min &amp; f(x) := &amp; \sum_{i=1}^n f_i(x_i)...
+...
+&amp;&amp; x_i &amp; \geq &amp; 0 &amp; \mbox{ for all } i=1,\ldots,n
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Let <!-- MATH: $\bar{x}=(\bar{x}_1,\ldots,\bar{x}_n)$ -->
+<IMG
+ WIDTH="134" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\bar{x}=(\bar{x}_1,\ldots,\bar{x}_n)$">
+be a local minimizer
+for this problem.
+Show that there is a real number <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\alpha$">
+with
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{rcll}
+f'_i(\bar{x}_i) & \geq & \alpha & \mbox{ for all } i=1,\ldots,n  \\
+(f'_i(\bar{x}_i) - \alpha) \bar{x}_i & = & 0 & \mbox{ for all } i=1,\ldots,n,
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="343" HEIGHT="53"
+ SRC="img5.gif"
+ ALT="\begin{displaymath}
+\begin{array}{rcll}
+f'_i(\bar{x}_i) &amp; \geq &amp; \alpha &amp; \mbox{...
+... \bar{x}_i &amp; = &amp; 0 &amp; \mbox{ for all } i=1,\ldots,n,
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <!-- MATH: $f'_i(\bar{x}_i)$ -->
+<IMG
+ WIDTH="50" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$f'_i(\bar{x}_i)$">
+denotes the derivative of <I>f</I><SUB><I>i</I></SUB> evaluated
+at&nbsp;<IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\bar{x}_i$">.
+
+<P>
+
+<DT>2.
+<DD>(20 points)
+In this problem, we consider the unconstrained
+quadratic program <!-- MATH: $\min \frac{1}{2}x^TAx + c^Tx$ -->
+<IMG
+ WIDTH="147" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$\min \frac{1}{2}x^TAx + c^Tx$">,
+where <I>A</I> is a symmetric <I>n</I>  x  <I>n</I> matrix, and <I>c</I> and <I>x</I> are
+<I>n</I>-vectors.
+<DL COMPACT>
+<DT>(a)
+<DD>(5 points)
+Assume <I>A</I> is positive definite. Show that the optimal solution
+is <I>x</I><SUP>*</SUP>=-<I>A</I><SUP>-1</SUP><I>c</I>.
+<DT>(b)
+<DD>(10 points)
+Assume <I>A</I> is positive definite. Show that steepest descent
+with an exact linesearch will find the optimal solution to this
+problem in one step if it is initialized at <!-- MATH: $x^{(0)}=v-A^{-1}c$ -->
+<I>x</I><SUP>(0)</SUP>=<I>v</I>-<I>A</I><SUP>-1</SUP><I>c</I>,
+where <I>v</I> is an eigenvector of&nbsp;<I>A</I>.
+<DT>(c)
+<DD>(5 points)
+Now assume <I>A</I> has a negative eigenvalue. Show that the problem
+has an unbounded optimal value.
+</DL>
+
+<P>
+
+<DT>3.
+<DD>(20 points)
+Consider the constraint <I>x</I><SUB>1</SUB><SUP>2</SUP>+<I>x</I><SUB>2</SUB><SUP>2</SUP>=1.
+Given a point <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.gif"
+ ALT="$\bar{x}$">,
+what is the linearized version of this constraint?
+What do you get for the following choices of <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.gif"
+ ALT="$\bar{x}$">?
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\bar{x}=(1,0), \quad
+\bar{x}=(0,0), \quad
+\bar{x}=(0,-2), \quad
+\bar{x}=(0.01,-0.2).
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="462" HEIGHT="33"
+ SRC="img10.gif"
+ ALT="\begin{displaymath}
+\bar{x}=(1,0), \quad
+\bar{x}=(0,0), \quad
+\bar{x}=(0,-2), \quad
+\bar{x}=(0.01,-0.2).
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+
+<DT>4.
+<DD>(25 points)  
+<BR>
+Consider the convex optimization problem
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{llcrcccl}
+\min & \frac{1}{2}x_1^2 & + & x_2 & - & 9 \ln (x_2)  \\
+\mbox{subject to} & -x_1 & - & 2x_2 & + & 10 & \leq & 0 \\
+& x & \in & \multicolumn{5}{l}{X := \{x \in I\!\! R^2: x_2 \geq 0\}.}
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="375" HEIGHT="76"
+ SRC="img11.gif"
+ ALT="\begin{displaymath}
+\begin{array}{llcrcccl}
+\min &amp; \frac{1}{2}x_1^2 &amp; + &amp; x_2 &amp; ...
+...column{5}{l}{X := \{x \in I\!\! R^2: x_2 \geq 0\}.}
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<DL COMPACT>
+<DT>(a)
+<DD>(5 points)
+Show that the objective function is convex.
+<DT>(b)
+<DD>(4 points)
+Formulate the Lagrangian dual problem
+by incorporating the first constraint in the objective with scalar
+multiplier&nbsp;<I>u</I>.
+<DT>(c)
+<DD>(8 points)
+Compute the value of the dual function and its gradient when <I>u</I>=4.
+(Hint: <IMG
+ WIDTH="92" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.gif"
+ ALT="$\ln(2)=0.7$">,
+<IMG
+ WIDTH="92" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\ln(3)=1.1$">,
+<IMG
+ WIDTH="92" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$\ln(4)=1.4$">,
+<IMG
+ WIDTH="92" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.gif"
+ ALT="$\ln(5)=1.6$">,
+<IMG
+ WIDTH="92" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.gif"
+ ALT="$\ln(6)=1.8$">,
+<IMG
+ WIDTH="92" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.gif"
+ ALT="$\ln(7)=1.9$">,
+<IMG
+ WIDTH="92" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.gif"
+ ALT="$\ln(8)=2.1$">,
+<IMG
+ WIDTH="92" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$\ln(9)=2.2$">,
+and <IMG
+ WIDTH="102" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.gif"
+ ALT="$\ln(10)=2.3$">.)
+<DT>(d)
+<DD>(8 points)
+When <I>u</I>=0, the Lagrangian is minimized by <I>x</I>=(0,3),
+with <!-- MATH: $\theta(0)=-4.4$ -->
+<IMG
+ WIDTH="101" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$\theta(0)=-4.4$">
+and <!-- MATH: $\frac{d\theta}{du}(0)=4$ -->
+<IMG
+ WIDTH="81" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.gif"
+ ALT="$\frac{d\theta}{du}(0)=4$">.
+When <I>u</I>=6 it is minimized by <I>x</I>=(6,12.7), to one decimal place,
+with <!-- MATH: $\theta(6)=-52.6$ -->
+<IMG
+ WIDTH="110" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$\theta(6)=-52.6$">
+and <!-- MATH: $\frac{d\theta}{du}(6)=-21.4$ -->
+<IMG
+ WIDTH="120" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.gif"
+ ALT="$\frac{d\theta}{du}(6)=-21.4$">.
+Use this information to find upper and lower bounds on the optimal
+value of the primal problem.
+</DL>
+
+<P>
+
+<DT>5.
+<DD>(20 points)
+Let <!-- MATH: $f:I\!\! R^n \rightarrow I\!\! R$ -->
+<IMG
+ WIDTH="105" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.gif"
+ ALT="$f:I\!\! R^n \rightarrow I\!\! R$">,
+<!-- MATH: $g: I\!\! R^n \rightarrow I\!\! R^m$ -->
+<IMG
+ WIDTH="116" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.gif"
+ ALT="$g: I\!\! R^n \rightarrow I\!\! R^m$">
+be convex and differentiable on&nbsp;<IMG
+ WIDTH="31" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$I\!\! R^n$">.
+Let <IMG
+ WIDTH="73" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.gif"
+ ALT="$g(\hat{x})&lt;0$">
+for some&nbsp;<IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\hat{x}$">.
+Suppose that <IMG
+ WIDTH="41" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.gif"
+ ALT="$x(\alpha)$">
+is a solution of the penalty function problem
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\min_{x \in I\!\! R^n} f(x) + \frac{\alpha}{2}
+  \parallel g(x)_+ \parallel^2_2
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="202" HEIGHT="42"
+ SRC="img31.gif"
+ ALT="\begin{displaymath}
+\min_{x \in I\!\! R^n} f(x) + \frac{\alpha}{2}
+\parallel g(x)_+ \parallel^2_2
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <!-- MATH: $\parallel . \parallel_2$ -->
+<IMG
+ WIDTH="46" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$\parallel . \parallel_2$">
+denotes the usual Euclidean 2-norm,
+<!-- MATH: $(g(x)_+))_i = \max \{g_i(x),0\}$ -->
+<IMG
+ WIDTH="214" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.gif"
+ ALT="$(g(x)_+))_i = \max \{g_i(x),0\}$">,
+<IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\alpha$">
+is a positive number, and <!-- MATH: $g(x(\alpha)) \not\leq 0$ -->
+<IMG
+ WIDTH="100" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.gif"
+ ALT="$g(x(\alpha)) \not\leq 0$">.
+<DL COMPACT>
+<DT>(a)
+<DD>(5 points)
+Show that <IMG
+ WIDTH="40" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.gif"
+ ALT="$f(\hat{x})$">
+is an upper bound and
+<!-- MATH: $f(x(\alpha)) + \frac{\alpha}{2} 
+  \parallel g(x(\alpha))_+ \parallel^2_2$ -->
+<IMG
+ WIDTH="218" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.gif"
+ ALT="$f(x(\alpha)) + \frac{\alpha}{2}
+\parallel g(x(\alpha))_+ \parallel^2_2$">
+is a lower bound to
+<!-- MATH: $\inf_x \{f(x) | g(x) \leq 0\}$ -->
+<IMG
+ WIDTH="165" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ ALT="$\inf_x \{f(x) \vert g(x) \leq 0\}$">.
+<DT>(b)
+<DD>(15 points)
+Give an <B>upper</B> bound to
+<!-- MATH: $\inf_x \{f(x) | g(x) \leq 0\}$ -->
+<IMG
+ WIDTH="165" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ ALT="$\inf_x \{f(x) \vert g(x) \leq 0\}$">
+which depends on <B>both</B> <IMG
+ WIDTH="41" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.gif"
+ ALT="$x(\alpha)$">
+and <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\hat{x}$">.
+</DL>
+
+<P>
+</DL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2004-12-01</I>
+</ADDRESS>
+</BODY>
+</HTML>

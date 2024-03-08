@@ -1,0 +1,47 @@
+ampl: option solver cplex;
+ampl: model cap_expCVaR.mod; data cap_exp.dat; data cap_expCVaR.dat; solve;
+CPLEX 20.1.0.0: optimal solution; objective 156.6666667
+73 dual simplex iterations (17 in phase I)
+ampl: display x;
+x :=
+r t    2
+r u   12
+r v   12
+t u    0
+t v    0
+;
+
+ampl: option omit_zero_rows 1;
+ampl: display z;
+z :=
+u 2    20
+u 6     7
+u 7     9
+u 10   16
+u 17    4
+u 23    9
+u 25    1
+u 26    1
+u 28   15
+u 30   22
+v 2     6
+v 10    3
+v 14    4
+v 15   12
+v 19   10
+v 20   10
+v 24    1
+v 27    3
+v 28    3
+v 30    6
+;
+
+ampl: display eta;
+eta = 152
+
+ampl: display value;
+value [*] :=
+ 2  56
+30  72
+;
+

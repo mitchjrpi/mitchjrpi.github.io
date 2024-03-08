@@ -1,0 +1,383 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Exam 2, Fall 2005</TITLE>
+<META NAME="description" CONTENT="exam2af05">
+<META NAME="keywords" CONTENT="exam2af05">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="exam2af05.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+
+<P>
+<a href=..>
+<DIV ALIGN="CENTER"><B>Math Models of Operations Research, MATP 4700/ DSES 4770.
+</B></DIV>
+</a>
+<P>
+<DIV ALIGN="CENTER"><B>Second Exam, Friday, November 11, 2005.
+</B></DIV>
+
+<P>
+You may use any result from your notes or a homework that is clearly stated.
+You may use one sheet of handwritten notes, but no other sources.
+The exam consists of five questions, and lasts one hundred and ten minutes.
+
+<P>
+
+<OL>
+<LI>(40 points)
+Consider the linear program:   
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lrcrcrcrcrclr}
+\max & 6x_1 & + & x_2 & + & 21x_3 & - & 54 x_4 & - & 8x_5 \\
+\mbox{s.t.} & 2x_1 &&& + & 5x_3 &&& + & 7x_5 & = & 70 & \qquad (P)\\
+&&& 3x_2 & + & 3x_3 & - & 9x_4 & + & x_5 & = & 1  \\
+\multicolumn{10}{r}{x_1,\ldots,x_5} & \geq & 0
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="539" HEIGHT="99" BORDER="0"
+ SRC="img1.png"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcrcrclr}
+\max &amp; 6x_1 &amp; + &amp; x_2 &amp; + &amp; 21x...
+... \\
+\multicolumn{10}{r}{x_1,\ldots,x_5} &amp; \geq &amp; 0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<OL>
+<LI>(20 points)
+Compute the dual solution corresponding to each of the following basic sets in (P):
+
+<OL>
+<LI><IMG
+ WIDTH="68" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$\{x_1,x_2\}$">
+</LI>
+<LI><IMG
+ WIDTH="68" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$\{x_1,x_3\}$">
+</LI>
+<LI><IMG
+ WIDTH="68" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$\{x_2,x_3\}$">
+</LI>
+<LI><IMG
+ WIDTH="68" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$\{x_4,x_5\}$">
+</LI>
+</OL>
+</LI>
+<LI>The dual of a linear program of the form <!-- MATH
+ $\max\{c^Tx:Ax=b, x\geq 0\}$
+ -->
+<IMG
+ WIDTH="215" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$\max\{c^Tx:Ax=b, x\geq 0\}$">
+is of the form <!-- MATH
+ $\min\{b^Ty : A^Ty \geq c, y \mbox{ free}\}$
+ -->
+<IMG
+ WIDTH="221" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$\min\{b^Ty : A^Ty \geq c, y \mbox{ free}\}$">.
+
+<OL>
+<LI>(6 points) <A NAME="part1bi"></A>Show that exactly two of the dual solutions you calculated in part (a)
+are feasible in the dual problem to&nbsp;<IMG
+ WIDTH="34" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$(P)$">.
+</LI>
+<LI>(7 points) <A NAME="part1bii"></A>Use the information you determined in part&nbsp;<A HREF="#part1bi">1(b)i</A>
+to find the optimal solutions to <IMG
+ WIDTH="34" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$(P)$"> and its dual.
+(You may assume that any basic set not considered in part (a)
+is not optimal.)
+</LI>
+<LI>(7 points)
+In this part, we are going to modify the right hand side of&nbsp;<IMG
+ WIDTH="34" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$(P)$">.
+This does not change the dual constraints,
+so it does not change the dual solution corresponding to a
+particular basis.
+Specifically, let the right hand side of the first constraint be 45
+and that of the second constraint be 27.
+How does your answer to part&nbsp;<A HREF="#part1bii">1(b)ii</A> change?
+(Again, you may assume that any basic set not considered in part (a)
+is not optimal.)
+</LI>
+</OL>
+</LI>
+</OL>
+</LI>
+<LI>(10 points)
+  A linear program in standard form has optimal tableau:
+  <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+M = \begin{array}{|r|rrrrrr|}
+  \multicolumn{1}{c}{} & x_1 & x_2 & x_3 & x_4 & x_5 & \multicolumn{1}{r}{x_6}  \\\hline
+  6 & 0 & 0 & 0 & 3 & 2 & 1 \\\hline
+  \frac{1}{2}& 1 & 0 & 0 & 2 & 4  & 1  \\
+  \frac{1}{2}& 0 & 0 & 1 & -3 & 2 & -1 \\
+  \frac{1}{2}& 0 & 1 & 0 & 1 & -1 & -1 \\\hline
+  \end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="294" HEIGHT="124" BORDER="0"
+ SRC="img9.png"
+ ALT="\begin{displaymath}
+M = \begin{array}{\vert r\vert rrrrrr\vert}
+\multicolumn{1...
+...
+\frac{1}{2}&amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; -1 &amp; -1 \\ \hline
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+An additional constraint is now added:
+ <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+x_4 + x_5 + x_6 \geq \frac{1}{2}.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="142" HEIGHT="45" BORDER="0"
+ SRC="img10.png"
+ ALT="\begin{displaymath}
+x_4 + x_5 + x_6 \geq \frac{1}{2}.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Use the dual simplex algorithm to show that the values of <IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$x_1$">, <IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$x_2$">, and <IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$x_3$">
+are integral in the optimal solution to the modified problem.
+
+<P>
+</LI>
+<LI>(15 points)
+The following digraph represents a partially solved minimum cost flow
+problem with labels on nodes indicating net demand and those on arcs showing unit cost,
+capacity, and current flow.
+
+<P>
+<DIV ALIGN="CENTER">
+<BR>
+<IMG
+ WIDTH="408" HEIGHT="235" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.png"
+ ALT="\begin{picture}(300,200)%(-25,-25)
+\par
+\put(50,100){\circle{20}}
+\put(150,150){...
+...{(1,25,20)}
+\put(190,135){(12,$\infty$,0)}
+\put(190,60){(3,40,10)}
+\end{picture}">
+<BR>
+</DIV>
+
+<P>
+The given feasible solution is not a basic feasible solution.
+Find a basic feasible solution that is at least as good as the given solution.
+
+<P>
+Is your basic feasible solution optimal?
+
+<P>
+</LI>
+<LI>(35 points)
+A transportation problem with three supply nodes and four demand nodes
+has tableau
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{|llll|}
+\hline
+6 & 3^{10} & 1^{20} & 8 \\
+2^{20} & 4 & 4 & 7 \\
+3^{20} & 2^{10} & 3 & 5^{20} \\
+\hline
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="159" HEIGHT="77" BORDER="0"
+ SRC="img15.png"
+ ALT="\begin{displaymath}
+\begin{array}{\vert llll\vert}
+\hline
+6 &amp; 3^{10} &amp; 1^{20} &amp; ...
+...&amp; 4 &amp; 7 \\
+3^{20} &amp; 2^{10} &amp; 3 &amp; 5^{20} \\
+\hline
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The large numbers give the costs of the arcs and the superscripts indicate
+a flow. This flow is a basic feasible solution.
+
+<P>
+
+<OL>
+<LI>(7 points)
+Show that the reduced costs for this basic feasible solution are as follows:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{|llll|}
+\hline
+2 & 0^{10} & 0^{20} & 2 \\
+0^{20} & 3 & 5 & 3 \\
+0^{20} & 0^{10} & 3 & 0^{20} \\
+\hline
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="159" HEIGHT="77" BORDER="0"
+ SRC="img16.png"
+ ALT="\begin{displaymath}
+\begin{array}{\vert llll\vert}
+\hline
+2 &amp; 0^{10} &amp; 0^{20} &amp; ...
+...&amp; 5 &amp; 3 \\
+0^{20} &amp; 0^{10} &amp; 3 &amp; 0^{20} \\
+\hline
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+</LI>
+<LI>(7 points)
+Currently, the cost of the arc from supply node 1 to demand node 4 is
+<IMG
+ WIDTH="61" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$c_{14}=8$">.
+What is the smallest value of <IMG
+ WIDTH="27" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$c_{14}$"> for which the given basic feasible
+solution is optimal?
+</LI>
+<LI>(7 points)
+Now set <IMG
+ WIDTH="61" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$c_{14}=4$">.
+Find the optimal solution.
+(Hint: only one pivot is needed.)
+</LI>
+<LI>For this part, reset <IMG
+ WIDTH="61" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$c_{14}=8$">.
+
+<OL>
+<LI>(7 points)  <A NAME="part4di"></A>Assume the supply at node 2 and the demand at node 3
+are each increased by 5 units.
+<B>Use sensitivity analysis</B> to find the change in the optimal value.
+(You may assume the set of optimal basic variables does not change.)
+</LI>
+<LI>(7 points)
+Now consider increasing the supply at node 2 and the demand at
+node 3 by <IMG
+ WIDTH="11" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="$t$"> units.
+What is the maximum value for <IMG
+ WIDTH="11" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="$t$"> for which the rate you found
+in part <A HREF="#part4di">4(d)i</A> still holds?
+Would you expect the rate to be larger or smaller for larger values of <IMG
+ WIDTH="11" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="$t$">?
+</LI>
+</OL>
+
+<P>
+</LI>
+</OL>
+
+<P>
+</LI>
+</OL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL>
+<LI><A NAME="tex2html3"
+  HREF="node1.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John Mitchell</a>
+<br>
+2008-11-06
+</ADDRESS>
+</BODY>
+</HTML>

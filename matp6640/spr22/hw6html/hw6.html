@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw6.tex"> 
+<meta name="date" content="2022-04-04 12:59:00"> 
+<link rel="stylesheet" type="text/css" href="hw6.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 13--><p class="noindent" >
+<!--l. 15--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12">MATP6640/DSES6770 Linear Programming</span></a><span 
+class="cmr-12">, Homework 6.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 19--><p class="noindent" >
+ Due: 11.59pm on Friday, April 22, 2022 on LMS.<br />
+10% penalty for each day late.</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1">Consider the following linear program with variables <span 
+class="cmmi-10x-x-109">&#x03B7; </span>and <span 
+class="cmmi-10x-x-109">v</span><sub><span 
+class="cmmi-8">s</span></sub><span 
+class="cmmi-10x-x-109">,s </span><span 
+class="cmsy-10x-x-109">&#x2208; </span>1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,S</span>:
+     <center class="math-display" >
+     <img 
+src="hw60x.png" alt="                 &#x2211;
+minv,&#x03B7;     &#x03B7; + 1&#x03B1;-  spsvs
+subject to  &#x03B7;   +    vs  &#x2265;  Q (¯x,&#x03BE;s)  &#x2200;s
+           &#x03B7;  free, vs  &#x2265;  0   &#x2200; s
+     " class="math-display" ></center>
+     <!--l. 47--><p class="nopar" >
+     Note that <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> and <span 
+class="cmmi-10x-x-109">&#x03BE;</span><sup><span 
+class="cmmi-8">s</span></sup><span 
+class="cmmi-10x-x-109">,s </span><span 
+class="cmsy-10x-x-109">&#x2208; </span>1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,S </span>are parameters. Assume the values of <span 
+class="cmmi-10x-x-109">Q</span>(<span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span><span 
+class="cmmi-10x-x-109">,&#x03BE;</span><sup><span 
+class="cmmi-8">s</span></sup>)<span 
+class="cmmi-10x-x-109">,s </span><span 
+class="cmsy-10x-x-109">&#x2208; </span>1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,S</span>,
+     <span 
+class="cmmi-10x-x-109">p</span><sub><span 
+class="cmmi-8">s</span></sub> <span 
+class="cmmi-10x-x-109">&#x003E; </span>0<span 
+class="cmmi-10x-x-109">,s </span><span 
+class="cmsy-10x-x-109">&#x2208; </span>1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,S</span>, and <span 
+class="cmmi-10x-x-109">&#x03B1; &#x003E; </span>0 are given. Also assume <span 
+class="cmmi-10x-x-109">&#x03B1; &#x003C; </span>1 and <span 
+class="cmex-10">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">s</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmmi-8">S</span></sup><span 
+class="cmmi-10x-x-109">p</span><sub><span 
+class="cmmi-8">s</span></sub> = 1.
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-5x1">What is the dual linear program?
+          </li>
+          <li 
+  class="enumerate" id="x1-7x2">Assume <span 
+class="cmmi-10x-x-109">Q</span>(<span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span><span 
+class="cmmi-10x-x-109">,&#x03BE;</span><sup><span 
+class="cmr-8">1</span></sup>) <span 
+class="cmsy-10x-x-109">&#x2265; </span><span 
+class="cmmi-10x-x-109">Q</span>(<span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span><span 
+class="cmmi-10x-x-109">,&#x03BE;</span><sup><span 
+class="cmr-8">2</span></sup>) <span 
+class="cmsy-10x-x-109">&#x2265;</span><span 
+class="cmmi-10x-x-109">&#x2026;</span> <span 
+class="cmsy-10x-x-109">&#x2265; </span><span 
+class="cmmi-10x-x-109">Q</span>(<span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span><span 
+class="cmmi-10x-x-109">,&#x03BE;</span><sup><span 
+class="cmmi-8">S</span></sup>). Use complementary slackness to solve the
+          primal and dual problems.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-9x2">Let (&#x0394;<span 
+class="cmmi-10x-x-109">x,</span>&#x0394;<span 
+class="cmmi-10x-x-109">y,</span>&#x0394;<span 
+class="cmmi-10x-x-109">s</span>) solve
+     <center class="math-display" >
+     <img 
+src="hw61x.png" alt="&#x230A;      T     &#x230B; &#x230A;     &#x230B;   &#x230A;     &#x230B;
+| 0   A   I  | | &#x0394;x  |   |  0  |
+&#x2308; A   0   0  &#x2309; &#x2308; &#x0394;y  &#x2309; = &#x2308; - rb&#x2309; .
+  S   0   X      &#x0394;s         0
+     " class="math-display" ></center>
+     <!--l. 66--><p class="nopar" >
+     Assume <span 
+class="cmmi-10x-x-109">r</span><sub><span 
+class="cmmi-8">b</span></sub><span 
+class="cmmi-10x-x-109">&#x2260;</span>0, <span 
+class="cmmi-10x-x-109">S </span>and <span 
+class="cmmi-10x-x-109">X </span>are positive definite diagonal matrices, and <span 
+class="cmmi-10x-x-109">A </span>is <span 
+class="cmmi-10x-x-109">m</span><span 
+class="cmsy-10x-x-109">&#x00D7;</span><span 
+class="cmmi-10x-x-109">n </span>with rank&#x00A0;<span 
+class="cmmi-10x-x-109">m</span>. Show
+     that &#x0394;<span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmmi-8">T</span> </sup>&#x0394;<span 
+class="cmmi-10x-x-109">s</span><span 
+class="cmmi-10x-x-109">&#x2260;</span>0.
+                                                                                         
+                                                                                         
+     </li>
+     <li 
+  class="enumerate" id="x1-11x3">Let <span 
+class="cmmi-10x-x-109">K </span>be a cone. A function <span 
+class="cmmi-10x-x-109">f </span>: int(<span 
+class="cmmi-10x-x-109">K</span>) <span 
+class="cmsy-10x-x-109">&#x2192; </span><span 
+class="cmmi-10x-x-109">IR </span>is <span 
+class="cmti-10x-x-109">logarithmically homogeneous </span>if there exists a
+     constant &#x0398; such that <span 
+class="cmmi-10x-x-109">f</span>(<span 
+class="cmmi-10x-x-109">tx</span>) = <span 
+class="cmmi-10x-x-109">f</span>(<span 
+class="cmmi-10x-x-109">x</span>) <span 
+class="cmsy-10x-x-109">- </span>&#x0398;ln(<span 
+class="cmmi-10x-x-109">t</span>) for all <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208;</span> int(<span 
+class="cmmi-10x-x-109">K</span>) and <span 
+class="cmmi-10x-x-109">t &#x003E; </span>0. (Here, int(<span 
+class="cmmi-10x-x-109">K</span>) denotes the
+     interior of&#x00A0;<span 
+class="cmmi-10x-x-109">K</span>.) Show the barrier function for the semidefinite cone, namely <span 
+class="cmmi-10x-x-109">f</span>(<span 
+class="cmmi-10x-x-109">X</span>) = <span 
+class="cmsy-10x-x-109">-</span>lndet(<span 
+class="cmmi-10x-x-109">X</span>), is
+     logarithmically homogeneous. What is the value of&#x00A0;&#x0398;?
+     </li>
+     <li 
+  class="enumerate" id="x1-13x4"><a 
+ id="x1-124"></a> Let
+     <center class="math-display" >
+     <img 
+src="hw62x.png" alt="     &#x230A;         &#x230B;         &#x230A;           &#x230B;         &#x230A;          &#x230B;
+       0  0  0             1    0  0              0  0  1         [   ]
+C :=  |&#x2308; 0  0  0 |&#x2309;,  A1 := |&#x2308; 0  - 1  0 |&#x2309; ,  A2 := |&#x2308;  0  0  1 |&#x2309;,  b :=   1
+       0  0  2             0    0  0              1  1  1           3
+     " class="math-display" ></center>
+     <!--l. 122--><p class="nopar" >
+     The primal and dual semidefinite programs are
+     <center class="math-display" >
+     <img 
+src="hw63x.png" alt="                                                        T
+min   trace(CX )                           max   &#x2211;     b y
+s.t.  trace(AiX )  =  bi  i = 1,2    (P)    s.t.     2i=1Aiyi  +  S   =  C     (D)
+              X   &#x227D;  0                                         S   &#x227D;  0
+     " class="math-display" ></center>
+     <!--l. 131--><p class="nopar" >
+     Show that both (<span 
+class="cmmi-10x-x-109">P</span>) and (<span 
+class="cmmi-10x-x-109">D</span>) are feasible, but that the optimal value of (<span 
+class="cmmi-10x-x-109">P</span>) is not achieved.
+     </li>
+     <li 
+  class="enumerate" id="x1-15x5"><a 
+ id="x1-145"></a> Let
+     <center class="math-display" >
+     <img 
+src="hw64x.png" alt="     [      ]         [       ]          [      ]        [   ]
+C :=    0  0  ,  A1 :=   1   0   ,  A2 :=   0  1  ,  b :=    3
+       0  9             0  - 1             1  2            6
+     " class="math-display" ></center>
+     <!--l. 222--><p class="nopar" >
+     The primal and dual semidefinite programs are
+     <center class="math-display" >
+     <img 
+src="hw65x.png" alt="                                                           T
+min   trace(CX )                               max   &#x2211;2    b y
+s.t.  trace(AiX )  =   bi   i = 1,...,2   (P)    s.t.     i=1 Aiyi  +  S   =  C     (D )
+              X   &#x227D;   0                                            S   &#x227D;  0
+     " class="math-display" ></center>
+     <!--l. 231--><p class="nopar" >
+     Show that (<span 
+class="cmmi-10x-x-109">P</span>) has an optimal value of&#x00A0;9. Is (<span 
+class="cmmi-10x-x-109">D</span>) strictly feasible? Show that <span 
+class="cmmi-10x-x-109">y </span>= (<span 
+class="cmsy-10x-x-109">-</span>1<span 
+class="cmmi-10x-x-109">,</span>2) is optimal
+     for&#x00A0;(<span 
+class="cmmi-10x-x-109">D</span>). Show that the optimal <span 
+class="cmmi-10x-x-109">X </span>and <span 
+class="cmmi-10x-x-109">S </span>matrices are simultaneously diagonalizable.
+     </li>
+     <li 
+  class="enumerate" id="x1-17x6">
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-19x1">Formulate the primal problem in Question&#x00A0;<a 
+href="#x1-145">5<!--tex4ht:ref: q.sdp2 --></a> as an equivalent second order cone program, and
+          solve it using CPLEX. <span 
+class="cmti-10x-x-109">Hint: </span>in AMPL, you should be able to enter a constraint of the following
+          form when <span 
+class="cmmi-10x-x-109">x</span>, <span 
+class="cmmi-10x-x-109">y</span>, <span 
+class="cmmi-10x-x-109">z </span>are variables, with <span 
+class="cmmi-10x-x-109">y,z </span><span 
+class="cmsy-10x-x-109">&#x2265; </span>0:
+                                                                                         
+                                                                                         
+          <div class="verbatim" id="verbatim-1">
+          subject&#x00A0;to&#x00A0;soc:&#x00A0;x**2&#x00A0;&#x003C;=&#x00A0;y*z&#x00A0;;
+</div>
+          <!--l. 245--><p class="nopar" >
+          </li>
+          <li 
+  class="enumerate" id="x1-21x2">Formulate the dual problem in Question&#x00A0;<a 
+href="#x1-145">5<!--tex4ht:ref: q.sdp2 --></a> as an equivalent second order cone program, and
+          solve it using CPLEX.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-23x7">
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-25x1">Construct and solve a second order cone relaxation of the primal SDP in Question&#x00A0;<a 
+href="#x1-124">4<!--tex4ht:ref: q.sdp1 --></a>,
+          by requiring all the principal 1 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>1 and 2 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>2 subdeterminants of <span 
+class="cmmi-10x-x-109">X </span>be nonnegative.
+          </li>
+          <li 
+  class="enumerate" id="x1-27x2">Construct and solve a second order cone relaxation of the dual SDP in Question&#x00A0;<a 
+href="#x1-124">4<!--tex4ht:ref: q.sdp1 --></a>, by
+          requiring all the principal 1 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>1 and 2 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>2 subdeterminants of <span 
+class="cmmi-10x-x-109">S </span>be nonnegative.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-29x8">Most semidefinite relaxations of combinatorial optimization problems result in a linear constraint on
+     the trace of the primal matrix&#x00A0;<span 
+class="cmmi-10x-x-109">X</span>. For example, in the relaxation of MaxCut, the diagonal
+     entries are all required to equal one, so the trace must equal the number of nodes. The
+     relaxation of the combinatorial optimization problem gives a primal SDP; assume this primal
+     SDP and its dual are feasible. Show that if the linear constraints of the primal problem
+     imply that any feasible solution must satisfy trace(<span 
+class="cmmi-10x-x-109">X</span>) = <span 
+class="cmmi-10x-x-109">a </span>for some positive constant <span 
+class="cmmi-10x-x-109">a</span>
+     then the feasible region for the dual is unbounded, and strictly feasible dual solutions
+     exist.
+     </li>
+     <li 
+  class="enumerate" id="x1-31x9"><span 
+class="cmbx-10x-x-109">The project: </span>Project presentations will be on Wednesday, May 4, from 3-6pm in Low 3039. Your
+     presentation should be no more than 15 minutes long. Please <span 
+class="cmbx-10x-x-109">bring your presentation on a</span>
+     <span 
+class="cmbx-10x-x-109">memory stick</span>, or something with a usb port. In order to encourage <span 
+class="cmbx-10x-x-109">questions</span>, your grade will
+     not be lowered if you are unable to answer questions from other students, but it may
+     be raised. Moreover, I may give some <span 
+class="cmbx-10x-x-109">bonus points </span>for asking a particularly good
+     question.
+     <!--l. 376--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Handouts: </span>Please prepare <span 
+class="cmbx-10x-x-109">10 copies of your slides</span>, to be handed out before your
+     talk.
+     <!--l. 380--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Reports: </span>Your writeup is due by Tuesday May 3, on LMS. It can go to the same place as this
+     homework. It should describe the problem you worked on, what you did to solve the problem, and
+     the significance of what you did. You should also cite relevant references and state what was novel
+     about your approach. In addition, upload a copy of your slides.
+     <!--l. 388--><p class="noindent" >For group projects, each group member should upload a description of his or her individual
+     contribution. (Plain text or pdf is fine.)
+     </li></ol>
+                                                                                         
+                                                                                         
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                                                         </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                                                                                    </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours: Thursday 11am&#8211;1pm., on webex <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-10x-x-109">https://rensselaer.webex.com/meet/mitchj</span></a></td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

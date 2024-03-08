@@ -1,0 +1,508 @@
+This is pdfTeXk, Version 3.1415926-1.40.9 (Web2C 7.5.7) (format=latex 2008.12.28)  1 DEC 2011 13:49
+entering extended mode
+ %&-line parsing enabled.
+**\makeatletter\def\HCode{\futurelet\HCode\HChar}\def\HChar{\ifx"\HCode\def\HCo
+de"##1"{\Link##1}\expandafter\HCode\else\expandafter\Link\fi}\def\Link#1.a.b.c.
+{\g@addto@macro\@documentclasshook{\RequirePackage[#1,html]{tex4ht}}\let\HCode\
+documentstyle\def\documentstyle{\let\documentstyle\HCode\expandafter\def\csname
+ tex4ht\endcsname{#1,html}\def\HCode####1{\documentstyle[tex4ht,}\@ifnextchar[{
+\HCode}{\documentstyle[tex4ht]}}}\makeatother\HCode .a.b.c.\input  outline
+(./outline.tex (/usr/local/texlive/2008/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
+(/usr/local/texlive/2008/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/tex4ht.sty
+version 2008-08-07-16:03
+Package: tex4ht 
+--------------------------------------
+--- Note --- for _ at preamble, use the command line option `early_'
+--------------------------------------
+--------------------------------------
+--- Note --- for ^ at preamble, use the command line option `early^'
+--------------------------------------
+\tmp:toks=\toks14
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/usepackage.4ht
+version 2008-09-16-11:44
+)
+(/usr/local/texlive/2008/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2009/02/22 v6.78p Hypertext links for LaTeX
+
+(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2007/12/12 v1.6 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode not detected.
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2009/01/23 v0.5 Provides ifxetex conditional
+)
+(/usr/local/texlive/2008/texmf-dist/tex/latex/oberdiek/hycolor.sty
+Package: hycolor 2008/09/08 v1.4 Code for color options of hyperref/bookmark (H
+O)
+
+(/usr/local/texlive/2008/texmf-dist/tex/latex/oberdiek/xcolor-patch.sty
+Package: xcolor-patch 2008/09/08 xcolor patch
+))
+\@linkdim=\dimen103
+\Hy@linkcounter=\count87
+\Hy@pagecounter=\count88
+
+(/usr/local/texlive/2008/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2009/02/22 v6.78p Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2007/12/12 v1.2 Prefix for e-TeX command names (HO)
+
+(/usr/local/texlive/2008/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)
+(/usr/local/texlive/2008/texmf/tex/latex/config/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+(/usr/local/texlive/2008/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2007/10/18 v3.0 Keyval support for LaTeX options (HO)
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 2824.
+Package hyperref Info: Hyper figures OFF on input line 2935.
+Package hyperref Info: Link nesting OFF on input line 2940.
+Package hyperref Info: Hyper index ON on input line 2943.
+Package hyperref Info: Plain pages OFF on input line 2950.
+Package hyperref Info: Backreferencing OFF on input line 2955.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 3145.
+(/usr/local/texlive/2008/texmf-dist/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 3382.
+
+(/usr/local/texlive/2008/texmf-dist/tex/generic/oberdiek/bitset.sty
+Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
+
+(/usr/local/texlive/2008/texmf-dist/tex/generic/oberdiek/intcalc.sty
+Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/oberdiek/bigintcalc.sty
+Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
+
+(/usr/local/texlive/2008/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2007/12/12 v0.3 LuaTeX support for pdfTeX utility functions
+ (HO)
+Package pdftexcmds Info: LuaTeX not detected on input line 139.
+)))
+(/usr/local/texlive/2008/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2007/09/29 v1.3 Key value parser with default handler suppor
+t (HO)
+)
+\Fld@menulength=\count89
+\Field@Width=\dimen104
+\Fld@charsize=\dimen105
+\Field@toks=\toks16
+Package hyperref Info: Hyper figures OFF on input line 4299.
+Package hyperref Info: Link nesting OFF on input line 4304.
+Package hyperref Info: Hyper index ON on input line 4307.
+Package hyperref Info: backreferencing OFF on input line 4314.
+Package hyperref Info: Link coloring ON on input line 4317.
+Package hyperref Info: Link coloring with OCG OFF on input line 4324.
+Package hyperref Info: PDF/A mode OFF on input line 4329.
+
+(/usr/local/texlive/2008/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
+)
+\Hy@abspage=\count90
+
+Hyperref stopped early
+)
+*hyperref using driver htex4ht*
+(/usr/local/texlive/2008/texmf-dist/tex/latex/hyperref/htex4ht.def
+File: htex4ht.def 2009/02/22 v6.78p Hyperref driver for TeX4ht
+
+hyperref tex4ht: tex4ht already loaded
+) (/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/tex4ht.4ht
+version 2008-06-23-09:47
+--------------------------------------
+--- Note --- for additional information, use the command line option `info'
+--------------------------------------
+
+::::::::::::::::::::::::::::::::::::::::::
+ TeX4ht info is available in the log file 
+::::::::::::::::::::::::::::::::::::::::::
+) (/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/tex4ht.sty
+version 2008-08-07-16:03
+
+(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2008/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: dvips.def on input line 130.
+
+(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)
+(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+--- needs --- tex4ht outline ---
+\tmp:cnt=\count91
+\openout15 = `outline.tmp'.
+
+(./outline.tmp)
+\tmp:dim=\skip43
+--------------------------------------
+--- Note --- for XML code, use the command line option `xml' or `xhtml'
+--------------------------------------
+ (./outline.xref)
+\:refout=\write3
+\openout3 = `outline.xref'.
+
+
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2008-09-06-23:50
+--------------------------------------
+--- Note --- to remove the DOCTYPE declaration use the command line option `no-
+DOCTYPE'
+--------------------------------------
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2008-09-06-23:50
+)
+--------------------------------------
+--- Note --- for marking of the base font, use the command line option `fonts+'
+
+--------------------------------------
+--------------------------------------
+--- Note --- for non active _, use the command line option `no_'
+--------------------------------------
+--------------------------------------
+--- Note --- for _ of catcode 13, use the command line option `_13'
+--------------------------------------
+--------------------------------------
+--- Note --- for non active ^, use the command line option `no^'
+--------------------------------------
+--------------------------------------
+--- Note --- for ^ of catcode 13, use the command line option `^13'
+--------------------------------------
+
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2008-09-06-23:50
+--------------------------------------
+--- Note --- for alternative charset, use the command line option `charset=...'
+
+--------------------------------------
+--------------------------------------
+--- Note --- to ignore CSS font decoration, use the `NoFonts' command line opti
+on
+--------------------------------------
+--------------------------------------
+--- Note --- for jpg bitmaps of pictures, use the `jpg' command line option. (C
+haracter bitmaps are controled only by `g' records of tex4ht.env and `-g' switc
+hes of tex4ht.c) 
+--------------------------------------
+--------------------------------------
+--- Note --- for gif bitmaps of pictures, use the `gif' command line option. (C
+haracter bitmaps are controled only by `g' records of tex4ht.env and `-g' switc
+hes of tex4ht.c) 
+--------------------------------------
+--------------------------------------
+--- Note --- for content and toc in 2 frames, use the command line option `fram
+es'
+--------------------------------------
+--------------------------------------
+--- Note --- for content, toc, and footnotes in 3 frames, use the command line 
+option `frames-fn'
+--------------------------------------
+--------------------------------------
+--- Note --- for file extension name xht, use the command line option `xht'
+--------------------------------------
+TeX4ht package options: html
+--------------------------------------
+--- Note --- to ignore CSS code, use the command line option `-css
+--------------------------------------
+--------------------------------------
+--- Note --- for inline CSS code, use the command line option `css-in'
+--------------------------------------
+--------------------------------------
+--- Note --- for pop ups on mouse over, use the command line option `mouseover'
+
+--------------------------------------
+--------------------------------------
+--- Note --- for addressing images in a subdirectory, use the command line opti
+on `imgdir:.../'
+--------------------------------------
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2008-09-06-23:50
+)
+\:tokwrite=\toks17
+\:tokpage=\toks18
+--------------------------------------
+--- Note --- for back links to toc, use the command line option `sections+'
+--------------------------------------
+--------------------------------------
+--- Note --- for linear crosslinks of pages, use the command line option `next'
+
+--------------------------------------
+\openout15 = `outline.4ct'.
+
+\:tocout=\write4
+\openout4 = `outline.4tc'.
+
+
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2008-09-06-23:50
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2008-09-06-23:50
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/latex.4ht
+version 2008-09-16-11:44
+--------------------------------------
+--- Note --- for links into captions, instead of float heads, use the command l
+ine option `refcaption'
+--------------------------------------
+
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2008-09-06-23:50
+--------------------------------------
+--- Note --- For mini tocs immediately aftter the header use the command line o
+ption `minitoc<'
+--------------------------------------
+--------------------------------------
+--- Note --- for enumerated list elements li's with value attributes, use the c
+ommand line option `li-'
+--------------------------------------
+--------------------------------------
+--- Note --- for CSS2 code, use the command line option `css2'
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial tabular, use the command line option `pic-tabular'
+--------------------------------------
+--------------------------------------
+--- Note --- for bitmap fbox'es, use the command line option `pic-fbox'
+--------------------------------------
+--------------------------------------
+--- Note --- for bitmap framebox'es, use the command line option `pic-framebox'
+
+--------------------------------------
+--------------------------------------
+--- Note --- for inline footnotes use command line option `fn-in'
+--------------------------------------
+--------------------------------------
+--- Note --- for tracing of latex font commands, use the command line option `f
+onts'
+--------------------------------------
+--------------------------------------
+--- Note --- for width specifications of tabular p entries, use the `p-width' c
+ommand line option or a configuration similar to \Configure{HColWidth}{\HCode{ 
+style="width:\HColWidth"}}
+--------------------------------------
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2008-09-06-23:50
+--------------------------------------
+--- Note --- for pictorial eqnarray, use the command line option `pic-eqnarray'
+
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial array, use the command line option `pic-array'
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial $...$ environments, use the command line option `pic
+-m' (not recommended!!)
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial $...$ and $$...$$ environments with latex alt, use t
+he command line option `pic-m+' (not safe!!)
+--------------------------------------
+--------------------------------------
+--- Note --- for pictorial array, use the command line option `pic-array'
+--------------------------------------
+))
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/fontmath.4ht
+version 2008-09-16-11:44
+
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2008-09-06-23:50
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2008-09-06-23:50
+))
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/article.4ht
+version 2008-09-16-11:44
+
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2008-09-06-23:50
+--------------------------------------
+--- Note --- for automatic sectioning pagination, use the command line option `
+1', `2', `3', '4', '5', '6', or '7'
+--------------------------------------
+--------------------------------------
+--- Note --- for files named derived from section titles, use the command line 
+option `sec-filename'
+--------------------------------------
+--------------------------------------
+--- Note --- for i-columns index, use the command line option `index=i' (e.g., 
+index=2)
+--------------------------------------
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2008-09-06-23:50
+))
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/hyperref.4ht
+version 2008-09-16-11:44
+
+(/usr/local/texlive/2008/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
+
+(/usr/local/texlive/2008/texmf-dist/tex/latex/oberdiek/refcount.sty
+Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
+)
+\c@section@level=\count92
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/nameref.4ht
+version 2008-09-16-11:44
+
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2008-09-06-23:50
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2008-09-06-23:50
+))
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2008-09-06-23:50
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2008-09-06-23:50
+))
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/pd1enc.4ht
+version 2008-09-16-11:44
+
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2008-09-06-23:50
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2008-09-06-23:50
+))
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/url.4ht
+version 2008-09-16-11:44
+
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2008-09-06-23:50
+--------------------------------------
+--- Note --- for URL encoding within href use the command line option `url-enc'
+
+--------------------------------------
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2008-09-06-23:50
+))
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/color.4ht
+version 2008-09-16-11:44
+
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2008-09-06-23:50
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2008-09-06-23:50
+))
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/dvips.4ht
+version 2008-09-16-11:44
+
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2008-09-06-23:50
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2008-09-06-23:50
+))
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/dvipsnam.4ht
+version 2008-09-16-11:44
+
+(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/dvipsnam.def)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2008-09-06-23:50
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2008-09-06-23:50
+))
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4.4ht
+version 2008-09-06-23:50
+)
+(/usr/local/texlive/2008/texmf-dist/tex/generic/tex4ht/html4-math.4ht
+version 2008-09-06-23:50
+))
+(./outline.aux)
+\openout1 = `outline.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+Package hyperref Info: Link coloring ON on input line 17.
+LaTeX Info: Redefining \ref on input line 17.
+LaTeX Info: Redefining \pageref on input line 17.
+\AtBeginShipoutBox=\box26
+--- file outline.css ---
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 118.
+
+ (/usr/local/texlive/2008/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 118.
+
+[1
+
+]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 215.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 215.
+ [2] [3] (./outline.aux) ) 
+Here is how much of TeX's memory you used:
+ 6975 strings out of 493877
+ 92021 string characters out of 1150590
+ 284730 words of memory out of 3000000
+ 10146 multiletter control sequences out of 10000+50000
+ 5067 words of font info for 19 fonts, out of 3000000 for 5000
+ 714 hyphenation exceptions out of 8191
+ 40i,8n,27p,689b,389s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on outline.dvi (3 pages, 26664 bytes).

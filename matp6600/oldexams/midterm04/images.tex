@@ -1,0 +1,341 @@
+\batchmode
+\documentclass[12pt]{article}
+\makeatletter
+
+
+\usepackage{fullpage}
+
+
+\providecommand{\real}{I\!\!R}  
+
+
+\usepackage[dvips]{color}
+\pagecolor[gray]{.7}
+
+
+
+\makeatletter
+
+\makeatletter
+\count@=\the\catcode`\_ \catcode`\_=8 
+\newenvironment{tex2html_wrap}{}{} \catcode`\_=\count@
+\makeatother
+\let\mathon=$
+\let\mathoff=$
+\ifx\AtBeginDocument\undefined \newcommand{\AtBeginDocument}[1]{}\fi
+\newbox\sizebox
+\setlength{\hoffset}{0pt}\setlength{\voffset}{0pt}
+\addtolength{\textheight}{\footskip}\setlength{\footskip}{0pt}
+\addtolength{\textheight}{\topmargin}\setlength{\topmargin}{0pt}
+\addtolength{\textheight}{\headheight}\setlength{\headheight}{0pt}
+\addtolength{\textheight}{\headsep}\setlength{\headsep}{0pt}
+\setlength{\textwidth}{349pt}
+\newwrite\lthtmlwrite
+\makeatletter
+\let\realnormalsize=\normalsize
+\global\topskip=2sp
+\def\preveqno{}\let\real@float=\@float \let\realend@float=\end@float
+\def\@float{\let\@savefreelist\@freelist\real@float}
+\def\end@float{\realend@float\global\let\@freelist\@savefreelist}
+\let\real@dbflt=\@dbflt \let\end@dblfloat=\end@float
+\let\@largefloatcheck=\relax
+\def\@dbflt{\let\@savefreelist\@freelist\real@dbflt}
+\def\adjustnormalsize{\def\normalsize{\mathsurround=0pt \realnormalsize
+ \parindent=0pt\abovedisplayskip=0pt\belowdisplayskip=0pt}\normalsize}%
+\def\lthtmltypeout#1{{\let\protect\string\immediate\write\lthtmlwrite{#1}}}%
+\newcommand\lthtmlhboxmathA{\adjustnormalsize\setbox\sizebox=\hbox\bgroup}%
+\newcommand\lthtmlvboxmathA{\adjustnormalsize\setbox\sizebox=\vbox\bgroup%
+ \let\ifinner=\iffalse }%
+\newcommand\lthtmlboxmathZ{\@next\next\@currlist{}{\def\next{\voidb@x}}%
+ \expandafter\box\next\egroup}%
+\newcommand\lthtmlmathtype[1]{\def\lthtmlmathenv{#1}}%
+\newcommand\lthtmllogmath{\lthtmltypeout{l2hSize %
+:\lthtmlmathenv:\the\ht\sizebox::\the\dp\sizebox::\the\wd\sizebox.\preveqno}}%
+\newcommand\lthtmlfigureA[1]{\let\@savefreelist\@freelist
+       \lthtmlmathtype{#1}\lthtmlvboxmathA}%
+\newcommand\lthtmlfigureZ{\lthtmlboxmathZ\lthtmllogmath\copy\sizebox
+       \global\let\@freelist\@savefreelist}%
+\newcommand\lthtmldisplayA[1]{\lthtmlmathtype{#1}\lthtmlvboxmathA}%
+\newcommand\lthtmldisplayB[1]{\edef\preveqno{(\theequation)}%
+  \lthtmldisplayA{#1}\let\@eqnnum\relax}%
+\newcommand\lthtmldisplayZ{\lthtmlboxmathZ\lthtmllogmath\lthtmlsetmath}%
+\newcommand\lthtmlinlinemathA[1]{\lthtmlmathtype{#1}\lthtmlhboxmathA  \vrule height1.5ex width0pt }%
+\newcommand\lthtmlinlineA[1]{\lthtmlmathtype{#1}\lthtmlhboxmathA}%
+\newcommand\lthtmlinlineZ{\egroup\expandafter\ifdim\dp\sizebox>0pt %
+  \expandafter\centerinlinemath\fi\lthtmllogmath\lthtmlsetinline}
+\newcommand\lthtmlinlinemathZ{\egroup\expandafter\ifdim\dp\sizebox>0pt %
+  \expandafter\centerinlinemath\fi\lthtmllogmath\lthtmlsetmath}
+\def\lthtmlsetinline{\hbox{\vrule width.1em\vtop{\vbox{%
+  \kern.1em\copy\sizebox}\ifdim\dp\sizebox>0pt\kern.1em\else\kern.3pt\fi
+  \ifdim\hsize>\wd\sizebox \hrule depth1pt\fi}}}
+\def\lthtmlsetmath{\hbox{\vrule width.1em\vtop{\vbox{%
+  \kern.1em\kern0.8 pt\hbox{\hglue.17em\copy\sizebox\hglue0.8 pt}}\kern.3pt%
+  \ifdim\dp\sizebox>0pt\kern.1em\fi \kern0.8 pt%
+  \ifdim\hsize>\wd\sizebox \hrule depth1pt\fi}}}
+\def\centerinlinemath{%\dimen1=\ht\sizebox
+  \dimen1=\ifdim\ht\sizebox<\dp\sizebox \dp\sizebox\else\ht\sizebox\fi
+  \advance\dimen1by.5pt \vrule width0pt height\dimen1 depth\dimen1 
+ \dp\sizebox=\dimen1\ht\sizebox=\dimen1\relax}
+
+\def\lthtmlcheckvsize{\ifdim\ht\sizebox<\vsize\expandafter\vfill
+  \else\expandafter\vss\fi}%
+\makeatletter \tracingstats = 1 
+
+
+\begin{document}
+\pagestyle{empty}\thispagestyle{empty}%
+\lthtmltypeout{latex2htmlLength hsize=\the\hsize}%
+\lthtmltypeout{latex2htmlLength vsize=\the\vsize}%
+\lthtmltypeout{latex2htmlLength hoffset=\the\hoffset}%
+\lthtmltypeout{latex2htmlLength voffset=\the\voffset}%
+\lthtmltypeout{latex2htmlLength topmargin=\the\topmargin}%
+\lthtmltypeout{latex2htmlLength topskip=\the\topskip}%
+\lthtmltypeout{latex2htmlLength headheight=\the\headheight}%
+\lthtmltypeout{latex2htmlLength headsep=\the\headsep}%
+\lthtmltypeout{latex2htmlLength parskip=\the\parskip}%
+\lthtmltypeout{latex2htmlLength oddsidemargin=\the\oddsidemargin}%
+\makeatletter
+\if@twoside\lthtmltypeout{latex2htmlLength evensidemargin=\the\evensidemargin}%
+\else\lthtmltypeout{latex2htmlLength evensidemargin=\the\oddsidemargin}\fi%
+\makeatother
+
+% !!! IMAGES START HERE !!!
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath17}%
+\begin{displaymath}
+   \begin{array}{lccccl}
+   \min & -x_1^2 & - & (x_2-9)^2 \\
+   \mbox{subject to} & 4x_1^2 & + & x_2^2 & \leq & 400.
+   \end{array}
+   \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath25}%
+\begin{displaymath}
+         \begin{array}{lc}
+            \min        &   \frac{1}{2} \parallel c-x {\parallel}^2_2  \\
+            \mbox{s.t.} &    Ax = 0,
+         \end{array}
+      \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline138}%
+$c,x\in{I\!\!R}^n$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline140}%
+$A\in{I\!\!R}^{m{\times}n}$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline156}%
+$\bar{x}:=c-A^T(AA^T)^{-1}Ac$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline158}%
+$\bar{x}$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline162}%
+$K \subseteq I\!\!R^n$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath43}%
+\begin{displaymath}
+   K^+ := \{v \in I\!\!R^n : v^Tx \geq 0 \;\;  \forall x \in K \}.
+   \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath45}%
+\begin{displaymath}
+   \begin{array}{lrcl}
+   \min & c^Tx \\
+   \mbox{subject to} & Ax & = & b  \\
+   & x & \in & K
+   \end{array}
+   \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath51}%
+\begin{displaymath}
+   \theta (u) := \inf\{c^Tx + u^T(b-Ax) : x \in K\}
+   \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline170}%
+$b, u \in I\!\!R^m$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline176}%
+$\theta(u)$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline178}%
+$u \in I\!\!R^m$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath54}%
+\begin{displaymath}
+   \max \; \theta(u) \quad \equiv \quad
+   \begin{array}{lrcl}
+   \max & b^Tu \\\mbox{subject to} & c - A^Tu & \in & K^+.
+   \end{array}
+   \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath60}%
+\begin{displaymath}
+   \begin{array}{lrcrcrcrcl}
+   \min &&&&&&& x_{22} \\
+   \mbox{subject to} & x_{11} & - & x_{12} & - & x_{21} & + & x_{22} & = & 0 \\
+   & x_{11} &&&&&&& = & 1 \\
+   & \multicolumn{7}{r}{x= \left[ \begin{array}{rr} x_{11} & x_{12} \\x_{21} & x_{22}
+   \end{array}  \right]} & \in & K
+   \end{array}
+   \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline188}%
+$x(t) \in I\!\!R^n$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath82}%
+\begin{displaymath}
+   x(t)=Ax(t-1)+bu(t), \quad t=1,\ldots,T
+   \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline196}%
+$b \in I\!\!R^n$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline202}%
+$x(T)=\bar{x}$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath85}%
+\begin{displaymath}
+   f(u(t)) = \left\{ \begin{array}{ll}
+   | u(t) | & \mbox{if } | u(t) |  \leq 1  \\
+   2| u(t) | - 1 & \mbox{if } | u(t) | > 1
+   \end{array}   \right.
+   \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath92}%
+\begin{displaymath}
+   \begin{array}{lrcrr} 
+    \min &   x_1^2 + 4 x_2^2 + 6x_3^2 \\
+    \mbox{subject to} & 3(x_1-4)^2 + 4(x_2+2)^2 + (x_3-5)^2 & \leq & 40 & \quad (NLP)  \\
+    & -x_1  & \leq & -2
+   \end{array}
+   \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline210}%
+$\theta(u)=\min\{L(x,u) : x \in I\!\!R^3\}$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath100}%
+\begin{displaymath}
+   \max_{u \geq 0} \; \theta(u)
+   \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline212}%
+$x(\bar{u})$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline214}%
+$\theta(\bar{u})=L(x(\bar{u}),\bar{u})$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline216}%
+$g(x(\bar{u}))$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline220}%
+$\bar{u}$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath109}%
+\begin{displaymath}
+   \theta(u) \leq \theta(\bar{u}) + g(x(\bar{u}))^T(u-\bar{u})
+   \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline222}%
+$u^1, \ldots, u^p$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath114}%
+\begin{displaymath}
+   \begin{array}{lrcllr}
+   \max_{z,u} & z \\
+   \mbox{subject to} & z & \leq &  \theta(u^i) + g(x(u^i))^T(u-u^i) & i=1,\ldots,p & \quad (DAp) \\
+   & u & \geq & 0
+   \end{array}
+   \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+
+\end{document}

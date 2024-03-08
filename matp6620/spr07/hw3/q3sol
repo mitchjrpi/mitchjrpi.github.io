@@ -1,0 +1,16 @@
+ILOG AMPL 9.100, licensed to "rensselaer-troy, ny".
+AMPL Version 20021038 (SunOS 5.8)
+ampl: model standard.mod;
+ampl: data standard2.dat;
+ampl: solve;
+ILOG CPLEX 9.100, licensed to "rensselaer-troy, ny", options: e m b q 
+CPLEX 9.1.0: optimal solution; objective -16.6
+0 dual simplex iterations (0 in phase I)
+ampl: display x, x.rc;  
+:     x        x.rc        :=
+s1   8.6    0
+s2   0      2.6
+s3   0      1.2
+x1   2.2   -4.44089e-16
+x2   3.6   -4.44089e-16
+;

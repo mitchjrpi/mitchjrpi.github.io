@@ -1,0 +1,39 @@
+set PLANTS;  #  desalination plants
+set CITIES;  #  demand points for water
+
+set NODES := PLANTS union CITIES;
+
+set EDGES within {NODES, NODES};  # any reversible edge is
+                                    # included twice
+
+#
+# parameters
+#
+
+param edgecost{EDGES} >= 0;  # cost to pump 1000 cubic meters of water
+                             # should be about $1 to lift 1000 cubic meters
+                             #    up 10 feet
+
+param demand{CITIES} >= 0;  #  1000s of cubic meters per day
+
+param wellcost{CITIES} >= 0;  # cost per cubic foot pulled from well
+                              # should be high to discourage use
+
+param capacity{PLANTS} >= 0;   # 1000s of cubic meters per day.
+                               # should prob be 100-200
+
+param dischargemax{PLANTS} >= 0;  # 1000s of cubic meters per day
+
+param disposalcost{PLANTS} >= 0;  # per 1000 cubic meters
+
+param  opcost{PLANTS} >= 0;  #  operational costs per 1000 cubic meters
+                             #  of purified water.
+                             #  includes power costs and maintenance costs.
+                             #  should be several hundred dollars
+
+param  renewcapacity{PLANTS} >= 0;  #  amount of supply that can be handled by
+                                    #  renewable energy
+
+param brinegeneration >= 0;  # cubic meters of brine produced for
+                             # each cubic meter of purified water
+

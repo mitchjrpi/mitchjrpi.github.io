@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw1.tex"> 
+<meta name="date" content="2014-01-20 21:21:00"> 
+<link rel="stylesheet" type="text/css" href="hw1.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 21--><p class="noindent" >
+<!--l. 23--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12x-x-120">MATP6640/ISYE6770 Linear Programming</span></a><span 
+class="cmr-12x-x-120">, Homework 1.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 28--><p class="noindent" >
+ Due: Friday, January 31, 2014.</div>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">Let <span 
+class="cmmi-12">Q </span>be a convex polyhedron in <span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup> and let <span 
+class="cmmi-12">F </span>be a nonempty face of&#x00A0;<span 
+class="cmmi-12">Q</span>. Let <span 
+class="cmmi-12">x </span>be
+      a point on the face&#x00A0;<span 
+class="cmmi-12">F</span>. Show that <span 
+class="cmmi-12">x </span>is an extreme point of <span 
+class="cmmi-12">Q </span>if and only if it is an
+      extreme point of&#x00A0;<span 
+class="cmmi-12">F</span>.
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2">Consider the standard form linear programming problem
+      <center class="math-display" >
+      <img 
+src="hw10x.png" alt="min   cTx
+s.t.   Ax   =   b           (P )
+        x  &#x2265;   0.
+      " class="math-display" ></center>
+      <!--l. 103--><p class="nopar" >
+      Here, <span 
+class="cmmi-12">A </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /></span> <span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">m</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup>, the dimensions of <span 
+class="cmmi-12">x</span>, <span 
+class="cmmi-12">c</span>, and <span 
+class="cmmi-12">b </span>are defined appropriately, and 1 <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">m </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">n </span>= 3.
+      The first row of the system <span 
+class="cmmi-12">Ax </span>= <span 
+class="cmmi-12">b </span>is the constraint 4<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> + 3<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> + <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> = 12. Let <span 
+class="cmmi-12">K </span>be the
+      feasible region of&#x00A0;(<span 
+class="cmmi-12">P</span>).
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-7x1">Construct a linear programming problem of the form (<span 
+class="cmmi-12">P</span>) with dim(<span 
+class="cmmi-12">K</span>) <span 
+class="cmmi-12">&#x003E; n </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">m</span>.
+           </li>
+           <li 
+  class="enumerate" id="x1-9x2">Construct a feasible linear programming problem of the form (<span 
+class="cmmi-12">P</span>) with dim(<span 
+class="cmmi-12">K</span>) <span 
+class="cmmi-12">&#x003C;</span>
+           <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">m</span>, <span 
+class="cmmi-12">b &#x003E; </span>0, and rank(<span 
+class="cmmi-12">A</span>) = <span 
+class="cmmi-12">m</span>.
+           </li>
+           <li 
+  class="enumerate" id="x1-11x3">In  part&#x00A0;(b),  the  linear  program  you  defined  has  a  degenerate  basic  feasible
+           solution. What are the bases associated with that bfs?</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-13x3"><a 
+ id="x1-123"></a> Consider the linear programming problem
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="hw11x.png" alt="min    x1  +    x2  +   x3  +   4x4  +  3x5
+
+s.t.   - x1          +   x3  +   3x4  -    x5  =  b1
+       x1  +    x2                   -    x5  =  b2            (P )
+               2x2  +   x3  +   2x4  +    x5  =  b1 + 2b2
+                        xi  &#x2265;    0,        i  =  1,...,5
+      " class="math-display" ></center>
+      <!--l. 155--><p class="nopar" >
+      with two parameters <span 
+class="cmmi-12">b</span><sub><span 
+class="cmr-8">1</span></sub> and <span 
+class="cmmi-12">b</span><sub><span 
+class="cmr-8">2</span></sub>. Assume that for a particular choice of <span 
+class="cmmi-12">b</span><sub><span 
+class="cmr-8">1</span></sub> and&#x00A0;<span 
+class="cmmi-12">b</span><sub><span 
+class="cmr-8">2</span></sub>, the problem
+      (<span 
+class="cmmi-12">P</span>) has an optimal solution <span class="bar-css"><span 
+class="cmmi-12">x</span></span>, where <span class="bar-css"><span 
+class="cmmi-12">x</span></span><sub><span 
+class="cmr-8">1</span></sub>, <span class="bar-css"><span 
+class="cmmi-12">x</span></span><sub><span 
+class="cmr-8">2</span></sub> and <span class="bar-css"><span 
+class="cmmi-12">x</span></span><sub><span 
+class="cmr-8">3</span></sub> are basic.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-15x1">What is the dual to this linear program?
+           </li>
+           <li 
+  class="enumerate" id="x1-17x2">Use complementary slackness to find an optimal solution <span class="bar-css"><span 
+class="cmmi-12">y</span></span> to the dual problem.</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-19x4">Consider again the problem (<span 
+class="cmmi-12">P</span>) in Question&#x00A0;<a 
+href="#x1-123">3<!--tex4ht:ref: qcs --></a>.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-21x1">Looking purely at the optimal dual solution you found above, can you conclude
+           that no optimal primal solution will have <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">4</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0? What about&#x00A0;<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">5</span></sub>?
+           </li>
+           <li 
+  class="enumerate" id="x1-23x2">The optimal dual solution <span class="bar-css"><span 
+class="cmmi-12">y</span></span> is not unique: there are other optimal solutions of the
+           form <span class="bar-css"><span 
+class="cmmi-12">y</span></span> + <span 
+class="cmmi-12">&#x03BB;</span>[<span 
+class="cmsy-10x-x-120">-</span>1<span 
+class="cmmi-12">,</span><span 
+class="cmsy-10x-x-120">-</span>2<span 
+class="cmmi-12">, </span>1]<sup><span 
+class="cmmi-8">T</span> </sup>. What is the largest possible value of&#x00A0;<span 
+class="cmmi-12">&#x03BB;</span>? Do these other
+           optimal solutions imply anything about the values of <span class="bar-css"><span 
+class="cmmi-12">x</span></span><sub><span 
+class="cmr-8">1</span></sub>, <span class="bar-css"><span 
+class="cmmi-12">x</span></span><sub><span 
+class="cmr-8">2</span></sub>  and&#x00A0;<span class="bar-css"><span 
+class="cmmi-12">x</span></span><sub><span 
+class="cmr-8">3</span></sub>? Do they
+           imply anything about the values of <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">4</span></sub> and <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">5</span></sub> in any optimal solution to&#x00A0;(<span 
+class="cmmi-12">P</span>)?</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-25x5">Let <span 
+class="cmmi-12">A </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /></span> <span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">m</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup> and <span 
+class="cmmi-12">c </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /></span> <span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup>. Show that exactly one of the following holds:
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-27x1"><span 
+class="cmsy-10x-x-120">&#x2203;</span><span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /></span> <span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">m</span></sup> s.t. <span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span>= <span 
+class="cmmi-12">c</span>
+           </li>
+           <li 
+  class="enumerate" id="x1-29x2"><span 
+class="cmsy-10x-x-120">&#x2203;</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /></span> <span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup> s.t. <span 
+class="cmmi-12">Ax </span>= 0<span 
+class="cmmi-12">,c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x</span><span 
+class="cmmi-12">&#x2260;</span>0<span 
+class="cmmi-12">.</span></li></ol>
+      <!--l. 215--><p class="noindent" >(Hint: You may assume that, given a matrix <span 
+class="cmmi-12">M </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /></span> <span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">m</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup> and a vector <span 
+class="cmmi-12">p </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /></span> <span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup>, there exist
+      unique <span 
+class="cmmi-12">p</span><span 
+class="cmsy-10x-x-120">&#x2032; </span>and <span 
+class="cmmi-12">p</span><span 
+class="cmsy-10x-x-120">&#x2032;&#x2032;</span> such that <span 
+class="cmmi-12">p </span>= <span 
+class="cmmi-12">p</span><span 
+class="cmsy-10x-x-120">&#x2032; </span>+ <span 
+class="cmmi-12">p</span><span 
+class="cmsy-10x-x-120">&#x2032;&#x2032;</span>, <span 
+class="cmmi-12">Mp</span><span 
+class="cmsy-10x-x-120">&#x2032; </span>= 0, <span 
+class="cmmi-12">p</span><span 
+class="cmsy-10x-x-120">&#x2032;&#x2032;</span> = <span 
+class="cmmi-12">M</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">q </span>for some <span 
+class="cmmi-12">q</span>, and
+      <span 
+class="cmmi-12">p</span><span 
+class="cmsy-10x-x-120">&#x2032;</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">p</span><span 
+class="cmsy-10x-x-120">&#x2032;&#x2032;</span> = 0.)
+      </li></ol>
+                                                                                         
+                                                                                         
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                   </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                              </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Tuesday 2&#8211;4pm; Wednesday 11am&#8211;1pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

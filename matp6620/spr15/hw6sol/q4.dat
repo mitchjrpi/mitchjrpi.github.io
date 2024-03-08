@@ -1,0 +1,42 @@
+set PRODUCTS = x1 x2 x3 x4;
+set RESOURCES = c1 c2 c3;
+
+param price := x1 6 x2 5 x3 5 x4 4;
+
+param: PAIRS: priceP :=
+   x1 x2 2
+   x1 x3 0
+   x1 x4 3
+   x2 x3 4
+   x2 x4 4
+;
+
+param: TRIPLES: priceT :=
+   x1 x2 x4 0
+   x1 x3 x4 0
+   x2 x3 x4 0
+;
+
+param avail := c1 1 c2 6 c3 14;
+
+param use :  x1 x2 x3 x4 :=
+   c1         0  0  0  0
+   c2         0  4  0  0
+   c3         5  4  6  4
+;
+
+param useP :
+           c1 c2 c3 :=
+   x1 x2    0  0  0
+   x1 x3    1  2  0
+   x1 x4    0  0  0
+   x2 x3    0  0  0
+   x2 x4    1  0  0
+;
+
+param useT :
+              c1 c2 c3 :=
+   x1 x2 x4    1  0  0
+   x1 x3 x4    0  5  0
+   x2 x3 x4    0  3  0
+;

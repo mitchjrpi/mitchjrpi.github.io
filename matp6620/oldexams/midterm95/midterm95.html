@@ -1,0 +1,327 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Midterm Exam 1995</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="midterm95">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="midterm95.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  <FONT SIZE="+1">
+  67.612/92.672/66.612 
+<BR>
+  <B><a href=..>Combinatorial Optimization and Integer Programming</a></B> 
+<BR>
+Spring 95</FONT>
+
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER">
+  Midterm Exam, Monday, April 3, 1995.
+
+</DIV>
+
+<P>
+Please do all four problems. Show all work. No books or calculators allowed.
+You may use any result from class, the homeworks, or the texts, except where
+stated.
+You may use one sheet of handwritten notes.
+The exam lasts two hours.
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>(25 points)
+Consider a bipartite graph <I>G</I>=(<I>V</I>,<I>E</I>), where <I>V</I> can be broken into
+    two parts <I>U</I> and <I>W</I>, and every edge in <I>E</I> has one endpoint in <I>U</I>
+    and one in&nbsp;<I>W</I>.
+    (Formally, <IMG
+ WIDTH="100" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$V=U\cup W$">,
+<!-- MATH: $U\cap W =\emptyset$ -->
+<IMG
+ WIDTH="95" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$U\cap W =\emptyset$">,
+and <IMG
+ WIDTH="51" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$e \in E$">
+implies that
+    <I>e</I>=(<I>i</I>,<I>j</I>), where <IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$i\in U$">
+and <IMG
+ WIDTH="56" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$j\in W$">.)
+    Let <!-- MATH: $k=\mid\!U\!\mid$ -->
+<IMG
+ WIDTH="64" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$k=\mid\!U\!\mid$">
+and <!-- MATH: $l=\mid\!W\!\mid$ -->
+<IMG
+ WIDTH="65" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$l=\mid\!W\!\mid$">.
+    Note that we have not assumed 
+that every vertex in <I>U</I> is adjacent to every vertex in&nbsp;<I>W</I>.
+    Because this is a bipartite graph, the maximum cardinality matching
+    problem can be solved by solving its linear programming relaxation
+    <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrclrr}
+        \max & \sum_{(i,j) \in E} x_{ij} \\
+        \mbox{subject to } & \sum_{j:(i,j) \in E} x_{ij}
+                                & \leq & 1, & i=1,...,k & \qquad (P) \\
+                           & \sum_{i:(i,j) \in E} x_{ij}
+                                & \leq & 1, & j=1,...,l \\
+                           & x_{ij} & \geq & 0, & (i,j) \in E
+      \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="442" HEIGHT="100"
+ SRC="img8.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrclrr}
+\max &amp; \sum_{(i,j) \in E} x_{ij} \\ ...
+...j=1,...,l \\
+&amp; x_{ij} &amp; \geq &amp; 0, &amp; (i,j) \in E
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <I>x</I><SUB><I>ij</I></SUB> is one if edge (<I>i</I>,<I>j</I>) is in the matching,
+    and zero otherwise.
+    Every basic feasible solution to both (<I>P</I>) and its dual (<I>D</I>) is integral.
+    <DL COMPACT>
+<DT>(a)
+<DD>(5 points)
+What is the dual (<I>D</I>) to the linear program&nbsp;(<I>P</I>)?
+        (Hint: The dual of a linear program of the form
+        <!-- MATH: $\max\{c^Tx:Ax\leq b,x\geq 0\}$ -->
+<IMG
+ WIDTH="215" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$\max\{c^Tx:Ax\leq b,x\geq 0\}$">
+is <!-- MATH: $\min\{b^Ty:A^Ty\geq c, y\geq 0\}$ -->
+<IMG
+ WIDTH="219" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$\min\{b^Ty:A^Ty\geq c, y\geq 0\}$">.)
+      <DT>(b)
+<DD>(10 points)
+        A <EM>node cover</EM> of <I>G</I> is a subset <I>S</I> of <I>V</I> such that every
+        edge in <I>E</I> is incident to at least one vertex in&nbsp;<I>S</I>.
+        What do the integral solutions to (<I>D</I>) correspond to?
+        What do you conclude from strong duality?
+      <DT>(c)
+<DD>(10 points)
+        What are the complementary slackness conditions for the
+        pair (<I>P</I>) and (<I>D</I>)? Interpret these conditions.
+    </DL>
+  <DT>2.
+<DD>(25 points)
+    An instance of the <EM>Hamiltonian Circuit</EM> problem is given by:
+    <BLOCKQUOTE>
+      Given a graph <I>G</I>=(<I>V</I>,<I>E</I>), does there exist a circuit that visits
+      every vertex in&nbsp;<I>V</I>?
+    
+</BLOCKQUOTE>
+    We saw in class that the Hamiltonian circuit problem is NP-Complete.
+    An instance of the <EM>Hamiltonian Path</EM> problem is given by:
+    <BLOCKQUOTE>
+      Given a graph <I>G</I>=(<I>V</I>,<I>E</I>), does there exist a path that visits
+      every vertex in&nbsp;<I>V</I>?
+    
+</BLOCKQUOTE>
+    Use the fact that the Hamiltonian circuit problem is NP-Complete
+    to show that the Hamiltonian path problem is NP-Complete.
+
+  <DT>3.
+<DD>(25 points)
+    Consider the node packing problem on the graph <I>G</I>=(<I>V</I>,<I>E</I>).
+    This can be written
+    <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcll}
+        \max & \sum_{i\in V} x_i \\
+        \mbox{subject to } & x_i + x_j & \leq & 1, & (i,j) \in E \\
+            & x_i & = & 0 \mbox{ or } 1, & i \in V
+      \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="357" HEIGHT="76"
+ SRC="img11.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcll}
+\max &amp; \sum_{i\in V} x_i \\
+\mbox{s...
+...\in E \\
+&amp; x_i &amp; = &amp; 0 \mbox{ or } 1, &amp; i \in V
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+    <DL COMPACT>
+<DT>(a)
+<DD>(10 points)
+We saw in class that if the vertices <!-- MATH: $v_1,...,v_{2k+1}$ -->
+<I>v</I><SUB>1</SUB>,...,<I>v</I><SUB>2<I>k</I>+1</SUB>
+        (<IMG
+ WIDTH="49" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.gif"
+ ALT="$k\geq 1$">,
+<I>k</I> integer)
+        give a circuit then the <EM>odd hole inequality</EM>
+        <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\sum_{i=1}^{2k+1} x_i \leq k
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="85" HEIGHT="59"
+ SRC="img13.gif"
+ ALT="\begin{displaymath}
+\sum_{i=1}^{2k+1} x_i \leq k
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+is valid for the node packing polytope.
+        What is the Chvatal rank of this inequality?
+      <DT>(b)
+<DD>(15 points)
+        We saw in class that if the vertices <!-- MATH: $v_1,...,v_{2k+1}$ -->
+<I>v</I><SUB>1</SUB>,...,<I>v</I><SUB>2<I>k</I>+1</SUB>
+        (<IMG
+ WIDTH="49" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.gif"
+ ALT="$k\geq 1$">,
+<I>k</I> integer)
+        form a clique then the <EM>clique inequality</EM>
+        <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\sum_{i=1}^{2k+1} x_i \leq 1
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="85" HEIGHT="59"
+ SRC="img14.gif"
+ ALT="\begin{displaymath}
+\sum_{i=1}^{2k+1} x_i \leq 1
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+is a facet of the node packing polytope.
+        What is the Chvatal rank of this inequality when <I>k</I>=1?
+        Show that the Chvatal rank of this inequality is no more than 2 if
+        <I>k</I>=2.
+    </DL>
+  <DT>4.
+<DD>(25 points)
+    Let <I>G</I>=(<I>V</I>,<I>E</I>) be a complete graph on <I>m</I> vertices, and let <I>n</I>=<I>m</I>(<I>m</I>-1)/2 be
+    the number of edges.
+    The set of matchings on <I>G</I> is
+    <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+S=\{x\in\Re^n:\sum_{e\in\delta(v)}x_e \leq 1 \mbox{ for } v=1,...,m
+          \mbox{ and } x_e = 0 \mbox{ or } 1 \mbox{ for } e=1,...,n\},
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="611" HEIGHT="53"
+ SRC="img15.gif"
+ ALT="\begin{displaymath}
+S=\{x\in\Re^n:\sum_{e\in\delta(v)}x_e \leq 1 \mbox{ for } v...
+... \mbox{ and } x_e = 0 \mbox{ or } 1 \mbox{ for } e=1,...,n\},
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <IMG
+ WIDTH="37" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.gif"
+ ALT="$\delta(v)$">
+is the set of vertices adjacent to vertex&nbsp;<I>v</I>.
+    <DL COMPACT>
+<DT>(a)
+<DD>(10 points)
+Show that the dimension of <I>S</I> is&nbsp;<I>n</I>.
+      <DT>(b)
+<DD>(15 points)
+        An odd set constraint has the form
+        <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\sum_{e \in E(U)} x_e \leq (\mid\!U\!\mid-1)/2
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="185" HEIGHT="53"
+ SRC="img17.gif"
+ ALT="\begin{displaymath}
+\sum_{e \in E(U)} x_e \leq (\mid\!U\!\mid-1)/2
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <I>U</I> is a subset of <I>V</I> of odd cardinality
+        and <I>E</I>(<I>U</I>) is the edges in <I>E</I> that have both endpoints in&nbsp;<I>U</I>.
+        We saw in class that this inequality is valid for&nbsp;<I>S</I>.
+        Show that it is a <EM>facet</EM> of&nbsp;<I>S</I> when <!-- MATH: $\mid\!U\!\mid=3$ -->
+<IMG
+ WIDTH="62" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.gif"
+ ALT="$\mid\!U\!\mid=3$">.
+    </DL></DL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2005-12-09</I>
+</ADDRESS>
+</BODY>
+</HTML>

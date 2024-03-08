@@ -1,0 +1,652 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="midterm22sol.tex"> 
+<meta name="date" content="2022-03-18 14:22:00"> 
+<link rel="stylesheet" type="text/css" href="midterm22sol.css"> 
+</head><body 
+>
+<!--l. 38--><p class="noindent" >
+                                                                                         
+
+                                                                                         
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"><col 
+id="TBL-1-2"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td11">&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                                                                          </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-2"  
+class="td11">Name:</td> </tr></table>
+</div>
+<div class="center" 
+>
+<!--l. 45--><p class="noindent" >
+<!--l. 48--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12x-x-120">MATP6640/ISYE6770</span><br />
+<span 
+class="cmbx-12x-x-120">Linear Programming </span><br />
+Spring 2022</a></div>
+<div class="center" 
+>
+<!--l. 51--><p class="noindent" >
+<!--l. 52--><p class="noindent" >Midterm Exam, Friday, March 18, 2022.<br />
+<span 
+class="cmbx-12">Solutions</span></div>
+<!--l. 56--><p class="indent" >   Please do all four problems. Show all work. No books or calculators allowed. You may use any
+result from class, the homeworks, or the texts, except where stated. You may use one sheet of
+handwritten notes. The exam lasts 110 minutes.
+<div class="center" 
+>
+<!--l. 66--><p class="noindent" >
+<div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><colgroup id="TBL-2-2g"><col 
+id="TBL-2-2"><col 
+id="TBL-2-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-1"  
+class="td10"> Q1 &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-1-3"  
+class="td11"> /25</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-1"  
+class="td10"> Q2  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-2-3"  
+class="td11"> /25</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-1"  
+class="td10"> Q3  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-3-3"  
+class="td11"> /30</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-1"  
+class="td10"> Q4  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-4-3"  
+class="td11"> /20</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-1"  
+class="td10">Total&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-5-3"  
+class="td11">/100</td></tr></table>
+</div></div>
+                                                                                         
+
+                                                                                         
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">(25 points) The linear program min<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>: <span 
+class="cmmi-12">Ax </span>= <span 
+class="cmmi-12">b,x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmsy-10x-x-120">} </span>has
+      <center class="math-display" >
+      <img 
+src="midterm22sol0x.png" alt="     &#x230A;                  &#x230B;          &#x230A;     &#x230B;
+         1  3  - 2   1                10
+A =  &#x2308;   2  0    3  - 4 &#x2309;,     b = &#x2308;   2 &#x2309;
+
+       - 1  2    1   4                 5
+      " class="math-display" ></center>
+      <!--l. 108--><p class="nopar" >
+      and the point <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> = (3<span 
+class="cmmi-12">,</span><span style="margin-left:0.3em" class="thinspace"></span>2<span 
+class="cmmi-12">,</span><span style="margin-left:0.3em" class="thinspace"></span>0<span 
+class="cmmi-12">,</span><span style="margin-left:0.3em" class="thinspace"></span>1)<sup><span 
+class="cmmi-8">T</span> </sup> is an optimal solution.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-5x1">(5 points) Show <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> is not a basic feasible solution.
+           </li>
+           <li 
+  class="enumerate" id="x1-7x2">(10 points) Find a nonzero direction <span 
+class="cmmi-12">d </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmr-8">4</span></sup>  satisfying <span 
+class="cmmi-12">Ad </span>= 0 with <span 
+class="cmmi-12">d</span><sub>
+<span 
+class="cmmi-8">j</span></sub>  = 0 if
+           <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub><sup><span 
+class="cmsy-8">*</span></sup> = 0.
+           </li>
+           <li 
+  class="enumerate" id="x1-9x3">(10 points) What can you say about <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">d</span>? Justify your answer.</li></ol>
+      <!--l. 117--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-11x1">Row reduce the 3 columns of <span 
+class="cmmi-12">A </span>used by <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup>:
+           <center class="math-display" >
+           <img 
+src="midterm22sol1x.png" alt="     &#x230A;             &#x230B;     &#x230A;              &#x230B;     &#x230A;          &#x230B;
+         1  3    1          1    3   1           1  3  1
+A =  &#x2308;   2  0  - 4 &#x2309; -&#x2192;  &#x2308;  0  - 6  - 6 &#x2309; -&#x2192;  &#x2308;  0  1  1 &#x2309;
+       - 1  2    4          0    5   5           0  0  0
+           " class="math-display" ></center>
+           <!--l. 139--><p class="nopar" >
+           so the set of columns used by <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> gives a submatrix of&#x00A0;<span 
+class="cmmi-12">A </span>of rank only&#x00A0;2.
+           </li>
+           <li 
+  class="enumerate" id="x1-13x2">We have
+           <center class="math-display" >
+           <img 
+src="midterm22sol2x.png" alt="                      &#x230A;     &#x230B;
+&#x230A;                  &#x230B;      2      &#x230A;    &#x230B;
+     1  3  - 2   1    | - 1 |       0
+&#x2308;    2  0    3  - 4 &#x2309; |&#x2308;   0 |&#x2309;  = &#x2308;  0 &#x2309;
+   - 1  2    1   4                  0
+                          1
+           " class="math-display" ></center>
+           <!--l. 159--><p class="nopar" >
+           so we can take <span 
+class="cmmi-12">d </span>= (2<span 
+class="cmmi-12">,</span><span 
+class="cmsy-10x-x-120">-</span>1<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>1)<sup><span 
+class="cmmi-8">T</span> </sup>.
+           </li>
+           <li 
+  class="enumerate" id="x1-15x3">We must have <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">d </span>= 0, since both <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> + 2<span 
+class="cmmi-12">d </span>and <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">d </span>are feasible, so if <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">d</span><span 
+class="cmmi-12">&#x2260;</span>0 then one
+           of these two feasible points would be better than&#x00A0;<span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup>, contradicting the optimality
+           of&#x00A0;<span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup>.</li></ol>
+                                                                                         
+
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-17x2">(25 points) <a 
+ id="x1-162"></a>
+      <!--l. 185--><p class="noindent" >A primal LP is
+      <center class="math-display" >
+      <img 
+src="midterm22sol3x.png" alt="minf&#x2208;&#x211D;4    15f1  +   25f2  +   13f3  +   14f4
+subject to    f1 +     f2                      =   25
+                                 f3  +     f4  =   20
+
+              f1                               &#x2264;   20
+                       f2                      &#x2264;   15
+              f1           +     f3            &#x2264;   35
+                       f2            +     f4  &#x2264;   25
+                                            f  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 201--><p class="nopar" >
+      The corresponding dual problem is
+      <center class="math-display" >
+      <img 
+src="midterm22sol4x.png" alt="max &#x03C3;&#x2208;&#x211D;2,y&#x2208;&#x211D;6  25&#x03C3;A   +20 &#x03C3;B  - 20w1   - 15w2  - 35w3   - 25w4
+subject to       &#x03C3;A             - w1             - w3           &#x2264;   15
+
+                &#x03C3;A                      - w2             - w4  &#x2264;   25
+                         &#x03C3;B                     - w3           &#x2264;   13
+                         &#x03C3;B                              - w4  &#x2264;   14
+                     &#x03C3; free,                               w   &#x2265;    0
+      " class="math-display" ></center>
+      <!--l. 220--><p class="nopar" >
+      Find optimal solutions to the primal and dual problems.
+      <!--l. 224--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 226--><p class="noindent" >Variable <span 
+class="cmmi-12">f</span><sub><span 
+class="cmr-8">1</span></sub> has far smaller cost than <span 
+class="cmmi-12">f</span><sub><span 
+class="cmr-8">2</span></sub>, so we try to make <span 
+class="cmmi-12">f</span><sub><span 
+class="cmr-8">1</span></sub> as large as possible. Similarly,
+      if we have a choice between <span 
+class="cmmi-12">f</span><sub><span 
+class="cmr-8">3</span></sub> and <span 
+class="cmmi-12">f</span><sub><span 
+class="cmr-8">4</span></sub>, we would pick&#x00A0;<span 
+class="cmmi-12">f</span><sub><span 
+class="cmr-8">3</span></sub>. This gives a primal feasible
+      solution:
+      <center class="math-display" >
+      <img 
+src="midterm22sol5x.png" alt="f1 = 20, f2 = 5,f3 = 15,f4 = 5
+      " class="math-display" ></center>
+                                                                                         
+
+                                                                                         
+      <!--l. 232--><p class="nopar" >
+      with value
+      <center class="math-display" >
+      <img 
+src="midterm22sol6x.png" alt="15 &#x00D7; 20 + 25 &#x00D7; 5 + 13 &#x00D7; 15 + 14 &#x00D7; 5 = 300 +  125 + 195 + 70 = 690.
+      " class="math-display" ></center>
+      <!--l. 237--><p class="nopar" >
+      If we can find a dual feasible solution that satisfies complementary slackness then we have an
+      optimal solution.
+      <!--l. 241--><p class="noindent" >All the primal variables are positive, so we need all four dual constraints to hold at equality.
+      The 2nd and 4th primal inequality constraints are strictly satisfied, so we need <span 
+class="cmmi-12">w</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmmi-12">w</span><sub><span 
+class="cmr-8">4</span></sub> = 0.
+      This implies we need
+      <center class="math-display" >
+      <img 
+src="midterm22sol7x.png" alt="&#x03C3;A  = 25,&#x03C3;B =  14,w3 =  1,w1 = 9,w2 =  w4 = 0.
+      " class="math-display" ></center>
+      <!--l. 248--><p class="nopar" >
+      Since we are primal and dual feasible and we satisfy complementary slackness, we are
+      optimal.
+      <!--l. 252--><p class="noindent" >Check: dual objective function value is
+      <center class="math-display" >
+      <img 
+src="midterm22sol8x.png" alt="25 &#x00D7; 25 + 20 &#x00D7; 14 - 20 &#x00D7; 9 - 35 &#x00D7; 1 =  625 + 280 - 180 - 35 = 690.&#x2713;
+      " class="math-display" ></center>
+      <!--l. 256--><p class="nopar" >
+                                                                                         
+
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-19x3">(30 points; each part is worth 5 points) We have a primal-dual pair of linear programs
+      <center class="math-display" >
+      <img 
+src="midterm22sol9x.png" alt="minx &#x2208;&#x211D;n  cTx                     maxy &#x2208;&#x211D;m,s&#x2208;&#x211D;n   bTy
+s.t.       Ax   =  b  (P )        s.t.            AT y  +   s  =  c  (D )
+
+            x   &#x2265;  0                               y free,  s  &#x2265;  0
+      " class="math-display" ></center>
+      <!--l. 276--><p class="nopar" >
+      where the dual slack variables have been included explicitly. Assume both problems are
+      feasible. We let <span 
+class="cmmi-12">e</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup> denote the <span 
+class="cmmi-12">j</span>th unit vector. We also work with the related
+      primal-dual pair of problems
+      <center class="math-display" >
+      <img 
+src="midterm22sol10x.png" alt="mind &#x2208;&#x211D;n  - eTj d                     maxp &#x2208;&#x211D;m,q&#x2208; &#x211D;n     0
+s.t.        Ad   =   0  (Pj )        s.t.            AT p  +  q  =   - ej (Dj )
+              d  &#x2265;   0                               p free, q  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 295--><p class="nopar" >
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-21x1">Show that problem (<span 
+class="cmmi-12">Pj</span>) is always feasible.
+           </li>
+           <li 
+  class="enumerate" id="x1-23x2">Assume (<span 
+class="cmmi-12">Pj</span>) has an unbounded optimal value. Show <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub>  is unbounded in the
+           feasible region of&#x00A0;(<span 
+class="cmmi-12">P</span>).
+           </li>
+           <li 
+  class="enumerate" id="x1-25x3">Assume (<span 
+class="cmmi-12">Pj</span>) has a finite optimal value. What is that optimal value? Can <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub> be
+           unbounded in the feasible region of&#x00A0;(<span 
+class="cmmi-12">P</span>)? Why or why not?
+           </li>
+           <li 
+  class="enumerate" id="x1-27x4">Assume (<span 
+class="cmmi-12">Dj</span>) is feasible. Can <span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">j</span></sub> be unbounded in the feasible region of&#x00A0;(<span 
+class="cmmi-12">D</span>)? Why
+           or why not?
+           </li>
+           <li 
+  class="enumerate" id="x1-29x5">Assume (<span 
+class="cmmi-12">Dj</span>) is infeasible. Can <span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">j</span></sub> be unbounded in the feasible region of&#x00A0;(<span 
+class="cmmi-12">D</span>)?
+           Why or why not?
+                                                                                         
+
+                                                                                         
+           </li>
+           <li 
+  class="enumerate" id="x1-31x6">Show exactly one of the following two statements is true:
+               <ul class="itemize1">
+               <li class="itemize"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub> is unbounded in the feasible region of&#x00A0;(<span 
+class="cmmi-12">P</span>).
+               </li>
+               <li class="itemize"><span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">j</span></sub> is unbounded in the feasible region of&#x00A0;(<span 
+class="cmmi-12">D</span>).</li></ul>
+           </li></ol>
+      <!--l. 323--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-33x1">Note that <span 
+class="cmmi-12">d </span>= 0 is always feasible in&#x00A0;(<span 
+class="cmmi-12">Pj</span>).
+           </li>
+           <li 
+  class="enumerate" id="x1-35x2">Since (<span 
+class="cmmi-12">Pj</span>) has an unbounded optimal value, there must exist a ray <span class="bar-css"><span 
+class="cmmi-12">d</span></span> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0 with
+           <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">e</span><sub><span 
+class="cmmi-8">j</span></sub><sup><span 
+class="cmmi-8">T</span> </sup><span class="bar-css"><span 
+class="cmmi-12">d</span></span> <span 
+class="cmmi-12">&#x003C; </span>0, <span 
+class="cmmi-12">A</span><span class="bar-css"><span 
+class="cmmi-12">d</span></span> = 0. Let <span class="bar-css"><span 
+class="cmmi-12">x</span></span> be feasible in (<span 
+class="cmmi-12">P</span>). Then <span class="bar-css"><span 
+class="cmmi-12">x</span></span> + <span 
+class="cmmi-12">&#x03B1;</span><span class="bar-css"><span 
+class="cmmi-12">d</span></span> is feasible in (<span 
+class="cmmi-12">P</span>) for
+           all <span 
+class="cmmi-12">&#x03B1; </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0, and we have (<span class="bar-css"><span 
+class="cmmi-12">x</span></span> + <span 
+class="cmmi-12">&#x03B1;</span><span class="bar-css"><span 
+class="cmmi-12">d</span></span>)<sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-120">&#x2192;&#x221E; </span>as <span 
+class="cmmi-12">&#x03B1; </span><span 
+class="cmsy-10x-x-120">&#x2192;&#x221E;</span>.
+           </li>
+           <li 
+  class="enumerate" id="x1-37x3">(<span 
+class="cmmi-12">Pj</span>) is a homogeneous problem, so the only possible finite optimal value is&#x00A0;0.
+           For <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub> to be unbounded in&#x00A0;(<span 
+class="cmmi-12">P</span>), there must exist a direction&#x00A0;<span class="bar-css"><span 
+class="cmmi-12">d</span></span> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0 with <span class="bar-css"><span 
+class="cmmi-12">d</span></span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0,
+           <span 
+class="cmmi-12">A</span><span class="bar-css"><span 
+class="cmmi-12">d</span></span> = 0. But no such <span class="bar-css"><span 
+class="cmmi-12">d</span></span> exists since (<span 
+class="cmmi-12">Pj</span>) has optimal value&#x00A0;0.
+           </li>
+           <li 
+  class="enumerate" id="x1-39x4">Let <span class="bar-css"><span 
+class="cmmi-12">y</span></span><span 
+class="cmmi-12">,</span><span class="bar-css"><span 
+class="cmmi-12">s</span></span> be feasible in&#x00A0;(<span 
+class="cmmi-12">D</span>) and let <span class="bar-css"><span 
+class="cmmi-12">p</span></span><span 
+class="cmmi-12">,</span><span class="bar-css"><span 
+class="cmmi-12">q</span></span> be feasible in&#x00A0;(<span 
+class="cmmi-12">Dj</span>). Then <span 
+class="cmmi-12">y </span>= <span class="bar-css"><span 
+class="cmmi-12">y</span></span> + <span 
+class="cmmi-12">&#x03B1;</span><span class="bar-css"><span 
+class="cmmi-12">p</span></span>,
+           <span 
+class="cmmi-12">s </span>= <span class="bar-css"><span 
+class="cmmi-12">s</span></span> + <span 
+class="cmmi-12">&#x03B1;</span><span class="bar-css"><span 
+class="cmmi-12">q</span></span> + <span 
+class="cmmi-12">&#x03B1;e</span><sub><span 
+class="cmmi-8">j</span></sub> is feasible in&#x00A0;(<span 
+class="cmmi-12">D</span>) for any <span 
+class="cmmi-12">&#x03B1; </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0. Note that <span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-120">&#x2192;&#x221E; </span>as <span 
+class="cmmi-12">&#x03B1; </span><span 
+class="cmsy-10x-x-120">&#x2192;&#x221E;</span>.
+           </li>
+           <li 
+  class="enumerate" id="x1-41x5">For <span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">j</span></sub> to be unbounded, we need to find a direction <img 
+src="midterm22sol11x.png" alt="&#x02C6;p"  class="circ" > <span 
+class="cmmi-12">,</span><img 
+src="midterm22sol12x.png" alt="&#x02C6;q"  class="circ" > with <span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><img 
+src="midterm22sol13x.png" alt="&#x02C6;p"  class="circ" >+ <img 
+src="midterm22sol14x.png" alt="q&#x02C6;"  class="circ" > = 0, <img 
+src="midterm22sol15x.png" alt="&#x02C6;q"  class="circ" ><span 
+class="cmsy-10x-x-120">&#x2265; </span>0,
+           <img 
+src="midterm22sol16x.png" alt="&#x02C6;q"  class="circ" ><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0. We can scale this direction so that <img 
+src="midterm22sol17x.png" alt="&#x02C6;q"  class="circ" > <sub><span 
+class="cmmi-8">j</span></sub>  <span 
+class="cmsy-10x-x-120">&#x2265; </span>1. Then <img 
+src="midterm22sol18x.png" alt="p&#x02C6;"  class="circ" > <span 
+class="cmmi-12">, </span>(<img 
+src="midterm22sol19x.png" alt="&#x02C6;q"  class="circ" ><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">e</span><sub><span 
+class="cmmi-8">j</span></sub>) is feasible
+           in&#x00A0;(<span 
+class="cmmi-12">Dj</span>). If (<span 
+class="cmmi-12">Dj</span>) is infeasible then no such direction exists, so <span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">j</span></sub> must be bounded.
+           </li>
+           <li 
+  class="enumerate" id="x1-43x6">There are 2 possible cases for (<span 
+class="cmmi-12">Pj</span>) since it is always feasible:
+               <ul class="itemize1">
+               <li class="itemize">(<span 
+class="cmmi-12">Pj</span>) has unbounded optimal value, so (<span 
+class="cmmi-12">Dj</span>) is infeasible, so in this case we
+               have <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub> is unbounded and <span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">j</span></sub> is bounded.
+               </li>
+               <li class="itemize">(<span 
+class="cmmi-12">Pj</span>) has zero optimal value, so (<span 
+class="cmmi-12">Dj</span>) is feasible, so in this case we have <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub> is
+               bounded and <span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">j</span></sub> is unbounded.</li></ul>
+           </li></ol>
+                                                                                         
+
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-45x4">(20 points) Consider the semi-infinite linear program
+      <center class="math-display" >
+      <img 
+src="midterm22sol20x.png" alt="maxy &#x2208;&#x211D;2     b1y1 + b2y2
+subject to  w  y +  w y   &#x2264;   1    for all w &#x2208; Q  &#x2286; &#x211D;2       (SILP  )
+             1 1    2 2
+                  y1,y2      free
+      " class="math-display" ></center>
+      <!--l. 376--><p class="nopar" >
+      where we have a constraint for each <span 
+class="cmmi-12">w </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">Q</span>, and we define
+      <center class="math-display" >
+      <img 
+src="midterm22sol21x.png" alt="     (                       w  + 3w  &#x2264;  9   )
+     {        2                1     2       }
+Q =  (  w &#x2208;  &#x211D; ,w  free  :     w1 + w2 &#x2264; 5    )  .
+                           - 3 &#x2264; w1 - w2 &#x2264; 5
+      " class="math-display" ></center>
+      <!--l. 387--><p class="nopar" >
+      Derive an equivalent linear program to (<span 
+class="cmmi-12">SILP</span>) with the same variables <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub>, <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub> and with a
+      finite number of constraints.
+      <!--l. 391--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 393--><p class="noindent" >We can sketch <span 
+class="cmmi-12">Q</span>:
+      <div class="center" 
+>
+<img src=q4a.png>
+</div>
+                                                                                         
+
+                                                                                         
+      <!--l. 433--><p class="noindent" >Any point in <span 
+class="cmmi-12">Q </span>can be represented as a convex combination of the extreme points plus a
+      nonnegative multiple of the ray:
+      <center class="math-display" >
+      <img 
+src="midterm22sol22x.png" alt="[     ]      [   ]      [   ]      [    ]     [     ]
+  w1           0          3          5          - 1
+  w     = &#x03BB;1   3   +  &#x03BB;2  2   +  &#x03BB;3  0    + &#x03BC;   - 1  ,
+    2
+      " class="math-display" ></center>
+      <!--l. 445--><p class="nopar" >
+      with <span 
+class="cmmi-12">&#x03BB;</span><sub><span 
+class="cmr-8">1</span></sub> + <span 
+class="cmmi-12">&#x03BB;</span><sub><span 
+class="cmr-8">2</span></sub> + <span 
+class="cmmi-12">&#x03BB;</span><sub><span 
+class="cmr-8">3</span></sub> = 1<span 
+class="cmmi-12">,</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">&#x03BB;</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0 for <span 
+class="cmmi-12">j </span>= 1<span 
+class="cmmi-12">, </span>2<span 
+class="cmmi-12">, </span>3<span 
+class="cmmi-12">,</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">&#x03BC; </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmmi-12">.</span>
+      <!--l. 449--><p class="noindent" >So (<span 
+class="cmmi-12">SILP</span>) is equivalent to the LP with 4 constraints:
+      <center class="math-display" >
+      <img 
+src="midterm22sol23x.png" alt="maxy &#x2208;&#x211D;2    b1y1  +    b2y2
+subject to             3y2  &#x2264;   1
+            3y1  +     2y2  &#x2264;   1         (LP  )
+
+            5y1             &#x2264;   1
+            - y1 -      y2  &#x2264;   0
+                     y1,y2      free
+      " class="math-display" ></center>
+      <!--l. 459--><p class="nopar" >
+                                                                                         
+
+                                                                                         
+      <!--l. 465--><p class="noindent" >The feasible region for this LP is as follows:
+      <div class="center" 
+>
+<img src=q4b.png>
+</div>
+      <!--l. 505--><p class="noindent" >Note that we have
+      <center class="math-display" >
+      <img 
+src="midterm22sol25x.png" alt=" T
+w  y = 3y2&#x03BB;1 + (3y1 + 2y2)&#x03BB;2 + 5y1&#x03BB;3 + (- y1 - y2)&#x03BC; &#x2264; 1   if y feasible in (LP ).
+      " class="math-display" ></center>
+      <!--l. 509--><p class="nopar" >
+      So if <span 
+class="cmmi-12">y </span>is feasible in (<span 
+class="cmmi-12">LP</span>) then it is feasible in (<span 
+class="cmmi-12">SILP</span>).
+      <!--l. 512--><p class="noindent" >Conversely, if <span 
+class="cmmi-12">y </span>is not feasible in (<span 
+class="cmmi-12">LP</span>) then either <span 
+class="cmmi-12">w</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y &#x003E; </span>1 for one of the extreme points
+      of&#x00A0;<span 
+class="cmmi-12">Q</span>, or <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> + <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmmi-12">&#x003C; </span>0, which implies <span 
+class="cmmi-12">w</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y &#x003E; </span>1 for <span 
+class="cmmi-12">w </span>= <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">t</span>(1<span 
+class="cmmi-12">, </span>1)<sup><span 
+class="cmmi-8">T</span> </sup> <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">Q </span>for large enough&#x00A0;<span 
+class="cmmi-12">t</span>. So <span 
+class="cmmi-12">y </span>is
+      not feasible in&#x00A0;(<span 
+class="cmmi-12">SILP</span>).
+      <!--l. 518--><p class="noindent" >Thus the two problems are equivalent.</li></ol>
+    
+</body></html> 
+
+                                                                                         
+
+

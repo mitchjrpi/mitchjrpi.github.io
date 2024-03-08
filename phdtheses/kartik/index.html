@@ -1,0 +1,124 @@
+<TITLE>LP Approaches to SDP</TITLE>
+
+<H1>Linear Programming Approaches to Semidefinite Programming
+Problems</H1>
+
+<H2><a href=http://www.caam.rice.edu/~kartik>Kartik Krishnan
+Sivaramakrishnan</a></H2>
+
+<H3>PhD Thesis, August 2002</H3>
+
+<H4><a href=http://www.math.rpi.edu>Mathematical Sciences</a></H4>
+<H4><a href=http://www.rpi.edu>Rensselaer Polytechnic Institute</a></H4>
+<H4>Advisor: <a href=../..>John Mitchell</a></H4>
+
+
+<B>Download the thesis</B>,
+<A HREF=http://eaton.math.rpi.edu/faculty/Mitchell/phdtheses/kartik/rpithes.ps>postscript</A> or <A HREF=rpithes.pdf>pdf</A>
+or <a href=rpithes.ps.gz>gzipped postscript</a>.
+
+<H4>Abstract:</H4>
+
+Semidefinite Programming (SDP) has been one of the most exciting
+and active areas in optimization lately. This tremendous activity was spurred by
+ the discovery of
+efficient interior point algorithms for solving SDP problems, and important appl
+ications of the
+SDP in developing approximation algorithms for various combinatorial optimizatio
+n problems.
+However these applications require effective techniques, to solve SDP's arising
+as relaxations of these problems.
+Although interior point methods are a great theoretical tool, and offer polynomi
+al time complexity,
+they are fairly limited in the size of problems they can handle. The thesis inve
+stigates
+linear programming approaches to solving SDP's. This potentially allows one to s
+olve large problems
+approximately and quickly, using state of the art linear solvers. The LP approac
+h is also incorporated
+in a branch and cut approach to solving integer programming problems.
+
+<P>
+
+One of the various characterizations of the positive semidefiniteness constraint
+ leads to a semi-infinite
+LP formulation for the SDP. We formulate the dual SDP as a semi-infinite LP, and
+ discuss the issue of its
+discretization in detail. Using the notions of nondegeneracy and basic feasible
+solutions developed in the
+context of semi-infinite linear programming, we recover a theorem due to Pataki
+on the rank of extreme
+matrices in SDP, which in turn implies that not more than $O(\sqrt{k})$ ($k$ is
+the number of constraints
+in the SDP) constraints are
+required in the LP relaxations. To generate these constraints we use the spectra
+l bundle approach due to
+Helmberg and Rendl. This scheme recasts any SDP with a bounded feasible set as a
+n eigenvalue optimization
+problem. These are convex but nonsmooth problems that can be tacked by bundle me
+thods for nondifferentiable
+optimization. The LP approach provides an upper bound, and can also
+be utilized to generate a primal feasible matrix $X$ for the spectral bundle app
+roach. We demonstrate
+the efficiency of the approach on two combinatorial optimization problems namely
+ maxcut and minbisection.
+
+<P>
+
+The semi-infinite LP formulation of the SDP, together with its polynomial time s
+eparation oracle
+leads naturally to a cutting plane LP approach for the SDP. We investigate such
+an approach.
+However to make the resulting method competitive with interior point methods for
+ the SDP, several refinements
+are necessary. In particular the cutting
+plane method requires solving the LP relaxations approximately using an interior
+ point method, since
+this results in better cutting planes. We experiment with various separation ora
+cles generating
+deep cuts, and techniques to restart the LP relaxations with strictly feasible s
+tarting points.
+We also relate these cutting planes to the geometry of the SDP cone. We then tes
+t the approach on
+the maxcut SDP.
+
+<P>
+
+Finally we incorporate the cutting plane LP approach to the SDP in an SDP approa
+ch for
+the maxcut problem. In particular, we formulate the dual of the well known SDP r
+elaxation for
+maxcut as a semi-infinite LP, and solve it using an interior point cutting plane
+ scheme. We then
+add cutting planes, which are facets of the maxcut polytope, to the primal probl
+em in order to
+tighten the SDP relaxations. The approach resembles a SDP cutting plane scheme f
+or the maxcut
+problem; in reality it uses an LP subroutine to solving the SDP within an overal
+l
+LP cutting plane approach for integer programming. This overcomes another shortc
+oming of an SDP cutting plane
+scheme, where there is no convincing warm start strategy, that allows one to qui
+ckly reoptimize a slightly
+perturbed version of the original SDP, after the addition of cutting planes.
+We present computational results on a variety of maxcut problems.
+
+<P>
+
+<a href=http://opac.lib.rpi.edu/search/asivaramakrishnan+kartik>Library
+listing</a>.
+
+<p>
+
+<B>Download the thesis</B>,
+<A HREF=http://eaton.math.rpi.edu/faculty/Mitchell/phdtheses/kartik/rpithes.ps>postscript</A> or <A HREF=rpithes.pdf>pdf</A>
+or <a href=rpithes.ps.gz>gzipped postscript</a>.
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-924637-1";
+_udn ="rpi.edu";
+urchinTracker();
+</script>
+

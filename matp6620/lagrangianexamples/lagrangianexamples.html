@@ -1,0 +1,1031 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="lagrangianexamples.tex"> 
+<meta name="date" content="2015-04-21 21:01:00"> 
+<link rel="stylesheet" type="text/css" href="lagrangianexamples.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 115--><p class="noindent" >
+<!--l. 116--><p class="noindent" ><span 
+class="cmbx-12x-x-172">Two Examples of</span><br />
+<span 
+class="cmbx-12x-x-172">Lagrangian Relaxation of Integer Programs</span><br />
+<a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a></div>
+<div>This is based on material in Chapter 4 of
+<span class="cite">[<a 
+href="#Xgonzalezbrevis2013">1</a>]</span>.</div>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Vehicle Routing Problems with Time Windows</h3>
+<!--l. 122--><p class="noindent" ><span 
+class="cmbx-12">Customers: </span><span 
+class="cmmi-12">C </span>:= <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span><span 
+class="cmsy-10x-x-120">}</span>. For each <span 
+class="cmmi-12">i </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">C</span>, have demand <span 
+class="cmmi-12">d</span><sub><span 
+class="cmmi-8">i</span></sub>, and a <span 
+class="cmti-12">time window </span>[<span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">,b</span><sub><span 
+class="cmmi-8">i</span></sub>] for the
+delivery.
+<!--l. 125--><p class="noindent" ><span 
+class="cmbx-12">Vehicles: </span><span 
+class="cmmi-12">V </span>:= <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,v</span><span 
+class="cmsy-10x-x-120">} </span>identical vehicles with capacity <span 
+class="cmmi-12">q</span>. All vehicles start at end their routes at
+the same depot; <span 
+class="cmmi-12">N </span>is the set of all nodes, which consists of the nodes <span 
+class="cmmi-12">C </span>plus two copies of the
+depot (labelled nodes 0 and <span 
+class="cmmi-12">n </span>+ 1). Depot has trivially satisfied values for its time window. Cost to
+traverse arc (<span 
+class="cmmi-12">i,j</span>) is <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub>, with <span 
+class="cmmi-12">c</span><sub><span 
+class="cmr-8">0</span><span 
+class="cmmi-8">,n</span><span 
+class="cmr-8">+1</span></sub> = 0. Can arrive at customer <span 
+class="cmmi-12">i </span>before time <span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">i</span></sub> but must then wait
+until time&#x00A0;<span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">i</span></sub>. Parameter <span 
+class="cmmi-12">t</span><sub><span 
+class="cmmi-8">ij</span></sub> is the time required to traverse the link from customer <span 
+class="cmmi-12">i </span>to
+customer&#x00A0;<span 
+class="cmmi-12">j</span>. Parameter <span 
+class="cmmi-12">T</span><sub><span 
+class="cmmi-8">ij</span></sub> = max<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">t</span><sub><span 
+class="cmmi-8">ij</span></sub> + <span 
+class="cmmi-12">b</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">j</span></sub><span 
+class="cmmi-12">, </span>0<span 
+class="cmsy-10x-x-120">}</span>.
+<!--l. 137--><p class="noindent" ><span 
+class="cmbx-12">Variables:</span>
+   <center class="math-display" >
+<img 
+src="lagrangianexamples0x.png" alt="          { 1  if vehicle k visits customer i immediately before customer  j
+xijk  =
+            0  otherwise
+          {
+ sik  =     departure time   if vehicle k visits customer i
+            anything         otherwise
+" class="math-display" ></center>
+<!--l. 152--><p class="nopar" >
+<!--l. 154--><p class="noindent" ><span 
+class="cmbx-12">Formulation:</span>
+   <div class="subequations">
+                                                                                         
+                                                                                         
+<table 
+class="align">
+        <tr><td 
+class="align-odd"></td>        <td 
+class="align-even"> min</td>              <td 
+class="align-odd"> <span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">k</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">V</span> </sub> <span 
+class="cmex-10x-x-120">&#x2211;</span>
+       <sub><span 
+class="cmmi-8">i</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">N</span></sub> <span 
+class="cmex-10x-x-120">&#x2211;</span>
+            <sub><span 
+class="cmmi-8">j</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">N</span></sub><span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ijk</span></sub></td>                               <td 
+class="align-even"></td>                         <td 
+class="align-odd"></td>        <td 
+class="align-even"></td>        <td 
+class="align-label"><a 
+ id="x1-1002r1"></a>(1a)
+        </td></tr><tr><td 
+class="align-odd"></td>        <td 
+class="align-even">subject to</td>        <td 
+class="align-odd"> <span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">k</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">V</span> </sub> <span 
+class="cmex-10x-x-120">&#x2211;</span>
+       <sub><span 
+class="cmmi-8">j</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">N</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ijk</span></sub></td>                  <td 
+class="align-even"> = 1</td>           <td 
+class="align-odd"></td>        <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">i </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">C</span></td>                                                           <td 
+class="align-label"><a 
+ id="x1-1003r2"></a>(1b)
+        </td></tr><tr><td 
+class="align-odd"></td>        <td 
+class="align-even"></td>                  <td 
+class="align-odd"> <span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">j</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">C</span></sub><span 
+class="cmmi-12">d</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">j</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">N</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ijk</span></sub></td>                <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">q</span></td>           <td 
+class="align-odd"></td>        <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">k </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">V</span> </td>                                                          <td 
+class="align-label"><a 
+ id="x1-1004r3"></a>(1c)
+        </td></tr><tr><td 
+class="align-odd"></td>        <td 
+class="align-even"></td>                  <td 
+class="align-odd"> <span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmr-8">&#x0237;</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">N</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">0</span><span 
+class="cmmi-8">jk</span></sub></td>                         <td 
+class="align-even"> = 1</td>           <td 
+class="align-odd"></td>        <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">k </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">V</span> </td>                                                          <td 
+class="align-label"><a 
+ id="x1-1005r4"></a>(1d)
+        </td></tr><tr><td 
+class="align-odd"></td>        <td 
+class="align-even"></td>                  <td 
+class="align-odd"> <span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">i</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">N</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ihk</span></sub> <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">j</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">N</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">hjk</span></sub></td>            <td 
+class="align-even"> = 0</td>           <td 
+class="align-odd"></td>        <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">h </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">C,</span><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">k </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">V</span> </td>                                                  <td 
+class="align-label"><a 
+ id="x1-1006r5"></a>(1e)
+        </td></tr><tr><td 
+class="align-odd"></td>        <td 
+class="align-even"></td>                  <td 
+class="align-odd"> <span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">i</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">N</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i,n</span><span 
+class="cmr-8">+1</span><span 
+class="cmmi-8">,k</span></sub></td>                      <td 
+class="align-even"> = 1</td>           <td 
+class="align-odd"></td>        <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">k </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">V</span> </td>                                                          <td 
+class="align-label"><a 
+ id="x1-1007r6"></a>(1f)
+        </td></tr><tr><td 
+class="align-odd"></td>        <td 
+class="align-even"></td>                  <td 
+class="align-odd"><span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">ik</span></sub> + <span 
+class="cmmi-12">t</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">T</span><sub><span 
+class="cmmi-8">ij</span></sub>(1 <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ijk</span></sub>)</td>              <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">jk</span></sub></td>          <td 
+class="align-odd"></td>        <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">i,j </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">N,</span><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">k </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">V</span> </td>                                                 <td 
+class="align-label"><a 
+ id="x1-1008r7"></a>(1g)
+        </td></tr><tr><td 
+class="align-odd"></td>        <td 
+class="align-even"></td>                  <td 
+class="align-odd"><span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">ik</span></sub></td>                             <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">b</span><sub><span 
+class="cmmi-8">i</span></sub></td>           <td 
+class="align-odd"></td>        <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">i </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">N,</span><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">k </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">V</span> </td>                                                   <td 
+class="align-label"><a 
+ id="x1-1009r8"></a>(1h)
+        </td></tr><tr><td 
+class="align-odd"></td>        <td 
+class="align-even"></td>                  <td 
+class="align-odd"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ijk</span></sub></td>                                 <td 
+class="align-even"> binary</td>        <td 
+class="align-odd"></td>        <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">i,j </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">N,</span><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">k </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">V.</span></td>                                                <td 
+class="align-label"><a 
+ id="x1-1010r9"></a>(1i)        </td></tr></table>
+</div>
+                                                                                         
+                                                                                         
+<!--l. 173--><p class="noindent" ><span 
+class="cmbx-12">Lagrangian relaxation:</span>
+<!--l. 176--><p class="indent" >   Constraint (<a 
+href="#x1-1003r2">1b<!--tex4ht:ref: eq:vrptw_linking --></a>) is the only one where the left hand side involves a sum over the vehicles. So if
+we dualize this constraint, we will be left with a separable problem. Let <span 
+class="cmmi-12">&#x03BB; </span>denote the vector of
+Lagrangian multipliers, with one component for each <span 
+class="cmmi-12">i </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">C</span>. To make the notation easier, we
+extend <span 
+class="cmmi-12">&#x03BB; </span>to include two additional components corresponding to nodes 0 and <span 
+class="cmmi-12">n </span>+ 1 and set those
+components equal to zero. Since the vehicles are identical, each subproblem can be regarded as a
+problem for a single vehicle. The part of the Lagrangian relaxation corresponding to a single
+vehicle can be written: <div class="subequations">
+<table 
+class="align">
+           <tr><td 
+class="align-odd"></td>           <td 
+class="align-even"> min</td>                <td 
+class="align-odd"> <span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">i</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">N</span></sub> <span 
+class="cmex-10x-x-120">&#x2211;</span>
+       <sub><span 
+class="cmmi-8">j</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">N</span></sub>(<span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03BB;</span><sub><span 
+class="cmmi-8">i</span></sub>)<span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ij</span></sub></td>                                        <td 
+class="align-even"></td>                    <td 
+class="align-odd"></td>           <td 
+class="align-even"></td>           <td 
+class="align-label"><a 
+ id="x1-1012r1"></a>(2a)
+           </td></tr><tr><td 
+class="align-odd"></td>           <td 
+class="align-even">subject to</td>           <td 
+class="align-odd"> <span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">j</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">C</span></sub><span 
+class="cmmi-12">d</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">j</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">N</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ij</span></sub></td>                  <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">q</span></td>              <td 
+class="align-odd"></td>           <td 
+class="align-even"></td>                                                                           <td 
+class="align-label"><a 
+ id="x1-1013r2"></a>(2b)
+           </td></tr><tr><td 
+class="align-odd"></td>           <td 
+class="align-even"></td>                    <td 
+class="align-odd"> <span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmr-8">&#x0237;</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">N</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">0</span><span 
+class="cmmi-8">j</span></sub></td>                           <td 
+class="align-even"> = 1</td>              <td 
+class="align-odd"></td>           <td 
+class="align-even"></td>                                                                           <td 
+class="align-label"><a 
+ id="x1-1014r3"></a>(2c)
+           </td></tr><tr><td 
+class="align-odd"></td>           <td 
+class="align-even"></td>                    <td 
+class="align-odd"> <span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">i</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">N</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ih</span></sub> <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">j</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">N</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">hj</span></sub></td>              <td 
+class="align-even"> = 0</td>              <td 
+class="align-odd"></td>           <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">h </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">C</span></td>                                                                    <td 
+class="align-label"><a 
+ id="x1-1015r4"></a>(2d)
+           </td></tr><tr><td 
+class="align-odd"></td>           <td 
+class="align-even"></td>                    <td 
+class="align-odd"> <span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">i</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">N</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i,n</span><span 
+class="cmr-8">+1</span></sub></td>                        <td 
+class="align-even"> = 1</td>              <td 
+class="align-odd"></td>           <td 
+class="align-even"></td>                                                                           <td 
+class="align-label"><a 
+ id="x1-1016r5"></a>(2e)
+           </td></tr><tr><td 
+class="align-odd"></td>           <td 
+class="align-even"></td>                    <td 
+class="align-odd"><span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">i</span></sub> + <span 
+class="cmmi-12">t</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">T</span><sub><span 
+class="cmmi-8">ij</span></sub>(1 <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ij</span></sub>)</td>                <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">j</span></sub></td>             <td 
+class="align-odd"></td>           <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">i,j </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">N</span></td>                                                                  <td 
+class="align-label"><a 
+ id="x1-1017r6"></a>(2f)
+           </td></tr><tr><td 
+class="align-odd"></td>           <td 
+class="align-even"></td>                    <td 
+class="align-odd"><span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">i</span></sub></td>                              <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">b</span><sub><span 
+class="cmmi-8">i</span></sub></td>             <td 
+class="align-odd"></td>           <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">i </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">N</span></td>                                                                    <td 
+class="align-label"><a 
+ id="x1-1018r7"></a>(2g)
+           </td></tr><tr><td 
+class="align-odd"></td>           <td 
+class="align-even"></td>                    <td 
+class="align-odd"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ij</span></sub></td>                                  <td 
+class="align-even"> binary</td>           <td 
+class="align-odd"></td>           <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">i,j </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">N.</span></td>                                                                  <td 
+class="align-label"><a 
+ id="x1-1019r8"></a>(2h)           </td></tr></table>
+</div>
+<!--l. 200--><p class="indent" >   This is known as an <span 
+class="cmti-12">elementary shortest path problem with resource constraints</span>.
+<!--l. 204--><p class="indent" >   If we use a cutting plane approach to solve the Lagrangian dual, then the dual to the LP
+cutting plane approximation has variables corresponding to vehicle tours that satisfy the
+time windows. The constraints are that every customer should appear in exactly one
+tour.
+<!--l. 211--><p class="indent" >   For more details, see&#x00A0;<span class="cite">[<a 
+href="#Xirnich2005">2</a>,&#x00A0;<a 
+href="#Xgonzalezbrevis2013">1</a>]</span>.
+                                                                                         
+                                                                                         
+<!--l. 216--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-20002"></a>Capacitated lot sizing with setup times</h3>
+<!--l. 218--><p class="noindent" >Time periods <span 
+class="cmmi-12">N </span>:= <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span><span 
+class="cmsy-10x-x-120">}</span>, items <span 
+class="cmmi-12">M </span>:= <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,m</span><span 
+class="cmsy-10x-x-120">}</span>, all processed on a single machine with
+capacity&#x00A0;<span 
+class="cmmi-12">C</span><sub><span 
+class="cmmi-8">t</span></sub> at time&#x00A0;<span 
+class="cmmi-12">t</span>. Have demand <span 
+class="cmmi-12">d</span><sub><span 
+class="cmmi-8">jt</span></sub> for item <span 
+class="cmmi-12">j </span>at time&#x00A0;<span 
+class="cmmi-12">t</span>. Production, holding, setup costs of
+item <span 
+class="cmmi-12">j </span>at time <span 
+class="cmmi-12">t </span>are <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">jt</span></sub>, <span 
+class="cmmi-12">h</span><sub><span 
+class="cmmi-8">jt</span></sub>, and <span 
+class="cmmi-12">f</span><sub><span 
+class="cmmi-8">jt</span></sub>, respectively. In any time period, the machine can perform
+many tasks; if it produces item <span 
+class="cmmi-12">j </span>in time period <span 
+class="cmmi-12">t </span>it must be setup in that time period for that
+item. Processing and setup times for item <span 
+class="cmmi-12">j </span>in time <span 
+class="cmmi-12">t </span>are <span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">jt</span></sub> and <span 
+class="cmmi-12">b</span><sub><span 
+class="cmmi-8">jt</span></sub> respectively. Let
+<span 
+class="cmmi-12">D</span><sub><span 
+class="cmmi-8">jt</span></sub> = <span 
+class="cmex-10x-x-120">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">i</span><span 
+class="cmr-8">=</span><span 
+class="cmmi-8">t</span></sub><sup><span 
+class="cmmi-8">n</span></sup><span 
+class="cmmi-12">d</span><sub>
+<span 
+class="cmmi-8">jt</span></sub>, the remaining demand for item&#x00A0;<span 
+class="cmmi-12">j</span>.
+<!--l. 231--><p class="noindent" ><span 
+class="cmbx-12">Variables: </span><div class="eqnarray">
+   <center class="math-display" >
+<img 
+src="lagrangianexamples1x.png" alt="xjt :   production of item j in time t
+sjt :   inventory of item  j at end of time period t
+y  :    binary  variable equal to one if and only if item j is produced in time period  t
+ jt
+" class="math-display" ></center>
+</div>
+<!--l. 239--><p class="noindent" ><span 
+class="cmbx-12">Formulation:</span>
+   <div class="subequations">
+                                                                                         
+                                                                                         
+<table 
+class="align">
+     <tr><td 
+class="align-odd"></td>     <td 
+class="align-even"> min</td>           <td 
+class="align-odd"> <span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">t</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">N</span></sub> <span 
+class="cmex-10x-x-120">&#x2211;</span>
+       <sub><span 
+class="cmmi-8">j</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">M</span></sub><span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">jt</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">jt</span></sub> + <span 
+class="cmmi-12">h</span><sub><span 
+class="cmmi-8">jt</span></sub><span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">jt</span></sub> + <span 
+class="cmmi-12">f</span><sub><span 
+class="cmmi-8">jt</span></sub><span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">jt</span></sub></td>                          <td 
+class="align-even"></td>                     <td 
+class="align-odd"></td>     <td 
+class="align-even"></td>     <td 
+class="align-label"><a 
+ id="x1-2003r1"></a>(3a)
+     </td></tr><tr><td 
+class="align-odd"></td>     <td 
+class="align-even">subject to</td>     <td 
+class="align-odd"> <span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">j</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">M</span></sub>(<span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">jt</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">jt</span></sub> + <span 
+class="cmmi-12">b</span><sub><span 
+class="cmmi-8">jt</span></sub><span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">jt</span></sub>)</td>                   <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">C</span><sub><span 
+class="cmmi-8">t</span></sub></td>           <td 
+class="align-odd"></td>     <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">N</span></td>                                           <td 
+class="align-label"><a 
+ id="x1-2004r2"></a>(3b)
+     </td></tr><tr><td 
+class="align-odd"></td>     <td 
+class="align-even"></td>               <td 
+class="align-odd"><span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">j,t</span><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sub> + <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">jt</span></sub></td>                               <td 
+class="align-even"> = <span 
+class="cmmi-12">d</span><sub><span 
+class="cmmi-8">jt</span></sub> + <span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">jt</span></sub></td>     <td 
+class="align-odd"></td>     <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">j </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">M,</span><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">N</span></td>                                  <td 
+class="align-label"><a 
+ id="x1-2005r3"></a>(3c)
+     </td></tr><tr><td 
+class="align-odd"></td>     <td 
+class="align-even"></td>               <td 
+class="align-odd"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">jt</span></sub></td>                                       <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">D</span><sub><span 
+class="cmmi-8">jt</span></sub><span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">jt</span></sub></td>       <td 
+class="align-odd"></td>     <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">j </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">M,</span><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">N</span></td>                                  <td 
+class="align-label"><a 
+ id="x1-2006r4"></a>(3d)
+     </td></tr><tr><td 
+class="align-odd"></td>     <td 
+class="align-even"></td>               <td 
+class="align-odd"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">jt</span></sub></td>                                       <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0</td>            <td 
+class="align-odd"></td>     <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">j </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">M,</span><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">N</span></td>                                  <td 
+class="align-label"><a 
+ id="x1-2007r5"></a>(3e)
+     </td></tr><tr><td 
+class="align-odd"></td>     <td 
+class="align-even"></td>               <td 
+class="align-odd"><span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">jt</span></sub></td>                                       <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0</td>            <td 
+class="align-odd"></td>     <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">j </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">M,</span><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">N</span></td>                                  <td 
+class="align-label"><a 
+ id="x1-2008r6"></a>(3f)
+     </td></tr><tr><td 
+class="align-odd"></td>     <td 
+class="align-even"></td>               <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">jt</span></sub></td>                                       <td 
+class="align-even"> binary</td>         <td 
+class="align-odd"></td>     <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">j </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">M,</span><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">N</span></td>                                  <td 
+class="align-label"><a 
+ id="x1-2009r7"></a>(3g)     </td></tr></table>
+</div>
+                                                                                         
+                                                                                         
+<!--l. 256--><p class="noindent" ><span 
+class="cmbx-12">Lagrangian relaxation:</span>
+<!--l. 259--><p class="indent" >   The items are linked through constraint (<a 
+href="#x1-2004r2">3b<!--tex4ht:ref: eq:cls_link --></a>), so we dualize this constraint, with multipliers <span 
+class="cmmi-12">&#x03BB;</span><sub><span 
+class="cmmi-8">t</span></sub>
+for each <span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">N</span>. The resulting Lagrangian relaxation is separable by item, and the subproblem for
+item <span 
+class="cmmi-12">j </span>is the following single item lot-sizing problem:
+   <div class="subequations">
+<table 
+class="align">
+       <tr><td 
+class="align-odd"></td>       <td 
+class="align-even"> min</td>            <td 
+class="align-odd"> <span 
+class="cmex-10x-x-120">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">t</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">N</span></sub>(<span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">jt</span></sub> <span 
+class="cmsy-10x-x-120">+ </span><span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">jt</span></sub><span 
+class="cmmi-12">&#x03BB;</span><sub><span 
+class="cmmi-8">t</span></sub>)<span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">jt</span></sub> + <span 
+class="cmmi-12">h</span><sub><span 
+class="cmmi-8">jt</span></sub><span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">jt</span></sub><span style="margin-left:0.3em" class="thinspace"></span></td>       <td 
+class="align-even"> + (<span 
+class="cmmi-12">f</span><sub><span 
+class="cmmi-8">jt</span></sub> <span 
+class="cmsy-10x-x-120">+ </span><span 
+class="cmmi-12">b</span><sub><span 
+class="cmmi-8">jt</span></sub><span 
+class="cmmi-12">&#x03BB;</span><sub><span 
+class="cmmi-8">t</span></sub>)<span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">jt</span></sub></td>                                   <td 
+class="align-odd"></td>       <td 
+class="align-even"></td>       <td 
+class="align-label"><a 
+ id="x1-2011r1"></a>(4a)
+       </td></tr><tr><td 
+class="align-odd"></td>       <td 
+class="align-even">subject to</td>       <td 
+class="align-odd"><span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">j,t</span><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sub> + <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">jt</span></sub></td>                          <td 
+class="align-even"> = <span 
+class="cmmi-12">d</span><sub><span 
+class="cmmi-8">jt</span></sub> + <span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">jt</span></sub></td>             <td 
+class="align-odd"></td>       <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">N</span></td>                                              <td 
+class="align-label"><a 
+ id="x1-2012r2"></a>(4b)
+       </td></tr><tr><td 
+class="align-odd"></td>       <td 
+class="align-even"></td>                <td 
+class="align-odd"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">jt</span></sub></td>                                 <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">D</span><sub><span 
+class="cmmi-8">jt</span></sub><span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">jt</span></sub></td>               <td 
+class="align-odd"></td>       <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">N</span></td>                                              <td 
+class="align-label"><a 
+ id="x1-2013r3"></a>(4c)
+       </td></tr><tr><td 
+class="align-odd"></td>       <td 
+class="align-even"></td>                <td 
+class="align-odd"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">jt</span></sub></td>                                 <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0</td>                    <td 
+class="align-odd"></td>       <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">N</span></td>                                              <td 
+class="align-label"><a 
+ id="x1-2014r4"></a>(4d)
+       </td></tr><tr><td 
+class="align-odd"></td>       <td 
+class="align-even"></td>                <td 
+class="align-odd"><span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">jt</span></sub></td>                                  <td 
+class="align-even"> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0</td>                    <td 
+class="align-odd"></td>       <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">N</span></td>                                              <td 
+class="align-label"><a 
+ id="x1-2015r5"></a>(4e)
+       </td></tr><tr><td 
+class="align-odd"></td>       <td 
+class="align-even"></td>                <td 
+class="align-odd"><span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">jt</span></sub></td>                                  <td 
+class="align-even"> binary</td>                 <td 
+class="align-odd"></td>       <td 
+class="align-even"><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">N</span></td>                                              <td 
+class="align-label"><a 
+ id="x1-2016r6"></a>(4f)       </td></tr></table>
+</div>
+<!--l. 276--><p class="indent" >   For more details, see&#x00A0;<span class="cite">[<a 
+href="#Xtrigeiro1989">3</a>,&#x00A0;<a 
+href="#Xgonzalezbrevis2013">1</a>]</span>.
+                                                                                         
+                                                                                         
+<!--l. 1--><p class="noindent" >
+   <h3 class="likesectionHead"><a 
+ id="x1-30002"></a>References</h3>
+<!--l. 1--><p class="noindent" >
+   <div class="thebibliography">
+   <p class="bibitem" ><span class="biblabel">
+ [1]<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
+ id="Xgonzalezbrevis2013"></a>P.&#x00A0;González-Brevis. <span 
+class="cmti-12">Advances in interior point methods and column generation</span>. PhD
+   thesis, University of Edinburgh, 2013.
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+ [2]<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
+ id="Xirnich2005"></a>S.&#x00A0;Irnich and G.&#x00A0;Desaulniers.   Shortest path problems with resource constraints.
+   In  G.&#x00A0;Desaulniers,  J.&#x00A0;Desrosiers,  and  M.&#x00A0;M.  Solomon,  editors,  <span 
+class="cmti-12">Column  Generation</span>,
+   chapter&#x00A0;2. Springer, 2005.
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+ [3]<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
+ id="Xtrigeiro1989"></a>W.&#x00A0;W. Trigeiro, L.&#x00A0;J. Thomas, and J.&#x00A0;O. McClain. Capacitated lot sizing with setup
+   times. <span 
+class="cmti-12">Management Science</span>, 35(3):353&#8211;366, 1989.
+</p>
+   </div>
+    
+</body></html> 
+
+                                                                                         
+
+

@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Homework 4</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="hw4">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="hw4.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+<a href=..>
+     MATP6620 / DSES6760 Combinatorial Optimization and Integer Programming 
+</a>
+<BR>
+Homework 4.
+  </FONT>
+</DIV>
+
+<P>
+
+<DIV ALIGN="RIGHT">
+   <strike>Due:  Friday, March 16, 2007.</strike>
+<br>
+   Due:  Tuesday, March 20, 2007.  
+<BR>
+Penalty for late homeworks: 10% for each day or part of a day.
+
+</DIV>
+
+<P>
+Given <I>n</I> objects,
+         we want to find an <EM>ordering</EM> (or permutation) of the objects.
+We can model the set of orderings by introducing
+         variables <I>x</I><SUB><I>ij</I></SUB> for <!-- MATH: $1 \leq i < j \leq n$ -->
+<IMG
+ WIDTH="108" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$1 \leq i &lt; j \leq n$">
+defined as follows:
+         <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+x_{ij} = \left\{ \begin{array}{ll}
+                        1 & \mbox{if $i$\space is before $j$ } \\
+                        0 & \mbox{otherwise}
+                     \end{array}  \right.
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="194" HEIGHT="55"
+ SRC="img2.gif"
+ ALT="\begin{displaymath}
+x_{ij} = \left\{ \begin{array}{ll}
+1 &amp; \mbox{if $i$\space is before $j$ } \\
+0 &amp; \mbox{otherwise}
+\end{array} \right.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Given two objects <I>i</I> and <I>j</I>, either <I>i</I> is before <I>j</I>
+         or <I>j</I> is before&nbsp;<I>i</I>.
+The set of feasible solutions can be written as
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+S :=
+\left\{ x \in I\!\! B^{n(n-1)/2} :
+\begin{array}{rcll}
+x_{ij} + x_{jk} - x_{ik} & \leq & 1 & \mbox{for }1 \leq i < j < k \leq n  \\
+- x_{ij} - x_{jk} + x_{ik} & \leq & 0 & \mbox{for } 1 \leq i < j < k \leq n  \\
+\end{array}   \right\}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="557" HEIGHT="55"
+ SRC="img3.gif"
+ ALT="\begin{displaymath}
+S :=
+\left\{ x \in I\!\! B^{n(n-1)/2} :
+\begin{array}{rcll}
+...
+...&amp; \mbox{for } 1 \leq i &lt; j &lt; k \leq n \\
+\end{array} \right\}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The inequalities are called triangle inequalities.
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>Show that <I>S</I> is full dimensional.
+<DT>2.
+<DD>Show that the triangle inequality <!-- MATH: $x_{ij} + x_{jk} - x_{ik}  \leq  1$ -->
+<IMG
+ WIDTH="148" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$x_{ij} + x_{jk} - x_{ik} \leq 1$">
+defines a facet of conv(<I>S</I>) for any <!-- MATH: $1 \leq i < j < k \leq n$ -->
+<IMG
+ WIDTH="141" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$1 \leq i &lt; j &lt; k \leq n $">.
+<DT>3.
+<DD>Let <!-- MATH: $1 \leq i < j < k < l \leq n$ -->
+<IMG
+ WIDTH="169" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$1 \leq i &lt; j &lt; k &lt; l \leq n$">.
+Show that the valid inequality <!-- MATH: $x_{ij} + x_{jk} + x_{kl} - x_{il} \leq 2$ -->
+<IMG
+ WIDTH="188" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$x_{ij} + x_{jk} + x_{kl} - x_{il} \leq 2$">
+is
+not a facet of&nbsp;conv(<I>S</I>).
+<DT>4.
+<DD>Solve the integer program <!-- MATH: $\min\{c^Tx : x \in S\}$ -->
+<IMG
+ WIDTH="137" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$\min\{c^Tx : x \in S\}$">
+with <I>n</I>=8 using a cutting plane
+algorithm, adding violated triangle inequalities as cutting planes.
+The objective function coefficients <I>c</I> are as follows:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{l|rrrrrrrr}
+    & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8  \\\hline
+1  & * &-3 & 2 &-4 & 1 & 3 &-1 &-2  \\
+2  & * & * &-3 & 2 & 4 &-1 &-5 & 2  \\
+3  & * & * & * & 1 &-4 & 5 & 1 &-3  \\
+4  & * & * & * & * &-3 & 1 & 2 &-3  \\
+5  & * & * & * & * & * & 3 &-1 &-1  \\
+6  & * & * & * & * & * & * &-1 & 4  \\
+7  & * & * & * & * & * & * & * & 5  \\
+8  & * & * & * & * & * & * & * & *
+\end{array}
+\end{displaymath} -->
+
+<IMG
+ WIDTH="317" HEIGHT="202"
+ SRC="img9.gif"
+ ALT="\begin{displaymath}
+\begin{array}{l\vert rrrrrrrr}
+&amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 ...
+...* &amp; * &amp; * &amp; 5 \\
+8 &amp; * &amp; * &amp; * &amp; * &amp; * &amp; * &amp; * &amp; *
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+What is the optimal ordering?
+(Hint: the optimal value is -22.)
+
+<p>
+You can download an AMPL <a href=linord.mod>model file</a>
+and a <a href=linord.dat>data file</a> for this problem.
+Some <a href=../../amplhints/>hints about using AMPL</a>
+are now available, including methods for adding constraints
+to this linear ordering problem.
+
+
+<P>
+</DL>
+
+<P>
+
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD></TD><TD ALIGN="LEFT"><a href=../..>John Mitchell</a></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Amos Eaton 325</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">x6915.</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT"><a href=mailto:mitchj@rpi.edu>mitchj
+at rpi dot edu</a></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Office hours:
+   Tuesday 2pm - 3pm, Wednesday 11am - noon.</TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2007-03-02</I>
+</ADDRESS>
+</BODY>
+</HTML>

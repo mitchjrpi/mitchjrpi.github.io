@@ -1,0 +1,592 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Exam 3 MATP4700 Fall 03</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="exam3af03short">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="exam3af03short.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  <a href=..>Math Models of Operations Research, MATP 4700/ DSES 4770.</a>
+
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER">
+  Third Exam, Friday, December 5, 2003.
+
+</DIV>
+
+<P>
+You may use any result from your notes or a homework that is clearly stated.
+You may use one sheet of handwritten notes, but no other sources.
+The exam consists of six questions, and lasts one hundred minutes.
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>(15 points; 5 points for each part)
+<P>
+Consider the linear programming problem
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcl}
+\min & 4x_1 & - & x_2 & + & 2x_3 \\
+\mbox{subject to}
+& 4x_1 & - & 3x_2 & + & 2x_3 & = & 13  \\
+&&& 3x_2 & - & x_3 & = & 1  \\
+& \multicolumn{5}{r}{x_1, x_2, x_3} & \geq & 0
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="338" HEIGHT="99"
+ SRC="img1.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcl}
+\min &amp; 4x_1 &amp; - &amp; x_2 &amp; + &amp; 2x_3 \\ ...
+... \\
+&amp; \multicolumn{5}{r}{x_1, x_2, x_3} &amp; \geq &amp; 0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+
+<DL COMPACT>
+<DT>(a)
+<DD>Show that <!-- MATH: $x^{(0)}=(3,1,2)$ -->
+<I>x</I><SUP>(0)</SUP>=(3,1,2) is an appropriate point to start
+an interior point log barrier algorithm.
+<DT>(b)
+<DD>Form the corresponding log barrier problem with multiplier
+<IMG
+ WIDTH="59" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\mu=10$">.
+<DT>(c)
+<DD>Show how you would compute the move that direction
+<IMG
+ WIDTH="30" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta x$">
+that could be pursued by the primal log barrier
+method given in the text.
+(Note: Let <!-- MATH: $P=(I-DA^T(AD^2A^T)^{-1}AD)$ -->
+<I>P</I>=(<I>I</I>-<I>DA</I><SUP><I>T</I></SUP>(<I>AD</I><SUP>2</SUP><I>A</I><SUP><I>T</I></SUP>)<SUP>-1</SUP><I>AD</I>) denote the 3  x  3
+projection matrix in an appropriate rescaled space,
+where <I>A</I> is the constraint matrix and <I>D</I> is an appropriate diagonal matrix.
+I want you to give me the formula for <IMG
+ WIDTH="30" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\Delta x$">
+in terms of <I>P</I> and various
+numbers. Your formula should contain numbers for all quantities except the
+elements of&nbsp;<I>P</I>.)
+</DL>
+
+<P>
+
+<DT>2.
+<DD>(20 points)
+The LP relaxation of an integer programming problem has optimal tableau <I>M</I> given below:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+M =
+\begin{tabular}{|r|rrrrrr|}
+\multicolumn{2}{r}{$x_1$ } & $x_2$\space & $x_3$\space & $x_4$\space & $x_5$\space &
+\multicolumn{1}{r}{$x_6$ }  \\\hline
+7 & 2 & 1 & 3 & 0 & 0 & 0 \\\hline
+3.4 & 0.4 & 0.5 & 0.7 & 1 & 0 & 0  \\
+2.8 & 1.2 & -0.5 & 0.3 & 0 & 1 & 0 \\
+1.5 & -0.2 & 1 & 0.3 & 0 & 0 & 1 \\
+\hline
+\end{tabular}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="342" HEIGHT="124"
+ SRC="img4.gif"
+ ALT="\begin{displaymath}
+M =
+\begin{tabular}{\vert r\vert rrrrrr\vert}
+\multicolumn{2...
+...0 \\
+1.5 &amp; -0.2 &amp; 1 &amp; 0.3 &amp; 0 &amp; 0 &amp; 1 \\
+\hline
+\end{tabular}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+It has been decided to branch on <I>x</I><SUB>4</SUB>.
+
+<P>
+
+<DL COMPACT>
+<DT>(a)
+<DD>(10 points)
+Use the dual simplex method to find the optimal solution to the LP relaxation
+with the additional constraint that <IMG
+ WIDTH="57" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$x_4 \leq 3$">.
+<P>
+
+<DT>(b)
+<DD>(10 points)
+Show that the linear programming relaxation with the additional restriction
+<IMG
+ WIDTH="57" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$x_4 \geq 4$">
+is infeasible.
+</DL>
+
+<P>
+
+<DT>3.
+<DD>(15 points)
+    Consider the transportation problem represented in the following table:
+    <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{tabular}{r|llll|}
+      \multicolumn{1}{l}{\quad} & 20 & 30 & 30 & \multicolumn{1}{l}{40} \\
+      \cline{2-5}
+      40 & $3^{20}$\space & $2^{20}$\space & 9 & 9 \\
+      30 & 9 & $4^5$\space & $1^{15}$\space & $2^{10}$\space \\
+      30 & 7 & 9 & 9 & $4^{30}$\space \\
+      20 & 9 & $3^5$\space & $5^{15}$\space & 8 \\\cline{2-5}
+     \end{tabular}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="201" HEIGHT="122"
+ SRC="img7.gif"
+ ALT="\begin{displaymath}
+\begin{tabular}{r\vert llll\vert}
+\multicolumn{1}{l}{\quad...
+...^5$\space &amp; $5^{15}$\space &amp; 8 \\ \cline{2-5}
+\end{tabular}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+There are four sources and four destinations. The supplies and demands   
+    are indicated. The cost of each arc is given in the table, and a feasible
+    solution <I>x</I> is indicated by the superscripts.
+    <DL COMPACT>
+<DT>(a)
+<DD>(5 points) Is the given solution <I>x</I> a basic feasible solution 
+in the linear programming representation of this transportation
+        problem?
+      <DT>(b)
+<DD>(5 points) Can you find a basic feasible solution which is better
+        than the given point&nbsp;<I>x</I>? (Hint:  You should modify&nbsp;<I>x</I>;   
+        you don't need to start from scratch. You do not need to find the optimal
+        solution.)
+     <DT>(c)
+<DD>(5 points) Is the basic feasible solution you found an optimal solution?
+    </DL>
+
+<P>
+
+<DT>4.
+<DD>(15 points) <A NAME="q_cb">&#160;</A>A capital equipment problem requires deciding which of projects <IMG
+ WIDTH="64" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$1,\ldots,4$">
+should be funded. Project <I>i</I> costs <I>c</I><SUB><I>i</I></SUB> and has a value <I>v</I><SUB><I>i</I></SUB>, given
+in the table:
+
+<P>
+
+<DIV ALIGN="CENTER">
+ 
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">2</TD>
+<TD ALIGN="CENTER">3</TD>
+<TD ALIGN="CENTER">4</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Cost <I>c</I><SUB><I>i</I></SUB></TD>
+<TD ALIGN="CENTER">2</TD>
+<TD ALIGN="CENTER">3</TD>
+<TD ALIGN="CENTER">4</TD>
+<TD ALIGN="CENTER">5</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Value <I>v</I><SUB><I>i</I></SUB></TD>
+<TD ALIGN="CENTER">3</TD>
+<TD ALIGN="CENTER">5</TD>
+<TD ALIGN="CENTER">7</TD>
+<TD ALIGN="CENTER">9</TD>
+</TR>
+</TABLE>
+</DIV>   
+
+<P>
+The total budget available is 11.
+A dynamic programming formulation for this problem is to define
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="429" HEIGHT="60"
+ SRC="img9.gif"
+ ALT="\begin{eqnarray*}
+f_n(s) &amp;=&amp; \mbox{value of best policy for products } n,\ldots,...
+...
+&amp;&amp; \quad \mbox{given that $s$\space units of the budget remain}
+\end{eqnarray*}">
+</DIV><P></P>
+<BR CLEAR="ALL">
+and
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="484" HEIGHT="88"
+ SRC="img10.gif"
+ ALT="\begin{eqnarray*}
+f_n(s,x_n) &amp;=&amp; \mbox{value of best policy for products } n,\ld...
+...ox{and that $x_n$\space copies of project $n$\space are funded.}
+\end{eqnarray*}">
+</DIV><P></P>
+<BR CLEAR="ALL">
+Note that <I>x</I><SUB><I>n</I></SUB> is equal to either 1 or&nbsp;0, indicating that project <I>n</I>
+is funded or not funded, respectively.
+
+<P>
+Recursive equations for this problem are
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="295" HEIGHT="61"
+ SRC="img11.gif"
+ ALT="\begin{eqnarray*}
+f_n(s) &amp;=&amp; \max\{f_n(s,0),f_n(s,1)\} \\
+f_n(s,x_n) &amp;=&amp; v_nx_n + f_{n+1}(s-c_nx_n)
+\end{eqnarray*}">
+</DIV><P></P>
+<BR CLEAR="ALL">
+with <I>f</I><SUB><I>n</I></SUB>(<I>s</I>) defined to be <IMG
+ WIDTH="38" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.gif"
+ ALT="$-\infty$">
+if <I>s</I>&lt;0.
+
+<P>
+We have the following table of values for <I>f</I><SUB><I>n</I></SUB>(<I>s</I>):
+(Note that I've omitted the columns for <I>f</I><SUB><I>n</I></SUB>(<I>s</I>,<I>x</I><SUB><I>n</I></SUB>) and
+that the approach discussed in class would have presented this data in four tables.)     
+
+<P>
+
+<DIV ALIGN="CENTER">
+ 
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="LEFT"><I>s</I></TD>
+<TD ALIGN="CENTER"><I>f</I><SUB>4</SUB>(<I>s</I>)</TD>
+<TD ALIGN="CENTER"><I>x</I><SUB>4</SUB><SUP>*</SUP></TD>
+<TD ALIGN="CENTER"><I>f</I><SUB>3</SUB>(<I>s</I>)</TD>
+<TD ALIGN="CENTER"><I>x</I><SUB>3</SUB><SUP>*</SUP></TD>
+<TD ALIGN="CENTER"><I>f</I><SUB>2</SUB>(<I>s</I>)</TD>
+<TD ALIGN="CENTER"><I>x</I><SUB>2</SUB><SUP>*</SUP></TD>
+<TD ALIGN="CENTER"><I>f</I><SUB>1</SUB>(<I>s</I>)</TD>
+<TD ALIGN="CENTER"><I>x</I><SUB>1</SUB><SUP>*</SUP></TD>
+</TR>
+<TR><TD ALIGN="LEFT">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">1</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">2</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">3</TD>
+<TD ALIGN="CENTER">1</TD>
+</TR>
+<TR><TD ALIGN="LEFT">3</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">5</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">5</TD>
+<TD ALIGN="CENTER">0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">4</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">7</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">7</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">7</TD>
+<TD ALIGN="CENTER">0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">5</TD>
+<TD ALIGN="CENTER">9</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">9</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">9</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">9</TD>
+<TD ALIGN="CENTER">0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">6</TD>
+<TD ALIGN="CENTER">9</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">9</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">9</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">10</TD>
+<TD ALIGN="CENTER">1</TD>
+</TR>
+<TR><TD ALIGN="LEFT">7</TD>
+<TD ALIGN="CENTER">9</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">9</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">12</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">12</TD>
+<TD ALIGN="CENTER">1</TD>
+</TR>
+<TR><TD ALIGN="LEFT">8</TD>
+<TD ALIGN="CENTER">9</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">9</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">14</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">14</TD>
+<TD ALIGN="CENTER">1</TD>
+</TR>
+<TR><TD ALIGN="LEFT">9</TD>
+<TD ALIGN="CENTER">9</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">16</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">16</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">16</TD>
+<TD ALIGN="CENTER">0</TD>
+</TR>
+<TR><TD ALIGN="LEFT">10</TD>
+<TD ALIGN="CENTER">9</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">16</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">16</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">17</TD>
+<TD ALIGN="CENTER">1</TD>
+</TR>
+<TR><TD ALIGN="LEFT">11</TD>
+<TD ALIGN="CENTER">9</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">16</TD>
+<TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">16</TD>
+<TD ALIGN="CENTER">0</TD>
+<TD ALIGN="CENTER">19</TD>
+<TD ALIGN="CENTER">1</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+In the following questions, you <B>must use the table</B>
+to get credit.
+<DL COMPACT>
+<DT>(a)
+<DD>(5 points)
+What is the optimal value of this problem?      
+<DT>(b)
+<DD>(5 points)
+What is the optimal solution&nbsp;<I>x</I>?    
+<DT>(c)
+<DD>(5 points)
+Now assume that the budget has been decreased to 8 and it has been
+decided not to fund project&nbsp;1.       
+What is the optimal solution to this problem, and what is its value?
+</DL>
+
+<P>
+
+<DT>5.
+<DD>(15 points)
+
+<P>
+Use LP duality to argue that at least one of the following systems must be inconsistent:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{rclrrrclr}
+Ax & \geq & e & \qquad (I) \qquad & \qquad \qquad & e^Ty & > & 0 & \qquad (II) \\
+x & \geq & 0 &&& A^Ty & \leq & 0 \\
+&&&&& y & \geq & 0
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="477" HEIGHT="76"
+ SRC="img13.gif"
+ ALT="\begin{displaymath}
+\begin{array}{rclrrrclr}
+Ax &amp; \geq &amp; e &amp; \qquad (I) \qquad &amp;...
+...\geq &amp; 0 &amp;&amp;&amp; A^Ty &amp; \leq &amp; 0 \\
+&amp;&amp;&amp;&amp;&amp; y &amp; \geq &amp; 0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Here <I>A</I> is an <I>m</I>  x  <I>n</I> matrix, <I>x</I> is an <I>n</I>-vector, <I>y</I> is an <I>m</I>-vector,
+and <I>e</I> is the <I>m</I>-vector with every component equal to one.
+(Hints: assume one of the systems has a solution and show that it then follows that
+the other one does not;
+the dual to <!-- MATH: $\min\{c^Tx:Ax \geq b, x \geq 0\}$ -->
+<IMG
+ WIDTH="211" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$\min\{c^Tx:Ax \geq b, x \geq 0\}$">
+is
+<!-- MATH: $\max\{b^Ty:A^Ty \leq c, y \geq 0\}$ -->
+<IMG
+ WIDTH="223" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.gif"
+ ALT="$\max\{b^Ty:A^Ty \leq c, y \geq 0\}$">.)
+
+<P>
+Hence show that if there exists a point <!-- MATH: $\bar{x} \geq 0$ -->
+<IMG
+ WIDTH="49" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.gif"
+ ALT="$\bar{x} \geq 0$">
+with <IMG
+ WIDTH="63" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.gif"
+ ALT="$A\bar{x} &gt; 0$">
+then there is no nonzero,
+nonnegative <!-- MATH: $y \in I \! \! R^m$ -->
+<IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.gif"
+ ALT="$y \in I \! \! R^m$">
+with <IMG
+ WIDTH="73" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$A^Ty \leq 0$">.
+(Hints: rescale&nbsp;<IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$\bar{x}$">;
+if <I>y</I> is nonzero and nonnegative then <I>e</I><SUP><I>T</I></SUP><I>y</I>&gt;0.)
+
+<P>
+
+<DT>6.
+<DD>(20 points; each part is worth 10 points)
+Let <I>G</I>=(<I>V</I>,<I>A</I>) be the following directed graph, where the label on each edge
+gives the cost of traversing that edge.
+
+<P>
+
+<DIV ALIGN="CENTER">
+<BR>
+<IMG
+ WIDTH="351" HEIGHT="196" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="\begin{picture}
+(300,200)%(-25,-25)
+\par
+\put(50,150){\circle{20}}
+\put(50,50){\...
+...
+\put(150,55){6}
+\put(200,130){1}
+\put(200,80){8}
+\put(255,100){3}
+\end{picture}">
+<BR>
+</DIV>
+
+<P>
+
+<DL COMPACT>
+<DT>(a)
+<DD>Use Dijkstra's algorithm to find the shortest path from vertex 1 to vertex 5.
+<P>
+
+<DT>(b)
+<DD>Find the shortest path from vertex 1 to vertex 5 in the graph using the
+network simplex method, starting with basic variables
+<I>x</I><SUB>14</SUB>=1, <I>x</I><SUB>45</SUB>=1, <I>x</I><SUB>12</SUB>=0, and <I>x</I><SUB>13</SUB>=0, with the
+other variables nonbasic.
+</DL>
+
+<P>
+</DL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2004-11-05</I>
+</ADDRESS>
+</BODY>
+</HTML>

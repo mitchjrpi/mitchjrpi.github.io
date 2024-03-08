@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw5.tex"> 
+<meta name="date" content="2018-04-02 07:18:00"> 
+<link rel="stylesheet" type="text/css" href="hw5.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 12--><p class="noindent" >
+<!--l. 15--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12x-x-120">MATP6640/DSES6770 Linear Programming</span></a><span 
+class="cmr-12x-x-120">, Homework 5.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 19--><p class="noindent" >
+ Due: Friday, April 6, 2016, in class.<br />
+10% penalty for each day late.</div>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">Let a stochastic program have a finite set <span 
+class="cmmi-12">S </span>of scenarios <span 
+class="cmmi-12">&#x03BE;</span><sup><span 
+class="cmmi-8">s</span></sup>, each with probability&#x00A0;<span 
+class="cmmi-12">p</span><sub>
+<span 
+class="cmmi-8">s</span></sub>. Let the
+      first stage decision variables be <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sub><span 
+class="cmr-8">+</span></sub><sup><span 
+class="cmmi-8">n</span></sup> and assume the problem has complete
+      recourse for any first stage decision. Let 0 <span 
+class="cmmi-12">&#x003C; &#x03B1; &#x003C; </span>1. For any feasible first stage
+      decision&#x00A0;<span 
+class="cmmi-12">x</span>, the Conditional Value at Risk <span 
+class="cmmi-12">&#x03C1;</span>(<span 
+class="cmmi-12">x</span>) can be calculated by solving the
+      problem
+      <center class="math-display" >
+      <img 
+src="hw50x.png" alt="                               1&#x2211;
+&#x03C1;(x) :=   miny,&#x03B7;,v        &#x03B7;  +   &#x03B1;   s&#x2208;S psvs
+         subject to W  ys  =  hs - T sx  &#x2200;s &#x2208; S
+                     T  s
+                    q  ys  &#x2264;  &#x03B7; + vs     &#x2200;s &#x2208; S
+                       y   &#x2265;  0          &#x2200;s &#x2208; S
+      " class="math-display" ></center>
+      <!--l. 64--><p class="nopar" >
+      Prove that <span 
+class="cmmi-12">&#x03C1;</span>(<span 
+class="cmmi-12">x</span>) is a convex function of&#x00A0;<span 
+class="cmmi-12">x</span>.
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2">Consider the LP:
+      <center class="par-math-display" >
+      <img 
+src="hw51x.png" alt="min   2x1  +   6x2  +  3x3
+s.t.    x1  +    x2  +    x3  =  6
+       x1  -   2x2  +  4x3   =  9
+                         xi  &#x2265;  0  i = 1,...,3
+      " class="par-math-display" ></center>
+      <!--l. 217--><p class="nopar" >
+      <!--l. 219--><p class="noindent" >Show that <span 
+class="cmmi-12">x </span>= (3<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">, </span>2) is on the central path for this problem.
+                                                                                         
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-7x3">(Wright, Chapter 2, Question 6, page 47.) Construct standard form linear programs with
+      <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">&#x2264; </span>3 and
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-9x1"><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-42.png" alt="B" class="10-120x-x-42" /> </span>= <span 
+class="cmsy-10x-x-120">&#x2205;</span>
+           </li>
+           <li 
+  class="enumerate" id="x1-11x2"><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-42.png" alt="B" class="10-120x-x-42" /> </span>= <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span><span 
+class="cmsy-10x-x-120">}</span>.</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-13x4">Pick three problems from the netlib LP test suite, at <a 
+href="http://www.netlib.org/lp" class="url" ><span 
+class="cmtt-12">http://www.netlib.org/lp</span></a> including
+      the problem <span 
+class="cmtt-12">boeing1</span>. Solve each problem using both a simplex algorithm and an
+      interior point algorithm. Do you get the same primal solution with each algorithm?
+      What if you don&#8217;t crossover to get a BFS? (Differences less than 10<sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">8</span></sup> can be
+      ignored.)
+      <!--l. 246--><p class="noindent" >(Most of the problems are also available in AMPL format and MATLAB format and
+      uncompressed MPS format at <a 
+href="http://clas.ufl.edu/users/hager/coap/format.html" class="url" ><span 
+class="cmtt-12">http://clas.ufl.edu/users/hager/coap/format.html</span></a> with
+      an AMPL model file available both at <a 
+href="http://clas.ufl.edu/users/hager/coap/m2a" class="url" ><span 
+class="cmtt-12">http://clas.ufl.edu/users/hager/coap/m2a</span></a> and
+      at <a 
+href="http://www.netlib.org/ampl/models/mps.mod" class="url" ><span 
+class="cmtt-12">http://www.netlib.org/ampl/models/mps.mod</span></a>
+      <!--l. 257--><p class="noindent" >Alternatively, you can run cplex directly, without using ampl, in which case you would read
+      in the MPS file. Useful commands in cplex include <span 
+class="cmtt-12">read</span>, <span 
+class="cmtt-12">optimize</span>, and <span 
+class="cmtt-12">display</span>. You can
+      choose the solver in cplex by issuing the command <span 
+class="cmtt-12">set lpmethod </span>at the prompt. You can
+      change options in the barrier solver (including the use of crossover) with the command <span 
+class="cmtt-12">set</span>
+      <span 
+class="cmtt-12">barrier</span>. You can use these options in ampl with the syntax <span 
+class="cmtt-12">option cplex</span><span 
+class="cmtt-12">_options</span>
+      <span 
+class="cmtt-12">&#8217;...&#8217;;</span>)
+      </li>
+      <li 
+  class="enumerate" id="x1-15x5"><span 
+class="cmbx-12">Hand in a progress report </span>of your work to date on the course project.
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                               </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                         </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr 
+class="vspace" style="font-size:5.0pt"><td 
+>&nbsp;</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Tuesdays 12noon&#8211;2pm, Wednesdays 11am&#8211;2pm..</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

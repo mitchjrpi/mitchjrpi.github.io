@@ -1,0 +1,146 @@
+\documentstyle[12pt]{article}
+
+\oddsidemargin -.5in
+\textheight 9in
+\textwidth 7.2in
+\topmargin -30pt
+\headsep 0pt
+\headheight 0pt
+
+\begin{document}
+
+\begin{center}
+   67.612 Integer Programming and Combinatorial Optimization
+\end{center}
+
+\begin{center}
+   Thursday, March 16, 1989. \hspace{1in}  2 hours.
+\end{center}
+
+Answer all questions.
+
+\begin{enumerate}
+   \item  (20 points.)
+          Find the minimum weight spanning tree in the graph below.
+          Specify the algorithm you use and the order in which you
+          construct your tree.
+
+   \newpage
+
+   \item  (15 points.)
+          Consider using the Bellman-Ford algorithm to find the shortest
+          path from $s$ to $t$ in a graph with edge lengths as follows:
+
+\begin{tabular}{lc|rrrrrr|}
+   \multicolumn{4}{c}{} & TO &  \multicolumn{3}{c}{}  \\
+   \multicolumn{2}{c}{}  &  \multicolumn{1}{c}{s}
+                       &  \multicolumn{1}{c}{1}
+                       &  \multicolumn{1}{c}{2}
+                       &  \multicolumn{1}{c}{3}
+                       &  \multicolumn{1}{c}{4}
+                       &  \multicolumn{1}{c}{t}   \\
+  \cline{3-8}
+   &  s  &  ---  &   3   &   2   &  100  &  100  &  100  \\
+   &  1  &  100  &  ---  &  -2   &   3   &  100  &  100  \\
+  FROM
+   &  2  &  100  &   4   &  ---  &   2   &   6   &  100  \\
+   &  3  &  100  &  100  &  100  &  ---  &   3   &  -4   \\
+   &  4  &  100  &  100  &  -4   &  100  &  ---  &  -8   \\
+   &  t  &  100  &  100  &  100  &  100  &  100  &  ---  \\
+  \cline{3-8}
+\end{tabular}
+
+(So, for example, the length of the arc from node $s$ to node 2 is 2.
+`---' indicates the corresponding edge does not exist.)
+
+Let $a_i^k$ be the length of the shortest path from $s$ to $i$ which uses
+at most $k$ edges. How would you calculate $a_i^{k+1}$?
+
+We find $a_s^3=0$, $a_1^3=3$, $a_2^3=1$, $a_3^3=3$, $a_4^3=7$, and
+$a_t^3=0$.  What are $a_i^4$, $i=s,1,2,3,4,t$?
+
+\newpage
+
+   \item  (20 points.)
+          Consider the problem of finding the maximum cardinality matching
+          in a bipartite graph.
+       \begin{enumerate}
+          \item  Express this problem as a linear programming problem~P.
+          \item  What is the dual linear program D to~P?
+          \item  How do node covers relate to feasible solutions to~D?
+          \item  What are the complementary slackness conditions for the
+                 dual pair of linear programming problems D and~P?
+       \end{enumerate}
+
+\newpage
+
+   \item  (30 points.)
+          Let $T$ be a finite set.
+          Let $S_i\subseteq{T}$, $i=1,2,\ldots,m$, and let
+          $\Sigma=\{S_1,S_2,\ldots,S_m\}$.
+          A list $(f_1,f_2,\ldots,f_m)$ of distinct elements
+          of $T$ which satisfy 
+          $f_i{\in}S_i,i=1,\ldots,m$
+          is called a {\em system of distinct representatives} (SDR)
+          of $\Sigma$.
+
+          For example:
+          \begin{quotation}
+             Let $T=\{a,b,c,d,e\}$.
+
+             If $\Sigma=\{\{a,b,c\},\{a,d,e\},\{a,d,e\},\{a,e\}\}$ then
+               $(c,d,e,a)$ is an SDR for $\Sigma$.
+
+             However, if 
+             $\Sigma=\{\{a,b,c\},\{a,d,e\},\{a,d,e\},\{a,e\},\{d,e\}\}$ then
+             there does not exist an SDR for $\Sigma$.
+          \end{quotation}
+
+       \begin{enumerate}
+          \item  Show that if there exists an SDR for $\Sigma$ then every
+                 ${\Sigma}'=\{S_{i_1},\ldots,S_{i_k}\}\subseteq\Sigma$
+                 must contain at least $k$
+                 distinct elements of $T$, ie, the cardinality of
+                 ${\cup}_{j=1}^k S_{i_j}$ is greater than or equal to $k$.
+          \item  Use the max-flow/min-cut theorem to show that if every
+                 ${\Sigma}'=\{S_{i_1},\ldots,S_{i_k}\}\subseteq\Sigma$
+                 contains at least $k$
+                 distinct elements of $T$ then there exists an SDR of
+                 $\Sigma$.
+                 (Hint:  Construct a bipartite graph with bipartition
+                 $(W_1,W_2)$.  Let the elements of $W_1$ correspond to the
+                 elements of $T$. Let the elements of $W_2$ correspond to the
+                 elements of $\Sigma$.
+                 Show that if there exists a flow of size $m$ then there
+                 exists an SDR.
+                 What can you conclude about the value of the maximum flow
+                 if there does not exist an SDR?
+                 If there exists a cut of size less than $m$, consider the
+                 elements of $W_2$ that are not reachable from $s$ with
+                 respect to the optimal flow.)
+        \end{enumerate}
+
+\newpage
+  \quad
+\newpage
+
+   \item  (15 points.)
+          For each of the questions below, answer either yes or no and give
+          a short justification for your answer.
+      \begin{enumerate}
+          \item Is the flow in the following graph maximum?
+                (The pair of numbers on each edge $e$ is $(x(e),c(e))$,
+                where $x(e)$ is the flow on edge $e$ and $c(e)$ is the
+                capacity of edge $e$.)
+            \vspace{2.3in}
+          \item Is the node cover in the following graph minimum?
+            \vspace{2.3in}
+          \item Is the matching in the following graph maximum?
+                (Squiggly lines indicate matched edges.)
+      \end{enumerate}
+
+\end{enumerate}
+
+
+
+\end{document}

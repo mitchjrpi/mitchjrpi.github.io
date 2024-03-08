@@ -1,0 +1,54 @@
+let NODES := 1 .. nnodes;
+
+let capacity := 10;
+
+let origin_limit := 2;
+
+let obj_weight := 1;
+
+param r default 0;
+param c default 0;
+param k default 0;
+
+for {i in 1..gridwidth} {
+   let ORIGINS := ORIGINS union {i};
+}
+
+for {i in 1..gridheight-1} {
+   let ORIGINS := ORIGINS union {1+i*gridwidth};
+}
+
+for {i in 0..gridheight-2} {
+   for {j in 1..gridwidth-1} {
+      let ARCS := ARCS union {(i*gridwidth+j,i*gridwidth+j+1)};
+           # horizontal edges (except bottom row)
+      let ARCS := ARCS union {(i*gridwidth+j,i*gridwidth+j+gridwidth)};
+           # vertical edges (except right hand side)
+   }
+}
+
+for {i in 1..gridheight-1} {
+      let ARCS := ARCS union {(i*gridwidth,i*gridwidth+gridwidth)};
+}
+#  the edges on the right side
+
+for {i in 1..gridwidth-1} {
+      let ARCS :=
+       ARCS union {((gridheight-1)*gridwidth+i,(gridheight-1)*gridwidth+i+1)};
+}
+#  the edges on the bottom
+
+for {(i,j) in ARCS} {
+   let traveltime[i,j] := floor(Uniform(1,5));
+   let repairtime[i,j] := floor(Uniform(3*traveltime[i,j],5*traveltime[i,j]));
+}
+
+
+# randomly generate the destinations
+repeat while card(DESTINATIONS) < ndest {
+   let r := floor(Uniform(2,gridheight+1));
+   let c := floor(Uniform(2,gridwidth+1));
+   let k := (r-1)*gridwidth + c;
+   let DESTINATIONS := DESTINATIONS union {k};
+   let demand[k] := floor(Uniform(1,6));
+}

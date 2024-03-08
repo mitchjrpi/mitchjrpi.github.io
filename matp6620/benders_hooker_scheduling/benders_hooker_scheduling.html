@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="benders_hooker_scheduling.tex"> 
+<meta name="date" content="2017-04-25 10:13:00"> 
+<link rel="stylesheet" type="text/css" href="benders_hooker_scheduling.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 128--><p class="noindent" >
+<!--l. 129--><p class="noindent" ><span 
+class="cmbx-12x-x-172">Logical Benders for Scheduling</span><br />
+<a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a></div>
+<!--l. 135--><p class="noindent" >Some classes of scheduling problems can be solved by a type of logical Benders decomposition
+popularized by Hooker&#x00A0;<span class="cite">[<a 
+href="#Xhooker_opt8">2</a>,&#x00A0;<a 
+href="#Xhooker_opt1">3</a>,&#x00A0;<a 
+href="#Xhooker_opt4">1</a>]</span>.
+<!--l. 139--><p class="indent" >   Consider a problem where we have to assign <span 
+class="cmmi-12">J </span>jobs to <span 
+class="cmmi-12">m </span>machines and then schedule the
+jobs on the machines. Each job&#x00A0;<span 
+class="cmmi-12">j </span>has a release time&#x00A0;<span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">j</span></sub> and a due date&#x00A0;<span 
+class="cmmi-12">b</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmmi-12">&#x003E; a</span><sub><span 
+class="cmmi-8">j</span></sub>. Work
+cannot start on job <span 
+class="cmmi-12">j </span>until time&#x00A0;<span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">j</span></sub> and it must be finished by time&#x00A0;<span 
+class="cmmi-12">b</span><sub><span 
+class="cmmi-8">j</span></sub>. It also has a
+processing time depending on the machine&#x00A0;<span 
+class="cmmi-12">i </span>chosen, denoted&#x00A0;<span 
+class="cmmi-12">p</span><sub><span 
+class="cmmi-8">ij</span></sub>. We have a cost <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub>
+for processing job&#x00A0;<span 
+class="cmmi-12">j </span>on machine&#x00A0;<span 
+class="cmmi-12">i </span>and the objective is to minimize the sum of these
+costs.
+<!--l. 149--><p class="indent" >   A Benders-type of approach to this problem is to construct a Master Problem that assigns jobs
+to machines and then have separate subproblems for each machine that schedule the jobs assigned
+to that machine. If the subproblem is infeasible then a constraint is fed back to the Master
+Problem and the Master Problem is solved again.
+<!--l. 156--><p class="indent" >   We can write the Master Problem as
+   <table 
+class="equation"><tr><td><a 
+ id="x1-2r1"></a>
+   <center class="math-display" >
+<img 
+src="benders_hooker_scheduling0x.png" alt="           &#x2211;     &#x2211;
+minx          mi=1   Jj=1 cijxij
+           &#x2211;m
+subject to     i=1 xij = 1
+           constraints to prevent invalid assignments  to machine  i
+
+           x binary
+" class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+<!--l. 164--><p class="nopar" >
+<!--l. 166--><p class="indent" >   Given a solution to the Master Problem &#x00A0;(<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.mp --></a>), the subproblem for machine&#x00A0;<span 
+class="cmmi-12">i </span>has to determine
+start times for each job&#x00A0;<span 
+class="cmmi-12">j </span>assigned to it in order to meet the time window constraints. If the
+subproblem is infeasible then there is a time interval&#x00A0;[<span 
+class="cmmi-12">a,b</span>] which is too short for the jobs
+assigned to the machine. More specifically, let <span 
+class="cmmi-12">J</span>(<span 
+class="cmmi-12">i</span>) be the jobs assigned to machine&#x00A0;<span 
+class="cmmi-12">i </span>and
+let
+                                                                                         
+                                                                                         
+   <table 
+class="equation"><tr><td><a 
+ id="x1-3r2"></a>
+   <center class="math-display" >
+<img 
+src="benders_hooker_scheduling1x.png" alt="Jba(i) := {i &#x2208; J(i) : a &#x2264; aj and bj &#x2264; b}.
+" class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+<!--l. 175--><p class="nopar" >
+If
+   <table 
+class="equation"><tr><td><a 
+ id="x1-4r3"></a>
+   <center class="math-display" >
+<img 
+src="benders_hooker_scheduling2x.png" alt=" &#x2211;
+     pij &#x003E; b - a
+j&#x2208;Jba(i)
+" class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+<!--l. 179--><p class="nopar" >
+then this set of jobs cannot all be assigned to machine&#x00A0;<span 
+class="cmmi-12">i</span>. Denote this set of jobs by&#x00A0;<span 
+class="cmmi-12">&#x0134;</span>. A valid
+constraint for the Master Problem is then
+   <table 
+class="equation"><tr><td><a 
+ id="x1-5r4"></a>
+   <center class="math-display" >
+<img 
+src="benders_hooker_scheduling3x.png" alt="&#x2211;
+    (1 - xij) &#x2265; 1.
+  &#x02C6;J
+" class="math-display" ></center></td><td class="equation-label">(4)</td></tr></table>
+                                                                                         
+                                                                                         
+<!--l. 185--><p class="nopar" >
+This forces <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ij</span></sub> = 0 for at least one of the jobs in <span 
+class="cmmi-12">&#x0134;</span>, thus preventing the assignment of this complete
+set of jobs to machine&#x00A0;<span 
+class="cmmi-12">i</span>.
+<!--l. 189--><p class="indent" >   In order to speed up the algorithm, it is desirable to <span 
+class="cmti-12">sparsify </span>the set&#x00A0;<span 
+class="cmmi-12">&#x0134;</span>, that is, include as few
+jobs in the set as possible.
+<!--l. 194--><p class="indent" >   The structure of this Benders algorithm is different from the others we have considered in that
+the subproblem is an <span 
+class="cmti-12">integer </span>program. Thus, we cannot exploit LP duality in the construction of
+cuts for the Master Problem. Instead, we have to use logical arguments to construct valid
+constraints for the Master Problem. Hooker refers to the arguments as <span 
+class="cmti-12">infeasibility proofs</span>; he
+generalizes the idea of an LP dual to an <span 
+class="cmti-12">inference dual</span>.
+   <h3 class="likesectionHead"><a 
+ id="x1-1000"></a>References</h3>
+<!--l. 1--><p class="noindent" >
+   <div class="thebibliography">
+   <p class="bibitem" ><span class="biblabel">
+ [1]<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
+ id="Xhooker_opt4"></a>J.&#x00A0;N.  Hooker.   An  integrated  method  for  planning  and  scheduling  to  minimize
+   tardiness. <span 
+class="cmti-12">Constraints</span>, 11(2&#8211;3):139&#8211;157, 2006.
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+ [2]<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
+ id="Xhooker_opt8"></a>J.&#x00A0;N.  Hooker.    Planning  and  scheduling  by  logic-based  benders  decomposition.
+   <span 
+class="cmti-12">Operations Research</span>, 55(3):588&#8211;602, 2007.
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+ [3]<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
+ id="Xhooker_opt1"></a>J.&#x00A0;N. Hooker and G.&#x00A0;Ottosson.  Logic-based Benders decomposition.  <span 
+class="cmti-12">Mathematical</span>
+   <span 
+class="cmti-12">Programming</span>, 96(1):33&#8211;60, 2003.
+</p>
+   </div>
+    
+</body></html> 
+
+                                                                                         
+
+

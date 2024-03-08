@@ -1,0 +1,519 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Midterm Exam</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="midterm">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="midterm.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+     <A HREF=..>MATP6600 / DSES6780 Nonlinear Programming</A>
+  </FONT>
+</DIV>
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+                Midterm Exam, Fall 1999
+  </FONT>
+</DIV>
+
+<P>
+Take Home   
+Due:  Beginning of class, Wednesday, 3 November 1999.
+
+<P>
+
+<BR>
+
+<P>
+This is to be all your own work.  You may use any result from class,
+homeworks, or the books on reserve in the library.
+Do not consult anybody or anything else. 
+I can dispense hints to help you if you are stuck.
+You can reach me by email at <A HREF=mailto:mitchj@rpi.edu>mitchj@rpi.edu</A>.
+My phone number is 276-6915.
+The exam consists of five questions and is worth a total of 100 points.
+I will have my usual office hours as follows:
+
+<P>
+
+<P></P>
+
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=72>&nbsp;</TD>
+<TD ALIGN="LEFT">Friday, 29 Oct:</TD>
+<TD ALIGN="LEFT">1-1.50pm</TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=72>&nbsp;</TD>
+<TD ALIGN="LEFT">Monday, 1 Nov:</TD>
+<TD ALIGN="LEFT">5-6pm</TD>
+</TR>
+</TABLE>
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>(25 points.)
+Consider the nonlinear programming problem
+     <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lccccr}
+         \min        & (x_1+3)^2 & + & (x_2+12)^2 \\
+         \mbox{s.t.} &   x_1^2   & + & (x_2+8)^2  & \geq & 100 \\
+                     &           &   &    x_2     & \geq &  0.
+       \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="322" HEIGHT="76"
+ SRC="img1.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lccccr}
+\min &amp; (x_1+3)^2 &amp; + &amp; (x_2+12)^2 \\...
+...(x_2+8)^2 &amp; \geq &amp; 100 \\
+&amp; &amp; &amp; x_2 &amp; \geq &amp; 0.
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+     <DL COMPACT>
+<DT>(a)
+<DD>(3 points.)
+Is the feasible region for this problem convex?
+       <DT>(b)
+<DD>(4 points.)
+         Show that the gradients of the active constraints are
+         linearly independent at any feasible point.
+       <DT>(c)
+<DD>(3 points.)
+         What are the Karush-Kuhn-Tucker conditions for this problem?
+       <DT>(d)
+<DD>(3 points.)
+         Verify that the points (6,0) and (-6,0) satisfy the KKT
+         conditions.
+       <DT>(e)
+<DD>(4 points.)
+         Show that there are no points which satisfy
+         <!-- MATH: $x_1^2+(x_2+8)^2>100$ -->
+<I>x</I><SUB>1</SUB><SUP>2</SUP>+(<I>x</I><SUB>2</SUB>+8)<SUP>2</SUP>&gt;100 and also satisfy the KKT conditions.
+       <DT>(f)
+<DD>(4 points.)
+         Are there any other points which satisfy the KKT conditions?
+       <DT>(g)
+<DD>(4 points.)
+         Can you find the global minimizer?
+     </DL>
+  <DT>2.
+<DD>(20 points.)
+    <DL COMPACT>
+<DT>(a)
+<DD>(10 points.)
+Let <!-- MATH: $Y=[y_1 \ldots y_m]$ -->
+<IMG
+ WIDTH="121" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$Y=[y_1 \ldots y_m]$">
+be an <I>n</I>  x  <I>m</I> matrix,
+         so <I>y</I><SUB><I>i</I></SUB> is the <I>i</I>th column of&nbsp;<I>Y</I>.
+         Let <IMG
+ WIDTH="64" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$u \in {\Re}^m$">
+with
+         <IMG
+ WIDTH="49" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$u \geq 0$">
+and <!-- MATH: $\sum_{i=1}^mu_i=1$ -->
+<IMG
+ WIDTH="97" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$\sum_{i=1}^mu_i=1$">.
+         The matrix <I>Y</I> and the vector <I>u</I> are given.
+         Show that <I>x</I>=<I>Yu</I> solves
+         <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\min \sum_i \frac{1}{2} u_i \| x-y_i \|_2^2.
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="169" HEIGHT="53"
+ SRC="img6.gif"
+ ALT="\begin{displaymath}
+\min \sum_i \frac{1}{2} u_i \Vert x-y_i \Vert _2^2.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+      <DT>(b)
+<DD>(10 points.)
+         Suppose you have an algorithm for minimizing a convex quadratic
+         function subject to linear constraints.
+         How could you solve the problem
+         <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\min_x \max_i \| x-y_i \|_2^2,
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="151" HEIGHT="41"
+ SRC="img7.gif"
+ ALT="\begin{displaymath}
+\min_x \max_i \Vert x-y_i \Vert _2^2,
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <!-- MATH: $y_1, \ldots ,y_m$ -->
+<IMG
+ WIDTH="84" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$y_1, \ldots ,y_m$">
+are distinct given points in <IMG
+ WIDTH="27" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.gif"
+ ALT="${\Re}^n$">?
+         (Note: a quadratic function has the form <!-- MATH: $f(w)=w^TQw+c^Tw+d$ -->
+<I>f</I>(<I>w</I>)=<I>w</I><SUP><I>T</I></SUP><I>Qw</I>+<I>c</I><SUP><I>T</I></SUP><I>w</I>+<I>d</I>,
+         where <I>Q</I> is a matrix, <I>c</I> is a vector, and <I>d</I> is a scalar.)
+    </DL>
+  <DT>3.
+<DD>(15 points. Each part is worth 5 points.) 
+<BR>
+Consider the nonlinear programming problem  
+<BR>
+    <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lccl}
+        \min             &  \frac{1}{2}x^TMx  \\
+        \mbox{s.t.}      &  \frac{1}{2}x^Tx  & = &  \frac{1}{2}.
+      \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="170" HEIGHT="53"
+ SRC="img10.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lccl}
+\min &amp; \frac{1}{2}x^TMx \\
+\mbox{s.t.} &amp; \frac{1}{2}x^Tx &amp; = &amp; \frac{1}{2}.
+\end{array} \end{displaymath}">
+</DIV>
+      <DIV ALIGN="RIGHT">
+(<I>P</I>)
+</DIV>
+    <BR>
+<BR>  
+<BR>
+Assume <I>M</I> is (<I>n</I>  x  <I>n</I>) and symmetric. Let the eigenvalues of
+    <I>M</I> be <!-- MATH: $\lambda_1\leq\lambda_2\leq\ldots\leq\lambda_n$ -->
+<IMG
+ WIDTH="159" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.gif"
+ ALT="$\lambda_1\leq\lambda_2\leq\ldots\leq\lambda_n$">.
+    Assume <IMG
+ WIDTH="57" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.gif"
+ ALT="$\lambda_1&lt;0$">
+and <!-- MATH: $\lambda_1<\lambda_2$ -->
+<IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\lambda_1&lt;\lambda_2$">.
+    We saw in Homework&nbsp;4 that the optimal solutions to this
+    problem are the eigenvectors with eigenvalue <IMG
+ WIDTH="22" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$\lambda_1$">
+    and norm <IMG
+ WIDTH="86" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.gif"
+ ALT="$\sqrt{x^Tx}=1$">.
+    (Recall: <IMG
+ WIDTH="15" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.gif"
+ ALT="$\lambda$">
+is an eigenvalue of <I>A</I> if <IMG
+ WIDTH="75" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$Ax=\lambda x$">
+for some
+    nonzero vector <I>x</I>; a nonzero <I>x</I> satisfying this equation for some
+    <IMG
+ WIDTH="15" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.gif"
+ ALT="$\lambda$">
+is an eigenvector of <I>A</I> with eigenvalue&nbsp;<IMG
+ WIDTH="15" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.gif"
+ ALT="$\lambda$">.
+    <I>A</I>&nbsp;is positive definite if and only if all the eigenvalues of <I>A</I>
+    are positive. <I>A</I>&nbsp;is positive semi-definite if and only if all the
+    eigenvalue of <I>A</I> are nonnegative.
+    If <I>A</I> has eigenvalues <IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.gif"
+ ALT="$\mu_1$">,...,<IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$\mu_n$">
+then <I>A</I>+<I>aI</I> has eigenvalues
+    <IMG
+ WIDTH="56" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.gif"
+ ALT="$\mu_1+a$">,...,<IMG
+ WIDTH="57" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$\mu_n+a$">.) 
+    <DL COMPACT>
+<DT>(a)
+<DD>What is the Lagrangian dual function <IMG
+ WIDTH="38" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.gif"
+ ALT="$\theta(v)$">
+for this problem?
+(Take <IMG
+ WIDTH="69" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.gif"
+ ALT="$X=\Re^n$">.)
+      <DT>(b)
+<DD>Solve the Lagrangian dual problem.
+      <DT>(c)
+<DD>Let <IMG
+ WIDTH="13" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.gif"
+ ALT="$\hat{v}$">
+solve the Lagrangian dual problem.
+        Let <IMG
+ WIDTH="45" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.gif"
+ ALT="$X(\hat{v})$">
+be the set of points in <I>X</I> which achieve the
+        infimum in the definition of <IMG
+ WIDTH="38" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.gif"
+ ALT="$\theta(v)$">.
+        Show that <IMG
+ WIDTH="45" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.gif"
+ ALT="$X(\hat{v})$">
+contains infinitely many points and that
+        one of them solves the primal problem.
+    </DL>
+  <DT>4.
+<DD><DL COMPACT>
+<DT>(a)
+<DD>(10 points.) <A NAME="sepa">&#160;</A>Consider the two sets of points
+         <!-- MATH: $A=\{a^1,...,a^k\}$ -->
+<I>A</I>={a<SUP>1</SUP>,...,<I>a</I><SUP><I>k</I></SUP>} and <!-- MATH: $B=\{b^1,...,b^m\}$ -->
+<I>B</I>={b<SUP>1</SUP>,...,<I>b</I><SUP><I>m</I></SUP>} in <IMG
+ WIDTH="27" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.gif"
+ ALT="${\Re}^n$">.
+         Show that the two sets of points can be strictly separated if
+         and only if there exists a vector <IMG
+ WIDTH="61" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.gif"
+ ALT="$x\in\Re^n$">
+and a
+         scalar&nbsp;<IMG
+ WIDTH="15" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.gif"
+ ALT="$\gamma$">
+satisfying
+         <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{rcrcll}
+             {a^i}^T x & - & \gamma & \geq & 1, & i=1,...,k  \\
+            -{b^j}^T x & + & \gamma & \geq & 1, & j=1,...,m.
+           \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="281" HEIGHT="59"
+ SRC="img28.gif"
+ ALT="\begin{displaymath}
+\begin{array}{rcrcll}
+{a^i}^T x &amp; - &amp; \gamma &amp; \geq &amp; 1, &amp;...
+... -{b^j}^T x &amp; + &amp; \gamma &amp; \geq &amp; 1, &amp; j=1,...,m.
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+         (Here, by <EM>strictly separate</EM>, I mean that the separating
+         hyperplane does not contain any points in either <I>A</I> or&nbsp;<I>B</I>.)
+      <DT>(b)
+<DD>(10 points.)
+         The problem in part <A HREF="midterm.html#sepa">4a</A> is a linear
+         programming feasibility problem with variables <I>x</I> and <IMG
+ WIDTH="15" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.gif"
+ ALT="$\gamma$">.
+         It can be stated as
+         an optimization problem if we use the objective function
+         <!-- MATH: $\min 0^Tx+0\gamma$ -->
+<IMG
+ WIDTH="112" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$\min 0^Tx+0\gamma$">,
+which is zero for any feasible solution.
+         What is the dual of this linear program?
+         If the dual problem has a feasible nonzero solution,
+         what does that imply about the primal problem given in
+         part&nbsp;<A HREF="midterm.html#sepa">4a</A>? Can you give a geometric meaning for
+         a nonzero solution to the dual problem?
+    </DL>
+   <DT>5.
+<DD>(20 points.)
+      Let <!-- MATH: $f:{\Re}^n\rightarrow\Re$ -->
+<IMG
+ WIDTH="97" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.gif"
+ ALT="$f:{\Re}^n\rightarrow\Re$">
+be C<SUP>1</SUP> (ie, the first derivative
+      is continuous).
+      <DL COMPACT>
+<DT>(a)
+<DD>(8 points.) <A NAME="fC1a">&#160;</A>Show that the first order necessary conditions for <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.gif"
+ ALT="$\bar{x}$">
+            to be a local minimizer of <I>f</I> over <IMG
+ WIDTH="29" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="${\Re}^n_+$">
+are
+            <!-- MATH: $\bar{x}\geq{0}$ -->
+<IMG
+ WIDTH="49" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.gif"
+ ALT="$\bar{x}\geq{0}$">,
+<!-- MATH: ${\nabla}f(\bar{x}){\geq}0$ -->
+<IMG
+ WIDTH="81" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.gif"
+ ALT="${\nabla}f(\bar{x}){\geq}0$">,
+and
+            <!-- MATH: ${\bar{x}}^T{\nabla}f(\bar{x})=0$ -->
+<IMG
+ WIDTH="112" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.gif"
+ ALT="${\bar{x}}^T{\nabla}f(\bar{x})=0$">.
+            (Note: <!-- MATH: ${\Re}^n_+ := \{x \in {\Re}^n: x \geq 0\}$ -->
+<IMG
+ WIDTH="196" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img36.gif"
+ ALT="${\Re}^n_+ := \{x \in {\Re}^n: x \geq 0\}$">.)
+         <DT>(b)
+<DD>(6 points.) <A NAME="fC1b">&#160;</A>            Let <!-- MATH: $F:{\Re}^n \rightarrow {\Re}^n$ -->
+<IMG
+ WIDTH="110" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img37.gif"
+ ALT="$F:{\Re}^n \rightarrow {\Re}^n$">
+be strictly monotone.
+            (A function G is strictly monotone if
+             <!-- MATH: $x\neq y \Rightarrow (G(y)-G(x))^T(y-x) > 0$ -->
+<IMG
+ WIDTH="299" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.gif"
+ ALT="$x\neq y \Rightarrow (G(y)-G(x))^T(y-x) &gt; 0$">.)
+            Show that <I>F</I> has at most one zero (an <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.gif"
+ ALT="$\bar{x}$">
+with
+            <IMG
+ WIDTH="78" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.gif"
+ ALT="$F(\bar{x})=0$">)
+and that the nonlinear complementarity
+            problem (find <!-- MATH: $\bar{x} \geq 0$ -->
+<IMG
+ WIDTH="49" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.gif"
+ ALT="$\bar{x}\geq{0}$">
+with <!-- MATH: $F(\bar{x}) \geq 0$ -->
+<IMG
+ WIDTH="79" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.gif"
+ ALT="$F(\bar{x}) \geq 0$">
+            and <!-- MATH: $\bar{x}^TF(\bar{x})=0$ -->
+<IMG
+ WIDTH="99" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img41.gif"
+ ALT="$\bar{x}^TF(\bar{x})=0$">)
+has at most one solution.
+         <DT>(c)
+<DD>(6 points.)
+            <B>Using the results of parts <A HREF="midterm.html#fC1a">5a</A> and <A HREF="midterm.html#fC1b">5b</A></B>,
+            show that, if <I>f</I> is strictly convex, it has at
+            most one minimizer over <IMG
+ WIDTH="27" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.gif"
+ ALT="${\Re}^n$">
+and at
+            most one minimizer over <IMG
+ WIDTH="29" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="${\Re}^n_+$">.
+            (Hint: We know that <I>f</I> is strictly convex if
+             <!-- MATH: $x \neq y, \lambda \in (0,1) \Rightarrow
+             f(\lambda x + (1-\lambda)y) < \lambda f(x) + (1-\lambda) f(y)$ -->
+<IMG
+ WIDTH="491" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.gif"
+ ALT="$x \neq y, \lambda \in (0,1) \Rightarrow
+f(\lambda x + (1-\lambda)y) &lt; \lambda f(x) + (1-\lambda) f(y)$">.
+             You may assume that
+             <I>f</I> is strictly convex if and only if
+             <IMG
+ WIDTH="31" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img43.gif"
+ ALT="${\nabla}f$">
+is strictly monotone.)
+      </DL></DL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<I><A HREF=../..>John E Mitchell</A></I>
+<BR><I>1999-10-27</I>
+</ADDRESS>
+</BODY>
+</HTML>

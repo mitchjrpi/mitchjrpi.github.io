@@ -1,0 +1,414 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Final Exam Fall 2005</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="final05">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="final05.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  <FONT SIZE="+1">
+<a href=../..>
+  MATP6620/DSES6770 
+<BR>
+  <B>Combinatorial Optimization and Integer Programming </B> 
+</a>
+<BR>
+Fall 2005</FONT>
+
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER">
+  Final Exam, Friday, December 16, 2005.
+
+</DIV>
+
+<P>
+Please do all three problems. Show all work. No books or calculators allowed.
+You may use any result from class, the homeworks, or the texts, except where
+stated.
+You may use one sheet of handwritten notes.
+The exam lasts three hours.
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>(30 points; each part is worth 10 points) 
+<BR>
+Consider the knapsack problem
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcrcrclr}
+\max & 23x_1 & + & 17x_2 & + & 30x_3 & + & 14x_4 & + & 9x_5 \\
+\mbox{subject to} & 6x_1 & + & 5x_2 & + & 10x_3 & + & 7x_4 & + & 5x_5 & \leq & 14 & \quad (KP) \\
+& \multicolumn{11}{c}{x_i \in \{0,1\},  \; i=1,\ldots, 5}
+\end{array}
+\end{displaymath} -->
+
+<IMG
+ WIDTH="602" HEIGHT="76"
+ SRC="img1.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcrcrclr}
+\max &amp; 23x_1 &amp; + &amp; 17x_2 &amp; + &amp; ...
+...lticolumn{11}{c}{x_i \in \{0,1\}, \; i=1,\ldots, 5}
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Let <I>P</I> denote the feasible region of (<I>KP</I>).
+
+<P>
+
+<DL COMPACT>
+<DT>(a)
+<DD>Recall that a <EM>cover</EM> is a set of variables <I>x</I><SUB><I>j</I></SUB> whose constraint coefficients <I>a</I><SUB><I>j</I></SUB>
+add up to more than&nbsp;<I>b</I>. Any feasible solution cannot have all of these <I>x</I><SUB><I>j</I></SUB>=1.
+Give three minimal cover inequalities satisfied by all feasible solutions to&nbsp;(<I>KP</I>).
+(Note: there are more than three minimal cover inequalities for this problem.)
+<P>
+
+<DT>(b)
+<DD>The inequality
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+x_1 + x_2 + x_4 + x_5 \leq 2
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="176" HEIGHT="31"
+ SRC="img2.gif"
+ ALT="\begin{displaymath}
+x_1 + x_2 + x_4 + x_5 \leq 2
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+is valid for <!-- MATH: $P \cap \{x \in I\!\!R^5: x_3=0\}$ -->
+<IMG
+ WIDTH="188" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$P \cap \{x \in I\!\!R^5: x_3=0\}$">
+Lift this inequality to give a valid inequality for&nbsp;<I>P</I>.
+
+<P>
+
+<DT>(c)
+<DD>Let <I>s</I> denote the slack in the original knapsack constraint,
+and
+let <I>s</I><SUB><I>i</I></SUB>=1-<I>x</I><SUB><I>i</I></SUB>
+for <IMG
+ WIDTH="97" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$i=1,\ldots,5$">.
+The optimal solution to the LP relaxation is to take <I>x</I><SUB>1</SUB>=<I>x</I><SUB>2</SUB>=1,
+<I>x</I><SUB>3</SUB>=0.3, and <I>x</I><SUB>4</SUB>=<I>x</I><SUB>5</SUB>=0.
+One row of the optimal simplex tableau
+can be written
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+x_3 + 0.7x_4 + 0.5 x_5 - 0.6 s_1 - 0.5 s_2 + 0.1s =  0.3.
+\end{displaymath} -->
+
+
+<I>x</I><SUB>3</SUB> + 0.7<I>x</I><SUB>4</SUB> + 0.5 <I>x</I><SUB>5</SUB> - 0.6 <I>s</I><SUB>1</SUB> - 0.5 <I>s</I><SUB>2</SUB> + 0.1<I>s</I> =  0.3.
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Show that the Gomory cutting plane procedure applied to this constraint
+gives a constraint equivalent to a cover inequality.
+Is it a minimal cover inequality?
+</DL>
+
+<P>
+
+<DT>2.
+<DD>(50 points, each part is worth 10 points)  
+<BR>
+Let <I>G</I>=(<I>V</I>,<I>E</I>) be a graph with edge weights <I>w</I><SUB><I>e</I></SUB>
+and let <IMG
+ WIDTH="60" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$R \subseteq V$">
+be a set of required vertices.
+The <B>Steiner tree problem</B> is to find the minimum weight tree
+in&nbsp;<I>G</I> that includes every vertex in&nbsp;<I>R</I>.
+In the following complete graph on four vertices,
+vertices 1, 2, and 3 are required, so <I>R</I>={1,2,3}.
+Edge lengths are indicated.
+
+<P>
+
+<DIV ALIGN="CENTER">
+<BR>
+<IMG
+ WIDTH="336" HEIGHT="254" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="\begin{picture}
+(200,200)
+\put(100,180){\circle{15}}
+\put(97,176){1}
+\put(100,80...
+...ut(100,32){5}
+\par
+\put(102,120){3}
+\put(50,60){3}
+\put(140,60){3}
+\end{picture}">
+<BR>
+</DIV>
+
+<P>
+
+<DL COMPACT>
+<DT>(a)
+<DD>A feasible solution to a Steiner tree problem can be obtained by finding a
+minimum spanning tree on the subgraph of <I>G</I> induced by the vertices in&nbsp;<I>R</I>.
+         Show that the minimum spanning tree on this subgraph is not optimal
+         for the Steiner tree problem on this graph.
+
+         <DT>(b)
+<DD>A first attempt to formulate
+         the Steiner tree problem on this graph as an
+         integer programming problem is the following:
+         <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcrcrcrclr}
+         \min & 5\mbox{$x_{1,2}$ }& + & 5\mbox{$x_{1,3}$ }& + & 5\mbox{$x_{2,3}$ }& + & 3\mbox{$x_{1,4}$ }& + & 3 \mbox{$x_{2,4}$ }& + & 3\mbox{$x_{3,4}$ }\\
+         \mbox{s.t.} & \mbox{$x_{1,2}$ }& + & \mbox{$x_{1,3}$ }&&& + & \mbox{$x_{1,4}$ }&&&&& \geq & 1 \\
+         & \mbox{$x_{1,2}$ }&&& + & \mbox{$x_{2,3}$ }&&& + & \mbox{$x_{2,4}$ }&&& \geq & 1 & \qquad (IP)  \\
+         &&& \mbox{$x_{1,3}$ }& + & \mbox{$x_{2,3}$ }&&&&& + & \mbox{$x_{3,4}$ }& \geq & 1  \\
+         & \multicolumn{11}{c}{\mbox{$x_{1,2}$ }, \mbox{$x_{1,3}$ }, \mbox{$x_{2,3}$ }, \mbox{$x_{1,4}$ }, \mbox{$x_{2,4}$ }, \mbox{$x_{3,4}$ }\mbox{ binary}}
+         \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="691" HEIGHT="122"
+ SRC="img7.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcrcrcrclr}
+\min &amp; 5\mbox{$x_{1,2}$ }&amp; ...
+...box{$x_{2,4}$ }, \mbox{$x_{3,4}$ }\mbox{ binary}}
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The upper bound constraints <IMG
+ WIDTH="57" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$x_e \leq 1$">
+are redundant in the LP relaxation,
+         so the dual to the LP relaxation can be written
+         <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrclr}
+         \max & y_1 & + & y_2 & + & y_3 \\
+         \mbox{s.t.} & y_1 & + & y_2 &&& \leq & 5  \\
+         & y_1 &&& + & y_3 & \leq & 5  \\
+         &&& y_2 & + & y_3 & \leq & 5 & \qquad (D) \\
+         & y_1 &&&&& \leq & 3 \\
+         &&& y_2 &&& \leq & 3 \\
+         &&&&& y_3 & \leq & 3 \\
+         & \multicolumn{5}{r}{y_1, y_2, y_3} & \geq & 0
+         \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="331" HEIGHT="192"
+ SRC="img9.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrclr}
+\max &amp; y_1 &amp; + &amp; y_2 &amp; + &amp; y_3 \\...
+...
+&amp; \multicolumn{5}{r}{y_1, y_2, y_3} &amp; \geq &amp; 0
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Show that the optimal value of the LP relaxation is 7.5, by finding primal and dual
+         feasible solutions with this value.
+
+<P>
+
+<DT>(c)
+<DD><A NAME="part14vs23">&#160;</A>        <DL COMPACT>
+<DT>i.
+<DD>Why are the following constraints valid for the Steiner Tree Problem:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{rcrcrcrcrcrcl}
+        \mbox{$x_{1,2}$ }& + & \mbox{$x_{1,3}$ }&&&&& + & \mbox{$x_{2,4}$ }& + & \mbox{$x_{3,4}$ }& \geq & 1  \\
+        \mbox{$x_{1,2}$ }&&& + & \mbox{$x_{2,3}$ }& + & \mbox{$x_{1,4}$ }&&& + & \mbox{$x_{3,4}$ }& \geq & 1 \\
+        && \mbox{$x_{1,3}$ }& + & \mbox{$x_{2,3}$ }& + & \mbox{$x_{1,4}$ }& + & \mbox{$x_{2,4}$ }&&& \geq & 1
+        \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="495" HEIGHT="76"
+ SRC="img10.gif"
+ ALT="\begin{displaymath}
+\begin{array}{rcrcrcrcrcrcl}
+\mbox{$x_{1,2}$ }&amp; + &amp; \mbox{...
+...ox{$x_{1,4}$ }&amp; + &amp; \mbox{$x_{2,4}$ }&amp;&amp;&amp; \geq &amp; 1
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+        <DT>ii.
+<DD>Give a feasible integral solution to (<I>IP</I>) that violates one of these constraints
+        and does not correspond to a Steiner tree.
+        </DL>
+
+<P>
+
+<DT>(d)
+<DD><A NAME="part.sumall">&#160;</A>         Let <I>S</I> be the set of incidence vectors of feasible solutions to the Steiner tree problem.
+         The constraint
+         <BR><P></P>
+<DIV ALIGN="CENTER">
+
+<!-- MATH: \begin{equation}
+3\mbox{$x_{1,2}$ }+ 3\mbox{$x_{1,3}$ }+ 3\mbox{$x_{2,3}$ }+ 2 \mbox{$x_{1,4}$ }+ 2 \mbox{$x_{2,4}$ }+ 2 \mbox{$x_{3,4}$ }\geq 6
+\end{equation} -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eqn.sumall">&#160;</A><IMG
+ WIDTH="415" HEIGHT="34"
+ SRC="img11.gif"
+ ALT="\begin{displaymath}
+3\mbox{$x_{1,2}$ }+ 3\mbox{$x_{1,3}$ }+ 3\mbox{$x_{2,3}$ }+...
+...x{$x_{1,4}$ }+ 2 \mbox{$x_{2,4}$ }+ 2 \mbox{$x_{3,4}$ }\geq 6
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(1)</TD></TR>
+</TABLE>
+</DIV>
+<BR CLEAR="ALL"><P></P>
+is valid for&nbsp;<I>S</I>.
+         Show that adding this constraint to the LP relaxation of (<I>IP</I>) results in
+         an optimal value of&nbsp;9, and hence gives a proof that the optimal Steiner tree
+         uses the edges (1,4), (2,4), and (3,4).
+
+<P>
+
+<DT>(e)
+<DD>By considering the valid constraints
+          <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{rcrcrcrcrcrcl}
+          \mbox{$x_{1,2}$ }& + & \mbox{$x_{1,3}$ }& + & \mbox{$x_{2,3}$ }& + & \mbox{$x_{1,4}$ }& + & \mbox{$x_{2,4}$ }&&& \geq & 2  \\
+          \mbox{$x_{1,2}$ }& + & \mbox{$x_{1,3}$ }& + & \mbox{$x_{2,3}$ }& + & \mbox{$x_{1,4}$ }&&& + & \mbox{$x_{3,4}$ }& \geq & 2  \\
+          \mbox{$x_{1,2}$ }& + & \mbox{$x_{1,3}$ }& + & \mbox{$x_{2,3}$ }&&& + & \mbox{$x_{2,4}$ }& + & \mbox{$x_{3,4}$ }& \geq & 2  \\
+          \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="496" HEIGHT="76"
+ SRC="img12.gif"
+ ALT="\begin{displaymath}
+\begin{array}{rcrcrcrcrcrcl}
+\mbox{$x_{1,2}$ }&amp; + &amp; \mbox{...
+...{$x_{2,4}$ }&amp; + &amp; \mbox{$x_{3,4}$ }&amp; \geq &amp; 2 \\
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+or otherwise,
+          show that constraint&nbsp;(<A HREF="final05.html#eqn.sumall">1</A>) does not define a facet
+          of&nbsp;<I>S</I>.
+          (You may assume that <I>S</I> has dimension equal to&nbsp;6.)
+</DL>
+
+<P>
+
+<DT>3.
+<DD>(20 points; each part is worth 10 points)  
+<BR>
+We have an integer program of the form
+   <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrclr}
+   \min & c^Tx \\
+   \mbox{s.t.} & Ax & \geq & b & \qquad (IP)  \\
+   & x && \mbox{binary}
+   \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="265" HEIGHT="76"
+ SRC="img13.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrclr}
+\min &amp; c^Tx \\
+\mbox{s.t.} &amp; Ax &amp; \geq &amp; b &amp; \qquad (IP) \\
+&amp; x &amp;&amp; \mbox{binary}
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <I>b</I>&gt;0 and <I>c</I>&gt;0, and each nonzero element <I>a</I><SUB><I>ij</I></SUB> of <I>A</I> satisfies
+   <!-- MATH: $a_{ij} \geq b_i$ -->
+<IMG
+ WIDTH="65" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$a_{ij} \geq b_i$">.
+         <DL COMPACT>
+<DT>(a)
+<DD>Show that the optimal solution to the LP relaxation of (<I>IP</I>)
+can be used to find a feasible integer solution.
+
+            <DT>(b)
+<DD>Let <I>p</I> be the maximum number of nonzeroes in any row of&nbsp;<I>A</I>.
+           Give a polynomial time algorithm to find a feasible integer
+           solution that has value within a factor of <I>p</I> of the optimal value.
+         </DL>
+
+<P>
+</DL>
+
+<P>
+<HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<font size=-2>
+<A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</font>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../../..>John E. Mitchell</a>
+<BR><I>2007-04-27</I>
+</ADDRESS>
+</BODY>
+</HTML>

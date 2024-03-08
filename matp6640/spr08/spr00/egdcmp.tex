@@ -1,0 +1,262 @@
+\documentstyle[12pt]{article}
+
+\renewcommand{\baselinestretch}{1.4}
+
+% My definitions of page layout
+\oddsidemargin .3in
+\textwidth 6in
+\textheight 8.8in
+\topmargin -30pt
+
+\pagestyle{myheadings}
+
+%\markboth{}{}
+
+\markboth{Dantzig-Wolfe example}{Dantzig-Wolfe example}
+
+\begin{document}
+
+\begin{center}
+   MATP6640/DSES6780 Linear Programming
+\end{center}
+
+\begin{center}
+  {\large\bf An Example of Dantzig-Wolfe Decomposition}
+\end{center}
+
+Consider the linear programming problem:
+\begin{displaymath}
+  \begin{array}{lccl}
+    \min         & c^Tx    & := & x_1 - x_2 - 2x_3 \\
+    \mbox{s.t. } & Ax      & := & x_1 + x_2 + x_3 = 3 =: b \\
+                 & x \in X & := & \left\{x : \begin{array}{l}
+                                          0 \leq x_1 \leq 2 \\
+                                          0 \leq x_2 \\
+                                          0 \leq x_3 \leq 2
+                                        \end{array} \right\}.
+  \end{array}
+\end{displaymath}
+Thus, $c^T=(1,-1,-2)$, $A=(1,1,1)$ and $b=3$.
+The {\em Master Problem (MP)} is:
+\begin{displaymath}
+  \begin{array}{lrcrcl}
+    \min         & \sum_{j\in J} (c^Tx^j) \lambda_j & + &
+                      \sum_{k\in K} (c^Td^k) \mu_k \\
+    \mbox{s.t. } & \sum_{j\in J} (Ax^j) \lambda_j & + & 
+                      \sum_{k\in K} (Ad^k) \mu_k & = & b \\
+                 & \sum_{j\in J} \lambda_j &&& = & 1 \\
+                 & \lambda_j \geq 0, && \mu_k \geq 0,
+  \end{array}
+\end{displaymath}
+where $\{x^j:j \in J \}$ is the set of extreme points of $X$, and
+$\{d^k:k \in K \}$ is the set of extreme rays of $X$.
+
+
+\begin{picture}(400,300)
+\put(200,100){\vector(1,0){200}}
+\put(200,100){\vector(0,1){150}}
+\put(200,100){\vector(-2,-1){150}}
+\put(300,100){\line(0,1){100}}
+\put(200,200){\line(1,0){100}}
+\put(300,100){\line(-2,-1){150}}
+\put(200,200){\line(-2,-1){150}}
+\put(300,200){\line(-2,-1){150}}
+
+\put(35,25){$x_2$}
+\put(390,85){$x_1$}
+\put(185,240){$x_3$}
+
+\put(201,85){0}
+\put(301,85){2}
+\put(185,201){2}
+\end{picture}
+
+\newpage
+
+\begin{itemize}
+  \item {\bf Initialization}: \\
+     Start with the two extreme points $x^1:=(2,0,0)^T$ and $x^2:=(2,0,2)^T$ of
+     $X$. Then when using the revised simplex method, our basic variables
+     are $\lambda_1$ and $\lambda_2$.
+     So, in terms of the basic variables, we get the
+     {\em Revised Master Problem (RMP)}:
+     \begin{displaymath}
+       \begin{array}{lrcrcl}
+         \min        & 2\lambda_1 & - & 2\lambda_2 \\
+         \mbox{s.t. }& 2\lambda_1 & + & 4\lambda_2 & = & 3 \\
+                     &  \lambda_1 & + &  \lambda_2 & = & 1 \\
+                     &  \lambda_j & \geq & 0.
+       \end{array}
+     \end{displaymath}
+     Here, the coefficient of $\lambda_1$ in the objective function is
+     $c^Tx^1$, the coefficient of 4 for $\lambda_2$ in the first constraint
+     comes from $Ax^2$, etc.
+     The second constraint is the convexity constraint
+     $\sum_{j\in J} \lambda_j = 1$.
+     We will denote costs in {\em (MP)}
+     by $\hat{c}_j$, columns by $\hat{a}_j$, etc.
+
+     Initial basis:
+     \begin{displaymath}
+       \begin{array}{c}\lambda_1: \\ \lambda_2: \end{array} \;\;\;
+       \hat{B} = \left[ \begin{array}{rr}2&4\\1&1\end{array} \right],
+       \hat{B}^{-1} = \left[ \begin{array}{rr}-0.5&2\\0.5&-1\end{array} \right].
+     \end{displaymath}
+     Thus, the initial basic feasible solution is:
+     \begin{displaymath}
+       \left( \begin{array}{c} \bar{\lambda}_1 \\ \bar{\lambda}_2 \end{array}
+         \right)  =  \hat{B}^{-1} \hat{b}  =
+            \left( \begin{array}{c} 0.5 \\ 0.5 \end{array} \right);
+     \end{displaymath}
+     the corresponding dual solution is:
+     \begin{displaymath}
+       (\pi, \sigma) = \hat{c}_B \hat{B}^{-1} = (-2, 6);
+     \end{displaymath}
+     the corresponding solution to the initial problem is
+     \begin{displaymath}
+       \bar{x} = \bar{\lambda}_1 x^1 + \bar{\lambda}_2 x^2 = (2,0,1)^T.
+     \end{displaymath}
+     Thus the subproblem is
+     \begin{displaymath}
+      \begin{array}{lc}
+       \min & z := (c^T - {\pi}^T A) x = ((1,-1,-2)+2(1,1,1))x = 3x_1 + x_2 \\
+         \mbox{s.t. } & x \in X.
+      \end{array}
+     \end{displaymath}
+     By inspection, the
+     optimal solution is $x=(0,0,0)^T$, giving $z^*=0<6=\sigma$.
+     Therefore, our current primal solution is not optimal, and we need
+     to introduce a column for $x_3:=(0,0,0)^T$ into the
+     {\em Revised Master Problem}.
+\newpage
+  \item {\bf First iteration}: \\
+     Then $\lambda_3$ enters the basis.
+     Objective function value is $\hat{c}_3=c^Tx^3=0$;
+     column of constraint matrix is
+       $\hat{a}^3=\left(\begin{array}{r}Ax^3\\1\end{array}\right)=
+          \left(\begin{array}{r}0\\1\end{array}\right)$
+     In order to determine which variable leaves the basis,
+     we need to calculate 
+       $\hat{B}^{-1} \hat{a}^3 = \left(\begin{array}{r}2\\-1\end{array}\right)$.
+     We then compare this column of ``$B^{-1}N$'' with the current bfs
+     $\hat{x}_B=\left(\begin{array}{r}0.5\\0.5\end{array}\right)$
+     using the minimum ratio test.
+     Thus, $\lambda_1$ leaves the basis.
+     The new basis matrix is:
+     \begin{displaymath}
+       \begin{array}{c}\lambda_3: \\ \lambda_2: \end{array} \;\;\;
+       \hat{B} = \left(\begin{array}{rr}0&4\\1&1\end{array}\right);
+        \hat{B}^{-1} = \left(\begin{array}{rr}-0.25&1\\0.25&0\end{array}\right)
+     \end{displaymath}
+     Thus, the new primal solution to {\em (MP)} is
+     \begin{displaymath}
+      (\bar{\lambda}_3,\bar{\lambda}_2)^T = 
+       \hat{B}^{-1} \hat{b} = \hat{B}^{-1} (3,1)^T = (0.25,0.75)^T
+     \end{displaymath}
+     and the new dual solution is
+     \begin{displaymath}
+       (\pi,\sigma) = \hat{c}^T_B \hat{B}^{-1} = (0,-2) \hat{B}^{-1} = (-0.5,0).
+     \end{displaymath}
+     Hence, the new solution for the original LP is:
+     \begin{displaymath}
+       \bar{x} = \bar{\lambda}_3 x^3 + \bar{\lambda}_2 x^2 = (1.5,0,1.5)^T.
+     \end{displaymath}
+     The subproblem is
+     \begin{displaymath}
+       \begin{array}{lc}
+       \min & z = (c^T - \pi A) x = ((1,-1,-2)+0.5(1,1,1))x=(1.5,-0.5,-1.5)x \\
+          \mbox{s.t. }  & x \in X.
+       \end{array}
+     \end{displaymath}
+     This subproblem has an unbounded optimal solution, and the extreme ray is
+     $d=(0,1,0)^T$.
+
+     Set $d^4:=(0,1,0)^T$; then $\hat{c}_4=c^Td^4=-1$ and
+      $\hat{a}_4=\left(\begin{array}{c}Ad^4\\0\end{array}\right)=
+         \left(\begin{array}{c}1\\0\end{array}\right)$.
+     We introduce $\mu_4$ into the basis.
+
+\newpage
+  \item {\bf Second iteration}: \\
+     We need to determine which variable leaves the basis.
+     Therefore, we calculate $\hat{B}^{-1}\hat{a}_4=(-0.25,0.25)^T$.
+     Using the minimum ratio test with $\hat{x}_B=(0.25,0.75)^T$ shows that
+     $\lambda_2$ leaves the basis.
+     The new basis matrix is:
+     \begin{displaymath}
+       \begin{array}{c}\lambda_3: \\ \mu_4: \end{array} \;\;\;
+       \hat{B} = \left(\begin{array}{rr}0&1\\1&0\end{array}\right);
+        \hat{B}^{-1} = \left(\begin{array}{rr}0&1\\1&0\end{array}\right)
+     \end{displaymath}
+     Thus, the new primal solution to {\em (MP)} is
+     \begin{displaymath}
+      (\bar{\lambda}_3,\bar{\mu}_4)^T =
+       \hat{B}^{-1} \hat{b} = \hat{B}^{-1} (3,1)^T = (1,3)^T
+     \end{displaymath}
+     and the new dual solution is
+     \begin{displaymath}
+       (\pi,\sigma) = \hat{c}^T_B \hat{B}^{-1} = (0,-1) \hat{B}^{-1} = (-1,0).
+     \end{displaymath}
+     Hence, the new solution for the original LP is:
+     \begin{displaymath}
+       \bar{x} = \bar{\lambda}_3 x^3 + \bar{\mu}_4 d^4 = (0,3,0)^T.
+     \end{displaymath}
+     The subproblem is
+     \begin{displaymath}
+       \begin{array}{lc}
+       \min & z = (c^T - \pi A) x = ((1,-1,-2)+1(1,1,1))x=2x_1-x_3 \\
+          \mbox{s.t. }  & x \in X.
+       \end{array}
+     \end{displaymath}
+     An optimal solution is $x=(0,0,2)^T$, giving $z^*=-2<\sigma$.
+     So we do not have the optimal solution to the {\em master problem (MP)}.
+     Hence, we set $x^5:=(0,0,2)^T$, and we introduce a column for this extreme
+     point into the {\em Revised Master Problem}.
+
+\newpage
+  \item {\bf Third iteration}: \\
+     Then $\lambda_5$ enters the basis.
+     Objective function value is $\hat{c}_5=c^Tx^5=-4$;
+     column of constraint matrix is
+       $\hat{a}^5=\left(\begin{array}{r}Ax^5\\1\end{array}\right)=
+          \left(\begin{array}{r}2\\1\end{array}\right)$.
+     In order to determine which variable leaves the basis,
+     we need to calculate
+       $\hat{B}^{-1} \hat{a}^5 = \left(\begin{array}{r}1\\2\end{array}\right)$.
+     Using the minimum ratio test with $\hat{x}_B=(1,3)^T$ shows that
+     $\lambda_3$ leaves the basis.
+     The new basis matrix is:
+     \begin{displaymath}
+       \begin{array}{c}\lambda_5: \\ \mu_4: \end{array} \;\;\;
+       \hat{B} = \left(\begin{array}{rr}2&1\\1&0\end{array}\right);
+        \hat{B}^{-1} = \left(\begin{array}{rr}0&1\\1&-2\end{array}\right).
+     \end{displaymath}
+     Thus, the new primal solution to {\em (MP)} is
+     \begin{displaymath}
+      (\bar{\lambda}_5,\bar{\mu}_4)^T =
+       \hat{B}^{-1} \hat{b} = \hat{B}^{-1} (3,1)^T = (1,1)^T
+     \end{displaymath}
+     and the new dual solution is
+     \begin{displaymath}
+       (\pi,\sigma) = \hat{c}^T_B \hat{B}^{-1} = (-4,-1) \hat{B}^{-1} = (-1,-2).
+     \end{displaymath}
+     Hence, the new solution for the original LP is:
+     \begin{displaymath}
+       \bar{x} = \bar{\lambda}_5 x^5 + \bar{\mu}_4 d^4 = (0,1,2)^T.
+     \end{displaymath}
+     The subproblem is
+     \begin{displaymath}
+       \begin{array}{lc}
+       \min & z = (c^T - \pi A) x = ((1,-1,-2)+1(1,1,1))x=2x_1-x_3 \\
+          \mbox{s.t. }  & x \in X.
+       \end{array}
+     \end{displaymath}
+     An optimal solution is $x=(0,0,2)^T$, giving $z^*=-2=\sigma$.
+     Hence, our optimality criterion is satisfied,
+     and $\bar{x}=(0,1,2)^T$ is an optimal solution to our original LP.
+\end{itemize}
+
+
+
+
+\end{document}

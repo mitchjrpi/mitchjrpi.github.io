@@ -1,0 +1,280 @@
+<title>Information about CPLEX and AMPL</title> 
+
+<h1>Information about CPLEX and AMPL</h1> 
+
+<h3>CPLEX is free for students and academics</h3>
+Follow
+<!--
+<a href=https://www.ibm.com/developerworks/community/blogs/jfp/entry/CPLEX_Is_Free_For_Students?lang=en>this link</a>.
+-->
+<a href=https://developer.ibm.com/docloud/blog/2019/07/04/cplex-optimization-studio-for-students-and-academics/>this link</a>.
+You can run CPLEX in standalone mode, or you can call it from
+C or C++ or Matlab or Python.
+<br>
+If you are an RPI student, you may be able to get our 2008 version of AMPL
+to work with the current version of CPLEX.
+
+<h3>Background information and reading</h3>
+     <B> <A HREF="http://www.ampl.com/">AMPL</A> </B>
+       is a mathematical programming and optimization modeling language
+       which can be used to solve linear, integer, and nonlinear
+       programming problems.
+       You can input your model into AMPL in a reasonably intuitive
+       way and it will use a solver (such as MINOS or CPLEX) for solving
+       the problem.
+       It is capable of solving linear, nonlinear, and integer programs.
+<p>
+The <a href=http://www.ampl.com>AMPL</a> website
+contains the
+<a href=http://www.ampl.com/BOOK/index.html>whole of the AMPL book</a>,
+a collection of
+<a href=http://www.ampl.com/FAQ/>frequently asked questions</a>,
+and a <a href=http://www.ampl.com/BOOKLETS/README101.cplex>list of
+all the cplex options available in AMPL</a>.
+
+<h3>The student version of AMPL</h3>
+
+The <a href=http://www.ampl.com>AMPL</a> website
+contains
+<a href=http://www.ampl.com/DOWNLOADS/index.html>downloadable executables</a>
+for use in Windows or in Unix/Linux systems, including Mac OSX.
+These executables are limited in the size of problems they can solve.
+<p>
+Note that if you use the <b>command line interface with Windows</b>
+and you use Word to create and edit the files, Word will add <tt>txt</tt> to
+the end of a filename when stored as a text file.
+For example, if your model is called <tt>zoff.mod</tt> and you created it and
+stored it using Word, the file will be called <tt>zoff.mod.txt</tt>.
+To read it into AMPL, you will need to use the command
+<pre>
+ampl: model zoff.mod.txt;
+</pre>
+
+<h3>Size-unrestricted versions of AMPL and CPLEX</h3>
+
+Our current version is <b>CPLEX 11</b>, as of May 2008.
+
+<p>
+You must have an RPI account to be able to use the size-unrestricted versions.
+
+<p><b>The access.ilm file included in the distribution no longer works</b>.
+Consequently, you cannot currently run AMPL or CPLEX by
+following the instruction below.</p>
+
+<p>
+<strike>
+<b>Installing AMPL and CPLEX on your personal computer</b>:
+Our license now allows you to
+<a href=Ilog_Installation_Instruction_Using_ARCVFS.html>install the size-unrestricted versions of
+these programs on your own machine</a>.
+Once you've installed the programs in Windows XP,
+you run them from a command prompt window.
+In Linux or in Mac OS X, they run in a terminal window.
+The program <b>OPL</b> is also available, as an alternative to AMPL.
+OPL is an ILOG modelling language and environment that has a user
+interface that is more user-friendly than AMPL.
+You can even run them from off-campus as long as you have
+<a href=http://www.rpi.edu/dept/nss/www/downloads/vpn.html>Cisco VPN</a>
+running.
+<p>
+To use the size-unrestricted version of <b>AMPL on RCS</b>, you need to follow
+<a href=cplex11.html>these instructions</a>.
+</strike>
+<p>
+
+<h3>IBM Academic Initiative</h3>
+CPLEX is an IBM product, so it can be obtained through the
+<!--
+<a href=https://ibm.onthehub.com/WebStore/OfferingDetails.aspx?o=733c3d21-0ce1-e711-80fa-000d3af41938&pmv=00000000-0000-0000-0000-000000000000>IBM Academic Initiative</a>.
+-->
+<a href=https://www.ibm.com/academic>IBM Academic Initiative</a>.
+After registering, you will be able to download the latest version
+of CPLEX.
+As of version 12, CPLEX is multithreaded.
+
+<p>
+
+<!--
+AMPL is not an IBM product and so our version of AMPL cannot be used
+with versions of CPLEX downloaded through the acadmic initiative,
+as far as I know.
+-->
+A downloaded version of CPLEX can either be run as a stand-alone program
+or called from other software written in C or C++ or Matlab, for example.
+
+<!--
+<b><font color=ee0044>Note:</font></b>
+Our license server was changed on <b>March 20, 2006</b>.
+Therefore, you may need to update your <tt>access.ilm</tt> file.
+Instructions for getting this file are in Steps 2 and 3 of the
+<a href=ILOG11.htm>instructions for installing the programs on your
+machine.</a>
+-->
+
+<h3>More on solvers</h3>
+
+<b>AMPL</b> is a modelling language. It uses other packages to
+actually solve optimization problems.
+The default solver we have available on campus is
+<b>CPLEX</b>.
+Our current version of CPLEX will solve integer, linear, and
+convex quadratic programming problems.
+As of June 15, 2006, it can solve quadratically
+constrained problems, including quadratically constrained
+integer programs.
+<!--
+However, it does not solve integer quadratic programs.
+To solve a <b>quadratic</b> program from within AMPL using CPLEX,
+you need to enter the line
+<br>
+<tt>option cplex_options 'baropt';</tt>
+-->
+
+<p>
+
+Here is some <b><a href=amplhints>more information about working with
+AMPL</a></b>.
+
+<h3>The NEOS Server</h3>
+AMPL can also be run
+<A HREF=http://www.neos-server.org/neos/>remotely
+on the NEOS server</a>.
+You submit your model and data files and it will give you the solution.
+
+<h3>Examples:</h3>
+
+<ul>
+<li>
+<a href=https://ampl.com/resources/the-ampl-book/example-files/>Examples from the
+AMPL website</a>.
+(There are two RPI alumni mentioned on this page:
+<a href=http://www.oberlin.edu/~math/faculty/bosch.html>Bob Bosch</a>
+and
+<a href=http://www.princeton.edu/~rvdb/>Bob Vanderbei</a>.)
+<li>
+Here are some more <a href=amplegs.html>AMPL examples</a>.
+<li>
+<a href=amplegs>More examples</a>,
+including a
+<a href=amplegs/brewABC.mod>set formulation of a general production problem</a>
+together with
+<a href=amplegs/brewA.dat>three</a>
+<a href=amplegs/brewB.dat>data</a>
+<a href=amplegs/brewC.dat>files</a>.
+And yet
+<a href=http://eaton.math.rpi.edu/faculty/mitchell/AMPLexamples>more
+examples</a>.
+<li>
+The CPLEX distribution of AMPL examples can be found
+<a href=http://www.rpi.edu/dept/math/math-programming/ampl90/examples/>here</a>.
+<li>
+An excellent collection of
+<a href=http://www.orfe.princeton.edu/~rvdb/ampl/nlmodels/><b>nonlinear</b>
+programming models</a>.
+A good place to start may be the block QP models in the <i>Cute set</i>,
+for example
+<a href=http://www.orfe.princeton.edu/~rvdb/ampl/nlmodels/cute/blockqp1.mod>blockqp1.mod</a>.
+<li>My page of
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/generators/qcqp.html>generators
+for nonconvex quadratically constrained quadratic programs</a>
+contains more involved examples, with run files that solve multiple
+problems, that use the output from one problem
+in the input to another, that use random number generators,
+and that use if-then-else statements and loops.
+</ul>
+
+<h3>Web resources and hints</h3>
+<ul>
+<li>
+The CPLEX manual is part of the software distribution.
+So when you download and install cplex on your computer,
+it creates a documentation folder.
+The documentation comes in both html and pdf format.
+It should give you some sort of introduction to modeling
+as well as to the syntax of CPLEX.
+It also includes some tutorials in the gscplex.pdf file.
+There is also a folder of examples included in the distribution.
+The documentation also includes information about installing CPLEX.
+<li><a href=amplhints>More information about working with
+AMPL</a> and getting more from it.
+<li>An
+<a href=http://www.student.math.uwaterloo.ca/~co370/faq.html>AMPL FAQ</a>
+from <a href=http://www.math.uwaterloo.ca/~cswamy/>Chaitanya Swamy</a>
+at the
+<a href=http://www.math.uwaterloo.ca/CandO_Dept/>University of Waterloo</a>.
+<li> An
+<a href=http://www.ieor.berkeley.edu/~atamturk/ieor264/samples/ampl/ampldoc.pdf>AMPL tutorial</a>, originally prepared by
+<a href=http://www.ieor.berkeley.edu/~kaminsky/>Phil Kaminsky</a>
+at
+<a href=http://www.ieor.berkeley.edu/>Berkeley</a>
+and modified by
+<a href=http://www.research.ibm.com/people/d/dpkrjn/>Deepak Rajan</a>.
+<li>The <a href=http://www.ilog.com/products/cplex/>CPLEX website</a>.
+<li>Information on using the <a href=http://www.rpi.edu/~mitchj/cplex/>CPLEX
+callable library</a>, including a sample makefile.
+<li>
+Here is the
+<a href=http://eaton.math.rpi.edu/cplex90html/index.html>
+cplex 9.0 documentation</a>.
+This page has links to an overview of the callable library,
+and also links to material on getting started with cplex and
+to the user's manual.
+The <a href=http://eaton.math.rpi.edu/cplex90html/pdf/usrcplex.pdf>user
+guide</a> is also available as a pdf file.
+Note that the current version of this information is available
+in the material you download when installing AMPL and CPLEX
+on your personal computer.
+<!--
+and the remaining documentation can also be downloaded in
+<a href=http://www.rpi.edu/AFS/campus/ilog/cplex/9.0/common/doc/cplex90/pdf/usrc
+plex.pdf>pdf format</a>.
+<a href=http://eaton.math.rpi.edu/cplex90html/pdf>pdf format</a>.
+-->
+<li>
+A nice example of
+<a href=http://myweb.clemson.edu/~pbelott/bulk/teaching/lehigh/ie426-f08/iisfind.html>debugging an infeasible model</a>
+by
+<a href=http://myweb.clemson.edu/~pbelott/>Pietro Bellotti</a>.
+<!--
+<a href=http://www.or.unc.edu/~pataki/or41/ampl/amplhandout.pdf>Debugging
+an infeasible model</a> by
+<a href=http://www.or.unc.edu/~pataki/>Gabor Pataki</a>.
+-->
+This uses the IIS options within CPLEX.
+In particular, you can use the AMPL command
+<br>
+<tt>option cplex_options 'iisfind 1';</tt>
+<li><a href=ampldisplayall.html>Displaying the values of all variables
+simultaneously.</a>
+</ul>
+
+<hr>
+
+<a href=index.html>John Mitchell</a>
+
+<br>
+
+<script
+  type="text/JavaScript"
+  language="JavaScript">
+<!--
+//
+// get last modified date of the
+// current document.
+//
+
+document.write(
+  "Last updated: " +
+   document.lastModified );
+
+// -->
+</script>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-924637-1";
+_udn ="rpi.edu";
+urchinTracker();
+</script>
+

@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="midterm18.tex"> 
+<meta name="date" content="2020-03-02 15:26:00"> 
+<link rel="stylesheet" type="text/css" href="midterm18.css"> 
+</head><body 
+>
+<!--l. 38--><p class="noindent" >
+                                                                                         
+
+                                                                                         
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"><col 
+id="TBL-1-2"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td11">&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                                                                          </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-2"  
+class="td11">Name:</td> </tr></table>
+</div>
+<div class="center" 
+>
+<!--l. 45--><p class="noindent" >
+<!--l. 48--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12x-x-120">MATP6640/ISYE6770</span><br />
+<span 
+class="cmbx-12x-x-120">Linear Programming </span><br />
+Spring 2018</a></div>
+<div class="center" 
+>
+<!--l. 51--><p class="noindent" >
+<!--l. 52--><p class="noindent" >Midterm Exam, Tuesday, March 27, 2018.</div>
+<!--l. 55--><p class="indent" >   Please do all three problems. Show all work. No books or calculators allowed. You may use any
+result from class, the homeworks, or the texts, except where stated. You may use one sheet of
+handwritten notes. The exam lasts 110 minutes.
+<div class="center" 
+>
+<!--l. 65--><p class="noindent" >
+<div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><colgroup id="TBL-2-2g"><col 
+id="TBL-2-2"><col 
+id="TBL-2-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-1"  
+class="td10"> Q1 &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-1-3"  
+class="td11"> /45</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-1"  
+class="td10"> Q2  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-2-3"  
+class="td11"> /20</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-1"  
+class="td10"> Q3  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-3-3"  
+class="td11"> /35</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-1"  
+class="td10">Total&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-4-3"  
+class="td11">/100</td></tr></table>
+</div></div>
+                                                                                         
+
+                                                                                         
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">(45 points) We have a two stage stochastic program where the nonnegative first stage
+      variables <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmr-8">2</span></sup> must satisfy <span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmr-8">1</span></sub> + 3<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> = 6. The first stage costs are <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>= 2<span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmr-8">1</span></sub> + 7<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub>. There
+      are two scenarios.
+           <ul class="itemize1">
+           <li class="itemize">Scenario 1 occurs with probability <img 
+src="midterm180x.png" alt="13"  class="frac" align="middle">. The second stage variable <span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D; </span>must satisfy the
+           constraints
+           <center class="math-display" >
+           <img 
+src="midterm181x.png" alt="y = 13 - 2x1 -  5x2,  y &#x2265; 0.
+           " class="math-display" ></center>
+           <!--l. 106--><p class="nopar" >
+           </li>
+           <li class="itemize">Scenario 2 occurs with probability <img 
+src="midterm182x.png" alt="2
+3"  class="frac" align="middle">. The second stage variable <span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D; </span>must satisfy the
+           constraints
+           <center class="math-display" >
+           <img 
+src="midterm183x.png" alt="y = 22 - 3x1 - 11x2,   y &#x2265; 0.
+           " class="math-display" ></center>
+           <!--l. 111--><p class="nopar" >
+           </li></ul>
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-5x1">(10  points)  Assume  <span 
+class="cmmi-12">x </span>satisfies  the  first  stage  constraints.  Show  that  in  each
+           scenario, there exists a recourse decision <span 
+class="cmmi-12">y </span>that is feasible in the second stage
+           problem.
+           </li>
+           <li 
+  class="enumerate" id="x1-7x2">(10 points) Assume the cost of the second stage variables is 3<span 
+class="cmmi-12">y</span>. Formulate the
+           stochastic program in extended form as an LP. (Hint: your problem should have
+           three equality constraints and four variables.)
+           </li>
+           <li 
+  class="enumerate" id="x1-9x3">(10 points) Find all the basic feasible solutions to the LP formulation. Find the
+           optimal solution.
+           </li>
+           <li 
+  class="enumerate" id="x1-11x4">(5 points) What is the dual to the LP formulation?
+                                                                                         
+
+                                                                                         
+           </li>
+           <li 
+  class="enumerate" id="x1-13x5">(10 points) Use complementary slackness to find the set of optimal solutions to
+           the dual problem.</li></ol>
+                                                                                         
+
+                                                                                         
+                                                                                         
+
+                                                                                         
+                                                                                         
+
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-15x2">(20 points) Let <span 
+class="cmmi-12">A </span>be a real <span 
+class="cmmi-12">p </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>matrix and <span 
+class="cmmi-12">B </span>be a real <span 
+class="cmmi-12">q </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>matrix, with <span 
+class="cmmi-12">p</span>, <span 
+class="cmmi-12">q</span>,
+      and <span 
+class="cmmi-12">n </span>all positive integers. Show that exactly one of the following systems has a
+      solution:
+           <div class="quote">
+           <!--l. 154--><p class="noindent" ><span 
+class="cmbx-12">System 1: </span><span 
+class="cmmi-12">Ax &#x003C; </span>0, <span 
+class="cmmi-12">Bx </span>= 0 for some <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup>. <br 
+class="newline" /><span 
+class="cmbx-12">System 2: </span><span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">u </span>+ <span 
+class="cmmi-12">B</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">v </span>= 0 for some <span 
+class="cmmi-12">u </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">p</span></sup>, <span 
+class="cmmi-12">v </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">q</span></sup>, with <span 
+class="cmmi-12">u </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0 and <span 
+class="cmmi-12">u</span><span 
+class="cmmi-12">&#x2260;</span>0.</div>
+                                                                                         
+
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-17x3">(35 points) <a 
+ id="x1-163"></a>In a vehicle routing problem, a set of cities <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span><span 
+class="cmsy-10x-x-120">} </span>must be visited, starting
+      from a base city&#x00A0;0. More than one vehicle can be used, with each vehicle traversing a subtour
+      that starts and ends at the base but only visits a subset of the cities. This problem can be
+      formulated as an integer program with each variable corresponding to an allowable subtour.
+      Let <span 
+class="cmmi-12">T </span>be the set of allowable subtours. Let <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">t</span></sub> be the cost of subtour&#x00A0;<span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">T</span>. Let <span 
+class="cmmi-12">a</span><sup><span 
+class="cmmi-8">t</span></sup> <span 
+class="cmsy-10x-x-120">&#x2208;{</span>0<span 
+class="cmmi-12">, </span>1<span 
+class="cmsy-10x-x-120">}</span><sup><span 
+class="cmmi-8">n</span></sup>
+      be the incidence vector of subtour&#x00A0;<span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">T</span>, so <span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmmi-8">t</span></sup> = 1 if and only if tour <span 
+class="cmmi-12">t </span>visits city&#x00A0;<span 
+class="cmmi-12">i </span>for
+      <span 
+class="cmmi-12">i </span><span 
+class="cmsy-10x-x-120">&#x2208;{</span>1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span><span 
+class="cmsy-10x-x-120">}</span>. The LP relaxation of the vehicle routing problem can then be expressed
+      as
+      <center class="math-display" >
+      <img 
+src="midterm184x.png" alt="            &#x2211;
+min         &#x2211; t&#x2208;T ctxt
+subject to    t&#x2208;T atixt  &#x2265;   1  for i = 1,...,n      (CP )
+                   xt  &#x2265;   0  &#x2200;t &#x2208; T
+      " class="math-display" ></center>
+      <!--l. 184--><p class="nopar" >
+      <!--l. 189--><p class="noindent" >Let <span 
+class="cmmi-12">n </span>= 4. Assume the cost <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">t</span></sub> of a tour is given by the sum of the edge lengths in the tour,
+      and the edge lengths are as follows:
+      <div class="center" 
+>
+<!--l. 192--><p class="noindent" >
+<div class="tabular"> <table id="TBL-3" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-3-1g"><col 
+id="TBL-3-1"></colgroup><colgroup id="TBL-3-2g"><col 
+id="TBL-3-2"><col 
+id="TBL-3-3"><col 
+id="TBL-3-4"><col 
+id="TBL-3-5"><col 
+id="TBL-3-6"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-3-1-"><td  style="white-space:nowrap; text-align:right;" id="TBL-3-1-1"  
+class="td11">city</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-1-2"  
+class="td11">0</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-1-3"  
+class="td11">1</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-1-4"  
+class="td11">2</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-1-5"  
+class="td11">3</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-1-6"  
+class="td11">4</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-2-"><td  style="white-space:nowrap; text-align:right;" id="TBL-3-2-1"  
+class="td11">   0</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-2-2"  
+class="td11">&#8211;</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-2-3"  
+class="td11">4</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-2-4"  
+class="td11">7</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-2-5"  
+class="td11">9</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-2-6"  
+class="td11">4</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-3-"><td  style="white-space:nowrap; text-align:right;" id="TBL-3-3-1"  
+class="td11"> 1</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-3-2"  
+class="td11">4</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-3-3"  
+class="td11">&#8211;</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-3-4"  
+class="td11">4</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-3-5"  
+class="td11">6</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-3-6"  
+class="td11">8</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-4-"><td  style="white-space:nowrap; text-align:right;" id="TBL-3-4-1"  
+class="td11">   2</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-4-2"  
+class="td11">7</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-4-3"  
+class="td11">4</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-4-4"  
+class="td11">&#8211;</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-4-5"  
+class="td11">7</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-4-6"  
+class="td11">5</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-5-"><td  style="white-space:nowrap; text-align:right;" id="TBL-3-5-1"  
+class="td11"> 3</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-5-2"  
+class="td11">9</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-5-3"  
+class="td11">6</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-5-4"  
+class="td11">7</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-5-5"  
+class="td11">&#8211;</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-5-6"  
+class="td11">7</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-6-"><td  style="white-space:nowrap; text-align:right;" id="TBL-3-6-1"  
+class="td11">   4</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-6-2"  
+class="td11">4</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-6-3"  
+class="td11">8</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-6-4"  
+class="td11">5</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-6-5"  
+class="td11">7</td><td  style="white-space:nowrap; text-align:right;" id="TBL-3-6-6"  
+class="td11">&#8211;</td></tr></table>
+</div>            
+<img src=q3.png>
+</div>
+      <!--l. 243--><p class="noindent" >No tour is allowed to visit more than three cities (plus the base city). A tour can visit just
+                                                                                         
+
+                                                                                         
+      one city and the base city. So, for example, valid tours include 0 <span 
+class="cmsy-10x-x-120">- </span>4 <span 
+class="cmsy-10x-x-120">- </span>0 with cost&#x00A0;8 and
+      0 <span 
+class="cmsy-10x-x-120">- </span>1 <span 
+class="cmsy-10x-x-120">- </span>2 <span 
+class="cmsy-10x-x-120">- </span>3 <span 
+class="cmsy-10x-x-120">- </span>0 with cost&#x00A0;24.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-19x1">(5 points) What is the dual LP to (CP)?
+           </li>
+           <li 
+  class="enumerate" id="x1-21x2">(10 points) Let the current dual solution be <span 
+class="cmmi-12">y </span>= (6<span 
+class="cmmi-12">, </span>8<span 
+class="cmmi-12">, </span>10<span 
+class="cmmi-12">, </span>7)<sup><span 
+class="cmmi-8">T</span> </sup>. Find a violated dual
+           constraint.
+           </li>
+           <li 
+  class="enumerate" id="x1-23x3">(10 points) There are 14 feasible tours for this problem. Enumerate them all and
+           hence show that <span 
+class="cmmi-12">&#x0177;</span> = (4<span 
+class="cmmi-12">, </span>8<span 
+class="cmmi-12">, </span>12<span 
+class="cmmi-12">, </span>5)<sup><span 
+class="cmmi-8">T</span> </sup> is dual feasible.
+           </li>
+           <li 
+  class="enumerate" id="x1-25x4">(10 points) What does complementary slackness imply about the primal solution
+           if  the  dual  solution  is&#x00A0;<span 
+class="cmmi-12">&#x0177;</span>?  Show  there  is  a  primal  feasible  solution  satisfying
+           complementary slackness with each positive <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">t</span></sub> taking the same value. What do
+           you conclude?</li></ol>
+                                                                                         
+
+                                                                                         
+                                                                                         
+
+                                                                                         
+                                                                                         
+
+                                                                                         
+      </li></ol>
+    
+</body></html> 
+
+                                                                                         
+
+

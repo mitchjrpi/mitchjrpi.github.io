@@ -1,0 +1,506 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Final Exam 1997</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="final97">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="final97.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+     67.612/92.672/66.612 
+<BR>
+ <B><a href=..>Combinatorial Optimization and Integer Programming</a></B>
+  </FONT>
+</DIV>
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+                Final Exam, Spring 1997
+  </FONT>
+</DIV>
+
+<P>
+Take Home   Due: 12 noon, Friday, 9 May, 1997.
+
+<P>
+
+<BR>
+
+<P>
+This is to be all your own work.  You may use any result from class,
+homeworks, or the books and papers on reserve in the library.
+Do not consult anybody or anything else. 
+I can dispense hints to help you if you are stuck.
+My phone numbers are 276-6915(O) and 346-2811(H).
+You can also reach me by email at mitchj@rpi.edu.
+I will have office hours each Thursday from 2-5pm.
+I will be out of town between Friday, 2 May and Wednesday, 7 May,
+inclusive.
+The exam consists of four questions and is worth 100 points.
+
+<P>
+In order that I can display grades, please write a 4 digit number
+on the front of your solution set.
+
+<P>
+
+<BR>
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>(25 points)
+Consider the complete undirected graph <I>G</I>=(<I>V</I>,<I>E</I>) on <I>n</I> vertices.
+         A travelling salesman tour on this graph
+         can be described as a collection of edges
+         <I>T</I> such that the graph <I>G</I>'=(<I>V</I>,<I>T</I>) is connected,
+         <I>T</I> contains <I>n</I> edges, and each vertex is adjacent to two edges.
+         Let <I>c</I><SUB><I>e</I></SUB> be the cost of edge <I>e</I> in&nbsp;<I>E</I>.
+         The travelling salesman problem is to find the minimum weight tour,
+         that is
+         <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\min\{\sum_{e \in T}c_ex_e : \mbox{$T$\space is a tour}\}.
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="219" HEIGHT="50"
+ SRC="img1.gif"
+ ALT="\begin{displaymath}
+\min\{\sum_{e \in T}c_ex_e : \mbox{$T$\space is a tour}\}.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Let <IMG
+ WIDTH="34" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\delta(i)$">
+denote the edges which are incident to vertex&nbsp;<I>i</I>.
+         <DL COMPACT>
+<DT>(a)
+<DD>(10 points)
+Verify that the following problem is a Lagrangian
+              relaxation of the travelling salesman problem:
+              <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{llr}
+                   \min      & \sum_{e \in  T}c_ex_e +
+         \sum_{i \in V}\lambda_i(2-\sum_{e \in \delta(i)}x_e)
+               &     \qquad  \qquad  LR(\lambda)  \\
+                   \mbox{st } & \mbox{$T$\space is a spanning tree together with
+                                        one additional edge.}
+                \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="638" HEIGHT="53"
+ SRC="img3.gif"
+ ALT="\begin{displaymath}
+\begin{array}{llr}
+\min &amp; \sum_{e \in T}c_ex_e +
+\sum_{i ...
+...panning tree together with
+one additional edge.}
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+           <DT>(b)
+<DD>(5 points)
+              What would it imply if the optimal solution to <IMG
+ WIDTH="56" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$LR(\lambda)$">
+              was a tour?
+           <DT>(c)
+<DD>(10 points)
+              Solve <IMG
+ WIDTH="56" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$LR(\lambda)$">
+for the graph with edge lengths as in
+              the following table,
+with vertex weights <IMG
+ WIDTH="57" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$\lambda_1=2$">,
+<IMG
+ WIDTH="57" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\lambda_2=4$">,
+              <IMG
+ WIDTH="57" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\lambda_3=6$">,
+<IMG
+ WIDTH="57" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$\lambda_4=4$">,
+<IMG
+ WIDTH="57" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$\lambda_5=0$">,
+and&nbsp;<IMG
+ WIDTH="57" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$\lambda_6=2$">.
+              (You may assume that the solution to a problem of the form
+              <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\min\{\sum_{e \in T}w_ex_e :
+                    \mbox{$T$\space is a spanning tree together with
+                                        one additional edge}\}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="578" HEIGHT="50"
+ SRC="img11.gif"
+ ALT="\begin{displaymath}
+\min\{\sum_{e \in T}w_ex_e :
+\mbox{$T$\space is a spanning tree together with
+one additional edge}\}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+is obtained by finding the minimum weight spanning tree and then
+              adding in the remaining shortest edge.)
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\left[ \begin{array}{rrrrrr} -- & 12 & 20 & 20 & 17 & 15 \\
+                                12 & -- & 18 & 21 & 17 & 20 \\
+                                20 & 18 & -- & 20 & 24 & 21 \\
+                                20 & 19 & 20 & -- & 16 & 19 \\
+                                17 & 17 & 24 & 16 & -- &  8 \\
+                                15 & 20 & 21 & 19 &  8 & -- 
+           \end{array}  \right]  \quad
+    \left. \begin{array}{c} v_1 \\v_2 \\v_3 \\v_4 \\v_5 \\v_6 \end{array}
+             \right.
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="337" HEIGHT="146"
+ SRC="img12.gif"
+ ALT="\begin{displaymath}
+\left[ \begin{array}{rrrrrr} -- &amp; 12 &amp; 20 &amp; 20 &amp; 17 &amp; 15 \\ ...
+...{c} v_1 \\ v_2 \\ v_3 \\ v_4 \\ v_5 \\ v_6 \end{array} \right.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P></DL>
+   <DT>2.
+<DD>(25 points; each part is worth 5 points.)
+Given the complete graph <I>K</I><SUB><I>n</I></SUB>=:(<I>V</I>,<I>E</I>) on <I>n</I> vertices
+and edge weights <I>w</I><SUB><I>e</I></SUB> on the edges, a <EM>clustering</EM>
+of the vertices is obtained by choosing an integer <I>p</I>
+and a partition of the vertices into <I>p</I> sets <!-- MATH: $V_1,\ldots,V_p$ -->
+<IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$V_1,\ldots,V_p$">
+satisfying:
+
+<UL>
+
+<LI><!-- MATH: $V_i \cap V_j = \emptyset$ -->
+<IMG
+ WIDTH="94" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$V_i \cap V_j = \emptyset$">
+for <!-- MATH: $1\leq i < j \leq p$ -->
+<IMG
+ WIDTH="114" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.gif"
+ ALT="$1\leq i &lt; j \leq p$">.
+
+<LI><!-- MATH: $\cup_{i=1}^p V_i=V$ -->
+<IMG
+ WIDTH="96" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.gif"
+ ALT="$\cup_{i=1}^p V_i=V$">.
+
+</UL>
+The <EM>incidence vector</EM> of this clustering is defined by
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+x_e = \left\{ \begin{array}{ll} 1 & \mbox{if the two endpoints of $e$                are in the same set $V_j$ }  \\0 & \mbox{otherwise}
+        \end{array}  \right.
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="472" HEIGHT="55"
+ SRC="img17.gif"
+ ALT="\begin{displaymath}
+x_e = \left\{ \begin{array}{ll} 1 &amp; \mbox{if the two endpoi...
+... same set $V_j$ } \\ 0 &amp; \mbox{otherwise}
+\end{array} \right.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The <EM>clustering problem</EM> for this set of edge weights is then
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{ll}
+ \max & z:=\sum_{e\in E}w_ex_e \\
+  \mbox{subject to } & x \mbox{ is the incidence vector of a}
+                         \mbox{ clustering}
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="425" HEIGHT="53"
+ SRC="img18.gif"
+ ALT="\begin{displaymath}
+\begin{array}{ll}
+\max &amp; z:=\sum_{e\in E}w_ex_e \\
+\mbox{...
+...{ is the incidence vector of a}
+\mbox{ clustering}
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The edge weights <I>w</I><SUB><I>e</I></SUB> can be positive or negative.
+If all the edge weights are positive, the optimal solution
+is to set <I>p</I>=1 and put all the vertices in one set,
+giving a value <!-- MATH: $z=\sum_{e \in E}w_e$ -->
+<IMG
+ WIDTH="106" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$z=\sum_{e \in E}w_e$">.
+If all the edge weights are negative, the optimal solution is
+to set <I>p</I>=<I>n</I> and put each vertex in its own set,
+giving a value <I>z</I>=0.
+The weights <I>w</I><SUB><I>e</I></SUB> measure a ``distance'' between two vertices:
+the larger this value, the more likely the vertices should be
+in the same subset&nbsp;<I>V</I><SUB><I>j</I></SUB>, and if <I>w</I><SUB><I>e</I></SUB> is very negative,
+the vertices will probably be in different sets in the optimal
+solution.
+
+<P>
+Let <I>Q</I> be the set of incidence vectors of clusterings
+for <I>K</I><SUB><I>n</I></SUB>.
+<DL COMPACT>
+<DT>(a)
+<DD>Show that the dimension of <I>Q</I> is <I>n</I>(<I>n</I>-1)/2, ie, <I>Q</I>
+is full dimensional.
+<DT>(b)
+<DD>Show that the inequality
+<BR><P></P>
+<DIV ALIGN="CENTER">
+
+<!-- MATH: \begin{equation}
+x_{ij} + x_{jk} - x_{ik}  \leq  1, \;\;  1 \leq i <j<k \leq n
+\end{equation} -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="eqn.cluster">&#160;</A><IMG
+ WIDTH="317" HEIGHT="34"
+ SRC="img20.gif"
+ ALT="\begin{displaymath}
+x_{ij} + x_{jk} - x_{ik} \leq 1, \;\; 1 \leq i &lt;j&lt;k \leq n
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(1)</TD></TR>
+</TABLE>
+</DIV>
+<BR CLEAR="ALL"><P></P>
+is valid for any point in Q.
+ <DT>(c)
+<DD>Show that inequality <!-- MATH: $(\ref{eqn.cluster})$ -->
+<IMG
+ WIDTH="28" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="% latex2html id marker 205
+$(\ref{eqn.cluster})$">
+defines
+a facet of the convex hull of&nbsp;<I>Q</I>.
+ <DT>(d)
+<DD><A NAME="part.k4">&#160;</A>Take <I>n</I>=4.
+Choose edge weights <I>w</I><SUB><I>e</I></SUB> so that
+the optimal solution to the following relaxation of the
+clustering problem is not in the convex hull of&nbsp;<I>Q</I>:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lccll}
+  \max & \sum_{e \in E} w_e x_e \\
+  \mbox{subject to} & x_{ij}+x_{jk}-x_{ik} & \leq & 1 & \mbox{ for }
+      1 \leq i < j < k \leq 4 \\
+  & 0 \;\;\; \leq \;\;\;  x_e & \leq & 1 & \mbox{ for } e \in E
+ \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="466" HEIGHT="76"
+ SRC="img22.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lccll}
+\max &amp; \sum_{e \in E} w_e x_e \\
+\m...
+... \leq \;\;\; x_e &amp; \leq &amp; 1 &amp; \mbox{ for } e \in E
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+ <DT>(e)
+<DD>Find a valid inequality that cuts off the point you found in
+part&nbsp;(<A HREF="final97.html#part.k4">2d</A>).
+</DL>
+
+<P>
+
+<DT>3.
+<DD>(25 points)
+         Consider the travelling salesman problem (TSP) on the complete
+         undirected graph. Let <I>X</I> be an instance of the travelling salesman
+         problem, let <I>OPT</I>(<I>X</I>) be the optimal value of this instance, and
+         let <I>A</I> be a polynomial time algorithm for the TSP which finds a
+         tour of length&nbsp;<I>A</I>(<I>X</I>). We know that (unless <!-- MATH: $\cal{P}=\cal{NP}$ -->
+<IMG
+ WIDTH="77" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.gif"
+ ALT="$\cal{P}=\cal{NP}$">)
+         algorithm <I>A</I> will not find the optimal solution to every instance&nbsp;<I>X</I>.
+         Let <I>r</I> be a given constant, <!-- MATH: $1 < r < \infty$ -->
+<IMG
+ WIDTH="92" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.gif"
+ ALT="$1 &lt; r &lt; \infty$">.
+         Show that we can not even guarantee <!-- MATH: $A(X) \leq rOPT(X)$ -->
+<IMG
+ WIDTH="158" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.gif"
+ ALT="$A(X) \leq rOPT(X)$">,
+         unless <!-- MATH: $\cal{P}=\cal{NP}$ -->
+<IMG
+ WIDTH="77" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.gif"
+ ALT="$\cal{P}=\cal{NP}$">.
+
+<P>
+If the edge lengths <I>c</I><SUB><I>ij</I></SUB> satisfy the triangle inequality
+         <!-- MATH: $c_{ij}+c_{jk}\geq c_{ik}$ -->
+<IMG
+ WIDTH="115" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.gif"
+ ALT="$c_{ij}+c_{jk}\geq c_{ik}$">
+for every three vertices <I>i</I>, <I>j</I>,
+         and <I>k</I> then Christofides Heuristic generates a tour that is
+         guaranteed to be no more than 1.5 <I>OPT</I>(<I>X</I>).
+         How does your earlier proof break down if the edge lengths
+         must satisfy the triangle inequality?
+
+<P>
+
+<DT>4.
+<DD>(25 points)
+Consider the mixed integer programming problem (<I>MIP</I>):
+     <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrrrrrrcl}
+         \max         & 8x_1 & +9x_2 & +5x_3 & +6x_4 & -15y_1 & -10y_2 \\
+         \mbox{s.t. } & x_1 &&  +x_3 &&&& \leq & 1 \\
+                      & x_1 &&& +x_4  &&& \leq & 1 \\
+                      && x_2 &  +x_3 &&&& \leq & 1 \\
+                      && x_2 && +x_4  &&& \leq & 1 \\
+                      &&&&& -y_1 & -y_2 & \leq & -1 \\
+                      &    x_1 &&&&  -y_1 && \leq & 0 \\
+                      &&   x_2  &&&  -y_1 && \leq & 0 \\
+                      &&&   x_3   &&& -y_2 & \leq & 0 \\
+                      &&&&  x_4    && -y_2 & \leq & 0 \\
+                      &&&&&& x_j & \geq & 0  \\
+                      &&&&&& y_i && \mbox{binary} \\
+       \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="483" HEIGHT="284"
+ SRC="img27.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrrrrrrcl}
+\max &amp; 8x_1 &amp; +9x_2 &amp; +5x_3 &amp; +6x...
+...j &amp; \geq &amp; 0 \\
+&amp;&amp;&amp;&amp;&amp;&amp; y_i &amp;&amp; \mbox{binary} \\
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Solve this problem using Bender's decomposition.
+     (Take the problem
+     <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrrrcl}
+         \max         & z & -15y_1 & -10y_2 \\
+         \mbox{s.t}   & z &&& \leq & 28 \\
+                      &&& y_i && \mbox{binary}
+       \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="292" HEIGHT="76"
+ SRC="img28.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrrrcl}
+\max &amp; z &amp; -15y_1 &amp; -10y_2 \\
+\mbo...
+...} &amp; z &amp;&amp;&amp; \leq &amp; 28 \\
+&amp;&amp;&amp; y_i &amp;&amp; \mbox{binary}
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+as the initial relaxation (<I>RMP</I>).)
+</DL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2005-12-09</I>
+</ADDRESS>
+</BODY>
+</HTML>

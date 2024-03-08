@@ -1,0 +1,19 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi 
+\doTocEntry\tocsection{1}{\csname a:TocLink\endcsname{1}{x1-10001}{QQ2-1-1}{Introduction}}{1}\relax 
+\doTocEntry\tocsection{2}{\csname a:TocLink\endcsname{1}{x1-20002}{QQ2-1-2}{Sets}}{2}\relax 
+\doTocEntry\tocsection{3}{\csname a:TocLink\endcsname{1}{x1-30003}{QQ2-1-3}{Objective function}}{3}\relax 
+\doTocEntry\tocsection{4}{\csname a:TocLink\endcsname{1}{x1-40004}{QQ2-1-4}{Vouchers}}{3}\relax 
+\doTocEntry\tocsection{5}{\csname a:TocLink\endcsname{1}{x1-50005}{QQ2-1-5}{Variables }}{3}\relax 
+\doTocEntry\tocsection{6}{\csname a:TocLink\endcsname{1}{x1-60006}{QQ2-1-6}{Constraints}}{5}\relax 
+\doTocEntry\tocsubsection{6.1}{\csname a:TocLink\endcsname{1}{x1-70006.1}{QQ2-1-7}{Flow conservation}}{5}\relax 
+\doTocEntry\tocsubsection{6.2}{\csname a:TocLink\endcsname{1}{x1-80006.2}{QQ2-1-8}{Obey the budget}}{5}\relax 
+\doTocEntry\tocsubsection{6.3}{\csname a:TocLink\endcsname{1}{x1-90006.3}{QQ2-1-9}{Calculate the nutrients supplied to each demand point}}{5}\relax 
+\doTocEntry\tocsubsection{6.4}{\csname a:TocLink\endcsname{1}{x1-100006.4}{QQ2-1-10}{Ensure some minimum threshold met for each nutrient}}{6}\relax 
+\doTocEntry\tocsubsection{6.5}{\csname a:TocLink\endcsname{1}{x1-110006.5}{QQ2-1-11}{Obey the capacity constraints of the local markets}}{6}\relax 
+\doTocEntry\tocsubsection{6.6}{\csname a:TocLink\endcsname{1}{x1-120006.6}{QQ2-1-12}{Obtain at least a certain proportion in Syria}}{6}\relax 
+\doTocEntry\tocsubsection{6.7}{\csname a:TocLink\endcsname{1}{x1-130006.7}{QQ2-1-13}{Obtain at least a certain percentage using vouchers}}{6}\relax 
+\doTocEntry\tocsection{7}{\csname a:TocLink\endcsname{1}{x1-140007}{QQ2-1-14}{The data}}{6}\relax 
+\doTocEntry\tocsection{8}{\csname a:TocLink\endcsname{1}{x1-150008}{QQ2-1-15}{Questions}}{7}\relax 
+\doTocEntry\tocsection{9}{\csname a:TocLink\endcsname{1}{x1-160009}{QQ2-1-16}{AMPL notes}}{7}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-170009}{QQ2-1-17}{References}}{8}\relax 
+\par 

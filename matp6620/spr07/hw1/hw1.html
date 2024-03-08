@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Homework 1</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="hw1">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="hw1.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+  <a href=..><B><FONT SIZE="+1"><B>MATP6620 / DSES6760
+<BR>
+Combinatorial Optimization and Integer Programming</a></B></FONT></B>
+
+<BR>
+Homework 1.
+  </FONT>
+</DIV>
+
+<P>
+
+<DIV ALIGN="RIGHT">
+   Due:  Friday, January 26, 2007.
+
+</DIV>
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>Model the following scheduling problem as a mixed integer
+programming problem:
+<BLOCKQUOTE>
+A set of <I>n</I> jobs must be carried out on a single machine that can only
+do one job at a time.
+Each job <I>j</I> takes <I>p</I><SUB><I>j</I></SUB> hours to complete.
+Each job has a target time <I>t</I><SUB><I>j</I></SUB> for <IMG
+ WIDTH="100" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$j=1,\ldots,n$">,
+and a priority weight <I>w</I><SUB><I>j</I></SUB> for <IMG
+ WIDTH="100" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$j=1,\ldots,n$">.
+in what order should the jobs be carried out in order to minimize
+the total weighted tardiness?
+(The <EM>tardiness</EM> of a job is how late it is,
+that is, the difference between the completion time and
+the target time if the completion time is greater than the target time.
+The tardiness is weighted by the priority weight&nbsp;<I>w</I><SUB><I>j</I></SUB>.)
+</BLOCKQUOTE>
+  <DT>2.
+<DD>Show that
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="478" HEIGHT="90"
+ SRC="img2.gif"
+ ALT="\begin{eqnarray*}
+S &amp; := &amp; \{x \in Z\!\!\! Z_+^3: 7x_1 + 9x_2 + 12x_3 \geq 17\} ...
+... Z\!\!\! Z_+^3:
+x_1+x_2+x_3 \geq 2, \; 2x_1+3x_3+4x_4 \geq 6 \}.
+\end{eqnarray*}">
+</DIV><P></P>
+<BR CLEAR="ALL">
+Which formulation do you think is most effective for solving
+<!-- MATH: $\max\{c^Tx: x\in S\}$ -->
+<IMG
+ WIDTH="150" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\max\{c^Tx: x\in S\}$">? Why?
+You may want to experiment with AMPL to confirm your answer.
+<DT>3.
+<DD>Consider the following LP, which we call problem (<I>P</I>):
+         <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcc}
+           \max         &  2y_1 & + & 3y_2 &      &     \\
+           \mbox{s.t.}  &  y_1 & + &  2y_2 & \leq & 7   \\
+                        & -y_1 & + &  y_2 & \leq & 4   \\
+                        &  y_1    &   &  & \leq & 1.
+          \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="215" HEIGHT="99"
+ SRC="img4.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcc}
+\max &amp; 2y_1 &amp; + &amp; 3y_2 &amp; &amp; \\
+\mbo...
+...1 &amp; + &amp; y_2 &amp; \leq &amp; 4 \\
+&amp; y_1 &amp; &amp; &amp; \leq &amp; 1.
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+         <DL COMPACT>
+<DT>(a)
+<DD>Solve (<I>P</I>) geometrically.
+<DT>(b)
+<DD>What is the dual (<I>D</I>) of (<I>P</I>)?
+           <DT>(c)
+<DD>Write down the complementary slackness conditions for
+                  this problem and use them to solve the dual (<I>D</I>).
+                  Check your answer by evaluating the optimal costs for
+                  (<I>P</I>) and (<I>D</I>).
+           <DT>(d)
+<DD>For problem (<I>D</I>), what is the optimal basis matrix <I>B</I>?
+                  What are the reduced costs at the optimal solution?
+                  What are <I>B</I><SUP>-1</SUP>, <I>B</I><SUP>-1</SUP><I>N</I>, <I>c</I><SUB><I>B</I></SUB><SUP><I>T</I></SUP><I>B</I><SUP>-1</SUP><I>N</I>,
+                  <I>c</I><SUB><I>B</I></SUB><SUP><I>T</I></SUP><I>B</I><SUP>-1</SUP><I>b</I>, and <!-- MATH: $c_N^T-c_B^TB^{-1}N$ -->
+<I>c</I><SUB><I>N</I></SUB><SUP><I>T</I></SUP>-<I>c</I><SUB><I>B</I></SUB><SUP><I>T</I></SUP><I>B</I><SUP>-1</SUP><I>N</I>?
+         </DL>
+
+<P>
+
+<DT>4.
+<DD>Model the following problem as an integer program:
+<BLOCKQUOTE>
+Given a graph <I>G</I>=(<I>V</I>,<I>E</I>), vertex weights <I>w</I><SUB><I>v</I></SUB>,
+and subsets <!-- MATH: $U_i, i=1,\ldots,k$ -->
+<IMG
+ WIDTH="123" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$U_i, i=1,\ldots,k$">
+of the vertices.
+Find a minimum weight subset <I>W</I> of the vertices such that
+<I>W</I> contains at least one vertex in each <I>U</I><SUB><I>i</I></SUB>
+and so that the subgraph of <I>G</I> induced by the vertices in <I>W</I> is  connected.
+
+</BLOCKQUOTE>
+
+<P>
+</DL>
+
+<P>
+
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD></TD><TD ALIGN="LEFT"><a href=../..>John Mitchell</a></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Amos Eaton 325</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">x6915.</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT"><a href=mailto:mitchj@rpi.edu>mitchj
+at rpi dot edu</a></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Office hours:
+   Tuesday 2-3pm, Wednesday 11am-12noon.</TD>
+</TR>
+</TABLE>
+
+<HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2007-01-19</I>
+</ADDRESS>
+</BODY>
+</HTML>

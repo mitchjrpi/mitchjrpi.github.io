@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="debrisIPsol.tex"> 
+<meta name="date" content="2017-12-11 08:49:00"> 
+<link rel="stylesheet" type="text/css" href="debrisIPsol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 31--><p class="noindent" >
+<!--l. 33--><p class="noindent" ><span class="underline"><span 
+class="cmbx-12x-x-144">Case Study:</span></span>
+<!--l. 37--><p class="noindent" ><span class="underline"><span 
+class="cmbx-12x-x-144">Post Disaster Debris Removal</span></span><br />
+<span class="underline"><span 
+class="cmbx-12x-x-144">Integer Programming Formulations</span></span>
+</div>
+<div class="center" 
+>
+<!--l. 44--><p class="noindent" >
+<!--l. 46--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmr-12x-x-120">MATP4700/ ISYE4770 Math Models of Operations Research</span></a>
+<!--l. 48--><p class="noindent" ><span 
+class="cmr-12x-x-120">Fall 2017 </span></div>
+<div class="center" 
+>
+<!--l. 52--><p class="noindent" >
+<!--l. 53--><p class="noindent" ><span 
+class="cmbx-12x-x-144">Solutions</span></div>
+<!--l. 57--><p class="noindent" >Sets of binary variables:
+      <ul class="itemize1">
+      <li class="itemize"><span 
+class="cmtt-12">useorigin</span><span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmtt-12">i in ORIGINS</span><span 
+class="cmsy-10x-x-120">}</span>
+      </li>
+      <li class="itemize"><span 
+class="cmtt-12">useorigdest</span><span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmtt-12">k in DESTINATIONS, i in ORIGINS</span><span 
+class="cmsy-10x-x-120">} </span>490 variables.
+      </li>
+      <li class="itemize"><span 
+class="cmtt-12">open</span><span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmtt-12">(i,j) in ARCS</span><span 
+class="cmsy-10x-x-120">}</span>
+      </li>
+      <li class="itemize"><span 
+class="cmtt-12">flow</span><span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmtt-12">k in DESTINATIONS, (i,j) in ARCS</span><span 
+class="cmsy-10x-x-120">}</span></li></ul>
+<!--l. 84--><p class="noindent" ><span 
+class="cmbx-12x-x-144">Questions</span>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">Show that forcing the decisions to open the origins to be binary is not sufficient to
+      give an integral solution, with many other variables still taking fractional values at
+      optimality. (The variable called <span 
+class="cmtt-12">useorigin </span>in my formulation is the one you can set
+      to be binary.)
+                                                                                         
+                                                                                         
+      <!--l. 95--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 97--><p class="noindent" >The optimal value of the LP relaxation is 166.04. Setting <span 
+class="cmtt-12">useorigin </span>to be binary
+      increases the optimal value of the LP relaxation to 166.125, but it still leaves many
+      variables fractional.
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2">Is there one set of variables that can be set to be binary which results in an integer
+      solution?
+      <!--l. 105--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 107--><p class="noindent" >Three cases:
+           <ul class="itemize1">
+           <li class="itemize">Setting <span 
+class="cmtt-12">open </span>to be binary increases the optimal value of the LP relaxation to
+           172.75, but it still leaves many variables fractional.
+           </li>
+           <li class="itemize">Setting <span 
+class="cmtt-12">useorigdest </span>to be binary does indeed result in an integral solution, with
+           value 178.5.
+           </li>
+           <li class="itemize">Setting <span 
+class="cmtt-12">flow </span>to be binary also results in an integral solution, with value 178.5.</li></ul>
+      </li>
+      <li 
+  class="enumerate" id="x1-7x3">Return again to the LP relaxation, with all variables taking values between 0
+      and&#x00A0;1.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-9x1">Why must a feasible solution to the integer program have at least 4 open origins?
+           What linear constraint would you add to the model to enforce this? Does this
+           improve the value of the LP relaxation?
+           <!--l. 125--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <!--l. 127--><p class="noindent" >The total demand is 32. Each origin can only supply 10 units, so 4 origins must be open.
+           We can require
+           <center class="math-display" >
+           <img 
+src="debrisIPsol0x.png" alt="    &#x2211;
+           useorigin [i] &#x2265; 4.
+
+i&#x2208;ORIGINS
+           " class="math-display" ></center>
+           <!--l. 131--><p class="nopar" >
+           One way to impose this constraint in AMPL is as follows:
+               <div class="quote">
+                                                                                         
+                                                                                         
+               <div class="verbatim" id="verbatim-1">
+subject&#x00A0;to&#x00A0;enoughcapacity:
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;sum{i&#x00A0;in&#x00A0;ORIGINS}&#x00A0;useorigin[i]&#x00A0;&#x003E;=
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;ceil&#x00A0;(sum{k&#x00A0;in&#x00A0;DESTINATIONS}&#x00A0;demand[k]&#x00A0;/&#x00A0;capacity);
+</div>
+               <!--l. 138--><p class="nopar" ></div>
+           <!--l. 140--><p class="noindent" >The optimal value is unchanged after the addition of this constraint; the constraint was
+           already satisfied in the original LP relaxation.
+           </li>
+           <li 
+  class="enumerate" id="x1-11x2">Why must the subset <span 
+class="cmsy-10x-x-120">{</span>173<span 
+class="cmmi-12">, </span>265<span 
+class="cmmi-12">, </span>359<span 
+class="cmmi-12">, </span>475<span 
+class="cmmi-12">, </span>559<span 
+class="cmmi-12">, </span>591<span 
+class="cmsy-10x-x-120">} </span>of the destinations be supplied by at
+           least 3 open origins?
+           <!--l. 146--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <!--l. 148--><p class="noindent" >The total demand for the listed origins is 22, so they need to be supplied by at least 3
+           origins.
+               <ol  class="enumerate3" >
+               <li 
+  class="enumerate" id="x1-13x1">The optimal solution uses the edges indicated in Figure&#x00A0;<a 
+href="#x1-141">1<!--tex4ht:ref: fig.map --></a>. <hr class="figure"><div class="figure" 
+><a 
+ id="x1-141"></a>
+<div class="center" 
+>
+<!--l. 156--><p class="noindent" >
+<!--l. 157--><p class="noindent" ><img 
+src="mapLPsoln_cut.png" alt="PIC"  
+></div>
+               <br /> <div class="caption" 
+><span class="id">Figure&#x00A0;1: </span><span  
+class="content">Map of optimal solution. Open origins are indicated in green;
+               destinations are indicated in red. </span></div><!--tex4ht:label?: x1-141 -->
+               <!--l. 161--><p class="noindent" ></div><hr class="endfigure">
+               <!--l. 162--><p class="noindent" >In the solution to the LP relaxation, only two origins from 16,...,30 are open. In any
+               such solution, at least one arc crossing from the left of the blue line to the right
+               must be open. Express this as a valid linear constraint which is satisfied by any
+               feasible solution to the integer program. Does your constraint improve the value of
+               the LP relaxation? (Hint: If three origins are open to the right of the blue line then
+               only one is open to the left, and this origin must supply destinations
+               <span 
+class="cmsy-10x-x-120">{</span>102<span 
+class="cmmi-12">, </span>282<span 
+class="cmmi-12">, </span>369<span 
+class="cmmi-12">, </span>542<span 
+class="cmsy-10x-x-120">}</span>. You can use this observation to help construct a valid
+               constraint.)
+               <!--l. 172--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+               <!--l. 174--><p class="noindent" >The arcs crossing the blue line are <span 
+class="cmmi-12">A</span><sub><span 
+class="cmmi-8">B</span></sub> := <span 
+class="cmsy-10x-x-120">{</span>(15<span 
+class="cmmi-12">, </span>16)<span 
+class="cmmi-12">, </span>(45<span 
+class="cmmi-12">, </span>46)<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">, </span>(585<span 
+class="cmmi-12">, </span>586)<span 
+class="cmsy-10x-x-120">}</span>. Either
+               three origins from <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmmi-8">R</span></sub> := <span 
+class="cmsy-10x-x-120">{</span>16<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">, </span>30<span 
+class="cmsy-10x-x-120">} </span>are used or at least one of these arcs
+               is open (or both). If three of these origins are open then destinations
+               <span 
+class="cmsy-10x-x-120">{</span>102<span 
+class="cmmi-12">, </span>282<span 
+class="cmmi-12">, </span>369<span 
+class="cmmi-12">, </span>542<span 
+class="cmsy-10x-x-120">} </span>must all be served by just a single origin; the only
+               possibilities are origins <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmmi-8">SW</span> </sub> := <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmmi-12">, </span>2<span 
+class="cmmi-12">, </span>31<span 
+class="cmmi-12">, </span>61<span 
+class="cmmi-12">, </span>91<span 
+class="cmsy-10x-x-120">}</span>. This leads to the valid
+               constraint
+               <center class="math-display" >
+               <img 
+src="debrisIPsol1x.png" alt=" &#x2211;                     &#x2211;
+      useorigin [i] +        open[j,k] &#x2265; 1.
+i&#x2208;VSW                (j,k)&#x2208;A
+                           B
+               " class="math-display" ></center>
+               <!--l. 185--><p class="nopar" >
+               Adding this constraint increases the optimal value of the LP relaxation to
+               166.58281.
+               <!--l. 189--><p class="noindent" >One way to model this constraint is to add the following lines to the model
+               file:
+                   <div class="quote">
+                                                                                         
+                                                                                         
+                   <div class="verbatim" id="verbatim-2">
+param&#x00A0;ncuts&#x00A0;default&#x00A0;1;
+&#x00A0;<br />set&#x00A0;cut_origins{1..ncuts}&#x00A0;within&#x00A0;ORIGINS;
+&#x00A0;<br />set&#x00A0;cut_arcs{1..ncuts}&#x00A0;within&#x00A0;ARCS;
+&#x00A0;<br />#
+&#x00A0;<br />subject&#x00A0;to&#x00A0;cut{i&#x00A0;in&#x00A0;1..ncuts}:
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;sum{j&#x00A0;in&#x00A0;cut_origins[i]}&#x00A0;useorigin[j]
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;+&#x00A0;sum{(k,l)&#x00A0;in&#x00A0;cut_arcs[i]}&#x00A0;open[k,l]&#x00A0;&#x003E;=&#x00A0;1;
+</div>
+                   <!--l. 199--><p class="nopar" ></div>
+               <!--l. 201--><p class="noindent" >and add the following lines to the data file:
+                   <div class="quote">
+                                                                                         
+                                                                                         
+                   <div class="verbatim" id="verbatim-3">
+set&#x00A0;cut_origins[1]&#x00A0;:=
+&#x00A0;<br />1&#x00A0;2&#x00A0;31&#x00A0;61&#x00A0;91;
+&#x00A0;<br />
+&#x00A0;<br />set&#x00A0;cut_arcs[1]&#x00A0;:=
+&#x00A0;<br />15&#x00A0;16
+&#x00A0;<br />45&#x00A0;46
+&#x00A0;<br />75&#x00A0;76
+&#x00A0;<br />105&#x00A0;106
+&#x00A0;<br />135&#x00A0;136
+&#x00A0;<br />165&#x00A0;166
+&#x00A0;<br />195&#x00A0;196
+&#x00A0;<br />225&#x00A0;226
+&#x00A0;<br />255&#x00A0;256
+&#x00A0;<br />285&#x00A0;286
+&#x00A0;<br />315&#x00A0;316
+&#x00A0;<br />345&#x00A0;346
+&#x00A0;<br />375&#x00A0;376
+&#x00A0;<br />405&#x00A0;406
+&#x00A0;<br />435&#x00A0;436
+&#x00A0;<br />465&#x00A0;466
+&#x00A0;<br />495&#x00A0;496
+&#x00A0;<br />525&#x00A0;526
+&#x00A0;<br />555&#x00A0;556
+&#x00A0;<br />585&#x00A0;586
+&#x00A0;<br />;
+</div>
+                   <!--l. 229--><p class="nopar" ></div>
+               <!--l. 231--><p class="noindent" >As added, the constraint is stronger than directly exploiting the disjunction with
+               the constraint
+               <center class="math-display" >
+               <img 
+src="debrisIPsol2x.png" alt="1 &#x2211;                    &#x2211;
+--    useorigin  [i] +        open [j,k] &#x2265; 1.
+3 i&#x2208;VR                 (j,k)&#x2208;AB
+               " class="math-display" ></center>
+               <!--l. 236--><p class="nopar" >
+               </li>
+               <li 
+  class="enumerate" id="x1-16x2">Can you find any other valid linear constraints that improve the value of the LP
+               relaxation?
+                                                                                         
+                                                                                         
+               <!--l. 244--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+               <!--l. 246--><p class="noindent" >Possibilities include:
+                   <div class="quote">
+                                                                                         
+                                                                                         
+                   <div class="verbatim" id="verbatim-4">
+subject&#x00A0;to&#x00A0;flowconopen{i&#x00A0;in&#x00A0;TRANSHIP&#x00A0;union&#x00A0;DESTINATIONS,
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;(i,j)&#x00A0;in&#x00A0;ARCS}:
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;open[i,j]&#x00A0;&#x003C;=&#x00A0;sum{(h,i)&#x00A0;in&#x00A0;ARCS}&#x00A0;open[h,i];
+&#x00A0;<br />
+&#x00A0;<br />subject&#x00A0;to&#x00A0;flowconopen2{i&#x00A0;in&#x00A0;TRANSHIP,&#x00A0;(h,i)&#x00A0;in&#x00A0;ARCS}:
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;open[h,i]&#x00A0;&#x003C;=&#x00A0;sum{(i,j)&#x00A0;in&#x00A0;ARCS}&#x00A0;open[i,j];
+&#x00A0;<br />
+&#x00A0;<br />subject&#x00A0;to&#x00A0;flowconopenorigin{i&#x00A0;in&#x00A0;ORIGINS}:
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;sum{(i,j)&#x00A0;in&#x00A0;ARCS}&#x00A0;open[i,j]&#x00A0;&#x003E;=&#x00A0;useorigin[i];
+&#x00A0;<br />
+&#x00A0;<br />subject&#x00A0;to&#x00A0;cut3:
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;sum{i&#x00A0;in&#x00A0;21..30}&#x00A0;useorigin[i]
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;+&#x00A0;2&#x00A0;*&#x00A0;sum{k&#x00A0;in&#x00A0;0..11}&#x00A0;open[20+30*k,21+30*k]&#x00A0;&#x003E;=&#x00A0;2;
+&#x00A0;<br /></div>
+                   <!--l. 263--><p class="nopar" ></div>
+               <!--l. 265--><p class="noindent" >Adding these constraints together with the constraint from Q3b(i) increases the
+               value of the LP relaxation to 167.5202966.</li></ol>
+           </li></ol>
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a></td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

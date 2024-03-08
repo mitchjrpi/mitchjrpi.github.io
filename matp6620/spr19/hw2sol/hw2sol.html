@@ -1,0 +1,539 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw2sol.tex"> 
+<meta name="date" content="2019-02-12 13:51:00"> 
+<link rel="stylesheet" type="text/css" href="hw2sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 40--><p class="noindent" >
+<!--l. 42--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6620" ><span 
+class="cmr-12">MATP6620/ISYE6760 Combinatorial Optimization &amp; Integer Programming</span></a><br />
+<span 
+class="cmr-12">Homework 2 Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 47--><p class="noindent" >
+ Due: Friday, February 8, 2019, in class.<br />
+Penalty for late homeworks: 10% for each day or part of a day.</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1">A method for representing a spanning tree on the complete graph on vertices <span 
+class="cmsy-10">{</span>1<span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x2026;</span><span 
+class="cmmi-10">,n</span><span 
+class="cmsy-10">} </span>as a string of <span 
+class="cmmi-10">n </span><span 
+class="cmsy-10">- </span>2
+     numbers was presented in class. Find the trees with 8 vertices corresponding to the following
+     strings:
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-5x1">856143.
+         </li>
+         <li 
+  class="enumerate" id="x1-7x2">341432.
+         </li>
+         <li 
+  class="enumerate" id="x1-9x3">432544.</li></ol>
+     <!--l. 100--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 148--><p class="noindent" >   
+<img src=hw2q1sol.png>
+     </li>
+     <li 
+  class="enumerate" id="x1-11x2">Show that <div class="eqnarray">
+     <center class="math-display" >
+     <img 
+src="hw2sol0x.png" alt="             3
+S  :=  {x &#x2208; &#x2124; + : 7x1 + 9x2 + 12x3 &#x2265; 17}
+   =   {x &#x2208; &#x2124;3+ : 4x1 + 5x2 + 6x3 &#x2265; 10}
+   =   {x &#x2208; &#x2124;3+ : x1 + x2 + x3 &#x2265; 2,2x1 + 3x2 + 4x3 &#x2265; 6}.
+     " class="math-display" ></center>
+     </div>Which formulation do you think is most effective for solving max<span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">c</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x </span>: <span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">S</span><span 
+class="cmsy-10">}</span>? Why? How do the feasible
+     regions of the LP relaxations compare?
+     <!--l. 255--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 269--><p class="noindent" >Each set contains the integer points
+     <center class="math-display" >
+     <img 
+src="hw2sol1x.png" alt="(3,0,0),(0,2,0),(0,0,2),(1,0,1),(0,1,1),(2,1,0)
+     " class="math-display" ></center>
+     <!--l. 272--><p class="nopar" >
+     and all integer points that are larger than at least one of these points, and no other point. So the sets are
+     identical.
+     <!--l. 278--><p class="noindent" >The most effective formulation is the one with the tightest LP relaxation. The third formulation is the
+     strongest, since it implies the other two relaxations. In particular:
+     <center class="math-display" >
+     <img 
+src="hw2sol2x.png" alt="3(x1 + x2 + x3 &#x2265; 2)+ 2(2x1 + 3x2 +4x3 &#x2265; 6) &#x21D2; 7x1 + 9x2 + 11x3 &#x2265; 18 &#x21D2; 7x1 +9x2 + 12x3 &#x2265; 17
+     " class="math-display" ></center>
+     <!--l. 284--><p class="nopar" >
+     since <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub> <span 
+class="cmsy-10">&#x2265; </span>0, and
+     <center class="math-display" >
+     <img 
+src="hw2sol3x.png" alt="2(x1 + x2 + x3 &#x2265; 2)+ (2x1 + 3x2 + 4x3 &#x2265; 6) &#x21D2; 4x1 + 5x2 + 6x3 &#x2265; 10.
+     " class="math-display" ></center>
+     <!--l. 290--><p class="nopar" >
+     <!--l. 292--><p class="noindent" >The second formulation implies the first, so the first is the weakest:
+     <center class="math-display" >
+     <img 
+src="hw2sol4x.png" alt="1.75(4x1 + 5x2 + 6x3 &#x2265; 10) &#x21D2; 7x1 + 8.75x2 + 10.5x3 &#x2265; 17.5 &#x21D2; 7x1 + 9x2 + 12x3 &#x2265; 17.5
+     " class="math-display" ></center>
+     <!--l. 296--><p class="nopar" >
+     since <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">i</span></sub> <span 
+class="cmsy-10">&#x2265; </span>0 <span 
+class="cmsy-10">&#x2200;</span><span 
+class="cmmi-10">i</span>.
+     </li>
+     <li 
+  class="enumerate" id="x1-14x3">Model the following problem as an integer linear program:
+         <div class="quote">
+                                                                                         
+                                                                                         
+         <!--l. 372--><p class="noindent" >Given a graph <span 
+class="cmmi-10">G </span>= (<span 
+class="cmmi-10">V,E</span>), vertex weights <span 
+class="cmmi-10">w</span><sub><span 
+class="cmmi-7">v</span></sub>, and subsets <span 
+class="cmmi-10">U</span><sub><span 
+class="cmmi-7">i</span></sub><span 
+class="cmmi-10">,i </span>= 1<span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x2026;</span><span 
+class="cmmi-10">,k </span>of the vertices. Find
+         a minimum weight subset <span 
+class="cmmi-10">W </span>of the vertices such that <span 
+class="cmmi-10">W </span>contains at least one vertex in each
+         <span 
+class="cmmi-10">U</span><sub><span 
+class="cmmi-7">i</span></sub> and so that the subgraph of <span 
+class="cmmi-10">G </span>induced by the vertices in <span 
+class="cmmi-10">W </span>is connected.</div>
+     <!--l. 381--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 384--><p class="noindent" >Define two sets of binary variables:
+     <center class="math-display" >
+     <img 
+src="hw2sol5x.png" alt="       {  1  if node v is selected
+xv  =     0  otherwise           &#x2200;v &#x2208; V
+
+       {  1  if edge e is selected
+ye  =     0  otherwise           &#x2200;e &#x2208; E
+     " class="math-display" ></center>
+     <!--l. 398--><p class="nopar" >
+     <!--l. 400--><p class="noindent" >Objective function: min<span 
+class="cmex-10">&#x2211;</span>
+     <sub><span 
+class="cmmi-7">v</span><span 
+class="cmsy-7">&#x2208;</span><span 
+class="cmmi-7">V</span> </sub><span 
+class="cmmi-10">w</span><sub><span 
+class="cmmi-7">v</span></sub><span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">v</span></sub>.
+     <!--l. 402--><p class="noindent" >Constraints:
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-16x1"><span 
+class="cmex-10">&#x2211;</span>
+           <sub><span 
+class="cmmi-7">v</span><span 
+class="cmsy-7">&#x2208;</span><span 
+class="cmmi-7">U</span><sub><span 
+class="cmmi-5">i</span></sub></sub><span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">v</span></sub><span style="margin-left:0.3em" class="thinspace"></span> <span 
+class="cmsy-10">&#x2265;</span><span style="margin-left:0.3em" class="thinspace"></span>1 for each set <span 
+class="cmmi-10">U</span><sub><span 
+class="cmmi-7">i</span></sub>, so pick at least one vertex from each set.
+         </li>
+         <li 
+  class="enumerate" id="x1-18x2"><span 
+class="cmmi-10">y</span><sub><span 
+class="cmmi-7">e</span></sub> <span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">u</span></sub> for each edge <span 
+class="cmmi-10">e </span>and each endpoint <span 
+class="cmmi-10">u </span>of&#x00A0;<span 
+class="cmmi-10">e</span>: an edge can only be in the induced subgraph
+         if both endpoints are selected.
+         </li>
+         <li 
+  class="enumerate" id="x1-20x3">For each subset <span 
+class="cmmi-10">S </span><span 
+class="cmsy-10">&#x2286; </span><span 
+class="cmmi-10">V </span>such that
+             <ul class="itemize1">
+             <li class="itemize"><span 
+class="cmmi-10">U</span><sub><span 
+class="cmmi-7">i</span></sub> <span 
+class="cmsy-10">&#x2286; </span><span 
+class="cmmi-10">S </span>for some set <span 
+class="cmmi-10">U</span><sub><span 
+class="cmmi-7">i</span></sub>, and
+             </li>
+             <li class="itemize"><span 
+class="cmmi-10">U</span><sub><span 
+class="cmmi-7">j</span></sub> <span 
+class="cmsy-10">&#x2286; </span><span 
+class="cmmi-10">V </span><span 
+class="cmsy-10">\ </span><span 
+class="cmmi-10">S </span>for some set <span 
+class="cmmi-10">U</span><sub><span 
+class="cmmi-7">j</span></sub>,</li></ul>
+         <!--l. 414--><p class="noindent" >require
+         <center class="math-display" >
+         <img 
+src="hw2sol6x.png" alt=" &#x2211;   y &#x2265; 1,
+e&#x2208;&#x03B4;(S) e
+         " class="math-display" ></center>
+         <!--l. 417--><p class="nopar" >
+         where <span 
+class="cmmi-10">&#x03B4;</span>(<span 
+class="cmmi-10">S</span>) denotes the set of edges with exactly one endpoint in&#x00A0;<span 
+class="cmmi-10">S</span>. This set of constraints enforces
+         connectivity. The construction assumes all weights <span 
+class="cmmi-10">w</span><sub><span 
+class="cmmi-7">e</span></sub> <span 
+class="cmmi-10">&#x003E; </span>0. Otherwise, we could pick isolated vertices to
+         improve the overall weight.</li></ol>
+     <!--l. 426--><p class="noindent" ><span 
+class="cmbx-10">Alternative solution:</span>
+     <!--l. 429--><p class="noindent" >We can include variables for both vertices and edges, if we link them together:
+     <center class="math-display" >
+     <img 
+src="hw2sol7x.png" alt="                 &#x2211;
+minx,y              v&#x2211;&#x2208;V wvxv
+subject to            v&#x2208;Ui xv &#x2265;  1       i = 1,...,k
+          &#x2211;    x  - &#x2211;    y   =  1
+            v&#x2208;V v&#x2211;    e&#x2208;E e
+                    e&#x2208;E(U)ye  &#x2264;  |U|- 1  &#x2200;U &#x2286; V,3 &#x2264; |U | &#x2264; |V |
+                         ye  &#x2264;  xu      if u is an endpoint of e
+
+                         xv     binary  &#x2200;v &#x2208; V
+                         ye     binary  &#x2200;e &#x2208; E.
+     " class="math-display" ></center>
+     <!--l. 440--><p class="nopar" >
+     The third constraint ensures the set of selected edges is acyclic. The second constraint then ensures that we
+     select enough edges to connect the selected vertices. The fourth constraint says we can only pick an edge if we
+     pick both its endpoints.
+     </li>
+     <li 
+  class="enumerate" id="x1-22x4">Assume that we have a polynomial time algorithm for <span 
+class="cmti-10">computing the length </span>of the shortest TSP tour, so
+     given any graph <span 
+class="cmmi-10">G </span>= (<span 
+class="cmmi-10">V,E</span>) with edge lengths <span 
+class="cmmi-10">c</span><sub><span 
+class="cmmi-7">e</span></sub>, this algorithm will tell us the length of the
+     optimal tour, but it will <span 
+class="cmti-10">not </span>tell us the edges that are used in the optimal tour. Prove that we can
+     use this algorithm as a subroutine in a polynomial time algorithm for <span 
+class="cmti-10">finding the edges </span>in the
+     shortest TSP tour. Be careful with your description of how you proceed in each case in your
+     algorithm.
+     <!--l. 542--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 545--><p class="noindent" >We construct an optimal tour <span 
+class="cmmi-10">T </span><span 
+class="cmsy-10">&#x2286; </span><span 
+class="cmmi-10">E</span>.
+     <!--l. 547--><p class="noindent" ><span 
+class="cmbx-10">Algorithm:</span>
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-24x1"><span 
+class="cmti-10">Initialize: </span><span 
+class="cmmi-10">T </span>= <span 
+class="cmsy-10">&#x2205;</span>. Let <span 
+class="cmmi-10">z </span>be the length of the optimal tour on the original graph. Let <span class="bar-css"><span 
+class="cmmi-10">z</span></span> := <span 
+class="cmmi-10">z</span>.
+         </li>
+         <li 
+  class="enumerate" id="x1-26x2"><span 
+class="cmti-10">Loop: </span>For <span 
+class="cmmi-10">e </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">E</span>:
+             <ol  class="enumerate3" >
+             <li 
+  class="enumerate" id="x1-28x1"><span 
+class="cmti-10">Set </span><span 
+class="cmmi-10">c</span><sub><span 
+class="cmmi-7">e</span></sub> <span 
+class="cmsy-10">&#x2190; </span><span 
+class="cmmi-10">c</span><sub><span 
+class="cmmi-7">e</span></sub> + 1.
+             </li>
+             <li 
+  class="enumerate" id="x1-30x2"><span 
+class="cmti-10">Call subroutine </span>on modified graph. Let <span 
+class="cmmi-10">z</span><sub><span 
+class="cmmi-7">e</span></sub> be the length of the optimal tour.
+             </li>
+             <li 
+  class="enumerate" id="x1-32x3"><span 
+class="cmti-10">Test and update:</span>
+                <ol  class="enumerate4" >
+                <li 
+  class="enumerate" id="x1-34x1">If <span 
+class="cmmi-10">z</span><sub><span 
+class="cmmi-7">e</span></sub> <span 
+class="cmmi-10">&#x003E;</span> <span class="bar-css"><span 
+class="cmmi-10">z</span></span>: update <span 
+class="cmmi-10">T </span><span 
+class="cmsy-10">&#x2190; </span><span 
+class="cmmi-10">T </span><span 
+class="cmsy-10">&#x222A;{</span><span 
+class="cmmi-10">e</span><span 
+class="cmsy-10">}</span>. Reset <span 
+class="cmmi-10">c</span><sub><span 
+class="cmmi-7">e</span></sub> <span 
+class="cmsy-10">&#x2190; </span><span 
+class="cmmi-10">c</span><sub><span 
+class="cmmi-7">e</span></sub> <span 
+class="cmsy-10">- </span>1. <a 
+ id="x1-331"></a>
+                </li>
+                <li 
+  class="enumerate" id="x1-36x2">If <span 
+class="cmmi-10">z</span><sub><span 
+class="cmmi-7">e</span></sub> = <span class="bar-css"><span 
+class="cmmi-10">z</span></span>: leave <span 
+class="cmmi-10">c</span><sub><span 
+class="cmmi-7">e</span></sub> at the modified value. <a 
+ id="x1-352"></a></li></ol>
+             </li></ol>
+         </li>
+         <li 
+  class="enumerate" id="x1-38x3"><span 
+class="cmti-10">Return </span>the tour <span 
+class="cmmi-10">T </span>of length&#x00A0;<span 
+class="cmmi-10">z</span>.</li></ol>
+     <!--l. 571--><p class="noindent" >If there is a unique optimal tour then it is clear that the algorithm will find it. If there are multiple optimal
+     tours then the tour returned depends on the order in which the edges are examined: it will be the last tour
+     lexicographically in the ordering.
+                                                                                         
+                                                                                         
+     <!--l. 575--><p class="noindent" >It is necessary to leave <span 
+class="cmmi-10">c</span><sub><span 
+class="cmmi-7">e</span></sub> at the modified value in Step&#x00A0;<a 
+href="#x1-352">4(b)<span class="roman-numeral">iii</span>B<!--tex4ht:ref: step:bad edge --></a> because of the potential for multiple optimal
+     tours. For example, if every edge had the same length <span 
+class="cmmi-10">c</span><sub><span 
+class="cmmi-7">e</span></sub> then the algorithm would return <span 
+class="cmmi-10">T </span>= <span 
+class="cmsy-10">&#x2205; </span>if every edge
+     length was reset.
+     <!--l. 580--><p class="noindent" >The number of iterations is bounded by <span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">E</span><span 
+class="cmsy-10">|</span>, and the work per iteration is bounded by the work of the
+     subroutine plus a constant term.
+     </li>
+     <li 
+  class="enumerate" id="x1-40x5">Using the <span 
+class="cmti-10">Hamiltonian path </span>problem, or otherwise, show that the following problem is <span 
+class="cmsy-10"><img 
+src="cmsy10-4e.png" alt="N" class="10x-x-4e" /></span><span 
+class="cmmi-10">P</span>-complete.
+         <div class="quote">
+         <!--l. 617--><p class="noindent" >Given a graph <span 
+class="cmmi-10">G </span>= (<span 
+class="cmmi-10">V,E</span>) and a set <span 
+class="cmmi-10">L </span><span 
+class="cmsy-10">&#x2286; </span><span 
+class="cmmi-10">V </span>, is there a spanning tree <span 
+class="cmmi-10">T </span>of <span 
+class="cmmi-10">G </span>such that the
+         set of leaves is <span 
+class="cmmi-10">L</span>?</div>
+     <!--l. 620--><p class="noindent" >(A <span 
+class="cmti-10">leaf </span>of a tree is a vertex of degree 1. The Hamiltonian path problem is: Given a graph <span 
+class="cmmi-10">G </span>= (<span 
+class="cmmi-10">V,E</span>), does
+     there exist a path which visits all the vertices of <span 
+class="cmmi-10">G </span>exactly once? You may assume that the Hamiltonian path
+     problem is <span 
+class="cmsy-10"><img 
+src="cmsy10-4e.png" alt="N" class="10x-x-4e" /><img 
+src="cmsy10-50.png" alt="P" class="10x-x-50" /></span>
+     -complete.)
+     <!--l. 629--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 632--><p class="noindent" >The given problem is in NP: easy to check if a set of edges <span 
+class="cmmi-10">E</span><span 
+class="cmsy-10">&#x2032; </span>meets the desired criteria.
+     <!--l. 634--><p class="noindent" >We polynomially reduce an instance of Hamiltonian path on a graph <span 
+class="cmmi-10">H </span>= (<span 
+class="cmmi-10">U,F</span>) to the given problem. Let
+     <span 
+class="cmmi-10">G </span>= <span 
+class="cmmi-10">H</span>, so <span 
+class="cmmi-10">V </span>= <span 
+class="cmmi-10">U </span>and <span 
+class="cmmi-10">E </span>= <span 
+class="cmmi-10">F</span>.
+         <div class="quote">
+         <!--l. 638--><p class="noindent" >For each pair of vertices <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">u,v</span><span 
+class="cmsy-10">}&#x2286; </span><span 
+class="cmmi-10">U</span>, set <span 
+class="cmmi-10">L </span>= <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">u,v</span><span 
+class="cmsy-10">}</span>.<br 
+class="newline" /> Solve the <span 
+class="cmti-10">Leaves </span>problem on this graph.<br 
+class="newline" /> If there exists a spanning tree <span 
+class="cmmi-10">T </span>of <span 
+class="cmmi-10">G </span>with leaves <span 
+class="cmmi-10">L </span>then there exists a Hamiltonian path.</div>
+     <!--l. 642--><p class="noindent" >If the answer to the <span 
+class="cmti-10">Leaves </span>problem is &#8220;No&#8221; for every pair <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">u,v</span><span 
+class="cmsy-10">} </span>then there is no Hamiltonian path. The
+     number of calls to the <span 
+class="cmti-10">Leaves </span>problem is <span 
+class="cmmi-10">O</span>(<span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">V </span><span 
+class="cmsy-10">|</span><sup><span 
+class="cmr-7">2</span></sup>), which is polynomial.
+     <!--l. 649--><p class="noindent" ><span 
+class="cmbx-10">Alternative reduction:</span>
+     <!--l. 652--><p class="noindent" >Introduce two new vertices <span 
+class="cmmi-10">s</span>, <span 
+class="cmmi-10">t</span>. Add edges between <span 
+class="cmmi-10">s </span>and each vertex in&#x00A0;<span 
+class="cmmi-10">V </span>, and between <span 
+class="cmmi-10">t </span>and each vertex
+     in&#x00A0;<span 
+class="cmmi-10">V </span>. Look for a spanning tree in the new graph with leaves&#x00A0;<span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">s,t</span><span 
+class="cmsy-10">}</span>. Such a spanning tree exists if and only if
+     there is a Hamiltonian path in the original graph.
+     </li>
+     <li 
+  class="enumerate" id="x1-42x6">Given sets <span 
+class="cmmi-10">M </span>of customers and <span 
+class="cmmi-10">N </span>of locations, integers <span 
+class="cmmi-10">c</span><sub><span 
+class="cmmi-7">ij</span></sub> for <span 
+class="cmmi-10">i </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">M </span>and <span 
+class="cmmi-10">j </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">N </span>of shipping costs, integers <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">j</span></sub>
+     of facility opening costs, and a scalar <span 
+class="cmmi-10">K</span>, the <span 
+class="cmti-10">uncapacitated facility location </span>problem is to find a set <span 
+class="cmmi-10">S </span><span 
+class="cmsy-10">&#x2286; </span><span 
+class="cmmi-10">N </span>such
+     that
+     <center class="math-display" >
+     <img 
+src="hw2sol8x.png" alt="&#x2211;          &#x2211;
+   min cij +   fj &#x2264; K.
+i&#x2208;M j&#x2208;S     j&#x2208;S
+     " class="math-display" ></center>
+     <!--l. 693--><p class="nopar" >
+     Show that this problem is <span 
+class="cmsy-10"><img 
+src="cmsy10-4e.png" alt="N" class="10x-x-4e" /></span><span 
+class="cmmi-10">P</span>-complete. (Hint: use node packing or vertex cover.)
+                                                                                         
+                                                                                         
+     <!--l. 699--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 702--><p class="noindent" >We use vertex cover with upper bound. Given a graph <span 
+class="cmmi-10">G </span>= (<span 
+class="cmmi-10">V,E</span>) and positive integer <span 
+class="cmmi-10">K</span>, we want to
+     determine whether there exists a vertex cover using no more than <span 
+class="cmmi-10">K </span>vertices.
+     <!--l. 706--><p class="noindent" >Transformation:
+         <ul class="itemize1">
+         <li class="itemize">Construct a facility for each vertex <span 
+class="cmmi-10">v </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">V </span>with cost <span 
+class="cmmi-10">f</span><sub><span 
+class="cmmi-7">j</span></sub> = 1.
+         </li>
+         <li class="itemize">Construct a customer for each edge <span 
+class="cmmi-10">e </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">E</span>. Set <span 
+class="cmmi-10">c</span><sub><span 
+class="cmmi-7">ij</span></sub> = 0 if vertex <span 
+class="cmmi-10">i </span>is an endpoint of edge&#x00A0;<span 
+class="cmmi-10">j</span>, set
+         <span 
+class="cmmi-10">c</span><sub><span 
+class="cmmi-7">ij</span></sub> = 2<span 
+class="cmmi-10">K </span>otherwise.
+         </li>
+         <li class="itemize">Use the same&#x00A0;<span 
+class="cmmi-10">K</span>.</li></ul>
+     <!--l. 714--><p class="noindent" >Then there is a solution to the facility location problem if and only if there is a solution to the vertex cover
+     problem.
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                             </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           x6915.                                                                                        </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           Office hours: Tuesday 5 Feb 10am&#8211;12noon, Wednesday 6 Feb 11am&#8211;1pm.</td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

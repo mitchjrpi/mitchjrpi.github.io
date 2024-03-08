@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw2.tex"> 
+<meta name="date" content="2017-01-29 20:31:00"> 
+<link rel="stylesheet" type="text/css" href="hw2.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 39--><p class="noindent" >
+<!--l. 41--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6620" ><span 
+class="cmr-12">MATP6620/ISYE6760 Combinatorial Optimization &amp; Integer Programming</span></a><br />
+<span 
+class="cmr-12">Homework 2.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 46--><p class="noindent" >
+ Due: Friday, February 10, 2017, in class.<br />
+Penalty for late homeworks: 10% for each day or part of a day.</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1">A method for representing a spanning tree on the complete graph on vertices <span 
+class="cmsy-10">{</span>1<span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x2026;</span><span 
+class="cmmi-10">,n</span><span 
+class="cmsy-10">} </span>as a string of <span 
+class="cmmi-10">n </span><span 
+class="cmsy-10">- </span>2
+     numbers was presented in class. Find the trees with 8 vertices corresponding to the following
+     strings:
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-5x1">543156.
+         </li>
+         <li 
+  class="enumerate" id="x1-7x2">768773.
+         </li>
+         <li 
+  class="enumerate" id="x1-9x3">543854.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-11x2">Show that <div class="eqnarray">
+     <center class="math-display" >
+     <img 
+src="hw20x.png" alt="             4
+S  :=  {x &#x2208; B : 97x1 +32x2 + 25x3 + 20x4 &#x2264; 139}
+    =  {x &#x2208; B4 : 2x1 + x2 + x3 + x4 &#x2264; 3}
+    =  {x &#x2208; B4 : x1 + x2 + x3 &#x2264; 2,x1 +x3 + x4 &#x2264; 2,x1 + x2 + x4 &#x2264; 2}.
+     " class="math-display" ></center>
+     </div>Which formulation do you think is most effective for solving max<span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">c</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x </span>: <span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">S</span><span 
+class="cmsy-10">}</span>? Why?
+     </li>
+     <li 
+  class="enumerate" id="x1-14x3">Assume that we have a polynomial time algorithm for <span 
+class="cmti-10">computing the number of nodes </span>of the largest node
+     packing for any graph <span 
+class="cmmi-10">G </span>= (<span 
+class="cmmi-10">V,E</span>). This algorithm will tell us the number of nodes in the optimal
+     packing but it will <span 
+class="cmti-10">not </span>tell us the nodes that are used in the optimal packing. Prove that we can
+     use this algorithm as a subroutine in a polynomial time algorithm for <span 
+class="cmti-10">finding the nodes </span>in the
+     largest node packing. Be careful with your description of how you proceed in each case in your
+     algorithm.
+                                                                                         
+                                                                                         
+     </li>
+     <li 
+  class="enumerate" id="x1-16x4">Using the <span 
+class="cmti-10">Hamiltonian path </span>problem, or otherwise, show that the following problem is <span 
+class="cmsy-10"><img 
+src="cmsy10-4e.png" alt="N" class="10x-x-4e" /><img 
+src="cmsy10-50.png" alt="P" class="10x-x-50" /></span>
+     -complete.
+         <div class="quote">
+         <!--l. 344--><p class="noindent" >Given a graph <span 
+class="cmmi-10">G </span>= (<span 
+class="cmmi-10">V,E</span>) is there a subset <span 
+class="cmmi-10">E</span><span 
+class="cmsy-10">&#x2032; &#x2286; </span><span 
+class="cmmi-10">E </span>where <span 
+class="cmmi-10">G</span><span 
+class="cmsy-10">&#x2032; </span>= (<span 
+class="cmmi-10">V,E</span><span 
+class="cmsy-10">&#x2032;</span>) is connected and
+         every vertex in <span 
+class="cmmi-10">G</span><span 
+class="cmsy-10">&#x2032; </span>has degree no larger than&#x00A0;3?</div>
+     <!--l. 348--><p class="noindent" >(The Hamiltonian path problem is: Given a graph <span 
+class="cmmi-10">H </span>= (<span 
+class="cmmi-10">U,F</span>), does there exist a path which visits all the
+     vertices of <span 
+class="cmmi-10">H </span>exactly once? You may assume that this problem is <span 
+class="cmsy-10"><img 
+src="cmsy10-4e.png" alt="N" class="10x-x-4e" /><img 
+src="cmsy10-50.png" alt="P" class="10x-x-50" /></span>
+     -complete.)
+     </li>
+     <li 
+  class="enumerate" id="x1-18x5">Polynomially reduce 3-SAT (a strongly <span 
+class="cmsy-10"><img 
+src="cmsy10-4e.png" alt="N" class="10x-x-4e" /><img 
+src="cmsy10-50.png" alt="P" class="10x-x-50" /></span>-complete problem) to <span 
+class="cmcsc-10">0-1</span><span 
+class="cmcsc-10">&#x00A0;K<span 
+class="small-caps">n</span><span 
+class="small-caps">a</span><span 
+class="small-caps">p</span><span 
+class="small-caps">s</span><span 
+class="small-caps">a</span><span 
+class="small-caps">c</span><span 
+class="small-caps">k</span> W<span 
+class="small-caps">i</span><span 
+class="small-caps">t</span><span 
+class="small-caps">h</span> L<span 
+class="small-caps">o</span><span 
+class="small-caps">w</span><span 
+class="small-caps">e</span><span 
+class="small-caps">r</span> B<span 
+class="small-caps">o</span><span 
+class="small-caps">u</span><span 
+class="small-caps">n</span><span 
+class="small-caps">d</span></span>,
+     that is,
+         <div class="quote">
+         <!--l. 376--><p class="noindent" >Given vectors <span 
+class="cmmi-10">c </span>and <span 
+class="cmmi-10">a </span>in <span 
+class="cmsy-10">&#x211C;</span><sup><span 
+class="cmmi-7">n</span></sup> and scalars <span 
+class="cmmi-10">b </span>and <span 
+class="cmmi-10">&#x03B4;</span>, does there exist binary <span 
+class="cmmi-10">x </span>with <span 
+class="cmmi-10">c</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2265; </span><span 
+class="cmmi-10">&#x03B4; </span>and
+         <span 
+class="cmmi-10">a</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">b</span>?</div>
+     <!--l. 380--><p class="noindent" >(Notice that this is a problem solvable in pseudopolynomial time.)
+     <!--l. 382--><p class="noindent" >(Hint: We know how to transform a clause into an inequality in binary variables. This can be refined slightly
+     by introducing additional binary variables to give an equivalent <span 
+class="cmti-10">equality </span>in binary variables. Construct a sum
+     <span 
+class="cmmi-10">a</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x </span>= <span 
+class="cmmi-10">b </span>of these equalities, such that the single equality <span 
+class="cmmi-10">a</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x </span>= <span 
+class="cmmi-10">b </span>is satisfied by binary variables if and only if
+     all of the original equalities can be satisfied simultaneously by binary variables. We can then get the equivalent
+     <span 
+class="cmcsc-10">0-1 K<span 
+class="small-caps">n</span><span 
+class="small-caps">a</span><span 
+class="small-caps">p</span><span 
+class="small-caps">s</span><span 
+class="small-caps">a</span><span 
+class="small-caps">c</span><span 
+class="small-caps">k</span> </span>problem by taking <span 
+class="cmmi-10">c </span>= <span 
+class="cmmi-10">a </span>and <span 
+class="cmmi-10">&#x03B4; </span>= <span 
+class="cmmi-10">b</span>: Does there exist a binary <span 
+class="cmmi-10">x </span>satisfying <span 
+class="cmmi-10">a</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">b </span>and
+     <span 
+class="cmmi-10">a</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2265; </span><span 
+class="cmmi-10">b</span>?)
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                      </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           x6915.                                                                </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           Office hours: Tuesdays 2&#8211;3pm, Wednesdays 11am&#8211;1pm.</td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

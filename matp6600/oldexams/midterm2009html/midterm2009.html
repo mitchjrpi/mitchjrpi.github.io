@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="midterm2009.tex"> 
+<meta name="date" content="2009-10-30 17:47:00"> 
+<link rel="stylesheet" type="text/css" href="midterm2009.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 21--><p class="noindent" >
+<!--l. 23--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6600" ><span 
+class="cmr-12x-x-120">MATP6600 / DSES6780 Nonlinear Programming</span></a>
+</div>
+<div class="center" 
+>
+<!--l. 26--><p class="noindent" >
+<!--l. 28--><p class="noindent" ><span 
+class="cmr-12x-x-120">Midterm Exam, Fall 2009</span>
+</div>
+<!--l. 32--><p class="noindent" >Take Home                                               Due: Beginning of class, Friday, 6 November
+2009.
+<!--l. 37--><p class="indent" >   This is to be all your own work. You may use any result from class, homeworks, or the books on
+reserve in the library. I will have my usual office hours on Tuesday from 2-3pm and Wednesday
+from 11am-noon. Do not consult anybody or anything else. The exam consists of four questions
+and is worth a total of 100 points.
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">(20 points) <br 
+class="newline" />Assume both the primal and dual linear programming problems are feasible in the following
+      primal-dual pair
+      <center class="math-display" >
+      <img 
+src="midterm20090x.png" alt="       T                                     T
+minx  c  x                         maxy,s   b y
+s.t.    Ax   =   b    (P)           s.t.    AT y  +   s  =   c    (D )
+         x  &#x2265;   0                                    s  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 57--><p class="nopar" >
+      where <span 
+class="cmmi-12">x</span>, <span 
+class="cmmi-12">s</span>, and <span 
+class="cmmi-12">c </span>are <span 
+class="cmmi-12">n</span>-vectors, <span 
+class="cmmi-12">y </span>and <span 
+class="cmmi-12">b </span>are <span 
+class="cmmi-12">m</span>-vectors, <span 
+class="cmmi-12">A </span>is <span 
+class="cmmi-12">m </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>of rank&#x00A0;<span 
+class="cmmi-12">m</span>, and
+      <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">m </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>1. Let <span 
+class="cmmi-12">C </span>be the set of feasible solutions to (<span 
+class="cmmi-12">P</span>) and <span 
+class="cmmi-12">W </span>be the set of feasible
+      solutions to&#x00A0;(<span 
+class="cmmi-12">D</span>). Show that for any component&#x00A0;<span 
+class="cmmi-12">i</span>, either <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> is unbounded in&#x00A0;<span 
+class="cmmi-12">C </span>or <span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">i</span></sub> is
+      unbounded in&#x00A0;<span 
+class="cmmi-12">W</span>.
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2">(20 points) <br 
+class="newline" /><a 
+ id="x1-42"></a> Let <img 
+src="midterm20091x.png" alt="¯x"  class="bar" > be a feasible solution to the quadratic programming problem
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="midterm20092x.png" alt="minx       cT x + 1xT Qx
+                  2
+subject to  Ax   &#x2265;   b
+      " class="math-display" ></center>
+      <!--l. 72--><p class="nopar" >
+      where <span 
+class="cmmi-12">x,c </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup>, <span 
+class="cmmi-12">b </span>is an <span 
+class="cmmi-12">m</span>-vector, <span 
+class="cmmi-12">A </span>is <span 
+class="cmmi-12">m</span><span 
+class="cmsy-10x-x-120">&#x00D7;</span><span 
+class="cmmi-12">n </span>of rank&#x00A0;<span 
+class="cmmi-12">n</span>, and <span 
+class="cmmi-12">Q </span>is a symmetric <span 
+class="cmmi-12">n</span><span 
+class="cmsy-10x-x-120">&#x00D7;</span><span 
+class="cmmi-12">n </span>matrix
+      with <span 
+class="cmmi-12">k </span>negative eigenvalues. Assume <span 
+class="cmmi-12">p </span>of the linear constraints are active at&#x00A0;<img 
+src="midterm20093x.png" alt="x¯"  class="bar" >, and the
+      active constraints are linearly independent. Show that if <span 
+class="cmmi-12">p &#x003C; k </span>then <img 
+src="midterm20094x.png" alt="¯x"  class="bar" > cannot satisfy the
+      second order necessary KKT conditions.
+      </li>
+      <li 
+  class="enumerate" id="x1-7x3">(40 points) <br 
+class="newline" />Consider the nonlinear programming problem
+      <center class="math-display" >
+      <img 
+src="midterm20095x.png" alt="min         4x1x2 - x1 - 2x2
+subject to  - x  + x  &#x2264;  0         (N LP )
+               1    2
+            0 &#x2264; x1,x2 &#x2264;  1
+      " class="math-display" ></center>
+      <!--l. 90--><p class="nopar" >
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-9x1">(10 points) Find all the KKT points for (<span 
+class="cmmi-12">NLP</span>). Which of them satisfy the second
+           order sufficient conditions?
+           </li>
+           <li 
+  class="enumerate" id="x1-11x2">(5 points) What is the global solution to (<span 
+class="cmmi-12">NLP</span>)? Justify your answer.
+           </li>
+           <li 
+  class="enumerate" id="x1-13x3">A Lagrangian dual function can be constructed as
+           <center class="math-display" >
+           <img 
+src="midterm20096x.png" alt="          min        4x1x2 -  x1 - 2x2 + u(- x1 + x2)
+&#x03B8;(u) :=   subject to 0 &#x2264;  x1,x2 &#x2264; 1                       (LR (u))
+           " class="math-display" ></center>
+           <!--l. 106--><p class="nopar" >
+               <ol  class="enumerate3" >
+               <li 
+  class="enumerate" id="x1-15x1">(5 points) Use the result of Question&#x00A0;<a 
+href="#x1-42">2<!--tex4ht:ref: q.2ord --></a> to show that the optimal solution <span 
+class="cmmi-12">x</span>
+               to (<span 
+class="cmmi-12">LR</span>(<span 
+class="cmmi-12">u</span>)) must be on the boundary of the feasible region.
+                                                                                         
+                                                                                         
+               </li>
+               <li 
+  class="enumerate" id="x1-17x2">(10 points) Find <span 
+class="cmmi-12">&#x03B8;</span>(<span 
+class="cmmi-12">u</span>) for all <span 
+class="cmmi-12">u </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0.
+               </li>
+               <li 
+  class="enumerate" id="x1-19x3">(5 points) Show that the optimal dual value is smaller than the optimal primal
+               value.
+               </li>
+               <li 
+  class="enumerate" id="x1-21x4">(5 points) Show explicitly that <span 
+class="cmmi-12">&#x03BE; </span>= 0 is in the convex hull of subgradients of
+               <span 
+class="cmmi-12">&#x03B8;</span>(<span 
+class="cmmi-12">u</span>) arising from optimal solutions to (<span 
+class="cmmi-12">LR</span>(<span 
+class="cmmi-12">u</span>)) at the optimal&#x00A0;<span 
+class="cmmi-12">u</span>.</li></ol>
+           </li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-23x4">(20 points) <br 
+class="newline" />Let <span 
+class="cmmi-12">f </span>: <span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup> <span 
+class="cmsy-10x-x-120">&#x2192; </span><span 
+class="cmmi-12">IR </span>be a convex function. Define the function <span 
+class="cmmi-12">g</span>(<span 
+class="cmmi-12">x,s</span>) = <span 
+class="cmmi-12">sf</span>(<img 
+src="midterm20097x.png" alt="1
+s"  class="frac" align="middle"><span 
+class="cmmi-12">x</span>) where <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup>
+      and <span 
+class="cmmi-12">s </span>is a positive scalar. Prove that <span 
+class="cmmi-12">g </span>is a convex function of <span 
+class="cmmi-12">x </span>and&#x00A0;<span 
+class="cmmi-12">s</span>. Hence show that the
+      function <span 
+class="cmmi-12">h</span>(<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,x</span><sub><span 
+class="cmr-8">2</span></sub>) := <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmr-8">2</span></sup><span 
+class="cmmi-12">&#x2215;x</span><sub>
+<span 
+class="cmr-8">2</span></sub> is convex for <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0, where <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> and <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> are scalars. Is <span 
+class="cmmi-12">h</span>(<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,x</span><sub><span 
+class="cmr-8">2</span></sub>)
+      strictly convex for <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0?
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                      </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                 </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Tuesday 2.0 &#8211; 3.0, Wednesday 11.0 &#8211; 12.0.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

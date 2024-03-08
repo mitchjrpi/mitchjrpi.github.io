@@ -1,0 +1,427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw3sol2022.tex"> 
+<meta name="date" content="2022-10-01 14:16:00"> 
+<link rel="stylesheet" type="text/css" href="hw3sol2022.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 24--><p class="noindent" >
+<!--l. 26--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12x-x-120">Math Models of Operations Research</span></a><br />
+<a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12x-x-120">MATP 4700 </span></a><br /><br />
+<span 
+class="cmbx-12x-x-120">Homework 3 Solutions</span></div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 33--><p class="noindent" >
+ This homework will not be collected or graded.</div>
+<!--l. 39--><p class="noindent" >Questions from Kupferschmid, Chapters 3 and 4 (available on LMS): 3.7.18 (lecture 5C), 3.7.22
+(lecture 7B), 4.6.18 (lecture 6), 4.6.29 (lecture 6), 4.6.42 (lecture 5A), and 4.6.44(a): give an
+example to justify your answer (lectures 5A and 7B). In addition, read Chapters 3 and 4 from the
+text.
+<!--l. 62--><p class="noindent" >Solving the homework problems (and other problems from the text) will improve your
+understanding of the material.
+<!--l. 68--><p class="noindent" >Working out the problems yourself will greatly improve your understanding of the material and
+help you on the exams.
+<!--l. 77--><p class="noindent" >You can ask questions on piazza, in addition to using office hours or email.
+<!--l. 85--><p class="noindent" ><span 
+class="cmbx-12">Exam 1 </span>is on Tuesday, October 4. It will cover the material in Lectures 1&#8211;9. You can bring
+one sheet of handwritten notes, no larger than 8<span 
+class="cmmi-12">.</span>5&#8221; <span 
+class="cmsy-10x-x-120">&#x00D7; </span>11&#8221;. Old exams are available on
+LMS.
+      <ul class="itemize1">
+      <li class="itemize"><span 
+class="cmbx-12">3.7.18 </span>Note that the tableaus are given on pages 103&#8211;105.
+           <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+        a. </dt><dd 
+class="enumerate-enumitem">B:
+                                                                                         
+                                                                                         
+           <center class="math-display" >
+           <img 
+src="hw3sol20220x.png" alt="minx        - 3x2  +  2x4  -   4
+
+subject to  2.2x2   -   x4  &#x2264;   4
+             - x2  +   x4  &#x2264;   2
+               x2  -   x4  &#x2264;   1
+               x2          &#x2264;   5
+                    x ,x   &#x2265;   0
+                      2  4
+           " class="math-display" ></center>
+           <!--l. 106--><p class="nopar" >
+<img src=3.7.18B.png>
+                                                                                         
+                                                                                         
+           </dd><dt class="enumerate-enumitem">
+        b. </dt><dd 
+class="enumerate-enumitem">C:
+           <center class="math-display" >
+           <img 
+src="hw3sol20221x.png" alt="minx         - x4  +    3x5  -   7
+subject to  1.2x4  -   2.2x5  &#x2264;   1.8
+                         x   &#x2264;   3
+                           5
+             - x4  +     x5  &#x2264;   1
+               x4  -     x5  &#x2264;   4
+                      x4,x5  &#x2265;   0
+           " class="math-display" ></center>
+           <!--l. 177--><p class="nopar" >
+           <!--l. 239--><p class="noindent" >
+<img src=3.7.18C.png>
+                                                                                         
+           </dd><dt class="enumerate-enumitem">
+        c. </dt><dd 
+class="enumerate-enumitem">E: There are three tableaus for this point. You only need to choose one. We choose
+           E1.
+           <center class="math-display" >
+           <img 
+src="hw3sol20222x.png" alt="minx        - 2x1  +     x6  -   5
+subject to     x   -  1.2x   &#x2264;   0
+                1          6
+               x1  +     x6  &#x2264;   7
+               x1            &#x2264;   3
+                         x6  &#x2264;   5
+                      x1,x6  &#x2265;   0
+           " class="math-display" ></center>
+           <!--l. 254--><p class="nopar" >
+           <!--l. 316--><p class="noindent" >
+<img src=3.7.18E.png>
+           </dd></dl>
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">3.7.22</span>
+      <center class="math-display" >
+      <img 
+src="hw3sol20223x.png" alt="minx &#x2208;&#x211D;3    0x1  +  0x2
+subject to  3x1  +    x2  =  0
+                  x1, x2  &#x2265;  0
+      " class="math-display" ></center>
+      <!--l. 326--><p class="nopar" >
+      In optimal form, with basic variable <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> = 0, nonbasic variable <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> = 0. Have <span 
+class="cmmi-12">c</span><sub><span 
+class="cmr-8">1</span></sub> = 0,
+      but do not have alternative optimal solutions (don&#8217;t even have any other feasible
+      solutions).
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">4.6.18 </span>Pivot matrix:
+      <center class="math-display" >
+      <img 
+src="hw3sol20224x.png" alt="      &#x230A;           &#x230B;
+        1  0    2
+Q  =  &#x2308; 0  1  - 12 &#x2309;
+        0  0    1
+                2
+      " class="math-display" ></center>
+      <!--l. 340--><p class="nopar" >
+      Pivot on <span 
+class="cmmi-12">a</span><sub><span 
+class="cmr-8">24</span></sub>, the 2 in the second constraint.
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">4.6.29 </span>Primal problem:
+      <center class="math-display" >
+      <img 
+src="hw3sol20225x.png" alt="            x1     x2    x3    x4  x5  x6   x7
+    |-----|------------------------------------|
+    |---0-|- 90--- 150--- 60---70---0----0---0-|
+T = |160  |  7     10     8    12   1    0   0 |
+    | 50  |  1       3    1     1   0    1   0 |
+    | 60  |  2       4    1     3   0    0   1 |
+    |-----|------------------------------------
+    |     |
+      " class="math-display" ></center>
+      <!--l. 354--><p class="nopar" >
+      We bring <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> into the basis. From the minimum ratio test, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">7</span></sub> leaves the basis.The pivot
+      matrix is
+      <center class="math-display" >
+      <img 
+src="hw3sol20226x.png" alt="      &#x230A;                &#x230B;
+         1  0  0  37.5
+      ||  0  1  0   - 52 ||
+Q1 =  &#x2308;  0  0  1   - 3 &#x2309;
+                     41
+         0  0  0     4
+      " class="math-display" ></center>
+      <!--l. 364--><p class="nopar" >
+      This gives tableau <span 
+class="cmmi-12">T</span><sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmmi-12">Q</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">T</span>. Calculating the reduced costs gives
+      <center class="math-display" >
+      <img 
+src="hw3sol20227x.png" alt="                x1  x2      x3    x4  x5  x6   x7
+     |-------|-------------------------------------|
+     |--2250-|--15---0----22.5--42.5---0---0--37.5-|
+T  = |    10 |   .   0       .     .   1   0     . |
+ 1   |     5 |   .   0       .     .   0   1     . |
+     |    15 |   .   1       .     .   0   0     . |
+     |-------|-------------------------------------
+     |       |
+      " class="math-display" ></center>
+      <!--l. 376--><p class="nopar" >
+      Choose <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> to enter the basis, so calculate the <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> column:
+      <center class="math-display" >
+      <img 
+src="hw3sol20228x.png" alt="              x1  x2      x3    x4  x5  x6   x7
+     |-----|-------------------------------------|
+     |2250-|--15---0----22.5--42.5---0---0--37.5-|
+T =  |  10 |    .  0     5.5     .   1   0     . |
+ 1   |   5 |    .  0    0.25     .   0   1     . |
+     |  15 |    .  1    0.25     .   0   0     . |
+     |-----|-------------------------------------
+     |     |
+      " class="math-display" ></center>
+      <!--l. 387--><p class="nopar" >
+      The minimum ratio tells us <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> replaces <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">5</span></sub> in the basis. The pivot matrix is
+      <center class="math-display" >
+      <img 
+src="hw3sol20229x.png" alt="      &#x230A;               &#x230B;
+         1    45- 0  0
+      |  0    112- 0  0 |
+Q2 =  |&#x2308;       111-      |&#x2309;
+         0  - 221  1  0
+         0  - 22- 0  1
+      " class="math-display" ></center>
+      <!--l. 397--><p class="nopar" >
+      This gives tableau <span 
+class="cmmi-12">T</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmmi-12">Q</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-12">Q</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">T</span>. Calculate <span 
+class="cmmi-12">P</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmmi-12">Q</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-12">Q</span><sub><span 
+class="cmr-8">1</span></sub>:
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="hw3sol202210x.png" alt="              &#x230A; 1    45  0   300 &#x230B;
+              |      112       115- |
+P2 = Q2Q1  =  | 0    111  0  - 171 |
+              &#x2308; 0  - 22  1  - 11 &#x2309;
+                0  - 212  0    411
+      " class="math-display" ></center>
+      <!--l. 408--><p class="nopar" >
+      The updated tableau is <span 
+class="cmmi-12">T</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmmi-12">P</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-12">T</span>. Calculating the reduced costs gives
+      <center class="math-display" >
+      <img 
+src="hw3sol202211x.png" alt="     |--------|--x1---x2--x3----x4---x5--x6---x7--|
+     |2290-1101-|- 6-911--0---0--601101--4111---0--27-311-|
+     |     20 |    .   0   1     .     .  0      .|
+T2 = |     1510 |    .   0   0     .     .  1      .|
+     |     161 |                                   |
+     |--14-11-|----.---1---0-----.-----.--0------.-
+     |        |
+      " class="math-display" ></center>
+      <!--l. 420--><p class="nopar" >
+      Choose <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> to enter the basis, so calculate the <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> column:
+      <center class="math-display" >
+      <img 
+src="hw3sol202212x.png" alt="     |--------|--x1---x2--x3----x4---x5--x6---x7--|
+     |2290-1101-|- 6-911--0---0--601101--4111---0--27-311-|
+     |     20 |   4-   0   1     .     .  0      .|
+T2 = |     1510 | - 1113   0   0     .     .  1      .|
+     |     161 |   292                              |
+     |--14-11-|---22---1---0-----.-----.--0------.-
+     |        |
+      " class="math-display" ></center>
+      <!--l. 431--><p class="nopar" >
+      From the minimum ratio test, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> replaces <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> in the basis. The pivot matrix is
+      <center class="math-display" >
+      <img 
+src="hw3sol202213x.png" alt="       &#x230A;     75       &#x230B;
+         1   141  0  0
+Q   =  || 0   -4  0  0 ||
+  3    &#x2308; 0   138  1  0 &#x2309;
+         0  - 9  0  1
+              8
+      " class="math-display" ></center>
+                                                                                         
+                                                                                         
+      <!--l. 442--><p class="nopar" >
+      This gives tableau <span 
+class="cmmi-12">T</span><sub><span 
+class="cmr-8">3</span></sub> = <span 
+class="cmmi-12">Q</span><sub><span 
+class="cmr-8">3</span></sub><span 
+class="cmmi-12">Q</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-12">Q</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">T</span>. Calculate <span 
+class="cmmi-12">P</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmmi-12">Q</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-12">Q</span><sub><span 
+class="cmr-8">1</span></sub>:
+      <center class="math-display" >
+      <img 
+src="hw3sol202214x.png" alt="                         &#x230A;                    &#x230B;
+                            1     7.5  0   183
+                         |  0     0.5  0   - 45 |
+P3 =  Q3Q2Q1  =  Q3P2 =  |&#x2308;                 141 |&#x2309;
+                            0   0.25  1  -  87
+                            0  - 0.25 0     8
+      " class="math-display" ></center>
+      <!--l. 453--><p class="nopar" >
+      The updated tableau is <span 
+class="cmmi-12">T</span><sub><span 
+class="cmr-8">3</span></sub> = <span 
+class="cmmi-12">P</span><sub><span 
+class="cmr-8">3</span></sub><span 
+class="cmmi-12">T</span>. Calculating the reduced costs gives
+      <center class="math-display" >
+      <img 
+src="hw3sol202215x.png" alt="     |-----x1--x2----x33---x41--x51--x6---x73-|
+     |2325-|0---0--18-4--764--72---0--18-4-|
+     |   5 |1   0     .     .   .  0     . |
+T2 = | 7.5 |0   0     .     .   .  1     . |
+     |12.5 |0   1     .     .   .  0     . |
+     |-----|--------------------------------
+     |     |
+      " class="math-display" ></center>
+      <!--l. 465--><p class="nopar" >
+      Hence the optimal solution is <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> = (5<span 
+class="cmmi-12">, </span>12<span 
+class="cmmi-12">.</span>5<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>7<span 
+class="cmmi-12">.</span>5<span 
+class="cmmi-12">, </span>0)<sup><span 
+class="cmmi-8">T</span> </sup>, with value <span 
+class="cmmi-12">z</span><sup><span 
+class="cmsy-8">*</span></sup> = <span 
+class="cmsy-10x-x-120">-</span>2305.
+      <!--l. 468--><p class="noindent" >(Note: all these pivots are in the text on the full tableau, so you can check your work. Note
+      also, as we will see later, the variable columns for <span 
+class="cmmi-12">Q</span><sub><span 
+class="cmr-8">1</span></sub>, <span 
+class="cmmi-12">P</span><sub><span 
+class="cmr-8">2</span></sub>, and <span 
+class="cmmi-12">P</span><sub><span 
+class="cmr-8">3</span></sub> are exactly the columns for
+      <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">5</span></sub>, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">6</span></sub>, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">7</span></sub> in the full tableau.)
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">4.6.42 </span>The change in the objective function value at each iteration is the product of the cost
+      <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">j</span></sub> with the minimum ratio for the pivot column. If the linear program is nondegenerate then
+      the value of the minimum ratio is always nonzero, so there is a strict improvement in the
+      objective function value at every iteration. Thus, we can never return to an earlier tableau, so
+      we cannot cycle.
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">4.6.44(a) </span>No. Eg:
+      <center class="math-display" >
+      <img 
+src="hw3sol202216x.png" alt="minx &#x2208;&#x211D;3    - x1  -   x2
+subject to    x1  +   x2  +  x3  =   5
+                 xj &#x2265; 0,j = 1,2,3
+      " class="math-display" ></center>
+      <!--l. 488--><p class="nopar" >
+      The optimal BFS are <span 
+class="cmmi-12">x </span>= (5<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>0)<sup><span 
+class="cmmi-8">T</span> </sup> and <span 
+class="cmmi-12">x </span>= (0<span 
+class="cmmi-12">, </span>5<span 
+class="cmmi-12">, </span>0)<sup><span 
+class="cmmi-8">T</span> </sup>.
+      <!--l. 491--><p class="noindent" >If the pivot left <span 
+class="cmmi-12">x </span>unchanged then it would be degenerate.
+      </li></ul>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                             </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                                        </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Tuesday 2.30&#8211;4pm in AE 325;                                                         </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Thursday 1&#8211;3pm webex: <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-12">https://rensselaer.webex.com/meet/mitchj</span></a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-7-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;                                                                                                         </td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

@@ -1,0 +1,12 @@
+set PRODUCTS = x1 x2 x3 x4 x5;
+set RESOURCES = c1 c2 c3;
+
+param price := x1 1 x2 3 x3 1 x4 0 x5 -4;
+
+param avail := c1 10 c2 7 c3 6;
+
+param use :  x1 x2 x3 x4 x5  :=
+   c1         1  0  1  0 -2
+   c2         0 -3  1  1  2
+   c3         1  1  0  0 -3
+   ;

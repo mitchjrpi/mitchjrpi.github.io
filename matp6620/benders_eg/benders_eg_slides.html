@@ -1,0 +1,428 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="benders_eg_slides.tex"> 
+<meta name="date" content="2015-04-28 10:52:00"> 
+<link rel="stylesheet" type="text/css" href="benders_eg_slides.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 123--><p class="noindent" >
+<!--l. 124--><p class="noindent" ><span 
+class="cmbx-12x-x-172">An Example of Benders Decomposition</span><br />
+<a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a></div>
+<!--l. 132--><p class="noindent" ><span 
+class="cmr-17">Consider the mixed integer programming problem (</span><span 
+class="cmmi-12x-x-144">MIP</span><span 
+class="cmr-17">):</span>
+   <center class="math-display" >
+<img 
+src="benders_eg_slides0x.png" alt="max    8x     +9x      +5x      +6x     -  15y     - 10y
+           1        2       3        4          1         2
+s.t.     x1             +x3                                  &#x2264;   1
+
+         x1                      +x4                         &#x2264;   1
+
+                  x2    +x3                                  &#x2264;   1
+
+                  x2             +x4                         &#x2264;   1
+                                           -  y       - y    &#x2264;   -  1
+                                                1         2
+         x                                 -  y              &#x2264;   0
+           1                                    1
+                  x2                       -  y1             &#x2264;   0
+
+                           x3                         - y2   &#x2264;   0
+
+                                   x4                 - y2   &#x2264;   0
+
+                                   xj                        &#x2265;   0    &#x2200;j
+                                                         y       binary      &#x2200;i
+                                                          i
+" class="math-display" ></center>
+<!--l. 148--><p class="nopar" >
+<span 
+class="cmr-17">Solve this problem using Bender&#8217;s decomposition.</span>
+<!--l. 154--><p class="indent" >   <span 
+class="cmr-17">Format:</span>
+   <center class="math-display" >
+<img 
+src="benders_eg_slides1x.png" alt="max            cT x   +   dT y
+
+subject   to    Ax    +   H  y   &#x2264;   b
+
+                  x              &#x2265;   0
+
+                             y       binary
+" class="math-display" ></center>
+<!--l. 162--><p class="nopar" >
+                                                                                         
+                                                                                         
+<!--l. 175--><p class="noindent" ><span 
+class="cmbx-12x-x-144">Solution: </span><br 
+class="newline" />
+<!--l. 180--><p class="indent" >   <span 
+class="cmr-17">Initial Revised Master Problem:</span>
+   <center class="math-display" >
+<img 
+src="benders_eg_slides2x.png" alt="max    z   - 15y1    - 10y2
+s.t    z                       &#x2264;    28
+
+                           yi       binary
+" class="math-display" ></center>
+<!--l. 187--><p class="nopar" >
+<!--l. 189--><p class="indent" >   <span 
+class="cmr-17">Solution to (</span><span 
+class="cmmi-12x-x-144">RMP</span><span 
+class="cmr-17">) is</span> <img 
+src="benders_eg_slides3x.png" alt="¯z"  class="bar" > <span 
+class="cmr-17">= 28,</span> <img 
+src="benders_eg_slides4x.png" alt="¯y"  class="bar" > <span 
+class="cmr-17">= (0</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0). Objective function for</span>
+<span 
+class="cmr-17">the subproblem is (</span><span id="textcolor1"><span 
+class="cmmi-12x-x-144">b</span></span> <span 
+class="cmsy-10x-x-172">-</span><span id="textcolor2"><span 
+class="cmmi-12x-x-144">H</span></span><sup><span 
+class="cmmi-12">T</span></sup><span 
+class="cmmi-12x-x-144">y</span><span 
+class="cmr-17">)</span><sup><span 
+class="cmmi-12">T</span></sup><span 
+class="cmmi-12x-x-144">u </span><span 
+class="cmr-17">=</span> <span id="textcolor3"><span 
+class="cmmi-12x-x-144">b</span></span><sup><span 
+class="cmmi-12">T</span></sup><span 
+class="cmmi-12x-x-144">u </span><span 
+class="cmr-17">since </span><span 
+class="cmmi-12x-x-144">y </span><span 
+class="cmr-17">= 0. Subproblem</span>
+<span 
+class="cmr-17">is:</span>
+   <center class="par-math-display" >
+<img 
+src="benders_eg_slides5x.png" alt="min            u    +   u    +    u   +    u    -   u
+     u           1        2        3         4        5
+subject   to   u1   +   u2                               +   u6                               &#x2265;   8
+
+                                  u3  +    u4                     +    u7                     &#x2265;   9         (SP   )
+
+               u1            +    u3                                        +   u8            &#x2265;   5
+
+                        u2            +    u4                                        +   u9   &#x2265;   6
+
+                                                                                          u   &#x2265;   0
+" class="par-math-display" ></center>
+<!--l. 203--><p class="nopar" >
+<!--l. 205--><p class="indent" >   <span 
+class="cmr-17">Solution is unbounded, with a ray </span><span 
+class="cmmi-12x-x-144">r</span><sup>1</sup> <span 
+class="cmr-17">= (0</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">1</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0)</span><sup><span 
+class="cmmi-12">T</span></sup><span 
+class="cmr-17">.</span>
+                                                                                         
+                                                                                         
+<!--l. 211--><p class="indent" >   <span 
+class="cmr-17">Add constraint (</span><span 
+class="cmmi-12x-x-144">r</span><sup>1</sup><span 
+class="cmr-17">)</span><sup><span 
+class="cmmi-12">T</span></sup><span id="textcolor4"><span 
+class="cmmi-12x-x-144">H</span></span><span 
+class="cmmi-12x-x-144">y </span><span 
+class="cmsy-10x-x-172">&#x2264;</span><span id="textcolor5"><span 
+class="cmmi-12x-x-144">b</span></span><sup><span 
+class="cmmi-12">T</span></sup><span 
+class="cmmi-12x-x-144">r</span><sup>1</sup> <span 
+class="cmr-17">to (</span><span 
+class="cmmi-12x-x-144">RMP</span><span 
+class="cmr-17">):</span>
+   <center class="par-math-display" >
+<img 
+src="benders_eg_slides6x.png" alt="max    z   -   15y1    -   10y2
+
+s.t    z                           &#x2264;    28
+
+           -      y1   -      y2   &#x2264;    - 1
+
+                               yi       binary
+" class="par-math-display" ></center>
+<!--l. 220--><p class="nopar" >
+<!--l. 222--><p class="indent" >   <span 
+class="cmr-17">Solution is</span> <img 
+src="benders_eg_slides7x.png" alt="y¯"  class="bar" > <span 
+class="cmr-17">= (0</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">1),</span> <img 
+src="benders_eg_slides8x.png" alt="¯z"  class="bar" > <span 
+class="cmr-17">= 28, with value 18. Updated subproblem with</span>
+<span 
+class="cmr-17">objective (</span><span id="textcolor6"><span 
+class="cmmi-12x-x-144">b</span></span> <span 
+class="cmsy-10x-x-172">-</span><span id="textcolor7"><span 
+class="cmmi-12x-x-144">H</span></span><sup><span 
+class="cmmi-12">T</span></sup><span 
+class="cmmi-12x-x-144">y</span><span 
+class="cmr-17">)</span><sup><span 
+class="cmmi-12">T</span></sup><span 
+class="cmmi-12x-x-144">u </span><span 
+class="cmr-17">is:</span>
+   <center class="par-math-display" >
+<img 
+src="benders_eg_slides9x.png" alt="minu           u1   +   u2   +    u3  +    u4                         +   u8   +   u9
+
+subject   to   u1   +   u2                          +   u6                              &#x2265;    8
+
+                                  u3  +    u4                +   u7                     &#x2265;    9        (SP   )
+               u             +    u                                   +   u             &#x2265;    5
+                 1                 3                                        8
+                        u2            +    u4                                  +   u9   &#x2265;    6
+
+                                                                                     u  &#x2265;    0
+" class="par-math-display" ></center>
+<!--l. 235--><p class="nopar" >
+<!--l. 237--><p class="indent" >   <span 
+class="cmr-17">Optimal value is 11 </span><span 
+class="cmmi-12x-x-144">&#x003C;</span> <img 
+src="benders_eg_slides10x.png" alt="¯z"  class="bar" > <span 
+class="cmr-17">. One solution is </span><span 
+class="cmmi-12x-x-144">u</span><sup>1</sup> <span 
+class="cmr-17">= (0</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">8</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">9</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">5</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">6)</span><sup><span 
+class="cmmi-12">T</span></sup><span 
+class="cmr-17">.</span>
+                                                                                         
+                                                                                         
+<!--l. 244--><p class="indent" >   <span 
+class="cmr-17">Add constraint </span><span 
+class="cmmi-12x-x-144">z </span><span 
+class="cmr-17">+ (</span><span 
+class="cmmi-12x-x-144">u</span><sup>1</sup><span 
+class="cmr-17">)</span><sup><span 
+class="cmmi-12">T</span></sup><span id="textcolor8"><span 
+class="cmmi-12x-x-144">H</span></span><span 
+class="cmmi-12x-x-144">y </span><span 
+class="cmsy-10x-x-172">&#x2264;</span><span id="textcolor9"><span 
+class="cmmi-12x-x-144">b</span></span><sup><span 
+class="cmmi-12">T</span></sup><span 
+class="cmmi-12x-x-144">u</span><sup>1</sup> <span 
+class="cmr-17">to (</span><span 
+class="cmmi-12x-x-144">RMP</span><span 
+class="cmr-17">):</span>
+   <center class="par-math-display" >
+<img 
+src="benders_eg_slides11x.png" alt="max    z   -   15y1    -   10y2
+
+s.t    z                           &#x2264;    28
+
+           -      y1   -      y2   &#x2264;    - 1
+
+       z   -   17y1    -   11y2    &#x2264;    0
+                               y        binary
+                                i
+" class="par-math-display" ></center>
+<!--l. 255--><p class="nopar" >
+<!--l. 257--><p class="indent" >   <span 
+class="cmr-17">Solution is</span> <img 
+src="benders_eg_slides12x.png" alt="y¯"  class="bar" > <span 
+class="cmr-17">= (1</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">1),</span> <img 
+src="benders_eg_slides13x.png" alt="¯z"  class="bar" > <span 
+class="cmr-17">= 28, with value 3. Updated subproblem with</span>
+<span 
+class="cmr-17">objective (</span><span id="textcolor10"><span 
+class="cmmi-12x-x-144">b</span></span> <span 
+class="cmsy-10x-x-172">-</span><span id="textcolor11"><span 
+class="cmmi-12x-x-144">H</span></span><sup><span 
+class="cmmi-12">T</span></sup><span 
+class="cmmi-12x-x-144">y</span><span 
+class="cmr-17">)</span><sup><span 
+class="cmmi-12">T</span></sup><span 
+class="cmmi-12x-x-144">u </span><span 
+class="cmr-17">is:</span>
+   <center class="par-math-display" >
+<img 
+src="benders_eg_slides14x.png" alt="minu           u1   +   u2   +    u3  +    u4   +   u5   +   u6   +   u7   +    u8   +   u9
+
+subject   to   u1   +   u2                               +   u6                               &#x2265;   8
+                                  u   +    u                      +   u                       &#x2265;   9         (SP   )
+                                   3         4                          7
+               u1            +    u3                                       +    u8            &#x2265;   5
+
+                        u2            +    u4                                        +   u9   &#x2265;   6
+
+                                                                                          u   &#x2265;   0
+" class="par-math-display" ></center>
+<!--l. 270--><p class="nopar" >
+<!--l. 272--><p class="indent" >   <span 
+class="cmr-17">Optimal value is 17 </span><span 
+class="cmmi-12x-x-144">&#x003C;</span> <img 
+src="benders_eg_slides15x.png" alt="¯z"  class="bar" > <span 
+class="cmr-17">. One solution is </span><span 
+class="cmmi-12x-x-144">u</span><sup>2</sup> <span 
+class="cmr-17">= (8</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">9</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0)</span><sup><span 
+class="cmmi-12">T</span></sup><span 
+class="cmr-17">.</span>
+                                                                                         
+                                                                                         
+<!--l. 278--><p class="indent" >   <span 
+class="cmr-17">Add constraint </span><span 
+class="cmmi-12x-x-144">z </span><span 
+class="cmr-17">+ (</span><span 
+class="cmmi-12x-x-144">u</span><sup>2</sup><span 
+class="cmr-17">)</span><sup><span 
+class="cmmi-12">T</span></sup><span id="textcolor12"><span 
+class="cmmi-12x-x-144">H</span></span><span 
+class="cmmi-12x-x-144">y </span><span 
+class="cmsy-10x-x-172">&#x2264;</span><span id="textcolor13"><span 
+class="cmmi-12x-x-144">b</span></span><sup><span 
+class="cmmi-12">T</span></sup><span 
+class="cmmi-12x-x-144">u</span><sup>2</sup> <span 
+class="cmr-17">to (</span><span 
+class="cmmi-12x-x-144">RMP</span><span 
+class="cmr-17">):</span>
+   <center class="par-math-display" >
+<img 
+src="benders_eg_slides16x.png" alt="max    z   -   15y1    -   10y2
+
+s.t    z                           &#x2264;    28
+
+           -      y1   -      y2   &#x2264;    - 1
+
+       z   -   17y1    -   11y2    &#x2264;    0
+       z                           &#x2264;    17
+
+                               yi       binary
+" class="par-math-display" ></center>
+<!--l. 290--><p class="nopar" >
+<!--l. 292--><p class="indent" >   <span 
+class="cmr-17">Solution is</span> <img 
+src="benders_eg_slides17x.png" alt="y¯"  class="bar" > <span 
+class="cmr-17">= (1</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0),</span> <img 
+src="benders_eg_slides18x.png" alt="¯z"  class="bar" > <span 
+class="cmr-17">= 17, with value 2. Updated subproblem with</span>
+<span 
+class="cmr-17">objective (</span><span id="textcolor14"><span 
+class="cmmi-12x-x-144">b</span></span> <span 
+class="cmsy-10x-x-172">-</span><span id="textcolor15"><span 
+class="cmmi-12x-x-144">H</span></span><sup><span 
+class="cmmi-12">T</span></sup><span 
+class="cmmi-12x-x-144">y</span><span 
+class="cmr-17">)</span><sup><span 
+class="cmmi-12">T</span></sup><span 
+class="cmmi-12x-x-144">u </span><span 
+class="cmr-17">is:</span>
+   <center class="par-math-display" >
+<img 
+src="benders_eg_slides19x.png" alt="minu           u1   +   u2   +    u3  +    u4       +   u6   +   u7
+subject   to   u    +   u                           +   u                               &#x2265;    8
+                 1        2                               6
+                                  u3  +    u4                +   u7                     &#x2265;    9        (SP   )
+
+               u1            +    u3                                  +   u8            &#x2265;    5
+
+                        u2            +    u4                                  +   u9   &#x2265;    6
+
+                                                                                     u  &#x2265;    0
+" class="par-math-display" ></center>
+<!--l. 305--><p class="nopar" >
+<!--l. 307--><p class="indent" >   <span 
+class="cmr-17">Optimal value is 17 =</span> <img 
+src="benders_eg_slides20x.png" alt="¯z"  class="bar" > <span 
+class="cmr-17">. The point </span><span 
+class="cmmi-12x-x-144">u</span><sup>2</sup> <span 
+class="cmr-17">is still optimal to the</span>
+                                                                                         
+                                                                                         
+<span 
+class="cmr-17">subproblem. So we have the optimal solution to the master problem,</span>
+<span 
+class="cmr-17">namely</span> <img 
+src="benders_eg_slides21x.png" alt="¯y"  class="bar" > <span 
+class="cmr-17">= (1</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0) with</span> <img 
+src="benders_eg_slides22x.png" alt="¯z"  class="bar" > <span 
+class="cmr-17">= 17. Fixing this choice of </span><span 
+class="cmmi-12x-x-144">y </span><span 
+class="cmr-17">in the original</span>
+<span 
+class="cmr-17">(</span><span 
+class="cmmi-12x-x-144">MIP</span><span 
+class="cmr-17">) gives the solution </span><span 
+class="cmmi-12x-x-144">x </span><span 
+class="cmr-17">= (8</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">9</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0</span><span 
+class="cmmi-12x-x-144">, </span><span 
+class="cmr-17">0), which is the </span><span 
+class="cmmi-12x-x-144">x </span><span 
+class="cmr-17">portion of the</span>
+<span 
+class="cmr-17">optimal solution. The optimal value is indeed</span><span 
+class="cmr-17">&#x00A0;2.</span>
+    
+</body></html> 
+
+                                                                                         
+
+

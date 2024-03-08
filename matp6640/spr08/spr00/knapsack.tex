@@ -1,0 +1,114 @@
+\documentstyle[12pt]{article}
+
+\begin{document}
+
+\begin{center}
+  {\bf\large\bf Solving a Knapsack Problem}
+\end{center}
+
+Consider the knapsack problem
+\begin{displaymath}
+  \begin{array}{lrcrcrcl}
+    \min & -3x_1 & - & 4x_2 & - & 6x_3 \\
+   \mbox{subject to} & x_1 & + & 3x_2 & + & 5x_3 & \leq & 7 \\
+         &&& x_i & = & 0,1 && i=1,...,3
+  \end{array}
+\end{displaymath}
+This is an {\bf integer} programming problem.
+We solve it by solving a sequence of {\bf linear programming relaxations} of
+the problem.
+The initial relaxation is
+\begin{displaymath}
+  \begin{array}{lrcrcrcl}
+    \min & -3x_1 & - & 4x_2 & - & 6x_3 \\
+   \mbox{subject to} & x_1 & + & 3x_2 & + & 5x_3 & \leq & 7 \\
+         & 0 & \leq & x_i & \leq & 1 && i=1,...,3
+  \end{array}
+\end{displaymath}
+The simplex tableau for this problem is
+       \begin{displaymath}
+         M =
+         \begin{array}{|r|rrrrrrr|}
+            \multicolumn{1}{c}{\quad} & x_1 & x_2 & x_3 & s_4 & s_5 & s_6 &
+                \multicolumn{1}{c}{s_7} \\ \hline
+             0 & -3 & -4 & -6 & 0 & 0 & 0 & 0 \\ \hline
+             7 & 1 & 3 & 5 & 1 & 0 & 0 & 0 \\
+             1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+             1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 \\
+             1 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \\ \hline
+         \end{array}
+       \end{displaymath}
+The optimal tableau for this relaxation is
+       \begin{displaymath}
+         M^1 =
+         \begin{array}{|r|rrrrrrr|}
+            \multicolumn{1}{c}{\quad} & x_1 & x_2 & x_3 & s_4 & s_5 & s_6 &
+                \multicolumn{1}{c}{s_7} \\ \hline
+             10.6 & 0 & 0 & 0 & 1.2 & 1.8 & 0.4 & 0 \\ \hline
+             0.6 & 0 & 0 & 1 & 0.2 & -0.2 & -0.6 & 0 \\
+             1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+             1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 \\
+             0.4 & 0 & 0 & 0 & -0.2 & 0.2 & 0.6 & 1 \\ \hline
+         \end{array}
+       \end{displaymath}
+Thus, the optimal solution to the initial relaxation is
+\begin{displaymath}
+  x_1=1, \quad x_2=1, \quad x_3=0.6
+\end{displaymath}
+This does obviously not solve the original relaxation,
+because it has $x_3=0.6$.
+Notice that no feasible solution to the integer programming problem
+can have both $x_2=1$ and $x_3=1$.
+Thus, every solution satisfies
+\begin{displaymath}
+  x_2 + x_3 \leq 1
+\end{displaymath}
+We can add this constraint to $M^1$, giving the tableau
+       \begin{displaymath}
+         M^2 =
+         \begin{array}{|r|rrrrrrrr|}
+            \multicolumn{1}{c}{\quad} & x_1 & x_2 & x_3 & s_4 & s_5 & s_6 &
+                s_7 & \multicolumn{1}{c}{s_8} \\ \hline
+             10.6 & 0 & 0 & 0 & 1.2 & 1.8 & 0.4 & 0 & 0 \\ \hline
+             0.6 & 0 & 0 & 1 & 0.2 & -0.2 & -0.6 & 0 & 0 \\
+             1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+             1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+             0.4 & 0 & 0 & 0 & -0.2 & 0.2 & 0.6 & 1 & 0 \\
+             1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 1 \\ \hline
+         \end{array}
+       \end{displaymath}
+Pivoting to get an identity, we obtain
+       \begin{displaymath}
+         M^3 =
+         \begin{array}{|r|rrrrrrrr|}
+            \multicolumn{1}{c}{\quad} & x_1 & x_2 & x_3 & s_4 & s_5 & s_6 &
+                s_7 & \multicolumn{1}{c}{s_8} \\ \hline
+             10.6 & 0 & 0 & 0 & 1.2 & 1.8 & 0.4 & 0 & 0 \\ \hline
+             0.6 & 0 & 0 & 1 & 0.2 & -0.2 & -0.6 & 0 & 0 \\
+             1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+             1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+             0.4 & 0 & 0 & 0 & -0.2 & 0.2 & 0.6 & 1 & 0 \\
+             -0.6 & 0 & 0 & 0 & -0.2 & 0.2 & -0.4 & 0 & 1 \\ \hline
+         \end{array}
+       \end{displaymath}
+Solving this tableau using the {\bf dual simplex} method gives
+       \begin{displaymath}
+         M^3 =
+         \begin{array}{|r|rrrrrrrr|}
+            \multicolumn{1}{c}{\quad} & x_1 & x_2 & x_3 & s_4 & s_5 & s_6 &
+                s_7 & \multicolumn{1}{c}{s_8} \\ \hline
+             9 & 0 & 2 & 0 & 0 & 3 & 0 & 0 & 6 \\ \hline
+             1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 \\
+             1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+             1 & 0 & -2 & 0 & 1 & -1 & 0 & 0 & -5 \\
+             0 & 0 & -1 & 0 & 0 & 0 & 0 & 1 & -1 \\
+             1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\ \hline
+         \end{array}
+       \end{displaymath}
+So, the solution to the modified relaxation is
+\begin{displaymath}
+  x_1=1, \quad x_2=0, \quad x_3=1
+\end{displaymath}
+This is integral, so it solves the original integer program.
+
+\end{document}

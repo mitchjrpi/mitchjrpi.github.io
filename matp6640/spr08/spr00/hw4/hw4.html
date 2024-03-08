@@ -1,0 +1,266 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Homework 4</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="hw4">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="hw4.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+     <A HREF=..>MATP6640/DSES6770 Linear Programming</A>, Homework 4.
+  </FONT>
+</DIV>
+
+<P>
+
+<DIV ALIGN="RIGHT">
+   Due:  Thursday, March 30, 2000.
+
+</DIV>
+
+<P>
+
+<BR>
+
+<P>
+Note: In the following, <I>P</I><SUB><I>M</I></SUB> denotes projection onto the nullspace
+of the matrix&nbsp;<I>M</I>. If <I>M</I> has full row rank, then <I>P</I><SUB><I>M</I></SUB> is given by
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+P_M = I - M^T (MM^T)^{-1} M.
+\end{displaymath} -->
+
+
+<I>P</I><SUB><I>M</I></SUB> = <I>I</I> - <I>M</I><SUP><I>T</I></SUP> (<I>MM</I><SUP><I>T</I></SUP>)<SUP>-1</SUP> <I>M</I>.
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Note that if <I>M</I> is a <I>m</I>  x  <I>n</I> matrix then <I>P</I><SUB><I>M</I></SUB> is an <I>n</I>  x  <I>n</I>
+matrix.
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>Consider the linear programming problem (<I>P</I>)
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcr}
+        \min        & 9x_1 & + & 6x_2 & - & 7x_3 \\
+        \mbox{s.t.} &  x_1 & + & 2x_2 & + & 3x_3 & = & 6  \\
+                    && x_1,& x_2,& x_3 & \geq & 0.
+      \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="290" HEIGHT="76"
+ SRC="img1.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcr}
+\min &amp; 9x_1 &amp; + &amp; 6x_2 &amp; - &amp; 7x_3 ...
+... 3x_3 &amp; = &amp; 6 \\
+&amp;&amp; x_1,&amp; x_2,&amp; x_3 &amp; \geq &amp; 0.
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Assume the current point is <I>e</I>=(1,1,1)<SUP><I>T</I></SUP>.
+    Calculate the affine descent direction -<I>P</I><SUB><I>A</I></SUB><I>c</I> and the centering direction
+    <I>P</I><SUB><I>A</I></SUB><I>e</I>.  We wish to move in the direction <!-- MATH: $d=-P_Ac+\beta P_Ae$ -->
+<IMG
+ WIDTH="151" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$d=-P_Ac+\beta P_Ae$">
+for some
+    <IMG
+ WIDTH="50" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\beta \geq 0$">.
+Show that by choosing <IMG
+ WIDTH="15" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\beta$">
+appropriately, we can find
+    a steplength <IMG
+ WIDTH="51" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$\alpha \geq 0$">
+such that <IMG
+ WIDTH="57" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$e+\alpha d$">
+is optimal for
+    the linear program.
+  <DT>2.
+<DD>Given two <I>n</I>-vectors <I>s</I> and <I>x</I>, define <!-- MATH: $\mu := x^Ts / n$ -->
+<IMG
+ WIDTH="96" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\mu := x^Ts / n$">.
+Let <I>X</I> and <I>S</I> be <I>n</I>  x  <I>n</I> diagonal matrices, with <I>X</I><SUB><I>ii</I></SUB>=<I>x</I><SUB><I>i</I></SUB>
+and <I>S</I><SUB><I>ii</I></SUB>=<I>s</I><SUB><I>i</I></SUB> for <IMG
+ WIDTH="98" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$i=1,\ldots,n$">.
+For <I>n</I>=2, find two vectors <I>x</I>&gt;0 and <I>s</I>&gt;0 such that
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\parallel XSe - \mu e \parallel_2 \leq \theta \mu
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="157" HEIGHT="33"
+ SRC="img9.gif"
+ ALT="\begin{displaymath}
+\parallel XSe - \mu e \parallel_2 \leq \theta \mu
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+is not satisfied for any <!-- MATH: $\theta \in (0,1)$ -->
+<IMG
+ WIDTH="78" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$\theta \in (0,1)$">.
+  <DT>3.
+<DD><EM>Wright</EM>, Chapter 2, Question 10, page 47.
+  <DT>4.
+<DD><EM>Wright</EM>, Chapter 2, Question 12, page 47.
+  <DT>5.
+<DD>Let <I>s</I>=<I>c</I>-<I>A</I><SUP><I>T</I></SUP><I>y</I>. Show that <!-- MATH: $P_{AD}s=P_{AD}c$ -->
+<I>P</I><SUB><I>AD</I></SUB><I>Ds</I>=<I>P</I><SUB><I>AD</I></SUB><I>Dc</I> for any positive
+diagonal matrix&nbsp;<I>D</I>, provided <I>A</I> has full row rank.
+  <DT>6.
+<DD><EM>Wright</EM> gives a formula for the direction in the
+primal variables, <IMG
+ WIDTH="30" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.gif"
+ ALT="$\Delta x$">,
+in equation (1.25c).
+Show that, if <!-- MATH: $D=X^{1/2}S^{-1/2}$ -->
+<I>D</I>=<I>X</I><SUP>1/2</SUP><I>S</I><SUP>-1/2</SUP>, then this direction is equal to
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\alpha D P_{AD} Dc + \beta D P_{AD} D X^{-1}e,
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="234" HEIGHT="32"
+ SRC="img12.gif"
+ ALT="\begin{displaymath}
+\alpha D P_{AD} Dc + \beta D P_{AD} D X^{-1}e,
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+for some scalars <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\alpha$">
+and&nbsp;<IMG
+ WIDTH="15" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\beta$">,
+provided <I>r</I><SUB><I>c</I></SUB>=0 and <I>r</I><SUB><I>b</I></SUB>=0.
+Show that this expression can be simplified slightly to
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\bar{\alpha} X P_{AX} Xc + \bar{\beta} X P_{AX} e,
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="188" HEIGHT="32"
+ SRC="img14.gif"
+ ALT="\begin{displaymath}
+\bar{\alpha} X P_{AX} Xc + \bar{\beta} X P_{AX} e,
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+if the iterate is perfectly centered, that is, if <IMG
+ WIDTH="87" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.gif"
+ ALT="$XSe=\mu e$">
+for <IMG
+ WIDTH="91" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.gif"
+ ALT="$\mu=x^Ts / n$">.
+Here, <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$\bar{\alpha}$">
+and <IMG
+ WIDTH="15" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.gif"
+ ALT="$\bar{\beta}$">
+are scalars that may differ
+from <IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\alpha$">
+and&nbsp;<IMG
+ WIDTH="15" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\beta$">.
+(You may assume that <I>AD</I> has full row rank and that <I>AD</I><SUP>2</SUP><I>A</I><SUP><I>T</I></SUP> is
+invertible.)
+</DL>
+
+<P>
+
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD></TD><TD ALIGN="LEFT"><A HREF=../..>John Mitchell</A></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Amos Eaton 325</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">x6915.</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT"><A HREF=mailto:mitchj@rpi.edu>
+mitchj@rpi.edu</A></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Office hours: Wednesday: 12 noon - 2.0pm.</TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<A HREF=../..>John E Mitchell</A>
+<BR><I>2000-03-20</I>
+</ADDRESS>
+</BODY>
+</HTML>

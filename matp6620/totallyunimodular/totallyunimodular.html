@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="totallyunimodular.tex"> 
+<meta name="date" content="2015-03-30 20:01:00"> 
+<link rel="stylesheet" type="text/css" href="totallyunimodular.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 113--><p class="noindent" >
+<!--l. 114--><p class="noindent" ><span 
+class="cmbx-12x-x-172">Totally Unimodular Matrices</span><br />
+<a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a></div>
+<!--l. 118--><p class="noindent" >See Nemhauser and Wolsey, section III.1.2, for more information.
+   <div class="newtheorem">
+<!--l. 120--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Definition</span><span 
+class="cmbx-12">&#x00A0;1</span> </span><span 
+class="cmti-12">An </span><span 
+class="cmmi-12">m</span><span 
+class="cmsy-10x-x-120">&#x00D7;</span><span 
+class="cmmi-12">n </span><span 
+class="cmti-12">matrix </span><span 
+class="cmmi-12">A </span><span 
+class="cmti-12">is </span><span 
+class="cmbx-12">totally unimodular </span><span 
+class="cmti-12">(TU) if the determinant of each</span>
+<span 
+class="cmti-12">square submatrix is equal to 0, 1, or -1.</span>
+   </div>
+<!--l. 127--><p class="noindent" ><span 
+class="cmbx-12">Necessary conditions:</span>
+   <div class="newtheorem">
+<!--l. 130--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Theorem</span><span 
+class="cmbx-12">&#x00A0;1</span> </span><span 
+class="cmti-12">If </span><span 
+class="cmmi-12">A </span><span 
+class="cmti-12">is totally unimodular then all the vertices of </span><span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sub><span 
+class="cmr-8">+</span></sub><sup><span 
+class="cmmi-8">n</span></sup>  : <span 
+class="cmmi-12">Ax </span>= <span 
+class="cmmi-12">b</span><span 
+class="cmsy-10x-x-120">} </span><span 
+class="cmti-12">are</span>
+<span 
+class="cmti-12">integer for any integer vector </span><span 
+class="cmmi-12">b </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sup><span 
+class="cmmi-8">m</span></sup><span 
+class="cmti-12">.</span>
+   </div>
+   <div class="newtheorem">
+<!--l. 135--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Theorem</span><span 
+class="cmbx-12">&#x00A0;2</span> </span><span 
+class="cmti-12">If </span><span 
+class="cmmi-12">A </span><span 
+class="cmti-12">is totally unimodular then all the vertices of </span><span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sub><span 
+class="cmr-8">+</span></sub><sup><span 
+class="cmmi-8">n</span></sup>  : <span 
+class="cmmi-12">Ax </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">b</span><span 
+class="cmsy-10x-x-120">} </span><span 
+class="cmti-12">are</span>
+<span 
+class="cmti-12">integer for any integer vector </span><span 
+class="cmmi-12">b </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sup><span 
+class="cmmi-8">m</span></sup><span 
+class="cmti-12">.</span>
+   </div>
+<!--l. 140--><p class="indent" >   It follows that if <span 
+class="cmmi-12">A </span>is totally unimodular then the optimal solution to the integer
+program
+   <center class="math-display" >
+<img 
+src="totallyunimodular0x.png" alt="max         cTx
+
+subject to   Ax   &#x2264;  b
+              x   &#x2265;  0, integer
+" class="math-display" ></center>
+<!--l. 148--><p class="nopar" >
+can be found by <span 
+class="cmti-12">solving its LP relaxation</span>.
+   <div class="newtheorem">
+<!--l. 152--><p class="noindent" ><span class="head">
+                                                                                         
+                                                                                         
+<span 
+class="cmbx-12">Theorem</span><span 
+class="cmbx-12">&#x00A0;3</span> </span><span 
+class="cmti-12">The following statements are equivalent:</span>
+      <dl class="enumerate"><dt class="enumerate">
+   <span 
+class="cmti-12">1.</span> </dt><dd 
+class="enumerate"><span 
+class="cmmi-12">A </span><span 
+class="cmti-12">is totally unimodular.</span>
+      </dd><dt class="enumerate">
+   <span 
+class="cmti-12">2.</span> </dt><dd 
+class="enumerate"><span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup> <span 
+class="cmti-12">is totally unimodular.</span>
+      </dd><dt class="enumerate">
+   <span 
+class="cmti-12">3.</span> </dt><dd 
+class="enumerate">[<span 
+class="cmmi-12">A,I</span>] <span 
+class="cmti-12">is totally unimodular.</span>
+      </dd><dt class="enumerate">
+   <span 
+class="cmti-12">4.</span> </dt><dd 
+class="enumerate"><span 
+class="cmti-12">A matrix obtained by deleting a unit row or column of </span><span 
+class="cmmi-12">A </span><span 
+class="cmti-12">is totally unimodular.</span>
+      </dd><dt class="enumerate">
+   <span 
+class="cmti-12">5.</span> </dt><dd 
+class="enumerate"><span 
+class="cmti-12">A matrix obtained by multiplying a row or column of </span><span 
+class="cmmi-12">A </span><span 
+class="cmti-12">by </span><span 
+class="cmsy-10x-x-120">-</span>1 <span 
+class="cmti-12">is totally unimodular.</span>
+      </dd><dt class="enumerate">
+   <span 
+class="cmti-12">6.</span> </dt><dd 
+class="enumerate"><span 
+class="cmti-12">A matrix obtained by interchanging two rows or two columns of </span><span 
+class="cmmi-12">A </span><span 
+class="cmti-12">is totally unimodular.</span>
+      </dd><dt class="enumerate">
+   <span 
+class="cmti-12">7.</span> </dt><dd 
+class="enumerate"><span 
+class="cmti-12">A matrix obtained by duplicating rows or columns of </span><span 
+class="cmmi-12">A </span><span 
+class="cmti-12">is totally unimodular.</span>
+      </dd><dt class="enumerate">
+   <span 
+class="cmti-12">8.</span> </dt><dd 
+class="enumerate"><span 
+class="cmti-12">A matrix obtained by pivot operations on </span><span 
+class="cmmi-12">A </span><span 
+class="cmti-12">is totally unimodular.</span></dd></dl>
+</div>
+<!--l. 166--><p class="indent" >   Note: unit rows and columns are rows and columns of the identity matrix.
+                                                                                         
+                                                                                         
+<!--l. 171--><p class="noindent" ><span 
+class="cmbx-12">Sufficient conditions:</span>
+   <div class="newtheorem">
+<!--l. 174--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Theorem</span><span 
+class="cmbx-12">&#x00A0;4</span> </span><a 
+ id="x1-144"></a> <span 
+class="cmti-12">An integer matrix </span><span 
+class="cmmi-12">A </span><span 
+class="cmti-12">with every entry </span><span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">ij</span></sub> = 0 <span 
+class="cmti-12">or </span><span 
+class="cmsy-10x-x-120">±</span>1 <span 
+class="cmti-12">is totally unimodular</span><span 
+class="cmti-12">&#x00A0;if no more</span>
+<span 
+class="cmti-12">than two nonzero entries appear in any column, and if the rows of </span><span 
+class="cmmi-12">A </span><span 
+class="cmti-12">can be partitioned into two</span>
+<span 
+class="cmti-12">sets </span><span 
+class="cmmi-12">I</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmti-12">and </span><span 
+class="cmmi-12">I</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmti-12">such that:</span>
+      <dl class="enumerate"><dt class="enumerate">
+   <span 
+class="cmti-12">1.</span> </dt><dd 
+class="enumerate"><span 
+class="cmti-12">If a column has two nonzero entries of the same sign then their rows are in different</span>
+      <span 
+class="cmti-12">sets.</span>
+      </dd><dt class="enumerate">
+   <span 
+class="cmti-12">2.</span> </dt><dd 
+class="enumerate"><span 
+class="cmti-12">If a column has two nonzero entries of opposite signs then their rows are in the same</span>
+      <span 
+class="cmti-12">set.</span></dd></dl>
+</div>
+   <div class="newtheorem">
+<!--l. 187--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Corollary</span><span 
+class="cmbx-12">&#x00A0;1</span> </span><span 
+class="cmti-12">Any linear program of the form</span>
+   <center class="math-display" >
+<img 
+src="totallyunimodular1x.png" alt="max        cTx                        max        cTx
+subject to  Ax   =  b        or       subject to  Ax   &#x2264;  b
+
+             x   &#x2265;  0                              x   &#x2265;  0
+" class="math-display" ></center>
+<!--l. 195--><p class="nopar" >
+<span 
+class="cmti-12">where </span><span 
+class="cmmi-12">A </span><span 
+class="cmti-12">is either</span>
+      <dl class="enumerate"><dt class="enumerate">
+   <span 
+class="cmti-12">1.</span> </dt><dd 
+class="enumerate"><span 
+class="cmti-12">the node-arc incidence matrix of a directed graph, or</span>
+      </dd><dt class="enumerate">
+   <span 
+class="cmti-12">2.</span> </dt><dd 
+class="enumerate"><span 
+class="cmti-12">the node-edge incidence matrix of an undirected bipartite graph</span></dd></dl>
+<!--l. 201--><p class="noindent" ><span 
+class="cmti-12">has only integer optimal vertices.</span>
+   </div>
+<!--l. 204--><p class="indent" >   Thus, the following problems can be solved by solving linear programs, and the optimal
+solutions to the LPs are integral:
+                                                                                         
+                                                                                         
+      <div class="quote">
+      <!--l. 207--><p class="noindent" >shortest path, max-flow, assignment, weighted bipartite matching, &#x2026;</div>
+   <div class="newtheorem">
+<!--l. 210--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Theorem</span><span 
+class="cmbx-12">&#x00A0;5</span> </span><span 
+class="cmti-12">If all the extreme points of </span><span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sub><span 
+class="cmr-8">+</span></sub><sup><span 
+class="cmmi-8">n</span></sup> : <span 
+class="cmmi-12">Ax </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">b</span><span 
+class="cmsy-10x-x-120">} </span><span 
+class="cmti-12">are integral for all </span><span 
+class="cmmi-12">b </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120">&#x2124;</span><sup><span 
+class="cmmi-8">m</span></sup>
+<span 
+class="cmti-12">then </span><span 
+class="cmmi-12">A </span><span 
+class="cmti-12">is totally unimodular.</span>
+   </div>
+<!--l. 217--><p class="noindent" ><span 
+class="cmbx-12">Necessary and sufficient condition:</span>
+   <div class="newtheorem">
+<!--l. 220--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Theorem</span><span 
+class="cmbx-12">&#x00A0;6</span> </span><span 
+class="cmti-12">The following statements are equivalent:</span>
+      <dl class="enumerate"><dt class="enumerate">
+   <span 
+class="cmti-12">1.</span> </dt><dd 
+class="enumerate"><span 
+class="cmmi-12">A </span><span 
+class="cmti-12">is totally unimodular.</span>
+      </dd><dt class="enumerate">
+   <span 
+class="cmti-12">2.</span> </dt><dd 
+class="enumerate"><span 
+class="cmti-12">For every </span><span 
+class="cmmi-12">J </span><span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="cmmi-12">N </span>:= <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span><span 
+class="cmsy-10x-x-120">}</span><span 
+class="cmti-12">, there exists a partition </span><span 
+class="cmmi-12">J</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,J</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmti-12">of </span><span 
+class="cmmi-12">J </span><span 
+class="cmti-12">such that</span>
+      <center class="math-display" >
+      <img 
+src="totallyunimodular2x.png" alt=" &#x2211;         &#x2211;
+|    aij -     aij| &#x2264; 1  for i = 1,...,m.
+ j&#x2208;J1      j&#x2208;J2
+      " class="math-display" ></center>
+      <!--l. 228--><p class="nopar" >
+      </dd></dl>
+</div>
+<!--l. 233--><p class="indent" >   Note that Theorem&#x00A0;<a 
+href="#x1-144">4<!--tex4ht:ref: thm:suff1 --></a> is a special case of this theorem (after transposing the matrix).
+    
+</body></html> 
+
+                                                                                         
+
+

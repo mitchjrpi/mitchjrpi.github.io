@@ -1,0 +1,14 @@
+ampl: model socpsdp.mod; data q2.dat; solve; display X;   
+CPLEX 12.7.1.0: CPXPARAM_Simplex_Display                         0
+CPXPARAM_MIP_Display                             0
+CPXPARAM_Barrier_Display                         0
+optimal solution; objective 8.999999999
+7 barrier iterations
+No basis.
+X :=
+1 1   4
+1 2   2
+2 1   2
+2 2   1
+;
+

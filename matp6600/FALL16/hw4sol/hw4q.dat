@@ -1,0 +1,21 @@
+#  solve the problem 
+#    min c^T x
+#    st  0.5 x^T M x <= m
+#        0.5 x^T Q x <= q
+#
+
+param M11 :=  1;
+param M12 :=  0;
+param M21 :=  0;
+param M22 :=  4;
+
+param Q11 :=  3;
+param Q12 :=  1;
+param Q21 :=  1;
+param Q22 :=  3;
+
+param m := 8;
+param q := 16;
+
+param c1 := 1;
+param c2 := 0;

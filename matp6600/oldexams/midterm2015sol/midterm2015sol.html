@@ -1,0 +1,800 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="midterm2015sol.tex"> 
+<meta name="date" content="2015-11-14 16:43:00"> 
+<link rel="stylesheet" type="text/css" href="midterm2015sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 25--><p class="noindent" >
+<!--l. 27--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6600" ><span 
+class="cmr-12">MATP6600 / ISYE6780 Nonlinear Programming</span></a>
+</div>
+<div class="center" 
+>
+<!--l. 30--><p class="noindent" >
+<!--l. 32--><p class="noindent" ><span 
+class="cmr-12">Midterm Exam, Fall 2015</span>
+</div>
+<div class="center" 
+>
+<!--l. 35--><p class="noindent" >
+<!--l. 37--><p class="noindent" ><span 
+class="cmr-12">Solutions</span>
+</div>
+<!--l. 41--><p class="noindent" >Take Home                                                         Due: Beginning of class, Friday, 13 October
+2015.
+<!--l. 46--><p class="indent" >   This is to be all your own work. You may use any result from class, homeworks, or the books on
+reserve in the library. You may also use anything that is linked directly from the course webpage.
+I will have office hours on Tuesdays from 2-5pm and Wednesdays from 11am-1pm. Do not
+consult anybody or anything else. The exam consists of six questions and is worth a total of 100
+points.
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1"><a 
+ id="x1-21"></a> (15 points) We have a nonlinear program with equality constraints:
+     <center class="math-display" >
+     <img 
+src="midterm2015sol0x.png" alt="min         f(x)
+subject to  g (x)  &#x2264;  0  i = 1,...,m
+            i
+             Ax   =  b
+     " class="math-display" ></center>
+     <!--l. 63--><p class="nopar" >
+     where <span 
+class="cmmi-10x-x-109">A </span>is an <span 
+class="cmmi-10x-x-109">p</span><span 
+class="cmsy-10x-x-109">&#x00D7;</span><span 
+class="cmmi-10x-x-109">n </span>matrix, <span 
+class="cmmi-10x-x-109">b </span><span 
+class="cmsy-10x-x-109"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">IR</span><sup><span 
+class="cmmi-8">p</span></sup>, and <span 
+class="cmmi-10x-x-109">f </span>and each <span 
+class="cmmi-10x-x-109">g</span><sub><span 
+class="cmmi-8">i</span></sub> are smooth functions from <span 
+class="cmmi-10x-x-109">IR</span><sup><span 
+class="cmmi-8">n</span></sup> to&#x00A0;<span 
+class="cmmi-10x-x-109">IR</span>. Assume
+     <img 
+src="midterm2015sol1x.png" alt="x&#x02C6;"  class="circ" > is a feasible solution. Assume there exists a direction <img 
+src="midterm2015sol2x.png" alt="d&#x02C6;"  class="circ" > with <span 
+class="cmmi-10x-x-109">A</span><img 
+src="midterm2015sol3x.png" alt="d&#x02C6;"  class="circ" >= 0 and <span 
+class="cmsy-10x-x-109">&#x2207;</span><span 
+class="cmmi-10x-x-109">g</span><sub><span 
+class="cmmi-8">i</span></sub>(<img 
+src="midterm2015sol4x.png" alt="&#x02C6;x"  class="circ" >)<sup><span 
+class="cmmi-8">T</span> </sup><img 
+src="midterm2015sol5x.png" alt="&#x02C6;d"  class="circ" ><span 
+class="cmmi-10x-x-109">&#x003C; </span>0 for
+     all the active constraints <span 
+class="cmmi-10x-x-109">I </span>at&#x00A0;<img 
+src="midterm2015sol6x.png" alt="&#x02C6;x"  class="circ" >. Show the constraint qualification <span 
+class="cmmi-10x-x-109">T </span>= <span 
+class="cmmi-10x-x-109">G</span><span 
+class="cmsy-10x-x-109">&#x2032;&#x2229; </span><span 
+class="cmmi-10x-x-109">H</span><sub><span 
+class="cmr-8">0</span></sub> holds
+     at&#x00A0;<img 
+src="midterm2015sol7x.png" alt="x&#x02C6;"  class="circ" >, where <span 
+class="cmmi-10x-x-109">T </span>is the cone of tangents at&#x00A0;<img 
+src="midterm2015sol8x.png" alt="&#x02C6;x"  class="circ" >, <span 
+class="cmmi-10x-x-109">G</span><span 
+class="cmsy-10x-x-109">&#x2032; </span>= <span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmmi-10x-x-109">d </span><span 
+class="cmsy-10x-x-109"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">IR</span><sup><span 
+class="cmmi-8">n</span></sup> : <span 
+class="cmsy-10x-x-109">&#x2207;</span><span 
+class="cmmi-10x-x-109">g</span><sub><span 
+class="cmmi-8">i</span></sub>(<img 
+src="midterm2015sol9x.png" alt="&#x02C6;x"  class="circ" >)<sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">d </span><span 
+class="cmsy-10x-x-109">&#x2264; </span>0<span 
+class="cmsy-10x-x-109">&#x2200;</span><span 
+class="cmmi-10x-x-109">i </span><span 
+class="cmsy-10x-x-109"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">I</span><span 
+class="cmsy-10x-x-109">}</span>, and
+     <span 
+class="cmmi-10x-x-109">H</span><sub><span 
+class="cmr-8">0</span></sub> = <span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmmi-10x-x-109">d </span><span 
+class="cmsy-10x-x-109"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">IR</span><sup><span 
+class="cmmi-8">n</span></sup> : <span 
+class="cmsy-10x-x-109">&#x2207;</span><span 
+class="cmmi-10x-x-109">h</span><sub><span 
+class="cmmi-8">j</span></sub>(<img 
+src="midterm2015sol10x.png" alt="&#x02C6;x"  class="circ" >)<sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">d </span>= 0 for <span 
+class="cmmi-10x-x-109">j </span>= 1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,p</span><span 
+class="cmsy-10x-x-109">}</span>.
+     <!--l. 76--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution:</span>
+     <!--l. 79--><p class="noindent" >We always have <span 
+class="cmmi-10x-x-109">T </span><span 
+class="cmsy-10x-x-109">&#x2286; </span><span 
+class="cmmi-10x-x-109">G</span><span 
+class="cmsy-10x-x-109">&#x2032;&#x2229; </span><span 
+class="cmmi-10x-x-109">H</span><sub><span 
+class="cmr-8">0</span></sub>, so we need to show the converse.
+                                                                                         
+                                                                                         
+     <!--l. 81--><p class="noindent" >Let <span 
+class="cmmi-10x-x-109">d </span><span 
+class="cmsy-10x-x-109"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10-109x-x-32" /> </span><span 
+class="cmmi-10x-x-109">G</span><span 
+class="cmsy-10x-x-109">&#x2032;&#x2229; </span><span 
+class="cmmi-10x-x-109">H</span><sub><span 
+class="cmr-8">0</span></sub>, <span 
+class="cmmi-10x-x-109">d</span><span 
+class="cmmi-10x-x-109">&#x2260;</span>0. Define
+     <center class="math-display" >
+     <img 
+src="midterm2015sol11x.png" alt="           1
+dk :=  d + --&#x02C6;d,  for k = 1,2,...
+          k
+     " class="math-display" ></center>
+     <!--l. 85--><p class="nopar" >
+     Note that
+     <center class="math-display" >
+     <img 
+src="midterm2015sol12x.png" alt="   k                T
+Ad   = 0 and  &#x2207;gi(&#x02C6;x) &#x02C6;d &#x003C;  0 for k = 1,2,...
+     " class="math-display" ></center>
+     <!--l. 90--><p class="nopar" >
+     so there exist positive step lengths <span 
+class="cmmi-10x-x-109">&#x03B1;</span><sub><span 
+class="cmmi-8">k</span></sub> and feasible points <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmmi-8">k</span></sup> with
+     <center class="math-display" >
+     <img 
+src="midterm2015sol13x.png" alt="xk = &#x02C6;x +  &#x03B1;kdk, k = 1,2,...
+     " class="math-display" ></center>
+     <!--l. 94--><p class="nopar" >
+     Thus, by definition,
+     <center class="math-display" >
+     <img 
+src="midterm2015sol14x.png" alt="             k
+T &#x220B;  limk &#x2192;&#x221E;d   =  d,
+     " class="math-display" ></center>
+     <!--l. 98--><p class="nopar" >
+     as required.
+     </li>
+     <li 
+  class="enumerate" id="x1-5x2"><a 
+ id="x1-42"></a> (15 points) Looking again at the nonlinear program of Question&#x00A0;<a 
+href="#x1-21">1<!--tex4ht:ref: q.cq1 --></a>, assume now that each <span 
+class="cmmi-10x-x-109">g</span><sub><span 
+class="cmmi-8">i</span></sub> is a
+     convex function and there exists a point <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> satisfying <span 
+class="cmmi-10x-x-109">A</span><span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> = <span 
+class="cmmi-10x-x-109">b </span>and <span 
+class="cmmi-10x-x-109">g</span><sub><span 
+class="cmmi-8">i</span></sub>(<span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span>) <span 
+class="cmmi-10x-x-109">&#x003C; </span>0 for all <span 
+class="cmmi-10x-x-109">i </span>= 1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,m</span>. Show
+     <span 
+class="cmmi-10x-x-109">T </span>= <span 
+class="cmmi-10x-x-109">G</span><span 
+class="cmsy-10x-x-109">&#x2032;&#x2229; </span><span 
+class="cmmi-10x-x-109">H</span><sub><span 
+class="cmr-8">0</span></sub> holds at every feasible point.
+     <!--l. 107--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution:</span>
+     <!--l. 110--><p class="noindent" >We show that the conditions of Question&#x00A0;<a 
+href="#x1-21">1<!--tex4ht:ref: q.cq1 --></a> hold, so the result follows. For any feasible point <img 
+src="midterm2015sol15x.png" alt="&#x02C6;x"  class="circ" >,
+     define
+     <center class="math-display" >
+     <img 
+src="midterm2015sol16x.png" alt="d&#x02C6;=  ¯x - x&#x02C6;.
+     " class="math-display" ></center>
+                                                                                         
+                                                                                         
+     <!--l. 115--><p class="nopar" >
+     Since <span 
+class="cmmi-10x-x-109">A</span><span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> = <span 
+class="cmmi-10x-x-109">A</span><img 
+src="midterm2015sol17x.png" alt="&#x02C6;x"  class="circ" > = <span 
+class="cmmi-10x-x-109">b</span>, we have <span 
+class="cmmi-10x-x-109">A</span><img 
+src="midterm2015sol18x.png" alt="d&#x02C6;"  class="circ" >= 0. In addition, for each active constraint <span 
+class="cmmi-10x-x-109">i </span>we have <span 
+class="cmmi-10x-x-109">g</span><sub><span 
+class="cmmi-8">i</span></sub>(<img 
+src="midterm2015sol19x.png" alt="&#x02C6;x"  class="circ" >) = 0, so
+     the subgradient inequality gives
+     <center class="math-display" >
+     <img 
+src="midterm2015sol20x.png" alt="0 &#x003E; gi(¯x) &#x2265; gi(&#x02C6;x) + &#x2207;gi(&#x02C6;x)T (¯x - &#x02C6;x) =  &#x2207;gi(&#x02C6;x)T &#x02C6;d.
+     " class="math-display" ></center>
+     <!--l. 122--><p class="nopar" >
+     Hence the conditions of Question&#x00A0;<a 
+href="#x1-21">1<!--tex4ht:ref: q.cq1 --></a> are satisfied by the direction&#x00A0;<img 
+src="midterm2015sol21x.png" alt="&#x02C6;
+d"  class="circ" > .
+     </li>
+     <li 
+  class="enumerate" id="x1-7x3">(25 points) <a 
+ id="x1-63"></a>Show that the point <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> = (2<span 
+class="cmmi-10x-x-109">,</span>1) is a KKT point for the problem
+     <center class="math-display" >
+     <img 
+src="midterm2015sol22x.png" alt="min   x31 - 6x21 +  6x1 + 2x2
+s.t.  3x   -   x   &#x2264;      5
+         1      2
+      - x1 -   x2  &#x2264;    - 3
+               x2  &#x2264;      3
+     " class="math-display" ></center>
+     <!--l. 147--><p class="nopar" >
+     Does it satisfy the second order necessary conditions? What about the second order sufficient
+     conditions? Find all other KKT points and check the second order necessary and sufficient
+     conditions for those points. Find the globally optimal solution (justify your answer). (Note: You
+     should find that one of the KKT points is irrational.)
+     <!--l. 155--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution:</span>
+     <!--l. 158--><p class="noindent" >Let the three linear constraints be denoted by <span 
+class="cmmi-10x-x-109">g</span><sub><span 
+class="cmr-8">1</span></sub>(<span 
+class="cmmi-10x-x-109">x</span>), <span 
+class="cmmi-10x-x-109">g</span><sub><span 
+class="cmr-8">2</span></sub>(<span 
+class="cmmi-10x-x-109">x</span>), and&#x00A0;<span 
+class="cmmi-10x-x-109">g</span><sub><span 
+class="cmr-8">3</span></sub>(<span 
+class="cmmi-10x-x-109">x</span>). We have
+     <center class="math-display" >
+     <img 
+src="midterm2015sol23x.png" alt="         [                 ]              [    ]              [    ]              [   ]
+            3x2-  12x  + 6                   3                  - 1                 0
+&#x2207;f (x) =      1   2  1       ,  &#x2207;g1(x) =    - 1  ,  &#x2207;g2 (x ) =   - 1  ,  &#x2207;g3 (x ) =   1
+     " class="math-display" ></center>
+     <!--l. 165--><p class="nopar" >
+     and
+     <center class="math-display" >
+     <img 
+src="midterm2015sol24x.png" alt="                         [            ]
+                           6x - 12  0
+&#x2207;xxL (x,u) = &#x2207;xxf (x) =      10     0
+     " class="math-display" ></center>
+                                                                                         
+                                                                                         
+     <!--l. 169--><p class="nopar" >
+     for any choice of&#x00A0;<span 
+class="cmmi-10x-x-109">u</span>, since all the constraints are linear.
+     <!--l. 172--><p class="noindent" >The point <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> satisfies <span 
+class="cmmi-10x-x-109">g</span><sub><span 
+class="cmr-8">1</span></sub>(<span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span>) = <span 
+class="cmmi-10x-x-109">g</span><sub><span 
+class="cmr-8">2</span></sub>(<span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span>) = 0 with <span 
+class="cmmi-10x-x-109">g</span><sub><span 
+class="cmr-8">3</span></sub>(<span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span>) <span 
+class="cmmi-10x-x-109">&#x003C; </span>0. So for this point to be a KKT point, we need
+     to be able to find nonnegative multipliers <span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmr-8">1</span></sub> and <span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmr-8">2</span></sub> with <div class="eqnarray">
+     <center class="math-display" >
+     <img 
+src="midterm2015sol25x.png" alt="- 6 + 3u1 - u2  =   0                                (1)
+   2 - u1 - u2  =   0.                               (2)
+     " class="math-display" ></center>
+     </div>The solution is <span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmr-8">1</span></sub> = 2, <span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmr-8">2</span></sub> = 0, so <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> <span 
+class="cmbx-10x-x-109">is a KKT point</span>. At this point, the Hessian matrix is
+     identically zero, so <span 
+class="cmbx-10x-x-109">the second order necessary conditions hold</span>. For the second order sufficient
+     conditions, need <span 
+class="cmmi-10x-x-109">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmsy-10x-x-109">&#x2207;</span><sub><span 
+class="cmmi-8">xx</span></sub><span 
+class="cmmi-10x-x-109">Ld &#x003E; </span>0 for all appropriate&#x00A0;<span 
+class="cmmi-10x-x-109">d</span>. The appropriate directions are those <span 
+class="cmmi-10x-x-109">d</span>
+     satisfying <span 
+class="cmmi-10x-x-109">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmsy-10x-x-109">&#x2207;</span><span 
+class="cmmi-10x-x-109">g</span><sub><span 
+class="cmmi-8">i</span></sub>(<span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span>) = 0 for all constraints with <span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmmi-10x-x-109">&#x003E; </span>0. So here, that is all directions satisfying
+     <span 
+class="cmmi-10x-x-109">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmsy-10x-x-109">&#x2207;</span><span 
+class="cmmi-10x-x-109">g</span><sub><span 
+class="cmr-8">1</span></sub> = 0, so
+     <center class="math-display" >
+     <img 
+src="midterm2015sol26x.png" alt="         T
+d = t(1,3)  for any nonzero scalar t.
+     " class="math-display" ></center>
+     <!--l. 188--><p class="nopar" >
+     Any such <span 
+class="cmmi-10x-x-109">d </span>has <span 
+class="cmmi-10x-x-109">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmsy-10x-x-109">&#x2207;</span><sub><span 
+class="cmmi-8">xx</span></sub><sup><span 
+class="cmr-8">2</span></sup><span 
+class="cmmi-10x-x-109">d </span>= 0, so <span 
+class="cmbx-10x-x-109">the second order sufficient conditions are not satisfied</span>. The
+     objective function value of <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> is&#x00A0;<span 
+class="cmsy-10x-x-109">-</span>2.
+     <!--l. 193--><p class="noindent" >The KKT conditions can be expressed <div class="eqnarray">
+     <center class="math-display" >
+     <img 
+src="midterm2015sol27x.png" alt="3x21 - 12x1 + 6 +  3u1 - u2  =  0                           (3)
+          2 - u1 -  u2 + u3  =  0                           (4)
+
+          u1 (3x1 -  x2 - 5)  =  0                           (5)
+          u2(- x1 - x2 + 3)  =  0                           (6)
+
+                 u3(x2 - 3)  =  0                           (7)
+                  u1, u2, u3 &#x2265;  0                           (8)
+                   3x1 - x2  &#x2264;  5                           (9)
+
+                  - x1 - x2  &#x2264;  - 3                        (10)
+                         x2  &#x2264;  3                          (11)
+     " class="math-display" ><a 
+ id="x1-9r3"></a><a 
+ id="x1-9r4"></a><a 
+ id="x1-9r5"></a><a 
+ id="x1-9r6"></a><a 
+ id="x1-9r7"></a><a 
+ id="x1-9r8"></a><a 
+ id="x1-9r9"></a><a 
+ id="x1-9r10"></a><a 
+ id="x1-9r11"></a></center>
+     </div>
+     <!--l. 211--><p class="noindent" >Divide into cases based on the complementarities:
+          <ul class="itemize1">
+          <li class="itemize">Assume <span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmr-8">1</span></sub> = 0: From (<a 
+href="#x1-9r4">4<!--tex4ht:ref: eq:KKT2 --></a>), we must have <span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmmi-10x-x-109">&#x003E; </span>0, so <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">1</span></sub> + <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">2</span></sub> = 3.
+              <ul class="itemize2">
+              <li class="itemize">If <span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmr-8">3</span></sub> <span 
+class="cmmi-10x-x-109">&#x003E; </span>0 then <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">2</span></sub> = 3 so <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">1</span></sub> = 0. It follows from (<a 
+href="#x1-9r3">3<!--tex4ht:ref: eq:KKT1 --></a>) that <span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmr-8">2</span></sub> = 6 and then <span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmr-8">3</span></sub> = 4.
+              This is a KKT point. Since both <span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmr-8">2</span></sub>  and <span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmr-8">3</span></sub>  are positive, only the zero direction
+              satisfies <span 
+class="cmmi-10x-x-109">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmsy-10x-x-109">&#x2207;</span><span 
+class="cmmi-10x-x-109">g</span><sub><span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-10x-x-109">x</span>) = 0 for all active <span 
+class="cmmi-10x-x-109">i </span>with <span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmmi-10x-x-109">&#x003E; </span>0. It follows that both the second
+              order necessary and the second order sufficient conditions are satisfied. The value of
+              this point is&#x00A0;6.
+              </li>
+              <li class="itemize">If <span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmr-8">3</span></sub> = 0 then <span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmr-8">2</span></sub> = 2 and so, from (<a 
+href="#x1-9r3">3<!--tex4ht:ref: eq:KKT1 --></a>), 3<span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmr-8">2</span></sup> <span 
+class="cmsy-10x-x-109">- </span>12<span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">1</span></sub> + 6 <span 
+class="cmsy-10x-x-109">- </span>2 = 0, so we get
+              <center class="math-display" >
+              <img 
+src="midterm2015sol28x.png" alt="          &#x221A;--------        &#x2218; --
+x1 = 2 ±  -144---48-=  2 ±   8.
+              6              3
+              " class="math-display" ></center>
+              <!--l. 232--><p class="nopar" >
+              Taking the positive square root leads to a violation of (<a 
+href="#x1-9r9">9<!--tex4ht:ref: eq:KKT7 --></a>), so the only possibility is the
+              negative root. This leads to a KKT point:
+              <center class="math-display" >
+              <img 
+src="midterm2015sol29x.png" alt="          &#x2218; --          &#x2218; --
+            8              8
+x1 =  2 -   3, x2 = 1 +    3.
+              " class="math-display" ></center>
+              <!--l. 238--><p class="nopar" >
+              The Hessian <span 
+class="cmsy-10x-x-109">&#x2207;</span><sub><span 
+class="cmmi-8">xx</span></sub><sup><span 
+class="cmr-8">2</span></sup><span 
+class="cmmi-10x-x-109">L </span>is indefinite at this point. Allowable directions include <span 
+class="cmmi-10x-x-109">d </span>= (1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmsy-10x-x-109">-</span>1)<sup><span 
+class="cmmi-8">T</span> </sup>,
+              which satisfies <span 
+class="cmmi-10x-x-109">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmsy-10x-x-109">&#x2207;</span><sub><span 
+class="cmmi-8">xx</span></sub><sup><span 
+class="cmr-8">2</span></sup><span 
+class="cmmi-10x-x-109">Ld &#x003C; </span>0. So neither the SONC nor the SOSC hold at
+              this point. The value of this point is also larger than 7, so it&#8217;s not a global
+              minimizer.</li></ul>
+                                                                                         
+                                                                                         
+          </li>
+          <li class="itemize">Assume <span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmmi-10x-x-109">&#x003E; </span>0: Must have 3<span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">2</span></sub> = 5. We&#8217;ve already considered the point <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span>, so we need only
+          consider points with <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">1</span></sub> + <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmmi-10x-x-109">&#x003E; </span>3 and hence with <span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmr-8">2</span></sub> = 0.
+              <ul class="itemize2">
+              <li class="itemize"><span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmr-8">3</span></sub> = 0: Then from (<a 
+href="#x1-9r4">4<!--tex4ht:ref: eq:KKT2 --></a>), we get <span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmr-8">1</span></sub> = 2. Plugging into (<a 
+href="#x1-9r3">3<!--tex4ht:ref: eq:KKT1 --></a>), we have 3<span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmr-8">2</span></sup><span 
+class="cmsy-10x-x-109">-</span>12<span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">1</span></sub>+6+6 =
+              0 or <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmr-8">2</span></sup> <span 
+class="cmsy-10x-x-109">- </span>4<span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">1</span></sub> + 4 = 0 or (<span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-109">- </span>2)<sup><span 
+class="cmr-8">2</span></sup> = 0, so we again get back&#x00A0;<span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span>.
+              </li>
+              <li class="itemize"><span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">2</span></sub> = 3: Then <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">1</span></sub> = <img 
+src="midterm2015sol30x.png" alt="8
+3"  class="frac" align="middle">. From (<a 
+href="#x1-9r3">3<!--tex4ht:ref: eq:KKT1 --></a>), we get
+              <center class="math-display" >
+              <img 
+src="midterm2015sol31x.png" alt="                        - 64+ 96 - 18    14
+u1 =  - x21 + 4x1 - 2 =  ------------- =  --,
+                              9          9
+              " class="math-display" ></center>
+              <!--l. 258--><p class="nopar" >
+              but then <span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmr-8">3</span></sub> <span 
+class="cmmi-10x-x-109">&#x003C; </span>0 from (<a 
+href="#x1-9r4">4<!--tex4ht:ref: eq:KKT2 --></a>), so this is not a KKT point.</li></ul>
+          </li></ul>
+     <!--l. 264--><p class="noindent" >Constraint Qualification holds throughout the feasible region, since the constraints are
+     linear. The feasible region is compact. Therefore, a global minimizer exists and must
+     be a KKT point. The best of the three KKT points is <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span>, so this is the global optimal
+     solution.
+     </li>
+     <li 
+  class="enumerate" id="x1-11x4">(25 points) <a 
+ id="x1-104"></a>The nonlinear program
+     <table 
+class="equation"><tr><td>
+     <center class="math-display" >
+     <img 
+src="midterm2015sol32x.png" alt="                   2        2
+minx&#x2208;IR2    - (x1 - 1) -   x 2
+subject to     x21     +   4x22  &#x2264;  4.
+     " class="math-display" ><a 
+ id="x1-12r12"></a></center></td><td class="equation-label">(12)</td></tr></table>
+     <!--l. 276--><p class="nopar" >
+     has Lagrangian dual function
+     <table 
+class="equation"><tr><td>
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="midterm2015sol33x.png" alt="&#x03B8;(u) :=  min    2  - (x1 - 1)2  -  x2  +   u(x2 + 4x2- 4)
+             x&#x2208;IR                   2         1     2
+     " class="math-display" ><a 
+ id="x1-13r13"></a></center></td><td class="equation-label">(13)</td></tr></table>
+     <!--l. 286--><p class="nopar" >
+     and Lagrangian dual problem
+     <table 
+class="equation"><tr><td>
+     <center class="math-display" >
+     <img 
+src="midterm2015sol34x.png" alt="max  &#x03B8;(u).
+ u&#x2265;0
+     " class="math-display" ><a 
+ id="x1-14r14"></a></center></td><td class="equation-label">(14)</td></tr></table>
+     <!--l. 290--><p class="nopar" >
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-16x1">(5 points) Show that problem (<a 
+href="#x1-13r13">13<!--tex4ht:ref: eq.Ldualfunction --></a>) has an unbounded optimal value if 0 <span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmmi-10x-x-109">u </span><span 
+class="cmsy-10x-x-109">&#x2264; </span>1.
+          </li>
+          <li 
+  class="enumerate" id="x1-18x2">(10 points) Find the optimal dual solution to (<a 
+href="#x1-14r14">14<!--tex4ht:ref: eq.Ldual --></a>).
+          </li>
+          <li 
+  class="enumerate" id="x1-20x3">(10 points) Find the optimal primal solution to (<a 
+href="#x1-12r12">12<!--tex4ht:ref: q4.primal --></a>). Does the problem have a duality
+          gap?</li></ol>
+     <!--l. 303--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution:</span>
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-22x1">Assume 0 <span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmmi-10x-x-109">u </span><span 
+class="cmsy-10x-x-109">&#x2264; </span>1. Then <div class="eqnarray">
+          <center class="math-display" >
+                                                                                         
+                                                                                         
+          <img 
+src="midterm2015sol35x.png" alt="&#x03B8;(u)  =   min  - (x1 - 1)2 - x22 + u (x21 + 4x22 - 4)
+          x[&#x2208;IR2                ]   [               ]
+      =    min (u - 1)x2 + 2x   +   min (4u - 1)x2 -  1 - 4u
+           x1&#x2208;IR        1     1     x2&#x2208;IR          2
+      =   - &#x221E;
+          " class="math-display" ></center>
+          </div>with the choice <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">2</span></sub> = 0, <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-109">&#x2192;-&#x221E;</span>.
+          </li>
+          <li 
+  class="enumerate" id="x1-25x2">Assume <span 
+class="cmmi-10x-x-109">u &#x003E; </span>1. We have <div class="eqnarray">
+          <center class="math-display" >
+          <img 
+src="midterm2015sol36x.png" alt="                        2    2       2    2
+&#x03B8;(u)  =   mxi&#x2208;nIR2 - (x1 - 1) - x2 + u (x 1 + 4x2 - 4)
+          [                   ]   [               ]
+      =    min (u - 1)x21 + 2x1  +   min (4u - 1)x22 -  1 - 4u
+          [x1&#x2208;IR ]                  x2&#x2208;IR
+      =    --1--  + 0 - 1 - 4u
+           1- u
+                4u2 - 4u + 1
+      =   - 1 + ---1---u----.
+          " class="math-display" ></center>
+          </div>So the dual problem is:
+          <center class="math-display" >
+          <img 
+src="midterm2015sol37x.png" alt="           4u2 --4u+-1-
+- 1 + mua&#x003E;x1     1 - u
+          " class="math-display" ></center>
+          <!--l. 328--><p class="nopar" >
+          For <span 
+class="cmmi-10x-x-109">&#x03B8; &#x003E; </span>1, we have
+          <center class="math-display" >
+          <img 
+src="midterm2015sol38x.png" alt="                  2                2
+d&#x03B8;- = 8u---4 +  4u----4u+-1- = - 4u----8u+-3-
+du     1-  u      (1- u )2          (1-  u)2
+          " class="math-display" ></center>
+          <!--l. 334--><p class="nopar" >
+                                                                                         
+                                                                                         
+          so <span 
+class="cmmi-10x-x-109">&#x03B8;</span>(<span 
+class="cmmi-10x-x-109">u</span>) is maximized at the larger root of the quadratic in the numerator, namely <span 
+class="cmmi-10x-x-109">u </span>= 1<span 
+class="cmmi-10x-x-109">.</span>5,
+          which is in the feasible range, so the optimal dual value is&#x00A0;-9.
+          </li>
+          <li 
+  class="enumerate" id="x1-28x3">The primal feasible region is compact and the objective function is continuous, so a global
+          minimizer exists. If the constraint is active then its gradient is nonzero, so the gradients of the
+          active constraints are linearly independent at any feasible point. So we can find a
+          global minimizer by finding all KKT points and choosing the best. KKT conditions:
+          <div class="eqnarray">
+          <center class="math-display" >
+          <img 
+src="midterm2015sol39x.png" alt="- 2(x1 - 1 ) + 2ux1 =  0                             (15)
+      - 2x2 + 8ux2  =  0                             (16)
+      2     2
+  u (x 1 + 4x2 - 4)  =  0                             (17)
+                 u  &#x2265;  0                             (18)
+         x2 +  4x2  &#x2264;  1                             (19)
+           1     2
+          " class="math-display" ><a 
+ id="x1-29r15"></a><a 
+ id="x1-29r16"></a><a 
+ id="x1-29r17"></a><a 
+ id="x1-29r18"></a><a 
+ id="x1-29r19"></a></center>
+          </div>Break into cases:
+              <ul class="itemize1">
+              <li class="itemize"><span 
+class="cmmi-10x-x-109">u </span>= 0: From (<a 
+href="#x1-29r15">15<!--tex4ht:ref: q4:KKT1 --></a>) and (<a 
+href="#x1-29r16">16<!--tex4ht:ref: q4:KKT2 --></a>), we have <span 
+class="cmmi-10x-x-109">x </span>= (1<span 
+class="cmmi-10x-x-109">,</span>0), which has value 0. This is a KKT
+              point.
+              </li>
+              <li class="itemize"><span 
+class="cmmi-10x-x-109">u &#x003E; </span>0: From (<a 
+href="#x1-29r16">16<!--tex4ht:ref: q4:KKT2 --></a>), we have <span 
+class="cmmi-10x-x-109">u </span>= 0<span 
+class="cmmi-10x-x-109">.</span>25 or <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">2</span></sub> = 0.
+                 <ul class="itemize2">
+                 <li class="itemize">Assume <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">2</span></sub> = 0: From (<a 
+href="#x1-29r17">17<!--tex4ht:ref: q4:KKT3 --></a>), we get <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmr-8">2</span></sup> + 4<span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">2</span></sub><sup><span 
+class="cmr-8">2</span></sup> = 4, so <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmsy-10x-x-109">±</span>2.
+                   <ul class="itemize3">
+                   <li class="itemize">If <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">1</span></sub> = 2: From (<a 
+href="#x1-29r15">15<!--tex4ht:ref: q4:KKT1 --></a>), we get <span 
+class="cmmi-10x-x-109">u </span>= 0<span 
+class="cmmi-10x-x-109">.</span>5. This is a KKT point with value&#x00A0;-1.
+                   </li>
+                   <li class="itemize">If <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmsy-10x-x-109">-</span>2: From (<a 
+href="#x1-29r15">15<!--tex4ht:ref: q4:KKT1 --></a>), we get <span 
+class="cmmi-10x-x-109">u </span>= 1<span 
+class="cmmi-10x-x-109">.</span>5. This is a KKT point with value&#x00A0;-9.</li></ul>
+                 <!--l. 368--><p class="noindent" >:
+                 </li>
+                 <li class="itemize">Assume <span 
+class="cmmi-10x-x-109">u </span>= 0<span 
+class="cmmi-10x-x-109">.</span>25: From (<a 
+href="#x1-29r15">15<!--tex4ht:ref: q4:KKT1 --></a>), we get <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">1</span></sub> = 4<span 
+class="cmmi-10x-x-109">&#x2215;</span>3, but this violates (<a 
+href="#x1-29r19">19<!--tex4ht:ref: q4:KKT5 --></a>).</li></ul>
+              </li></ul>
+          <!--l. 373--><p class="noindent" >Thus, we have 3 KKT points. The best of these has value -9, which is also the dual value, so
+          this point <span 
+class="cmmi-10x-x-109">x </span>= (<span 
+class="cmsy-10x-x-109">-</span>2<span 
+class="cmmi-10x-x-109">,</span>0) is optimal.</li></ol>
+                                                                                         
+                                                                                         
+     </li>
+     <li 
+  class="enumerate" id="x1-31x5">(10 points) Use AMPL to solve the problem of Question <a 
+href="#x1-63">3<!--tex4ht:ref: q3 --></a> with three different solvers. Make sure
+     you reset before each run.
+     </li>
+     <li 
+  class="enumerate" id="x1-33x6">(10 points) Use AMPL to solve the problem of Question <a 
+href="#x1-104">4<!--tex4ht:ref: q4 --></a> with three different solvers. Make sure
+     you reset before each run.
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                     </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                                </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours: Tuesday 2 &#8211; 5pm, Wednesday 11am&#8211;1pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

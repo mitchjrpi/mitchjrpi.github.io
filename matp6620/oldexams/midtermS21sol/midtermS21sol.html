@@ -1,0 +1,684 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (https://tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (https://tug.org/tex4ht/)"> 
+<!-- html --> 
+<meta name="src" content="midtermS21sol.tex"> 
+<link rel="stylesheet" type="text/css" href="midtermS21sol.css"> 
+</head><body 
+>
+<!--l. 37--><p class="noindent" >
+                                                                                         
+
+                                                                                         
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+ 
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"><col 
+id="TBL-1-2"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td11">&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                                                                          </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-2"  
+class="td11">Name:</td> </tr></table>
+</div>
+<div class="center" 
+>
+<!--l. 44--><p class="noindent" >
+<!--l. 46--><p class="noindent" ><span 
+class="cmr-12x-x-120">MATP6620/ISYE6770</span><br />
+<span 
+class="cmbx-12x-x-120">Integer and Combinatorial Optimization</span><br />
+<span 
+class="cmr-12x-x-120">Spring 2021</span></div>
+<div class="center" 
+>
+<!--l. 51--><p class="noindent" >
+<!--l. 52--><p class="noindent" >Midterm Exam, Thursday, April 1, 2021.<br />
+<span 
+class="cmbx-12">Solutions</span></div>
+<!--l. 55--><p class="indent" >   Please do all six problems. Show all work. You can use your notes and the text books and
+other material linked from the course webpage, on Box, or LMS, or Piazza. You cannot
+use online resources such as chegg or google searches, or software such as AMPL or
+OPL or matlab or desmos. You cannot consult with other students. You may use any
+result from class, the homeworks, or the texts, except where stated. The exam lasts 150
+minutes.
+<!--l. 67--><p class="indent" >   You do not need to print out and fill in this exam, you can write up your solutions separately
+and scan them in. Please write neatly, since there is almost always a loss in picture quality when
+scanning!
+<!--l. 72--><p class="indent" >   Make sure you state the last digit of your RIN in the questions that require it.
+<div class="center" 
+>
+<!--l. 77--><p class="noindent" >
+                                                                                         
+
+                                                                                         
+<div class="tabular"> <table id="TBL-2" class="tabular" 
+ 
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><colgroup id="TBL-2-2g"><col 
+id="TBL-2-2"><col 
+id="TBL-2-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-1"  
+class="td10"> Q1 &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-1-3"  
+class="td11">  /0</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-1"  
+class="td10"> Q2  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-2-3"  
+class="td11"> /15</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-1"  
+class="td10"> Q3  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-3-3"  
+class="td11"> /15</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-1"  
+class="td10"> Q4  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-4-3"  
+class="td11"> /20</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-1"  
+class="td10"> Q5  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-5-3"  
+class="td11"> /20</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-6-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-6-1"  
+class="td10"> Q6  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-6-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-6-3"  
+class="td11"> /30</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-7-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-7-1"  
+class="td10">Total&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-7-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-7-3"  
+class="td11">/100</td></tr></table>
+</div></div>
+                                                                                         
+
+                                                                                         
+      <ol  class="enumerate1" >
+<li 
+  class="enumerate" id="x1-3x1">
+      <!--l. 92--><p class="noindent" >(0 points) Write out the following honor pledge and sign your name:
+           <blockquote class="quote">
+           <!--l. 94--><p class="noindent" >I have neither given nor received any illegal aid on this exam.</blockquote>
+                                                                                         
+
+                                                                                         
+      </li>
+<li 
+  class="enumerate" id="x1-5x2">
+      <!--l. 100--><p class="noindent" >If the last digit of your RIN is 0,3,7, let <span 
+class="cmmi-12">a </span>= 3<span 
+class="cmmi-12">.</span>5. If the last digit of your RIN is 1,4,8, let
+      <span 
+class="cmmi-12">a </span>= 4<span 
+class="cmmi-12">.</span>5. If the last digit of your RIN is 2,5,6,9, let <span 
+class="cmmi-12">a </span>= 5<span 
+class="cmmi-12">.</span>5.
+           <ol  class="enumerate2" >
+<li 
+  class="enumerate" id="x1-7x1">
+           <!--l. 104--><p class="noindent" >(5 points) Let <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0 be a continuous variable and let <span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0 be an integer variable. Give
+           the convex hull of
+<div class="math-display" >
+<img 
+src="midtermS21sol0x.png" alt="{(x,y) : y &#x2264; a + x}.
+" class="math-display" ></div>
+           </li>
+<li 
+  class="enumerate" id="x1-9x2">
+           <!--l. 110--><p class="noindent" >(10 points) Use part (a) to give a valid constraint for the following set:
+<div class="math-display" >
+<img 
+src="midtermS21sol1x.png" alt="{(x, y) &#x2208; &#x211D;2+ &#x00D7; &#x2124;2+ : y1 + &#x2308;a&#x2309;y2 - 2x1 - 5x2 &#x2264; a}.
+" class="math-display" ></div>
+           </li></ol>
+      <!--l. 119--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+                                                                                         
+
+                                                                                         
+           <ol  class="enumerate2" >
+<li 
+  class="enumerate" id="x1-11x1">
+           <!--l. 122--><p class="noindent" >Convex hull is all <span 
+class="cmmi-12">x,y </span>satisfying
+<div class="math-display" >
+<img 
+src="midtermS21sol2x.png" alt="y   -      x  &#x2264;   a
+y   -  1-1fx  &#x2264;   &#x230A;a&#x230B;
+         y,x  &#x2265;   0
+" class="math-display" ></div>
+           </li>
+<li 
+  class="enumerate" id="x1-13x2">
+           <!--l. 131--><p class="noindent" >We have <span 
+class="cmmi-12">y </span>= <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> + <span 
+class="cmsy-10x-x-120">&#x2308;</span><span 
+class="cmmi-12">a</span><span 
+class="cmsy-10x-x-120">&#x2309;</span><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub>, <span 
+class="cmmi-12">x </span>= 2<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> + 5<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub>. Since <span 
+class="cmmi-12">f </span>= 0<span 
+class="cmmi-12">.</span>5, the cut is
+<div class="math-display" >
+<img 
+src="midtermS21sol3x.png" alt="y1 + &#x2308;a&#x2309;y2 - 4x1 - 10x2  &#x2264;  &#x230A;a&#x230B;.
+" class="math-display" ></div>
+           <!--l. 139--><p class="noindent" >Notes:
+               <ul class="itemize1">
+               <li class="itemize">
+               <!--l. 141--><p class="noindent" >This is the round-down version of the Gomory mixed integer cut.
+               </li>
+               <li class="itemize">
+               <!--l. 142--><p class="noindent" >We can&#8217;t use the fractional form of the Gomory mixed integer cut, because
+               we don&#8217;t have equality with <span 
+class="cmmi-12">y </span>= <span 
+class="cmmi-12">a </span>+ <span 
+class="cmmi-12">x</span>.</li></ul>
+                                                                                         
+
+                                                                                         
+           </li></ol>
+                                                                                         
+
+                                                                                         
+      </li>
+<li 
+  class="enumerate" id="x1-15x3">
+      <!--l. 160--><p class="noindent" >Consider the matrices
+<div class="math-display" >
+<img 
+src="midtermS21sol4x.png" alt="       &#x230A; 1  0  1 &#x230B;             &#x230A;  1  0  1 &#x230B;             &#x230A;  1  1  0 &#x230B;
+       &#x2308;         &#x2309;             &#x2308;          &#x2309;             &#x2308;          &#x2309;
+M1  =    1  1  0   ,     M2  =    0  1  1   ,    M3   =    1  0  1   .
+         0  1  1                  1  1  0                  0  1  1
+" class="math-display" ></div>
+      <!--l. 175--><p class="noindent" >If the last digit of your RIN is 0,1,2, let <span 
+class="cmmi-12">M </span>= <span 
+class="cmmi-12">M</span><sub><span 
+class="cmr-8">1</span></sub>. If the last digit of your RIN is 3,4,5,6, let
+      <span 
+class="cmmi-12">M </span>= <span 
+class="cmmi-12">M</span><sub><span 
+class="cmr-8">2</span></sub>. If the last digit of your RIN is 7,8,9, let <span 
+class="cmmi-12">M </span>= <span 
+class="cmmi-12">M</span><sub><span 
+class="cmr-8">3</span></sub>.
+           <ol  class="enumerate2" >
+<li 
+  class="enumerate" id="x1-17x1">
+           <!--l. 179--><p class="noindent" >(5 points) Show <span 
+class="cmmi-12">M </span>is not totally unimodular.
+           </li>
+<li 
+  class="enumerate" id="x1-19x2">
+           <!--l. 180--><p class="noindent" >(10 points) Find a subset <span 
+class="cmmi-12">S </span>of the entries of <span 
+class="cmmi-12">M </span>with the property that the matrix
+           can be turned into a totally unimodular matrix by changing the sign of the entries
+           in&#x00A0;<span 
+class="cmmi-12">S</span>.</li></ol>
+      <!--l. 185--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <ol  class="enumerate2" >
+<li 
+  class="enumerate" id="x1-21x1">
+           <!--l. 188--><p class="noindent" >We have det(<span 
+class="cmmi-12">M</span>) = <span 
+class="cmsy-10x-x-120">±</span>2, with the sign depending on the particular <span 
+class="cmmi-12">M</span>.
+           </li>
+<li 
+  class="enumerate" id="x1-23x2">
+                                                                                         
+
+                                                                                         
+           <!--l. 190--><p class="noindent" >Almost any sign change will work. Eg, if we introduce exactly one <span 
+class="cmsy-10x-x-120">-</span>1 in each
+           column then we have an incidence matrix for a directed graph.</li></ol>
+                                                                                         
+
+                                                                                         
+      </li>
+<li 
+  class="enumerate" id="x1-25x4">
+      <!--l. 209--><p class="noindent" >(20 points) All the objective function coefficients <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">j</span></sub> in the following feasible integer program
+      are integral:
+<div class="math-display" >
+<img 
+src="midtermS21sol5x.png" alt="      n   T
+minx&#x2208;&#x2124;   c  x
+s.t.       Ax   =  b
+            x  &#x2265;  0
+" class="math-display" ></div>
+      <!--l. 219--><p class="noindent" >where <span 
+class="cmmi-12">A </span>is <span 
+class="cmmi-12">m </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>and all vectors are dimensioned appropriately. The dual to the LP
+      relaxation to this problem can be written
+<div class="math-display" >
+<img 
+src="midtermS21sol6x.png" alt="maxy &#x2208;&#x211D;m,z&#x2208;&#x211D;n   bTy
+s.t.           AT y  +   z  =   c
+                         z  &#x2265;   0
+" class="math-display" ></div>
+      <!--l. 228--><p class="noindent" >Assume (<span class="bar-css"><span 
+class="cmmi-12">y</span></span><span 
+class="cmmi-12">,</span><span class="bar-css"><span 
+class="cmmi-12">z</span></span>) is a feasible solution to the dual, with <span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span class="bar-css"><span 
+class="cmmi-12">y</span></span> non-integral. Let <span 
+class="cmmi-12">f</span><sub>
+<span 
+class="cmr-8">0</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0 denote the
+      fractional part of <span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span class="bar-css"><span 
+class="cmmi-12">y</span></span> and let <span 
+class="cmmi-12">f</span><sub>
+<span 
+class="cmmi-8">i</span></sub> denote the fractional part of <span class="bar-css"><span 
+class="cmmi-12">z</span></span><sub><span 
+class="cmmi-8">i</span></sub> for <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span>. Show that any
+      feasible integer solution must satisfy
+                                                                                         
+
+                                                                                         
+<div class="math-display" >
+<img 
+src="midtermS21sol7x.png" alt="      &#x2211;n
+f0 +      fixi &#x2265;  1.
+
+      i=1
+" class="math-display" ></div>
+      <!--l. 236--><p class="noindent" >(Hint: consider <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x</span>.)
+      <!--l. 238--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 247--><p class="noindent" >From dual feasibility, we have
+<div class="math-display" >
+<img 
+src="midtermS21sol8x.png" alt="          (        )                                        &#x2211;n
+cTx  = xT  AT ¯y + ¯z  =  bT¯y + ¯zT x =  &#x230A;bT¯y&#x230B; + f0 + &#x230A;z¯&#x230B;Tx +     fixi
+                                                            i=1
+" class="math-display" ></div>
+      <!--l. 257--><p class="noindent" >Now, <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">-&#x230A;</span><span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span class="bar-css"><span 
+class="cmmi-12">y</span></span><span 
+class="cmsy-10x-x-120">&#x230B; </span>is integral and strictly greater than <span 
+class="cmsy-10x-x-120">&#x230A;</span><span class="bar-css"><span 
+class="cmmi-12">z</span></span><span 
+class="cmsy-10x-x-120">&#x230B;</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0. Hence <span 
+class="cmmi-12">f</span><sub>
+<span 
+class="cmr-8">0</span></sub> + <span 
+class="cmex-10x-x-120">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">i</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmmi-8">n</span></sup><span 
+class="cmmi-12">f</span><sub>
+<span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">x </span>is
+      integral and at least equal to one, so the desired result follows.
+                                                                                         
+
+                                                                                         
+      </li>
+<li 
+  class="enumerate" id="x1-27x5">
+      <!--l. 294--><p class="noindent" >(20 points) If the last digit of your RIN is even, let <span 
+class="cmmi-12">S </span>= <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">c,j,l</span><span 
+class="cmsy-10x-x-120">}</span>. If the last digit of your RIN
+      is odd, let <span 
+class="cmmi-12">S </span>= <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">d,k,p</span><span 
+class="cmsy-10x-x-120">}</span>.
+      <div class="center" 
+>
+  <img src=q5.png>
+</div>
+           <ol  class="enumerate2" >
+<li 
+  class="enumerate" id="x1-29x1">
+           <!--l. 392--><p class="noindent" >(5 points) Show that the set <tspan font-family="cmmi" font-size="12">S </tspan>is a maximal node packing in this graph.
+           </li>
+<li 
+  class="enumerate" id="x1-31x2">
+           <!--l. 394--><p class="noindent" >(5 points) The clique polytope is the convex hull of all incidence vectors <tspan font-family="cmmi" font-size="12">x </tspan><tspan font-family="cmsy" font-size="10">&#x2208; </tspan><tspan font-family="msbm" font-size="10">B</tspan><sup><tspan font-family="cmr" font-size="8">11</tspan></sup>
+           of cliques on this graph. Show the clique polytope has dimension&#x00A0;11.
+           </li>
+<li 
+  class="enumerate" id="x1-33x3">
+           <!--l. 397--><p class="noindent" >(10 points) Show that the inequality <tspan font-family="cmex" font-size="10">&#x2211;</tspan>
+  <sub><tspan font-family="cmmi" font-size="8">i</tspan><tspan font-family="cmsy" font-size="8">&#x2208;</tspan><tspan font-family="cmmi" font-size="8">S</tspan></sub><tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmmi" font-size="8">i</tspan></sub>  <tspan font-family="cmsy" font-size="10">&#x2264; </tspan>1 defines a facet of the clique
+           polytope.</li></ol>
+      <!--l. 402--><p class="noindent" ><tspan font-family="cmbx" font-size="12">Solution:</tspan>
+                                                                                         
+
+                                                                                         
+           <ol  class="enumerate2" >
+<li 
+  class="enumerate" id="x1-35x1">
+           <!--l. 405--><p class="noindent" >It is clear that every other node is adjacent to at least one node in&#x00A0;<tspan font-family="cmmi" font-size="12">S</tspan>, so the set
+           <tspan font-family="cmmi" font-size="12">S </tspan>is a maximal node packing.
+           </li>
+<li 
+  class="enumerate" id="x1-37x2">
+           <!--l. 408--><p class="noindent" >Any vertex on its own is a clique. The empty set is a clique. These 12 incidence
+           vectors are affinely independent, so the set is fill-dimensional.
+           </li>
+<li 
+  class="enumerate" id="x1-39x3">
+           <!--l. 412--><p class="noindent" >We just consider the case where <tspan font-family="cmmi" font-size="12">S </tspan>= <tspan font-family="cmsy" font-size="10">{</tspan><tspan font-family="cmmi" font-size="12">c,j,l</tspan><tspan font-family="cmsy" font-size="10">}</tspan>, the other case is similar.
+           <!--l. 414--><p class="noindent" >11 cliques that satisfy the constraint at equality are:
+<div class="math-display" >
+<img 
+src="midtermS21sol9x.png" alt="{c}, {j}, {l}, {a,c}, {b,j}, {d, c}, {f, l}, {g,c}, {h,j},{k, l}, {p,c}.
+" class="math-display" ></div>
+           <!--l. 420--><p class="noindent" >The incidence vectors of these 11 cliques are linearly independent, so they are affinely
+           independent, so the inequality defines a face of dimension at least 10. Since the set is
+           full-dimensional and the inequality is nontrivial, this is sufficient to argue that we have a
+           facet.
+                                                                                         
+
+                                                                                         
+           <!--l. 430--><p class="noindent" ><tspan font-family="cmti" font-size="12">Alternatively</tspan>, could prove this using lifting:
+           <!--l. 432--><p class="noindent" >First, argue that when we are in 3-space, with only variables <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmmi" font-size="8">c</tspan></sub>, <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmmi" font-size="8">j</tspan></sub>, <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmmi" font-size="8">l</tspan></sub>, we do have a
+           facet. (Exercise.)
+           <!--l. 435--><p class="noindent" >Then as we lift to include each other vertex <tspan font-family="cmmi" font-size="12">i</tspan>, we get the subproblem
+<div class="math-display" >
+<img 
+src="midtermS21sol10x.png" alt="&#x03B6; = max  {x + x  + x  : x =  1, plus part of the graph} ,
+           c    j    l   i
+" class="math-display" ></div>
+           <!--l. 439--><p class="noindent" >which has optimal value 1. So lifting coefficient for <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmmi" font-size="8">i</tspan></sub> is <tspan font-family="cmmi" font-size="12">&#x03C0;</tspan><sub><tspan font-family="cmmi" font-size="8">i</tspan></sub> = 1 <tspan font-family="cmsy" font-size="10">- </tspan>1 = 0. (Should show
+           this more carefully for full credit.)
+           <!--l. 442--><p class="noindent" >So overall lifted constraint is the given constraint.</li></ol>
+                                                                                         
+
+                                                                                         
+      </li>
+<li 
+  class="enumerate" id="x1-41x6">
+      <!--l. 453--><p class="noindent" >(30 points) Define the four polyhedra in <tspan font-family="msbm" font-size="10">&#x211D;</tspan><sup><tspan font-family="cmr" font-size="8">3</tspan></sup>:
+<div class="math-display" >
+<img 
+src="midtermS21sol11x.png" alt="Q1  =   {x &#x2208; &#x211D;3  : x1 + x2 + x3 &#x2264; 1, - x1 &#x2264; 0, - x2 &#x2264; 0, - x3 &#x2264; 0}
+
+Q2  =   {x &#x2208; &#x211D;3  : - x1 + x2 &#x2264; 0, - x2 + x3 &#x2264; 0, x1 &#x2264; 1, - x1 &#x2264; 0, - x2 &#x2264; 0, - x3 &#x2264; 0}
+               3
+Q3  =   {x &#x2208; &#x211D;   : x1 - x2 &#x2264; 0, x2 - x3 &#x2264; 0, x3 &#x2264; 1, - x1 &#x2264; 0, - x2 &#x2264; 0, - x3 &#x2264; 0}
+Q4  =   {x &#x2208; &#x211D;3  : - x1 + x3 &#x2264; 0, x1 - x2 &#x2264; 0, x2 &#x2264; 1, - x1 &#x2264; 0, - x2 &#x2264; 0, - x3 &#x2264; 0}
+" class="math-display" ></div>
+      <!--l. 470--><p class="noindent" >If the last digit of your RIN is 0,2,5,9, let <tspan font-family="cmmi" font-size="12">P </tspan>= <tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x222A; </tspan><tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> and <span class="bar-css"><tspan font-family="cmmi" font-size="12">x</tspan></span> = (1<tspan font-family="cmmi" font-size="12">, </tspan>0<tspan font-family="cmmi" font-size="12">, </tspan>1). If the last digit of
+      your RIN is 1,6,8, let <tspan font-family="cmmi" font-size="12">P </tspan>= <tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x222A;</tspan><tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">3</tspan></sub> and <span class="bar-css"><tspan font-family="cmmi" font-size="12">x</tspan></span> = (1<tspan font-family="cmmi" font-size="12">, </tspan>0<tspan font-family="cmmi" font-size="12">, </tspan>1). If the last digit of your RIN is 3,4,7, let
+      <tspan font-family="cmmi" font-size="12">P </tspan>= <tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x222A; </tspan><tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">4</tspan></sub> and <span class="bar-css"><tspan font-family="cmmi" font-size="12">x</tspan></span> = (0<tspan font-family="cmmi" font-size="12">, </tspan>1<tspan font-family="cmmi" font-size="12">, </tspan>1).
+           <ol  class="enumerate2" >
+<li 
+  class="enumerate" id="x1-43x1">
+           <!--l. 479--><p class="noindent" >(10 points) Set up the cut generation linear programming problem to find valid
+           inequalities for <tspan font-family="cmmi" font-size="12">P </tspan>that are violated by&#x00A0;<span class="bar-css"><tspan font-family="cmmi" font-size="12">x</tspan></span>.
+           </li>
+<li 
+  class="enumerate" id="x1-45x2">
+           <!--l. 482--><p class="noindent" >(10 points) If the last digit of your RIN is 0,2,5,9, show that <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> <tspan font-family="cmsy" font-size="10">- </tspan><tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> + <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">3</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x2264; </tspan>1 is
+           valid for&#x00A0;<tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> and&#x00A0;<tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub>.
+           <!--l. 486--><p class="noindent" >If the last digit of your RIN is 1,6,8, show that <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> <tspan font-family="cmsy" font-size="10">- </tspan><tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> + <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">3</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x2264; </tspan>1 is valid for&#x00A0;<tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub>
+           and&#x00A0;<tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">3</tspan></sub>.
+           <!--l. 489--><p class="noindent" >If the last digit of your RIN is 3,4,7, show that <tspan font-family="cmsy" font-size="10">-</tspan><tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> + <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> + <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">3</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x2264; </tspan>1 is valid for&#x00A0;<tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub>
+           and&#x00A0;<tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">4</tspan></sub>.
+                                                                                         
+
+                                                                                         
+           </li>
+<li 
+  class="enumerate" id="x1-47x3">
+           <!--l. 492--><p class="noindent" >(10 points) Show that the inequality in part (b) corresponds to a feasible solution
+           to your LP in part&#x00A0;(a).</li></ol>
+      <!--l. 497--><p class="noindent" ><tspan font-family="cmbx" font-size="12">Solution:</tspan>
+           <ol  class="enumerate2" >
+<li 
+  class="enumerate" id="x1-49x1">
+           <!--l. 500--><p class="noindent" >We are in the setting in the notes, so:
+<div class="math-display" >
+<img 
+src="midtermS21sol12x.png" alt="              n    j     j
+Qj  =  {x &#x2208; &#x211D; + : A x &#x2264;  b}   for j &#x2208; 1,...,q.
+" class="math-display" ></div>
+           <!--l. 504--><p class="noindent" >Our feasible region is the union of polyhedra. The general form of the cut generation LP
+           to find a valid cut <tspan font-family="cmmi" font-size="12">&#x03C0;</tspan><sup><tspan font-family="cmmi" font-size="8">T</tspan> </sup><tspan font-family="cmmi" font-size="12">x </tspan><tspan font-family="cmsy" font-size="10">&#x2264; </tspan><tspan font-family="cmmi" font-size="12">&#x03C0;</tspan><sub>
+<tspan font-family="cmr" font-size="8">0</tspan></sub>:
+<div class="math-display" >
+<img 
+src="midtermS21sol13x.png" alt="max      j     &#x03C0;T ¯x - &#x03C0;0
+    &#x03C0;,&#x03C0;0,&#x03BB;                       j T  j
+subject to             &#x03C0;  &#x2264;   (Aj)T &#x03BB;j   for j = 1,...,q
+                      &#x03C0;0  &#x2265;   (b)  &#x03BB;    for j = 1,...,q
+            &#x2211;         &#x03BB;j  &#x2265;   0   for j = 1,...,q
+              qj=1(ej)T&#x03BB;j  =   1
+" class="math-display" ></div>
+                                                                                         
+
+                                                                                         
+           <!--l. 522--><p class="noindent" >The three cases:
+               <ul class="itemize1">
+               <li class="itemize">
+               <!--l. 524--><p class="noindent" ><tspan font-family="cmmi" font-size="12">P </tspan>= <tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x222A; </tspan><tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub>:
+<div class="math-display" >
+<img 
+src="midtermS21sol14x.png" alt="max &#x03C0;&#x2208;&#x211D;3,&#x03C0;0,&#x03BB;1&#x2208;&#x211D;,&#x03BB;4&#x2208;&#x211D;3       &#x03C0;2 + &#x03C0;3 - &#x03C0;0
+subject to                           &#x03C0;1  &#x2264;  &#x03BB;1
+                                     &#x03C0;2  &#x2264;  &#x03BB;1
+                                              1
+                                     &#x03C0;3  &#x2264;  &#x03BB;  2    2
+                                     &#x03C0;1  &#x2264;  - &#x03BB;1 + &#x03BB;3
+                                     &#x03C0;2  &#x2264;  &#x03BB;21 - &#x03BB;22
+                                     &#x03C0;3  &#x2264;  &#x03BB;22
+                                     &#x03C0;0  &#x2265;  &#x03BB;1
+                                              2
+                            1  2   2 &#x03C0;02  &#x2265;  &#x03BB; 3
+                           &#x03BB; ,&#x03BB;1,&#x03BB; 2,&#x03BB;3  &#x2265;  0
+                      &#x03BB;1 + &#x03BB;21 + &#x03BB;22 + &#x03BB;23  =  1.
+" class="math-display" ></div>
+               </li>
+               <li class="itemize">
+               <!--l. 541--><p class="noindent" ><tspan font-family="cmmi" font-size="12">P </tspan>= <tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x222A; </tspan><tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">3</tspan></sub>:
+<div class="math-display" >
+<img 
+src="midtermS21sol15x.png" alt="max &#x03C0;&#x2208;&#x211D;3,&#x03C0;0,&#x03BB;1&#x2208;&#x211D;,&#x03BB;4&#x2208;&#x211D;3       &#x03C0;2 + &#x03C0;3 - &#x03C0;0
+subject to                           &#x03C0;1  &#x2264;  &#x03BB;1
+                                     &#x03C0;   &#x2264;  &#x03BB;1
+                                      2       1
+                                     &#x03C0;3  &#x2264;  &#x03BB; 3
+                                     &#x03C0;1  &#x2264;  &#x03BB; 1
+                                     &#x03C0;2  &#x2264;  - &#x03BB;31 + &#x03BB;32
+                                     &#x03C0;3  &#x2264;  - &#x03BB;3 + &#x03BB;3
+                                     &#x03C0;   &#x2265;  &#x03BB;1 2    3
+                                      0       3
+                                     &#x03C0;0  &#x2265;  &#x03BB; 3
+                           &#x03BB;1,&#x03BB;31,&#x03BB;32,&#x03BB;33  &#x2265;  0
+                      &#x03BB;1 + &#x03BB;31 + &#x03BB;32 + &#x03BB;33  =  1.
+" class="math-display" ></div>
+               </li>
+               <li class="itemize">
+               <!--l. 558--><p class="noindent" ><tspan font-family="cmmi" font-size="12">P </tspan>= <tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x222A; </tspan><tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">4</tspan></sub>:
+<div class="math-display" >
+<img 
+src="midtermS21sol16x.png" alt="max &#x03C0;&#x2208;&#x211D;3,&#x03C0;0,&#x03BB;1&#x2208;&#x211D;,&#x03BB;4&#x2208;&#x211D;3       &#x03C0;2 + &#x03C0;3 - &#x03C0;0
+subject to                           &#x03C0;1  &#x2264;  &#x03BB;1
+                                     &#x03C0;2  &#x2264;  &#x03BB;1
+                                     &#x03C0;3  &#x2264;  &#x03BB;1
+                                               4    4
+                                     &#x03C0;1  &#x2264;  - &#x03BB;14 + &#x03BB;24
+                                     &#x03C0;2  &#x2264;  - &#x03BB;2 + &#x03BB;3
+                                     &#x03C0;3  &#x2264;  &#x03BB;41
+                                     &#x03C0;0  &#x2265;  &#x03BB;1
+                                     &#x03C0;0  &#x2265;  &#x03BB;4
+                            1  4   4  4       3
+                       1   &#x03BB;4,&#x03BB;1,&#x03BB;4 2,&#x03BB;34  &#x2265;  0
+                      &#x03BB; +  &#x03BB;1 + &#x03BB;2 + &#x03BB;3  =  1.
+" class="math-display" ></div>
+               </li></ul>
+                                                                                         
+
+                                                                                         
+           </li>
+<li 
+  class="enumerate" id="x1-51x2">
+           <!--l. 582--><p class="noindent" >Three cases:
+               <ul class="itemize1">
+               <li class="itemize">
+               <!--l. 584--><p class="noindent" ><tspan font-family="cmmi" font-size="12">P </tspan>= <tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x222A; </tspan><tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub>:
+               <!--l. 586--><p class="noindent" >Note that the given inequality is valid for <tspan font-family="cmmi" font-size="12">P </tspan>since:
+<div class="math-display" >
+<img 
+src="midtermS21sol17x.png" alt="x &#x2208; Q1     =&#x21D2;     x1 + x2 + x3 &#x2264; 1, - x2 &#x2264; 0   = &#x21D2;     x1 - x2 + x3 &#x2264; 1
+" class="math-display" ></div>
+               <!--l. 592--><p class="noindent" >and
+<div class="math-display" >
+<img 
+src="midtermS21sol18x.png" alt="x &#x2208; Q2    =&#x21D2;     - x2 + x3 &#x2264; 0, x1 &#x2264; 1    =&#x21D2;     x1 - x2 + x3 &#x2264; 1.
+" class="math-display" ></div>
+               </li>
+               <li class="itemize">
+               <!--l. 598--><p class="noindent" ><tspan font-family="cmmi" font-size="12">P </tspan>= <tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x222A; </tspan><tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">3</tspan></sub>:
+               <!--l. 600--><p class="noindent" >Note that the given inequality is valid for <tspan font-family="cmmi" font-size="12">P </tspan>since:
+<div class="math-display" >
+<img 
+src="midtermS21sol19x.png" alt="x &#x2208; Q1     =&#x21D2;     x1 + x2 + x3 &#x2264; 1, - x2 &#x2264; 0   = &#x21D2;     x1 - x2 + x3 &#x2264; 1
+" class="math-display" ></div>
+               <!--l. 606--><p class="noindent" >and
+<div class="math-display" >
+<img 
+src="midtermS21sol20x.png" alt="x &#x2208; Q      =&#x21D2;     x  - x  &#x2264; 0, x &#x2264;  1    =&#x21D2;     x  - x  + x  &#x2264; 1.
+      3            1    2       3                1    2    3
+" class="math-display" ></div>
+               </li>
+               <li class="itemize">
+               <!--l. 612--><p class="noindent" ><tspan font-family="cmmi" font-size="12">P </tspan>= <tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x222A; </tspan><tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">4</tspan></sub>:
+               <!--l. 614--><p class="noindent" >Note that the given inequality is valid for <tspan font-family="cmmi" font-size="12">P </tspan>since:
+<div class="math-display" >
+<img 
+src="midtermS21sol21x.png" alt="x &#x2208; Q1    =&#x21D2;     x1 + x2 + x3 &#x2264; 1, - x1 &#x2264; 0    =&#x21D2;     - x1 + x2 + x3 &#x2264; 1
+" class="math-display" ></div>
+               <!--l. 620--><p class="noindent" >and
+<div class="math-display" >
+<img 
+src="midtermS21sol22x.png" alt="x &#x2208; Q4    =&#x21D2;     - x1 + x3 &#x2264; 0, x2 &#x2264; 1    =&#x21D2;     - x1 + x2 + x3 &#x2264; 1.
+" class="math-display" ></div>
+               </li></ul>
+                                                                                         
+
+                                                                                         
+           </li>
+<li 
+  class="enumerate" id="x1-53x3">
+           <!--l. 631--><p class="noindent" >Three cases:
+               <ul class="itemize1">
+               <li class="itemize">
+               <!--l. 633--><p class="noindent" ><tspan font-family="cmmi" font-size="12">P </tspan>= <tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x222A; </tspan><tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub>: We rescale the inequality so
+<div class="math-display" >
+<img 
+src="midtermS21sol23x.png" alt="&#x03C0;1 = 1-, &#x03C0;2 = - 1, &#x03C0;3 = 1-, &#x03C0;0 = 1-.
+     3         3       3       3
+" class="math-display" ></div>
+               <!--l. 638--><p class="noindent" >This gives a positive objective function value in the CGLP, and it is feasible
+               with
+<div class="math-display" >
+<img 
+src="midtermS21sol24x.png" alt="     1       1               1
+&#x03BB;1 = --, &#x03BB;22 =--, &#x03BB;21 = 0, &#x03BB;23 =-.
+     3       3               3
+" class="math-display" ></div>
+               </li>
+               <li class="itemize">
+               <!--l. 645--><p class="noindent" ><tspan font-family="cmmi" font-size="12">P </tspan>= <tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x222A; </tspan><tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">3</tspan></sub>: We rescale the inequality so
+<div class="math-display" >
+                                                                                         
+
+                                                                                         
+<img 
+src="midtermS21sol25x.png" alt="     1-        1-      1-      1-
+&#x03C0;1 = 3 , &#x03C0;2 = - 3, &#x03C0;3 = 3 , &#x03C0;0 = 3 .
+" class="math-display" ></div>
+               <!--l. 650--><p class="noindent" >This gives a positive objective function value in the CGLP, and it is feasible
+               with
+<div class="math-display" >
+<img 
+src="midtermS21sol26x.png" alt=" 1   1-  3   1-   3      3   1-
+&#x03BB;  = 3 , &#x03BB;1 = 3 , &#x03BB; 2 = 0, &#x03BB;3 = 3 .
+" class="math-display" ></div>
+               </li>
+               <li class="itemize">
+               <!--l. 657--><p class="noindent" ><tspan font-family="cmmi" font-size="12">P </tspan>= <tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x222A; </tspan><tspan font-family="cmmi" font-size="12">Q</tspan><sub><tspan font-family="cmr" font-size="8">4</tspan></sub>: We rescale the inequality so
+<div class="math-display" >
+<img 
+src="midtermS21sol27x.png" alt="       1       1       1       1
+&#x03C0;1 = - -, &#x03C0;2 = -, &#x03C0;3 = --, &#x03C0;0 =--.
+       3       3       3       3
+" class="math-display" ></div>
+               <!--l. 662--><p class="noindent" >This gives a positive objective function value in the CGLP, and it is feasible
+               with
+<div class="math-display" >
+<img 
+src="midtermS21sol28x.png" alt="&#x03BB;1 = 1-, &#x03BB;4 = 1-, &#x03BB;4 = 0, &#x03BB;4 = 1-.
+     3   1   3    2      3   3
+" class="math-display" ></div>
+               </li></ul>
+           </li></ol>
+      </li></ol>
+    
+</body></html> 
+
+                                                                                         
+
+                                                                                         
+                                                                                         
+
+

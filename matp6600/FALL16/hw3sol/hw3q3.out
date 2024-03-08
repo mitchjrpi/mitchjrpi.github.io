@@ -1,0 +1,30 @@
+ILOG AMPL 11.000, licensed to "- Site Replacement Keys 3.2".
+AMPL Version 20080102 (Darwin 8.10.1)
+ampl: model hw3q3.run;
+_total_solve_elapsed_time = 0
+
+Solve exact L1 formulation with no error
+CPLEX 12.6.2.0: optimal solution; objective 10.22222222
+8 dual simplex iterations (6 in phase I)
+x [*] :=
+1   4.88889
+2   0
+3   0
+4  -5.33333
+;
+
+_total_solve_elapsed_time = 0.04
+
+ampl: display exactfit;
+exactfit [*] :=
+1  0.296296
+2  0.259259
+;
+
+ampl: display calc_tplus, calc_tminus;
+: calc_tplus calc_tminus    :=
+1   1          0
+2   0.574074   0.425926
+3   0.666667   0.333333
+4   0          1
+;

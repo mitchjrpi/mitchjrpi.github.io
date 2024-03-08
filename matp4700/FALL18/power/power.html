@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="power.tex"> 
+<meta name="date" content="2018-10-02 19:39:00"> 
+<link rel="stylesheet" type="text/css" href="power.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 32--><p class="noindent" >
+<!--l. 34--><p class="noindent" ><span class="underline"><span 
+class="cmbx-12x-x-120">Case Study:</span></span>
+<!--l. 38--><p class="noindent" ><span class="underline"><span 
+class="cmbx-12x-x-120">ZICO Power</span></span> </div>
+<div class="center" 
+>
+<!--l. 42--><p class="noindent" >
+<!--l. 44--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmr-12">MATP4700 Math Models of Operations Research</span></a>
+<!--l. 46--><p class="noindent" ><span 
+class="cmr-12">Fall 2018</span>
+</div>
+<!--l. 51--><p class="noindent" ><span 
+class="cmti-10x-x-109">Students may work in groups of up to three people. You may consult your textbooks, your notes, online</span>
+<span 
+class="cmti-10x-x-109">information, the TA, and me. You may not solicit help from other sources.</span>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Introduction</h3>
+<!--l. 59--><p class="noindent" >ZICO Power operates the power grid for Clark County. They employ multiple methods for generating
+power: solar arrays, wind farms, hydropower, and a gas-fired steam plant. They have forecasted the wind
+and solar power available for the next week and wish to decide how to meet the forecasted
+demand.
+<!--l. 65--><p class="indent" >   All the forecasts are for 6-hour intervals, so power generation decisions are needed for 28 periods.
+The forecasts for demand, solar availability, and wind power availability can be found on
+the course webpage and on LMS. At present, ZICO operates a single wind farm and a single
+solar array. The hydro system consists of four reservoirs, networked together. Water from
+reservoir A flows into reservoir B, which in turn flows into reservoir&#x00A0;C. In addition, water from
+reservoir D also flows into reservoir&#x00A0;C. Solar power can be used to either meet the forecasted
+demand and/or to pump water uphill from reservoir C to reservoir&#x00A0;D. Wind power can be
+used to either meet the forecasted demand and/or to pump water uphill from reservoir B to
+reservoir&#x00A0;A.
+<div class="center" 
+>
+<!--l. 82--><p class="noindent" >
+                                                                                         
+                                                                                         
+<!--l. 220--><p class="noindent" >  <img src=reservoirs.png> 
+</div>
+<!--l. 222--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-20002"></a>Objective function</h3>
+<!--l. 224--><p class="noindent" >ZICO incurs costs to generate power from the steam plant. In particular, to generate <span 
+class="cmmi-10x-x-109">x</span>MWh
+costs
+   <center class="math-display" >
+<img 
+src="power0x.png" alt="max {12x, 15x- 30,20x - 130}.
+" class="math-display" ></center>
+<!--l. 228--><p class="nopar" >
+The other costs incurred by ZICO are either fixed costs or negligible, and can be ignored.
+<!--l. 233--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-30003"></a>Constraints</h3>
+<!--l. 235--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">3.1   </span> <a 
+ id="x1-40003.1"></a>The steam plant</h4>
+<!--l. 237--><p class="noindent" >The steam plant can generate at most 30MWh in a 6 hour interval. The plant can increase or decrease its
+production by at most 3MWh from one 6-hour period to the next; this is its maximum ramp-up or
+ramp-down rate.
+<!--l. 241--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">3.2   </span> <a 
+ id="x1-50003.2"></a>Meet demand</h4>
+<!--l. 243--><p class="noindent" >Demand is measured in MWh and has to be met in each 6 hour period. The output of the solar
+array, the wind farm, and the steam plant are measured in MWh. The total water flowing out
+of a reservoir and used for power generation in a six-hour period is measured in acre-feet,
+and has to be scaled to give the power generation in MWh. The conversion factors are as
+follows:
+                                                                                         
+                                                                                         
+<div class="center" 
+>
+<!--l. 251--><p class="noindent" >
+<div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><colgroup id="TBL-1-2g"><col 
+id="TBL-1-2"></colgroup><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td11">Reservoir</td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-2"  
+class="td11">MWh per acre-foot of water</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-1"  
+class="td11">   A     </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-2"  
+class="td11">           1.7                 </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-3-1"  
+class="td11"> B </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-3-2"  
+class="td11"> 1.4</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-4-1"  
+class="td11">    C      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-4-2"  
+class="td11">           1.8                 </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-5-1"  
+class="td11">   D     </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-5-2"  
+class="td11">           1.7                 </td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-6-1"  
+class="td11">        </td></tr></table></div></div>
+<!--l. 263--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">3.3   </span> <a 
+ id="x1-60003.3"></a>Pumping water</h4>
+<!--l. 265--><p class="noindent" >Some of the power output from the solar array can be used to pump water from Reservoir C to
+Reservoir&#x00A0;D, instead of being used to meet the system-wide demand.
+<!--l. 269--><p class="indent" >   Similarly, some of the power output from the wind farm can be used to pump water from Reservoir B
+to Reservoir&#x00A0;A, instead of being used to meet the system-wide demand.
+<!--l. 273--><p class="indent" >   The number of acre-feet pumped per MWh of output are as follows:
+<div class="center" 
+>
+<!--l. 275--><p class="noindent" >
+<div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><colgroup id="TBL-2-2g"><col 
+id="TBL-2-2"></colgroup><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-1"  
+class="td11">     Reservoir        </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-2"  
+class="td11">Acre-feet of water pumped per MWh of energy</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-1"  
+class="td11">B to A by wind farm</td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-2"  
+class="td11">                  0.4                             </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-1"  
+class="td11">C to D by solar array</td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-2"  
+class="td11">                  0.5                             </td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-1"  
+class="td11">                  </td></tr></table></div></div>
+<!--l. 290--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">3.4   </span> <a 
+ id="x1-70003.4"></a>Water levels in the reservoirs</h4>
+<!--l. 292--><p class="noindent" >Various parameters associated with the reservoirs are given in the next table.
+<div class="center" 
+>
+<!--l. 294--><p class="noindent" >
+<div class="tabular"> <table id="TBL-3" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-3-1g"><col 
+id="TBL-3-1"></colgroup><colgroup id="TBL-3-2g"><col 
+id="TBL-3-2"></colgroup><colgroup id="TBL-3-3g"><col 
+id="TBL-3-3"></colgroup><colgroup id="TBL-3-4g"><col 
+id="TBL-3-4"></colgroup><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-3-1-1"  
+class="td11">Reservoir</td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-1-2"  
+class="td11">Initial water level</td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-1-3"  
+class="td11">Capacity</td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-1-4"  
+class="td11">Maximum release rate</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-3-2-1"  
+class="td11">   A     </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-2-2"  
+class="td11">      200         </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-2-3"  
+class="td11">  400    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-2-4"  
+class="td11">        15             </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-3-3-1"  
+class="td11"> B </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-3-2"  
+class="td11"> 150 </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-3-3"  
+class="td11"> 350 </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-3-4"  
+class="td11"> 14</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-3-4-1"  
+class="td11">    C      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-4-2"  
+class="td11">      400         </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-4-3"  
+class="td11">  600    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-4-4"  
+class="td11">        16             </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-5-"><td  style="white-space:nowrap; text-align:center;" id="TBL-3-5-1"  
+class="td11">   D     </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-5-2"  
+class="td11">      180         </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-5-3"  
+class="td11">  380    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-5-4"  
+class="td11">        17             </td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-6-"><td  style="white-space:nowrap; text-align:center;" id="TBL-3-6-1"  
+class="td11">        </td></tr></table></div></div>
+<!--l. 306--><p class="indent" >   Initial water level and capacity are measured in acre-feet. The maximum release rate is an upper
+bound on the amount of acre-feet of water that can be released from a reservoir in a six-hour
+period.
+<!--l. 311--><p class="indent" >   You may assume water takes 6 hours to flow downstream from one reservoir to the next, and that it is
+also pumped uphill at the same rate. For example, water that is discharged from Reservoir B at period&#x00A0;<span 
+class="cmmi-10x-x-109">t</span>
+arrives in Reservoir C at period <span 
+class="cmmi-10x-x-109">t </span>+ 1.
+                                                                                         
+                                                                                         
+<!--l. 316--><p class="indent" >   You can model the water level in Reservoir&#x00A0;<span 
+class="cmmi-10x-x-109">j </span>at time <span 
+class="cmmi-10x-x-109">t </span>+ 1 as equal to its level at time&#x00A0;<span 
+class="cmmi-10x-x-109">t</span>, minus any
+outflow at time&#x00A0;<span 
+class="cmmi-10x-x-109">t </span>(upstream or downstream), plus any incoming rainflow, plus any incoming pumped
+water that was pumped at time&#x00A0;<span 
+class="cmmi-10x-x-109">t</span>.
+<!--l. 321--><p class="indent" >   Forecast rainfall over the week is limited:
+<div class="center" 
+>
+<!--l. 323--><p class="noindent" >
+<div class="tabular"> <table id="TBL-4" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-4-1g"><col 
+id="TBL-4-1"></colgroup><colgroup id="TBL-4-2g"><col 
+id="TBL-4-2"></colgroup><colgroup id="TBL-4-3g"><col 
+id="TBL-4-3"></colgroup><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-4-1-1"  
+class="td11">Reservoir</td><td  style="white-space:nowrap; text-align:center;" id="TBL-4-1-2"  
+class="td11">time</td><td  style="white-space:nowrap; text-align:center;" id="TBL-4-1-3"  
+class="td11">Rainfall inflow forecast (acre-feet of water)</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-4-2-1"  
+class="td11">   A     </td><td  style="white-space:nowrap; text-align:center;" id="TBL-4-2-2"  
+class="td11"> 12 </td><td  style="white-space:nowrap; text-align:center;" id="TBL-4-2-3"  
+class="td11">                 13                           </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-4-3-1"  
+class="td11">   D     </td><td  style="white-space:nowrap; text-align:center;" id="TBL-4-3-2"  
+class="td11"> 16 </td><td  style="white-space:nowrap; text-align:center;" id="TBL-4-3-3"  
+class="td11">                 15                           </td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-4-4-1"  
+class="td11">        </td></tr></table></div></div>
+<!--l. 333--><p class="indent" >   No other rainfall is forecast.
+<!--l. 336--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">3.5   </span> <a 
+ id="x1-80003.5"></a>Mitigating end effects</h4>
+<!--l. 338--><p class="noindent" >ZICO does not want to use up all its water inventories in a single week, so they impose conservation
+constraints. In particular, they require that the total energy that could be generated from the water in the
+reservoirs should be the same at the end of the week as it is at the beginning. For the water in each
+reservoir, this energy is the sum of the energy available from releasing the water from the current
+reservoir, plus the energy available from all downstream releases as this water flows through the
+system.
+<!--l. 348--><p class="indent" >   Additionally, they require that the final water level in each reservoir is at least 80% of its initial
+level.
+<!--l. 352--><p class="indent" >   They also want to allow the possibility for the steam plant schedule to be repeated from one week to
+the next. This means that the output from the steam plant in the first period and the last period should
+differ by no more than 3MWh (the ramp-up rate).
+<!--l. 358--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">3.6   </span> <a 
+ id="x1-90003.6"></a>Spinning reserve</h4>
+<!--l. 360--><p class="noindent" >As a contingency against the demand exceeding forecast or generation from wind or solar failing to meet
+the forecast level, ZICO wishes to ensure that it has enough unused capacity available at any
+moment in the hydro system and steam plant to generate an additional 10MWh in any six-hour
+period.
+<!--l. 370--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x1-100004"></a>The data</h3>
+<!--l. 374--><p class="noindent" >Files containing the forecast demands and the forecast solar and wind generation can be found on LMS,
+and also on the course webpage at
+     <div class="quote">
+     <!--l. 378--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700/projectdata" class="url" ><span 
+class="cmtt-10x-x-109">http://www.rpi.edu/</span><span 
+class="cmtt-10x-x-109">~</span><span 
+class="cmtt-10x-x-109">mitchj/matp4700/projectdata</span></a></div>
+                                                                                         
+                                                                                         
+<!--l. 380--><p class="noindent" >The first of the 28 periods is from midnight to 6am on Monday, and the last period is from 6pm to midnight
+on Sunday.
+<!--l. 388--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
+ id="x1-110005"></a>Questions</h3>
+<!--l. 389--><p class="noindent" >
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-11002x1">Due: <span 
+class="cmbx-10x-x-109">Friday, October 26</span>, in class. (40 points) <br 
+class="newline" /><span 
+class="cmti-10x-x-109">(Please submit a written report, a printout of your problem files, and any AMPL output used.</span>
+     <span 
+class="cmti-10x-x-109">Also email me your model and data files.)</span>
+     <!--l. 396--><p class="noindent" >Formulate  and  solve  the  problem  as  a  linear  optimization  problem.  Clearly  define  every
+     variable in your formulation. Explain every constraint including coefficients.
+     </li>
+     <li 
+  class="enumerate" id="x1-11004x2"><span 
+class="cmbx-10x-x-109">Sensitivity  analysis  </span>(30  points):  To  be  distributed  later.  Solutions  due  on  Friday
+     November&#x00A0;16.
+     </li>
+     <li 
+  class="enumerate" id="x1-11006x3"><span 
+class="cmbx-10x-x-109">Extra conditions </span>(30 points): To be distributed later. Your answers will be due on Friday
+     December&#x00A0;7.</li></ol>
+<!--l. 408--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
+ id="x1-120006"></a>AMPL notes</h3>
+     <ul class="itemize1">
+     <li class="itemize">If you are working in a Windows operating system, you can edit your model and data files in
+     Office, for example. Save the files as plain text files. Windows may append the suffix <span 
+class="cmtt-10x-x-109">txt </span>to
+     the file names, in which case you would need to include that suffix when asking ampl to read
+     the file.
+     </li>
+     <li class="itemize">If you want to read in a new model file <span 
+class="cmtt-10x-x-109">chips.mod </span>and data file <span 
+class="cmtt-10x-x-109">chips.dat</span>, you can use the <span 
+class="cmtt-10x-x-109">reset</span>
+     command: <div class="verse">
+             <!--l. 426--><p class="noindent" > ampl: <span 
+class="cmtt-10x-x-109">reset;</span><br />
+             ampl: <span 
+class="cmtt-10x-x-109">model chips.mod;</span><br />
+             ampl: <span 
+class="cmtt-10x-x-109">data chips.dat;</span>
+</div>
+                                                                                         
+                                                                                         
+     </li>
+     <li class="itemize">If you want to reset the whole data file and read in a new data file <span 
+class="cmtt-10x-x-109">chips.dat</span>, but you want to keep
+     the model file as before, you can type <div class="verse">
+             <!--l. 436--><p class="noindent" > ampl: <span 
+class="cmtt-10x-x-109">reset data;</span><br />
+             ampl: <span 
+class="cmtt-10x-x-109">data chips.dat;</span>
+</div>
+     </li>
+     <li class="itemize">More hints are available online from my page about AMPL:
+          <div class="quote">
+          <!--l. 459--><p class="noindent" ><a 
+href="http://homepages.rpi.edu/~mitchj/ampldetails.html" class="url" ><span 
+class="cmtt-10x-x-109">http://homepages.rpi.edu/</span><span 
+class="cmtt-10x-x-109">~</span><span 
+class="cmtt-10x-x-109">mitchj/ampldetails.html</span></a></div>
+     </li>
+     <li class="itemize">This project is available from LMS and also from the course webpage, at
+          <div class="quote">
+          <!--l. 464--><p class="noindent" ><a 
+href="http://homepages.rpi.edu/~mitchj/matp4700/#project" class="url" ><span 
+class="cmtt-10x-x-109">http://homepages.rpi.edu/</span><span 
+class="cmtt-10x-x-109">~</span><span 
+class="cmtt-10x-x-109">mitchj/matp4700/#project</span></a></div>
+     <!--l. 466--><p class="noindent" >where you will also find more information about AMPL.</li></ul>
+   <div class="tabular"> <table id="TBL-5" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-5-1g"><col 
+id="TBL-5-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-5-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-5-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                        </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-5-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-5-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                                   </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-5-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-5-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours: Wednesdays 12noon&#8211;2pm.                       </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-5-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-5-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Dan Kosmas office hours: Mon, Thurs 4&#8211;5pm, AE 316W.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

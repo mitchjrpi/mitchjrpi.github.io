@@ -1,0 +1,836 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="NPdefs.tex"> 
+<meta name="date" content="2015-02-10 08:52:00"> 
+<link rel="stylesheet" type="text/css" href="NPdefs.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 98--><p class="noindent" >
+<!--l. 99--><p class="noindent" ><span 
+class="cmbx-12x-x-172">Algorithm Complexity and NP-Completeness</span><br />
+<a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a></div>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>How run-time grows as problem size grows</h3>
+<!--l. 109--><p class="noindent" ><span 
+class="cmbx-12">Size of an instance: </span>the number of binary characters required to store the problem.
+<!--l. 112--><p class="noindent" >For example, if <span 
+class="cmmi-12">x </span>is a positive integer we let <span 
+class="cmmi-12">n </span>= <span 
+class="cmsy-10x-x-120">&#x230A;</span>log <sub><span 
+class="cmr-8">2</span></sub>(<span 
+class="cmmi-12">x</span>)<span 
+class="cmsy-10x-x-120">&#x230B;</span>. Then
+   <center class="math-display" >
+<img 
+src="NPdefs0x.png" alt=" n        n+1               &#x2211;n    i
+2 &#x2264;  x &#x003C; 2      and    x =     &#x03B4;i2   for some  binary &#x03B4;i.
+                            i=0
+" class="math-display" ></center>
+<!--l. 118--><p class="nopar" >
+So we need <span 
+class="cmmi-12">O</span>(log(<span 
+class="cmmi-12">x</span>)) bits to store&#x00A0;<span 
+class="cmmi-12">x</span>. We don&#8217;t need to specify the base for the logarithm here,
+because
+   <center class="math-display" >
+<img 
+src="NPdefs1x.png" alt="if x &#x003E; 0  and    y = loga(x),z = logb(x)   then y = z loga (b).
+" class="math-display" ></center>
+<!--l. 123--><p class="nopar" >
+<!--l. 127--><p class="noindent" >The major classification of algorithm efficiency is insensitive to the choice of data representation, for the most
+part. There are two restrictions:
+      <dl class="enumerate"><dt class="enumerate">
+   1. </dt><dd 
+class="enumerate">The alphabet used to represent the data must contain at least two symbols.
+      </dd><dt class="enumerate">
+   2. </dt><dd 
+class="enumerate">The &#8220;data&#8221; can&#8217;t contain information that requires a lot of calculation. For example, can&#8217;t store the
+      length of all tours as part of the representation of a traveling salesman problem.</dd></dl>
+<!--l. 141--><p class="noindent" ><span 
+class="cmbx-12">Computation time</span>
+<!--l. 144--><p class="noindent" >The time required for an elementary operation (addition, subtraction, multiplication, division, comparison) is
+counted as <span 
+class="cmti-12">unit time</span>. (Need to be a little careful if multiply very large numbers together.)
+<!--l. 152--><p class="noindent" ><span 
+class="cmbx-12">Instances</span>
+<!--l. 155--><p class="noindent" >Perfect matching, linear programming, and node packing are all examples of optimization problems. An
+optimization problem <span 
+class="cmmi-12">X </span>consists of an infinite number of instances <span 
+class="cmmi-12">d</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,d</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span> where the data for instance <span 
+class="cmmi-12">d</span><sub><span 
+class="cmmi-8">i</span></sub> is given
+by a binary string of length <span 
+class="cmmi-12">l</span>(<span 
+class="cmmi-12">d</span><sub><span 
+class="cmmi-8">i</span></sub>).
+<!--l. 165--><p class="noindent" ><span 
+class="cmbx-12">Worst case running time</span>
+                                                                                                       
+                                                                                                       
+<!--l. 168--><p class="noindent" >Let <span 
+class="cmmi-12">A </span>be an algorithm the solves every instance of <span 
+class="cmmi-12">X </span>in finite time. Let <span 
+class="cmmi-12">g</span><sub><span 
+class="cmmi-8">A</span></sub>(<span 
+class="cmmi-12">d</span><sub><span 
+class="cmmi-8">i</span></sub>) be the running time of <span 
+class="cmmi-12">A </span>on
+instance&#x00A0;<span 
+class="cmmi-12">d</span><sub><span 
+class="cmmi-8">i</span></sub>. Measure performance of <span 
+class="cmmi-12">A </span>on <span 
+class="cmmi-12">X </span>using the <span 
+class="cmti-12">worst-case </span>running time, for each problem
+size&#x00A0;<span 
+class="cmmi-12">k</span>:
+   <center class="math-display" >
+<img 
+src="NPdefs2x.png" alt="fA(k ) := max {gA(di) : l(di) = k}.
+" class="math-display" ></center>
+<!--l. 175--><p class="nopar" >
+Advantages of using worst-case performance measure:
+      <ul class="itemize1">
+      <li class="itemize">Gives a guarantee of performance of the algorithm
+      </li>
+      <li class="itemize">Independent of the probability distribution of the instances.
+      </li>
+      <li class="itemize">Appears to be the easiest to analyze.</li></ul>
+   <div class="newtheorem">
+<!--l. 184--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Definition</span><span 
+class="cmbx-12">&#x00A0;1</span> </span><span 
+class="cmti-12">Let </span><span 
+class="cmmi-12">f </span><span 
+class="cmti-12">and </span><span 
+class="cmmi-12">g </span><span 
+class="cmti-12">be functions from the set of integers or the set of reals to the set of real numbers. The</span>
+<span 
+class="cmti-12">function </span><span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">k</span>) <span 
+class="cmti-12">is </span><span 
+class="cmmi-12">O</span>(<span 
+class="cmmi-12">g</span>(<span 
+class="cmmi-12">k</span>)) <span 
+class="cmti-12">whenever there exist positive constants </span><span 
+class="cmmi-12">C </span><span 
+class="cmti-12">and </span><span 
+class="cmmi-12">k</span><span 
+class="cmsy-10x-x-120">&#x2032; </span><span 
+class="cmti-12">such that</span>
+   <center class="math-display" >
+<img 
+src="NPdefs3x.png" alt="|f (k )| &#x2264; C |g(k)|  &#x2200;k &#x2265; k&#x2032;.
+" class="math-display" ></center>
+<!--l. 191--><p class="nopar" >
+   </div>
+<!--l. 197--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-20002"></a>Polynomial time algorithms and the class <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /></span></h3>
+<!--l. 201--><p class="noindent" ><span 
+class="cmbx-12">Feasibility problems</span>
+<!--l. 204--><p class="noindent" >For example, an instance of the <span 
+class="cmti-12">perfect matching feasibility problem </span>consists of a graph <span 
+class="cmmi-12">G </span>= (<span 
+class="cmmi-12">V,E</span>) and
+asks the question &#8220;Does there exist a perfect matching on this graph&#8221;? The answer is either <span 
+class="cmti-12">Yes </span>or
+<span 
+class="cmti-12">No</span>.
+   <div class="newtheorem">
+<!--l. 209--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Definition</span><span 
+class="cmbx-12">&#x00A0;2</span> </span><span 
+class="cmti-12">A </span>feasibility problem <span 
+class="cmmi-12">X </span><span 
+class="cmti-12">consists of a set of instances </span><span 
+class="cmmi-12">D </span><span 
+class="cmti-12">and a set of feasible instances</span>
+<span 
+class="cmmi-12">F </span><span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="cmmi-12">D</span><span 
+class="cmti-12">. Given an instance </span><span 
+class="cmmi-12">d </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">D</span><span 
+class="cmti-12">, determine whether </span><span 
+class="cmmi-12">d </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">F</span><span 
+class="cmti-12">. The answer is either </span>Yes <span 
+class="cmti-12">or </span>No<span 
+class="cmti-12">.</span>
+                                                                                                       
+                                                                                                       
+   </div>
+<!--l. 218--><p class="noindent" ><span 
+class="cmbx-12">Binary search: </span><br 
+class="newline" />Many instances of optimization problems can be solved using binary search on a sequence of instances of
+feasibility problems. For example, the 0 <span 
+class="cmsy-10x-x-120">- </span>1 linear optimization problem
+   <center class="math-display" >
+<img 
+src="NPdefs4x.png" alt="min {cT x : Ax &#x2265; b,x &#x2208; Bn }
+  x
+" class="math-display" ></center>
+<!--l. 225--><p class="nopar" >
+can be solved using binary search applied to the 0 <span 
+class="cmsy-10x-x-120">- </span>1 linear feasibility problem
+   <center class="math-display" >
+<img 
+src="NPdefs5x.png" alt="                      n                  T
+Does there exist x &#x2208; B  with Ax &#x2265;  b, - c x &#x2265;  - z?
+" class="math-display" ></center>
+<!--l. 229--><p class="nopar" >
+The initial bounds on <span 
+class="cmmi-12">z </span>can be taken to be
+   <center class="math-display" >
+<img 
+src="NPdefs6x.png" alt=" UB    &#x2211;          LB     &#x2211;
+z   =       cj,  z   =       cj.
+       j:cj&#x003E;0             j:cj&#x003C;0
+" class="math-display" ></center>
+<!--l. 233--><p class="nopar" >
+   <div class="newtheorem">
+<!--l. 237--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Definition</span><span 
+class="cmbx-12">&#x00A0;3</span> </span><span 
+class="cmti-12">Algorithm </span><span 
+class="cmmi-12">A </span><span 
+class="cmti-12">is a </span><span 
+class="cmbx-12">polynomial time algorithm </span><span 
+class="cmti-12">for the feasibility problem </span><span 
+class="cmmi-12">X </span><span 
+class="cmti-12">if </span><span 
+class="cmmi-12">f</span><sub><span 
+class="cmmi-8">A</span></sub>(<span 
+class="cmmi-12">k</span>) <span 
+class="cmti-12">is</span>
+<span 
+class="cmmi-12">O</span>(<span 
+class="cmmi-12">k</span><sup><span 
+class="cmmi-8">p</span></sup>) <span 
+class="cmti-12">for some fixed</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">p</span><span 
+class="cmti-12">. </span><br 
+class="newline" /><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /> </span><span 
+class="cmti-12">denotes the class of feasibility problems that can be solved in polynomial time. </span><br 
+class="newline" /><span 
+class="cmti-12">Problem </span><span 
+class="cmmi-12">X </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /> </span><span 
+class="cmti-12">if and only if there is a polynomial time algorithm for</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">X</span><span 
+class="cmti-12">.</span>
+   </div>
+<!--l. 246--><p class="noindent" ><span 
+class="cmbx-12">Examples of problems in </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /></span><span 
+class="cmbx-12">:</span>
+      <ul class="itemize1">
+      <li class="itemize"><span 
+class="cmti-12">Minimum spanning tree with upper bound: </span>Use a greedy algorithm.
+      </li>
+      <li class="itemize"><span 
+class="cmti-12">Shortest path with upper bound: </span>Use Dijkstra&#8217;s algorithm if edge weights are nonnegative.
+      </li>
+      <li class="itemize"><span 
+class="cmti-12">Perfect matching feasibility problem: </span>Use Edmonds blossom algorithm.
+      </li>
+      <li class="itemize"><span 
+class="cmti-12">Linear programming with bound: </span>Use the ellipsoid algorithm or some interior point algorithms.</li></ul>
+                                                                                                       
+                                                                                                       
+   <div class="newtheorem">
+<!--l. 255--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Definition</span><span 
+class="cmbx-12">&#x00A0;4</span> </span><span 
+class="cmti-12">The function </span><span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">k</span>) <span 
+class="cmti-12">is </span>exponential <span 
+class="cmti-12">if there exist positive constants </span><span 
+class="cmmi-12">c</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,c</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0<span 
+class="cmti-12">, constants </span><span 
+class="cmmi-12">d</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,d</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmmi-12">&#x003E; </span>1<span 
+class="cmti-12">,</span>
+<span 
+class="cmti-12">and a positive constant </span><span 
+class="cmmi-12">k</span><span 
+class="cmsy-10x-x-120">&#x2032; </span><span 
+class="cmti-12">such that</span>
+   <center class="math-display" >
+<img 
+src="NPdefs7x.png" alt="c1dk1 &#x2264; f (k ) &#x2264; c2dk2  &#x2200;k &#x2265;  k&#x2032;.
+" class="math-display" ></center>
+<!--l. 260--><p class="nopar" >
+   </div>
+<!--l. 262--><p class="noindent" >For example, let <span 
+class="cmmi-12">b </span>be the largest integer for an instance of an optimization problem <span 
+class="cmmi-12">X</span>, so this requires
+storage&#x00A0;<span 
+class="cmmi-12">O</span>(log <sub><span 
+class="cmr-8">2</span></sub>(<span 
+class="cmmi-12">b</span>)). Assume the total storage is also <span 
+class="cmmi-12">O</span>(log <sub><span 
+class="cmr-8">2</span></sub>(<span 
+class="cmmi-12">b</span>)). If algorithm <span 
+class="cmmi-12">A </span>runs in time <span 
+class="cmmi-12">O</span>(<span 
+class="cmmi-12">b</span>) then it requires
+exponential time for this instance, since
+   <center class="math-display" >
+<img 
+src="NPdefs8x.png" alt="     log(b)
+b = 2  2  .
+" class="math-display" ></center>
+<!--l. 268--><p class="nopar" >
+<!--l. 277--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-30003"></a>The class <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span></h3>
+<!--l. 280--><p class="noindent" ><span 
+class="cmbx-12">Certificate of Feasibility </span><br 
+class="newline" />Given an instance <span 
+class="cmmi-12">d </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">D </span>of a feasibility problem <span 
+class="cmmi-12">X</span>, a <span 
+class="cmti-12">certificate of feasibility </span><span 
+class="cmmi-12">Q</span><sub><span 
+class="cmmi-8">d</span></sub> is information that can be used
+to check feasibility in polynomial time. Note that the length of <span 
+class="cmmi-12">Q</span><sub><span 
+class="cmmi-8">d</span></sub> must be polynomial in the length of the
+data.
+<!--l. 287--><p class="noindent" >For example, a certificate of feasibility for an instance of the perfect matching problem would be a list of edges in
+the matching.
+   <div class="newtheorem">
+<!--l. 292--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Definition</span><span 
+class="cmbx-12">&#x00A0;5</span> </span><span 
+class="cmti-12">A feasibility problem </span><span 
+class="cmmi-12">X </span>= (<span 
+class="cmmi-12">D,F</span>) <span 
+class="cmti-12">is in</span> <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span> <span 
+class="cmti-12">if there exists a certificate of feasibility for any</span>
+<span 
+class="cmmi-12">d </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">F </span><span 
+class="cmti-12">that can be checked in polynomial time.</span>
+   </div>
+<!--l. 298--><p class="noindent" >Note that <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" />&#x2286; </span><span 
+class="cmmi-12">NP</span>, since the algorithm for solving the problem can used as a certificate.
+<!--l. 304--><p class="noindent" >Is <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /> </span>= <span 
+class="cmmi-12">NP</span>? This is the fundamental question in computational complexity. It is generally
+accepted that <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /></span><span 
+class="cmmi-12">&#x2260;</span><span 
+class="cmmi-12">NP</span>, but not yet proven. This is one of the <span 
+class="cmti-12">Clay Millennium Problems</span>,
+<a 
+href="http://www.claymath.org/millenium-problems/p-vs-np-problem" class="url" ><span 
+class="cmtt-12">http://www.claymath.org/millenium-problems/p-vs-np-problem</span></a>
+                                                                                                       
+                                                                                                       
+<!--l. 313--><p class="noindent" ><span 
+class="cmbx-12">Why study problems in</span> <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span><span 
+class="cmbx-12">?</span><br 
+class="newline" /><span 
+class="cmti-12">Papadimitriou and Steiglitz, page 351: </span>&#8220;The recognition versions of all reasonable combinatorial optimization
+problems are in <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span>, &#x2026;(because) &#x2026;combinatorial optimization problems aim for the optimal design of objects. It is
+reasonable to expect that, once found, the optimal solution can be written down concisely, and thus serve as a
+certificate for the recognition version.&#8221;
+<!--l. 325--><p class="noindent" >A problem not in <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span>: <br 
+class="newline" /><span 
+class="cmti-12">Solution of quadratic inequalities: </span>Given symmetric <span 
+class="cmmi-12">n</span><span 
+class="cmsy-10x-x-120">&#x00D7;</span><span 
+class="cmmi-12">n </span>matrices <span 
+class="cmmi-12">Q</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,Q</span><sub><span 
+class="cmmi-8">m</span></sub>, and scalars <span 
+class="cmmi-12">b</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,b</span><sub><span 
+class="cmmi-8">m</span></sub>, does there exist
+<span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sup><span 
+class="cmmi-8">n</span></sup> satisfying <span 
+class="cmmi-12">x</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">Q</span><sub>
+<span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">b</span><sub><span 
+class="cmmi-8">i</span></sub> for <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,m</span>? <br 
+class="newline" />Eg, the only solutions to <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">2</span></sup> <span 
+class="cmsy-10x-x-120">&#x2264; </span>2, <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">2</span></sup> <span 
+class="cmsy-10x-x-120">&#x2264;-</span>2 are <span 
+class="cmmi-12">x </span>= <span 
+class="cmsy-10x-x-120">±</span><img 
+src="NPdefs9x.png" alt="&#x221A; --
+  2"  class="sqrt" >, neither of which can be written down in polynomial
+time. <br 
+class="newline" />If ask for a <span 
+class="cmti-12">rational </span><span 
+class="cmmi-12">x </span>then the problem is in <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span>.
+<!--l. 340--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x1-40004"></a><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span>-Complete problems</h3>
+<!--l. 342--><p class="noindent" >The hardest problems in <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span> are the <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span><span 
+class="cmbx-12">-complete </span>problems. We will set up some definitions leading towards
+the characterization that
+      <div class="quote">
+      <!--l. 346--><p class="noindent" >If an <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span>-complete problem can be solved in polynomial time then any problem in <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span> can be
+      solved in polynomial time.</div>
+   <div class="newtheorem">
+<!--l. 352--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Definition</span><span 
+class="cmbx-12">&#x00A0;6</span> </span><span 
+class="cmti-12">Let </span><span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">1</span></sub>  = (<span 
+class="cmmi-12">D</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,F</span><sub><span 
+class="cmr-8">1</span></sub>) <span 
+class="cmti-12">and </span><span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">2</span></sub>  = (<span 
+class="cmmi-12">D</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-12">,F</span><sub><span 
+class="cmr-8">2</span></sub>) <span 
+class="cmti-12">be two feasibility problems in</span> <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span><span 
+class="cmti-12">. Assume there</span>
+<span 
+class="cmti-12">exists a function </span><span 
+class="cmmi-12">g </span>: <span 
+class="cmmi-12">D</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">&#x2192; </span><span 
+class="cmmi-12">D</span><sub><span 
+class="cmr-8">2</span></sub>  <span 
+class="cmti-12">such that </span><span 
+class="cmmi-12">d</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">F</span><sub><span 
+class="cmr-8">1</span></sub>  <span 
+class="cmti-12">if and only if </span><span 
+class="cmmi-12">g</span>(<span 
+class="cmmi-12">d</span><sub><span 
+class="cmr-8">1</span></sub>) <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">F</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmti-12">, for any instance </span><span 
+class="cmmi-12">d</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">D</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmti-12">. If</span>
+<span 
+class="cmmi-12">g </span><span 
+class="cmti-12">is computable in time that is polynomial in the length of the encoding of </span><span 
+class="cmmi-12">d</span><sub><span 
+class="cmr-8">1</span></sub>  <span 
+class="cmti-12">then </span><span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">1</span></sub>  <span 
+class="cmti-12">is </span><span 
+class="cmbx-12">polynomially</span>
+<span 
+class="cmbx-12">transformable </span><span 
+class="cmti-12">to</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmti-12">.</span>
+   </div>
+   <div class="newtheorem">
+<!--l. 360--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Proposition</span><span 
+class="cmbx-12">&#x00A0;1</span> </span><span 
+class="cmti-12">If </span><span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmti-12">is polynomially transformable to </span><span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmti-12">and if </span><span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /> </span><span 
+class="cmti-12">then </span><span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /></span><span 
+class="cmti-12">.</span>
+   </div>
+<!--l. 365--><p class="indent" >   A polynomial transformation is a &#8220;one-shot&#8221; modification of the original problem. We can also think of using
+problem <span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">2</span></sub> as a &#8220;subroutine&#8221;, so we solve multiple instances of problem <span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">2</span></sub> in order to solve an instance
+of&#x00A0;<span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">1</span></sub>.
+   <div class="newtheorem">
+<!--l. 369--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Definition</span><span 
+class="cmbx-12">&#x00A0;7</span> </span><span 
+class="cmti-12">Let </span><span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">1</span></sub> = (<span 
+class="cmmi-12">D</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,F</span><sub><span 
+class="cmr-8">1</span></sub>) <span 
+class="cmti-12">and </span><span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">2</span></sub> = (<span 
+class="cmmi-12">D</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-12">,F</span><sub><span 
+class="cmr-8">2</span></sub>) <span 
+class="cmti-12">be two feasibility problems in</span> <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span><span 
+class="cmti-12">. The problem </span><span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">1</span></sub>
+<span 
+class="cmti-12">is </span><span 
+class="cmbx-12">polynomially reducible </span><span 
+class="cmti-12">to </span><span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">2</span></sub>  <span 
+class="cmti-12">if there exists an algorithm </span><span 
+class="cmmi-12">A</span><sub><span 
+class="cmr-8">1</span></sub>  <span 
+class="cmti-12">for </span><span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">1</span></sub>  <span 
+class="cmti-12">that uses an algorithm </span><span 
+class="cmmi-12">A</span><sub><span 
+class="cmr-8">2</span></sub>  <span 
+class="cmti-12">for</span>
+<span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmti-12">as a subroutine, and </span><span 
+class="cmmi-12">A</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmti-12">runs in polynomial time under the assumption that each call of the subroutine</span>
+<span 
+class="cmti-12">takes unit time.</span>
+                                                                                                       
+                                                                                                       
+   </div>
+   <div class="newtheorem">
+<!--l. 377--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Proposition</span><span 
+class="cmbx-12">&#x00A0;2</span> </span><span 
+class="cmti-12">If </span><span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmti-12">is polynomially reducible to </span><span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmti-12">and if </span><span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /> </span><span 
+class="cmti-12">then </span><span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /></span><span 
+class="cmti-12">.</span>
+   </div>
+   <div class="newtheorem">
+<!--l. 382--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Definition</span><span 
+class="cmbx-12">&#x00A0;8</span> </span><span 
+class="cmti-12">A feasibility problem </span><span 
+class="cmmi-12">X </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /></span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span> <span 
+class="cmti-12">is</span> <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span><span 
+class="cmbx-12">-complete </span><span 
+class="cmti-12">if all other problems in</span> <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span> <span 
+class="cmti-12">polynomially</span>
+<span 
+class="cmti-12">reduce to</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">X</span><span 
+class="cmti-12">.</span>
+   </div>
+<!--l. 389--><p class="noindent" ><span 
+class="cmbx-12">Proving a feasibility problem </span><span 
+class="cmmi-12">X </span><span 
+class="cmbx-12">is</span> <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span><span 
+class="cmbx-12">-complete:</span>
+      <ul class="itemize1">
+      <li class="itemize">First, need to verify the problem is in <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span>.
+      </li>
+      <li class="itemize">Then, need to show that a known <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span>-complete problem can be <span 
+class="cmbx-12">polynomially reduced to</span>&#x00A0;<span 
+class="cmmi-12">X</span>. <br 
+class="newline" />Note the direction!!</li></ul>
+<!--l. 400--><p class="noindent" >Why this direction? We know every problem in <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span> can be polynomially reduced to our known <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span>-complete
+problem, which in turn can be polynomially reduced to&#x00A0;<span 
+class="cmmi-12">X</span>. Hence, every problem in <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span> can be polynomially
+reduced to&#x00A0;<span 
+class="cmmi-12">X</span>.
+<!--l. 407--><p class="noindent" >The first problem to be shown to be <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span>-complete was <span 
+class="cmbx-12">SAT</span>, by S. Cook in 1971.
+   <div class="newtheorem">
+<!--l. 410--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Definition</span><span 
+class="cmbx-12">&#x00A0;9</span> </span><span 
+class="cmti-12">A </span><span 
+class="cmbx-12">Boolean variable </span><span 
+class="cmmi-12">y </span><span 
+class="cmti-12">is a variable that can assume only the values true or false. Boolean</span>
+<span 
+class="cmti-12">variables can be combined to form Boolean formulas using </span>&#8220;negation&#8221; <span class="bar-css"><span 
+class="cmmi-12">y</span></span><span 
+class="cmti-12">, </span>&#8220;or&#8221; <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub>+<span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmti-12">, </span>&#8220;and&#8221; <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">.y</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmti-12">. A </span><span 
+class="cmbx-12">clause</span>
+<span 
+class="cmti-12">is a formula containing some of the original variables together with only </span>or <span 
+class="cmti-12">and </span>negation<span 
+class="cmti-12">. An instance of</span>
+<span 
+class="cmti-12">the </span><span 
+class="cmbx-12">Satisfiability problem (SAT) </span><span 
+class="cmti-12">consists of a collection of clauses </span><span 
+class="cmmi-12">C</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,C</span><sub><span 
+class="cmmi-8">m</span></sub> <span 
+class="cmti-12">and asks if there is a truth</span>
+<span 
+class="cmti-12">assignment to the Boolean variables so that all the clauses can be satisfied simultaneously.</span>
+   </div>
+<!--l. 423--><p class="noindent" >For example:
+      <ul class="itemize1">
+      <li class="itemize">The formula (<span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> + <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub>)<span 
+class="cmmi-12">.</span>(<span class="bar-css"><span 
+class="cmmi-12">y</span></span><sub><span 
+class="cmr-8">1</span></sub>) can be satisfied: set <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> =FALSE, <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub> =TRUE.
+      </li>
+      <li class="itemize">The formula (<span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> + <span class="bar-css"><span 
+class="cmmi-12">y</span></span><sub><span 
+class="cmr-8">2</span></sub>)<span 
+class="cmmi-12">.</span>(<span class="bar-css"><span 
+class="cmmi-12">y</span></span><sub><span 
+class="cmr-8">1</span></sub>)<span 
+class="cmmi-12">.</span>(<span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub>) cannot be satisfied.</li></ul>
+<!--l. 434--><p class="noindent" >The problem <span 
+class="cmbx-12">3-SAT </span>is also <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><span 
+class="cmmi-12">P</span>-complete. In this problem, each clause has at most 3 literals.
+                                                                                                       
+                                                                                                       
+<!--l. 438--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
+ id="x1-50005"></a>Gadgets</h3>
+<!--l. 440--><p class="noindent" >A &#8220;gadget&#8221; is a structure that is constructed when reducing one problem to another. For example, in the
+reduction of <span 
+class="cmbx-12">3-SAT to node packing</span>, a clique is constructed from each clause. And in the reduction of <span 
+class="cmbx-12">3-SAT</span>
+<span 
+class="cmbx-12">to Hamiltonian cycle</span>, a subgraph is constructed for each clause; the subgraph can be traversed in multiple
+different ways, corresponding to different ways to satisfy the clause; but it cannot be traversed in a way that
+corresponds to the clause being False.
+<!--l. 451--><p class="noindent" >In a reduction from 3-SAT, each clause is typically used to construct some structure, and then the structures are
+linked together somehow so as to <span 
+class="cmbx-12">enforce consistency </span>between the truth assignments used for each different
+clause and its corresponding structure. These methods to enforce consistency can also be regarded as
+gadgets.
+    
+</body></html> 
+
+                                                                                                       
+
+

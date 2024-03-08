@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="pandemic2023.tex"> 
+<meta name="date" content="2023-10-15 20:04:00"> 
+<link rel="stylesheet" type="text/css" href="pandemic2023.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 45--><p class="noindent" >
+<!--l. 47--><p class="noindent" ><span class="underline"><span 
+class="cmbx-12x-x-120">Case Study:</span></span>
+<!--l. 51--><p class="noindent" ><span class="underline"><span 
+class="cmcsc-10x-x-144">P<span 
+class="small-caps">r</span><span 
+class="small-caps">o</span><span 
+class="small-caps">v</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span> H<span 
+class="small-caps">e</span><span 
+class="small-caps">a</span><span 
+class="small-caps">l</span><span 
+class="small-caps">t</span><span 
+class="small-caps">h</span><span 
+class="small-caps">c</span><span 
+class="small-caps">a</span><span 
+class="small-caps">r</span><span 
+class="small-caps">e</span></span></span> </div>
+<div class="center" 
+>
+<!--l. 55--><p class="noindent" >
+<!--l. 57--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmr-12">MATP4700 Math Models of Operations Research</span></a>
+<!--l. 59--><p class="noindent" ><span 
+class="cmr-12">Fall 2023</span>
+</div>
+<!--l. 64--><p class="noindent" ><span class="uline">Students may work in groups of up to three people. You are strongly encouraged to work in groups; if
+you&#8217;re unable to find a partner, please let me know. You may be able to use <span 
+class="cmtt-10x-x-109">piazza</span> to find teammates.
+You may consult your textbooks, your notes, online information, and me. You may not solicit help from
+other sources.</span>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Introduction</h3>
+<!--l. 82--><p class="noindent" ><span 
+class="cmcsc-10x-x-109">P<span 
+class="small-caps">r</span><span 
+class="small-caps">o</span><span 
+class="small-caps">v</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span> H<span 
+class="small-caps">e</span><span 
+class="small-caps">a</span><span 
+class="small-caps">l</span><span 
+class="small-caps">t</span><span 
+class="small-caps">h</span><span 
+class="small-caps">c</span><span 
+class="small-caps">a</span><span 
+class="small-caps">r</span><span 
+class="small-caps">e</span> </span>operates several hospitals. A pandemic has started to affect their operations,
+with multiple patients hospitalized in intensive care. <span 
+class="cmcsc-10x-x-109">P<span 
+class="small-caps">r</span><span 
+class="small-caps">o</span><span 
+class="small-caps">v</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span> H<span 
+class="small-caps">e</span><span 
+class="small-caps">a</span><span 
+class="small-caps">l</span><span 
+class="small-caps">t</span><span 
+class="small-caps">h</span><span 
+class="small-caps">c</span><span 
+class="small-caps">a</span><span 
+class="small-caps">r</span><span 
+class="small-caps">e</span> </span>has forecast the expected
+additional demand for intensive care in the next week, and this will exhaust the current supply of
+IC beds. They plan to create extra IC beds by converting current regular beds into IC beds
+and/or creating extra wards of IC beds. Each IC patient needs one dedicated nurse at all
+times.
+<!--l. 91--><p class="indent" >   <span 
+class="cmcsc-10x-x-109">P<span 
+class="small-caps">r</span><span 
+class="small-caps">o</span><span 
+class="small-caps">v</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span> H<span 
+class="small-caps">e</span><span 
+class="small-caps">a</span><span 
+class="small-caps">l</span><span 
+class="small-caps">t</span><span 
+class="small-caps">h</span><span 
+class="small-caps">c</span><span 
+class="small-caps">a</span><span 
+class="small-caps">r</span><span 
+class="small-caps">e</span> </span>wants to set up a linear programming problem to model its operations and t
+minimize the cost of meeting all demand for IC beds.
+<!--l. 96--><p class="indent" >   The data for the problem is contained in <span 
+class="cmtt-10x-x-109">patients.dat</span>, an ampl file on LMS. Also on LMS is the
+start of an AMPL model file <span 
+class="cmtt-10x-x-109">patients.mod</span>.
+<!--l. 101--><p class="indent" >   (The solution to your linear program may be fractional. This is OK, you don&#8217;t need to require the
+variables to be integer. We will return to this issue in the third part of the project.)
+<!--l. 107--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-20002"></a>Set of Hosptials</h3>
+<!--l. 109--><p class="noindent" ><span 
+class="cmcsc-10x-x-109">P<span 
+class="small-caps">r</span><span 
+class="small-caps">o</span><span 
+class="small-caps">v</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span> H<span 
+class="small-caps">e</span><span 
+class="small-caps">a</span><span 
+class="small-caps">l</span><span 
+class="small-caps">t</span><span 
+class="small-caps">h</span><span 
+class="small-caps">c</span><span 
+class="small-caps">a</span><span 
+class="small-caps">r</span><span 
+class="small-caps">e</span> </span>operates one hospital in each of a set of cities, each with its own catchment area.
+Patients can be transported between any two hospitals. Each patient requires an IC bed and also nursing
+care. For nursing, the hospitals are divided into two zones, and nurses from one zone can only work at
+hospitals in the same zone. The zones are given by the sets <span 
+class="cmtt-10x-x-109">ZONE1 </span>and <span 
+class="cmtt-10x-x-109">ZONE2 </span>in the data file. The set of
+cities is the union of the two zones.
+                                                                                         
+                                                                                         
+<!--l. 118--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-30003"></a>Demand</h3>
+<!--l. 120--><p class="noindent" >The forecasted additional demand for IC beds over the coming week is given by the parameter <span 
+class="cmtt-10x-x-109">demand</span>.
+You can assume this forecast is exactly accurate.
+<!--l. 125--><p class="indent" >   Each hospital has a current set of patients in intesive care, given by the parameter <span 
+class="cmtt-10x-x-109">used</span><span 
+class="cmtt-10x-x-109">_IC</span>. They also
+have a current set of available beds in IC, given by the parameter <span 
+class="cmtt-10x-x-109">avail</span><span 
+class="cmtt-10x-x-109">_IC</span>.
+<!--l. 130--><p class="indent" >   Demand at any hospital for IC beds can be satisfied by a mixture of two strategies:
+     <ul class="itemize1">
+     <li class="itemize">convert existing regular beds into IC beds, or create new sets of IC beds. For a given hospital,
+     the cost using either method is the same and is given by the parameter <span 
+class="cmtt-10x-x-109">cost</span>.
+     </li>
+     <li class="itemize">moving patients to other hospitals. The cost to move each patient is given by the parameter
+     <span 
+class="cmtt-10x-x-109">transp</span><span 
+class="cmtt-10x-x-109">_costs</span>.</li></ul>
+<!--l. 140--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x1-40004"></a>Nursing</h3>
+<!--l. 142--><p class="noindent" >Each hospital currently has enough IC-trained nurses to fully staff each of their currently used
+IC beds and their available IC beds. If they expand capacity then they will need additional
+nurses.
+<!--l. 146--><p class="indent" >   Each IC patient needs one dedicated nurse at all times, so it needs 3 additional nurses over the course
+of 24 hours for each additional available IC bed. This number 3 is given by the parameter
+<span 
+class="cmtt-10x-x-109">nurse</span><span 
+class="cmtt-10x-x-109">_per</span><span 
+class="cmtt-10x-x-109">_pat</span>.
+<!--l. 151--><p class="indent" >   Some of the regular nurses at each hospital can be coverted to IC nurses in time for the
+forecasted increase in demand. The number of such nurses available is given by the parameter
+<span 
+class="cmtt-10x-x-109">extra</span><span 
+class="cmtt-10x-x-109">_nurses</span>.
+<!--l. 155--><p class="indent" >   IC nurses can also move between hospitals in their own zone. The cost to transfer a nurse from one
+hospital to another is given by the parameter <span 
+class="cmtt-10x-x-109">nurse</span><span 
+class="cmtt-10x-x-109">_cost</span>.
+<!--l. 159--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
+ id="x1-50005"></a>Balance</h3>
+<!--l. 161--><p class="noindent" ><span 
+class="cmcsc-10x-x-109">P<span 
+class="small-caps">r</span><span 
+class="small-caps">o</span><span 
+class="small-caps">v</span><span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span> H<span 
+class="small-caps">e</span><span 
+class="small-caps">a</span><span 
+class="small-caps">l</span><span 
+class="small-caps">t</span><span 
+class="small-caps">h</span><span 
+class="small-caps">c</span><span 
+class="small-caps">a</span><span 
+class="small-caps">r</span><span 
+class="small-caps">e</span> </span>wants to balance the availability of IC beds between the hospitals, based on the
+populations of their catchment areas. In particular, for each city they want the value of the
+ratio
+   <center class="math-display" >
+<img 
+src="pandemic20230x.png" alt="currently used beds + currently available beds + additional beds
+------------------------------------------------------------
+                     population of city
+" class="math-display" ></center>
+<!--l. 167--><p class="nopar" >
+to be at least the product of <span 
+class="cmtt-10x-x-109">minratio </span>and the average value of this ratio. The population (in thousands)
+is given by the parameter&#x00A0;<span 
+class="cmtt-10x-x-109">pop</span>.
+                                                                                         
+                                                                                         
+<!--l. 173--><p class="noindent" >AMPL note: You can express the number of elements in the set <span 
+class="cmtt-10x-x-109">CITIES </span>using the expression
+<span 
+class="cmtt-10x-x-109">card</span><span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmtt-10x-x-109">CITIES</span><span 
+class="cmsy-10x-x-109">}</span>.
+<!--l. 177--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
+ id="x1-60006"></a>Variables </h3>
+<!--l. 179--><p class="noindent" >You will probably need several sets of variables. The principal decision variables are the number of extra
+IC beds at each hospital, the number of patients moved between hospitals, and the number of nurses
+moved between hospitals. You may also find it useful to define other (state) variables which are linear
+functions of these (decision) variables.
+<!--l. 186--><p class="indent" >   If you want your variables to be nonnegative, you have to explicitly state they are nonnegative.
+<!--l. 197--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">7   </span> <a 
+ id="x1-70007"></a>Constraints</h3>
+<!--l. 199--><p class="noindent" >You will need several sets of constraints in your model.
+<!--l. 207--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">8   </span> <a 
+ id="x1-80008"></a>The data</h3>
+<!--l. 211--><p class="noindent" >All the data can be found on LMS, and also on the course webpage at
+     <div class="quote">
+     <!--l. 215--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700/patients/patients.dat" class="url" ><span 
+class="cmtt-10x-x-109">http://www.rpi.edu/</span><span 
+class="cmtt-10x-x-109">~</span><span 
+class="cmtt-10x-x-109">mitchj/matp4700/patients/patients.dat</span></a></div>
+<!--l. 217--><p class="noindent" >The parameter definitions in the model file can be found on LMS and at
+     <div class="quote">
+     <!--l. 219--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700/patients/patients.mod" class="url" ><span 
+class="cmtt-10x-x-109">http://www.rpi.edu/</span><span 
+class="cmtt-10x-x-109">~</span><span 
+class="cmtt-10x-x-109">mitchj/matp4700/patients/patients.mod</span></a></div>
+<!--l. 228--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">9   </span> <a 
+ id="x1-90009"></a>Questions</h3>
+<!--l. 229--><p class="noindent" >
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-9002x1">Due: <span 
+class="cmbx-10x-x-109">Friday, October 27</span>, 11.59pm, on LMS. (30 points) <br 
+class="newline" /><span class="uline">Please submit a written report, your problem files, and any AMPL output used. Choose a
+     name for your model file that is distinctive to your group.</span>
+     <!--l. 237--><p class="noindent" >Formulate  and  solve  the  problem  as  a  linear  optimization  problem.  Clearly  define  every
+     variable in your formulation. Explain every constraint including coefficients.
+                                                                                         
+                                                                                         
+     <!--l. 241--><p class="noindent" >Hint: your optimal value should be between $250,000 and $300,000.
+     <!--l. 243--><p class="noindent" >Only one submission is needed from each group, but ensure that every team member&#8217;s name
+     appears at the top of the report.
+     </li>
+     <li 
+  class="enumerate" id="x1-9004x2"><span 
+class="cmbx-10x-x-109">Sensitivity analysis </span>(40 points): To be distributed later. Due on Friday November&#x00A0;17.
+     </li>
+     <li 
+  class="enumerate" id="x1-9006x3"><span 
+class="cmbx-10x-x-109">Extra conditions </span>(30 points): To be distributed later. Due on Tuesday December&#x00A0;5.</li></ol>
+<!--l. 253--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">10   </span> <a 
+ id="x1-1000010"></a>AMPL notes</h3>
+     <ul class="itemize1">
+     <li class="itemize">AMPL comes with an IDE, which is fairly user friendly. I believe it is integrated into the
+     single downloads for all 3 operating systems.
+     </li>
+     <li class="itemize">If you are working in a Windows operating system and don&#8217;t use the IDE, you can edit your
+     model and data files in Office, for example. Save the files as plain text files. Windows may
+     append the suffix <span 
+class="cmtt-10x-x-109">txt </span>to the file names, in which case you would need to include that suffix
+     when asking ampl to read the file.
+     </li>
+     <li class="itemize">If you want to read in a new model file <span 
+class="cmtt-10x-x-109">chips.mod </span>and data file <span 
+class="cmtt-10x-x-109">chips.dat</span>, you can use the <span 
+class="cmtt-10x-x-109">reset</span>
+     command: <div class="verse">
+             <!--l. 280--><p class="noindent" > ampl: <span 
+class="cmtt-10x-x-109">reset;</span><br />
+             ampl: <span 
+class="cmtt-10x-x-109">model chips.mod;</span><br />
+             ampl: <span 
+class="cmtt-10x-x-109">data chips.dat;</span>
+</div>
+     </li>
+     <li class="itemize">If you want to reset the whole data file and read in a new data file <span 
+class="cmtt-10x-x-109">chips.dat</span>, but you want to keep
+     the model file as before, you can type <div class="verse">
+             <!--l. 290--><p class="noindent" > ampl: <span 
+class="cmtt-10x-x-109">reset data;</span><br />
+             ampl: <span 
+class="cmtt-10x-x-109">data chips.dat;</span>
+</div>
+                                                                                         
+                                                                                         
+     </li>
+     <li class="itemize">More hints are available online from my page about AMPL:
+          <div class="quote">
+          <!--l. 313--><p class="noindent" ><a 
+href="http://homepages.rpi.edu/~mitchj/ampldetails.html" class="url" ><span 
+class="cmtt-10x-x-109">http://homepages.rpi.edu/</span><span 
+class="cmtt-10x-x-109">~</span><span 
+class="cmtt-10x-x-109">mitchj/ampldetails.html</span></a></div>
+     </li>
+     <li class="itemize">This project is available from LMS and also from the course webpage, at
+          <div class="quote">
+          <!--l. 318--><p class="noindent" ><a 
+href="http://homepages.rpi.edu/~mitchj/matp4700/#project" class="url" ><span 
+class="cmtt-10x-x-109">http://homepages.rpi.edu/</span><span 
+class="cmtt-10x-x-109">~</span><span 
+class="cmtt-10x-x-109">mitchj/matp4700/#project</span></a></div>
+     <!--l. 320--><p class="noindent" >where you will also find more information about AMPL.</li></ul>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                             </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                                                        </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Tuesday 2.30&#8211;4pm in AE 325;                                                         </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Thursday 1&#8211;3pm webex: <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-10x-x-109">https://rensselaer.webex.com/meet/mitchj</span></a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-7-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;                                                                                                          </td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

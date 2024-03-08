@@ -1,0 +1,11 @@
+reset;
+
+model midterm20q3gen_robust.mod;
+# data midterm20q3.dat;
+
+solve;
+
+display x;
+
+display b, y;
+display w;

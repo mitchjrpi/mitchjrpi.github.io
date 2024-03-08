@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw5.tex"> 
+<meta name="date" content="2016-04-11 19:35:00"> 
+<link rel="stylesheet" type="text/css" href="hw5.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 12--><p class="noindent" >
+<!--l. 15--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12x-x-120">MATP6640/DSES6770 Linear Programming</span></a><span 
+class="cmr-12x-x-120">, Homework 5.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 19--><p class="noindent" >
+ Due: Friday, April 22, 2016, in class.<br />
+10% penalty for each day late.</div>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">The Monteiro-Adler short step algorithm presented in class (Algorithm SPF on page 86
+      of <span 
+class="cmti-12">Wright</span>) could be used as an infeasible interior point method, starting with <span 
+class="cmmi-12">x </span>= <span 
+class="cmmi-12">s </span>= <span 
+class="cmmi-12">e</span>,
+      <span 
+class="cmmi-12">y </span>= 0, and <span 
+class="cmmi-12">&#x03BC; </span>= 1. Give an example to show that we may not get &#x0394;<span 
+class="cmmi-12">x</span><sup><span 
+class="cmmi-8">T</span> </sup>&#x0394;<span 
+class="cmmi-12">s </span>= 0, even
+      if&#x00A0;<span 
+class="cmmi-12">r</span><sub><span 
+class="cmmi-8">c</span></sub> = 0. (Note: We solve (1.20) to find the directions given in (1.25) at each iteration.
+      Hint: you only need look at <span 
+class="cmbx-12">small </span>examples.)
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2">The problems (<span 
+class="cmmi-12">P</span>) and (<span 
+class="cmmi-12">D</span>) are
+      <center class="math-display" >
+      <img 
+src="hw50x.png" alt="            T                                    T
+min        c  x                     max         bTy
+subject to   Ax   =   b    (P)       subject to A  y  +   s  =   c    (D )
+              x  &#x2265;   0                                   s  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 127--><p class="nopar" >
+      where <span 
+class="cmmi-12">x</span>, <span 
+class="cmmi-12">s</span>, and <span 
+class="cmmi-12">c </span>are <span 
+class="cmmi-12">n</span>-vectors, <span 
+class="cmmi-12">b </span>and <span 
+class="cmmi-12">y </span>are <span 
+class="cmmi-12">m</span>-vectors, and <span 
+class="cmmi-12">A </span>is an <span 
+class="cmmi-12">m </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>matrix. Let
+      <img 
+src="hw51x.png" alt="&#x02C6;b"  class="circ" > = <span 
+class="cmmi-12">b</span><span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">Ae </span>and <span 
+class="cmmi-12">&#x0109;</span> = <span 
+class="cmmi-12">c</span><span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">e</span>, where <span 
+class="cmmi-12">e </span>denotes the vector where every component is equal to one.
+      Let <img 
+src="hw52x.png" alt="&#x02C6;d"  class="circ" >= <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">e </span>+ 1. Now consider the linear programming problem
+      <center class="math-display" >
+      <img 
+src="hw53x.png" alt="min                                     (n + 1)w
+                                           &#x02C6;
+subject to     T        Ax  -   bt  +      bw     =   0
+            - A y           +   ct  -      &#x02C6;cw     &#x2265;   0    (HLP   )
+              bTy  -   cTx          +      &#x02C6;dw     &#x2265;   0
+            - &#x02C6;bTy  +   &#x02C6;cTx  -   d&#x02C6;t                =   - (n + 1)
+
+                       x, t &#x2265;   0,        y,w         free,
+      " class="math-display" ></center>
+                                                                                         
+                                                                                         
+      <!--l. 145--><p class="nopar" >
+      where <span 
+class="cmmi-12">t </span>and <span 
+class="cmmi-12">w </span>are scalars. Show that if <span 
+class="cmmi-12">t </span>= 0 in a strictly complementary optimal solution to
+      (<span 
+class="cmmi-12">HLP</span>) then either there exists a vector <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0 with <span 
+class="cmmi-12">Ax </span>= 0 and <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x &#x003C; </span>0 or there exists a
+      vector <span 
+class="cmmi-12">y </span>with <span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2264; </span>0 and <span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y &#x003E; </span>0. What do you conclude?
+      </li>
+      <li 
+  class="enumerate" id="x1-7x3">Consider the standard form linear programming problem min<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>: <span 
+class="cmmi-12">Ax </span>= <span 
+class="cmmi-12">b,x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmsy-10x-x-120">}</span>. Assume
+      <span 
+class="cmmi-12">A </span>is an <span 
+class="cmmi-12">m </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>matrix of rank&#x00A0;<span 
+class="cmmi-12">m</span>. Let <span 
+class="cmmi-12">&#x03BC; &#x003E; </span>0 and let <span 
+class="cmmi-12">x </span>be a given strictly feasible
+      solution. Let <span 
+class="cmmi-12">X </span>denote the diagonal matrix with <span 
+class="cmmi-12">X</span><sub><span 
+class="cmmi-8">ii</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> for <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span>. Let <span 
+class="cmmi-12">y</span><sup><span 
+class="cmsy-8">*</span></sup><span 
+class="cmmi-12">,s</span><sup><span 
+class="cmsy-8">*</span></sup>
+      solve the problem min <sub><span 
+class="cmmi-8">y,s</span></sub><span 
+class="cmsy-10x-x-120">{||</span><span 
+class="cmmi-12">Xs </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03BC;e</span><span 
+class="cmsy-10x-x-120">||</span><sup><span 
+class="cmr-8">2</span></sup> : <span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span>+ <span 
+class="cmmi-12">s </span>= <span 
+class="cmmi-12">c</span><span 
+class="cmsy-10x-x-120">}</span>, where <span 
+class="cmmi-12">e </span>denotes the vector
+      of ones. Find <span 
+class="cmmi-12">y</span><sup><span 
+class="cmsy-8">*</span></sup> and&#x00A0;<span 
+class="cmmi-12">s</span><sup><span 
+class="cmsy-8">*</span></sup>. Show that if the optimal value is smaller than <span 
+class="cmmi-12">&#x03BC;</span><sup><span 
+class="cmr-8">2</span></sup> then
+      <span 
+class="cmmi-12">s</span><sup><span 
+class="cmsy-8">*</span></sup> <span 
+class="cmmi-12">&#x003E; </span>0; what can you conclude about the set of optimal primal solutions in this
+      situation?
+      </li>
+      <li 
+  class="enumerate" id="x1-9x4">Consider the LP:
+      <center class="par-math-display" >
+      <img 
+src="hw54x.png" alt="max   17y1   +   y2
+
+s.t.     y1  +  3y2  &#x2264;   3
+         y1  -   y2  &#x2264;   3
+         y1  +   y2  &#x2264;   2
+      " class="par-math-display" ></center>
+      <!--l. 186--><p class="nopar" >
+      <!--l. 188--><p class="noindent" >Show that <span 
+class="cmmi-12">y </span>= (1<span 
+class="cmmi-12">,</span><span 
+class="cmsy-10x-x-120">-</span>1) is on the central trajectory for this problem.
+      </li>
+      <li 
+  class="enumerate" id="x1-11x5">What happens if an interior point method is applied to the LP
+      <center class="math-display" >
+      <img 
+src="hw55x.png" alt="min {x2  : x1 &#x2264; x2, x2 &#x2265; 0, x &#x2208; IR2 }?
+      " class="math-display" ></center>
+      <!--l. 214--><p class="nopar" >
+      What is the set of optimal solutions?
+      </li>
+      <li 
+  class="enumerate" id="x1-13x6">Pick three problems from the netlib LP test suite, at <a 
+href="http://www.netlib.org/lp" class="url" ><span 
+class="cmtt-12">http://www.netlib.org/lp</span></a> including
+      the problem <span 
+class="cmtt-12">boeing1</span>. Solve each problem using both a simplex algorithm and an
+      interior point algorithm. Do you get the same primal solution with each algorithm?
+      What if you don&#8217;t crossover to get a BFS? (Differences less than 10<sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">8</span></sup> can be
+                                                                                         
+                                                                                         
+      ignored.)
+      <!--l. 226--><p class="noindent" >(Most of the problems are also available in AMPL format and MATLAB format and
+      uncompressed MPS format at <a 
+href="http://clas.ufl.edu/users/hager/coap/format.html" class="url" ><span 
+class="cmtt-12">http://clas.ufl.edu/users/hager/coap/format.html</span></a> with
+      an AMPL model file available both at <a 
+href="http://clas.ufl.edu/users/hager/coap/m2a" class="url" ><span 
+class="cmtt-12">http://clas.ufl.edu/users/hager/coap/m2a</span></a> and
+      at <a 
+href="http://www.netlib.org/ampl/models/mps.mod" class="url" ><span 
+class="cmtt-12">http://www.netlib.org/ampl/models/mps.mod</span></a>
+      <!--l. 237--><p class="noindent" >Alternatively, you can run cplex directly, without using ampl, in which case you would read
+      in the MPS file. Useful commands in cplex include <span 
+class="cmtt-12">read</span>, <span 
+class="cmtt-12">optimize</span>, and <span 
+class="cmtt-12">display</span>. You can
+      choose the solver in cplex by issuing the command <span 
+class="cmtt-12">set lpmethod </span>at the prompt. You can
+      change options in the barrier solver (including the use of crossover) with the command <span 
+class="cmtt-12">set</span>
+      <span 
+class="cmtt-12">barrier</span>. You can use these options in ampl with the syntax <span 
+class="cmtt-12">option cplex</span><span 
+class="cmtt-12">_options</span>
+      <span 
+class="cmtt-12">&#8217;...&#8217;;</span>)
+      </li>
+      <li 
+  class="enumerate" id="x1-15x7"><span 
+class="cmbx-12">Hand in a progress report </span>of your work to date on the course project.
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                         </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                                   </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr 
+class="vspace" style="font-size:5.0pt"><td 
+>&nbsp;</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Tuesday Apr 12: 2&#8211;4pm, Wednesday Apr 13: noon&#8211;2pm.</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;                           Tuesday Apr 19: 2&#8211;<span 
+class="cmbx-12">3pm</span>, <span 
+class="cmbx-12">Thursday Apr 21: 2&#8211;4pm</span>. </td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

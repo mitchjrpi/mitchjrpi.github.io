@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Homework 5</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="hw5">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="hw5.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+     <A HREF=..>MATP6640/DSES6770 Linear Programming</A>, Homework 5.
+  </FONT>
+</DIV>
+
+<P>
+
+<DIV ALIGN="RIGHT">
+   Due:  Thursday, April 13, 2000.
+
+</DIV>
+
+<P>
+
+<BR>
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>Let <!-- MATH: $f(x)=n \log (c^Tx) - \sum_{i=1}^n \log(x_i)$ -->
+<IMG
+ WIDTH="268" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$f(x)=n \log (c^Tx) - \sum_{i=1}^n \log(x_i)$">.
+Show that <!-- MATH: $f(x+\theta d)=f(x)$ -->
+<IMG
+ WIDTH="144" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$f(x+\theta d)=f(x)$">
+if <I>d</I>=<I>kx</I> for some scalar <I>k</I>,
+        provided <I>x</I>&gt;0, <IMG
+ WIDTH="91" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$x+\theta d&gt;0$">,
+<I>c</I><SUP><I>T</I></SUP><I>x</I>&gt;0, and <!-- MATH: $c^T(x+\theta d)>0$ -->
+<IMG
+ WIDTH="124" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$c^T(x+\theta d)&gt;0$">.
+  <DT>2.
+<DD>Let <I>x</I> be a nondegenerate basic feasible solution for the standard
+    form linear programming problem <!-- MATH: $\max\{c^Tx:Ax=b, x\geq 0 \}$ -->
+<IMG
+ WIDTH="214" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$\max\{c^Tx:Ax=b, x\geq 0 \}$">.
+    Let <IMG
+ WIDTH="74" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\bar{A} = AX$">,
+where <I>X</I> is a diagonal matrix with <I>X</I><SUB><I>ii</I></SUB>=<I>x</I><SUB><I>i</I></SUB> for
+    <I>i</I>=1,...,<I>n</I>. Simplify <IMG
+ WIDTH="27" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$P_{\bar{A}}$">,
+the projection matrix onto the
+    nullspace of <IMG
+ WIDTH="18" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.gif"
+ ALT="$\bar{A}$">.
+  <DT>3.
+<DD>Starting from equation (1.20) in <EM>Wright</EM>,
+show that there is a typo in equation (1.25a). It should read:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+A D^2 A^T \Delta \lambda =
+-r_b + A ( {\mathbf -}S^{-1}X r_c +x - \sigma \mu S^{-1} e).
+\end{displaymath} -->
+
+
+
+<IMG
+ WIDTH="395" HEIGHT="33"
+ SRC="img9.gif"
+ ALT="\begin{displaymath}
+A D^2 A^T \Delta \lambda =
+-r_b + A ( {\mathbf -}S^{-1}X r_c +x - \sigma \mu S^{-1} e).
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+(Note: your version of the text may not contain the typo!)
+<P></P>
+  <DT>4.
+<DD><A NAME="MAd1">&#160;</A>The Monteiro-Adler short step algorithm presented in class (Algorithm SPF
+on page 86 of <EM>Wright</EM>) could be used as an infeasible interior point
+method, starting with <I>x</I>=<I>s</I>=<I>e</I>, <I>y</I>=0, and <IMG
+ WIDTH="49" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$\mu=1$">.
+Give an example to show that in this case we may not be able
+to take a step of length 1 and we may need to take a linesearch to
+preserve nonnegativity.
+(Note: We solve (1.20) to find the directions given in (1.25)
+at each iteration. Hint: you only need look at <B>small</B> examples.)
+  <DT>5.
+<DD>Show that we may not get <!-- MATH: $\Delta x^T \Delta s=0$ -->
+<IMG
+ WIDTH="100" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.gif"
+ ALT="$\Delta x^T \Delta s=0$">
+in the setting of 
+Question&nbsp;<A HREF="hw5.html#MAd1">4</A>, even if&nbsp;<I>r</I><SUB><I>c</I></SUB>=0.
+  <DT>6.
+<DD>Consider the primal-dual pair of linear programming problems:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrclllrcll}
+\min & c^Tx &&&& \max & b^Ty \\
+\mbox{subject to} & Ax & = & b & \quad (P) \qquad &
+   \mbox{subject to} & A^Ty & \leq & c  & \quad (D)  \\
+& x & \geq & 0
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="548" HEIGHT="76"
+ SRC="img12.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrclllrcll}
+\min &amp; c^Tx &amp;&amp;&amp;&amp; \max &amp; b^Ty \\
+\...
+...o} &amp; A^Ty &amp; \leq &amp; c &amp; \quad (D) \\
+&amp; x &amp; \geq &amp; 0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <I>x</I> and <I>c</I> are <I>n</I>-vectors, <I>b</I> and <I>y</I> are <I>m</I>-vectors,
+and <I>A</I> is an <I>m</I>  x  <I>n</I> matrix.
+Let <IMG
+ WIDTH="91" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\hat{b}=b-Ae$">
+and <IMG
+ WIDTH="77" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$\hat{c}=c-e$">,
+where <I>e</I> denotes the vector where every component is equal to one.
+Let <!-- MATH: $\hat{d}=c^Te+1$ -->
+<IMG
+ WIDTH="99" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.gif"
+ ALT="$\hat{d}=c^Te+1$">.
+Now consider the linear programming problem
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcccl}
+\min &&&&&&& (n+1) w \\
+\mbox{subject to} &&& Ax & - & bt & + & \hat{b} w & = & 0  \\
+& -A^Ty &&& + & ct & - & \hat{c} w & \geq & 0 \qquad (HLP)  \\
+& b^Ty & - & c^T x &&& + & \hat{d} w & \geq & 0 \\
+& -\hat{b}^Ty & + & \hat{c}^Tx & - & \hat{d} t &&& = & -(n+1)  \\
+&&& x,t & \geq & 0, && y,w &&\mbox{free,}
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="554" HEIGHT="152"
+ SRC="img16.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcccl}
+\min &amp;&amp;&amp;&amp;&amp;&amp;&amp; (n+1) w \\
+\mbox{sub...
+...(n+1) \\
+&amp;&amp;&amp; x,t &amp; \geq &amp; 0, &amp;&amp; y,w &amp;&amp;\mbox{free,}
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <I>t</I> and <I>w</I> are scalars.
+An interior point method can be used to find a <EM>strictly complementary</EM>
+optimal solution to (<I>HLP</I>).
+In such a solution, if the primal variable is equal to zero then
+the corresponding dual slack is strictly positive.
+Use this result to show that if <I>t</I>=0 in a strictly complementary
+optimal solution then either there exists a vector <IMG
+ WIDTH="49" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.gif"
+ ALT="$x\geq 0$">
+with <I>Ax</I>=0 and
+<I>c</I><SUP><I>T</I></SUP><I>x</I>&lt;0 or there exists a vector <I>y</I> with <IMG
+ WIDTH="73" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.gif"
+ ALT="$A^Ty\leq 0$">
+and <I>b</I><SUP><I>T</I></SUP><I>y</I>&gt;0.
+</DL>
+
+<P>
+
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD></TD><TD ALIGN="LEFT"><A HREF=../..>John Mitchell</A></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Amos Eaton 325</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">x6915.</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT"><A HREF=mailto:mitchj@rpi.edu>
+mitchj@rpi.edu</A></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Office hours: Wednesday: 12 noon - 2.0pm.</TD>
+</TR>
+</TABLE>
+
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<A HREF=../..>John E Mitchell</A>
+<BR><I>2000-04-04</I>
+</ADDRESS>
+</BODY>
+</HTML>

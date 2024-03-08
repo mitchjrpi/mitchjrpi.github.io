@@ -1,0 +1,317 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Linear Programming: 
+Homework 1</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="hw1">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="hw1.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+     <A href=..>MATP6640/DSES6770 Linear Programming</A>, Homework 1.
+  </FONT>
+</DIV>
+
+<P>
+
+<DIV ALIGN="RIGHT">
+   Due:  Thursday, January 31, 2002.
+
+</DIV>
+
+<P>
+
+<BR>
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>Let the system <I>Ax</I>=<I>b</I> be defined by:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{cccccrcrcl}
+                 x_1  &       & - & x_3 & + & 3x_4  & - &  x_5 & = & 1  \\
+                      &  x_2  & + & x_3 & + & 4x_4  & + & 2x_5 & = & 4  \\
+                      &       &   &     & - &  x_4  & + & 3x_5 & = & 0. \\
+          \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="300" HEIGHT="64"
+ SRC="img1.gif"
+ ALT="\begin{displaymath}
+\begin{array}{cccccrcrcl}
+x_1 &amp; &amp; - &amp; x_3 &amp; + &amp; 3x_4 &amp; - &amp;...
+... &amp; 4 \\
+&amp; &amp; &amp; &amp; - &amp; x_4 &amp; + &amp; 3x_5 &amp; = &amp; 0. \\
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Let <!-- MATH: $K:=\{x \in {I\!\! R}^5:Ax=b, x \geq 0\}$ -->
+<IMG
+ WIDTH="218" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$K:=\{x \in {I\!\! R}^5:Ax=b, x \geq 0\}$">.
+         The point <!-- MATH: $x=(1,4,0,0,0)^T$ -->
+<I>x</I>=(1,4,0,0,0)<SUP><I>T</I></SUP> is a basic feasible solution for this
+         problem. Find all the bases corresponding to this bfs.
+<DT>2.
+<DD>In what follows, (<I>P</I>) refers to the standard form linear programming problem
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcl}
+      \min  &  c^Tx  &   &    \\
+      \mbox{s.t. }  &  Ax  &  =  &  b  \\
+                    &   x  & \geq & 0.
+  \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="126" HEIGHT="64"
+ SRC="img3.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcl}
+\min &amp; c^Tx &amp; &amp; \\
+\mbox{s.t. } &amp; Ax &amp; = &amp; b \\
+&amp; x &amp; \geq &amp; 0.
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Here, <!-- MATH: $A \in {I\!\! R}^{m \times n}$ -->
+<IMG
+ WIDTH="80" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$A \in {I\!\! R}^{m \times n}$">,
+the dimensions of <I>x</I>, <I>c</I>, and <I>b</I>
+are defined appropriately, and <IMG
+ WIDTH="48" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$m \leq n$">.
+Let <I>K</I> be the feasible region of (<I>P</I>).
+         <DL COMPACT>
+<DT>(a)
+<DD>Construct a linear programming problem of the form (<I>P</I>)
+with dim(<I>K</I>)&gt;<I>n</I>-<I>m</I>.
+            <DT>(b)
+<DD>Construct a feasible
+              linear programming problem of the form (<I>P</I>)
+              with dim(<I>K</I>)&lt;<I>n</I>-<I>m</I>, <IMG
+ WIDTH="39" HEIGHT="29" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$b \neq 0$">,
+and rank(<I>A</I>)=<I>m</I>.
+            <DT>(c)
+<DD>In part&nbsp;(b),
+              the linear program you defined has
+              a degenerate basic feasible solution.
+              What are the bases associated with that bfs?
+         </DL>
+<DT>3.
+<DD><A NAME="qcs">&#160;</A>     Consider the linear programming problem
+     <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcrcrclr}
+         \min         &  x_1 & + &  x_2 & + &  x_3 & + & 4x_4 & + & 3x_5 \\
+         \mbox{s.t. } & -x_1 &   &      & + &  x_3 & + & 3x_4 & - &  x_5
+                                                              & = & b_1 \\
+&  x_1 & + &  x_2 &   &      &   &      & - &  x_5
+                                                   & = & b_2 & \qquad (P)\\
+&      &   & 2x_2 & + &  x_3 & + & 2x_4 & + &  x_5
+                                                              & = & b_1+2b_2  \\
+ 
+&      &   &&& x_i & \geq & 0, && i & = & 1,...,5.
+       \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="510" HEIGHT="102"
+ SRC="img7.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcrcrclr}
+\min &amp; x_1 &amp; + &amp; x_2 &amp; + &amp; x_...
+...\\
+&amp; &amp; &amp;&amp;&amp; x_i &amp; \geq &amp; 0, &amp;&amp; i &amp; = &amp; 1,...,5.
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Assume that
+     the problem (<I>P</I>) has an optimal solution <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.gif"
+ ALT="$\bar{x}$">,
+where
+     <IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$\bar{x}_1$">,
+<IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$\bar{x}_2$">
+and <IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.gif"
+ ALT="$\bar{x}_3$">
+are basic.
+     <DL COMPACT>
+<DT>(a)
+<DD>What is the dual to this linear program?
+<DT>(b)
+<DD>Use complementary slackness to find an optimal solution
+         <IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.gif"
+ ALT="$\bar{y}$">
+to the dual problem. 
+<P>
+</DL>
+   <DT>4.
+<DD>Consider again the problem (<I>P</I>) in Question&nbsp;<A HREF="hw1.html#qcs">3</A>.
+     <DL COMPACT>
+<DT>(a)
+<DD>Looking purely at the optimal dual solution you found above,
+can you conclude that
+         no optimal primal solution will have <I>x</I><SUB>4</SUB>&gt;0? What about&nbsp;<I>x</I><SUB>5</SUB>?
+       <DT>(b)
+<DD>The optimal dual solution <IMG
+ WIDTH="12" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.gif"
+ ALT="$\bar{y}$">
+is not unique: there are
+         other optimal solutions of the form <!-- MATH: $\bar{y}+\lambda[-1,-2,1]^T$ -->
+<IMG
+ WIDTH="122" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\bar{y}+\lambda[-1,-2,1]^T$">.
+         What is the largest possible value of&nbsp;<IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.gif"
+ ALT="$\lambda$">?
+         Do these other optimal solutions imply anything about the values of
+         <IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$\bar{x}_1$">,
+<IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$\bar{x}_2$">
+and&nbsp;<IMG
+ WIDTH="20" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.gif"
+ ALT="$\bar{x}_3$">?
+         Do they imply anything about the values of <I>x</I><SUB>4</SUB> and <I>x</I><SUB>5</SUB> in any
+         optimal solution to&nbsp;(<I>P</I>)?
+     </DL>
+<DT>5.
+<DD>Consider the subspace alternative theorem:  
+<BR>
+For <!-- MATH: $A\in{I\!\! R}^{m{\times}n}$ -->
+<IMG
+ WIDTH="80" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$A \in {I\!\! R}^{m \times n}$">
+and <!-- MATH: $c\in{I\!\! R}^n$ -->
+<IMG
+ WIDTH="54" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.gif"
+ ALT="$c\in{I\!\! R}^n$">,
+exactly one of the
+         following holds:
+         <DL COMPACT>
+<DT>(a)
+<DD><!-- MATH: $\exists y \in {I\!\! R}^m  \mbox{ s.t. }  A^Ty=c$ -->
+<IMG
+ WIDTH="159" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.gif"
+ ALT="$ \exists y \in {I\!\! R}^m \mbox{ s.t. } A^Ty=c $">
+<DT>(b)
+<DD><!-- MATH: $\exists x \in {I\!\! R}^n  \mbox{ s.t. }  Ax=0, c^Tx \neq 0.$ -->
+<IMG
+ WIDTH="215" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ \exists x \in {I\!\! R}^n \mbox{ s.t. } Ax=0, c^Tx \neq 0. $"></DL>
+         Develop a proof for this along the following lines:
+         <BLOCKQUOTE>
+            First observe that both (a) and (b) can not hold simultaneously.
+            Thus, it suffices to show that when (a) fails, (b) must hold.
+            Next assume (a) fails and then construct an <I>x</I> which satisfies (b).
+         
+</BLOCKQUOTE>
+         (Hint: You may assume that,
+             given a matrix <!-- MATH: $M \in {I\!\! R}^{m \times n}$ -->
+<IMG
+ WIDTH="85" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.gif"
+ ALT="$M \in {I\!\! R}^{m \times n}$">
+and a vector
+             <!-- MATH: $p \in {I\!\! R}^n$ -->
+<IMG
+ WIDTH="55" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$p \in {I\!\! R}^n$">,
+there exist unique <I>p</I>' and <I>p</I>'' such that
+             <I>p</I>=<I>p</I>'+<I>p</I>'', <I>Mp</I>'=0, <I>p</I>''=<I>M</I><SUP><I>T</I></SUP><I>q</I> for some <I>q</I>, and <I>p</I>'<SUP><I>T</I></SUP><I>p</I>''=0.)
+</DL>
+
+<P>
+
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD></TD><TD ALIGN="LEFT"><a href=../..>John Mitchell</a></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Amos Eaton 325</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">x6915.</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">
+<a href=mailto:mitchj@rpi.edu>mitchj@rpi.edu</a></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Office hours:</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Wednesday: 10am - 12 noon.</TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John Mitchell</a>
+<BR><I>2002-01-17</I>
+</ADDRESS>
+</BODY>
+</HTML>

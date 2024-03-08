@@ -1,0 +1,434 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Final Exam 2001</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="final01">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="final01.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+     <a href=..>MATP6620/DSES6760 
+<BR>
+ <B>Combinatorial Optimization and Integer Programming</B>
+</a>
+  </FONT>
+</DIV>
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+                Final Exam, Spring 2001
+  </FONT>
+</DIV>
+
+<P>
+Take Home   Due: 5pm, Monday, 30 April, 2001.
+
+<P>
+
+<BR>
+
+<P>
+This is to be all your own work.  You may use any result from class,
+homeworks, or the books and papers on reserve in the library.
+Do not consult anybody or anything else. 
+I can dispense hints to help you if you are stuck.
+My office extension is 276-6915 and
+you can also reach me by email at mitchj@rpi.edu.
+I will have office hours Wednesday from 1-3pm
+and Friday 2-4pm.
+The exam consists of four questions and is worth 100 points.
+
+<P>
+In order that I can display grades, please write a 4 digit number
+on the front of your solution set.
+
+<P>
+
+<BR>
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>(25 points)
+Consider a bipartite graph <I>G</I>=(<I>V</I>,<I>E</I>), where <I>V</I> can be broken into
+    two parts <I>U</I> and <I>W</I>, and every edge in <I>E</I> has one endpoint in <I>U</I>
+    and one in&nbsp;<I>W</I>.
+    (Formally, <IMG
+ WIDTH="100" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$V=U\cup W$">,
+<!-- MATH: $U\cap W =\emptyset$ -->
+<IMG
+ WIDTH="95" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$U\cap W =\emptyset$">,
+and <IMG
+ WIDTH="51" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$e \in E$">
+implies that
+    <I>e</I>=(<I>i</I>,<I>j</I>), where <IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$i\in U$">
+and <IMG
+ WIDTH="56" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$j\in W$">.)
+ 
+Note that we have not assumed 
+that every vertex in <I>U</I> is adjacent to every vertex in&nbsp;<I>W</I>.
+    Because this is a bipartite graph, the maximum cardinality matching
+    problem can be solved by solving its linear programming relaxation
+    <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcllr}
+        \max & \sum_{(i,j) \in E} x_{ij} \\
+        \mbox{subject to } & \sum_{j \in W: (i,j) \in E} x_{ij}
+                                & \leq & 1, & \forall i \in U & \qquad (P) \\
+                           & \sum_{i \in U: (i,j) \in E} x_{ij}
+                                & \leq & 1, & \forall j \in W \\
+                           & x_{ij} & \geq & 0, & (i,j) \in E
+      \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="458" HEIGHT="100"
+ SRC="img6.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcllr}
+\max &amp; \sum_{(i,j) \in E} x_{ij} \\ ...
+...l j \in W \\
+&amp; x_{ij} &amp; \geq &amp; 0, &amp; (i,j) \in E
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <I>x</I><SUB><I>ij</I></SUB> is one if edge (<I>i</I>,<I>j</I>) is in the matching,
+    and zero otherwise.
+    Every basic feasible solution to both (<I>P</I>) and its dual (<I>D</I>) is integral.
+    <DL COMPACT>
+<DT>(a)
+<DD>(5 points)
+What is the dual (<I>D</I>) to the linear program&nbsp;(<I>P</I>)?
+        (Hint: The dual of a linear program of the form
+        <!-- MATH: $\max\{c^Tx:Ax\leq b,x\geq 0\}$ -->
+<IMG
+ WIDTH="215" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\max\{c^Tx:Ax\leq b,x\geq 0\}$">
+is <!-- MATH: $\min\{b^Ty:A^Ty\geq c, y\geq 0\}$ -->
+<IMG
+ WIDTH="219" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$\min\{b^Ty:A^Ty\geq c, y\geq 0\}$">.)
+      <DT>(b)
+<DD>(10 points)
+        A <EM>node cover</EM> of <I>G</I> is a subset <I>S</I> of <I>V</I> such that every
+        edge in <I>E</I> is incident to at least one vertex in&nbsp;<I>S</I>.
+        What do the integral solutions to (<I>D</I>) correspond to?
+        What do you conclude from strong duality?
+      <DT>(c)
+<DD>(10 points)
+        What are the complementary slackness conditions for the
+        pair (<I>P</I>) and (<I>D</I>)? Interpret these conditions.
+    </DL>
+  <DT>2.
+<DD>(20 points)
+    <DL COMPACT>
+<DT>(a)
+<DD>(10 points)
+Let <I>M</I>=(<I>N</I>,<I>F</I>) be a matroid defined on the finite set <I>N</I> and with
+        independent sets <I>F</I>.
+        The <B>dual matroid</B> <IMG
+ WIDTH="24" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.gif"
+ ALT="$\bar{M}$">
+        to <I>M</I> can be defined as the independence
+        system on the finite set <I>N</I> with its maximal independent sets
+        equal to the complements of the maximal independent sets in&nbsp;<I>M</I>.
+        Show that <IMG
+ WIDTH="24" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.gif"
+ ALT="$\bar{M}$">
+is a matroid.
+        (Note: The dual matroid is defined in a different way in Nemhauser
+        and Wolsey. I want you to use the definition I've given you here
+        to prove this result, and not to use the definition in the text.)
+      <DT>(b)
+<DD>(10 points)
+        A <EM>matric matroid</EM> <I>M</I><SUB>1</SUB>=(<I>N</I><SUB>1</SUB>,<I>F</I><SUB>1</SUB>)
+        can be represented using a matrix:
+        elements of the finite set <I>N</I><SUB>1</SUB> correspond to columns of the matrix,
+        and the independent sets in <I>F</I><SUB>1</SUB> correspond to
+        linearly independent subsets of the columns.
+        A <EM>graphic matroid</EM> <I>M</I><SUB>2</SUB>=(<I>N</I><SUB>2</SUB>,<I>F</I><SUB>2</SUB>) can be represented
+        using a graph:
+        elements of the finite set <I>N</I><SUB>2</SUB> correspond to edges of the graph,
+        and the independent sets in <I>F</I><SUB>2</SUB> correspond to acyclic subsets
+        of the edges.
+        Show that any graphic matroid is also a matric matroid.
+    </DL>
+
+<P>
+
+<DT>3.
+<DD>(30+10 points)   <A NAME="equi_lp">&#160;</A>       Let <I>G</I> be a complete graph on 2<I>s</I> vertices, for some integer&nbsp;<IMG
+ WIDTH="48" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$s\geq 3$">.
+       Let each edge <I>e</I> have weight&nbsp;<I>c</I><SUB><I>e</I></SUB>.
+       The <EM>equipartition problem</EM> on this graph is to divide the vertices
+       into two sets of size <I>s</I> so as to minimize the sum of the weights of
+       the edges that have one endpoint in each set. One polyhedral
+       representation of this problem requires defining variables
+       <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+x_e := \left\{ \begin{array}{ll}
+           1 & \mbox{if the endpoints are in different sets}  \\
+           0 & \mbox{otherwise}
+         \end{array}  \right.
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="384" HEIGHT="55"
+ SRC="img11.gif"
+ ALT="\begin{displaymath}
+x_e := \left\{ \begin{array}{ll}
+1 &amp; \mbox{if the endpoint...
+...ifferent sets} \\
+0 &amp; \mbox{otherwise}
+\end{array} \right.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+for each edge&nbsp;<I>e</I>.
+       <DL COMPACT>
+<DT>(a)
+<DD>(5 points)  <A NAME="degree">&#160;</A>Show that <I>x</I> must satisfy the equality
+            <!-- MATH: $\sum_{e \in \delta(v)}x_e=s$ -->
+<IMG
+ WIDTH="116" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.gif"
+ ALT="$\sum_{e \in \delta(v)}x_e=s$">
+            for each vertex <I>v</I>, where <IMG
+ WIDTH="37" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\delta(v)$">
+denotes the set of
+            edges incident to vertex&nbsp;<I>v</I>.
+         <DT>(b)
+<DD>(5 points)
+            Show that the dimension of the feasible region is no more than
+            <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\mbox{dim}(Q) \leq \left( \begin{array}{c}2s\\2\end{array}
+                 \right) - 2s.
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="191" HEIGHT="55"
+ SRC="img14.gif"
+ ALT="\begin{displaymath}
+\mbox{dim}(Q) \leq \left( \begin{array}{c}2s\\ 2\end{array} \right) - 2s.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+         <DT>(c)
+<DD>(Extra credit: 10 points)
+            Show that the dimension of the feasible region is exactly
+            <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\mbox{dim}(Q) = \left( \begin{array}{c}2s\\2\end{array}
+                 \right) - 2s.
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="190" HEIGHT="55"
+ SRC="img15.gif"
+ ALT="\begin{displaymath}
+\mbox{dim}(Q) = \left( \begin{array}{c}2s\\ 2\end{array} \right) - 2s.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+         <DT>(d)
+<DD>(5 points)  <A NAME="tri">&#160;</A>            Let <I>C</I> be a cycle of length 3 and let <I>E</I>(<I>C</I>) denote the
+            edges of this cycle.
+            Show that any feasible solution satisfies
+            <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\sum_{e \in E(C)} x_e \leq 2.
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="106" HEIGHT="53"
+ SRC="img16.gif"
+ ALT="\begin{displaymath}
+\sum_{e \in E(C)} x_e \leq 2.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+         <DT>(e)
+<DD>(5 points)  <A NAME="cycle">&#160;</A>            Let <I>C</I> be a cycle of length <I>s</I>+1 and let <I>E</I>(<I>C</I>) denote the
+            edges of this cycle.
+            Show that any feasible solution satisfies
+            <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\sum_{e \in E(C)} x_e \geq 2.
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="106" HEIGHT="53"
+ SRC="img17.gif"
+ ALT="\begin{displaymath}
+\sum_{e \in E(C)} x_e \geq 2.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+         <DT>(f)
+<DD>(10 points)
+            Solve the instance of the equipartition problem contained in
+            <BLOCKQUOTE>
+              http://www.rpi.edu/~mitchj/matp6620/final/equi.mod
+            
+</BLOCKQUOTE>
+            and
+            <BLOCKQUOTE>
+              http://www.rpi.edu/~mitchj/matp6620/final/equi8.dat
+            
+</BLOCKQUOTE>
+            using a cutting plane method.
+       </DL>
+
+<P>
+
+<DT>4.
+<DD>(25 points)
+Another approach to the equipartition problem is to define a variable
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+w_{kj} := \left\{ \begin{array}{ll}
+1 & \mbox{if vertex $j$\space is on side $k$ }  \\
+0 & \mbox{otherwise}
+\end{array}  \right.
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="285" HEIGHT="55"
+ SRC="img18.gif"
+ ALT="\begin{displaymath}
+w_{kj} := \left\{ \begin{array}{ll}
+1 &amp; \mbox{if vertex $j$\...
+... is on side $k$ } \\
+0 &amp; \mbox{otherwise}
+\end{array} \right.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <I>k</I> takes the values 1 and 2, corresponding to the two sides
+of the equipartition.
+Let <I>g</I><SUP>(<I>p</I>)</SUP> denote the <I>p</I>-vector with every entry equal to one.
+<DL COMPACT>
+<DT>(a)
+<DD>(8 points)
+Let <I>W</I> denote the 2  x  2<I>s</I> matrix whose (<I>k</I>,<I>j</I>)th entry is <I>w</I><SUB><I>kj</I></SUB>.
+Show that the entries of <I>W</I> satisfy <!-- MATH: $Wg^{(2s)}=sg^{(2)}$ -->
+<I>Wg</I><SUP>(2<I>s</I>)</SUP>=<I>sg</I><SUP>(2)</SUP> and
+<!-- MATH: $W^Tg^{(2)}=g^{(2s)}$ -->
+<I>W</I><SUP><I>T</I></SUP><I>g</I><SUP>(2)</SUP>=<I>g</I><SUP>(2<I>s</I>)</SUP>.
+<DT>(b)
+<DD>(8 points)
+Let <I>X</I> denote the 2<I>s</I>  x  2<I>s</I> matrix whose (<I>i</I>,<I>j</I>)th entry is
+the variable <I>x</I><SUB><I>ij</I></SUB> defined in Question&nbsp;<A HREF="final01.html#equi_lp">3</A> corresponding
+to the edge <I>e</I>=(<I>i</I>,<I>j</I>).
+Show that <I>E</I>-<I>X</I>=<I>W</I><SUP><I>T</I></SUP><I>W</I> for any feasible equipartition, where <I>E</I> denotes
+a matrix whose every entry is one.
+<DT>(c)
+<DD>(9 points)
+Show that an SDP relaxation of the equipartition problem is:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcl}
+\min_Z & \frac{1}{2}C \bullet E - \frac{1}{2} C \bullet Z \\
+\mbox{subject to} & Zg^{(2s)} & = & sg^{(2s)} \\
+& Z_{ii} & = & 1 \\
+& Z & \succeq & 0 \mbox{ and symmetric}
+\end{array}
+\end{displaymath} -->
+
+<IMG
+ WIDTH="420" HEIGHT="100"
+ SRC="img19.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcl}
+\min_Z &amp; \frac{1}{2}C \bullet E - \frac{...
+...&amp; = &amp; 1 \\
+&amp; Z &amp; \succeq &amp; 0 \mbox{ and symmetric}
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <I>Z</I> is a 2<I>s</I>  x  2<I>s</I> matrix and <I>C</I><SUB><I>ij</I></SUB>=<I>c</I><SUB><I>e</I></SUB> when the edge
+<I>e</I>=(<I>i</I>,<I>j</I>).
+How does the matrix <I>Z</I> relate to the matrices <I>X</I> and <I>W</I> given earlier?
+How can we exploit the results of Question&nbsp;<A HREF="final01.html#equi_lp">3</A> in this
+SDP formulation?
+What have we relaxed to arrive at this formulation?
+</DL>
+
+<P>
+</DL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2005-11-28</I>
+</ADDRESS>
+</BODY>
+</HTML>

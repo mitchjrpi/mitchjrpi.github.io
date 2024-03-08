@@ -1,0 +1,46 @@
+ILOG AMPL 11.000, licensed to "rensselaer-troy, ny".
+AMPL Version 20080102 (Darwin 8.10.1)
+ampl: model hw3q4.mod;
+ampl: data hw3q4.dat;
+ampl: solve;
+CPLEX 12.6.0.0: optimal solution; objective 49
+0 dual simplex iterations (0 in phase I)
+ampl: display x;
+x [*,*]
+:   1   2   3   4   5    :=
+1   0   1   1   1   1
+2   1   0   1   1   1
+3   1   1   0   1   1
+4   1   1   1   0   1
+5   1   1   1   1   0
+;
+
+ampl: subject to cutplus{i in vertices, j in vertices, k in vertices: i < j and j < k}: x[i,j] + x[i,k] + x[j,k] <= 2;
+ampl: solve;
+CPLEX 12.6.0.0: optimal solution; objective 39
+6 dual simplex iterations (0 in phase I)
+ampl: display x;
+x [*,*]
+:   1   2   3   4   5    :=
+1   0   0   1   0   1
+2   0   0   0   1   1
+3   1   0   0   1   0
+4   0   1   1   0   0
+5   1   1   0   0   0
+;
+
+ampl: subject to cut132: x[1,3] - x[1,2] - x[2,3] <= 0;
+ampl: solve;
+CPLEX 12.6.0.0: optimal solution; objective 36
+6 dual simplex iterations (2 in phase I)
+ampl: display x;
+x [*,*]
+:   1   2   3   4   5    :=
+1   0   0   1   1   1
+2   0   0   1   1   1
+3   1   1   0   0   0
+4   1   1   0   0   0
+5   1   1   0   0   0
+;
+
+

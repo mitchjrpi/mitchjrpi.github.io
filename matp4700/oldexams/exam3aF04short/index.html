@@ -1,0 +1,580 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>exam3aF04short</TITLE>
+<META NAME="description" CONTENT="exam3aF04short">
+<META NAME="keywords" CONTENT="exam3aF04short">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="exam3aF04short.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+
+<P>
+<DIV ALIGN="CENTER">
+<a href=..>Math Models of Operations Research, MATP 4700/ DSES 4770</a>.
+
+</DIV>
+
+<P>
+<DIV ALIGN="CENTER">
+Third Exam, Friday, December 10, 2004.
+
+</DIV>
+
+<P>
+You may use any result from your notes or a homework that is clearly stated.
+You may use one sheet of handwritten notes, but no other sources.
+The exam consists of six questions, and lasts one hundred minutes.
+
+<P>
+
+<OL>
+<LI>(20 points)
+
+<P>
+A pharmaceutical manufacturer must supply 30 batches of its new medication in
+the next quarter, then 25, 10, and 35 in successive quarters.
+Each quarter in which the company makes product requires $100,000 setup,
+plus $3000 per batch produced. There is no limit on production capacity.
+Batches can be held in inventory, but the cost is a high $5000 per batch per quarter.
+The company seeks a minimum total cost production plan.
+
+<P>
+
+<OL>
+<LI>(5 points)
+
+<P>
+Explain why this problem can be approached by dynamic programming,
+with states <IMG
+ WIDTH="101" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$k=1,\ldots,5$"> representing the reaching of quarter <IMG
+ WIDTH="15" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="$k$"> with all earlier demand
+fulfilled and no inventory on hand.
+</LI>
+<LI>(10 points)
+
+<P>
+Sketch the digraph corresponding to the dynamic program structure of part (a).
+Include costs on all arcs.
+</LI>
+<LI>(5 points)
+
+<P>
+Explain why the feasible production plans correspond exactly to the paths from
+node <IMG
+ WIDTH="50" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$k=1$"> to node <IMG
+ WIDTH="50" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$k=5$"> in your digraph.
+</LI>
+</OL>
+
+<P>
+</LI>
+<LI>(20 points)
+
+<P>
+A <B>node packing</B> on a graph <IMG
+ WIDTH="95" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$G=(V,E)$"> is a subset of the vertices so that
+no two vertices in the subset share an edge.
+If each vertex&nbsp;<IMG
+ WIDTH="15" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.png"
+ ALT="$v$"> has a weight&nbsp;<IMG
+ WIDTH="26" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$w_v$">,
+the <B>weighted node packing</B> problem on a graph is to
+choose a node packing <IMG
+ WIDTH="60" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$P \subset V$"> of maximum weight
+<!-- MATH
+ $\sum_{v \in P} w_v$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$\sum_{v \in P} w_v$">.
+This can be formulated as an integer programming problem by
+introducing a binary variable <IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$x_v$"> for each vertex <IMG
+ WIDTH="53" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$v \in V$"> and then
+solving the problem
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lrclr}
+\min & - \sum_{v \in V} w_v x_v  \\
+\mbox{subject to } & x_u + x_v & \leq & 1 \mbox{ for each edge } (u,v) \in E  & \qquad (WNP) \\
+& x_v && \mbox{binary } \forall v \in V
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="583" HEIGHT="76" BORDER="0"
+ SRC="img12.png"
+ ALT="\begin{displaymath}
+\begin{array}{lrclr}
+\min &amp; - \sum_{v \in V} w_v x_v \\
+\mb...
+...d (WNP) \\
+&amp; x_v &amp;&amp; \mbox{binary } \forall v \in V
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+Let <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$G$"> be the complete graph on three vertices <IMG
+ WIDTH="109" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$V=\{1,2,3\}$">,
+so <IMG
+ WIDTH="20" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img13.png"
+ ALT="$G$"> has undirected edges (1,2), (2,3), and (1,3).
+Let <IMG
+ WIDTH="61" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.png"
+ ALT="$w_1=5$">, <IMG
+ WIDTH="61" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$w_2=4$">, and <IMG
+ WIDTH="61" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$w_3=3$">.
+Solving the linear programming relaxation of <IMG
+ WIDTH="71" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$(WNP)$"> for this problem gives an
+optimal tableau
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+M =
+\begin{tabular}{|l|rrrrrr|}
+\multicolumn{2}{r}{$x_1$} & $x_2$\  & $x_3$\  & $s_1$\  & $s_2$\  &
+\multicolumn{1}{r}{$s_3$}  \\\hline
+6 & 0 & 0 & 0 & 3 & 1 & 2 \\\hline
+0.5 & 1 & 0 & 0 & 0.5 & -0.5 & 0.5 \\
+0.5 & 0 & 1 & 0 & 0.5 & 0.5 & -0.5 \\
+0.5 & 0 & 0 & 1 & -0.5 & 0.5 & 0.5 \\\hline
+\end{tabular}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="338" HEIGHT="124" BORDER="0"
+ SRC="img19.png"
+ ALT="\begin{displaymath}
+M =
+\begin{tabular}{\vert l\vert rrrrrr\vert}
+\multicolumn{2...
+... \\
+0.5 &amp; 0 &amp; 0 &amp; 1 &amp; -0.5 &amp; 0.5 &amp; 0.5 \\ \hline
+\end{tabular}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <IMG
+ WIDTH="21" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.png"
+ ALT="$s_1$">, <IMG
+ WIDTH="21" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$s_2$">, and <IMG
+ WIDTH="21" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$s_3$"> are the slack variables in&nbsp;<IMG
+ WIDTH="71" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$(WNP)$">.
+
+<OL>
+<LI>(10 points)
+
+<P>
+Why is the inequality <!-- MATH
+ $x_1+x_2+x_3 \leq 1$
+ -->
+<IMG
+ WIDTH="140" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$x_1+x_2+x_3 \leq 1$"> a valid inequality that could be
+added to <IMG
+ WIDTH="71" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$(WNP)$">?
+
+<P>
+</LI>
+<LI>(10 points)
+
+<P>
+Add the inequality <!-- MATH
+ $x_1+x_2+x_3 \leq 1$
+ -->
+<IMG
+ WIDTH="140" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$x_1+x_2+x_3 \leq 1$"> to <IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img24.png"
+ ALT="$M$"> and reoptimize.
+(You should obtain an integral solution.)
+</LI>
+</OL>
+
+<P>
+</LI>
+<LI>Consider the integer programming problem
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lrcrclr}
+\max & 5x_1 & + & 3x_2 \\
+\mbox{subject to}
+& 3x_1 & + & 2x_2 & \leq & 7 & \qquad (IP) \\
+& \multicolumn{3}{r}{x_1, x_2} & \geq & 0 \mbox{ and integer}
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="443" HEIGHT="76" BORDER="0"
+ SRC="img25.png"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrclr}
+\max &amp; 5x_1 &amp; + &amp; 3x_2 \\
+\mbox{subj...
+...lumn{3}{r}{x_1, x_2} &amp; \geq &amp; 0 \mbox{ and integer}
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+
+<OL>
+<LI>(20 points)
+
+<P>
+Solve this integer program <B>using branch-and-bound</B>.
+It is acceptable to solve the LP relaxations graphically or by inspection;
+the problem is illustrated below.
+
+<P>
+<DIV ALIGN="CENTER">
+<BR>
+<IMG
+ WIDTH="319" HEIGHT="399" ALIGN="BOTTOM" BORDER="0"
+ SRC="img26.png"
+ ALT="\begin{picture}(200,250)(-25,-25)
+\put(-25,0){\vector(1,0){200}}
+\put(0,-25){\ve...
+...0,-15){$2\frac{1}{3}$}
+\put(165,-15){$x_1$}
+\put(-12,215){$x_2$}
+\end{picture}">
+<BR>
+</DIV>
+
+<P>
+</LI>
+<LI>(15 points)
+
+<P>
+Solve <IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$(IP)$"> using <B>dynamic programming</B>.
+Be sure to state the recursion you use to get <IMG
+ WIDTH="72" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$f_1(s,x_1)$">
+in terms of <IMG
+ WIDTH="45" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$f_2(s)$">,
+and to explain your stages and state variable(s).
+</LI>
+</OL>
+
+<P>
+</LI>
+<LI>(25 points)
+
+<P>
+The linear programming problem
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lrcrcrcrcllr}
+\min & -2x_1 & - & x_2 \\
+\mbox{subject to } & 2x_1 & + & x_2 & + & x_3 &&& = & 8 && \qquad (P)  \\
+& -x_1 & + & 2x_2 &&& + & x_4 & = & 6 \\
+&&&&&&& x_i & \geq & 0 & \mbox{for } i=1,\ldots,4
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="622" HEIGHT="99" BORDER="0"
+ SRC="img30.png"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcrcllr}
+\min &amp; -2x_1 &amp; - &amp; x_2 \\
+\mbox...
+...
+&amp;&amp;&amp;&amp;&amp;&amp;&amp; x_i &amp; \geq &amp; 0 &amp; \mbox{for } i=1,\ldots,4
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+has dual
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lrcrcrr}
+\max & 8y_1 & + & 6y_2 \\
+\mbox{subject to } & 2y_1 & - & y_2 & \leq & -2  \\
+& y_1 & + & 2y_2 & \leq & -1  & \qquad \qquad (D)  \\
+& y_1 &&& \leq & 0 \\
+&&& y_2 & \leq & 0
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="392" HEIGHT="122" BORDER="0"
+ SRC="img31.png"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrr}
+\max &amp; 8y_1 &amp; + &amp; 6y_2 \\
+\mbox{subj...
+...d (D) \\
+&amp; y_1 &amp;&amp;&amp; \leq &amp; 0 \\
+&amp;&amp;&amp; y_2 &amp; \leq &amp; 0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+
+<OL>
+<LI>(3 points)
+
+<P>
+Let <!-- MATH
+ $\bar{x}=(3,2,0,5)$
+ -->
+<IMG
+ WIDTH="118" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.png"
+ ALT="$\bar{x}=(3,2,0,5)$"> and <!-- MATH
+ $\bar{y}=(-1,0)$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.png"
+ ALT="$\bar{y}=(-1,0)$">.
+Show that this is an optimal solution to the primal-dual pair <IMG
+ WIDTH="34" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.png"
+ ALT="$(P)$"> and&nbsp;<IMG
+ WIDTH="36" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.png"
+ ALT="$(D)$">.
+
+<P>
+</LI>
+<LI>(3 points)
+
+<P>
+Is <IMG
+ WIDTH="16" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\bar{x}$"> a basic feasible solution? Justify your answer.
+
+<P>
+</LI>
+<LI>(3 points)
+
+<P>
+Find two optimal basic feasible solutions to <IMG
+ WIDTH="34" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.png"
+ ALT="$(P)$">, graphically.
+Label <IMG
+ WIDTH="16" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.png"
+ ALT="$\bar{x}$"> on your graph.
+
+<P>
+</LI>
+<LI>(3 points)
+
+<P>
+Show that <IMG
+ WIDTH="36" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.png"
+ ALT="$(D)$"> is degenerate, graphically.
+Label <IMG
+ WIDTH="15" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.png"
+ ALT="$\bar{y}$"> on your graph.
+
+<P>
+</LI>
+<LI>(3 points)
+
+<P>
+Give an integral feasible interior point for <IMG
+ WIDTH="34" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.png"
+ ALT="$(P)$">.
+
+<P>
+</LI>
+<LI>(10 points)
+
+<P>
+Let <!-- MATH
+ $\tilde{x}=(3-\epsilon,2-\epsilon,3\epsilon,5+\epsilon)$
+ -->
+<IMG
+ WIDTH="218" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.png"
+ ALT="$\tilde{x}=(3-\epsilon,2-\epsilon,3\epsilon,5+\epsilon)$">
+and <!-- MATH
+ $\tilde{y}=(-1-\epsilon,-\epsilon)$
+ -->
+<IMG
+ WIDTH="140" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.png"
+ ALT="$\tilde{y}=(-1-\epsilon,-\epsilon)$">,
+where <!-- MATH
+ $0 < \epsilon < 0.1$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.png"
+ ALT="$0 &lt; \epsilon &lt; 0.1$">
+Let <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img41.png"
+ ALT="$\tilde{z}$"> denote the corresponding dual slacks.
+Show that all complementary slackness terms <!-- MATH
+ $\tilde{x}_i \tilde{z}_i$
+ -->
+<IMG
+ WIDTH="35" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.png"
+ ALT="$\tilde{x}_i \tilde{z}_i$"> lie
+between <IMG
+ WIDTH="22" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.png"
+ ALT="$2\epsilon$"> and <IMG
+ WIDTH="22" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img44.png"
+ ALT="$6\epsilon$">.
+Hence argue that <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.png"
+ ALT="$\tilde{x}$"> is close to being an optimal solution to the log barrier
+problem
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lrcrcrcrcllr}
+\min & -2x_1 & - & x_2 & - & \multicolumn{5}{l}{4 \epsilon \sum_{i=1}^4 \ln(x_i)}\\
+\mbox{subject to } & 2x_1 & + & x_2 & + & x_3 &&& = & 8 && \qquad (LBP)  \\
+& -x_1 & + & 2x_2 &&& + & x_4 & = & 6 \\
+&&&&&&& x_i & \geq & 0 & \mbox{for } i=1,\ldots,4
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="650" HEIGHT="99" BORDER="0"
+ SRC="img46.png"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcrcllr}
+\min &amp; -2x_1 &amp; - &amp; x_2 &amp; - &amp; \mu...
+...
+&amp;&amp;&amp;&amp;&amp;&amp;&amp; x_i &amp; \geq &amp; 0 &amp; \mbox{for } i=1,\ldots,4
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+(Hint: For example, you could argue that <IMG
+ WIDTH="16" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img45.png"
+ ALT="$\tilde{x}$"> almost satisfies the
+optimality conditions for&nbsp;<IMG
+ WIDTH="62" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img47.png"
+ ALT="$(LBP)$">.)
+</LI>
+</OL>
+
+<P>
+</LI>
+</OL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL>
+<LI><A NAME="tex2html3"
+  HREF="node1.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<br>
+2005-11-11
+</ADDRESS>
+</BODY>
+</HTML>

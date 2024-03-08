@@ -1,0 +1,19 @@
+ampl: model socpsdd.mod; data q2.dat; solve; display y, S;
+CPLEX 12.7.1.0: CPXPARAM_Simplex_Display                         0
+CPXPARAM_MIP_Display                             0
+CPXPARAM_Barrier_Display                         0
+optimal solution; objective 9.000000344
+12 barrier iterations
+No basis.
+y [*] :=
+1  -0.999865
+2   1.99993
+;
+
+S :=
+1 1    0.999865
+1 2   -1.99993
+2 1   -1.99993
+2 2    4.00027
+;
+

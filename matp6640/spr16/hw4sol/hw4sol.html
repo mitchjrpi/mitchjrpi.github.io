@@ -1,0 +1,562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw4sol.tex"> 
+<meta name="date" content="2016-03-28 19:43:00"> 
+<link rel="stylesheet" type="text/css" href="hw4sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 16--><p class="noindent" >
+<!--l. 18--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12">MATP6640/DSES6770 Linear Programming</span></a><span 
+class="cmr-12">, Homework 4.</span><br /><br />
+<span 
+class="cmr-12">Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 23--><p class="noindent" >
+ Due: Friday, March 25, 2016.<br />
+10% penalty for each day late.</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1">Construct   a   four-vertex   network   flow   transshipment   problem   with   the   following
+     counterintuitive property: if the supply is decreased by one unit at one node and the demand
+     is decreased by one unit at one node, then the value of the minimum cost flow increases.
+     (Both problems should be feasible.)
+     <!--l. 67--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution:</span>
+     <div class="center" 
+>
+<!--l. 70--><p class="noindent" >
+<!--l. 72--><p class="noindent" ><span 
+class="cmti-10x-x-109"><img src=q1pic.png></span>
+</div>
+     <!--l. 104--><p class="noindent" >With the initial costs, supplies, and demands as shown, the optimal solution is <span 
+class="cmmi-10x-x-109">x</span>(<span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,t</span><sub><span 
+class="cmr-8">1</span></sub>) = 1,
+     <span 
+class="cmmi-10x-x-109">x</span>(<span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-10x-x-109">,t</span><sub><span 
+class="cmr-8">2</span></sub>) = 1, <span 
+class="cmmi-10x-x-109">x</span>(<span 
+class="cmmi-10x-x-109">t</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,t</span><sub><span 
+class="cmr-8">2</span></sub>) = 0, with total cost&#x00A0;0.
+     <!--l. 107--><p class="noindent" >Now reduce the supply at <span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmr-8">2</span></sub> to zero and the demand at <span 
+class="cmmi-10x-x-109">t</span><sub><span 
+class="cmr-8">1</span></sub> to zero. The new optimal solution is
+     <span 
+class="cmmi-10x-x-109">x</span>(<span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,t</span><sub><span 
+class="cmr-8">1</span></sub>) = 1, <span 
+class="cmmi-10x-x-109">x</span>(<span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-10x-x-109">,t</span><sub><span 
+class="cmr-8">2</span></sub>) = 0, <span 
+class="cmmi-10x-x-109">x</span>(<span 
+class="cmmi-10x-x-109">t</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,t</span><sub><span 
+class="cmr-8">2</span></sub>) = 1, with total cost&#x00A0;1.
+     </li>
+     <li 
+  class="enumerate" id="x1-5x2"><a 
+ id="x1-42"></a> A two-stage stochastic programming problem with recourse can be stated as minimizing a function
+     <span 
+class="cmmi-10x-x-109">f</span>(<span 
+class="cmmi-10x-x-109">x</span>) = <span 
+class="cmmi-10x-x-109">E</span><sub><span 
+class="cmmi-8">&#x03BE;</span></sub>(<span 
+class="cmmi-10x-x-109">g</span>(<span 
+class="cmmi-10x-x-109">x,&#x03BE;</span>)) over <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">X </span>for some set&#x00A0;<span 
+class="cmmi-10x-x-109">X</span>, where <span 
+class="cmmi-10x-x-109">&#x03BE; </span>is a random variable with a known
+     probability distribution. Assume <span 
+class="cmmi-10x-x-109">&#x03BE; </span>has a large, possibly infinite, set of possible realizations. Let
+     <span 
+class="cmmi-10x-x-109">v</span><sup><span 
+class="cmsy-8">*</span></sup> := min<sub><span 
+class="cmmi-8">x</span><span 
+class="cmsy-8">&#x2208;</span><span 
+class="cmmi-8">X</span></sub><span 
+class="cmmi-10x-x-109">f</span>(<span 
+class="cmmi-10x-x-109">x</span>). Let <span 
+class="cmmi-10x-x-109">&#x03BE;</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,&#x03BE;</span><sub><span 
+class="cmmi-8">k</span></sub> be a random sample of realizations of the random variable&#x00A0;<span 
+class="cmmi-10x-x-109">&#x03BE;</span>.
+     Let
+     <center class="math-display" >
+     <img 
+src="hw4sol0x.png" alt="                   1&#x2211;k
+&#x02C6;v*k :=  min{f&#x02C6;k(x) :=  --  g(x,&#x03BE;i)}.
+      x&#x2208;X          ki=1
+     " class="math-display" ></center>
+                                                                                         
+                                                                                         
+     <!--l. 168--><p class="nopar" >
+     This corresponds to assuming that the <span 
+class="cmmi-10x-x-109">k </span>scenarios are equally likely, and that they give the whole
+     set of possible scenarios. Let <img 
+src="hw4sol1x.png" alt="&#x02C6;x"  class="circ" ><sub><span 
+class="cmmi-8">k</span></sub><sup><span 
+class="cmsy-8">*</span></sup> be an optimal solution to this problem. Show that the expected
+     value of <img 
+src="hw4sol2x.png" alt="&#x02C6;v"  class="circ" > <sub><span 
+class="cmmi-8">k</span></sub><sup><span 
+class="cmsy-8">*</span></sup> is no larger than&#x00A0;<span 
+class="cmmi-10x-x-109">v</span><sup><span 
+class="cmsy-8">*</span></sup>.
+     <!--l. 174--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution:</span>
+     <!--l. 177--><p class="noindent" >Note that <img 
+src="hw4sol3x.png" alt="&#x02C6;v"  class="circ" > <sub><span 
+class="cmmi-8">k</span></sub><sup><span 
+class="cmsy-8">*</span></sup><span 
+class="cmsy-10x-x-109">&#x2264;</span><img 
+src="hw4sol4x.png" alt="&#x02C6;f"  class="circ" > <sub><span 
+class="cmmi-8">k</span></sub>(<span 
+class="cmmi-10x-x-109">x</span>) <span 
+class="cmsy-10x-x-109">&#x2200;</span><span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">X</span>, so we have: <div class="eqnarray">
+     <center class="math-display" >
+     <img 
+src="hw4sol5x.png" alt="             (      )
+E (&#x02C6;v*)  &#x2264;  E  f&#x02C6;k(x))   &#x2200;x &#x2208; X
+    k
+             (   &#x2211;k       )
+        =  E   1-   g(x,&#x03BE;i)    &#x2200;x &#x2208; X
+               k i=1
+
+        =  E (g(x, &#x03BE;))  &#x2200;x &#x2208; X, by linearity of expectations
+
+        =  f(x)  &#x2200;x &#x2208; X.
+     " class="math-display" ></center>
+     </div>Since this holds <span 
+class="cmsy-10x-x-109">&#x2200;</span><span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">X</span>, we have that it holds for the minimum over <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">X</span>, so the desired result
+     holds.
+     <!--l. 187--><p class="noindent" >Informally, we are tuning <img 
+src="hw4sol6x.png" alt="&#x02C6;x"  class="circ" ><sub><span 
+class="cmmi-8">k</span></sub><sup><span 
+class="cmsy-8">*</span></sup> to a subset of scenarios, with no concern for the omitted scenarios, so
+     we should be able to do a little better in expectation.
+     </li>
+     <li 
+  class="enumerate" id="x1-8x3"><a 
+ id="x1-73"></a> It is desired to split some money between four different asset classes: domestic stocks, international
+     stocks, bonds, and money market funds. To create some diversification, at least 10% and no more
+     than 35% of the money is invested in each asset class. It is desired to maximize the expected value of
+     the portfolio after one year. Various scenarios <span 
+class="cmmi-10x-x-109">S </span>are possible over the year, with scenario <span 
+class="cmmi-10x-x-109">s </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">S</span>
+     having probability&#x00A0;<span 
+class="cmmi-10x-x-109">p</span><sub><span 
+class="cmmi-8">s</span></sub>. Let <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">i</span></sub> denote the proportion of assets invested in class&#x00A0;<span 
+class="cmmi-10x-x-109">i</span>, <span 
+class="cmmi-10x-x-109">i </span>= 1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,</span>4. If
+     scenario <span 
+class="cmmi-10x-x-109">s </span>is realized then one dollar invested in asset class <span 
+class="cmmi-10x-x-109">i </span>at the beginning of the year
+     will be worth <span 
+class="cmmi-10x-x-109">r</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmmi-8">s</span></sup> at its end. Let <span 
+class="cmmi-10x-x-109">y</span><sub><span 
+class="cmmi-8">s</span></sub> denote the proportional increase in the value of the
+     portfolio at the end of the year under scenario&#x00A0;<span 
+class="cmmi-10x-x-109">s</span>. The problem of maximizing the expected
+     wealth at the end of the year can be expressed as an equivalent minimization problem as
+     follows:
+     <center class="math-display" >
+     <img 
+src="hw4sol7x.png" alt="                         &#x2211;
+minx,y       &#x2211;        -    s&#x2208;S psys
+subject to &#x2211;   4i=1 xi                =   1
+             4i=1rsixi  -         ys  =   1  &#x2200;s &#x2208; S          (SP )
+                         0.1 &#x2264;  xi &#x2264;  0.35  i = 1,...,4
+     " class="math-display" ></center>
+     <!--l. 219--><p class="nopar" >
+     (In the notation of Question&#x00A0;<a 
+href="#x1-42">2<!--tex4ht:ref: q.lower --></a>, we have <span 
+class="cmmi-10x-x-109">f</span>(<span 
+class="cmmi-10x-x-109">x</span>) = <span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmex-10">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">s</span><span 
+class="cmsy-8">&#x2208;</span><span 
+class="cmmi-8">S</span></sub><span 
+class="cmmi-10x-x-109">p</span><sub><span 
+class="cmmi-8">s</span></sub>(<span 
+class="cmex-10">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">i</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmr-8">4</span></sup><span 
+class="cmmi-10x-x-109">r</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmmi-8">s</span></sup><span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-109">- </span>1).)
+     <!--l. 222--><p class="noindent" >Assume we have sampled the following scenarios, which are equally likely:
+     <div class="center" 
+>
+<!--l. 224--><p class="noindent" >
+<div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><colgroup id="TBL-1-2g"><col 
+id="TBL-1-2"><col 
+id="TBL-1-3"><col 
+id="TBL-1-4"><col 
+id="TBL-1-5"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-1-1"  
+class="td11"><span 
+class="cmmi-10x-x-109">s</span></td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-1-2"  
+class="td11"> <span 
+class="cmmi-10x-x-109">r</span><sub><span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmmi-8">s</span></sup></td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-1-3"  
+class="td11"> <span 
+class="cmmi-10x-x-109">r</span><sub><span 
+class="cmr-8">2</span></sub><sup><span 
+class="cmmi-8">s</span></sup></td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-1-4"  
+class="td11"> <span 
+class="cmmi-10x-x-109">r</span><sub><span 
+class="cmr-8">3</span></sub><sup><span 
+class="cmmi-8">s</span></sup></td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-1-5"  
+class="td11"> <span 
+class="cmmi-10x-x-109">r</span><sub><span 
+class="cmr-8">4</span></sub><sup><span 
+class="cmmi-8">s</span></sup></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-2-1"  
+class="td11"> 1</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-2-2"  
+class="td11">1.10</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-2-3"  
+class="td11">1.22</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-2-4"  
+class="td11">1.07</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-2-5"  
+class="td11">1.03</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-3-1"  
+class="td11"> 2</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-3-2"  
+class="td11">1.30</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-3-3"  
+class="td11">1.20</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-3-4"  
+class="td11">1.02</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-3-5"  
+class="td11">1.03</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-4-1"  
+class="td11"> 3</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-4-2"  
+class="td11">0.75</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-4-3"  
+class="td11">0.80</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-4-4"  
+class="td11">1.11</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-4-5"  
+class="td11">1.05</td>
+</tr></table></div></div>
+     <!--l. 232--><p class="noindent" >Use the approximation of Question&#x00A0;<a 
+href="#x1-42">2<!--tex4ht:ref: q.lower --></a> to derive an expected lower bound on the optimal value
+     of&#x00A0;(<span 
+class="cmmi-10x-x-109">SP</span>) over all possible scenarios, using <a 
+href="http://www.rpi.edu/~mitchj/ampldetails.html" >AMPL</a> or otherwise. Show that the optimal solution is
+     <img 
+src="hw4sol8x.png" alt="x&#x02C6;"  class="circ" ><sup><span 
+class="cmsy-8">*</span></sup> = (0<span 
+class="cmmi-10x-x-109">.</span>2<span 
+class="cmmi-10x-x-109">,</span>0<span 
+class="cmmi-10x-x-109">.</span>35<span 
+class="cmmi-10x-x-109">,</span>0<span 
+class="cmmi-10x-x-109">.</span>35<span 
+class="cmmi-10x-x-109">,</span>0<span 
+class="cmmi-10x-x-109">.</span>1) with the given three scenarios.
+     <!--l. 238--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution:</span>
+     <!--l. 241--><p class="noindent" >The AMPL
+<a href=investments.mod>model</a> and <a href=investments.dat>data</a>
+file are online, as is the
+<a href=investments.out>output</a>. The optimal value is <span 
+class="cmsy-10x-x-109">-</span><img 
+src="hw4sol9x.png" alt=" 47
+750"  class="frac" align="middle"> (<span 
+class="cmsy-10x-x-109">&#x2248;-</span>0<span 
+class="cmmi-10x-x-109">.</span>0626667), with the
+     optimal solution as given. Thus, our expected upper bound on returns obtained using these three
+     scenarios is <span 
+class="cmsy-10x-x-109">&#x2248; </span>6<span 
+class="cmmi-10x-x-109">.</span>267%.
+     </li>
+     <li 
+  class="enumerate" id="x1-10x4"><a 
+ id="x1-94"></a> In a vehicle routing problem, a set of cities <span 
+class="cmsy-10x-x-109">{</span>1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,n</span><span 
+class="cmsy-10x-x-109">} </span>must be visited, starting from a base city&#x00A0;0.
+     More than one vehicle can be used, with each vehicle traversing a subtour that starts and ends at
+     the base but only visits a subset of the cities. There may be constraints on the allowed subtours; for
+     example, no tour can visit more than <span 
+class="cmmi-10x-x-109">k </span>cities, or no tour can take longer than&#x00A0;<span 
+class="cmmi-10x-x-109">U</span>. This problem can
+     be formulated as an integer program with each variable corresponding to an allowable subtour. Let
+     <span 
+class="cmmi-10x-x-109">T </span>be the set of allowable subtours. Let <span 
+class="cmmi-10x-x-109">c</span><sub><span 
+class="cmmi-8">t</span></sub> be the cost of subtour&#x00A0;<span 
+class="cmmi-10x-x-109">t </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">T</span>. Let <span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmmi-8">t</span></sup> <span 
+class="cmsy-10x-x-109">&#x2208;{</span>0<span 
+class="cmmi-10x-x-109">,</span>1<span 
+class="cmsy-10x-x-109">}</span><sup><span 
+class="cmmi-8">n</span></sup> be
+     the incidence vector of subtour&#x00A0;<span 
+class="cmmi-10x-x-109">t </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">T</span>, so <span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmmi-8">t</span></sup> = 1 if and only if tour <span 
+class="cmmi-10x-x-109">t </span>visits city&#x00A0;<span 
+class="cmmi-10x-x-109">i </span>for
+     <span 
+class="cmmi-10x-x-109">i </span><span 
+class="cmsy-10x-x-109">&#x2208;{</span>1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,n</span><span 
+class="cmsy-10x-x-109">}</span>. The LP relaxation of the vehicle routing problem can then be expressed
+     as
+     <center class="math-display" >
+     <img 
+src="hw4sol10x.png" alt="           &#x2211;
+min        &#x2211; t&#x2208;T ctxt
+subject to   t&#x2208;T atxt &#x2265;   e              (CP  )
+                  xt  &#x2265;   0 &#x2200;t &#x2208; T
+     " class="math-display" ></center>
+     <!--l. 435--><p class="nopar" >
+     where <span 
+class="cmmi-10x-x-109">e </span>denotes the vector of ones. Since the number of possible tours is very large, a column
+     generation approach is used.
+                                                                                         
+                                                                                         
+     <!--l. 439--><p class="noindent" >Let <span 
+class="cmmi-10x-x-109">n </span>= 4. Assume the cost <span 
+class="cmmi-10x-x-109">c</span><sub><span 
+class="cmmi-8">t</span></sub> of a tour is given by the sum of the edge lengths in the tour, and the
+     edge lengths are as follows:
+     <div class="center" 
+>
+<!--l. 442--><p class="noindent" >
+<div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><colgroup id="TBL-2-2g"><col 
+id="TBL-2-2"><col 
+id="TBL-2-3"><col 
+id="TBL-2-4"><col 
+id="TBL-2-5"><col 
+id="TBL-2-6"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:right;" id="TBL-2-1-1"  
+class="td11">city</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-1-2"  
+class="td11">0</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-1-3"  
+class="td11">1</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-1-4"  
+class="td11">2</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-1-5"  
+class="td11">3</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-1-6"  
+class="td11">4</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:right;" id="TBL-2-2-1"  
+class="td11">   0</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-2-2"  
+class="td11">&#8211;</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-2-3"  
+class="td11">4</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-2-4"  
+class="td11">7</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-2-5"  
+class="td11">9</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-2-6"  
+class="td11">4</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:right;" id="TBL-2-3-1"  
+class="td11"> 1</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-3-2"  
+class="td11">4</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-3-3"  
+class="td11">&#8211;</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-3-4"  
+class="td11">4</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-3-5"  
+class="td11">6</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-3-6"  
+class="td11">8</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:right;" id="TBL-2-4-1"  
+class="td11">   2</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-4-2"  
+class="td11">7</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-4-3"  
+class="td11">4</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-4-4"  
+class="td11">&#8211;</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-4-5"  
+class="td11">7</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-4-6"  
+class="td11">5</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="white-space:nowrap; text-align:right;" id="TBL-2-5-1"  
+class="td11">   3</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-5-2"  
+class="td11">9</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-5-3"  
+class="td11">6</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-5-4"  
+class="td11">7</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-5-5"  
+class="td11">&#8211;</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-5-6"  
+class="td11">7</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-6-"><td  style="white-space:nowrap; text-align:right;" id="TBL-2-6-1"  
+class="td11">   4</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-6-2"  
+class="td11">4</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-6-3"  
+class="td11">8</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-6-4"  
+class="td11">5</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-6-5"  
+class="td11">7</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-6-6"  
+class="td11">&#8211;</td>
+</tr></table></div></div>
+     <!--l. 452--><p class="noindent" >Let the current dual solution be <span 
+class="cmmi-10x-x-109">y </span>= (5<span 
+class="cmmi-10x-x-109">,</span>6<span 
+class="cmmi-10x-x-109">,</span>8<span 
+class="cmmi-10x-x-109">,</span>7)<sup><span 
+class="cmmi-8">T</span> </sup>. No tour is allowed to visit more than three cities
+     (plus the base city). Show that the current dual solution to (<span 
+class="cmmi-10x-x-109">CP</span>) is not optimal. How can the
+     solution be improved?
+     <!--l. 457--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution:</span>
+     <!--l. 460--><p class="noindent" >The dual problem is
+     <center class="math-display" >
+     <img 
+src="hw4sol11x.png" alt="maxy         eT y
+subject to (at)T y  &#x2264;  c   &#x2200;t &#x2208; T
+                       t
+                y  &#x2265;  0.
+     " class="math-display" ></center>
+     <!--l. 467--><p class="nopar" >
+     The valid tour 0 <span 
+class="cmsy-10x-x-109">- </span>1 <span 
+class="cmsy-10x-x-109">- </span>2 <span 
+class="cmsy-10x-x-109">- </span>4 <span 
+class="cmsy-10x-x-109">- </span>0 has <span 
+class="cmmi-10x-x-109">c</span><sub><span 
+class="cmmi-8">t</span></sub> = 17. Further, <span 
+class="cmmi-10x-x-109">A</span><sup><span 
+class="cmmi-8">t</span></sup> = (1<span 
+class="cmmi-10x-x-109">,</span>1<span 
+class="cmmi-10x-x-109">,</span>0<span 
+class="cmmi-10x-x-109">,</span>1)<sup><span 
+class="cmmi-8">T</span> </sup>, so (<span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmmi-8">t</span></sup>)<sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">y </span>= 18 <span 
+class="cmmi-10x-x-109">&#x003E; c</span><sub><span 
+class="cmmi-8">t</span></sub>. Thus,
+     the given <span 
+class="cmmi-10x-x-109">y </span>is not dual feasible, and the given tour has a negative reduced cost. The
+     constraint
+     <center class="math-display" >
+     <img 
+src="hw4sol12x.png" alt="y1 + y2 + y4 &#x2264;  17
+     " class="math-display" ></center>
+     <!--l. 475--><p class="nopar" >
+     can be added to the dual problem.
+     </li>
+     <li 
+  class="enumerate" id="x1-12x5">Algorithmically, the problem (<span 
+class="cmmi-10x-x-109">CP</span>) in Question&#x00A0;<a 
+href="#x1-94">4<!--tex4ht:ref: q.vrp --></a> is sometimes relaxed to
+     <center class="math-display" >
+     <img 
+src="hw4sol13x.png" alt="minx,s     &#x2211;    ctxt  +  gT s
+subject to &#x2211; t&#x2208;Tatx   +     s &#x2265;   e              (CP P )
+             t&#x2208;T    t
+                  xt          &#x2265;   0  &#x2200;t &#x2208; T
+                   0  &#x2264;     s &#x2264;   h
+     " class="math-display" ></center>
+                                                                                         
+                                                                                         
+     <!--l. 488--><p class="nopar" >
+     where <span 
+class="cmmi-10x-x-109">g,h </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">IR</span><sup><span 
+class="cmmi-8">n</span></sup> are nonnegative vectors of parameters. How does this change the dual problem?
+     What benefit do you think this might have?
+     <!--l. 493--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution:</span>
+     <!--l. 496--><p class="noindent" >The dual problem to (CPP) is
+     <center class="math-display" >
+     <img 
+src="hw4sol14x.png" alt="maxy          eTy  -   hT&#x03C0;
+subject to  (at)Ty           &#x2264;   ct &#x2200;t &#x2208; T
+                y  -     &#x03C0;  &#x2264;   g
+               y,        &#x03C0;  &#x2265;   0.
+     " class="math-display" ></center>
+     <!--l. 504--><p class="nopar" >
+     <!--l. 506--><p class="noindent" >If any component <span 
+class="cmmi-10x-x-109">y</span><sub><span 
+class="cmmi-8">j</span></sub> is greater than the corresponding component <span 
+class="cmmi-10x-x-109">g</span><sub><span 
+class="cmmi-8">j</span></sub>, a penalty is paid. This serves
+     to stabilize the set of dual solutions, reducing some of the oscillations that are sometimes seen in
+     column generation methods.
+     </li></ol>
+   <div class="tabular"> <table id="TBL-3" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-3-1g"><col 
+id="TBL-3-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-3-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                     </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                               </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours: Tuesday: 2&#8211;4pm, Wednesday: noon&#8211;2pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

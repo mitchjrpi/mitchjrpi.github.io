@@ -1,0 +1,447 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Exam 2, Fall 2002</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="exam2f02s">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="exam2f02s.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  <a href=..>Math Models of Operations Research, MATP 4700/ DSES 4770.</a>
+
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER">
+  Second Exam, Friday, November 7, 2002.
+
+</DIV>
+
+<P>
+You may use any result from your notes or a homework that is clearly stated.
+You may use one sheet of handwritten notes, but no other sources.
+The exam consists of five questions, and lasts one hundred minutes.
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>(20 points)
+Up to 10000 seats are to be divided between the media, the competing
+universities and the general public.
+At least half as many tickets should go to the competing universities
+as to the general public.
+The problem can be modeled using the linear program
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcl}
+\max &&& 45 x_2 & + & 100 x_3 \\
+\mbox{s.t.} & x_1 & + & x_2 & + & x_3 & \leq & 10000 \\
+&&& x_2 & - & \frac{1}{2}x_3 & \geq & 0 \\
+& x_1 &&&&& \geq & 500 \\
+&&&&& x_1, x_2, x_3 & \geq & 0
+\end{array}
+\end{displaymath} -->
+
+<IMG
+ WIDTH="363" HEIGHT="122"
+ SRC="img1.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcl}
+\max &amp;&amp;&amp; 45 x_2 &amp; + &amp; 100 x_3 \\
+\m...
+...&amp;&amp;&amp;&amp;&amp; \geq &amp; 500 \\
+&amp;&amp;&amp;&amp;&amp; x_1, x_2, x_3 &amp; \geq &amp; 0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <I>x</I><SUB>1</SUB>, <I>x</I><SUB>2</SUB>, and <I>x</I><SUB>3</SUB> denote the number of seats assigned to
+the media, to the competing universities, and to the general public,
+respectively.
+<DL COMPACT>
+<DT>(a)
+<DD>(10 points)
+Find the dual linear program to the linear program
+<DT>(b)
+<DD>(10 points)
+To accommodate high demand from student supporters of the participating
+universities, the NCAA is considering marketing a new ``scrunch''
+seat that consumes only 80% of a regular bleacher seat but counts fully
+against the ``university <IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\geq$">
+half public'' rule.
+Could an optimal solution allocate any such seats at a ticket price
+of $35? At a price of $25?
+(Hint: If you formulate the dual problem as in the text,
+the optimal dual solution is <I>y</I><SUB>1</SUB>=81.667, <I>y</I><SUB>2</SUB>=-36.667, and
+<I>y</I><SUB>3</SUB>=-81.667.)
+</DL>
+     <DT>2.
+<DD>(15 points; no partial credit)
+       A resource allocation problem of the form
+       <BR><P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="109" HEIGHT="87"
+ SRC="img3.gif"
+ ALT="\begin{eqnarray*}
+\max &amp; c^Tx \\
+\mbox{st } &amp; Ax \leq b \\
+&amp; x \geq 0
+\end{eqnarray*}">
+</DIV><P></P>
+<BR CLEAR="ALL">
+       has optimal tableau
+       <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+M^* =
+         \begin{array}{|c|rrrrrrr|}
+            \multicolumn{1}{c}{\quad} & x_1 & x_2 & x_3 & x_4 & s_1 & s_2 &
+                \multicolumn{1}{c}{s_3} \\\hline
+            20 & 0 & 0 & 2 & 0 & 3 & 1 & 4 \\\hline
+            30 & 0 & 0 & 1 & 1 & 0 & 2 & -3 \\
+            40 & 1 & 0 & 2 & 0 & 1 & -4 & -2 \\
+            20 & 0 & 1 & -1 & 0 & -1 & 5 & 4 \\\hline
+         \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="350" HEIGHT="124"
+ SRC="img4.gif"
+ ALT="\begin{displaymath}
+M^* =
+\begin{array}{\vert c\vert rrrrrrr\vert}
+\multicolu...
+...2 \\
+20 &amp; 0 &amp; 1 &amp; -1 &amp; 0 &amp; -1 &amp; 5 &amp; 4 \\ \hline
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The problem has four products and three resources, so <I>s</I><SUB><I>i</I></SUB> represents
+       the amount of resource&nbsp;<I>i</I> which is unused and <I>x</I><SUB><I>i</I></SUB> represents the
+       amount of product&nbsp;<I>i</I> which is produced.
+<DL COMPACT>
+<DT>(a)
+<DD>(5 points)
+Suppose somebody offered to buy a small amount of resource&nbsp;1.
+           How much would you charge for each unit of the resource?
+Circle your choice:  
+<BR>
+ <B>1   2   3   4</B>
+         <DT>(b)
+<DD>(5 points)
+           What is the upper bound&nbsp;<I>k</I> on the number of
+           units of the resource you would sell at this price?
+Circle your choice:  
+<BR>
+ <B>4   5   10   15
+    20   30   40
+</B>
+         <DT>(c)
+<DD>(5 points)
+           Now suppose that you want to sell slightly more than&nbsp;<I>k</I> units
+           of this resource. Would you charge more or less
+           than your answer in part (a) for additional units?
+Circle your choice:  
+<BR>
+ <B>Charge more than in part (a)
+    Charge less than in part (a)
+</B>
+       </DL>
+  <DT>3.
+<DD>(25 points)
+    Consider the network flow problem shown below, with the indicated
+    feasible solution. The numbers on each arc give the cost <I>c</I><SUB><I>ij</I></SUB>
+    and the flow <I>x</I><SUB><I>ij</I></SUB> as <!-- MATH: $(c_{ij},x_{ij})$ -->
+(<I>c</I><SUB><I>ij</I></SUB>,<I>x</I><SUB><I>ij</I></SUB>).
+<DIV ALIGN="CENTER">
+<BR>
+<IMG
+ WIDTH="433" HEIGHT="163" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.gif"
+ ALT="\begin{picture}
+(300,120)
+\put(58,10){\vector(1,0){84}}
+\put(58,90){\vector(1,0)...
+...,10)}
+\put(180,15){(3,20)}
+\put(80,95){(1,10)}
+\put(180,95){(3,0)}
+\end{picture}">
+<BR>
+</DIV>
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">Node 1:</TD>
+<TD ALIGN="LEFT">transshipment</TD>
+<TD ALIGN="CENTER">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+<TD ALIGN="LEFT">Node 4:</TD>
+<TD ALIGN="LEFT">supply 20</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Node 2:</TD>
+<TD ALIGN="LEFT">demand 20</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="LEFT">Node 5:</TD>
+<TD ALIGN="LEFT">supply 20</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Node 3:</TD>
+<TD ALIGN="LEFT">demand 20</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="LEFT">Node 6:</TD>
+<TD ALIGN="LEFT">transshipment</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DL COMPACT>
+<DT>(a)
+<DD>(15 points) Find a basic feasible solution that
+is at least as good as the given solution.
+      <DT>(b)
+<DD>(10 points) Is the basic feasible solution you found optimal?
+    </DL>
+<DT>4.
+<DD>(20 points; no partial credit)
+Consider the primal-dual pair of linear programming problems:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcllllrcrcll}
+\min & 9x_1 & + & cx_2 & + & 3x_3 &&&&&  \max & b_1y_1 & + & b_2y_2 \\
+\mbox{s.t.}
+& x_1 & + & 2x_2 & + & x_3 & = & b_1 & (P) & \qquad & \mbox{s.t.}
+& y_1 & + & 2y_2 & \leq & 9 & \qquad (D) \\
+& 2x_1 & + & x_2 & - & x_3 & = & b_2 &&&& 2y_1 & + & y_2 & \leq & c \\
+&&&&& x_1,x_2,x_3 & \geq & 0 &&&& y_1 & - & y_2 & \leq & 3
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="742" HEIGHT="99"
+ SRC="img6.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcllllrcrcll}
+\min &amp; 9x_1 &amp; + &amp; cx_2 &amp; + ...
+..._1,x_2,x_3 &amp; \geq &amp; 0 &amp;&amp;&amp;&amp; y_1 &amp; - &amp; y_2 &amp; \leq &amp; 3
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Assume we have a basic feasible solution with <I>x</I><SUB>1</SUB> and <I>x</I><SUB>3</SUB> basic.
+<DL COMPACT>
+<DT>(a)
+<DD>(10 points)
+Which of the following solutions satisfies complementary slackness?
+Circle exactly one: 
+<BR>
+<B>A: <I>y</I><SUB>1</SUB>=3, <I>y</I><SUB>2</SUB>=3   B: <I>y</I><SUB>1</SUB>=5, <I>y</I><SUB>2</SUB>=2
+C: <!-- MATH: $y_1=\frac{c}{3}+1$ -->
+<IMG
+ WIDTH="89" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$y_1=\frac{c}{3}+1$">,
+<!-- MATH: $y_2=\frac{c}{3}-2$ -->
+<IMG
+ WIDTH="89" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$y_2=\frac{c}{3}-2$"></B>
+<DT>(b)
+<DD>(10 points)
+For what range of <I>c</I> is this solution optimal?
+Circle exactly one:  
+<BR>
+<B>A: <IMG
+ WIDTH="47" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$c \leq 7$">
+B: <IMG
+ WIDTH="47" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$c \geq 6$">
+  C: <!-- MATH: $6 \leq c \leq 12$ -->
+<IMG
+ WIDTH="91" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.gif"
+ ALT="$6 \leq c \leq 12$">
+  D: <IMG
+ WIDTH="56" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.gif"
+ ALT="$c \geq 12$">
+  E: <IMG
+ WIDTH="47" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$c \geq 9$"></B>
+</DL>
+
+<P>
+
+<P>
+
+<DT>5.
+<DD>(20 points)
+We are going to look at an example of the use of the dual simplex method.
+Given a graph, a <EM>perfect matching</EM> pairs off all the vertices.
+For example, in the following graph:
+<DIV ALIGN="CENTER">
+<BR>
+<IMG
+ WIDTH="469" HEIGHT="154" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.gif"
+ ALT="\begin{picture}
+(400,100)
+\put(58,10){\line(2,1){80}}
+\put(58,90){\line(2,-1){80...
+...{2}
+\put(144,46){3}
+\put(230,46){4}
+\put(326,86){5}
+\put(326,6){6}
+\end{picture}">
+<BR>
+</DIV>
+there are several perfect matchings, for example:  
+<BR>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+<TD ALIGN="LEFT">One matching:</TD>
+<TD ALIGN="LEFT">edges (1,2), (3,4), and (5,6)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+<TD ALIGN="LEFT">Another matching:</TD>
+<TD ALIGN="LEFT">edges (1,5), (3,4), and (2,6)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+<TD ALIGN="LEFT">Another matching:</TD>
+<TD ALIGN="LEFT">edges (1,3), (2,6), and (4,5).</TD>
+</TR>
+</TABLE>
+
+<P>
+If we give each edge a cost, then the <B>perfect matching problem</B>
+is to find the perfect matching of smallest cost.
+This problem can be expressed as a linear programming problem,
+with the additional constraints that the variables be integer.
+The variables are:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+x(i,j) = \left\{ \begin{array}{ll}
+   1 & \mbox{if $(i,j)$\space is in the perfect matching}  \\
+   0 & \mbox{otherwise.}   \end{array}   \right.
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="390" HEIGHT="55"
+ SRC="img15.gif"
+ ALT="\begin{displaymath}
+x(i,j) = \left\{ \begin{array}{ll}
+1 &amp; \mbox{if $(i,j)$\spa...
+...rfect matching} \\
+0 &amp; \mbox{otherwise.} \end{array} \right.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+With one choice of edge costs for this graph,
+we can ignore the integrality restrictions and solve the linear programming
+relaxation for this problem, obtaining the following optimal tableau:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{|c|ccccccccc|}
+\multicolumn{1}{c}{} & (1,2) & (1,3) & (2,3) & (1,5) & (3,4) & (2,6) & (4,5) &
+(4,6) & \multicolumn{1}{c}{(5,6)}  \\\hline
+-3 & 0 & 0 & 0 & 5 & 2 & 4 & 0 & 0 & 0 \\\hline
+0.5 & 1 & 0 & 0 & 0.5 & -0.5 & 0.5 & 0 & 0 & 0 \\
+0.5 & 0 & 1 & 0 & 0.5 & 0.5 & -0.5 & 0 & 0 & 0 \\
+0.5 & 0 & 0 & 1 & -0.5 & 0.5 & 0.5 & 0 & 0 & 0 \\
+0.5 & 0 & 0 & 0 & 0.5 & 0.5 & -0.5 & 1 & 0 & 0 \\
+0.5 & 0 & 0 & 0 & -0.5 & 0.5 & 0.5 & 0 & 1 & 0 \\
+0.5 & 0 & 0 & 0 & 0.5 & -0.5 & 0.5 & 0 & 0 & 1 \\\hline
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="559" HEIGHT="193"
+ SRC="img16.gif"
+ ALT="\begin{displaymath}
+\begin{array}{\vert c\vert ccccccccc\vert}
+\multicolumn{1}{c...
+... 0 &amp; 0 &amp; 0 &amp; 0.5 &amp; -0.5 &amp; 0.5 &amp; 0 &amp; 0 &amp; 1 \\ \hline
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+This solution obviously does not correspond to a perfect matching.
+Any perfect matching can only use at most one of the edges
+<!-- MATH: $(1,2), (1,3), (2,3)$ -->
+(1,2), (1,3), (2,3).
+We can express this as the following constraint:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+x(1,2) + x(1,3) + x(2,3) \leq 1.
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="240" HEIGHT="33"
+ SRC="img17.gif"
+ ALT="\begin{displaymath}
+x(1,2) + x(1,3) + x(2,3) \leq 1.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<DL COMPACT>
+<DT>(a)
+<DD>(10 points)
+Add this constraint to the tableau and pivot so that you have a tableau
+which can be attacked using the dual simplex method.
+<DT>(b)
+<DD>(10 points)
+Make one dual simplex pivot in the tableau.
+Does the new basic feasible solution correspond to a perfect matching?
+</DL></DL>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2003-10-09</I>
+</ADDRESS>
+</BODY>
+</HTML>

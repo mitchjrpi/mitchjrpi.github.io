@@ -1,0 +1,268 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Midterm Exam 1991</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="midterm91">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="midterm91.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="LEFT">Name:</TD>
+</TR>
+</TABLE>
+
+<P>
+
+<DIV ALIGN="CENTER">
+  <a href=..>67.612
+Combinatorial Optimization and Integer Programming</a>, Spring 91.
+
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER">
+  Midterm Exam, Tuesday, March 5, 1991.
+
+</DIV>
+
+<P>
+Please do all five problems. Show all work. No books or calculators allowed.
+You may use any result from class, the homeworks, or the texts.
+
+<P>
+
+
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER">Q1</TD>
+<TD></TD><TD ALIGN="CENTER">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER">Q2</TD>
+<TD></TD><TD ALIGN="CENTER">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER">Q3</TD>
+<TD></TD><TD ALIGN="CENTER">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER">Q4</TD>
+<TD></TD><TD ALIGN="CENTER">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER">Q5</TD>
+<TD></TD><TD ALIGN="CENTER">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER">Total</TD>
+<TD></TD><TD ALIGN="CENTER">&nbsp;</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>(20 points)
+Let <I>G</I>=(<I>V</I>,<I>E</I>) be a bipartite graph with (<I>W</I><SUB>1</SUB>,<I>W</I><SUB>2</SUB>) being a
+     bipartition of <I>V</I>. Assume <!-- MATH: $\mid W_1\mid =\mid W_2\mid =n$ -->
+<IMG
+ WIDTH="142" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\mid W_1\mid =\mid W_2\mid =n$">.
+     Show that <I>G</I> has a matching of cardinality <I>n</I> if
+     <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\mid \{ \mbox{neighbours of } S \} \mid =
+       \mid \{u\in W_2: (v,u) \in E \mbox{ for some } v \in S \}\mid  \; \geq \;
+               \mid S\mid
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="563" HEIGHT="33"
+ SRC="img2.gif"
+ ALT="\begin{displaymath}
+\mid \{ \mbox{neighbours of } S \} \mid =
+\mid \{u\in W_2:...
+...\in E \mbox{ for some } v \in S \}\mid \; \geq \;
+\mid S\mid
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+for all <!-- MATH: $S \subseteq W_1$ -->
+<IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$S \subseteq W_1$">.
+
+   <DT>2.
+<DD>(15 points)  Show that the graph feasibility problem
+     <BLOCKQUOTE>
+       Is <I>G</I> bipartite?
+     
+</BLOCKQUOTE>
+     is in both <I>NP</I> and <I>CoNP</I>.
+
+   <DT>3.
+<DD>(25 points)  Consider the graph
+     <BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+     <DL COMPACT>
+<DT>(a)
+<DD>(5 points) Give a maximum cardinality matching for this graph.
+<DT>(b)
+<DD>(5 points) <A NAME="formIP">&#160;</A>         Formulate the problem of finding the maximum cardinality
+         matching in the form
+         <!-- MATH: $\max\{c^Tx : Ax \leq b, x \geq 0, x \mbox{ integer} \}$ -->
+<IMG
+ WIDTH="296" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\max\{c^Tx : Ax \leq b, x \geq 0, x \mbox{ integer} \}$">.
+       <DT>(c)
+<DD>(5 points) Give an optimal solution
+         to the linear programming relaxation of the integer
+         program given in part&nbsp;<A HREF="midterm91.html#formIP">3b</A>.
+       <DT>(d)
+<DD>(5 points) Suggest an additional constraint for the LP relaxation.
+       <DT>(e)
+<DD>(5 points) Formulate and solve the dual of the LP relaxation with
+         the additional constraint.
+         (The dual of the problem <!-- MATH: $\max\{c^Tx : Ax \leq b, x \geq 0 \}$ -->
+<IMG
+ WIDTH="215" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$\max\{c^Tx : Ax \leq b, x \geq 0 \}$">
+is
+         <!-- MATH: $\min\{b^Ty : A^Ty \geq c, y \geq 0 \}$ -->
+<IMG
+ WIDTH="219" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\min\{b^Ty : A^Ty \geq c, y \geq 0 \}$">.)
+     </DL>
+
+   <DT>4.
+<DD>(15 points)  Let <I>G</I>=(<I>V</I>,<I>E</I>) be a graph with weights <I>w</I><SUB><I>e</I></SUB> on the edges.
+     Assume <!-- MATH: $w_{e_i}\neq w_{e_j}$ -->
+<IMG
+ WIDTH="81" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$w_{e_i}\neq w_{e_j}$">
+for any pair of edges <I>e</I><SUB><I>i</I></SUB> and <I>e</I><SUB><I>j</I></SUB>.
+     Let <I>T</I> be a minimum weight
+     spanning tree on this graph.  Divide the vertices into two sets
+     <I>U</I> and <IMG
+ WIDTH="52" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$V\setminus U$">.
+Show that <I>T</I> must contain the shortest
+     edge between <I>U</I> and <IMG
+ WIDTH="52" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$V\setminus U$">.
+
+   <DT>5.
+<DD>(25 points. Each part is worth five points.)
+     Give short justifications for your answers.
+     <DL COMPACT>
+<DT>(a)
+<DD>An instance <I>d</I> of a feasibility problem <IMG
+ WIDTH="76" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$X \in NP$">
+depends upon two positive integer parameters <I>m</I> and <I>n</I>.
+         Assume <I>d</I> requires storage <I>m</I>2<SUP><I>n</I></SUP> in binary, and that we
+         know an algorithm <I>A</I> which solves <I>d</I> in time 2<SUP><I>m</I>+<I>n</I></SUP>.
+         <DL COMPACT>
+<DT>i.
+<DD>Can we conclude <I>X</I> is in <I>P</I>?
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+           <DT>ii.
+<DD>Can we conclude <I>X</I> is not in <I>P</I>?
+             <BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+           <DT>iii.
+<DD>Assume we know in addition that <IMG
+ WIDTH="57" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$m\leq n$">
+for every
+             instance <I>d</I> of <I>X</I>.  What can we conclude now?
+             <BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+         </DL>
+       <DT>(b)
+<DD><DL COMPACT>
+<DT>i.
+<DD>Is the given (<I>s</I>,<I>t</I>) flow optimal? (The numbers on the
+arcs indicate the capacity and the flow.)
+             <BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+           <DT>ii.
+<DD>Is the given matching optimal?
+         </DL></DL></DL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2005-12-09</I>
+</ADDRESS>
+</BODY>
+</HTML>

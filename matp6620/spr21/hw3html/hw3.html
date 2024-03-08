@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw3.tex"> 
+<meta name="date" content="2021-02-22 12:46:00"> 
+<link rel="stylesheet" type="text/css" href="hw3.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 34--><p class="noindent" >
+<!--l. 36--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6620" ><span 
+class="cmr-12">MATP6620/ISYE6760 Combinatorial Optimization &amp; Integer Programming</span></a><br />
+<span 
+class="cmr-12">Homework 3.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 41--><p class="noindent" >
+ Due: Thursday, March 4, 2021, by end of day.<br />
+Penalty for late homeworks: 10% for each day or part of a day.</div>
+<!--l. 58--><p class="noindent" >The following graph <span 
+class="cmmi-10">G </span>= (<span 
+class="cmmi-10">V,E</span>) is used in question&#x00A0;<a 
+href="#x1-21">1<!--tex4ht:ref: q.nodepack --></a>.
+<div class="center" 
+>
+<!--l. 62--><p class="noindent" >
+<!--l. 63--><p class="center" ><img 
+src="hw30x.png" alt="PICT" >
+</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1"><a 
+ id="x1-21"></a> Consider a node packing problem on the above graph, with each vertex having weight equal to 2 more than
+     its degree. The LP relaxation includes the clique constraints <span 
+class="cmex-10">&#x2211;</span>
+  <sub><span 
+class="cmmi-7">v</span><span 
+class="cmsy-7">&#x2208;</span><span 
+class="cmmi-7">C</span></sub><span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">v</span></sub> <span 
+class="cmsy-10">&#x2264; </span>1 for each maximal clique&#x00A0;<span 
+class="cmmi-10">C </span>in the
+     graph. The point <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">A</span></sub> = 0<span 
+class="cmmi-10">.</span>4, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">B</span></sub> = 0<span 
+class="cmmi-10">.</span>6, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">C</span></sub> = 0<span 
+class="cmmi-10">.</span>4, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">D</span></sub> = 0<span 
+class="cmmi-10">.</span>5, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">E</span></sub> = 0<span 
+class="cmmi-10">.</span>4, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">F</span></sub> = 0<span 
+class="cmmi-10">.</span>5, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">G</span></sub> = 0<span 
+class="cmmi-10">.</span>1, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">H</span></sub> = 0<span 
+class="cmmi-10">.</span>4, and
+     <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">J</span></sub> = 0<span 
+class="cmmi-10">.</span>1 is feasible in the LP relaxation.
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-5x1">Show that the given point is not in the convex hull of feasible solutions, by giving a valid constraint
+         that is violated by this point.
+         </li>
+         <li 
+  class="enumerate" id="x1-7x2">Find an optimal solution to the node packing problem for this graph. Prove your solution is
+         optimal.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-9x2">Consider the constraints
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="hw31x.png" alt="   t1  &#x2265;  |x1 - x2|
+   t2  &#x2265;  |x1 + x2 - 1|
+ t1,t2     integer
+x1,x2     binary
+     " class="math-display" ></center>
+     <!--l. 143--><p class="nopar" >
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-11x1">By considering the different possibilities for <span 
+class="cmmi-10">x</span>, show that <span 
+class="cmmi-10">t</span><sub><span 
+class="cmr-7">1</span></sub> + <span 
+class="cmmi-10">t</span><sub><span 
+class="cmr-7">2</span></sub> <span 
+class="cmsy-10">&#x2265; </span>1.
+         </li>
+         <li 
+  class="enumerate" id="x1-13x2">The constraints can be modeled equivalently as
+         <center class="math-display" >
+         <img 
+src="hw32x.png" alt="   t1  &#x2265;    x1 -   x2
+   t1  &#x2265;  - x1 +   x2
+   t2  &#x2265;    x1 +   x2  -  1
+   t2  &#x2265;  - x1 -   x2  +  1
+ t1,t2     integer
+x1,x2     binary
+         " class="math-display" ></center>
+         <!--l. 156--><p class="nopar" >
+         Show that the valid constraint <span 
+class="cmmi-10">t</span><sub><span 
+class="cmr-7">1</span></sub> + <span 
+class="cmmi-10">t</span><sub><span 
+class="cmr-7">2</span></sub> <span 
+class="cmsy-10">&#x2265; </span>1 has Chvatal rank equal to 2.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-15x3">The optimal tableau to the linear programming relaxation of the integer program
+     <center class="math-display" >
+     <img 
+src="hw33x.png" alt="min   - x1 -  10x2                     min  - 36    +  32x3  +   1x4     17
+s.t.    x1  +   2x2  &#x2264;  14              s.t.  x1      +  4x3  -   4x4  =   2
+      - x1 +   6x2  &#x2264;  8          is            x2  +  18x3  +   18x4  =  114
+             x1,x2  &#x2265;  0,integer                          x,x ,x ,x   &#x2265;  0
+                                                          1 2  3  4
+     " class="math-display" ></center>
+     <!--l. 186--><p class="nopar" >
+     where <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub> and <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">4</span></sub> are the slack variables in the two constraints. Find the Gomory and strong Gomory cutting
+     planes implied by the two constraints. Express these constraints in terms of the original variables <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> and&#x00A0;<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub>
+     and draw them on a graph of the feasible region.
+     </li>
+     <li 
+  class="enumerate" id="x1-17x4">Let <span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="msbm-10">B</span><sup><span 
+class="cmmi-7">n</span></sup> satisfy the constraints
+     <center class="math-display" >
+     <img 
+src="hw34x.png" alt="xi + xj &#x2265; 1 for 1 &#x2264; i &#x003C; j &#x2264; n.
+     " class="math-display" ></center>
+                                                                                         
+                                                                                         
+     <!--l. 264--><p class="nopar" >
+     Show that the constraint <span 
+class="cmex-10">&#x2211;</span>
+  <sub><span 
+class="cmmi-7">i</span><span 
+class="cmr-7">=1</span></sub><sup><span 
+class="cmmi-7">n</span></sup><span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">i</span></sub> <span 
+class="cmsy-10">&#x2265; </span><span 
+class="cmmi-10">n </span><span 
+class="cmsy-10">- </span>1 is valid. Give a fractional point with 0 <span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">e </span>that satisfies the
+     original <span 
+class="cmmi-10">n</span>(<span 
+class="cmmi-10">n</span><span 
+class="cmsy-10">- </span>1)<span 
+class="cmmi-10">&#x2215;</span>2 constraints but violates the new constraint. Show that the new constraint has Chvatal rank
+     no larger than <span 
+class="cmmi-10">O</span>(log <span 
+class="cmmi-10">n</span>).
+     </li>
+     <li 
+  class="enumerate" id="x1-19x5"><a 
+ id="x1-185"></a> The AMPL model of the LP relaxation of a random weighted node packing problem with 15 nodes is
+     contained in the file <br 
+class="newline" />   <a 
+href="http://www.rpi.edu/~mitchj/matp6620/hw3html/nodepack.mod" class="url" ><span 
+class="cmtt-10">http://www.rpi.edu/</span><span 
+class="cmtt-10">~</span><span 
+class="cmtt-10">mitchj/matp6620/hw3/nodepack.mod</span></a>
+     <!--l. 288--><p class="noindent" >The initial model contains only the adjacency constraint that just one endpoint of an edge can appear in the
+     node packing. Pick a seed and then solve the problem using a cutting plane algorithm:
+         <div class="quote">
+    <ol  class="enumerate2" >
+    <li 
+  class="enumerate" id="x1-21x1">Solve the LP relaxation.
+    </li>
+    <li 
+  class="enumerate" id="x1-23x2">If the solution is integral, STOP.
+    </li>
+    <li 
+  class="enumerate" id="x1-25x3">If necessary, add one or more valid inequalities to the LP. These inequalities can be
+    clique inequalities or odd hole inequalities.
+    </li>
+    <li 
+  class="enumerate" id="x1-27x4">Return to Step (a).</li></ol>
+         </div>
+     <!--l. 300--><p class="noindent" >(It is highly likely that you will need to use both clique inequalities and odd hole inequalities, and that these
+     inequalities will be sufficient to solve the problem.)
+     <!--l. 303--><p class="noindent" >(Hint: The graph consists of the cycle 1 <span 
+class="cmsy-10">- </span>2 <span 
+class="cmsy-10">- </span>3 <span 
+class="cmsy-10">- </span>4 <span 
+class="cmsy-10">-</span><span 
+class="cmmi-10">&#x2026;</span><span 
+class="cmsy-10">- </span>14 <span 
+class="cmsy-10">- </span>15 <span 
+class="cmsy-10">- </span>1, plus some extra edges. You might be able
+     to see the structure by displaying <span 
+class="cmtt-10">adjacency</span>.)
+     </li>
+     <li 
+  class="enumerate" id="x1-29x6">The <span 
+class="cmbx-10">Project: </span><br 
+class="newline" />Along with your solutions to this homework, hand in a brief description of what you would like to do for the
+     project part of this course.
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                      </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           x6915.                                                                </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           Office hours: Monday and Thursday 1pm&#8211;2pm.           </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           webex: <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-10">https://rensselaer.webex.com/meet/mitchj</span></a></td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

@@ -1,0 +1,41 @@
+problem original: x, objective_orig, quadratic;
+
+problem L2barrier: x, surplus, objective, quadratic;
+
+problem L1barrier: x, surplus, objectiveL1, quadratic;
+
+printf "=======original problem=========\n";
+
+solve original;
+display x;
+
+printf "=======end original problem=====\n";
+
+let mu := 0.01;
+
+for {i in 1..6} {
+   let mu := mu*10;
+   display mu;
+   printf "======L2 barrier=======\n";
+   for {j in VARS}{
+     let x[j] := 0;
+   }
+   for {j in CONS}{
+     let surplus[j] := 1;
+   }
+   solve L2barrier;
+   display x, surplus, mu;
+   printf "======end L2 barrier===\n";
+   printf "\n";
+   printf "======L1 barrier=======\n";
+   for {j in VARS}{
+     let x[j] := 0;
+   }
+   for {j in CONS}{
+     let surplus[j] := 1;
+   }
+   solve L1barrier;
+   display x, surplus, mu;
+   printf "======end L1 barrier===\n";
+   printf "\n";
+}

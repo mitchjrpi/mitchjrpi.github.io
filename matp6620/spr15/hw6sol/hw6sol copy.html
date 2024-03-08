@@ -1,0 +1,482 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw6sol.tex"> 
+<meta name="date" content="2015-05-20 12:58:00"> 
+<link rel="stylesheet" type="text/css" href="hw6sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 31--><p class="noindent" >
+<!--l. 34--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6620" ><span 
+class="cmr-12x-x-120">MATP6620 / ISYE6760</span><br />
+<span 
+class="cmr-12x-x-120">Combinatorial Optimization and Integer Programming</span></a><br />
+<span 
+class="cmr-12x-x-120">Homework 6: </span><span 
+class="cmbx-12x-x-120">Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 39--><p class="noindent" >
+ Due: Friday, May 8, 2015.<br />
+Penalty for late homeworks: 10% for each day or part of a day.</div>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">Nemhauser and Wolsey, page 346, question 13.
+      <!--l. 103--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>We use Theorem 6.2 on page 327 for the problem:
+      <center class="math-display" >
+      <img 
+src="hw6sol0x.png" alt="min        7x    +  6x   +   2x
+              1        2       3
+subject to 3x1   +  3x2  +    x3  &#x2265;   5
+           3x1   +   x2  +   2x3  &#x2265;   4
+                               x  &#x2208;   &#x2124;3+
+      " class="math-display" ></center>
+      <!--l. 113--><p class="nopar" >
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-5x1">Dualize first constraint:
+           <center class="math-display" >
+           <img 
+src="hw6sol1x.png" alt="Q =  {x &#x2208; &#x2124;3+ : 3x1 + x2 + 2x3 &#x2265; 4} =  {x &#x2208; &#x2124;3  : x1 + x2 + x3 &#x2265; 2, 2x1 + x2 + 2x3 &#x2265; 4 }
+           " class="math-display" ></center>
+           <!--l. 119--><p class="nopar" >
+           so
+                                                                                         
+                                                                                         
+           <center class="math-display" >
+           <img 
+src="hw6sol2x.png" alt="zLD =  min         7x1  +   6x2  +   2x3           = 10.
+       subject to  3x1  +   3x2  +    x3  &#x2265;   5
+                   2x1  +    x2  +   2x3  &#x2265;   4
+                    x1  +    x2  +    x3  &#x2265;   2
+                                       x  &#x2208;   &#x211D;3
+                                               +
+           " class="math-display" ></center>
+           <!--l. 131--><p class="nopar" >
+           </li>
+           <li 
+  class="enumerate" id="x1-7x2">Dualize second constraint:
+           <center class="math-display" >
+           <img 
+src="hw6sol3x.png" alt="            3
+Q  = {x &#x2208;  &#x2124;+  : 3x1 + 3x2 + x3 &#x2265; 5 },
+           " class="math-display" ></center>
+           <!--l. 136--><p class="nopar" >
+           so
+           <center class="math-display" >
+           <img 
+src="hw6sol4x.png" alt="conv (Q ) =  {x &#x2208; &#x211D;3  : 3x  + 3x  + x  &#x2265; 5, 2x +  2x +  x &#x2265;  4}
+                   +     1     2    3        1     2    3
+           " class="math-display" ></center>
+           <!--l. 141--><p class="nopar" >
+           so
+           <center class="math-display" >
+           <img 
+src="hw6sol5x.png" alt="zLD =  min         7x1  +   6x2  +   2x3           = 10.
+       subject to  3x1  +   3x2  +    x3  &#x2265;   5
+                   2x1  +   2x2  +    x3  &#x2265;   4
+
+                   3x1  +    x2  +   2x3  &#x2265;   43
+                                       x  &#x2208;   &#x211D;+
+           " class="math-display" ></center>
+           <!--l. 153--><p class="nopar" >
+           </li>
+           <li 
+  class="enumerate" id="x1-9x3">Dual easily solved if, for example, in part (a):
+           <!--l. 157--><p class="noindent" >With <span 
+class="cmmi-12">&#x03BB; </span>= 1, the solution to <span 
+class="cmmi-12">LR</span>(<span 
+class="cmmi-12">&#x03BB;</span>) is <span 
+class="cmmi-12">x </span>= (0<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>2), so this solves the Lagrangian dual if
+           we choose <span 
+class="cmmi-12">b</span><sub><span 
+class="cmr-8">1</span></sub> = 2.
+                                                                                         
+                                                                                         
+           </li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-11x2">Nemhauser and Wolsey, page 346, question 14, parts (i), (ii), (iii), and (v).
+      <!--l. 168--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-13x1">If we dualize the first and second constraints or the second and third constraints
+           then it is immediate that the extreme points of the remaining constraint with
+           nonnegativity are integer, so the Lagrangian relaxation is equivalent to the LP
+           relaxation.
+           <!--l. 177--><p class="noindent" >If we dualize the first and third constraints, we have
+           <center class="math-display" >
+           <img 
+src="hw6sol6x.png" alt="                  2
+conv(Q ) = {x &#x2208;  &#x211D;+  : x1 + 4x2 &#x2264; 27, x2 &#x2264; 6}
+           " class="math-display" ></center>
+           <!--l. 180--><p class="nopar" >
+           and
+           <center class="math-display" >
+           <img 
+src="hw6sol7x.png" alt="zLD  =  max         2x1  +  5x2           =  38,
+
+        subject to  4x1  +    x2  &#x2264;  28
+                     x1  +  4x2   &#x2264;  27
+                     x1  -    x2  &#x2264;  1
+                              x2  &#x2264;  6
+                              x   &#x2208;  &#x211D;3
+                                       +
+           " class="math-display" ></center>
+           <!--l. 193--><p class="nopar" >
+           achieved by <span 
+class="cmmi-12">x </span>= (5<img 
+src="hw6sol8x.png" alt="23"  class="frac" align="middle"><span 
+class="cmmi-12">, </span>5<img 
+src="hw6sol9x.png" alt="13"  class="frac" align="middle">), and this is also the value of the LP relaxation.
+           </li>
+           <li 
+  class="enumerate" id="x1-15x2">Need to pick the objective so that the constraint <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>6 is active at optimality. So, eg,
+           max <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub>. Then <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">LD</span></sub> = 6 <span 
+class="cmmi-12">&#x003C; </span>6<span 
+class="cmmi-12">.</span>75 = <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">LP</span> </sub>.
+           </li>
+           <li 
+  class="enumerate" id="x1-17x3">The point <span 
+class="cmmi-12">x </span>= (5<img 
+src="hw6sol10x.png" alt="2
+3"  class="frac" align="middle"><span 
+class="cmmi-12">, </span>5<img 
+src="hw6sol11x.png" alt="1
+3"  class="frac" align="middle">) is not in the convex hull of the set of integer points satisfying
+           any pair of the constraints, so we get an improved upper bound.
+           <!--l. 205--><p class="noindent" >Dualize first constraint: optimal <span 
+class="cmmi-12">x </span>= (5<img 
+src="hw6sol12x.png" alt="-8
+11"  class="frac" align="middle"><span 
+class="cmmi-12">, </span>5<img 
+src="hw6sol13x.png" alt="-1
+11"  class="frac" align="middle">) with value 36<img 
+src="hw6sol14x.png" alt="10
+11"  class="frac" align="middle">.
+           <!--l. 209--><p class="noindent" >Dualize second constraint: optimal <span 
+class="cmmi-12">x </span>= (5<span 
+class="cmmi-12">, </span>5<img 
+src="hw6sol15x.png" alt="1
+2"  class="frac" align="middle">) with value 37<img 
+src="hw6sol16x.png" alt="1
+2"  class="frac" align="middle">.
+           <!--l. 213--><p class="noindent" >Dualize third constraint: optimal <span 
+class="cmmi-12">x </span>= (3<span 
+class="cmmi-12">, </span>6) with value 36.
+                                                                                         
+                                                                                         
+           </li>
+           <li 
+  class="enumerate" id="x1-19x4">
+               <ul class="itemize1">
+               <li class="itemize">Dualize first and third constraints:
+               <!--l. 244--><p class="noindent" > 
+               <!--l. 246--><p class="noindent" >The convex hull of <span 
+class="cmmi-12">Q </span>is shaded. The dualized constraints are in magenta, and the
+               optimal point is in green. If instead we maximize <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub>, the optimal value is
+               zero.
+               </li>
+               <li class="itemize">Dualize first constraint:
+               <!--l. 275--><p class="noindent" > 
+               <!--l. 277--><p class="noindent" >The convex hull of <span 
+class="cmmi-12">Q </span>is shaded. The dualized constraint is in magenta, and the
+               optimal point is in green.
+               </li>
+                                                                                         
+                                                                                         
+               <li class="itemize">Dualize second constraint:
+               <!--l. 305--><p class="noindent" > 
+               <!--l. 307--><p class="noindent" >The convex hull of <span 
+class="cmmi-12">Q </span>is shaded. The dualized constraint is in magenta, and the
+               optimal point is in green.
+               </li>
+               <li class="itemize">Dualize third constraint:
+               <!--l. 335--><p class="noindent" > 
+               <!--l. 337--><p class="noindent" >The convex hull of <span 
+class="cmmi-12">Q </span>is shaded. The dualized constraint is in magenta, and the
+               optimal point is in green.
+               </li></ul>
+           </li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-21x3">Nemhauser and Wolsey, page 429, question 16. (Note: the problem WUFL can be found on
+      page 385.)
+                                                                                         
+                                                                                         
+      <!--l. 560--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 563--><p class="noindent" >See the separate AMPL files and output.
+      </li>
+      <li 
+  class="enumerate" id="x1-23x4">Reformulate the following binary polynomial problem as an equivalent binary linear program,
+      and solve it (using AMPL or otherwise):
+      <center class="math-display" >
+      <img 
+src="hw6sol17x.png" alt="max         6x31 + 5x22 + 5x23 + 4x34 + 2x1x32 + 3x1x4 + 4x2x3 + 4x2x4
+subject to             x1x3 +  x2x4 + x1x2x4  &#x2264;   1
+            3x x x  + 2x2 x + 5x2 x x5 + 4x   &#x2264;   6
+              2 3  4     1 3     1 3 4     2
+                       5x1 + 4x2 + 6x3 + 4x4  &#x2264;   14
+                                           x  &#x2208;   B4.
+      " class="math-display" ></center>
+      <!--l. 576--><p class="nopar" >
+      <!--l. 580--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>Note first that <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmmi-8">p</span></sup> = <span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmmi-8">i</span></sub> for any positive integer power <span 
+class="cmmi-12">p </span>for any binary variable&#x00A0;<span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub>.
+      Let <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ijk</span></sub> denote a variable that is supposed to equal the product <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">k</span></sub>, etc. The original
+      problem is equivalent to:
+      <center class="math-display" >
+      <img 
+src="hw6sol18x.png" alt="max         6x1 + 5x2 + 5x3 + 4x4 + 2x12 + 3x14 + 4x23 + 4x24
+subject to                    x13 + x24 + x124 &#x2264;   1
+                   3x234 + 2x13 + 5x134 + 4x2  &#x2264;   6
+
+                       5x1 +  4x2 + 6x3 + 4x4  &#x2264;   14
+                                     x12 - x1  &#x2264;   0
+                                     x12 - x2  &#x2264;   0
+                                x1 + x2 - x12  &#x2264;   1
+                                     x  -  x   &#x2264;   0
+                                      13    1
+                                     x13 - x3  &#x2264;   0
+                                x1 + x3 - x13  &#x2264;   1
+                                     x14 - x1  &#x2264;   0
+                                     x14 - x4  &#x2264;   0
+                                x  + x  - x    &#x2264;   1
+                                 1    4    14
+                                     x23 - x2  &#x2264;   0
+                                     x23 - x3  &#x2264;   0
+                                x2 + x3 - x23  &#x2264;   1
+                                     x24 - x2  &#x2264;   0
+                                     x  -  x   &#x2264;   0
+                                      24    4
+                                x2 + x4 - x24  &#x2264;   1
+                                    x124 - x1  &#x2264;   0
+                                    x124 - x2  &#x2264;   0
+                                    x124 - x4  &#x2264;   0
+
+                          x1 + x2 + x4 - x124  &#x2264;   2
+                                    x134 - x1  &#x2264;   0
+                                    x134 - x3  &#x2264;   0
+                                    x134 - x4  &#x2264;   0
+                          x1 + x3 + x4 - x134  &#x2264;   2
+
+                                    x234 - x2  &#x2264;   0
+                                    x234 - x3  &#x2264;   0
+                                    x234 - x4  &#x2264;   0
+                          x2 + x3 + x4 - x234  &#x2264;   2
+            x  ,x  ,x  ,x  ,x  ,x  ,x   ,x     &#x2208;   B
+             12  13  14  23  24  124   134  234       4
+                                            x  &#x2208;   B .
+      " class="math-display" ></center>
+      <!--l. 622--><p class="nopar" >
+      All the additional constraints are the McCormick inequalities that force the additional binary
+      variables to take the correct value. The optimal solution is <span 
+class="cmmi-12">x </span>= (0<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">, </span>0) with value
+      14.
+      </li>
+      <li 
+  class="enumerate" id="x1-25x5">Show how the quadratic integer program
+      <center class="math-display" >
+                                                                                         
+                                                                                         
+      <img 
+src="hw6sol19x.png" alt="minx &#x2208;&#x211D;n,z&#x2208;Bk  xT Qz
+subject to    Ax  +  Hz  = b
+
+              0 &#x2264;  x &#x2264;  u
+      " class="math-display" ></center>
+      <!--l. 635--><p class="nopar" >
+      can be written as an equivalent mixed integer <span 
+class="cmti-12">linear </span>program, where <span 
+class="cmmi-12">u </span>is a finite positive
+      vector in&#x00A0;<span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sup><span 
+class="cmmi-8">n</span></sup>, <span 
+class="cmmi-12">A </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sup><span 
+class="cmmi-8">m</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup>, <span 
+class="cmmi-12">H </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sup><span 
+class="cmmi-8">m</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">k</span></sup>, <span 
+class="cmmi-12">b </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sup><span 
+class="cmmi-8">m</span></sup>, and <span 
+class="cmmi-12">Q </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sup><span 
+class="cmmi-8">n</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">k</span></sup>. Note that <span 
+class="cmmi-12">Q </span>may contain both
+      positive and negative entries.
+      <!--l. 644--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>Introduce new variables <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">ij</span></sub> to capture the product <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">j</span></sub>. The problem is
+      equivalent to
+      <center class="math-display" >
+      <img 
+src="hw6sol20x.png" alt="                     &#x2211;    &#x2211;
+minx &#x2208;&#x211D;n,z&#x2208;Bk,w&#x2208;&#x211D;n&#x00D7;k    ni=1   kj=1Qijwij
+subject to           Ax  + Hz   = b
+
+                     0 &#x2264;  wij &#x2264;  xi  &#x2200;i,j
+                     wij &#x2264; uizj  &#x2200;i,j
+                     wij &#x2265;  xi - ui(1 - zj) &#x2200;i,j
+                     0 &#x2264;  x &#x2264;  u
+      " class="math-display" ></center>
+      <!--l. 657--><p class="nopar" >
+      The linear constraints force <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">ij</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">j</span></sub> provided <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">j</span></sub> is binary and 0 <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">u</span><sub><span 
+class="cmmi-8">i</span></sub>. In particular, if
+      <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">j</span></sub> = 0 then we must have <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">u</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">j</span></sub> = 0 together with <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0, and if <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">j</span></sub> = 1
+      then we must have <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> together with <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub>. If <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">j</span></sub> = 1 then the constraint
+      <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">u</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">j</span></sub> is redundant, and if <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">j</span></sub> = 0 then the constraint <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">u</span><sub><span 
+class="cmmi-8">i</span></sub>(1 <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">j</span></sub>) is
+      redundant.
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                     </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                               </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Tuesday, Wednesday, 2&#8211;4pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

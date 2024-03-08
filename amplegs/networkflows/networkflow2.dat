@@ -1,0 +1,23 @@
+set NODES := r s t u v w;
+set ARCS := (r,s) (r,t) (s,t) (s,u) (t,u) (t,v) (u,v) (u,w) (v,w);
+
+param supply :=
+r 15
+s 3
+t -6
+u -6
+v 4
+w -10
+;
+
+param: cost  capacity  :=
+r,s     5      7
+r,t     4      9
+s,t     3      7
+s,u     5      4
+t,u     7      6
+t,v     4      8
+u,v     3      5
+u,w     4      3
+v,w     6      8
+;

@@ -1,0 +1,175 @@
+\documentclass[12pt]{article}
+
+\pagestyle{empty}
+
+\oddsidemargin -.5in
+\textwidth 7.5in
+\textheight 10in
+\topmargin -30pt
+\headsep 0in
+\headheight 0in
+
+%\usepackage{fullpage}
+
+\newcommand{\real}{I\!\! R}
+\newcommand{\binary}{I\!\! B}
+\newcommand{\integer}{Z\!\!\! Z}
+
+\begin{document}
+
+\begin{center}
+  \begin{large}
+     MATP6620 / DSES6760 Combinatorial Optimization and Integer Programming \\
+       Homework 1.
+  \end{large}
+\end{center}
+
+\begin{flushright}
+   Due:  Friday, January 26, 2007.
+\end{flushright}
+
+%\vspace{\baselineskip}
+
+%Throughout, let $\binary^n:=
+%\{x \in \real^n: x_i = 0 \mbox{ or } 1 \;\; \forall i\}$.
+
+\begin{enumerate}
+%   \item  Model the following scheduling problem as a mixed integer
+%programming problem:
+%\begin{quote}
+%A set of $n$ jobs must be carried out on a single machine that can only
+%do one job at a time.
+%Each job $j$ takes $p_j$ hours to complete.
+%Given job weights $w_j$ for $j=1,\ldots,n$,
+%in what order should the jobs be carried out in order to minimize
+%the weighted sum of their completion times?
+%\end{quote}
+   \item  Model the following scheduling problem as a mixed integer
+programming problem:
+\begin{quote}
+A set of $n$ jobs must be carried out on a single machine that can only
+do one job at a time.
+Each job $j$ takes $p_j$ hours to complete.
+Each job has a target time $t_j$ for $j=1,\ldots,n$,
+and a priority weight $w_j$ for $j=1,\ldots,n$.
+in what order should the jobs be carried out in order to minimize
+the total weighted tardiness?
+(The {\em tardiness} of a job is how late it is,
+that is, the difference between the completion time and
+the target time if the completion time is greater than the target time.
+The tardiness is weighted by the priority weight~$w_j$.)
+\end{quote}
+  \item
+Show that
+\begin{eqnarray*}
+S & := & \{x \in \integer_+^3: 7x_1 + 9x_2 + 12x_3  \geq 17\} \\
+&=& \{x \in \integer_+^3: 4x_1 + 5x_2 + 6x_3  \geq 10 \}  \\
+&=& \{x \in \integer_+^3:
+x_1+x_2+x_3 \geq 2, \; 2x_1+3x_3+4x_4 \geq 6 \}.
+%S & := & \{x \in \binary^4: 15x_1 + 12x_2 + 37x_3 + 9x_4 \leq 55\} \\
+%&=& \{x \in \binary^4: x_1 + x_2 + 2x_3 + x_4 \leq 3 \}  \\
+%&=& \{x \in \binary^4:
+%x_1+x_2+x_3 \leq 2, \; x_1+x_3+x_4 \leq 2, \; x_2+x_3 + x_4 \leq 2 \}.
+%%%
+%S & := & \{x \in \binary^4: 97x_1 + 32x_2 + 25x_3 + 20x_4 \leq 139\} \\
+%&=& \{x \in \binary^4: 2x_1 + x_2 + x_3 + x_4 \leq 3 \}  \\
+%&=& \{x \in \binary^4:
+%x_1+x_2+x_3 \leq 2, \; x_1+x_3+x_4 \leq 2, \; x_1+x_2 + x_4 \leq 2 \}.
+%\begin{array}{ccccccccc}
+%x_1 &+& x_2 &+& x_3 &&& \leq & 2 \\
+\end{eqnarray*}
+Which formulation do you think is most effective for solving
+$\max\{c^Tx: x\in S\}$? Why?
+You may want to experiment with AMPL to confirm your answer.
+%   \item
+%Let $x \in \binary^n$, where $\binary^n:=
+%\{x \in \real^n: x_i = 0 \mbox{ or } 1 \;\; \forall i\}$.
+%What, if anything, is implied by the following?
+%\begin{enumerate}
+%\item $x_i + x_j \geq 1$ and $ x_i \leq x_j$.
+%\item $x_i \leq x_j$ and $x_i+x_j + x_k \leq 1$.
+%\end{enumerate}
+  \item  Consider the following LP, which we call problem $(P)$:
+         \begin{displaymath}
+          \begin{array}{lrcrcc}
+           \max         &  2y_1 & + & 3y_2 &      &     \\
+           \mbox{s.t.}  &  y_1 & + &  2y_2 & \leq & 7   \\
+                        & -y_1 & + &  y_2 & \leq & 4   \\
+                        &  y_1    &   &  & \leq & 1.
+          \end{array}
+         \end{displaymath}
+         \begin{enumerate}
+           \item  Solve $(P)$ geometrically.
+           \item  What is the dual $(D)$ of $(P)$?
+           \item  Write down the complementary slackness conditions for
+                  this problem and use them to solve the dual $(D)$.
+                  Check your answer by evaluating the optimal costs for
+                  $(P)$ and $(D)$.
+           \item  For problem $(D)$, what is the optimal basis matrix $B$?
+                  What are the reduced costs at the optimal solution?
+                  What are $B^{-1}$, $B^{-1}N$, $c_B^TB^{-1}N$,
+                  $c_B^TB^{-1}b$, and $c_N^T-c_B^TB^{-1}N$?
+         \end{enumerate}
+%  \item  %The following game for two players can be enjoyed at the Ontario
+%         %Science Center in Toronto.
+%         A game is played on a set of six points, no three collinear.
+%         The players, red and black, alternate turns. When it is a player's
+%         turn, she selects two of the six points not yet connected by a line
+%         segment, and draws a line segment of her colour between them. The
+%         first player to complete a triangle of her colour loses. Prove that
+%         this game cannot end in a draw.
+%%         (Hint: Assume the game ends in a draw and obtain a contradiction.
+%%         Consider one vertex at the end of the game.
+%%         If it has two black edges incident to it, what can you say about
+%%         the colour of the edge between the other two endpoints of those
+%%         black edges? What happens if the vertex has three black edges
+%%         incident to it?)
+
+
+\item Model the following problem as an integer program:
+\begin{quote}
+Given a graph $G=(V,E)$, vertex weights $w_v$,
+and subsets $U_i, i=1,\ldots,k$ of the vertices.
+Find a minimum weight subset $W$ of the vertices such that
+$W$ contains at least one vertex in each $U_i$
+and so that the subgraph of $G$ induced by the vertices in $W$ is  connected.
+\end{quote}
+
+%\item Model the following feasibility problem as an integer programming feasibility problem:
+%\begin{quote}
+%Given a graph $G=(V,E)$, does there exist a partition of
+%the edges $E$ into two sets $E_1$ and $E_2$
+%such that neither $E_1$ nor $E_2$ contains a triangle?
+%\end{quote}
+%Is the LP relaxation to your formulation feasible?
+
+%  \item  Given a connected graph $G=(V,E)$ with edge weights $w$,
+%a greedy algorithm
+%for constructing a minimum spanning tree is as follows.
+%(Let $m$ be the number of edges in the graph.
+%Assume $w_1 \leq w_2 \leq \ldots \leq w_m$.)
+%\begin{itemize}
+%\item Initialize with $T = \phi$, the empty set.
+%\item For $i=1,\ldots,m$:
+%Add edge $i$ to the tree, provided this does not create a cycle.
+%\end{itemize}
+%Prove that this does create a spanning tree of minimum total weight.
+%(Hint: Assume there is another spanning tree that is better than the
+%one created by the algorithm. Let $e$ be the edge with minimum weight that
+%is in this alternative tree and not in the tree created by the algorithm.
+%Derive a contradiction.)
+\end{enumerate}
+
+\vfill
+
+\begin{tabular}{@{\hspace{.5in}}l}
+   John Mitchell  \\
+   Amos Eaton 325  \\
+   x6915.  \\
+   mitchj@rpi.edu  \\
+   Office hours:
+   Tuesday 2--3pm, Wednesday 11am--12noon.
+\end{tabular}
+
+
+\end{document}

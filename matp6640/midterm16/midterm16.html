@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html --> 
+<meta name="src" content="midterm16.tex"> 
+<meta name="date" content="2016-04-09 17:19:00"> 
+<link rel="stylesheet" type="text/css" href="midterm16.css"> 
+</head><body 
+>
+<!--l. 27--><p class="noindent" >
+                                                                                         
+
+                                                                                         
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"><col 
+id="TBL-1-2"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td11">&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                                                                          </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-2"  
+class="td11">Name:</td> </tr></table>
+</div>
+<div class="center" 
+>
+<!--l. 34--><p class="noindent" >
+<!--l. 37--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12x-x-120">MATP6640/ISYE6770</span><br />
+<span 
+class="cmbx-12x-x-120">Linear Programming </span><br />
+Spring 2016</a></div>
+<div class="center" 
+>
+<!--l. 40--><p class="noindent" >
+<!--l. 41--><p class="noindent" >Midterm Exam, Friday, April 8, 2016.</div>
+<!--l. 44--><p class="indent" >   Please do all three problems. Show all work. No books or calculators allowed. You may use any
+result from class, the homeworks, or the texts, except where stated. You may use one sheet of
+handwritten notes. The exam lasts 110 minutes.
+<div class="center" 
+>
+<!--l. 54--><p class="noindent" >
+<div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><colgroup id="TBL-2-2g"><col 
+id="TBL-2-2"><col 
+id="TBL-2-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-1"  
+class="td10"> Q1 &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-1-3"  
+class="td11"> /30</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-1"  
+class="td10"> Q2  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-2-3"  
+class="td11"> /35</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-1"  
+class="td10"> Q3  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-3-3"  
+class="td11"> /35</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-1"  
+class="td10">Total&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-4-3"  
+class="td11">/100</td></tr></table>
+</div></div>
+                                                                                         
+
+                                                                                         
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">(30 points; each part is worth 10 points) <br 
+class="newline" />Let <span 
+class="cmmi-12">A </span>be an <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>matrix satisfying:
+           <ul class="itemize1">
+           <li class="itemize"><span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0 if <span 
+class="cmmi-12">i</span><span 
+class="cmmi-12">&#x2260;</span><span 
+class="cmmi-12">j</span>, for 1 <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">i </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">n </span>and 1 <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">j </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">n</span>,
+           </li>
+           <li class="itemize">and <span 
+class="cmex-10x-x-120">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">i</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmmi-8">n</span></sup><span 
+class="cmmi-12">a</span><sub>
+<span 
+class="cmmi-8">ij</span></sub> = 0 for <span 
+class="cmmi-12">j </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span>.</li></ul>
+      <!--l. 92--><p class="noindent" >Show the following:
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-5x1">Let <span class="bar-css"><span 
+class="cmmi-12">y</span></span> <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup>. Assume the smallest component of <span class="bar-css"><span 
+class="cmmi-12">y</span></span> is <span class="bar-css"><span 
+class="cmmi-12">y</span></span><sub>
+<span 
+class="cmmi-8">k</span></sub>, so <span class="bar-css"><span 
+class="cmmi-12">y</span></span><sub><span 
+class="cmmi-8">k</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264;</span><span class="bar-css"><span 
+class="cmmi-12">y</span></span><sub><span 
+class="cmmi-8">i</span></sub> for <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span>.
+           Show <span 
+class="cmex-10x-x-120">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">i</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmmi-8">n</span></sup><span 
+class="cmmi-12">a</span><sub>
+<span 
+class="cmmi-8">ik</span></sub><span class="bar-css"><span 
+class="cmmi-12">y</span></span><sub><span 
+class="cmmi-8">i</span></sub><span style="margin-left:0.3em" class="thinspace"></span> <span 
+class="cmsy-10x-x-120">&#x2265;</span><span style="margin-left:0.3em" class="thinspace"></span>0.
+           </li>
+           <li 
+  class="enumerate" id="x1-7x2">Show the linear program
+           <center class="math-display" >
+           <img 
+src="midterm160x.png" alt="maxy           0
+subject to  AT y  &#x2264;  - e
+               y  &#x2208;  &#x211D;n
+           " class="math-display" ></center>
+           <!--l. 105--><p class="nopar" >
+           is infeasible, where <span 
+class="cmmi-12">e </span>denotes the vector of ones.
+           </li>
+           <li 
+  class="enumerate" id="x1-9x3">What can you say about the set <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup> : <span 
+class="cmmi-12">Ax </span>= 0<span 
+class="cmmi-12">,</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmsy-10x-x-120">}</span>?</li></ol>
+                                                                                         
+
+                                                                                         
+                                                                                         
+
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-11x2">(35 points) <br 
+class="newline" />In the single commodity network flow problem in the figure, nodes <span 
+class="cmmi-12">s </span>and <span 
+class="cmmi-12">t </span>are supply nodes
+      and nodes <span 
+class="cmmi-12">u </span>and <span 
+class="cmmi-12">v </span>are demand nodes. The supplies available are <span 
+class="cmmi-12">b</span><sub><span 
+class="cmmi-8">s</span></sub> = 3 and <span 
+class="cmmi-12">b</span><sub><span 
+class="cmmi-8">t</span></sub> = 2. The
+      demands are <span 
+class="cmmi-12">d</span><sub><span 
+class="cmmi-8">u</span></sub> = 1 and <span 
+class="cmmi-12">d</span><sub><span 
+class="cmmi-8">v</span></sub> = 4. The unit shipping costs for each edge are indicated in the
+      figure.
+      <div class="center" 
+>
+<!--l. 136--><p class="noindent" >
+<!--l. 165--><p class="noindent" >
+<img src=q2fig.png>
+</div>
+      <!--l. 167--><p class="noindent" >An initial basic feasible solution can be obtained by taking <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">su</span></sub>, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ut</span></sub>, and <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">tv</span></sub> to be basic, and
+      <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">st</span></sub>, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">uv</span></sub> to be nonbasic.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-13x1">(5 points) What is the initial basic feasible solution?
+           </li>
+           <li 
+  class="enumerate" id="x1-15x2">(15 points) What are the primal and dual linear programs? Find a dual solution
+           that  satisfies  complementary  slackness.  Show  your  dual  solution  is  not  dual
+           feasible.
+           </li>
+           <li 
+  class="enumerate" id="x1-17x3">(15 points) Make a simplex pivot to improve your primal solution. What is the
+           updated dual solution? Is the new solution optimal?</li></ol>
+                                                                                         
+
+                                                                                         
+                                                                                         
+
+                                                                                         
+                                                                                         
+
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-19x3">(35 points) <br 
+class="newline" />The numbers on the edges in the following graph represent the probability of failure of an
+      edge. Edges fail independently of one another.
+      <div class="center" 
+>
+<!--l. 200--><p class="noindent" >
+<!--l. 235--><p class="noindent" >
+<img src=q3fig.png> 
+</div>
+      <!--l. 238--><p class="noindent" >For a price, we can reinforce an edge so that its probability of failure drops to zero. We want
+      to ensure that a path exists between <span 
+class="cmmi-12">s </span>and <span 
+class="cmmi-12">t </span>with high probability. More precisely, we want to
+      ensure that, for each cutset,
+      <table 
+class="equation"><tr><td><a 
+ id="x1-20r1"></a>
+      <center class="math-display" >
+      <img 
+src="midterm161x.png" alt="Probability {every edge in cutset fails} &#x2264; 0.01.
+      " class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+      <!--l. 243--><p class="nopar" >
+      A cutset consists of all edges leading <span 
+class="cmbx-12">from</span> <span 
+class="cmbx-12">P</span> <span 
+class="cmbx-12">to Q</span>, where <span 
+class="cmmi-12">P </span>and <span 
+class="cmmi-12">Q </span>form a partition of the
+      vertices with <span 
+class="cmmi-12">s </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">P </span>and <span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">Q</span>, so
+      <table 
+class="equation"><tr><td><a 
+ id="x1-21r2"></a>
+                                                                                         
+
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="midterm162x.png" alt="P &#x222A; Q  = {s,t,u,v,w },  P  &#x2229; Q =  &#x2205;,  s &#x2208; P,   t &#x2208; Q.
+      " class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+      <!--l. 249--><p class="nopar" >
+      Two possible partitions are:
+           <ul class="itemize1">
+           <li class="itemize"><span 
+class="cmmi-12">P</span><sub><span 
+class="cmr-8">1</span></sub>  = <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">s</span><span 
+class="cmsy-10x-x-120">}</span>, <span 
+class="cmmi-12">Q</span><sub><span 
+class="cmr-8">1</span></sub>  = <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">t,u,v,w</span><span 
+class="cmsy-10x-x-120">}</span>. Edges from <span 
+class="cmmi-12">P</span><sub><span 
+class="cmr-8">1</span></sub>  to <span 
+class="cmmi-12">Q</span><sub><span 
+class="cmr-8">1</span></sub>  are (<span 
+class="cmmi-12">s,u</span>), (<span 
+class="cmmi-12">s,v</span>). Probability
+           both edges in the cutset fail is 0<span 
+class="cmmi-12">.</span>2 <span 
+class="cmsy-10x-x-120">&#x00D7; </span>0<span 
+class="cmmi-12">.</span>1 = 0<span 
+class="cmmi-12">.</span>02 <span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmmi-12">.</span>01, so at least one edge in the
+           cutset must be reinforced.
+           </li>
+           <li class="itemize"><span 
+class="cmmi-12">P</span><sub><span 
+class="cmr-8">2</span></sub>  = <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">s,u,v,w</span><span 
+class="cmsy-10x-x-120">}</span>, <span 
+class="cmmi-12">Q</span><sub><span 
+class="cmr-8">2</span></sub>  = <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">t</span><span 
+class="cmsy-10x-x-120">}</span>. Edges from <span 
+class="cmmi-12">P</span><sub><span 
+class="cmr-8">2</span></sub>  to <span 
+class="cmmi-12">Q</span><sub><span 
+class="cmr-8">2</span></sub>  are (<span 
+class="cmmi-12">v,t</span>), (<span 
+class="cmmi-12">w,t</span>). Probability
+           both edges in the cutset fail is 0<span 
+class="cmmi-12">.</span>2 <span 
+class="cmsy-10x-x-120">&#x00D7; </span>0<span 
+class="cmmi-12">.</span>1 = 0<span 
+class="cmmi-12">.</span>02 <span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmmi-12">.</span>01, so at least one edge in the
+           cutset must be reinforced.</li></ul>
+      <!--l. 259--><p class="noindent" >We introduce variables
+      <table 
+class="equation"><tr><td><a 
+ id="x1-22r3"></a>
+      <center class="math-display" >
+      <img 
+src="midterm163x.png" alt="     {  1  if edge e is reinforced
+xe =
+        0  otherwise.
+      " class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+      <!--l. 266--><p class="nopar" >
+      In order to ensure the solution <span 
+class="cmmi-12">x </span>satisfies the constraint (<a 
+href="#x1-20r1">1<!--tex4ht:ref: eq:prob --></a>) for the cutset given by <span 
+class="cmmi-12">P</span><sub><span 
+class="cmr-8">1</span></sub> and
+      <span 
+class="cmmi-12">Q</span><sub><span 
+class="cmr-8">1</span></sub>, we can impose the constraint
+                                                                                         
+
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="midterm164x.png" alt="xsu + xsv &#x2265; 1.
+      " class="math-display" ></center>
+      <!--l. 272--><p class="nopar" >
+      Similarly, we can impose the constraint
+      <center class="math-display" >
+      <img 
+src="midterm165x.png" alt="xvt + xwt &#x2265; 1
+      " class="math-display" ></center>
+      <!--l. 276--><p class="nopar" >
+      corresponding to the other cutset. For a general graph, there may be a large number of
+      possible cutsets, so we add the corresponding constraints as needed. The initial LP relaxation
+      is as follows, where the objective function coefficients correspond to the costs of reinforcing a
+      particular edge:
+      <table 
+class="equation"><tr><td><a 
+ id="x1-23r4"></a>
+      <center class="math-display" >
+      <img 
+src="midterm166x.png" alt="minx &#x2208;&#x211D;7    3xsu  +   2xsv  +  7xuv   +  6xuw   +  7xvw   +   5xvt +   3xwt
+subject to   xsu  +    xsv                                                   &#x2265;   1
+                                                               xvt +    xwt  &#x2265;   1
+              xe  &#x2265;      0  for all edges e
+      " class="math-display" ></center></td><td class="equation-label">(4)</td></tr></table>
+      <!--l. 290--><p class="nopar" >
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-25x1">(5 points) <a 
+ id="x1-241"></a>Show that the solution to the initial relaxation is <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">sv</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">wt</span></sub> = 1, with
+           all other <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">e</span></sub> = 0.
+                                                                                         
+
+                                                                                         
+           </li>
+           <li 
+  class="enumerate" id="x1-27x2">(10 points) Find a cutset that leads to a valid inequality that is violated by the
+           solution in part <a 
+href="#x1-241">3a<!--tex4ht:ref: q3parta --></a>.
+           </li>
+           <li 
+  class="enumerate" id="x1-29x3">(5 points) Show that <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">su</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">wt</span></sub> = 1 with all other <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">e</span></sub> = 0 is feasible after the new
+           valid inequality is added to&#x00A0;(<a 
+href="#x1-23r4">4<!--tex4ht:ref: eq:initial --></a>).
+           </li>
+           <li 
+  class="enumerate" id="x1-31x4">(15 points) Construct the dual LP to the new problem obtained by adding the
+           constraint to&#x00A0;(<a 
+href="#x1-23r4">4<!--tex4ht:ref: eq:initial --></a>). Find a dual solution that satisfies complementary slackness. Is
+           your solution optimal?</li></ol>
+                                                                                         
+
+                                                                                         
+                                                                                         
+
+                                                                                         
+      </li></ol>
+    
+</body></html> 
+
+                                                                                         
+
+

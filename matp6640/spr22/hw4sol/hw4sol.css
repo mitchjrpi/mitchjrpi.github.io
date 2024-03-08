@@ -1,0 +1,383 @@
+ 
+/* start css.sty */
+.cmr-5{font-size:45%;}
+.cmr-7{font-size:63%;}
+.cmr-10{font-size:90%;}
+.cmmi-5{font-size:45%;font-style: italic;}
+.cmmi-7{font-size:63%;font-style: italic;}
+.cmmi-10{font-size:90%;font-style: italic;}
+.cmsy-10{font-size:90%;}
+.cmr-10x-x-109{}
+.cmr-12{font-size:109%;}
+.cmr-8{font-size:72%;}
+.cmr-6{font-size:54%;}
+.cmmi-10x-x-109{font-style: italic;}
+.cmmi-8{font-size:72%;font-style: italic;}
+.cmmi-6{font-size:54%;font-style: italic;}
+.cmsy-10x-x-109{}
+.cmsy-8{font-size:72%;}
+.cmsy-6{font-size:54%;}
+.cmex-10x-x-109{}
+.msbm-10x-x-80{font-size:72%;}
+.cmbx-10x-x-109{ font-weight: bold;}
+.cmtt-10x-x-109{font-family: monospace;}
+p.noindent { text-indent: 0em }
+td p.noindent { text-indent: 0em; margin-top:0em; }
+p.nopar { text-indent: 0em; }
+p.indent{ text-indent: 1.5em }
+@media print {div.crosslinks {visibility:hidden;}}
+a img { border-top: 0; border-left: 0; border-right: 0; }
+center { margin-top:1em; margin-bottom:1em; }
+td center { margin-top:0em; margin-bottom:0em; }
+.Canvas { position:relative; }
+img.math{vertical-align:middle;}
+li p.indent { text-indent: 0em }
+li p:first-child{ margin-top:0em; }
+li p:last-child, li div:last-child { margin-bottom:0.5em; }
+li p~ul:last-child, li p~ol:last-child{ margin-bottom:0.5em; }
+.enumerate1 {list-style-type:decimal;}
+.enumerate2 {list-style-type:lower-alpha;}
+.enumerate3 {list-style-type:lower-roman;}
+.enumerate4 {list-style-type:upper-alpha;}
+div.newtheorem { margin-bottom: 2em; margin-top: 2em;}
+.obeylines-h,.obeylines-v {white-space: nowrap; }
+div.obeylines-v p { margin-top:0; margin-bottom:0; }
+.overline{ text-decoration:overline; }
+.overline img{ border-top: 1px solid black; }
+td.displaylines {text-align:center; white-space:nowrap;}
+.centerline {text-align:center;}
+.rightline {text-align:right;}
+div.verbatim {font-family: monospace; white-space: nowrap; text-align:left; clear:both; }
+.fbox {padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+div.fbox {display:table}
+div.center div.fbox {text-align:center; clear:both; padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+div.minipage{width:100%;}
+div.center, div.center div.center {text-align: center; margin-left:1em; margin-right:1em;}
+div.center div {text-align: left;}
+div.flushright, div.flushright div.flushright {text-align: right;}
+div.flushright div {text-align: left;}
+div.flushleft {text-align: left;}
+.underline{ text-decoration:underline; }
+.underline img{ border-bottom: 1px solid black; margin-bottom:1pt; }
+.framebox-c, .framebox-l, .framebox-r { padding-left:3.0pt; padding-right:3.0pt; text-indent:0pt; border:solid black 0.4pt; }
+.framebox-c {text-align:center;}
+.framebox-l {text-align:left;}
+.framebox-r {text-align:right;}
+span.thank-mark{ vertical-align: super }
+span.footnote-mark sup.textsuperscript, span.footnote-mark a sup.textsuperscript{ font-size:80%; }
+div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; }
+table.tabular td p{margin-top:0em;}
+table.tabular {margin-left: auto; margin-right: auto;}
+td p:first-child{ margin-top:0em; }
+td p:last-child{ margin-bottom:0em; }
+div.td00{ margin-left:0pt; margin-right:0pt; }
+div.td01{ margin-left:0pt; margin-right:5pt; }
+div.td10{ margin-left:5pt; margin-right:0pt; }
+div.td11{ margin-left:5pt; margin-right:5pt; }
+table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+td.td00{ padding-left:0pt; padding-right:0pt; }
+td.td01{ padding-left:0pt; padding-right:5pt; }
+td.td10{ padding-left:5pt; padding-right:0pt; }
+td.td11{ padding-left:5pt; padding-right:5pt; }
+table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+.hline hr, .cline hr{ height : 1px; margin:0px; }
+.tabbing-right {text-align:right;}
+span.TEX {letter-spacing: -0.125em; }
+span.TEX span.E{ position:relative;top:0.5ex;left:-0.0417em;}
+a span.TEX span.E {text-decoration: none; }
+span.LATEX span.A{ position:relative; top:-0.5ex; left:-0.4em; font-size:85%;}
+span.LATEX span.TEX{ position:relative; left: -0.4em; }
+div.float, div.figure {margin-left: auto; margin-right: auto;}
+div.float img {text-align:center;}
+div.figure img {text-align:center;}
+.marginpar {width:20%; float:right; text-align:left; margin-left:auto; margin-top:0.5em; font-size:85%; text-decoration:underline;}
+.marginpar p{margin-top:0.4em; margin-bottom:0.4em;}
+table.equation {width:100%;}
+.equation td{text-align:center; }
+td.equation { margin-top:1em; margin-bottom:1em; } 
+td.equation-label { width:5%; text-align:center; }
+td.eqnarray4 { width:5%; white-space: normal; }
+td.eqnarray2 { width:5%; }
+table.eqnarray-star, table.eqnarray {width:100%;}
+div.eqnarray{text-align:center;}
+div.array {text-align:center;}
+div.pmatrix {text-align:center;}
+table.pmatrix {width:100%;}
+span.pmatrix img{vertical-align:middle;}
+div.pmatrix {text-align:center;}
+table.pmatrix {width:100%;}
+span.bar-css {text-decoration:overline;}
+img.cdots{vertical-align:middle;}
+.partToc a, .partToc, .likepartToc a, .likepartToc {line-height: 200%; font-weight:bold; font-size:110%;}
+.index-item, .index-subitem, .index-subsubitem {display:block}
+div.caption {text-indent:-2em; margin-left:3em; margin-right:1em; text-align:left;}
+div.caption span.id{font-weight: bold; white-space: nowrap; }
+h1.partHead{text-align: center}
+p.bibitem { text-indent: -2em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+p.bibitem-p { text-indent: 0em; margin-left: 2em; margin-top:0.6em; margin-bottom:0.6em; }
+.paragraphHead, .likeparagraphHead { margin-top:2em; font-weight: bold;}
+.subparagraphHead, .likesubparagraphHead { font-weight: bold;}
+.quote {margin-bottom:0.25em; margin-top:0.25em; margin-left:1em; margin-right:1em; text-align:justify;}
+.verse{white-space:nowrap; margin-left:2em}
+div.maketitle {text-align:center;}
+h2.titleHead{text-align:center;}
+div.maketitle{ margin-bottom: 2em; }
+div.author, div.date {text-align:center;}
+div.thanks{text-align:left; margin-left:10%; font-size:85%; font-style:italic; }
+div.author{white-space: nowrap;}
+.quotation {margin-bottom:0.25em; margin-top:0.25em; margin-left:1em; }
+.abstract p {margin-left:5%; margin-right:5%;}
+div.abstract {width:100%;}
+.equation td{text-align:center; }
+.equation-star td{text-align:center; }
+table.equation-star { width:100%; }
+table.equation { width:100%; }
+table.align, table.alignat, table.xalignat, table.xxalignat, table.flalign {width:100%; margin-left:5%; white-space: nowrap;}
+table.align-star, table.alignat-star, table.xalignat-star, table.flalign-star {margin-left:auto; margin-right:auto; white-space: nowrap;}
+td.align-label { width:5%; text-align:center; }
+td.align-odd { text-align:right; padding-right:0.3em;}
+td.align-even { text-align:left; padding-right:0.6em;}
+table.multline, table.multline-star {width:100%;}
+td.gather {text-align:center; }
+table.gather {width:100%;}
+div.gather-star {text-align:center;}
+.figure img.graphics {margin-left:10%;}
+span#textcolor1{color:#00FF00}
+span#textcolor2{color:#FF00FF}
+span#textcolor3{color:#0000FF}
+span#textcolor4{color:#00FF00}
+span#textcolor5{color:#FF00FF}
+span#textcolor6{color:#0000FF}
+span#textcolor7{color:#00FF00}
+span#textcolor8{color:#FF00FF}
+span#textcolor9{color:#0000FF}
+span#textcolor10{color:#00FF00}
+span#textcolor11{color:#FF00FF}
+span#textcolor12{color:#0000FF}
+span#textcolor13{color:#00FF00}
+span#textcolor14{color:#FF00FF}
+span#textcolor15{color:#0000FF}
+span#textcolor16{color:#00FF00}
+span#textcolor17{color:#FF00FF}
+span#textcolor18{color:#0000FF}
+span#textcolor19{color:#00FF00}
+span#textcolor20{color:#FF00FF}
+span#textcolor21{color:#0000FF}
+span#textcolor22{color:#0000FF}
+span#textcolor23{color:#0000FF}
+span#textcolor24{color:#00FF00}
+span#textcolor25{color:#FF00FF}
+span#textcolor26{color:#0000FF}
+span#textcolor27{color:#00FF00}
+span#textcolor28{color:#FF00FF}
+span#textcolor29{color:#0000FF}
+span#textcolor30{color:#00FF00}
+span#textcolor31{color:#FF00FF}
+span#textcolor32{color:#0000FF}
+span#textcolor33{color:#00FF00}
+span#textcolor34{color:#FF00FF}
+span#textcolor35{color:#0000FF}
+span#textcolor36{color:#00FF00}
+span#textcolor37{color:#FF00FF}
+span#textcolor38{color:#0000FF}
+span#textcolor39{color:#00FF00}
+span#textcolor40{color:#FF00FF}
+span#textcolor41{color:#0000FF}
+span#textcolor42{color:#00FF00}
+span#textcolor43{color:#FF00FF}
+span#textcolor44{color:#0000FF}
+span#textcolor45{color:#0000FF}
+span#textcolor46{color:#0000FF}
+span#textcolor47{color:#FF0000}
+span#textcolor48{color:#FF0000}
+span#textcolor49{color:#FF0000}
+span#textcolor50{color:#FF0000}
+span#textcolor51{color:#00FF00}
+span#textcolor52{color:#FF00FF}
+span#textcolor53{color:#FF0000}
+span#textcolor54{color:#0000FF}
+span#textcolor55{color:#00FF00}
+span#textcolor56{color:#FF00FF}
+span#textcolor57{color:#0000FF}
+span#textcolor58{color:#00FF00}
+span#textcolor59{color:#FF00FF}
+span#textcolor60{color:#0000FF}
+span#textcolor61{color:#00FF00}
+span#textcolor62{color:#FF00FF}
+span#textcolor63{color:#FF0000}
+span#textcolor64{color:#0000FF}
+span#textcolor65{color:#00FF00}
+span#textcolor66{color:#FF00FF}
+span#textcolor67{color:#0000FF}
+span#textcolor68{color:#00FF00}
+span#textcolor69{color:#FF00FF}
+span#textcolor70{color:#FF0000}
+span#textcolor71{color:#0000FF}
+span#textcolor72{color:#00FF00}
+span#textcolor73{color:#FF00FF}
+span#textcolor74{color:#0000FF}
+span#textcolor75{color:#0000FF}
+span#textcolor76{color:#0000FF}
+span#textcolor77{color:#00FF00}
+span#textcolor78{color:#FF00FF}
+span#textcolor79{color:#0000FF}
+span#textcolor80{color:#00FF00}
+span#textcolor81{color:#FF00FF}
+span#textcolor82{color:#0000FF}
+span#textcolor83{color:#00FF00}
+span#textcolor84{color:#FF00FF}
+span#textcolor85{color:#0000FF}
+span#textcolor86{color:#00FF00}
+span#textcolor87{color:#FF00FF}
+span#textcolor88{color:#0000FF}
+span#textcolor89{color:#00FF00}
+span#textcolor90{color:#FF00FF}
+span#textcolor91{color:#0000FF}
+span#textcolor92{color:#00FF00}
+span#textcolor93{color:#FF00FF}
+span#textcolor94{color:#0000FF}
+span#textcolor95{color:#00FF00}
+span#textcolor96{color:#FF00FF}
+span#textcolor97{color:#0000FF}
+span#textcolor98{color:#0000FF}
+span#textcolor99{color:#0000FF}
+span#textcolor100{color:#00FF00}
+span#textcolor101{color:#FF00FF}
+span#textcolor102{color:#0000FF}
+span#textcolor103{color:#00FF00}
+span#textcolor104{color:#FF00FF}
+span#textcolor105{color:#0000FF}
+span#textcolor106{color:#00FF00}
+span#textcolor107{color:#FF00FF}
+span#textcolor108{color:#0000FF}
+span#textcolor109{color:#00FF00}
+span#textcolor110{color:#FF00FF}
+span#textcolor111{color:#0000FF}
+span#textcolor112{color:#00FF00}
+span#textcolor113{color:#FF00FF}
+span#textcolor114{color:#0000FF}
+span#textcolor115{color:#00FF00}
+span#textcolor116{color:#FF00FF}
+span#textcolor117{color:#0000FF}
+span#textcolor118{color:#00FF00}
+span#textcolor119{color:#FF00FF}
+span#textcolor120{color:#0000FF}
+span#textcolor121{color:#0000FF}
+span#textcolor122{color:#0000FF}
+span#textcolor123{color:#FF0000}
+span#textcolor124{color:#FF0000}
+span#textcolor125{color:#FF0000}
+span#textcolor126{color:#FF0000}
+span#textcolor127{color:#00FF00}
+span#textcolor128{color:#FF00FF}
+span#textcolor129{color:#0000FF}
+span#textcolor130{color:#00FF00}
+span#textcolor131{color:#FF00FF}
+span#textcolor132{color:#FF0000}
+span#textcolor133{color:#0000FF}
+span#textcolor134{color:#00FF00}
+span#textcolor135{color:#FF00FF}
+span#textcolor136{color:#FF0000}
+span#textcolor137{color:#0000FF}
+span#textcolor138{color:#00FF00}
+span#textcolor139{color:#FF00FF}
+span#textcolor140{color:#FF0000}
+span#textcolor141{color:#0000FF}
+span#textcolor142{color:#00FF00}
+span#textcolor143{color:#FF00FF}
+span#textcolor144{color:#0000FF}
+span#textcolor145{color:#00FF00}
+span#textcolor146{color:#FF00FF}
+span#textcolor147{color:#FF0000}
+span#textcolor148{color:#0000FF}
+span#textcolor149{color:#00FF00}
+span#textcolor150{color:#FF00FF}
+span#textcolor151{color:#0000FF}
+span#textcolor152{color:#0000FF}
+span#textcolor153{color:#0000FF}
+span#textcolor154{color:#00FF00}
+span#textcolor155{color:#FF00FF}
+span#textcolor156{color:#0000FF}
+span#textcolor157{color:#00FF00}
+span#textcolor158{color:#FF00FF}
+span#textcolor159{color:#0000FF}
+span#textcolor160{color:#00FF00}
+span#textcolor161{color:#FF00FF}
+span#textcolor162{color:#0000FF}
+span#textcolor163{color:#00FF00}
+span#textcolor164{color:#FF00FF}
+span#textcolor165{color:#0000FF}
+span#textcolor166{color:#00FF00}
+span#textcolor167{color:#FF00FF}
+span#textcolor168{color:#0000FF}
+span#textcolor169{color:#00FF00}
+span#textcolor170{color:#FF00FF}
+span#textcolor171{color:#0000FF}
+span#textcolor172{color:#00FF00}
+span#textcolor173{color:#FF00FF}
+span#textcolor174{color:#0000FF}
+span#textcolor175{color:#0000FF}
+span#textcolor176{color:#0000FF}
+span#textcolor177{color:#00FF00}
+span#textcolor178{color:#FF00FF}
+span#textcolor179{color:#0000FF}
+span#textcolor180{color:#00FF00}
+span#textcolor181{color:#FF00FF}
+span#textcolor182{color:#0000FF}
+span#textcolor183{color:#00FF00}
+span#textcolor184{color:#FF00FF}
+span#textcolor185{color:#0000FF}
+span#textcolor186{color:#00FF00}
+span#textcolor187{color:#FF00FF}
+span#textcolor188{color:#0000FF}
+span#textcolor189{color:#00FF00}
+span#textcolor190{color:#FF00FF}
+span#textcolor191{color:#0000FF}
+span#textcolor192{color:#00FF00}
+span#textcolor193{color:#FF00FF}
+span#textcolor194{color:#0000FF}
+span#textcolor195{color:#00FF00}
+span#textcolor196{color:#FF00FF}
+span#textcolor197{color:#0000FF}
+span#textcolor198{color:#0000FF}
+span#textcolor199{color:#0000FF}
+span#textcolor200{color:#FF0000}
+span#textcolor201{color:#FF0000}
+span#textcolor202{color:#FF0000}
+span#textcolor203{color:#FF0000}
+span#textcolor204{color:#0000FF}
+span#textcolor205{color:#0000FF}
+span#textcolor206{color:#0000FF}
+span#textcolor207{color:#0000FF}
+span#textcolor208{color:#0000FF}
+span#textcolor209{color:#0000FF}
+span#textcolor210{color:#0000FF}
+span#textcolor211{color:#0000FF}
+span#textcolor212{color:#0000FF}
+span#textcolor213{color:#0000FF}
+span#textcolor214{color:#0000FF}
+span#textcolor215{color:#0000FF}
+span#textcolor216{color:#0000FF}
+span#textcolor217{color:#0000FF}
+span#textcolor218{color:#0000FF}
+span#textcolor219{color:#0000FF}
+span#textcolor220{color:#FF0000}
+span#textcolor221{color:#FF0000}
+span#textcolor222{color:#FF0000}
+span#textcolor223{color:#FF0000}
+span#textcolor224{color:#FF0000}
+span#textcolor225{color:#FF0000}
+span#textcolor226{color:#FF0000}
+span#textcolor227{color:#FF0000}
+span#textcolor228{color:#FF0000}
+span#textcolor229{color:#FF0000}
+span#textcolor230{color:#FF0000}
+span#textcolor231{color:#FF0000}
+span#textcolor232{color:#FF0000}
+span#textcolor233{color:#FF0000}
+span#textcolor234{color:#FF0000}
+span#textcolor235{color:#FF0000}
+span#textcolor236{color:#FF0000}
+span#textcolor237{color:#FF0000}
+/* end css.sty */
+

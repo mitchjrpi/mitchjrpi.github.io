@@ -1,0 +1,227 @@
+\documentclass[11pt]{article}
+
+\pagestyle{empty}
+
+%\oddsidemargin -.1in
+%\textwidth 6.5in
+%\textheight 8.9in
+%\topmargin -30pt
+%\headsep 0in
+%\headheight 0in
+
+\usepackage{fullpage}
+
+\pagestyle{empty}
+
+\newcommand{\til}{\char '176}
+\newcommand{\re}{I\!\!R}
+
+
+\begin{document}
+
+\begin{center}
+  \begin{large}
+     MATP6620 / DSES6760 \\
+Combinatorial Optimization and Integer Programming \\
+       Homework 6.
+  \end{large}
+\end{center}
+
+\begin{flushright}
+   Due:  Friday, April 20, 2007.
+\end{flushright}
+
+%\vspace{\baselineskip}
+
+
+\begin{enumerate}
+
+\item
+Given a complete graph $G=(V,E)$ with edge weights $w_e$ and $n=kp$ nodes,
+we wish to partition the vertices into
+$k$ sets each containing exactly $p$ vertices so as to minimize the sum of the edge weights of the edges with endpoints in the same set.
+Let $e$ denote the $n$-vector of ones and let $w_{ii}=0$ for $i=1,\ldots,n$.
+Show that the following semidefinite program gives a lower bound
+on the optimal value of this problem, where $X$ is an $n \times n$ matrix:
+\begin{displaymath}
+\begin{array}{lrcll}
+\min & 0.5  \sum_{i=1}^n \sum_{j=1}^n w_{ij} X_{ij}  \\
+\mbox{subject to} & X_{ii} & = & 1 & i = 1,\ldots,n \\
+& Xe & = & pe \\
+& X && \multicolumn{2}{l}{\mbox{symmetric and positive semidefinite}}
+\end{array}
+\end{displaymath}
+%where $w_{ii}=0$ for $i=1,\ldots,n$ and $e$ is the vector of ones.
+
+\item  \label{q.greedy}
+Define a greedy algorithm for the weighted node packing problem.
+How does your algorithm do on the instance given in Figure 9.1 on page 343 of the text?
+
+\item
+How would you modify your algorithm of question~\ref{q.greedy}
+to construct a GRASP routine for weighted node packing?
+Give five sample packings found by your algorithm for the
+instance given in Figure 9.1 on page 343 of the text.
+
+\item
+Describe a tabu search algorithm for weighted node packing.
+Be sure to define your valid solutions, your neighbourhoods,
+your tabu criteria,
+and what you would do with violated constraints.
+%and how you would handle violated constraints,
+%or if you would allow violated constraints.
+Run your algorithm on the instance given in Figure 9.1 on page 343 of the text,
+starting from the solution you found in Question~\ref{q.greedy}
+and running until the algorithm finds three more local minima.
+
+
+%\item  \label{sdpclique}
+%Given a graph $G=(V,E)$, let $n=|V|$ be the number of nodes.
+%We can set up a semidefinite programming problem
+%with the $n \times n$ symmetric matrix $X$ of variables:
+%\begin{displaymath}
+%\begin{array}{lrcllr}
+%\max & \sum_{i=1}^n \sum_{j=1}^n X_{ij} &&\qquad \\
+%\mbox{subject to} & X_{ij} & = & 0 & \mbox{if } (i,j) \not\in E  & \qquad (P) \\
+%& \sum_{i=1}^n X_{ii} & = & 1  \\
+%& X & \succeq & 0
+%\end{array}
+%\end{displaymath}
+%Show that the optimal value of this SDP gives an upper bound on the
+%maximum cardinality of a clique in~$G$.
+
+%%\pagebreak
+
+%\item
+%Problem $(P)$ in question~\ref{sdpclique} has a dual:
+%\begin{displaymath}
+%\begin{array}{lrcrcrcllr}
+%\min &&& z \\
+%\mbox{subject to} & -S_{ii} & + & z &&& = & 1 & i=1,\ldots,n & \qquad (D)  \\
+%& -S_{ij} &&& + & y_{ij} & = & 1 &   \mbox{if } (i,j) \not\in E  \\
+%& -S_{ij} &&&&& = & 1 & \mbox{if } (i,j) \in E \\
+%& S &&&&& \succeq & 0
+%\end{array}
+%\end{displaymath}
+%Here, $S$ is constrained to be a symmetric positive semidefinite $n \times n$
+%matrix,
+%$z$ is a scalar, and each $y_{ij}$ for $(i,j) \not \in E$ is a scalar with
+%$y_{ij}=y_{ji}$.
+%Show that the optimal value of the dual problem gives a lower bound
+%on the minimum number of colours needed to colour the nodes of the
+%graph so that no adjacent nodes receive the same colour.
+%(Hint: The sum of positive semidefinite matrices is positive semidefinite.)
+
+   \item
+   We have an integer program of the form
+   \begin{displaymath}
+   \begin{array}{lrclr}
+   \min & c^Tx \\
+   \mbox{s.t.} & Ax & \geq & b & \qquad (IP)  \\
+   & x && \mbox{binary}
+   \end{array}
+   \end{displaymath}
+   where $b>0$ and $c>0$, and each nonzero element $a_{ij}$ of $A$ satisfies
+   $a_{ij} \geq b_i$.
+         \begin{enumerate}
+           \item
+           Show that the optimal solution to the LP relaxation of $(IP)$
+           can be used to find a feasible integer solution.
+            \item
+           Let $p$ be the maximum number of nonzeroes in any row of~$A$.
+           Give a polynomial time algorithm to find a feasible integer
+           solution that has value within a factor of $p$ of the optimal value.
+         \end{enumerate}
+
+
+%   \item
+%In the examples below, $x$ is required to be a nonnegative vector
+%in~$\re^3$ and $y$ is constrained to be a binary vector with three
+%components.
+%A set of constraints that must be satisfied by $x$ and $y$ is given,
+%and a point that satisfies these constraints is also given.
+%Find a valid flow cover inequality that cuts off this point.
+%\begin{enumerate}
+%\item
+%Constraints:
+%\begin{displaymath}
+%x_1+x_2+x_3 \leq 7, \; x_1 \leq 3y_1, \; x_2 \leq 5y_2, \; x_3 \leq 6y_3.
+%\end{displaymath}
+%Point:
+%\begin{displaymath}x=(2,5,0), \; y=(\frac{2}{3},1,0).
+%\end{displaymath}
+%\item
+%Constraints:
+%\begin{displaymath}
+%7 \leq x_1+x_2+x_3, \; x_1 \leq 3y_1, \; x_2 \leq 5y_2, \; x_3 \leq 6y_3.
+%\end{displaymath}
+%Point:
+%\begin{displaymath}x=(2,5,0), \; y=(\frac{2}{3},1,0).
+%\end{displaymath}
+%\end{enumerate}
+
+%   \item
+%         Interpret the numbers on the edges in the graph
+%         below as both edge numbers and edge weights.
+%         We are looking for a minimum weight spanning tree,
+%         subject to the constraints
+%         \begin{displaymath}
+%           x_1 \leq x_6, \quad x_2 \leq x_7, \quad x_3 \leq x_8,
+%         \end{displaymath}
+%         where $x_i=1$ if edge $e_i$ is in the tree, and 0 otherwise.
+%         Use tabu search to find the minimum weight spanning tree subject
+%         to these constraints. The move should be from tree to tree,
+%         with one edge entering and one leaving.
+%         Use a penalty of 50 for each violated constraint.
+%         The tabu restrictions are that added edges can not leave for
+%         one iteration, and dropped edges can not enter for one iteration.
+%         The initial tree should be the minimum weight spanning tree,
+%         without considering the constraints.
+%         (You should not need to use aspiration criteria.
+%         You may assume that once you have visited two local minima,
+%         one of them is the optimal solution.)
+
+%\begin{picture}(420,140)(-80,0)
+%  \put(20,20){\line(1,0){100}}
+%  \put(20,20){\line(1,1){100}}
+%  \put(120,20){\line(0,1){100}}
+%  \put(120,120){\line(1,0){100}}
+%  \put(120,20){\line(1,0){100}}
+%  \put(220,20){\line(0,1){100}}
+%  \put(220,20){\line(1,1){100}}
+%  \put(220,120){\line(1,0){100}}
+
+%
+%  \put(20,20){\circle*{3}}
+%  \put(120,20){\circle*{3}}
+%  \put(120,120){\circle*{3}}
+%  \put(220,20){\circle*{3}}
+%  \put(220,120){\circle*{3}}
+%  \put(320,120){\circle*{3}}
+
+%
+%  \put(55,70){1}
+%  \put(70,10){8}
+%  \put(125,70){4}
+%  \put(170,10){5}
+%  \put(170,125){3}
+%  \put(210,70){6}
+%  \put(270,125){7}
+%  \put(270,60){2}
+%\end{picture}
+
+\end{enumerate}
+
+\vfill
+
+\begin{tabular}{@{\hspace{1in}}l}
+   John Mitchell  \\
+   Amos Eaton 325  \\
+   x6915.  \\
+   mitchj@rpi.edu  \\
+   Office hours:
+   Tuesday 2pm -- 3pm, Wednesday 11am -- noon.
+\end{tabular}
+
+
+\end{document}

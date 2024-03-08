@@ -1,0 +1,94 @@
+reset;
+
+model benders.mod; data benders.dat;
+
+param itercount;
+param eps_terminate;
+param lowerbound;
+param upperbound;
+param subprobval;
+
+problem masterproblem: x, z, MPobj, extptcons, extraycons;
+
+problem subproblem: v, u, subprobobj, subprobcon, vabs, vabs1, vabs2, normalize;
+
+problem IP: x,y,IPobj,meetdemand,use_open_facs;
+
+#
+
+for {i in 1..nCust} {
+  for {j in 1..nFac} {
+    let C[i,j] := - C[i,j];
+  }
+}
+
+#let xbar[1] := 0;
+#let xbar[2] := 0;
+#let xbar[3] := 0;
+#let xbar[4] := 0;
+#let xbar[5] := 1;
+#let xbar[6] := 1;
+
+let z := min(0, sum{i in 1..nCust,j in 1..nFac} C[i,j]);
+display z;
+
+let eps_terminate := 0.5;
+
+let itercount := 0;
+let upperbound := sum{i in 1..nFac} f[i] +
+       max(0,sum{l in 1..nCust, j in 1..nFac} C[l,j]);
+let lowerbound := 0;
+
+solve subproblem;
+#display subprobobj;
+let subprobval := subprobobj;  #z + 2*eps_terminate;
+
+repeat while (subprobval > z + eps_terminate) and (itercount < 25) {
+  let upperbound := min(upperbound,subprobval + sum{i in 1..nFac} f[i]*xbar[i]);
+  display lowerbound, upperbound, itercount, subprobval, z, xbar;
+#  solve subproblem;
+
+#  let subprobval := subprobobj;
+
+
+#  if subprobobj > 10000 then {
+#    let nExtRays := nExtRays + 1;
+#    for {i in 1..nCust} {
+#       let extrayv[nExtRays,i] := v[i];
+#    }
+#    for {i in 1..nFac} {
+#       let extrayu[nExtRays,i] := u[i];
+#    }
+#    display nExtRays, subprobobj, u,v;
+#  }
+#  else {
+    let nExtPts := nExtPts + 1;
+    for {i in 1..nCust} {
+       let extptv[nExtPts,i] := v[i];
+    }
+    for {i in 1..nFac} {
+       let extptu[nExtPts,i] := u[i];
+    }
+    display nExtPts;  #, subprobval;  #, u,v;
+#  };
+
+  solve masterproblem;
+
+  let lowerbound := MPobj;
+#  display lowerbound,z, x;
+
+  for {i in 1..nFac} {
+     let xbar[i] := x[i];
+  }
+
+  let itercount := itercount+1;
+
+  solve subproblem;
+
+  let subprobval := subprobobj;
+}
+
+display lowerbound, upperbound, itercount, subprobval, z, xbar;
+
+solve IP;
+display x,y;

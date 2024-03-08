@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="824.33">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1"><b>Model file</b></p>
+<p class="p1">========</p>
+<p class="p2"><br></p>
+<p class="p1">set PRODUCTS;</p>
+<p class="p1">set RESOURCES;</p>
+<p class="p2"><br></p>
+<p class="p1">var x{p in PRODUCTS} &gt;= 0;</p>
+<p class="p2"><br></p>
+<p class="p1">param price{p in PRODUCTS};</p>
+<p class="p1">param avail{r in RESOURCES};</p>
+<p class="p1">param use{r in RESOURCES, p in PRODUCTS};</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1">minimize objective: sum{p in PRODUCTS} price[p] * x[p];</p>
+<p class="p2"><br></p>
+<p class="p1">subject to resourcelimit{r in RESOURCES}:</p>
+<p class="p1"><span class="Apple-converted-space">  </span>sum{p in PRODUCTS} use[r,p] * x[p] = avail[r];</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><b>Data file</b></p>
+<p class="p1">=======</p>
+<p class="p2"><br></p>
+<p class="p1">set PRODUCTS = x1 x2 x3 x4 x5;</p>
+<p class="p1">set RESOURCES = c1 c2 c3;</p>
+<p class="p2"><br></p>
+<p class="p1">param price := x1 4 x2 4 x3 0 x4 1 x5 5;</p>
+<p class="p2"><br></p>
+<p class="p1">param avail := c1 3 c2 3 c3 1;</p>
+<p class="p2"><br></p>
+<p class="p1">param use :<span class="Apple-converted-space">  </span>x1 x2 x3 x4 x5<span class="Apple-converted-space">  </span>:=</p>
+<p class="p1"><span class="Apple-converted-space">   </span>c1 <span class="Apple-converted-space">        </span>2<span class="Apple-converted-space">  </span>1<span class="Apple-converted-space">  </span>0<span class="Apple-converted-space">  </span>1 -2</p>
+<p class="p1"><span class="Apple-converted-space">   </span>c2<span class="Apple-converted-space">        </span>-1<span class="Apple-converted-space">  </span>1<span class="Apple-converted-space">  </span>1<span class="Apple-converted-space">  </span>0<span class="Apple-converted-space">  </span>0</p>
+<p class="p1"><span class="Apple-converted-space">   </span>c3 <span class="Apple-converted-space">        </span>1<span class="Apple-converted-space">  </span>0<span class="Apple-converted-space">  </span>0<span class="Apple-converted-space">  </span>1 -1</p>
+<p class="p1"><span class="Apple-converted-space">   </span>;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><b>Output</b></p>
+<p class="p1">======</p>
+<p class="p2"><br></p>
+<p class="p1">~ (4) ampl</p>
+<p class="p1">ILOG AMPL 9.000, licensed to "rensselaer-troy, ny ".</p>
+<p class="p1">AMPL Version 20021031 (SunOS 5.8)</p>
+<p class="p1">ampl: model standard.mod; data standard.dat; solve;</p>
+<p class="p1">ILOG CPLEX 9.000, licensed to "rensselaer-troy, ny ", options: e m b<span class="Apple-converted-space"> </span></p>
+<p class="p1">CPLEX 9.0.0: optimal solution; objective 8</p>
+<p class="p1">3 dual simplex iterations (0 in phase I)</p>
+<p class="p1">ampl: display x;</p>
+<p class="p1">x [*] :=</p>
+<p class="p1">x1<span class="Apple-converted-space">  </span>1</p>
+<p class="p1">x2<span class="Apple-converted-space">  </span>1</p>
+<p class="p1">x3<span class="Apple-converted-space">  </span>3</p>
+<p class="p1">x4<span class="Apple-converted-space">  </span>0</p>
+<p class="p1">x5<span class="Apple-converted-space">  </span>0</p>
+<p class="p1">;</p>
+</body>
+</html>

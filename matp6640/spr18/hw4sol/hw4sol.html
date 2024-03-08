@@ -1,0 +1,970 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw4sol.tex"> 
+<meta name="date" content="2018-03-19 14:34:00"> 
+<link rel="stylesheet" type="text/css" href="hw4sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 28--><p class="noindent" >
+<!--l. 30--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12x-x-120">MATP6640/ISYE6770 Linear Programming</span></a><span 
+class="cmr-12x-x-120">, Homework 4.</span><br />
+<span 
+class="cmr-12x-x-120">Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 35--><p class="noindent" >
+ Due: Friday, March 9, 2018.<br />
+10% penalty for each day late.</div>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">Consider the problem
+      <center class="math-display" >
+      <img 
+src="hw4sol0x.png" alt="max         &#x2211;m   &#x2211;n    c x
+    x         i=1   j&#x2211;=n1 ij ij
+subject to       &#x2211;m   j=1xij  =   1       i = 1,...,m
+                   i=1wijxij  &#x2264;   bj      j = 1,...,n
+                         xij      binary  i = 1,...,m, j = 1,...,n
+      " class="math-display" ></center>
+      <!--l. 61--><p class="nopar" >
+      where all the parameters <span 
+class="cmmi-12">c</span>, <span 
+class="cmmi-12">w</span>, and <span 
+class="cmmi-12">b </span>are positive integers. Construct a Dantzig-Wolfe
+      approach to this problem, where integrality is imposed in the subproblem but not in
+      the master problem. The equality constraints should be in the master problem
+      and the inequality constraints should be handled through the subproblem. Your
+      formulation should be disaggregated. What is your criterion for optimality in the master
+      problem?
+      <!--l. 70--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 72--><p class="noindent" >Since all variables are binary, there are no rays. We let
+      <center class="math-display" >
+      <img 
+src="hw4sol1x.png" alt="                 &#x2211;m
+Xj := {x  &#x2208; Bm :     wijxi &#x2264; bj} for j = 1,...,n,
+                 i=1
+      " class="math-display" ></center>
+      <!--l. 77--><p class="nopar" >
+      the set of feasible solutions to a binary knapsack problem. Every point in <span 
+class="cmmi-12">X</span><sub><span 
+class="cmmi-8">j</span></sub> is an
+                                                                                         
+                                                                                         
+      extreme point of the convex hull of&#x00A0;<span 
+class="cmmi-12">X</span><sub><span 
+class="cmmi-8">j</span></sub>, since <span 
+class="cmmi-12">x </span>is binary. Let the <span 
+class="cmmi-12">K</span><sub><span 
+class="cmmi-8">j</span></sub> points of <span 
+class="cmmi-12">X</span><sub><span 
+class="cmmi-8">j</span></sub>
+      be
+      <center class="math-display" >
+      <img 
+src="hw4sol2x.png" alt="points of X  :  {zjk : k = 1,...,K }
+           j                      j
+      " class="math-display" ></center>
+      <!--l. 85--><p class="nopar" >
+      Let <span 
+class="cmmi-12">&#x03BB;</span><sub><span 
+class="cmmi-8">jk</span></sub> be the convex multiplier associated with point&#x00A0;<span 
+class="cmmi-12">z</span><sup><span 
+class="cmmi-8">jk</span></sup>. Let
+      <center class="math-display" >
+      <img 
+src="hw4sol3x.png" alt="      &#x2211;m      jk
+¯cjk =     cijzi .
+       i=1
+      " class="math-display" ></center>
+      <!--l. 90--><p class="nopar" >
+      The Master Problem can then be written
+      <center class="math-display" >
+      <img 
+src="hw4sol4x.png" alt="            &#x2211;n    &#x2211;Kj
+max &#x03BB;          j=1   k=1 ¯cjk&#x03BB;jk
+            &#x2211;n    &#x2211;Kj    jk
+subject to    j=1   k=1z i &#x03BB;jk =   1  i = 1,...,m       (M  P)
+                     &#x2211;Kj  &#x03BB;    =   1  j = 1,...,n
+                       k=1  jk
+                            &#x03BB;  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 100--><p class="nopar" >
+      where we&#8217;ve exploited the fact that each <span 
+class="cmmi-12">z</span><sup><span 
+class="cmmi-8">jk</span></sup> is a binary vector. The dual to the Master
+      Problem is
+      <center class="math-display" >
+      <img 
+src="hw4sol5x.png" alt="           &#x2211;m           &#x2211;n
+min&#x03C0;,&#x03C3;        i=1 &#x03C0;i  +     j=1 &#x03C3;j
+             jk T
+subject to  (z  ) &#x03C0;   +        &#x03C3;j  &#x2265;   ¯cjk   k = 1,...,Kj, j = 1,...,n     (M D )
+                 &#x03C0;,            &#x03C3;      free
+      " class="math-display" ></center>
+      <!--l. 110--><p class="nopar" >
+      Given a (<span class="bar-css"><span 
+class="cmmi-12">&#x03C0;</span></span><span 
+class="cmmi-12">,</span><span class="bar-css"><span 
+class="cmmi-12">&#x03C3;</span></span>), need to check dual feasibility. There is a separate subproblem for each
+      <span 
+class="cmmi-12">j </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span>, each a knapsack problem:
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="hw4sol6x.png" alt="                   &#x2211;m
+vj :=  maxx &#x2208;Bm      i=1(&#x2211;cij - ¯&#x03C0;i)xi
+       subject to         m   wijxi &#x2264;   bj          (SPj (¯&#x03C0;))
+                          i=1
+                                 x      binary
+      " class="math-display" ></center>
+      <!--l. 121--><p class="nopar" >
+      where we&#8217;ve exploited the definition of&#x00A0;<span class="bar-css"><span 
+class="cmmi-12">c</span></span><sub><span 
+class="cmmi-8">jk</span></sub>. The solution to Master Dual is feasible and hence
+      the solution to the Master Problem is optimal if <span 
+class="cmmi-12">v</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264;</span><span class="bar-css"><span 
+class="cmmi-12">&#x03C3;</span></span><sub><span 
+class="cmmi-8">j</span></sub> for <span 
+class="cmmi-12">j </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span>.
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2">The directed graph <span 
+class="cmmi-12">G </span>= (<span 
+class="cmmi-12">V,E</span>) is as follows:
+      <div class="center" 
+>
+<!--l. 137--><p class="noindent" >
+<!--l. 138--><p class="center" ><img 
+src="hw4sol7x.png" alt="PICT" >
+</div>
+      <!--l. 173--><p class="noindent" >One unit of commodity A must be shipped from <span 
+class="cmmi-12">b </span>to <span 
+class="cmmi-12">c </span>and one unit of commodity
+      B must be shipped from <span 
+class="cmmi-12">f </span>to <span 
+class="cmmi-12">e</span>. The cost of shipping one unit of flow along an
+      arc is indicated in the figure. The cost is the same for each commodity. Each arc
+      <span 
+class="cmmi-12">e </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">E </span>in the graph has capacity equal to one; this is the maximum total flow
+      along the arc for the combination of the two commodities. Used the path-based
+      formulation to find the minimum cost total flow. What is the optimal <span 
+class="cmti-12">integral</span>
+      flow?
+                                                                                         
+                                                                                         
+      <!--l. 182--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 184--><p class="noindent" >The following are the valid paths:
+           <ul class="itemize1">
+           <li class="itemize">Paths from <span 
+class="cmmi-12">b </span>to <span 
+class="cmmi-12">c</span>:
+               <ul class="itemize2">
+               <li class="itemize"><span 
+class="cmmi-12">b </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">d </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">c</span>, cost 10. Variable <span 
+class="cmmi-12">f</span><sub><span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmmi-8">A</span></sup>.
+               </li>
+               <li class="itemize"><span 
+class="cmmi-12">b </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">a </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">e </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">c</span>, cost 10. Variable <span 
+class="cmmi-12">f</span><sub><span 
+class="cmr-8">2</span></sub><sup><span 
+class="cmmi-8">A</span></sup>.</li></ul>
+           </li>
+           <li class="itemize">Paths from <span 
+class="cmmi-12">f </span>to <span 
+class="cmmi-12">e</span>:
+               <ul class="itemize2">
+               <li class="itemize"><span 
+class="cmmi-12">f </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">e</span>, cost 17. Variable <span 
+class="cmmi-12">f</span><sub><span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmmi-8">B</span></sup>.
+               </li>
+               <li class="itemize"><span 
+class="cmmi-12">f </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">d </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">c </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">a </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">e</span>, cost 12. Variable <span 
+class="cmmi-12">f</span><sub><span 
+class="cmr-8">2</span></sub><sup><span 
+class="cmmi-8">B</span></sup>.</li></ul>
+           </li></ul>
+      <!--l. 197--><p class="noindent" >LP formulation: <div class="subequations"><div class="eqnarray">
+      <center class="math-display" >
+      <img 
+src="hw4sol8x.png" alt="min         10fA +  10fA + 17f B + 12fB                                 (1a)
+ f             1       2       1      2
+subject to               fA               &#x2264; 1 for edge (b,d )            (1b)
+                       A  1  B
+                      f1 + f2             &#x2264; 1 for edge (d, c)            (1c)
+                         fA               &#x2264; 1 for edge (b,a )            (1d)
+                       A  2  B
+                      f2 + f2             &#x2264; 1 for edge (a, e)            (1e)
+                         fA2               &#x2264; 1 for edge (e,c)             (1f)
+                          B
+                         f1               &#x2264; 1 for edge (f, e)            (1g)
+                         fB2               &#x2264; 1 for edge (f, d)            (1h)
+                          B
+                         f2               &#x2264; 1 for edge (c,a )            (1i)
+                      fA1 + f2A            = 1 for commodity  A          (1j)
+                      fB + f B            = 1 for commodity  B          (1k)
+                       1    2
+                   fA1 ,fA2 ,f1B,fB2         &#x2265; 0                           (1l)
+                                                                                         
+                                                                                         
+      " class="math-display" ><a 
+ id="x1-7r1c"></a><a 
+ id="x1-7r1e"></a><a 
+ id="x1-7r1j"></a></center>
+      </div>
+      </div>
+      <!--l. 232--><p class="noindent" >Taking (<a 
+href="#x1-7r1c">1c<!--tex4ht:ref: eq.dc --></a>)+(<a 
+href="#x1-7r1e">1e<!--tex4ht:ref: eq.ae --></a>)-(<a 
+href="#x1-7r1j">1j<!--tex4ht:ref: eq.A --></a>) implies
+      <center class="math-display" >
+      <img 
+src="hw4sol9x.png" alt="2f B &#x2264; 1,   or fB &#x2264;  0.5.
+  2             2
+      " class="math-display" ></center>
+      <!--l. 235--><p class="nopar" >
+      It follows that the optimal solution is <span 
+class="cmmi-12">f</span><sub><span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmmi-8">A</span></sup> = <span 
+class="cmmi-12">f</span><sub>
+<span 
+class="cmr-8">2</span></sub><sup><span 
+class="cmmi-8">A</span></sup> = <span 
+class="cmmi-12">f</span><sub>
+<span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmmi-8">B</span></sup> = <span 
+class="cmmi-12">f</span><sub>
+<span 
+class="cmr-8">2</span></sub><sup><span 
+class="cmmi-8">B</span></sup> = 0<span 
+class="cmmi-12">.</span>5, with value&#x00A0;24.5. The
+      optimal integral value is 27, achieved by <span 
+class="cmmi-12">f</span><sub><span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmmi-8">A</span></sup> = 1, <span 
+class="cmmi-12">f</span><sub>
+<span 
+class="cmr-8">2</span></sub><sup><span 
+class="cmmi-8">A</span></sup> = 0, <span 
+class="cmmi-12">f</span><sub>
+<span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmmi-8">B</span></sup> = 1, <span 
+class="cmmi-12">f</span><sub>
+<span 
+class="cmr-8">2</span></sub><sup><span 
+class="cmmi-8">B</span></sup>, and by <span 
+class="cmmi-12">f</span><sub>
+<span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmmi-8">A</span></sup> = 0,
+      <span 
+class="cmmi-12">f</span><sub><span 
+class="cmr-8">2</span></sub><sup><span 
+class="cmmi-8">A</span></sup> = 1, <span 
+class="cmmi-12">f</span><sub>
+<span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmmi-8">B</span></sup> = 1, <span 
+class="cmmi-12">f</span><sub>
+<span 
+class="cmr-8">2</span></sub><sup><span 
+class="cmmi-8">B</span></sup>.
+      </li>
+      <li 
+  class="enumerate" id="x1-9x3">Use the network simplex algorithm to find the minimum cost flow for the problem with the
+      following linear programming representation:
+      <center class="math-display" >
+      <img 
+src="hw4sol10x.png" alt="min                -  2x13  -   x23  -   2x24          -   10x41
+subject to  - x12  -    x13                            +     x41  =   0
+              x12           -   x23  -    x24                     =   0
+                        x   +   x              -  x               =   0
+                         13      23                 34
+                                          x24  +  x34  -     x41  =   0
+                                         0 &#x2264; x12,x13,x23,x24,x34  &#x2264;   1
+                                                    0  &#x2264;     x41  &#x2264;   10
+      " class="math-display" ></center>
+      <!--l. 378--><p class="nopar" >
+      Use the initial basic feasible solution with basic variables <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">12</span></sub> = 1<span 
+class="cmmi-12">,x</span><sub><span 
+class="cmr-8">34</span></sub> = 1<span 
+class="cmmi-12">,x</span><sub><span 
+class="cmr-8">41</span></sub> = 1 and
+      nonbasic variables <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">13</span></sub> = 0<span 
+class="cmmi-12">,x</span><sub><span 
+class="cmr-8">23</span></sub> = 1<span 
+class="cmmi-12">,x</span><sub><span 
+class="cmr-8">24</span></sub> = 0<span 
+class="cmmi-12">. </span>You should need three iterations.
+      <!--l. 389--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 391--><p class="noindent" >The initial solution is
+                                                                                         
+                                                                                         
+      <!--l. 424--><p class="noindent" >
+<img src=q3a.png>
+      <!--l. 428--><p class="noindent" >Calculate dual variables from complementary slackness on basic edges. Take <span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmr-8">0</span></sub> = 0, solve
+      <span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmmi-8">i</span></sub> = <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub> for basic edges.
+      <!--l. 468--><p class="noindent" >
+<img src=q3b.png>
+      <!--l. 470--><p class="noindent" >We need <span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub> for each edge (<span 
+class="cmmi-12">i,j</span>) for dual feasibility, with equality for arcs at
+      their upper bound and <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">ij</span></sub> = 0 for arcs at their lower bounds. Calculate <span 
+class="cmmi-12">y </span>values for nonbasic
+      edges:
+      <center class="math-display" >
+      <img 
+src="hw4sol11x.png" alt="(1,3) : cij - &#x03C0;j + &#x03C0;i = c13 - &#x03C0;3 + &#x03C0;1 = - 2 - 10 + 0 = - 12 =&#x21D2;  y13 = 12
+(2,3) : cij - &#x03C0;j + &#x03C0;i = c23 - &#x03C0;3 + &#x03C0;2 = - 1 - 10 + 1 = - 11 =&#x21D2;  y23 = 11
+(2,4) : cij - &#x03C0;j + &#x03C0;i = c24 - &#x03C0;4 + &#x03C0;2 = - 2 - 10 + 0 = - 12 =&#x21D2;  y24 = 12
+      " class="math-display" ></center>
+      <!--l. 482--><p class="nopar" >
+                                                                                         
+                                                                                         
+      We need <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">ij</span></sub> = 0 for nonbasic arcs at their lower bounds, so arcs (1<span 
+class="cmmi-12">, </span>3) and (2<span 
+class="cmmi-12">, </span>4) are both
+      candidates to enter the basis. We choose to bring (1<span 
+class="cmmi-12">, </span>3) into the basis. Flow is adjusted
+      around the cycle 1 <span 
+class="cmsy-10x-x-120">- </span>3 <span 
+class="cmsy-10x-x-120">- </span>4 <span 
+class="cmsy-10x-x-120">- </span>1.
+      <!--l. 519--><p class="noindent" >
+<img src=q3c.png>
+      <!--l. 521--><p class="noindent" >We have to take <span 
+class="cmmi-12">&#x03F5; </span>= 0 and arc (3<span 
+class="cmmi-12">, </span>4) leaves the basis. The updated solution is:
+      <!--l. 555--><p class="noindent" >
+<img src=q3d.png>
+      <!--l. 559--><p class="noindent" >Calculate dual variables from complementary slackness on basic edges. Take <span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmr-8">0</span></sub> = 0, solve
+      <span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmmi-8">i</span></sub> = <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub> for basic edges.
+                                                                                         
+                                                                                         
+      <!--l. 599--><p class="noindent" >
+<img src=q3e.png>
+      <!--l. 601--><p class="noindent" >We need <span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub> for each edge (<span 
+class="cmmi-12">i,j</span>) for dual feasibility, with equality for arcs at
+      their upper bound and <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">ij</span></sub> = 0 for arcs at their lower bounds. Calculate <span 
+class="cmmi-12">y </span>values for nonbasic
+      edges:
+      <center class="math-display" >
+      <img 
+src="hw4sol12x.png" alt="(2,3) : cij - &#x03C0;j + &#x03C0;i = c23 - &#x03C0;3 + &#x03C0;2 = - 1 + 2 + 0 = 1      =&#x21D2;  y23 = - 1
+(2,4) : cij - &#x03C0;j + &#x03C0;i = c24 - &#x03C0;4 + &#x03C0;2 = - 2 - 10 + 0 = - 12  =&#x21D2;  y24 = 12
+(3,4) : cij - &#x03C0;j + &#x03C0;i = c34 - &#x03C0;4 + &#x03C0;3 = 0 - 10 - 2 = - 12    =&#x21D2;  y34 = 12
+      " class="math-display" ></center>
+      <!--l. 613--><p class="nopar" >
+      We need <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">ij</span></sub> = 0 for nonbasic arcs at their lower bounds, so arc (2<span 
+class="cmmi-12">, </span>4) is a candidate to enter
+      the basis. Flow is adjusted around the cycle 1 <span 
+class="cmsy-10x-x-120">- </span>2 <span 
+class="cmsy-10x-x-120">- </span>4 <span 
+class="cmsy-10x-x-120">- </span>1.
+      <!--l. 649--><p class="noindent" >
+<img src=q3f.png>
+                                                                                         
+      <!--l. 653--><p class="noindent" >We have to take <span 
+class="cmmi-12">&#x03F5; </span>= 0 and arc (1<span 
+class="cmmi-12">, </span>2) leaves the basis. The updated solution is:
+      <!--l. 687--><p class="noindent" >
+<img src=q3g.png>
+      <!--l. 691--><p class="noindent" >Calculate dual variables from complementary slackness on basic edges. Take <span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmr-8">0</span></sub> = 0, solve
+      <span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmmi-8">i</span></sub> = <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub> for basic edges.
+      <!--l. 730--><p class="noindent" >
+<img src=q3h.png>
+      <!--l. 734--><p class="noindent" >We need <span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub> for each edge (<span 
+class="cmmi-12">i,j</span>) for dual feasibility, with equality for arcs at
+      their upper bound and <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">ij</span></sub> = 0 for arcs at their lower bounds. Calculate <span 
+class="cmmi-12">y </span>values for nonbasic
+      edges:
+      <center class="math-display" >
+      <img 
+src="hw4sol13x.png" alt="(1,2) : cij - &#x03C0;j + &#x03C0;i = c12 - &#x03C0;2 + &#x03C0;1 = 0 - 12 + 0 = - 12 = &#x21D2;  y12 = 12
+(2,3) : cij - &#x03C0;j + &#x03C0;i = c23 - &#x03C0;3 + &#x03C0;2 = - 1 + 2 + 12 = 13 = &#x21D2;  y23 = - 13
+(3,4) : cij - &#x03C0;j + &#x03C0;i = c34 - &#x03C0;4 + &#x03C0;3 = 0 - 10 - 2 = - 12 = &#x21D2;  y34 = 12
+                                                                                         
+                                                                                         
+      " class="math-display" ></center>
+      <!--l. 746--><p class="nopar" >
+      We need <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0 for nonbasic arcs at their upper bounds, so arc (2<span 
+class="cmmi-12">, </span>3) is a candidate to enter
+      the basis. Flow is adjusted around the cycle 1 <span 
+class="cmsy-10x-x-120">- </span>3 <span 
+class="cmsy-10x-x-120">- </span>2 <span 
+class="cmsy-10x-x-120">- </span>4 <span 
+class="cmsy-10x-x-120">- </span>1.
+      <!--l. 782--><p class="noindent" >
+<img src=q3i.png>
+      <!--l. 786--><p class="noindent" >We have to take <span 
+class="cmmi-12">&#x03F5; </span>= 1 and arc (2<span 
+class="cmmi-12">, </span>3) moves from being nonbasic at its upper bound to being
+      nonbasic at its lower bound. The updated solution is:
+      <!--l. 821--><p class="noindent" >
+<img src=q3j.png>
+      <!--l. 825--><p class="noindent" >Calculate dual variables from complementary slackness on basic edges. Take <span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmr-8">0</span></sub> = 0, solve
+      <span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmmi-8">i</span></sub> = <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub> for basic edges.
+                                                                                         
+                                                                                         
+      <!--l. 864--><p class="noindent" >
+<img src=q3k.png>
+      <!--l. 868--><p class="noindent" >We need <span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub> for each edge (<span 
+class="cmmi-12">i,j</span>) for dual feasibility, with equality for arcs at
+      their upper bound and <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">ij</span></sub> = 0 for arcs at their lower bounds. Calculate <span 
+class="cmmi-12">y </span>values for nonbasic
+      edges:
+      <center class="math-display" >
+      <img 
+src="hw4sol14x.png" alt="(1,2) : c  - &#x03C0;  + &#x03C0;  = c  - &#x03C0;  + &#x03C0;  =  0 - 12 + 0 = - 12  = &#x21D2; y   = 12
+         ij   j    i    12    2    1                            12
+(2,3) : cij - &#x03C0;j + &#x03C0;i = c23 - &#x03C0;3 + &#x03C0;2 = - 1 + 2 + 12 = 13 = &#x21D2; y23 = 0
+(3,4) : cij - &#x03C0;j + &#x03C0;i = c34 - &#x03C0;4 + &#x03C0;3 = 0 - 10 - 2 = - 12 = &#x21D2; y34 = 12
+      " class="math-display" ></center>
+      <!--l. 880--><p class="nopar" >
+      Since arc (2<span 
+class="cmmi-12">, </span>3) is nonbasic at its lower bound, we can have <span 
+class="cmmi-12">c</span><sub><span 
+class="cmr-8">23</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmr-8">3</span></sub> + <span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0 and can take
+      <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">23</span></sub> = 0. The other two nonbasic arcs are at their upper bound, so it is OK to have <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">12</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0
+      and <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">34</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0.
+      <!--l. 886--><p class="noindent" >Thus, we are optimal.
+      </li>
+      <li 
+  class="enumerate" id="x1-11x4">(Bertsimas and Tsitsiklis 7.4) Assume we have a network flow problem on a simple graph
+      <span 
+class="cmmi-12">G </span>= (<span 
+class="cmmi-12">V,E</span>) where the cost <span 
+class="cmmi-12">f</span><sub><span 
+class="cmmi-8">e</span></sub>(<span 
+class="cmmi-12">x</span>) of shipping <span 
+class="cmmi-12">x </span>units along arc <span 
+class="cmmi-12">e </span>is a convex nonnegative
+      piecewise linear function with <span 
+class="cmmi-12">f</span><sub><span 
+class="cmmi-8">e</span></sub>(0) = 0. Assume arc <span 
+class="cmmi-12">e </span>has capacity&#x00A0;<span 
+class="cmmi-12">u</span><sub><span 
+class="cmmi-8">e</span></sub>. The supply <span 
+class="cmmi-12">b</span><sub><span 
+class="cmmi-8">v</span></sub> at
+      each node <span 
+class="cmmi-12">v </span>is given and the aim is to construct a minimum cost circulation. Show that we
+      can construct an equivalent problem on a modified graph <span 
+class="cmmi-12">G</span><span 
+class="cmsy-10x-x-120">&#x2032; </span>= (<span 
+class="cmmi-12">V </span><span 
+class="cmsy-10x-x-120">&#x2032;</span><span 
+class="cmmi-12">,E</span><span 
+class="cmsy-10x-x-120">&#x2032;</span>) where all the arc
+      costs are linear. (The graph <span 
+class="cmmi-12">G</span><span 
+class="cmsy-10x-x-120">&#x2032; </span>should also be simple. A directed graph is simple if it has no
+      parallel arcs or loops.)
+      <!--l. 902--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 904--><p class="noindent" >It is given that the cost of pushing <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ij</span></sub> units of flow along arc (<span 
+class="cmmi-12">i,j</span>) is given by a piecewise
+      linear function of the form
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="hw4sol15x.png" alt="           (|  c1xij                       if 0 &#x2264; xij &#x2264; a1
+           |||   ij2       1         1           1         ij2
+           |{  cij3(xij - ai2j) + fij(ai2j)     if aij2 &#x2264; xij &#x2264; ai3j
+fij(xij) =     cij(xij - aij) + fij(aij)     if aij &#x2264; xij &#x2264; aij
+           |||      ...                           ...
+           ||(   kij+1       kij        kij      kij
+              cij   (xij - aij ) + fij(aij ) if aij &#x2264; xij &#x2264; uij
+      " class="math-display" ></center>
+      <!--l. 914--><p class="nopar" >
+      where the function consists of <span 
+class="cmmi-12">k</span><sub><span 
+class="cmmi-8">ij</span></sub> + 1 line segments and where <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub><sup><span 
+class="cmr-8">1</span></sup> <span 
+class="cmmi-12">&#x003C; c</span><sub>
+<span 
+class="cmmi-8">ij</span></sub><sup><span 
+class="cmr-8">2</span></sup> <span 
+class="cmmi-12">&#x003C;</span> <span 
+class="cmmi-12">&#x2026;</span> <span 
+class="cmmi-12">&#x003C; c</span><sub>
+<span 
+class="cmmi-8">ij</span></sub><sup><span 
+class="cmmi-8">k</span><sub><span 
+class="cmmi-6">ij</span></sub><span 
+class="cmr-8">+1</span></sup>. We
+      can represent the problem as a problem with linear costs by introducing an extra 2<span 
+class="cmmi-12">k</span><sub><span 
+class="cmmi-8">ij</span></sub>
+      edges and <span 
+class="cmmi-12">k</span><sub><span 
+class="cmmi-8">ij</span></sub> vertices for each original edge. Edge (<span 
+class="cmmi-12">i,j</span>) is replaced by the complex
+      below:
+      <!--l. 942--><p class="noindent" >
+<img src=q4.png>
+      </li>
+      <li 
+  class="enumerate" id="x1-13x5">(Bertsimas and Tsitsiklis 7.13) Suppose we are given a noninteger optimal solution to an
+      uncapacitated network flow problem with integer data. Show that there exists a cycle with
+      every arc on the cycle carrying a positive flow. What can you say about the cost of such a
+      cycle? How could you exploit the cycles to construct an optimal integral solution? (Note:
+      Some arcs may be oriented in the opposite direction from the cycle. The cost of the cycle is
+      the difference between the sum of the costs of the arcs oriented in the same direction as the
+      cycle and the sum of the costs of the arcs oriented in the opposite direction from the
+      cycle.)
+      <!--l. 959--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 961--><p class="noindent" >Assume <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">v</span><sub><span 
+class="cmr-6">0</span></sub><span 
+class="cmmi-8">v</span><sub><span 
+class="cmr-6">1</span></sub></sub>  is fractional. Since all the capacities and demands are integral, there
+      must be another edge (<span 
+class="cmmi-12">v</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,v</span><sub><span 
+class="cmr-8">2</span></sub>) with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">v</span><sub><span 
+class="cmr-6">1</span></sub><span 
+class="cmmi-8">v</span><sub><span 
+class="cmr-6">2</span></sub></sub>  fractional. Since <span 
+class="cmmi-12">b</span><sub><span 
+class="cmmi-8">v</span><sub><span 
+class="cmr-6">2</span></sub></sub>  is integral, can find
+      another (<span 
+class="cmmi-12">v</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-12">,v</span><sub><span 
+class="cmr-8">3</span></sub>) with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">v</span><sub><span 
+class="cmr-6">2</span></sub><span 
+class="cmmi-8">v</span><sub><span 
+class="cmr-6">3</span></sub></sub>  fractional. By continuing this process, a vertex will
+                                                                                         
+                                                                                         
+      eventually be repeated, giving a cycle, with every edge on the cycle having fractional
+      flow.
+      <!--l. 967--><p class="noindent" >Flow can be increased or decreased around this cycle, while still maintaining feasibility. Since
+      the current flow is optimal, the cost of the cycle must be zero. Decreasing the flow around the
+      cycle will drive at least one <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">e</span></sub> value to an integral value, while only modifying fractional
+      values.
+      <!--l. 972--><p class="noindent" >If the resulting flow is still fractional, we can repeat this process, eventually obtaining an
+      integral optimal flow.
+      </li>
+      <li 
+  class="enumerate" id="x1-15x6">Consider a multicommodity network flow problem with three commodities on a graph
+      <span 
+class="cmmi-12">G </span>= (<span 
+class="cmmi-12">V,E</span>) with five nodes and seven edges. The seven edges and their costs and capacities
+      are as follows:
+      <center class="math-display" >
+      <img 
+src="hw4sol17x.png" alt="          |
+-edge-----|(1,2)--(1,5)--(2,3)--(2,4)--(2,-5)-(3,4-)-(4,5)--
+ cost     |    8     11      7    10      6      6      8
+ capacity |   25     40     35    50     40     25     50
+          |
+      " class="math-display" ></center>
+      <!--l. 1010--><p class="nopar" >
+      The costs are identical for each commodity. 25 units of commodity A need to be moved from
+      node 1 to node&#x00A0;3. 20 units of commodity B need to be moved from node 5 to node&#x00A0;3. 20
+      units of commodity C need to be moved from node 4 to node&#x00A0;1. The current set of paths
+      consists of 1 <span 
+class="cmsy-10x-x-120">&#x2192; </span>2 <span 
+class="cmsy-10x-x-120">&#x2192; </span>3 and 1 <span 
+class="cmsy-10x-x-120">&#x2192; </span>5 <span 
+class="cmsy-10x-x-120">&#x2192; </span>4 <span 
+class="cmsy-10x-x-120">&#x2192; </span>3 for commodity&#x00A0;A, 5 <span 
+class="cmsy-10x-x-120">&#x2192; </span>2 <span 
+class="cmsy-10x-x-120">&#x2192; </span>3 for
+      commodity&#x00A0;B, and 4 <span 
+class="cmsy-10x-x-120">&#x2192; </span>5 <span 
+class="cmsy-10x-x-120">&#x2192; </span>1 for commodity&#x00A0;<span 
+class="cmmi-12">C</span>. Use the path based approach described
+      in class to show that this is not an optimal set of paths. What is the optimal
+      solution?
+      <!--l. 1025--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 1045--><p class="noindent" >
+<img src=q6a.png>
+                                                                                         
+                                                                                         
+      <!--l. 1049--><p class="noindent" >Need to set up linear programming formulation, so need to calculate costs of the
+      paths:
+      <center class="math-display" >
+      <img 
+src="hw4sol18x.png" alt="f123 : 15, f1543 : 25, f523 : 13, f451 : 19.
+      " class="math-display" ></center>
+      <!--l. 1053--><p class="nopar" >
+      The LP is
+      <center class="math-display" >
+      <img 
+src="hw4sol19x.png" alt="minf        15f123 +   25f1543  +  13f523  +   19f451
+subject to    f    +     f                             =  25
+               123        1543
+                                      f523              =  20
+                                                 f451  =  20
+              f123                                    &#x2264;   25
+                         f1543             +     f451 &#x2264;   40
+              f                 +     f               &#x2264;   35
+               123                     523
+                                                   0  &#x2264;   50
+                                      f523             &#x2264;   40
+                         f1543                        &#x2264;   25
+                         f1543             +     f451 &#x2264;   50
+                                                   f  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 1070--><p class="nopar" >
+      Optimal solution is
+      <center class="math-display" >
+      <img 
+src="hw4sol20x.png" alt="f123 = 15,f1543 = 10,f523 = 20,f451 = 20,  total cost 1115.
+      " class="math-display" ></center>
+      <!--l. 1074--><p class="nopar" >
+      <!--l. 1076--><p class="noindent" >Dual problem is
+      <center class="math-display" >
+      <img 
+src="hw4sol21x.png" alt="msauxbyje,c&#x03C0;t to 25&#x03C3;&#x03C3;A +20&#x03C3;B  +20&#x03C3;C  -2-5ww12 - 40w15  -3-5ww23  -50w24  -40w25  -25w34 - 50w45  &#x2264;  15
+           &#x03C3;AA                    12   -w15      23                   -w34   -w45  &#x2264;  25
+                  &#x03C3;B                         - w23           -w25                 &#x2264;  13
+                         &#x03C3;C           -w15                                 -w45  &#x2264;  19
+                      y free,                                                   &#x03C0;  &#x2265;  0
+      " class="math-display" ></center>
+      <!--l. 1088--><p class="nopar" >
+      From complementary slackness, dual solution is
+      <center class="math-display" >
+      <img 
+src="hw4sol22x.png" alt="&#x03C3;A =  25,  &#x03C3;B  = 23,  &#x03C3;C  = 19
+      " class="math-display" ></center>
+      <!--l. 1093--><p class="nopar" >
+      with
+      <center class="math-display" >
+      <img 
+src="hw4sol23x.png" alt="w12 =  w15 = w24 = w25 =  w34 = w45 = 0,   w23 = 10.
+      " class="math-display" ></center>
+      <!--l. 1097--><p class="nopar" >
+      <!--l. 1099--><p class="noindent" >The subproblems require solving shortest path problems for each commodity, with costs
+      <span 
+class="cmmi-12">c </span>+ <span 
+class="cmmi-12">w</span>:
+      <!--l. 1120--><p class="noindent" >
+<img src=q6b.png>
+      <!--l. 1122--><p class="noindent" >Shortest paths with the modified costs:
+           <ul class="itemize1">
+           <li class="itemize">Commodity A: 1 <span 
+class="cmsy-10x-x-120">- </span>2 <span 
+class="cmsy-10x-x-120">- </span>4 <span 
+class="cmsy-10x-x-120">- </span>3, cost 24 <span 
+class="cmmi-12">&#x003C; &#x03C3;</span><sub><span 
+class="cmmi-8">A</span></sub> = 25.
+                                                                                         
+                                                                                         
+           </li>
+           <li class="itemize">Commodity B: 5 <span 
+class="cmsy-10x-x-120">- </span>4 <span 
+class="cmsy-10x-x-120">- </span>3, cost 14 <span 
+class="cmmi-12">&#x003C; &#x03C3;</span><sub><span 
+class="cmmi-8">B</span></sub> = 23.
+           </li>
+           <li class="itemize">Commodity B: 4 <span 
+class="cmsy-10x-x-120">- </span>2 <span 
+class="cmsy-10x-x-120">- </span>1, cost 18 <span 
+class="cmmi-12">&#x003C; &#x03C3;</span><sub><span 
+class="cmmi-8">C</span></sub> = 19.</li></ul>
+      <!--l. 1129--><p class="noindent" >All three paths have negative reduced cost. Add the one with the most negative reduced cost,
+      namely path 5 <span 
+class="cmsy-10x-x-120">- </span>4 <span 
+class="cmsy-10x-x-120">- </span>3 for Commodity&#x00A0;B. The cost of this path is <span 
+class="cmmi-12">c</span><sub><span 
+class="cmr-8">45</span></sub> + <span 
+class="cmmi-12">c</span><sub><span 
+class="cmr-8">34</span></sub> = 14. The
+      updated primal LP is
+      <center class="math-display" >
+      <img 
+src="hw4sol24x.png" alt="minf        15f123  +  25f1543  +   13f523 +   14f543  +  19f451
+subject to    f     +     f                                       =   25
+               123         1543
+                                      f523 +     f543             =   20
+                                                             f451  =   20
+              f123                                                &#x2264;   25
+                          f1543                         +     f451  &#x2264;   40
+              f                 +     f                           &#x2264;   35
+               123                     523
+                                                               0  &#x2264;   50
+                                      f523                        &#x2264;   40
+                          f1543             +     f543             &#x2264;   25
+                          f1543             +     f543  +     f451  &#x2264;   50
+
+                                                               f  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 1148--><p class="nopar" >
+      Optimal solution is
+      <center class="math-display" >
+      <img 
+src="hw4sol25x.png" alt="f   =  25,f    = 0,f    = 10,f    = 10,f   =  20,  total cost 1025.
+ 123       1543       523       543       451
+      " class="math-display" ></center>
+      <!--l. 1152--><p class="nopar" >
+      <!--l. 1154--><p class="noindent" >Updated dual problem is
+      <center class="math-display" >
+      <img 
+src="hw4sol26x.png" alt="msauxbyje,c&#x03C0;t to 25&#x03C3;&#x03C3;A +20&#x03C3;B  +20&#x03C3;C  -2-5ww12 - 40w15  -3-5ww23  -50w24  -40w25  -25w34 - 50w45  &#x2264;  15
+           &#x03C3;AA                    12   -w15      23                   -w34   -w45  &#x2264;  25
+                  &#x03C3;B                         - w23           -w25                 &#x2264;  13
+                  &#x03C3;B                                                -w34   -w45  &#x2264;  14
+                      y fr&#x03C3;eCe,           -w15                                 -w45&#x03C0;  &#x2264;&#x2265;  109
+      " class="math-display" ></center>
+                                                                                         
+                                                                                         
+      <!--l. 1167--><p class="nopar" >
+      From complementary slackness, one dual solution is
+      <center class="math-display" >
+      <img 
+src="hw4sol27x.png" alt="&#x03C3;  =  17,  &#x03C3;   = 14,  &#x03C3;   = 19
+ A          B           C
+      " class="math-display" ></center>
+      <!--l. 1172--><p class="nopar" >
+      with
+      <center class="math-display" >
+      <img 
+src="hw4sol28x.png" alt="w12 = 1,   w15 = w24 = w25 = w34 =  w45 = 0,   w23 = 1.
+      " class="math-display" ></center>
+      <!--l. 1176--><p class="nopar" >
+      (There are multiple dual optimal solutions, with 25 <span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">&#x03C3;</span><sub><span 
+class="cmmi-8">A</span></sub> = 16 + <span 
+class="cmmi-12">w</span><sub><span 
+class="cmr-8">12</span></sub>, <span 
+class="cmmi-12">w</span><sub><span 
+class="cmr-8">12</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0.)
+      <!--l. 1179--><p class="noindent" >The subproblems require solving shortest path problems for each commodity, with costs
+      <span 
+class="cmmi-12">c </span>+ <span 
+class="cmmi-12">w</span>:
+      <!--l. 1200--><p class="noindent" >
+<img src=q6c.png>
+      <!--l. 1202--><p class="noindent" >Shortest paths with the modified costs:
+           <ul class="itemize1">
+           <li class="itemize">Commodity A: 1 <span 
+class="cmsy-10x-x-120">- </span>2 <span 
+class="cmsy-10x-x-120">- </span>3, cost 17 = <span 
+class="cmmi-12">&#x03C3;</span><sub><span 
+class="cmmi-8">A</span></sub>.
+           </li>
+           <li class="itemize">Commodity B: 5 <span 
+class="cmsy-10x-x-120">- </span>4 <span 
+class="cmsy-10x-x-120">- </span>3, cost 14 = <span 
+class="cmmi-12">&#x03C3;</span><sub><span 
+class="cmmi-8">B</span></sub>.
+           </li>
+           <li class="itemize">Commodity B: 4 <span 
+class="cmsy-10x-x-120">- </span>2 <span 
+class="cmsy-10x-x-120">- </span>1, cost 19 = <span 
+class="cmmi-12">&#x03C3;</span><sub><span 
+class="cmmi-8">C</span></sub>.</li></ul>
+      <!--l. 1208--><p class="noindent" >Thus, no path has negative reduced cost, so we are dual feasible in the full problem, so we
+      are optimal.
+                                                                                         
+                                                                                         
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                       </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                 </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Tuesday: 12&#8211;2pm, Wednesday: 11am&#8211;1pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

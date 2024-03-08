@@ -1,0 +1,260 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Homework 2</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="hw2">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="hw2.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+     <A HREF=..>MATP6640/DSES6770 Linear Programming</A>, Homework 2.
+  </FONT>
+</DIV>
+
+<P>
+
+<DIV ALIGN="RIGHT">
+   Due:  Thursday, February 3, 2000.
+
+</DIV>
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD><A NAME="qcs">&#160;</A>Consider the linear programming problem
+     <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcrcrclr}
+         \min         &  x_1 & + &  x_2 & + &  x_3 & + & 4x_4 & + & 3x_5 \\
+         \mbox{s.t. } & -x_1 &   &      & + &  x_3 & + & 3x_4 & - &  x_5
+                                                              & = & b_1 \\
+&  x_1 & + &  x_2 &   &      &   &      & - &  x_5
+                                                   & = & b_2 & \qquad (P)\\
+&      &   & 2x_2 & + &  x_3 & + & 2x_4 & + &  x_5
+                                                              & = & b_1+2b_2  \\
+ 
+&      &   &&& x_i & \geq & 0, && i & = & 1,...,5.
+       \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="558" HEIGHT="122"
+ SRC="img1.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcrcrclr}
+\min &amp; x_1 &amp; + &amp; x_2 &amp; + &amp; x_...
+...\\
+&amp; &amp; &amp;&amp;&amp; x_i &amp; \geq &amp; 0, &amp;&amp; i &amp; = &amp; 1,...,5.
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Assume that
+     the problem (<I>P</I>) has an optimal solution <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\bar{x}$">,
+where
+     <IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\bar{x}_1$">,
+<IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\bar{x}_2$">
+and <IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$\bar{x}_3$">
+are basic.
+     <DL COMPACT>
+<DT>(a)
+<DD>What is the dual to this linear program?
+<DT>(b)
+<DD>Use complementary slackness to find an optimal solution
+         <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\bar{y}$">
+to the dual problem. 
+<P>
+</DL>
+   <DT>2.
+<DD>Consider again the problem (<I>P</I>) in Question&nbsp;<A HREF="hw2.html#qcs">1</A>.
+     <DL COMPACT>
+<DT>(a)
+<DD>Looking purely at the optimal dual solution you found above,
+can you conclude that
+         no optimal primal solution will have <I>x</I><SUB>4</SUB>&gt;0? What about&nbsp;<I>x</I><SUB>5</SUB>?
+       <DT>(b)
+<DD>The optimal dual solution <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\bar{y}$">
+is not unique: there are
+         other optimal solutions of the form <!-- MATH: $\bar{y}+\lambda[-1,-2,1]^T$ -->
+<IMG
+ WIDTH="143" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\bar{y}+\lambda[-1,-2,1]^T$">.
+         What is the largest possible value of&nbsp;<IMG
+ WIDTH="15" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.gif"
+ ALT="$\lambda$">?
+         Do these other optimal solutions imply anything about the values of
+         <IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\bar{x}_1$">,
+<IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\bar{x}_2$">
+and&nbsp;<IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$\bar{x}_3$">?
+         Do they imply anything about the values of <I>x</I><SUB>4</SUB> and <I>x</I><SUB>5</SUB> in any
+         optimal solution to&nbsp;(<I>P</I>)?
+     </DL>
+<DT>3.
+<DD><A NAME="altthm">&#160;</A>  Consider the subspace alternative theorem:  
+<BR>
+For <!-- MATH: $A\in{\Re}^{m{\times}n}$ -->
+<IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$A\in{\Re}^{m{\times}n}$">
+and <IMG
+ WIDTH="58" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$c\in{\Re}^n$">,
+exactly one of the
+         following holds:
+         <DL COMPACT>
+<DT>(a)
+<DD><!-- MATH: $\exists y \in {\Re}^m  \mbox{ s.t. }  A^Ty=c$ -->
+<IMG
+ WIDTH="181" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.gif"
+ ALT="$ \exists y \in {\Re}^m \mbox{ s.t. } A^Ty=c $">
+<DT>(b)
+<DD><!-- MATH: $\exists x \in {\Re}^n  \mbox{ s.t. }  Ax=0, c^Tx \neq 0.$ -->
+<IMG
+ WIDTH="247" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.gif"
+ ALT="$ \exists x \in {\Re}^n \mbox{ s.t. } Ax=0, c^Tx \neq 0. $"></DL>
+         Develop a proof for this along the following lines:
+         <BLOCKQUOTE>
+            First observe that both (a) and (b) can not hold simultaneously.
+            Thus, it suffices to show that when (a) fails, (b) must hold.
+            Next assume (a) fails and then construct an <I>x</I> which satisfies (b).
+         
+</BLOCKQUOTE>
+         (Hint: You may assume that,
+             given a matrix <!-- MATH: $M \in {\Re}^{m \times n}$ -->
+<IMG
+ WIDTH="93" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$M \in {\Re}^{m \times n}$">
+and a vector
+             <IMG
+ WIDTH="59" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$p \in {\Re}^n$">,
+there exist unique <I>p</I>' and <I>p</I>'' such that
+             <I>p</I>=<I>p</I>'+<I>p</I>'', <I>Mp</I>'=0, <I>p</I>''=<I>M</I><SUP><I>T</I></SUP><I>q</I> for some <I>q</I>, and <I>p</I>'<SUP><I>T</I></SUP><I>p</I>''=0.
+             The vector <I>p</I>' is the projection of <I>p</I> onto the nullspace
+             of&nbsp;<I>M</I>.)
+<DT>4.
+<DD>Let the polyhedron <!-- MATH: $Q=\{x \in {\Re}^2: x_1+x_2 \geq 2, x_1 - 2x_2 \leq
+            2,  x_1 \geq 1, x_1 - x_2 \leq 3 \}$ -->
+<IMG
+ WIDTH="505" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.gif"
+ ALT="$Q=\{x \in {\Re}^2: x_1+x_2 \geq 2, x_1 - 2x_2 \leq
+2, x_1 \geq 1, x_1 - x_2 \leq 3 \}$">.
+            Graph this polyhedron, and hence find matrices <I>B</I> and <I>C</I> such that
+            <!-- MATH: $Q = \{x \in {\Re}^2: x = By + Cz,
+                      y \geq 0, z \geq 0, \sum_i z_i = 1  \}$ -->
+<IMG
+ WIDTH="430" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.gif"
+ ALT="$Q = \{x \in {\Re}^2: x = By + Cz,
+y \geq 0, z \geq 0, \sum_i z_i = 1 \}$">.
+<DT>5.
+<DD>Construct a linear programming problem in the standard form
+            <!-- MATH: $\min\{c^Tx:Ax=b, x\geq 0\}$ -->
+<IMG
+ WIDTH="211" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.gif"
+ ALT="$\min\{c^Tx:Ax=b, x\geq 0\}$">
+which has an optimal basis,
+            but, for this basis, not all the reduced costs are nonnegative.
+<DT>6.
+<DD>Let <I>K</I><SUB>1</SUB> and <I>K</I><SUB>2</SUB> be two finitely generated convex cones
+           in <IMG
+ WIDTH="27" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="${\Re}^n$">.
+Prove that <IMG
+ WIDTH="72" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$K_1 \cap K_2$">
+is a finitely generated
+           convex cone.
+</DL>
+
+<P>
+
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD></TD><TD ALIGN="LEFT"><A HREF=../..>John Mitchell</A></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Amos Eaton 325</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">x6915.</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">
+<A HREF=mailto:mitchj@rpi.edu>mitchj@rpi.edu</A></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Office hours: Wednesday: 12 noon - 2.0pm.</TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<I><A HREF=../..>John E Mitchell</A></I>
+<BR><I>2000-01-20</I>
+</ADDRESS>
+</BODY>
+</HTML>

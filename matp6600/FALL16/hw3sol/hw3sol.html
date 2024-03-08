@@ -1,0 +1,704 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw3sol.tex"> 
+<meta name="date" content="2016-10-07 20:08:00"> 
+<link rel="stylesheet" type="text/css" href="hw3sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 13--><p class="noindent" >
+<!--l. 15--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6600" ><span 
+class="cmr-12x-x-120">MATP6600/ISYE6780 Nonlinear Programming</span></a><br />
+<span 
+class="cmr-12x-x-120">Homework 3</span><br />
+<span 
+class="cmr-12x-x-120">Solutions</span>
+</div>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">Consider the convex optimization problem <a 
+ id="x1-21"></a>
+      <center class="math-display" >
+      <img 
+src="hw3sol0x.png" alt="min          2f(x) :=  x1
+subject to  x1 - x2 &#x2264; 0.
+      " class="math-display" ></center>
+      <!--l. 103--><p class="nopar" >
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-5x1">Show that the optimal value of this problem is unbounded.
+           </li>
+           <li 
+  class="enumerate" id="x1-7x2">Given a feasible point <span class="bar-css"><span 
+class="cmmi-12">x</span></span> and feasible direction <span 
+class="cmmi-12">d</span><span 
+class="cmmi-12">&#x2260;</span>0, let <span 
+class="cmmi-12">&#x03D5;</span><sub><span class="bar-css"><span 
+class="cmmi-8">x</span></span><span 
+class="cmmi-8">,d</span></sub>(<span 
+class="cmmi-12">&#x03B1;</span>) = <span 
+class="cmmi-12">f</span>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span> + <span 
+class="cmmi-12">&#x03B1;d</span>). For
+           any feasible <span class="bar-css"><span 
+class="cmmi-12">x</span></span> and <span 
+class="cmmi-12">d</span>, show that <span 
+class="cmmi-12">&#x03D5;</span><sub><span class="bar-css"><span 
+class="cmmi-8">x</span></span><span 
+class="cmmi-8">,d</span></sub>(<span 
+class="cmmi-12">&#x03B1;</span>) has a finite minimal value over <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">&#x03B1; </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmsy-10x-x-120">}</span>.</li></ol>
+      <!--l. 117--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-9x1">Taking the feasible points <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub>  = <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">t</span>, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub>  = <span 
+class="cmmi-12">t</span><sup><span 
+class="cmr-8">2</span></sup>  and <span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120">&#x2192; &#x221E; </span>drives the objective
+           function value to&#x00A0;<span 
+class="cmsy-10x-x-120">-&#x221E;</span>.
+           </li>
+           <li 
+  class="enumerate" id="x1-11x2">Let <span 
+class="cmmi-12">d </span>= (<span 
+class="cmmi-12">d</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,d</span><sub><span 
+class="cmr-8">2</span></sub>). We break into cases depending on the sign of&#x00A0;<span 
+class="cmmi-12">d</span><sub><span 
+class="cmr-8">1</span></sub>.
+               <ul class="itemize1">
+               <li class="itemize">If <span 
+class="cmmi-12">d</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0 then <span 
+class="cmmi-12">&#x03D5;</span><sub><span class="bar-css"><span 
+class="cmmi-8">x</span></span><span 
+class="cmmi-8">,d</span></sub>(<span 
+class="cmmi-12">&#x03B1;</span>) is minimized by <span 
+class="cmmi-12">&#x03B1; </span>= 0 with value&#x00A0;<span class="bar-css"><span 
+class="cmmi-12">x</span></span><sub><span 
+class="cmr-8">1</span></sub>.
+               </li>
+               <li class="itemize">If <span 
+class="cmmi-12">d</span><sub><span 
+class="cmr-8">1</span></sub> = 0 then one minimizer of <span 
+class="cmmi-12">&#x03D5;</span><sub><span class="bar-css"><span 
+class="cmmi-8">x</span></span><span 
+class="cmmi-8">,d</span></sub>(<span 
+class="cmmi-12">&#x03B1;</span>) is <span 
+class="cmmi-12">&#x03B1; </span>= 0 with value&#x00A0;<span class="bar-css"><span 
+class="cmmi-12">x</span></span><sub><span 
+class="cmr-8">1</span></sub>.
+                                                                                         
+                                                                                         
+               </li>
+               <li class="itemize">If <span 
+class="cmmi-12">d</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmmi-12">&#x003C; </span>0 then <span class="bar-css"><span 
+class="cmmi-12">x</span></span> + <span 
+class="cmmi-12">&#x03B1;d </span>is infeasible for sufficiently large&#x00A0;<span 
+class="cmmi-12">&#x03B1;</span>. The largest possible value
+               for <span 
+class="cmmi-12">&#x03B1; </span>is the larger root <span class="bar-css"><span 
+class="cmmi-12">&#x03B1;</span></span> of the quadratic equation
+               <center class="math-display" >
+               <img 
+src="hw3sol1x.png" alt="(¯x1 + &#x03B1;d1)2 - (x¯2 + &#x03B1;d2 ) = 0,
+               " class="math-display" ></center>
+               <!--l. 130--><p class="nopar" >
+               giving the optimal value of <span 
+class="cmmi-12">&#x03D5;</span><sub><span class="bar-css"><span 
+class="cmmi-8">x</span></span><span 
+class="cmmi-8">,d</span></sub>(<span 
+class="cmmi-12">&#x03B1;</span>) = <span class="bar-css"><span 
+class="cmmi-12">x</span></span><sub><span 
+class="cmr-8">1</span></sub> + <span class="bar-css"><span 
+class="cmmi-12">&#x03B1;</span></span><span 
+class="cmmi-12">d</span><sub><span 
+class="cmr-8">1</span></sub>.</li></ul>
+           </li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-13x2"><a 
+ id="x1-122"></a> In the following convex nonsmooth optimization problem
+      <table 
+class="equation"><tr><td><a 
+ id="x1-14r1"></a>
+      <center class="math-display" >
+      <img 
+src="hw3sol2x.png" alt="                     &#x2211;n
+minx&#x2208;&#x211D;n    f (x) :=    i=1|xi|
+subject to                Ax   =   b,
+      " class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+      <!--l. 157--><p class="nopar" >
+      we have <span 
+class="cmmi-12">b </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">m</span></sup> and <span 
+class="cmmi-12">A </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">m</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup>. Let <span 
+class="cmmi-12">e </span>denote the vector of ones. The problem can be
+      expressed equivalently as the linear program
+      <table 
+class="equation"><tr><td><a 
+ id="x1-15r2"></a>
+      <center class="math-display" >
+      <img 
+src="hw3sol3x.png" alt="minx,t&#x2208; &#x211D;n         eTt
+subject to   Ax         =  b
+
+           - x  +   t  &#x2265;  0
+             x  +   t  &#x2265;  0,
+                                                                                         
+                                                                                         
+      " class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+      <!--l. 168--><p class="nopar" >
+      which has dual problem
+      <table 
+class="equation"><tr><td><a 
+ id="x1-16r3"></a>
+      <center class="math-display" >
+      <img 
+src="hw3sol4x.png" alt="                   T
+maxy &#x2208;&#x211D;m,s,w &#x2208;&#x211D;n   bTy
+subject to       A  y  -   s +   w   =   0
+                           s +   w   =   e
+                               s,w   &#x2265;  0.
+      " class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+      <!--l. 177--><p class="nopar" >
+      Assume an optimal solution to (<a 
+href="#x1-15r2">2<!--tex4ht:ref: eq.nsprimal --></a>) is (<span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup><span 
+class="cmmi-12">,t</span><sup><span 
+class="cmsy-8">*</span></sup>) with corresponding optimal solution to (<a 
+href="#x1-16r3">3<!--tex4ht:ref: eq.nsdual --></a>) of
+      (<span 
+class="cmmi-12">y</span><sup><span 
+class="cmsy-8">*</span></sup><span 
+class="cmmi-12">,s</span><sup><span 
+class="cmsy-8">*</span></sup><span 
+class="cmmi-12">,w</span><sup><span 
+class="cmsy-8">*</span></sup>). Construct a subgradient <span 
+class="cmmi-12">&#x03BE; </span>to <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup>) such that
+      <table 
+class="equation"><tr><td><a 
+ id="x1-17r4"></a>
+      <center class="math-display" >
+      <img 
+src="hw3sol5x.png" alt=" T       *
+&#x03BE;  (x - x ) &#x2265; 0&#x2200;x feasible in (1 ).
+      " class="math-display" ></center></td><td class="equation-label">(4)</td></tr></table>
+      <!--l. 183--><p class="nopar" >
+      Make sure you explain why condition (<a 
+href="#x1-17r4">4<!--tex4ht:ref: eq.optimcond --></a>) holds for your choice of&#x00A0;<span 
+class="cmmi-12">&#x03BE;</span>, and why <span 
+class="cmmi-12">&#x03BE; </span>is a
+      subgradient.
+      <!--l. 187--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>We can take
+      <center class="math-display" >
+      <img 
+src="hw3sol6x.png" alt="&#x03BE; = s* - w * = AT y*.
+                                                                                         
+                                                                                         
+      " class="math-display" ></center>
+      <!--l. 191--><p class="nopar" >
+      Since <span 
+class="cmmi-12">&#x03BE; </span>is in the row space of <span 
+class="cmmi-12">A</span>, it follows that <span 
+class="cmmi-12">&#x03BE;</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">d </span>= 0 for any feasible direction from <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup>,
+      since <span 
+class="cmmi-12">Ad </span>= 0. In order to show <span 
+class="cmmi-12">&#x03BE; </span>is a subgradient, we break into cases based on the sign
+      of&#x00A0;<span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup>:
+           <ul class="itemize1">
+           <li class="itemize"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> <span 
+class="cmmi-12">&#x003E; </span>0: Note that <span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0 in any feasible solution to&#x00A0;(<a 
+href="#x1-15r2">2<!--tex4ht:ref: eq.nsprimal --></a>), so <span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> + <span 
+class="cmmi-12">t</span><sub>
+<span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> <span 
+class="cmmi-12">&#x003E; </span>0. It
+           follows from complementary slackness that&#x00A0;<span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> = 0, so from the second equality
+           constraint in (<a 
+href="#x1-16r3">3<!--tex4ht:ref: eq.nsdual --></a>) we have <span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> = 1 and so <span 
+class="cmmi-12">&#x03BE;</span><sub>
+<span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> = 1. This is the only valid choice for
+           the <span 
+class="cmmi-12">i</span>th component of a subgradient of <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) for a component with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0.
+           </li>
+           <li class="itemize"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> <span 
+class="cmmi-12">&#x003C; </span>0: Since <span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0 in any feasible solution to&#x00A0;(<a 
+href="#x1-15r2">2<!--tex4ht:ref: eq.nsprimal --></a>), we have <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> + <span 
+class="cmmi-12">t</span><sub>
+<span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> <span 
+class="cmmi-12">&#x003E; </span>0. It
+           follows from complementary slackness that&#x00A0;<span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> = 0, so from the second equality
+           constraint in (<a 
+href="#x1-16r3">3<!--tex4ht:ref: eq.nsdual --></a>) we have <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> = 1 and so <span 
+class="cmmi-12">&#x03BE;</span><sub>
+<span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> = <span 
+class="cmsy-10x-x-120">-</span>1. This is the only valid choice
+           for the <span 
+class="cmmi-12">i</span>th component of a subgradient of <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) for a component with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmmi-12">&#x003C; </span>0.
+           </li>
+           <li class="itemize"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> =  0: Since <span 
+class="cmmi-12">s</span><sub>
+<span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> + <span 
+class="cmmi-12">w</span><sub>
+<span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> =  1 and they are both nonnegative, we have <span 
+class="cmsy-10x-x-120">-</span>1  <span 
+class="cmsy-10x-x-120">&#x2264;</span>
+           <span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup><span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">w</span><sub>
+<span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> <span 
+class="cmsy-10x-x-120">&#x2264; </span>1, so <span 
+class="cmsy-10x-x-120">-</span>1 <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">&#x03BE;</span><sub>
+<span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>1. For components with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> = 0, <span 
+class="cmmi-12">&#x03BE;</span><sub>
+<span 
+class="cmmi-8">i</span></sub> can take any value
+           in this range in a subgradient to&#x00A0;<span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>).</li></ul>
+      </li>
+      <li 
+  class="enumerate" id="x1-19x3">Reformulate the problem
+      <center class="math-display" >
+      <img 
+src="hw3sol7x.png" alt="minx &#x2208;&#x211D;4      |x1 | +   |x2 | +   |x3 | +   |x4 |
+subject to    6x1  -   3x2  +   2x3  +    x4  =   24
+            - 3x   +   4x   -    x   -   5x   =   12
+                1        2        3        4
+      " class="math-display" ></center>
+      <!--l. 224--><p class="nopar" >
+      as a linear program and solve it using the software package AMPL, available via the
+      course LMS page. Apply the result of Question&#x00A0;<a 
+href="#x1-122">2<!--tex4ht:ref: q.nonsmooth --></a> to find a subgradient to the
+      objective function at the optimal point that confirms that the solution you have is
+      optimal.
+      <!--l. 231--><p class="noindent" >More information about AMPL is available at
+           <div class="quote">
+           <!--l. 233--><p class="noindent" ><a 
+href="http://homepages.rpi.edu/~mitchj/ampldetails.html" class="url" ><span 
+class="cmtt-12">http://homepages.rpi.edu/</span><span 
+class="cmtt-12">~</span><span 
+class="cmtt-12">mitchj/ampldetails.html</span></a></div>
+      <!--l. 236--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>The corresponding versions of (<a 
+href="#x1-15r2">2<!--tex4ht:ref: eq.nsprimal --></a>) and (<a 
+href="#x1-16r3">3<!--tex4ht:ref: eq.nsdual --></a>) are
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="hw3sol8x.png" alt="min    4   4                                  &#x2211;4   t
+   x&#x2208;&#x211D; ,t&#x2208;&#x211D;                                      i=1 i
+subject to      6x1  -   3x2  +   2x3  +    x4         =   24
+             - 3x1  +   4x2  -    x3  -   5x4         =   12
+                                          - xi +   ti &#x2265;   0   for i = 1, ...,4
+                                            xi +   ti &#x2265;   0   for i = 1, ...,4
+      " class="math-display" ></center>
+      <!--l. 247--><p class="nopar" >
+      and
+      <center class="math-display" >
+      <img 
+src="hw3sol9x.png" alt="maxy &#x2208;&#x211D;2,s&#x2208; &#x211D;4,w&#x2208;&#x211D;4   24y1  +   12y2
+subject to           6y1  -    3y2  -  s1  +   w1  =   0
+                   - 3y   +    4y   -  s   +   w   =   0
+                       1         2      2        2
+                     2y1  -     y2  -  s3  +   w3  =   0
+                      y1  -    5y2  -  s4  +   w4  =   0
+                                       s1  +   w1  =   1
+                                       s2  +   w2  =   1
+                                       s   +   w   =   1
+                                        3        3
+                                       s4  +   w4  =   1
+                                              s,w  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 262--><p class="nopar" >
+      Here are the <a href=hw3q3.mod>model</a> and <a href=hw3q3.dat>data</a>
+      files.
+      Output from AMPL is
+           <div class="quote">
+                                                                                         
+                                                                                         
+           <div class="verbatim" id="verbatim-1">
+CPLEX&#x00A0;12.6.2.0:&#x00A0;optimal&#x00A0;solution;&#x00A0;objective&#x00A0;10.22222222
+&#x00A0;<br />8&#x00A0;dual&#x00A0;simplex&#x00A0;iterations&#x00A0;(6&#x00A0;in&#x00A0;phase&#x00A0;I)
+&#x00A0;<br />x&#x00A0;[*]&#x00A0;:=
+&#x00A0;<br />1&#x00A0;&#x00A0;&#x00A0;4.88889
+&#x00A0;<br />2&#x00A0;&#x00A0;&#x00A0;0
+&#x00A0;<br />3&#x00A0;&#x00A0;&#x00A0;0
+&#x00A0;<br />4&#x00A0;&#x00A0;-5.33333
+&#x00A0;<br />;
+&#x00A0;<br />
+&#x00A0;<br />_total_solve_elapsed_time&#x00A0;=&#x00A0;0.04
+&#x00A0;<br />
+&#x00A0;<br />ampl:&#x00A0;display&#x00A0;exactfit;
+&#x00A0;<br />exactfit&#x00A0;[*]&#x00A0;:=
+&#x00A0;<br />1&#x00A0;&#x00A0;0.296296
+&#x00A0;<br />2&#x00A0;&#x00A0;0.259259
+&#x00A0;<br />;
+&#x00A0;<br />
+&#x00A0;<br />ampl:&#x00A0;display&#x00A0;calc_tplus,&#x00A0;calc_tminus;
+&#x00A0;<br />:&#x00A0;calc_tplus&#x00A0;calc_tminus&#x00A0;&#x00A0;&#x00A0;&#x00A0;:=
+&#x00A0;<br />1&#x00A0;&#x00A0;&#x00A0;1&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;0
+&#x00A0;<br />2&#x00A0;&#x00A0;&#x00A0;0.574074&#x00A0;&#x00A0;&#x00A0;0.425926
+&#x00A0;<br />3&#x00A0;&#x00A0;&#x00A0;0.666667&#x00A0;&#x00A0;&#x00A0;0.333333
+&#x00A0;<br />4&#x00A0;&#x00A0;&#x00A0;0&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;1
+&#x00A0;<br />;
+</div>
+           <!--l. 290--><p class="nopar" ></div>
+      <!--l. 293--><p class="noindent" >The optimal dual solution <span 
+class="cmmi-12">y</span><sup><span 
+class="cmsy-8">*</span></sup> is displayed as <span 
+class="cmtt-12">exactfit </span>and the optimal dual slacks <span 
+class="cmmi-12">s</span><sup><span 
+class="cmsy-8">*</span></sup> and <span 
+class="cmmi-12">w</span><sup><span 
+class="cmsy-8">*</span></sup>
+      are displayed as <span 
+class="cmtt-12">calc</span><span 
+class="cmtt-12">_tplus </span>and <span 
+class="cmtt-12">calc</span><span 
+class="cmtt-12">_tminus</span>, so we get the optimal subgradient and
+      solution:
+      <center class="math-display" >
+      <img 
+src="hw3sol10x.png" alt="     &#x230A;     &#x230B;                 &#x230A;      &#x230B;
+         1                       48
+     |   4-|                 |    90 |
+&#x03BE;* = |&#x2308;   271 |&#x2309;    and    x* =  |&#x2308;      |&#x2309; .
+         3                        0
+        - 1                    - 513
+      " class="math-display" ></center>
+      <!--l. 300--><p class="nopar" >
+                                                                                         
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-21x4">Consider the following nonconvex quadratically constrained quadratic program:
+      <center class="math-display" >
+      <img 
+src="hw3sol11x.png" alt="min        f (x) := - 2x1x2 + x3x4 + x21
+subject to       x2 - x   &#x2264;   0
+                 12    3
+                x2 - x4  &#x2264;   0.
+      " class="math-display" ></center>
+      <!--l. 312--><p class="nopar" >
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-23x1">Show that any feasible solution <span class="bar-css"><span 
+class="cmmi-12">x</span></span> has <span 
+class="cmmi-12">f</span>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span>) <span 
+class="cmmi-12">&#x003E; </span><span 
+class="cmsy-10x-x-120">-</span>1.
+           </li>
+           <li 
+  class="enumerate" id="x1-25x2">Given <span 
+class="cmmi-12">&#x03F5; &#x003E; </span>0, find a feasible solution <img 
+src="hw3sol12x.png" alt="x&#x02C6;"  class="circ" > with <span 
+class="cmmi-12">f</span>(<img 
+src="hw3sol13x.png" alt="&#x02C6;x"  class="circ" >) <span 
+class="cmsy-10x-x-120">&#x2264;-</span>1 + <span 
+class="cmmi-12">&#x03F5;</span><sup><span 
+class="cmr-8">2</span></sup>.
+           </li>
+           <li 
+  class="enumerate" id="x1-27x3">Does the problem achieve its optimal value?</li></ol>
+      <!--l. 319--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>An equivalent unconstrained problem is to minimize
+      <center class="math-display" >
+      <img 
+src="hw3sol14x.png" alt="                       2  2    2
+g(x1,x2) =  - 2x1x2 + x1x 2 + x 1,
+      " class="math-display" ></center>
+      <!--l. 324--><p class="nopar" >
+      which can be rewritten as
+      <table 
+class="equation"><tr><td><a 
+ id="x1-28r5"></a>
+      <center class="math-display" >
+      <img 
+src="hw3sol15x.png" alt="g (x  ,x ) = (x x -  1)2 - 1 + x2.
+    1  2      1 2             1
+      " class="math-display" ></center></td><td class="equation-label">(5)</td></tr></table>
+      <!--l. 328--><p class="nopar" >
+                                                                                         
+                                                                                         
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-30x1">From the reformulation (<a 
+href="#x1-28r5">5<!--tex4ht:ref: eq.completesquare --></a>), we have <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) <span 
+class="cmsy-10x-x-120">&#x2265;-</span>1 for any feasible&#x00A0;<span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmr-8">4</span></sup>. Further,
+           we can only have <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) = <span 
+class="cmsy-10x-x-120">-</span>1 if both <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub>  = 0 and <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub>  = 1, which is impossible.
+           Thus, we must have <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) <span 
+class="cmmi-12">&#x003E; </span><span 
+class="cmsy-10x-x-120">-</span>1 for any feasible <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmr-8">4</span></sup>.
+           </li>
+           <li 
+  class="enumerate" id="x1-32x2">Setting <img 
+src="hw3sol16x.png" alt="x&#x02C6;"  class="circ" > = (<span 
+class="cmmi-12">&#x03F5;, </span>1<span 
+class="cmmi-12">&#x2215;&#x03F5;,&#x03F5;</span><sup><span 
+class="cmr-8">2</span></sup><span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">&#x2215;&#x03F5;</span><sup><span 
+class="cmr-8">2</span></sup>) gives a feasible point with <span 
+class="cmmi-12">f</span>(<img 
+src="hw3sol17x.png" alt="&#x02C6;x"  class="circ" >) = <span 
+class="cmsy-10x-x-120">-</span>1 + <span 
+class="cmmi-12">&#x03F5;</span><sup><span 
+class="cmr-8">2</span></sup>.
+           </li>
+           <li 
+  class="enumerate" id="x1-34x3">No: we can get arbitrarily close to the optimal value of <span 
+class="cmsy-10x-x-120">-</span>1, but not achieve it.</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-36x5">Let the cone <span 
+class="cmmi-12">K </span><span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup> be defined as
+      <center class="math-display" >
+      <img 
+src="hw3sol18x.png" alt="             n
+K  := {x &#x2208; &#x211D;   : 0 &#x2264; x1 &#x2264; x2 &#x2264; ... &#x2264; xn}.
+      " class="math-display" ></center>
+      <!--l. 381--><p class="nopar" >
+      What is the dual cone of&#x00A0;<span 
+class="cmmi-12">K</span>?
+      <!--l. 384--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>Any polyhedral cone of the form <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup><span style="margin-left:0.3em" class="thinspace"></span> : <span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">Ax </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmsy-10x-x-120">} </span>has dual cone
+      <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup><span style="margin-left:0.3em" class="thinspace"></span> : <span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">y </span>= <span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">z</span><span style="margin-left:0.3em" class="thinspace"></span> for some <span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">z </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmsy-10x-x-120">}</span>. In our setting, this gives the dual cone <div class="eqnarray">
+      <center class="math-display" >
+      <img 
+src="hw3sol19x.png" alt="  *             n                                                           n
+K    =   {y &#x2208; &#x211D;  : yi = zi - zi+1 for i = 1,...,n - 1,yn = zn, for some z &#x2208; &#x211D; +}
+                   &#x2211;n
+     =   {y &#x2208; &#x211D;n :     yk &#x2265; 0 for p = 1,...,n }.
+                   i=p
+      " class="math-display" ></center>
+      </div>
+      </li>
+      <li 
+  class="enumerate" id="x1-39x6"><a 
+ id="x1-386"></a> Show that a feasible quadratic programming problem of the form
+      <center class="math-display" >
+      <img 
+src="hw3sol20x.png" alt="min   q(x) := cT x + 12xTQx
+s.t.   Ax  &#x2264;   b
+      " class="math-display" ></center>
+      <!--l. 451--><p class="nopar" >
+      is unbounded if there exists a feasible point <span class="bar-css"><span 
+class="cmmi-12">x</span></span> and a direction <span 
+class="cmmi-12">d </span>satisfying (<span 
+class="cmmi-12">c </span>+ <span 
+class="cmmi-12">Q</span><span class="bar-css"><span 
+class="cmmi-12">x</span></span>)<sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">d &#x003C; </span>0,
+      <span 
+class="cmmi-12">Ad </span><span 
+class="cmsy-10x-x-120">&#x2264; </span>0, <span 
+class="cmmi-12">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">Qd </span><span 
+class="cmsy-10x-x-120">&#x2264; </span>0, where <span 
+class="cmmi-12">A </span>is an <span 
+class="cmmi-12">m </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>matrix and all other vectors and matrices are
+      dimensioned appropriately.
+      <!--l. 457--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>Note that <span class="bar-css"><span 
+class="cmmi-12">x</span></span> + <span 
+class="cmmi-12">&#x03B1;d </span>is feasible for any <span 
+class="cmmi-12">&#x03B1; </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0. Further, we have <div class="eqnarray">
+      <center class="math-display" >
+      <img 
+src="hw3sol21x.png" alt="                T            1-        T
+q(¯x + &#x03B1;d)  =   c (¯x + &#x03B1;d ) + 2(¯x + &#x03B1;d ) Q (x¯+ &#x03B1;d )
+               &#x03B1;2                               1
+           =   ---dTQd  + &#x03B1; (c + Q ¯x)Td + cT ¯x + -¯xT Qx¯
+                2                               2
+           &#x2264;   &#x03B1; (c + Q ¯x)Td + cT ¯x + 1¯xT Q ¯x
+                                     2
+           &#x2192;   - &#x221E;    as &#x03B1; &#x2192; + &#x221E;.
+      " class="math-display" ></center>
+      </div>
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                    </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                               </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Monday 2.0 &#8211; 4.0; Wednesday 11.0 &#8211; 1.0.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

@@ -1,0 +1,303 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Affine Spaces</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="affine">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="affine.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+<B><FONT SIZE="+1"><B>Subspaces, Affine sets, Convex sets, Cones</B></FONT></B> 
+<BR>
+<A HREF=../..>John Mitchell</A>
+
+</DIV>
+
+<P>
+This document describes various subsets of <IMG
+ WIDTH="31" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$I\!\!R^n$">.
+
+<P>
+
+<UL>
+
+<LI>Let <!-- MATH: $v_1,\ldots,v_k$ -->
+<IMG
+ WIDTH="80" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$v_1,\ldots,v_k$">
+be <I>k</I> vectors in <IMG
+ WIDTH="31" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$I\!\!R^n$">.
+Let <!-- MATH: $\lambda_1,\ldots,\lambda_k$ -->
+<IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\lambda_1,\ldots,\lambda_k$">
+be <I>k</I> scalars.
+The vector <!-- MATH: $v:=\sum_{i=1}^k\lambda_iv_i$ -->
+<IMG
+ WIDTH="117" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$v:=\sum_{i=1}^k\lambda_iv_i$">
+is a
+<B>linear combination</B> of <!-- MATH: $v_1,\ldots,v_k$ -->
+<IMG
+ WIDTH="80" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$v_1,\ldots,v_k$">.
+
+<LI>Let <I>S</I> be a subset of <IMG
+ WIDTH="31" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$I\!\!R^n$">.
+<I>S</I> is a <B>subspace</B> if it is closed under linear combinations.
+Thus, for any <I>k</I>&gt;0, for any vectors <!-- MATH: $v_1,\ldots,v_k \in S$ -->
+<IMG
+ WIDTH="115" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$v_1,\ldots,v_k \in S$">,
+and for any scalars <!-- MATH: $\lambda_1,\ldots,\lambda_k$ -->
+<IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\lambda_1,\ldots,\lambda_k$">,
+the linear
+combination <!-- MATH: $v:=\sum_{i=1}^k\lambda_iv_i$ -->
+<IMG
+ WIDTH="117" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$v:=\sum_{i=1}^k\lambda_iv_i$">
+is also in&nbsp;<I>S</I>.
+Notice that the origin is in any nonempty subspace -- just take all
+<IMG
+ WIDTH="55" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\lambda_i=0$">.
+
+<LI>The row space, range, and null space of a matrix are all subspaces.
+
+<LI>Let <!-- MATH: $v_1,\ldots,v_k$ -->
+<IMG
+ WIDTH="80" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$v_1,\ldots,v_k$">
+be <I>k</I> vectors in <IMG
+ WIDTH="31" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$I\!\!R^n$">.
+Let <!-- MATH: $\lambda_1,\ldots,\lambda_k$ -->
+<IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\lambda_1,\ldots,\lambda_k$">
+be <I>k</I> scalars
+<EM>satisfying <!-- MATH: $\sum_{i=1}^k\lambda_i=1$ -->
+<IMG
+ WIDTH="97" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\sum_{i=1}^k\lambda_i=1$"></EM>.
+(Note: some of the scalars may be negative.)
+The vector <!-- MATH: $v:=\sum_{i=1}^k\lambda_iv_i$ -->
+<IMG
+ WIDTH="117" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$v:=\sum_{i=1}^k\lambda_iv_i$">
+is an
+<B>affine combination</B> of <!-- MATH: $v_1,\ldots,v_k$ -->
+<IMG
+ WIDTH="80" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$v_1,\ldots,v_k$">.
+
+<LI>Let <I>S</I> be a subset of <IMG
+ WIDTH="31" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$I\!\!R^n$">.
+<I>S</I> is an <B>affine space</B> if it is closed under affine combinations.
+Thus, for any <I>k</I>&gt;0, for any vectors <!-- MATH: $v_1,\ldots,v_k \in S$ -->
+<IMG
+ WIDTH="115" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$v_1,\ldots,v_k \in S$">,
+and for any scalars <!-- MATH: $\lambda_1,\ldots,\lambda_k$ -->
+<IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\lambda_1,\ldots,\lambda_k$">
+satisfying <!-- MATH: $\sum_{i=1}^k\lambda_i=1$ -->
+<IMG
+ WIDTH="97" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\sum_{i=1}^k\lambda_i=1$">,
+the affine
+combination <!-- MATH: $v:=\sum_{i=1}^k\lambda_iv_i$ -->
+<IMG
+ WIDTH="117" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$v:=\sum_{i=1}^k\lambda_iv_i$">
+is also in&nbsp;<I>S</I>.
+
+<LI>The set of solutions to the system of equations <I>Ax</I>=<I>b</I> is an
+affine space.
+This is why we talk about affine spaces in this course!
+
+<LI>An affine space is a translation of a subspace.
+
+<LI>Any subspace is also an affine space.
+
+<LI>Let <!-- MATH: $v_1,\ldots,v_k$ -->
+<IMG
+ WIDTH="80" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$v_1,\ldots,v_k$">
+be <I>k</I> vectors in <IMG
+ WIDTH="31" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$I\!\!R^n$">.
+Let <!-- MATH: $\lambda_1,\ldots,\lambda_k$ -->
+<IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\lambda_1,\ldots,\lambda_k$">
+be <I>k</I> <EM>nonnegative</EM> scalars
+satisfying <!-- MATH: $\sum_{i=1}^k\lambda_i=1$ -->
+<IMG
+ WIDTH="97" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\sum_{i=1}^k\lambda_i=1$">.
+The vector <!-- MATH: $v:=\sum_{i=1}^k\lambda_iv_i$ -->
+<IMG
+ WIDTH="117" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$v:=\sum_{i=1}^k\lambda_iv_i$">
+is a
+<B>convex combination</B> of <!-- MATH: $v_1,\ldots,v_k$ -->
+<IMG
+ WIDTH="80" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$v_1,\ldots,v_k$">.
+
+<LI>Let <I>S</I> be a subset of <IMG
+ WIDTH="31" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$I\!\!R^n$">.
+<I>S</I> is an <B>convex set</B> if it is closed under convex combinations.
+Thus, for any <I>k</I>&gt;0, for any vectors <!-- MATH: $v_1,\ldots,v_k \in S$ -->
+<IMG
+ WIDTH="115" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$v_1,\ldots,v_k \in S$">,
+and for any nonnegative scalars <!-- MATH: $\lambda_1,\ldots,\lambda_k$ -->
+<IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\lambda_1,\ldots,\lambda_k$">
+satisfying <!-- MATH: $\sum_{i=1}^k\lambda_i=1$ -->
+<IMG
+ WIDTH="97" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\sum_{i=1}^k\lambda_i=1$">,
+the convex
+combination <!-- MATH: $v:=\sum_{i=1}^k\lambda_iv_i$ -->
+<IMG
+ WIDTH="117" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$v:=\sum_{i=1}^k\lambda_iv_i$">
+is also in&nbsp;<I>S</I>.
+
+<LI>Polyhedra are convex sets.
+
+<LI>A polytope is defined to be a bounded polyhedron.
+Note that every point in a polytope is a convex combination of the
+extreme points.
+
+<LI>Any subspace is a convex set.
+Any affine space is a convex set.
+
+<LI>Let <I>S</I> be a subset of <IMG
+ WIDTH="31" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$I\!\!R^n$">.
+<I>S</I> is a <B>cone</B>
+if it is closed under nonnegative scalar multiplication.
+Thus, for any vector <IMG
+ WIDTH="49" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$v\in S$">
+and for any nonnegative scalar&nbsp;<IMG
+ WIDTH="15" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.gif"
+ ALT="$\lambda$">,
+the vector <IMG
+ WIDTH="25" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.gif"
+ ALT="$\lambda v$">
+is also in <I>S</I>.
+
+<LI>Let <I>S</I> be a subset of <IMG
+ WIDTH="31" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$I\!\!R^n$">.
+<I>S</I> is a <B>convex cone</B>
+if it is a cone and it is convex.
+It can be shown that this is equivalent to saying that <I>S</I>
+is closed under nonnegative linear combinations.
+Thus, for any <I>k</I>&gt;0, for any vectors <!-- MATH: $v_1,\ldots,v_k \in S$ -->
+<IMG
+ WIDTH="115" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$v_1,\ldots,v_k \in S$">,
+and for any nonnegative scalars <!-- MATH: $\lambda_1,\ldots,\lambda_k$ -->
+<IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\lambda_1,\ldots,\lambda_k$">,
+the linear combination <!-- MATH: $v:=\sum_{i=1}^k\lambda_iv_i$ -->
+<IMG
+ WIDTH="117" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$v:=\sum_{i=1}^k\lambda_iv_i$">
+is also in&nbsp;<I>S</I>.
+
+<LI>The origin is in any nonempty cone -- just take <IMG
+ WIDTH="49" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.gif"
+ ALT="$\lambda=0$">.
+
+<LI>Any subspace is a convex cone.
+
+</UL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<I><A HREF=../..>John E Mitchell</A></I>
+<BR><I>2000-01-20</I>
+</ADDRESS>
+</BODY>
+</HTML>

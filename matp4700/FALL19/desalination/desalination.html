@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="desalination.tex"> 
+<meta name="date" content="2019-10-07 12:07:00"> 
+<link rel="stylesheet" type="text/css" href="desalination.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 32--><p class="noindent" >
+<!--l. 34--><p class="noindent" ><span class="underline"><span 
+class="cmbx-12x-x-120">Case Study:</span></span>
+<!--l. 38--><p class="noindent" ><span class="underline"><span 
+class="cmbx-12x-x-120">Abacus Water</span></span> </div>
+<div class="center" 
+>
+<!--l. 42--><p class="noindent" >
+<!--l. 44--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmr-12">MATP4700 Math Models of Operations Research</span></a>
+<!--l. 46--><p class="noindent" ><span 
+class="cmr-12">Fall 2019</span>
+</div>
+<!--l. 51--><p class="noindent" ><span 
+class="cmti-10x-x-109">Students may work in groups of up to three people. You are strongly encouraged to work in groups; if</span>
+<span 
+class="cmti-10x-x-109">you&#8217;re unable to find a partner, please let me know. You may consult your textbooks, your notes, online</span>
+<span 
+class="cmti-10x-x-109">information, the TA, and me. You may not solicit help from other sources.</span>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Introduction</h3>
+<!--l. 61--><p class="noindent" >Abacus Water supplies water to 6 demand zones, using a combination of desalination plants, wells,
+and reservoirs. They wish to meet demand as cheaply as possible, while obeying multiple
+constraints.
+<!--l. 66--><p class="indent" >   All data are contained in the file <span 
+class="cmtt-10x-x-109">desalination.dat</span>, available on LMS and on the course
+webpage.
+<!--l. 69--><p class="indent" >   Abacus operates 4 reverse osmosis desalination plants, which take seawater or brackish
+river water and purify it. The set of plants is denoted <span 
+class="cmtt-10x-x-109">PLANTS</span>. Each plant has a limit on its
+capacity (the parameter <span 
+class="cmtt-10x-x-109">capacity</span>, expressed in units of 1000<span 
+class="cmmi-10x-x-109">m</span><sup><span 
+class="cmr-8">3</span></sup> per day). The operating and
+maintenance costs are aggregated in the single parameter <span 
+class="cmtt-10x-x-109">opcost</span>, as a cost per 1000<span 
+class="cmmi-10x-x-109">m</span><sup><span 
+class="cmr-8">3</span></sup>. A
+desalination plant produces brine as a waste product which can be discharged into the sea. You can
+assume that for each 1000<span 
+class="cmmi-10x-x-109">m</span><sup><span 
+class="cmr-8">3</span></sup> of drinking water produced, each desalination plant also produces
+200<span 
+class="cmmi-10x-x-109">m</span><sup><span 
+class="cmr-8">3</span></sup> of brine. However, because of concerns about increasing the saline concentration in the
+sea near the discharge point, each plant is limited in how much brine it can discharge, given
+by the parameter <span 
+class="cmtt-10x-x-109">dischargemax</span>, expressed in units of 1000<span 
+class="cmmi-10x-x-109">m</span><sup><span 
+class="cmr-8">3</span></sup> per day. Any excess brine
+above this limit must be disposed of in an alternative manner, at a cost of <span 
+class="cmtt-10x-x-109">disposalcost </span>per
+1000<span 
+class="cmmi-10x-x-109">m</span><sup><span 
+class="cmr-8">3</span></sup>.
+<!--l. 87--><p class="indent" >   The six demand zones are called <span 
+class="cmtt-10x-x-109">CITIES </span>and their daily water needs are given by <span 
+class="cmtt-10x-x-109">demand </span>in units of
+1000<span 
+class="cmmi-10x-x-109">m</span><sup><span 
+class="cmr-8">3</span></sup> per day. Each city also has access to water through a system of wells and reservoirs. However,
+because of concerns about a drop in the level of the water table, any water taken from these alternative
+sources is modeled as costing <span 
+class="cmtt-10x-x-109">wellcost </span>per 1000<span 
+class="cmmi-10x-x-109">m</span><sup><span 
+class="cmr-8">3</span></sup>.
+<!--l. 94--><p class="indent" >   Together, the <span 
+class="cmtt-10x-x-109">PLANTS </span>and <span 
+class="cmtt-10x-x-109">CITIES </span>constitute the <span 
+class="cmtt-10x-x-109">NODES </span>of a network. The network also contains <span 
+class="cmtt-10x-x-109">EDGES</span>,
+corresponding to pipes from one node to another. Not every pair of vertices is connected by a pipe. The
+lines in the <span 
+class="cmtt-10x-x-109">AMPL </span>model file to set up the nodes and edges are:
+                                                                                         
+                                                                                         
+   <div class="verbatim" id="verbatim-1">
+set&#x00A0;PLANTS;&#x00A0;&#x00A0;#&#x00A0;&#x00A0;desalination&#x00A0;plants
+&#x00A0;<br />set&#x00A0;CITIES;&#x00A0;&#x00A0;#&#x00A0;&#x00A0;demand&#x00A0;points&#x00A0;for&#x00A0;water
+&#x00A0;<br />set&#x00A0;NODES&#x00A0;:=&#x00A0;PLANTS&#x00A0;union&#x00A0;CITIES;
+&#x00A0;<br />set&#x00A0;EDGES&#x00A0;within&#x00A0;{NODES,&#x00A0;NODES};&#x00A0;&#x00A0;#&#x00A0;any&#x00A0;reversible&#x00A0;edge&#x00A0;is&#x00A0;included&#x00A0;twice
+</div>
+<!--l. 105--><p class="nopar" >
+<!--l. 108--><p class="indent" >   Water is pumped from the desalination plants to the cities along a network of pipes. The cost to pump
+1000<span 
+class="cmmi-10x-x-109">m</span><sup><span 
+class="cmr-8">3</span></sup> along a pipe is given by the parameter <span 
+class="cmtt-10x-x-109">edgecost</span>. The available edges are listed in
+<span 
+class="cmtt-10x-x-109">EDGES</span>.
+<!--l. 115--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-20002"></a>Objective function</h3>
+<!--l. 117--><p class="noindent" >The objective function is to minimize costs. There are 4 types of costs:
+     <ul class="itemize1">
+     <li class="itemize">operating costs for the desalination plants,
+     </li>
+     <li class="itemize">pumping costs to move the water around the network,
+     </li>
+     <li class="itemize">disposal costs to discard excess brine, and
+     </li>
+     <li class="itemize">costs to take water from wells and reservoirs.</li></ul>
+<!--l. 125--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-30003"></a>Constraints</h3>
+<!--l. 127--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">3.1   </span> <a 
+ id="x1-40003.1"></a>Flow conservation</h4>
+<!--l. 129--><p class="noindent" >The amount of purified water leaving each plant is limited by <span 
+class="cmtt-10x-x-109">supply</span>. The net supply of purified water to
+each city must equal <span 
+class="cmtt-10x-x-109">demand</span>.
+<!--l. 132--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">3.2   </span> <a 
+ id="x1-50003.2"></a>Brine calculations</h4>
+<!--l. 134--><p class="noindent" >You will need a constraint or two to calculate the amount of brine produced and how much of that must
+be disposed of at a cost of <span 
+class="cmtt-10x-x-109">disposalcost</span>.
+                                                                                         
+                                                                                         
+<!--l. 137--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">3.3   </span> <a 
+ id="x1-60003.3"></a>Renewable energy</h4>
+<!--l. 139--><p class="noindent" >A desalination plant requires energy to push seawater through a filter. Each desalination plant can meet
+some of its energy demand using renewable energy. The parameter <span 
+class="cmtt-10x-x-109">renewcapacity </span>lists the maximum
+amount of daily demand that can be met using renewable energy sources, in units of 1000<span 
+class="cmmi-10x-x-109">m</span><sup><span 
+class="cmr-8">3</span></sup>. Abacus
+Water has to satisfy the constraint that no more than 5% of the purified water supplied by the
+desalination plants is produced using non-renewable energy sources; this is aggregated across all the
+plants. Thus, it is allowed for one plant to have, say, 20% of its water from non-renewable
+sources as long as almost all the water from the other plants comes from renewable energy
+sources.
+<!--l. 153--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">3.4   </span> <a 
+ id="x1-70003.4"></a>Well water limit</h4>
+<!--l. 155--><p class="noindent" >The aggregate amount of water taken from wells and reservoirs across the whole system must be no more
+than 5% of the total demand.
+<!--l. 166--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x1-80004"></a>The data</h3>
+<!--l. 170--><p class="noindent" >All the data can be found on LMS, and also on the course webpage at
+     <div class="quote">
+     <!--l. 174--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700/desalination/desalination.dat" class="url" ><span 
+class="cmtt-10x-x-109">http://www.rpi.edu/</span><span 
+class="cmtt-10x-x-109">~</span><span 
+class="cmtt-10x-x-109">mitchj/matp4700/desalination/desalination.dat</span></a></div>
+<!--l. 180--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
+ id="x1-90005"></a>Questions</h3>
+<!--l. 181--><p class="noindent" >
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-9002x1">Due: <span 
+class="cmbx-10x-x-109">Friday, October 25</span>, in class. (40 points) <br 
+class="newline" /><span 
+class="cmti-10x-x-109">(Please submit a written report, a printout of your problem files, and any AMPL output used.</span>
+     <span 
+class="cmti-10x-x-109">Also email me your model and data files.)</span>
+     <!--l. 188--><p class="noindent" >Formulate  and  solve  the  problem  as  a  linear  optimization  problem.  Clearly  define  every
+     variable in your formulation. Explain every constraint including coefficients.
+     <!--l. 192--><p class="noindent" >Hint: your optimal value should be between $200,000 and $250,000 per day.
+     </li>
+     <li 
+  class="enumerate" id="x1-9004x2"><span 
+class="cmbx-10x-x-109">Sensitivity analysis </span>(30 points): To be distributed later. Due on Friday November&#x00A0;15.
+     </li>
+     <li 
+  class="enumerate" id="x1-9006x3"><span 
+class="cmbx-10x-x-109">Extra conditions </span>(30 points): To be distributed later. Due on Tuesday December&#x00A0;10.</li></ol>
+                                                                                         
+                                                                                         
+<!--l. 202--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
+ id="x1-100006"></a>AMPL notes</h3>
+     <ul class="itemize1">
+     <li class="itemize">If you are working in a Windows operating system, you can edit your model and data files in
+     Office, for example. Save the files as plain text files. Windows may append the suffix <span 
+class="cmtt-10x-x-109">txt </span>to
+     the file names, in which case you would need to include that suffix when asking ampl to read
+     the file.
+     </li>
+     <li class="itemize">If you want to read in a new model file <span 
+class="cmtt-10x-x-109">chips.mod </span>and data file <span 
+class="cmtt-10x-x-109">chips.dat</span>, you can use the <span 
+class="cmtt-10x-x-109">reset</span>
+     command: <div class="verse">
+             <!--l. 220--><p class="noindent" > ampl: <span 
+class="cmtt-10x-x-109">reset;</span><br />
+             ampl: <span 
+class="cmtt-10x-x-109">model chips.mod;</span><br />
+             ampl: <span 
+class="cmtt-10x-x-109">data chips.dat;</span>
+</div>
+     </li>
+     <li class="itemize">If you want to reset the whole data file and read in a new data file <span 
+class="cmtt-10x-x-109">chips.dat</span>, but you want to keep
+     the model file as before, you can type <div class="verse">
+             <!--l. 230--><p class="noindent" > ampl: <span 
+class="cmtt-10x-x-109">reset data;</span><br />
+             ampl: <span 
+class="cmtt-10x-x-109">data chips.dat;</span>
+</div>
+     </li>
+     <li class="itemize">More hints are available online from my page about AMPL:
+          <div class="quote">
+          <!--l. 253--><p class="noindent" ><a 
+href="http://homepages.rpi.edu/~mitchj/ampldetails.html" class="url" ><span 
+class="cmtt-10x-x-109">http://homepages.rpi.edu/</span><span 
+class="cmtt-10x-x-109">~</span><span 
+class="cmtt-10x-x-109">mitchj/ampldetails.html</span></a></div>
+     </li>
+     <li class="itemize">This project is available from LMS and also from the course webpage, at
+          <div class="quote">
+          <!--l. 258--><p class="noindent" ><a 
+href="http://homepages.rpi.edu/~mitchj/matp4700/#project" class="url" ><span 
+class="cmtt-10x-x-109">http://homepages.rpi.edu/</span><span 
+class="cmtt-10x-x-109">~</span><span 
+class="cmtt-10x-x-109">mitchj/matp4700/#project</span></a></div>
+     <!--l. 260--><p class="noindent" >where you will also find more information about AMPL.</li></ul>
+                                                                                         
+                                                                                         
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                               </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                                          </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours: Tuesdays 2&#8211;4pm.                                          </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;                Note: I will be out of town on Wed Oct 23.                    </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-7-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; It is also highly likely I will be off-campus on Thu Oct 24.</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-8-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Jun Tan office hours: Thursdays 1-2pm, AE 430.                   </td> </tr></table></div>
+                                                                                         
+                                                                                         
+<!--l. 280--><p class="noindent" ><span 
+class="cmbx-12">Parameter definitions in the model file</span>
+                                                                                         
+                                                                                         
+   <div class="verbatim" id="verbatim-2">
+set&#x00A0;PLANTS;&#x00A0;&#x00A0;#&#x00A0;&#x00A0;desalination&#x00A0;plants
+&#x00A0;<br />set&#x00A0;CITIES;&#x00A0;&#x00A0;#&#x00A0;&#x00A0;demand&#x00A0;points&#x00A0;for&#x00A0;water
+&#x00A0;<br />
+&#x00A0;<br />set&#x00A0;NODES&#x00A0;:=&#x00A0;PLANTS&#x00A0;union&#x00A0;CITIES;
+&#x00A0;<br />
+&#x00A0;<br />set&#x00A0;EDGES&#x00A0;within&#x00A0;{NODES,&#x00A0;NODES};&#x00A0;&#x00A0;#&#x00A0;any&#x00A0;reversible&#x00A0;edge&#x00A0;is
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;#&#x00A0;included&#x00A0;twice
+&#x00A0;<br />
+&#x00A0;<br />#
+&#x00A0;<br />#&#x00A0;parameters
+&#x00A0;<br />#
+&#x00A0;<br />
+&#x00A0;<br />param&#x00A0;edgecost{EDGES}&#x00A0;&#x003E;=&#x00A0;0;&#x00A0;&#x00A0;#&#x00A0;cost&#x00A0;to&#x00A0;pump&#x00A0;1000&#x00A0;cubic&#x00A0;meters&#x00A0;of&#x00A0;water
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;#&#x00A0;should&#x00A0;be&#x00A0;about&#x00A0;$1&#x00A0;to&#x00A0;lift&#x00A0;1000&#x00A0;cubic&#x00A0;meters
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;#&#x00A0;&#x00A0;&#x00A0;&#x00A0;up&#x00A0;10&#x00A0;feet
+&#x00A0;<br />
+&#x00A0;<br />param&#x00A0;demand{CITIES}&#x00A0;&#x003E;=&#x00A0;0;&#x00A0;&#x00A0;#&#x00A0;&#x00A0;1000s&#x00A0;of&#x00A0;cubic&#x00A0;meters&#x00A0;per&#x00A0;day
+&#x00A0;<br />
+&#x00A0;<br />param&#x00A0;wellcost{CITIES}&#x00A0;&#x003E;=&#x00A0;0;&#x00A0;&#x00A0;#&#x00A0;cost&#x00A0;per&#x00A0;cubic&#x00A0;foot&#x00A0;pulled&#x00A0;from&#x00A0;well
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;#&#x00A0;should&#x00A0;be&#x00A0;high&#x00A0;to&#x00A0;discourage&#x00A0;use
+&#x00A0;<br />
+&#x00A0;<br />param&#x00A0;capacity{PLANTS}&#x00A0;&#x003E;=&#x00A0;0;&#x00A0;&#x00A0;&#x00A0;#&#x00A0;1000s&#x00A0;of&#x00A0;cubic&#x00A0;meters&#x00A0;per&#x00A0;day.
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;#&#x00A0;should&#x00A0;prob&#x00A0;be&#x00A0;100-200
+&#x00A0;<br />
+&#x00A0;<br />param&#x00A0;dischargemax{PLANTS}&#x00A0;&#x003E;=&#x00A0;0;&#x00A0;&#x00A0;#&#x00A0;1000s&#x00A0;of&#x00A0;cubic&#x00A0;meters&#x00A0;per&#x00A0;day
+&#x00A0;<br />
+&#x00A0;<br />param&#x00A0;disposalcost{PLANTS}&#x00A0;&#x003E;=&#x00A0;0;&#x00A0;&#x00A0;#&#x00A0;per&#x00A0;1000&#x00A0;cubic&#x00A0;meters
+&#x00A0;<br />
+&#x00A0;<br />param&#x00A0;&#x00A0;opcost{PLANTS}&#x00A0;&#x003E;=&#x00A0;0;&#x00A0;&#x00A0;#&#x00A0;&#x00A0;operational&#x00A0;costs&#x00A0;per&#x00A0;1000&#x00A0;cubic&#x00A0;meters
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;#&#x00A0;&#x00A0;of&#x00A0;purified&#x00A0;water.
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;#&#x00A0;&#x00A0;includes&#x00A0;power&#x00A0;costs&#x00A0;and&#x00A0;maintenance&#x00A0;costs.
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;#&#x00A0;&#x00A0;should&#x00A0;be&#x00A0;several&#x00A0;hundred&#x00A0;dollars
+&#x00A0;<br />
+&#x00A0;<br />param&#x00A0;&#x00A0;renewcapacity{PLANTS}&#x00A0;&#x003E;=&#x00A0;0;&#x00A0;&#x00A0;#&#x00A0;&#x00A0;amount&#x00A0;of&#x00A0;supply&#x00A0;that&#x00A0;can&#x00A0;be&#x00A0;handled&#x00A0;by
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;#&#x00A0;&#x00A0;renewable&#x00A0;energy
+&#x00A0;<br />
+&#x00A0;<br />param&#x00A0;brinegeneration&#x00A0;&#x003E;=&#x00A0;0;&#x00A0;&#x00A0;#&#x00A0;cubic&#x00A0;meters&#x00A0;of&#x00A0;brine&#x00A0;produced&#x00A0;for
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;#&#x00A0;each&#x00A0;cubic&#x00A0;meter&#x00A0;of&#x00A0;purified&#x00A0;water
+</div>
+<!--l. 322--><p class="nopar" >
+    
+</body></html> 
+
+                                                                                         
+
+

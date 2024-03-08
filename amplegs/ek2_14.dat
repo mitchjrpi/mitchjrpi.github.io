@@ -1,0 +1,9 @@
+set MACHINE = lathe sander polisher;
+set PRODUCT = p1 p2;
+
+param r (tr): p1 p2 :=
+   lathe       1.1  2.0
+   sander      3.0  4.5
+   polisher    2.5  1.3;
+
+param c := lathe 1000 sander 2000 polisher 1500;

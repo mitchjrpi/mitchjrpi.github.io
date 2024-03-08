@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw4.tex"> 
+<meta name="date" content="2016-10-10 22:29:00"> 
+<link rel="stylesheet" type="text/css" href="hw4.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 22--><p class="noindent" >
+<!--l. 24--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6600" ><span 
+class="cmr-12">MATP6600/DSES6780 Nonlinear Programming</span></a><span 
+class="cmr-12">, Homework 4.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 28--><p class="noindent" >
+ Due: Thursday, October 20, 2016, in class.<br />
+10% penalty for each day late.</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1"><a 
+ id="x1-21"></a> Consider the nonlinear programming problem
+     <center class="math-display" >
+     <img 
+src="hw40x.png" alt="min  (x1 + 3)2 +  (x2 + 12)2
+s.t.     x2     +  (x2 + 8)2 &#x2265;   100
+         1           x2     &#x2265;    0.
+     " class="math-display" ></center>
+     <!--l. 140--><p class="nopar" >
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-5x1">Is the feasible region for this problem convex?
+         </li>
+         <li 
+  class="enumerate" id="x1-7x2">Show that the gradients of the active constraints are linearly independent at any feasible point.
+         </li>
+         <li 
+  class="enumerate" id="x1-9x3">What are the Karush-Kuhn-Tucker conditions for this problem?
+         </li>
+         <li 
+  class="enumerate" id="x1-11x4">Verify that the points (6,0) and (-6,0) satisfy the KKT conditions.
+         </li>
+         <li 
+  class="enumerate" id="x1-13x5">Show that there are no points which satisfy <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub><sup><span 
+class="cmr-7">2</span></sup> + (<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> + 8)<sup><span 
+class="cmr-7">2</span></sup>  <span 
+class="cmmi-10">&#x003E; </span>100 and also satisfy the KKT
+         conditions.
+         </li>
+         <li 
+  class="enumerate" id="x1-15x6">Are there any other points which satisfy the KKT conditions?
+         </li>
+         <li 
+  class="enumerate" id="x1-17x7">Can you find the global minimizer without using the second order conditions?</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-19x2"><a 
+ id="x1-182"></a> Use the <span 
+class="cmti-10">first </span>order optimality conditions to find the <span 
+class="cmti-10">global </span>minimizer for the problem
+     <center class="math-display" >
+     <img 
+src="hw41x.png" alt="min           x1x2
+subject to      - x1 &#x2264;   - 1
+               - x2 &#x2264;   - 3
+          - 3x1 - x2 &#x2264;  - 12
+     " class="math-display" ></center>
+                                                                                         
+                                                                                         
+     <!--l. 217--><p class="nopar" >
+     (Note that this problem is nonconvex &#8212; prove that the solution you obtain is the global minimizer, <span 
+class="cmti-10">without</span>
+     considering the second order conditions.)
+     </li>
+     <li 
+  class="enumerate" id="x1-21x3">Let <span 
+class="cmmi-10">f</span>(<span 
+class="cmmi-10">x</span>) and <span 
+class="cmmi-10">g</span><sub><span 
+class="cmmi-7">i</span></sub>(<span 
+class="cmmi-10">x</span>), <span 
+class="cmmi-10">i </span>= 1<span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x2026;</span><span 
+class="cmmi-10">,m </span>be smooth convex functions from <span 
+class="msbm-10">&#x211D;</span><sup><span 
+class="cmmi-7">n</span></sup> to <span 
+class="msbm-10">&#x211D;</span>. Assume <span class="bar-css"><span 
+class="cmmi-10">x</span></span> is a global minimizer to
+     the nonlinear program
+     <center class="math-display" >
+     <img 
+src="hw42x.png" alt="min        f(x )
+subject to  gi(x ) &#x2264;   0 i = 1,...,m.          (N LP )
+     " class="math-display" ></center>
+     <!--l. 289--><p class="nopar" >
+     Let <span 
+class="cmmi-10">I </span>be the set of active constraints at&#x00A0;<span class="bar-css"><span 
+class="cmmi-10">x</span></span>.
+Assume the Abadie constraint qualification holds at&#x00A0;<span class="bar-css"><span 
+class="cmmi-10">x</span></span>.
+Prove <span 
+class="cmmi-10">x </span>= <span class="bar-css"><span 
+class="cmmi-10">x</span></span> solves the linear program
+     <center class="math-display" >
+     <img 
+src="hw43x.png" alt="min       &#x2207;f (¯x)T (x - ¯x)
+subject to &#x2207;gi(¯x)T (x - ¯x)  &#x2264;  0  i &#x2208; I.        (LP)
+     " class="math-display" ></center>
+     <!--l. 297--><p class="nopar" >
+     </li>
+     <li 
+  class="enumerate" id="x1-23x4">Consider the problem
+     <center class="math-display" >
+     <img 
+src="hw44x.png" alt="               &#x2211;
+min  cTx  -   &#x03BC;  ni=1loge(xi)
+s.t.   Ax  =   b
+       x  &#x2265;   0,
+     " class="math-display" ></center>
+     <!--l. 329--><p class="nopar" >
+     where <span 
+class="cmmi-10">x </span>and <span 
+class="cmmi-10">c </span>are <span 
+class="cmmi-10">n</span>-vectors, <span 
+class="cmmi-10">b </span>is an <span 
+class="cmmi-10">m</span>-vector, <span 
+class="cmmi-10">&#x03BC; </span>is a fixed, nonnegative scalar, and <span 
+class="cmmi-10">A </span>is <span 
+class="cmmi-10">m </span><span 
+class="cmsy-10">&#x00D7; </span><span 
+class="cmmi-10">n</span>.
+     Assume there exists a feasible solution <span class="bar-css"><span 
+class="cmmi-10">x</span></span> to this problem with <span class="bar-css"><span 
+class="cmmi-10">x</span></span> <span 
+class="cmmi-10">&#x003E; </span>0, and that the feasible region is
+     bounded.
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-25x1">What are the first order Karush-Kuhn-Tucker conditions for this problem?
+         </li>
+         <li 
+  class="enumerate" id="x1-27x2">Assume <span 
+class="cmmi-10">&#x03BC; &#x003E; </span>0 is fixed. Show that the KKT conditions have a unique solution. (You do not need
+         to find the solution, just argue why one exists and why it is unique. Hint: Is every KKT point a
+         local minimizer?)
+         </li>
+         <li 
+  class="enumerate" id="x1-29x3">What  do  your  first  order  KKT  conditions  become  when  <span 
+class="cmmi-10">&#x03BC;  </span>=  0?  Interpret  them  in  terms
+         of  the  standard  linear  programming  optimality  conditions  of  primal  and  dual  feasibility  and
+         complementary slackness.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-31x5"><a 
+ id="x1-305"></a> Use AMPL to solve the convex quadratically constrained nonlinear program
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="hw45x.png" alt="              T
+min       1 T c x
+subject to 2x1 TM x  &#x2264;  m          (QCQP  )
+           2x Qx   &#x2264;  q,
+     " class="math-display" ></center>
+     <!--l. 388--><p class="nopar" >
+     with
+     <center class="math-display" >
+     <img 
+src="hw46x.png" alt="   [   ]        [     ]       [      ]
+c =  1  ,  M =   1  0   , Q =   3  1  ,  m = 8,  q = 16.
+     0           0  4           1  3
+     " class="math-display" ></center>
+     <!--l. 403--><p class="nopar" >
+     (AMPL is discussed at <a 
+href="http://www.rpi.edu/~mitchj/ampldetails.html" class="url" ><span 
+class="cmtt-10">http://www.rpi.edu/</span><span 
+class="cmtt-10">~</span><span 
+class="cmtt-10">mitchj/ampldetails.html</span></a> <br 
+class="newline" />It is available via the course LMS site with several different solvers, with a license that runs through the end of
+     the semester. Perhaps the easiest way to solve an NLP in AMPL is to use the NEOS server at
+     <a 
+href="http://www.neos-server.org/neos/" class="url" ><span 
+class="cmtt-10">http://www.neos-_server.org/neos/</span></a> which has a selection of solvers available. CPLEX can also solve
+     problems in this form.)
+     </li>
+     <li 
+  class="enumerate" id="x1-33x6">Find the KKT multipliers for problem (QCQP) in Question&#x00A0;<a 
+href="#x1-305">5<!--tex4ht:ref: amplq --></a> using the AMPL command <span 
+class="cmtt-10">display</span>. Check the
+     first order necessary conditions. (Notes: AMPL may display multipliers with a negative sign;
+     you can just take the absolute value of the multiplier. You can <span 
+class="cmtt-10">display </span>expressions such as
+     <span 
+class="cmmi-10">c </span>+ <span 
+class="cmmi-10">Mx</span>.)
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                    </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           x6915.                                                               </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           Office hours: Monday 2.0 &#8211; 4.0; Wednesday 11.0 &#8211; 1.0.</td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

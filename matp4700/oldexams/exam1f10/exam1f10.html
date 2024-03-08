@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="exam1f10.tex"> 
+<meta name="date" content="2017-09-01 14:54:00"> 
+<link rel="stylesheet" type="text/css" href="exam1f10.css"> 
+</head><body 
+>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"><col 
+id="TBL-1-2"><col 
+id="TBL-1-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td11">C</td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-2"  
+class="td11">&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                                                                                            </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-3"  
+class="td11">Name:</td> </tr></table>
+</div>
+<div class="center" 
+>
+<!--l. 22--><p class="noindent" >
+<!--l. 23--><p class="noindent" >Math Models of Operations Research, MATP 4700/ ISYE 4770.</div>
+<div class="center" 
+>
+<!--l. 26--><p class="noindent" >
+<!--l. 27--><p class="noindent" >First Exam, Tuesday, September 28, 2010.</div>
+<!--l. 30--><p class="noindent" >You may use any result from your notes or a homework that is clearly stated. You may use one sheet of
+handwritten notes, but no other sources. The exam consists of five questions, and lasts one hundred and ten
+minutes.
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">(20 points) For a linear program in standard form with the tableau
+      <center class="math-display" >
+      <img 
+src="exam1f100x.png" alt="|----x1--x2---x3--x4---x5--x6-|
+|- 9 |0   4    5   0    2   0 |
+|--4-|1---2----4---0----1---0-|
+|    |                        |
+|  2 |0  - 1 - 1   0    1   1 |
+---5--0---3----1---1----1---0--
+      " class="math-display" ></center>
+      <!--l. 48--><p class="nopar" >
+      the optimal basic feasible solution is <span 
+class="cmmi-12">x </span>= [4<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>5<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>2]<sup><span 
+class="cmmi-8">T</span> </sup>. Find the next best basic feasible
+      solution.
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2">(20 points; each part is worth 10 points.)
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-7x1">Use the method of artificial variables to show that the following linear program is infeasible:
+           <center class="math-display" >
+           <img 
+src="exam1f101x.png" alt="min                    x2
+subject to  - 5x   +  4x    +  3x   +   2x   =   6
+                2        2        3       4
+             2x1   -  8x2  -   4x3  -    x4  =   5
+                                x1,x2,x3,x4  &#x2265;   0
+           " class="math-display" ></center>
+
+           <!--l. 66--><p class="nopar" >
+           </li>
+           <li 
+  class="enumerate" id="x1-9x2">An initial basic feasible solution to the LP
+           <center class="math-display" >
+           <img 
+src="exam1f102x.png" alt="min          x1  +  5x2   +  2x2
+subject to  3x    +  2x    +  5x   =   17
+              1        2        3
+           2x1   -   x2   +  3x3  =   11
+                        x1,x2,x3  &#x2265;   0
+           " class="math-display" ></center>
+           <!--l. 78--><p class="nopar" >
+           is found using the method of artificial variables. The final tableau for the artificial problem with
+           artificial variables <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> and <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub> is:
+           <center class="math-display" >
+           <img 
+src="exam1f103x.png" alt="   x1    x2  x3   y1   y2
+|--|----------------------|
+|0-|0-----0---0----1----1-|
+|1 |0     7   1  - 3    2 |
+-4--1----11---0----5----3-|
+           " class="math-display" ></center>
+           <!--l. 89--><p class="nopar" >
+           Show that the corresponding initial BFS for the original problem is optimal for the original
+           problem.</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-11x3">(20 points. Each part is worth 5 points.)
+      <!--l. 96--><p class="noindent" >Consider the following tableau for a standard form linear program min<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>: <span 
+class="cmmi-12">Ax </span>= <span 
+class="cmmi-12">b,x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmsy-10x-x-120">}</span>:
+      <center class="math-display" >
+      <img 
+src="exam1f104x.png" alt="    x   x    x   x
+|--|--1---2---3---4-|
+|3-|-0----e---0---1-|
+|p | 1   f    0   3 |
+-4---0---g----1---1-|
+      " class="math-display" ></center>
+      <!--l. 105--><p class="nopar" >
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-13x1">For what value(s) of <span 
+class="cmmi-12">e</span>, <span 
+class="cmmi-12">f</span>, <span 
+class="cmmi-12">g</span>, <span 
+class="cmmi-12">p </span>is this problem in optimal form?
+           </li>
+           <li 
+  class="enumerate" id="x1-15x2">For what value(s) of <span 
+class="cmmi-12">e</span>, <span 
+class="cmmi-12">f</span>, <span 
+class="cmmi-12">g</span>, <span 
+class="cmmi-12">p </span>is this problem in unbounded form?
+
+           </li>
+           <li 
+  class="enumerate" id="x1-17x3">When the tableau is in unbounded form, what is the simplex direction <span 
+class="cmmi-12">d </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0 satisfying <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">d &#x003C; </span>0
+           and <span 
+class="cmmi-12">Ad </span>= 0?
+           </li>
+           <li 
+  class="enumerate" id="x1-19x4">Assume <span 
+class="cmmi-12">p &#x003E; </span>0, <span 
+class="cmmi-12">e &#x003C; </span>0, <span 
+class="cmmi-12">f &#x003E; </span>0, <span 
+class="cmmi-12">g &#x003E; </span>0, and <span 
+class="cmmi-12">p&#x2215;f &#x003C; </span>4<span 
+class="cmmi-12">&#x2215;g</span>. What is the pivot matrix corresponding to
+           the next simplex pivot?</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-21x4">(20 points)
+      <!--l. 125--><p class="noindent" >Consider the linear program
+      <center class="math-display" >
+      <img 
+src="exam1f105x.png" alt="min            -   x2          +   5x4
+subject to x1  +   x2          -   3x4  =  0
+                   x2  +   x3  +   2x4  =  3
+
+                          x1,x2,x3, x4  &#x2265;  0
+      " class="math-display" ></center>
+      <!--l. 134--><p class="nopar" >
+      This LP is in canonical form, with corresponding basic feasible solution <span 
+class="cmmi-12">x </span>= (0<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>3<span 
+class="cmmi-12">, </span>0)<sup><span 
+class="cmmi-8">T</span> </sup>.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-23x1">(10 points) Plot the LP in (<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-12">,x</span><sub><span 
+class="cmr-8">4</span></sub>)-space. Show graphically that the basic feasible solution
+           <span 
+class="cmmi-12">x </span>= (0<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>3<span 
+class="cmmi-12">, </span>0)<sup><span 
+class="cmmi-8">T</span> </sup> is optimal.
+           </li>
+           <li 
+  class="enumerate" id="x1-25x2">(5 points) The tableau is not in optimal form, but the corresponding basic feasible solution is
+           optimal. How do you explain that?
+           </li>
+           <li 
+  class="enumerate" id="x1-27x3">(5 points) Find another canonical form tableau for this LP that is optimal form.</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-29x5">(20 points) LBS Inc.&#x00A0;buys loans, repackages them, and resells them. They buy blocks of loans of three
+      ratings: A, B, and C, and create packages rated either Excellent or Very Good. They pay face value for loans
+      rated A, they obtain a 20% discount for loans rated B, and a 60% discount for loans rated&#x00A0;C. The prices
+      LBS pays are equal to the expected payoffs on the loans. For example, if LBS buys loans of type B with a
+      face value of $1000, then it pays $800 for the loans, it expects that $800 of the loans will be repaid, and that
+      $200 of the loans will go into default and never be repaid. The packages rated Excellent must have an
+      expected payoff of at least 90%, and LBS sells them for 95% of their face value. The packages
+      rated Very Good must have an expected payoff of at least 65%, and LBS sells them for 75% of
+      their face value. LBS is willing to spend $1,000,000 on these blocks of loans, but doesn&#8217;t want
+      to spend more than half its money on any one class of loans. Formulate LBS&#8217;s problem of
+      maximizing profits as a linear programming problem. (Hint: Let <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">Be</span></sub> denote the face value
+      of the loans of type B that LBS includes in packages rated Excellent. Define other variables
+      similarly.)
+
+      </li></ol>
+    
+</body></html> 
+
+
+

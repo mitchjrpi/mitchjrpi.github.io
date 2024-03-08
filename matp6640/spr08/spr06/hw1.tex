@@ -1,0 +1,210 @@
+\documentclass[11pt]{article}
+%\documentstyle[12pt]{article}
+
+
+%\oddsidemargin -.5in
+%\textwidth 7.5in
+%\textheight 10in
+%\topmargin -30pt
+%\headsep 0in
+%\headheight 0in
+
+\usepackage{fullpage}
+
+\pagestyle{empty}
+
+\newcommand{\real}{I\!\! R}
+\newcommand{\re}{I\!\! R}
+
+\begin{document}
+
+\begin{center}
+  \begin{large}
+     MATP6640/DSES6770 Linear Programming, Homework 1.
+  \end{large}
+\end{center}
+
+\begin{flushright}
+   Due:  Friday, January 27, 2006.
+\end{flushright}
+
+\vspace{\baselineskip}
+
+
+\begin{enumerate}
+  \item  Let $a\in L$, where $L$ is an affine space in $\real^n$.
+         Let $L\setminus\{a\}:=
+                \{x\in\real^n:x=\bar{x}-a\mbox{ for some } \bar{x} \in L\}$.
+         \begin{enumerate}
+           \item Let $x$ and $y$ be two points in $L\setminus\{a\}$.
+             Show that any linear combination of $x$ and $y$ is also
+             in $L\setminus\{a\}$.
+             What do you conclude about $L\setminus\{a\}$?
+           \item Let $b$ be another point in $L$.
+             Let $x$ be a point in $L\setminus\{a\}$.
+             Show that $x$ is also in $L\setminus\{b\}$.
+             How are $L\setminus\{a\}$ and $L\setminus\{b\}$ related?
+         \end{enumerate}
+%  \item  In class, we saw that if a problem of the form $(P)$ has a feasible
+%         solution then it has a basic feasible solution.
+%         Construct a similar proof to show that if $(P)$ has an optimal
+%         solution, it has a basic feasible solution that is optimal.
+  \item  Consider the linear program
+  % Let the system $Ax=b$ be defined by:
+         \begin{displaymath}
+          \begin{array}{lcccccrcrcl}
+          \min & x_1 & &- & x_3 & + & 5x_4 & - & x_5 \\
+                 \mbox{s.t.} &x_1  &       & - & x_3 & + & 3x_4  & - &  x_5 & = & 1  \\
+                  &    &  x_2  & + & x_3 & + & 4x_4  & + & 2x_5 & = & 4  \\
+                     & &       &   &     & - &  x_4  & + & 3x_5 & = & 0. \\
+                     & \multicolumn{8}{r}{x_1,\ldots,x_5} & \geq & 0
+          \end{array}
+         \end{displaymath}
+%         Let $K:=\{x \in {\real}^5:Ax=b, x \geq 0\}$.
+         The point $x=(1,4,0,0,0)^T$ is a basic feasible solution for this
+         problem. Find all the bases corresponding to this bfs.
+         Use complementary slackness to show that this point is optimal.
+%  \item  Let $Q$ be a convex polyhedron in ${\real}^n$ and let $F$ be a nonempty
+%         face of $Q$.
+%         Let $x$ be a point on the face $F$.
+%         Show that $x$ is an extreme point of $Q$ if and only if it is an
+%         extreme point of $F$.
+   \item
+Consider the standard form linear programming problem
+\begin{displaymath}
+  \begin{array}{lrclr}
+      \min  &  c^Tx  &   &    \\
+      \mbox{s.t. }  &  Ax  &  =  &  b  & \qquad \qquad  (P) \\
+                    &   x  & \geq & 0.
+  \end{array}
+\end{displaymath}
+Here, $A \in {\real}^{m \times n}$, the dimensions of $x$, $c$, and $b$
+are defined appropriately, and $m \leq n$.
+Let $K$ be the feasible region of $(P)$.
+         \begin{enumerate}
+            \item Construct a linear programming problem of the form $(P)$
+              with dim($K)>n-m$.
+            \item Construct a feasible
+              linear programming problem of the form $(P)$
+              with dim($K)<n-m$, $b \neq 0$, and rank($A)=m$.
+            \item In part~(b),
+              the linear program you defined has
+              a degenerate basic feasible solution.
+              What are the bases associated with that bfs?
+         \end{enumerate}
+%  \item  Construct a dual pair of linear programming problems where both
+%         problems are infeasible.
+%  \item  What is the dual of the following linear programming problem?
+%         \begin{displaymath}
+%           \begin{array}{lrcrcrcrcl}
+%             \min        &  3x_1 & - & 5x_2 & + & 8x_3 &   &    \\
+%             \mbox{s.t.} &   x_1 &   &      & - &  x_3 & = &  6  \\
+%                         &       &   & 2x_2 & - &  x_3 & \geq & -5 \\
+%                         &   x_1 & + &  x_2 &   &      & \leq &  8 \\
+%                         &&& x_2 & \leq 0, & x_3 & \geq & 0.
+%           \end{array}
+%         \end{displaymath}
+%         Use complementary slackness to show that $x=(6,0,0)$ is
+%         optimal for this problem.
+%         Find a linear programming problem in standard form which is
+%         equivalent to this problem.
+%   \item  \label{qcs}
+%     Consider the linear programming problem
+%     \begin{displaymath}
+%       \begin{array}{lrcrcrcrcrclr}
+%         \min         &  x_1 & + &  x_2 & + &  x_3 & + & 4x_4 & + & 3x_5 \\
+%         \mbox{s.t. } & -x_1 &   &      & + &  x_3 & + & 3x_4 & - &  x_5
+%                                                              & = & b_1 \\ %3
+%                      &  x_1 & + &  x_2 &   &      &   &      & - &  x_5
+%                                                   & = & b_2 & \qquad (P)\\ %1
+%                      &      &   & 2x_2 & + &  x_3 & + & 2x_4 & + &  x_5
+%                                                              & = & b_1+2b_2  \\
+%                                                                        %5
+%                      &      &   &&& x_i & \geq & 0, && i & = & 1,...,5.
+%       \end{array}
+%     \end{displaymath}
+%     %In what follows,
+%     Assume that
+%     the problem $(P)$ has an optimal solution $\bar{x}$, where
+%     $\bar{x}_1$, $\bar{x}_2$ and $\bar{x}_3$ are basic.
+%     \begin{enumerate}
+%       \item  What is the dual to this linear program?
+%       \item  Use complementary slackness to find an optimal solution
+%         $\bar{y}$ to the dual problem.  %(Hint:
+%         %\begin{displaymath}
+%         %  \left[ \begin{array}{rrr} -1 & 0 & 1 \\ 1 & 1 & 0 \\ 0 & 2 & 1
+%         %            \end{array}  \right]^{-1}  =
+%         %  \left[ \begin{array}{rrr} 1 & 2 & -1 \\ -1 & -1 & 1 \\ 2 & 2 & -1
+%         %            \end{array}  \right]. )
+%         %\end{displaymath}
+%     \end{enumerate}
+%   \item Consider again the problem $(P)$ in Question~\ref{qcs}.
+%     \begin{enumerate}
+%       \item  Looking purely at the optimal dual solution you found above,
+%         can you conclude that
+%         no optimal primal solution will have $x_4>0$? What about~$x_5$?
+%       \item  The optimal dual solution $\bar{y}$ is not unique: there are
+%         other optimal solutions of the form $\bar{y}+\lambda[-1,-2,1]^T$.
+%         What is the largest possible value of~$\lambda$?
+%         Do these other optimal solutions imply anything about the values of
+%         $\bar{x}_1$, $\bar{x}_2$ and~$\bar{x}_3$?
+%         Do they imply anything about the values of $x_4$ and $x_5$ in any
+%         optimal solution to~$(P)$?
+%     \end{enumerate}
+%  \item  Recall that the polar cone of~$S$ is
+%         $S^+=\{x:x^Ty \leq 0 \mbox{ for all } y \in S\}$.
+%         A constrained cone is a set of points
+%         $T$ satisfying $T=\{x:a^Tx \leq 0 \mbox{ for all } a \in A\}$
+%         for some set $A$.
+%         \begin{enumerate}
+%           \item Let $S$ be a subset of $\real^n$. Show that $S\subseteq S^{++}$.
+%           \item Let $S$ be a subset of $\real^n$. Show that $S^+=S^{+++}$.
+%           \item Let $S$ be a constrained cone. Show that $S=S^{++}$.
+%         \end{enumerate}
+%  \item  Show that a convex cone has at most one extreme point,
+%         namely the origin.
+%  \item  Consider the subspace alternative theorem:  \\
+%         For $A\in{\real}^{m{\times}n}$ and $c\in{\real}^n$, exactly one of the
+%         following holds:
+%         \begin{enumerate}
+%           \item  $  \exists y \in {\real}^m  \mbox{ s.t. }  A^Ty=c   $
+%           \item  $  \exists x \in {\real}^n  \mbox{ s.t. }  Ax=0, c^Tx \neq 0. $
+%         \end{enumerate}
+%         Develop a proof for this along the following lines:
+%         \begin{quote}
+%            First observe that both (a) and (b) can not hold simultaneously.
+%            Thus, it suffices to show that when (a) fails, (b) must hold.
+%            Next assume (a) fails and then construct an $x$ which satisfies (b).
+%         \end{quote}
+%         (Hint: You may assume that,
+%             given a matrix $M \in {\real}^{m \times n}$ and a vector
+%             $p \in {\real}^n$, there exist unique $p'$ and $p''$ such that
+%             $p=p'+p''$, $Mp'=0$, $p''=M^Tq$ for some $q$, and ${p'}^Tp''=0$.)
+             
+  \item
+%  question 2.22 from Bazaraa, Sherali, Shetty
+Let $A$ be a $p \times n$ matrix and $B$ be a $q \times n$ matrix.
+Show that exactly one of the following systems has a solution:
+\begin{quote}
+{\bf System 1:} $Ax < 0$, $Bx=0$ for some $x \in \re^n$.  \\
+{\bf System 2:} $A^Tu+B^Tv=0$ for some $u \in \re^p$, $v \in \re^q$,
+with $u \geq 0$ and $u \neq 0$.
+\end{quote}
+\end{enumerate}
+
+\bigskip
+
+\bigskip
+
+\vfill
+
+\begin{tabular}{@{\hspace{.5in}}l}
+   John Mitchell  \\
+   Amos Eaton 325  \\
+   x6915.  \\
+   mitchj@rpi.edu  \\
+   Office hours:  
+   Tuesday: 2pm -- 3.30pm.
+\end{tabular}
+
+\end{document}

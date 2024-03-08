@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw4.tex"> 
+<meta name="date" content="2017-03-08 15:08:00"> 
+<link rel="stylesheet" type="text/css" href="hw4.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 25--><p class="noindent" >
+<!--l. 28--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6620" ><span 
+class="cmr-12">MATP6620 / ISYE6760 Combinatorial Optimization and Integer Programming</span></a><br />
+<span 
+class="cmr-12">Homework 4.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 33--><p class="noindent" >
+ Due: Friday, March 24, 2017.<br />
+Penalty for late homeworks: 10% for each day or part of a day.</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1">Let <span 
+class="cmmi-10">P </span>= <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="msbm-10">&#x211D;</span><sup><span 
+class="cmmi-7">n</span></sup> : <span 
+class="cmmi-10">Ax </span><span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">b</span><span 
+class="cmsy-10">} </span>and <span 
+class="cmmi-10">S </span>= <span 
+class="cmmi-10">P </span><span 
+class="cmsy-10">&#x2229; </span><span 
+class="msbm-10">B</span><sup><span 
+class="cmmi-7">n</span></sup>. Let <span 
+class="cmmi-10">S</span><sup><span 
+class="cmr-7">0</span></sup> := <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">S </span>: <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> = 0<span 
+class="cmsy-10">}</span>. Assume <span 
+class="cmmi-10">g</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">h </span>is a valid constraint
+     for&#x00A0;<span 
+class="cmmi-10">S</span><sup><span 
+class="cmr-7">0</span></sup>, and <span 
+class="cmmi-10">g</span><sub><span 
+class="cmr-7">1</span></sub> = 0. Let <span 
+class="cmmi-10">&#x03BC; </span>be the optimal value of the <span 
+class="cmbx-10">linear </span>program max<span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">g</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x </span>: <span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">P,x</span><sub><span 
+class="cmr-7">1</span></sub> = 1<span 
+class="cmsy-10">}</span>. Prove the
+     following inequality is valid for&#x00A0;<span 
+class="cmmi-10">S</span>:
+     <center class="math-display" >
+     <img 
+src="hw40x.png" alt="          &#x2211;n
+(h - &#x03BC;)x1 +   gjxj &#x2264; h.
+          j=2
+     " class="math-display" ></center>
+     <!--l. 153--><p class="nopar" >
+     </li>
+     <li 
+  class="enumerate" id="x1-5x2">Let <span 
+class="cmmi-10">S </span>be the set of binary variables <span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="msbm-10">B</span><sup><span 
+class="cmr-7">4</span></sup> satisfying
+     <table 
+class="equation"><tr><td><a 
+ id="x1-6r1"></a>
+     <center class="math-display" >
+     <img 
+src="hw41x.png" alt="7x1 - 4x2 +5x3 + 3x4 &#x2264; 9.
+     " class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+     <!--l. 204--><p class="nopar" >
+     <span 
+class="cmbx-10">When</span> <span 
+class="cmbx-10">x</span><sub><span 
+class="cmbx-7">2</span></sub> = <span 
+class="cmbx-10">1</span>, we have the valid constraint
+     <table 
+class="equation"><tr><td><a 
+ id="x1-7r2"></a>
+     <center class="math-display" >
+                                                                                         
+                                                                                         
+     <img 
+src="hw42x.png" alt="x1 + x3 + x4 &#x2264; 2.
+     " class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+     <!--l. 208--><p class="nopar" >
+     Lift the inequality to give a valid inequality for&#x00A0;<span 
+class="cmmi-10">S</span>. (Hint: consider a change of variables <span 
+class="cmmi-10">z</span><sub><span 
+class="cmr-7">2</span></sub> := 1 <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub>.)
+     </li>
+     <li 
+  class="enumerate" id="x1-9x3"><a 
+ id="x1-83"></a> The <span 
+class="cmti-10">multiple choice </span>knapsack problem is a knapsack problem with the additional restriction that at
+     most one item can be picked from <span 
+class="cmmi-10">k </span>disjoint subsets <span 
+class="cmmi-10">N</span><sub><span 
+class="cmmi-7">i</span></sub> of the items&#x00A0;<span 
+class="cmmi-10">N </span>= <span 
+class="cmsy-10">{</span>1<span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x2026;</span><span 
+class="cmmi-10">,n</span><span 
+class="cmsy-10">}</span>. This can be
+     written
+     <center class="math-display" >
+     <img 
+src="hw43x.png" alt="                T
+max            cTx
+subject to &#x2211;   a x  &#x2264;   b
+             j&#x2208;Ni xj &#x2264;   1n  for i = 1,...,k
+                 x  &#x2208;   B
+     " class="math-display" ></center>
+     <!--l. 235--><p class="nopar" >
+     where <span 
+class="cmmi-10">a,c </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="msbm-10">&#x2124;</span><sub><span 
+class="cmr-7">+</span></sub><sup><span 
+class="cmmi-7">n</span></sup>. Assume <span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">j</span></sub> <span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">b </span>for <span 
+class="cmmi-10">j </span>= 1<span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x2026;</span><span 
+class="cmmi-10">,n</span>. Let <span 
+class="cmmi-10">S </span>denote the set of feasible solutions.
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-11x1">Prove that the convex hull of&#x00A0;<span 
+class="cmmi-10">S </span>has dimension&#x00A0;<span 
+class="cmmi-10">n</span>.
+         </li>
+         <li 
+  class="enumerate" id="x1-13x2">Give a condition on the entries of <span 
+class="cmmi-10">a </span>that guarantees that the inequality <span 
+class="cmex-10">&#x2211;</span>
+  <sub><span 
+class="cmmi-7">j</span><span 
+class="cmsy-7">&#x2208;</span><span 
+class="cmmi-7">N</span><sub><span 
+class="cmmi-5">i</span></sub></sub><span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">j</span></sub> <span 
+class="cmsy-10">&#x2264; </span>1 defines a
+         facet of the convex hull of&#x00A0;<span 
+class="cmmi-10">S</span>. Prove it is a facet when your condition is satisfied.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-15x4">Let <span 
+class="cmmi-10">C </span>be a minimal cover for the multiple choice knapsack problem of Question&#x00A0;<a 
+href="#x1-83">3<!--tex4ht:ref: q.mcknap --></a>, with <span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">C </span><span 
+class="cmsy-10">&#x2229; </span><span 
+class="cmmi-10">N</span><sub><span 
+class="cmmi-7">i</span></sub><span 
+class="cmsy-10">|&#x2264; </span>1 for
+     <span 
+class="cmmi-10">i </span>= 1<span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x2026;</span><span 
+class="cmmi-10">,k</span>. The inequality
+     <table 
+class="equation"><tr><td><a 
+ id="x1-16r3"></a>
+     <center class="math-display" >
+     <img 
+src="hw44x.png" alt="&#x2211;n
+   xj &#x2264; |C|- 1
+j=1
+     " class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+     <!--l. 251--><p class="nopar" >
+     is a valid inequality. Let <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">j</span>(<span 
+class="cmmi-10">i</span>)<span 
+class="cmsy-10">} </span>= <span 
+class="cmmi-10">C </span><span 
+class="cmsy-10">&#x2229; </span><span 
+class="cmmi-10">N</span><sub><span 
+class="cmmi-7">i</span></sub> when <span 
+class="cmmi-10">C </span><span 
+class="cmsy-10">&#x2229; </span><span 
+class="cmmi-10">N</span><sub><span 
+class="cmmi-7">i</span></sub><span 
+class="cmmi-10">&#x2260;</span><span 
+class="cmsy-10">&#x2205;</span>. Prove the following inequality is also
+     valid:
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="hw45x.png" alt="       (             )
+  &#x2211;    (    &#x2211;        )
+                   xj  &#x2264; |C|- 1
+i:C&#x2229;Ni&#x2044;=&#x2205;  j&#x2208;Ni:aj&#x2265;aj(i)
+     " class="math-display" ></center>
+Here is an <a href=hw4q4eg/hw4q4eg.html>example</a>
+for questions 3 and 4 to illustrate the notation in question 4.
+
+     <!--l. 258--><p class="nopar" >
+     </li>
+     <li 
+  class="enumerate" id="x1-18x5">Let
+     <center class="math-display" >
+     <img 
+src="hw46x.png" alt="    {                                            }
+P =   x &#x2208; &#x211D;4+ : 5x1 -  3x2  +  4x3          &#x2264;   6
+              3x1  +  4x2  +  6x3  -   3x4 &#x2264;   5
+     " class="math-display" ></center>
+     <!--l. 269--><p class="nopar" >
+     and <span 
+class="cmmi-10">S </span>= <span 
+class="cmmi-10">P </span><span 
+class="cmsy-10">&#x2229; </span><span 
+class="msbm-10">B</span><sup><span 
+class="cmr-7">4</span></sup>. The point <span class="bar-css"><span 
+class="cmmi-10">x</span></span> = (<img 
+src="hw47x.png" alt="89"  class="frac" align="middle"><span 
+class="cmmi-10">,</span>0<span 
+class="cmmi-10">,</span><img 
+src="hw48x.png" alt="178"  class="frac" align="middle"><span 
+class="cmmi-10">,</span>0) <span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">P</span>, but it is not in the convex hull of&#x00A0;<span 
+class="cmmi-10">S</span>. <span 
+class="cmbx-10">Exploit</span>
+     <span 
+class="cmbx-10">the disjunction </span><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> + <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub> <span 
+class="cmsy-10">&#x2264; </span>1 or <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> + <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub> <span 
+class="cmsy-10">&#x2265; </span>2 to find a valid constraint for <span 
+class="cmmi-10">S </span>that is violated
+     by&#x00A0;<span class="bar-css"><span 
+class="cmmi-10">x</span></span>.
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                   </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           x6915.                                                              </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           Office hours: Tuesday 2&#8211;3pm, Wednesday 11am&#8211;1pm.</td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

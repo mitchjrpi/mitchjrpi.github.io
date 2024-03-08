@@ -1,0 +1,782 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw4sol.tex"> 
+<meta name="date" content="2015-03-29 10:16:00"> 
+<link rel="stylesheet" type="text/css" href="hw4sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 23--><p class="noindent" >
+<!--l. 26--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6620" ><span 
+class="cmr-12">MATP6620 / ISYE6760 Combinatorial Optimization and Integer Programming</span></a><br />
+<span 
+class="cmr-12">Homework 4.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 31--><p class="noindent" >
+ Due: Friday, March 20, 2015.<br />
+Penalty for late homeworks: 10% for each day or part of a day.</div>
+<!--l. 37--><p class="noindent" >Given <span 
+class="cmmi-10">n </span><span 
+class="cmsy-10">&#x2265; </span>3 objects, we want to find an <span 
+class="cmti-10">ordering </span>(or permutation) of the objects, so, given two objects <span 
+class="cmmi-10">i </span>and <span 
+class="cmmi-10">j</span>,
+either <span 
+class="cmmi-10">i </span>is before <span 
+class="cmmi-10">j </span>or <span 
+class="cmmi-10">j </span>is before&#x00A0;<span 
+class="cmmi-10">i</span>. We can model the set of orderings by introducing variables <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">ij</span></sub> for 1 <span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">i,j </span><span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">n</span>
+defined as follows:
+   <center class="math-display" >
+<img 
+src="hw4sol0x.png" alt="     { 1  if i is before j
+xij =  0  otherwise.
+" class="math-display" ></center>
+<!--l. 65--><p class="nopar" >
+The set of feasible solutions can be written as
+   <center class="math-display" >
+<img 
+src="hw4sol1x.png" alt="       (                                                )
+       {                  xij + xji =  1  for 1 &#x2264; i,j &#x2264; n }
+PLnO :=  x &#x2208; Bn(n-1) : xij +xjk + xki  &#x2264;  2  for 1 &#x2264; i,j,k &#x2264; n .
+       (                                                )
+" class="math-display" ></center>
+<!--l. 86--><p class="nopar" >
+The inequalities are called triangle inequalities. You may assume that the dimension of <span 
+class="cmmi-10">P</span><sub><span 
+class="cmmi-7">LO</span></sub><sup><span 
+class="cmmi-7">n</span></sup> is <span 
+class="cmmi-10">n</span>(<span 
+class="cmmi-10">n </span><span 
+class="cmsy-10">- </span>1)<span 
+class="cmmi-10">&#x2215;</span>2.
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1"><a 
+ id="x1-21"></a> Let <span 
+class="cmmi-10">a</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">b </span>be a facet-defining inequality for <span 
+class="cmmi-10">P</span><sub><span 
+class="cmmi-7">LO</span></sub><sup><span 
+class="cmmi-7">n</span></sup>. Define <span class="bar-css"><span 
+class="cmmi-10">a</span></span><sub><span 
+class="cmmi-7">ij</span></sub> for 1 <span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">i,j </span><span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">n </span>+ 1 by:
+     <center class="math-display" >
+     <img 
+src="hw4sol2x.png" alt="     {
+¯aij =  aij  if 1 &#x2264; i,j &#x2264; n
+        0   otherwise.
+     " class="math-display" ></center>
+     <!--l. 172--><p class="nopar" >
+     Prove that <span class="bar-css"><span 
+class="cmmi-10">a</span></span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">b </span>is a facet defining inequality for <span 
+class="cmmi-10">P</span><sub><span 
+class="cmmi-7">LO</span></sub><sup><span 
+class="cmmi-7">n</span><span 
+class="cmr-7">+1</span></sup>.
+     <!--l. 177--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 180--><p class="noindent" >There are dim(<span 
+class="cmmi-10">P</span><sub><span 
+class="cmmi-7">LO</span></sub><sup><span 
+class="cmmi-7">n</span></sup>) orderings of <span 
+class="cmmi-10">n </span>objects with affinely independent incident vectors that satisfy <span 
+class="cmmi-10">a</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x </span>= <span 
+class="cmmi-10">b</span>.
+     These orderings can be extended to orderings of <span 
+class="cmmi-10">n </span>+ 1 objects by adding object <span 
+class="cmmi-10">n </span>+ 1 at the end. We need
+     another
+     <center class="math-display" >
+     <img 
+src="hw4sol3x.png" alt="dim(PnL+O1) - dim (P nLO) = (n-+-1)n-- n(n---1= n
+                          2        2
+     " class="math-display" ></center>
+     <!--l. 188--><p class="nopar" >
+     orderings. Pick any one of the original dim(<span 
+class="cmmi-10">P</span><sub><span 
+class="cmmi-7">LO</span></sub><sup><span 
+class="cmmi-7">n</span></sup>) orderings and insert item <span 
+class="cmmi-10">n </span>+ 1 before any of the original <span 
+class="cmmi-10">n</span>
+     objects. The resulting incidence vectors are affinely independent since as object <span 
+class="cmmi-10">n </span>+ 1 is moved earlier in the
+     ordering, one component of the incidence vector that was zero in all the previously considered orderings is now
+     equal to one.
+     </li>
+     <li 
+  class="enumerate" id="x1-5x2">Use the result of Question&#x00A0;<a 
+href="#x1-21">1<!--tex4ht:ref: q.lift --></a> to show that the simple bounds <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">ij</span></sub> <span 
+class="cmsy-10">&#x2265; </span>0 and the triangle inequalities define facets
+     of <span 
+class="cmmi-10">P</span><sub><span 
+class="cmmi-7">LO</span></sub><sup><span 
+class="cmmi-7">n</span></sup> for <span 
+class="cmmi-10">n </span><span 
+class="cmsy-10">&#x2265; </span>3.
+     <!--l. 204--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 207--><p class="noindent" >We use proof by induction. Question&#x00A0;<a 
+href="#x1-21">1<!--tex4ht:ref: q.lift --></a> gives the inductive step, we need to prove the base case. We take <span 
+class="cmmi-10">n </span>= 3
+     as the base case. Now dim(<span 
+class="cmmi-10">P</span><sub><span 
+class="cmmi-7">LO</span></sub><sup><span 
+class="cmr-7">3</span></sup>)=3, so we need three affinely independent vectors satisfying a constraint at
+     equality for it to be facet defining.
+         <ul class="itemize1">
+         <li class="itemize"><span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">ij</span></sub> <span 
+class="cmsy-10">&#x2265; </span>0: Consider the three orderings <span 
+class="cmmi-10">jik</span>, <span 
+class="cmmi-10">jki</span>, <span 
+class="cmmi-10">kji</span>. Looking just at components <span 
+class="cmmi-10">ij</span>, <span 
+class="cmmi-10">ik</span>, <span 
+class="cmmi-10">jk</span>, the three
+         incidence vectors are <span 
+class="cmmi-10">a</span><sup><span 
+class="cmr-7">1</span></sup> := (0<span 
+class="cmmi-10">,</span>1<span 
+class="cmmi-10">,</span>1), <span 
+class="cmmi-10">a</span><sup><span 
+class="cmr-7">2</span></sup> := (0<span 
+class="cmmi-10">,</span>0<span 
+class="cmmi-10">,</span>1), and <span 
+class="cmmi-10">a</span><sup><span 
+class="cmr-7">0</span></sup> := (0<span 
+class="cmmi-10">,</span>0<span 
+class="cmmi-10">,</span>0). The two vectors <span 
+class="cmmi-10">a</span><sup><span 
+class="cmr-7">1</span></sup> <span 
+class="cmsy-10">-</span><span 
+class="cmmi-10">a</span><sup><span 
+class="cmr-7">0</span></sup> and
+         <span 
+class="cmmi-10">a</span><sup><span 
+class="cmr-7">2</span></sup> <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">a</span><sup><span 
+class="cmr-7">0</span></sup> are linearly independent, so the three incidence vectors are affinely independent.
+         </li>
+         <li class="itemize"><span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">ij</span></sub> + <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">jk</span></sub> + <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">ki</span></sub> <span 
+class="cmsy-10">&#x2264; </span>2: Consider the three orderings <span 
+class="cmmi-10">ijk</span>, <span 
+class="cmmi-10">kij</span>, <span 
+class="cmmi-10">jki</span>. Looking just at components <span 
+class="cmmi-10">ij</span>,
+         <span 
+class="cmmi-10">ik</span>, <span 
+class="cmmi-10">jk</span>, the three incidence vectors are <span 
+class="cmmi-10">a</span><sup><span 
+class="cmr-7">1</span></sup> := (1<span 
+class="cmmi-10">,</span>1<span 
+class="cmmi-10">,</span>1), <span 
+class="cmmi-10">a</span><sup><span 
+class="cmr-7">2</span></sup> := (1<span 
+class="cmmi-10">,</span>0<span 
+class="cmmi-10">,</span>0), and <span 
+class="cmmi-10">a</span><sup><span 
+class="cmr-7">0</span></sup> := (0<span 
+class="cmmi-10">,</span>0<span 
+class="cmmi-10">,</span>1). The two
+         vectors <span 
+class="cmmi-10">a</span><sup><span 
+class="cmr-7">1</span></sup> <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">a</span><sup><span 
+class="cmr-7">0</span></sup> and <span 
+class="cmmi-10">a</span><sup><span 
+class="cmr-7">2</span></sup> <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">a</span><sup><span 
+class="cmr-7">0</span></sup> are linearly independent, so the three incidence vectors are affinely
+         independent.</li></ul>
+     </li>
+     <li 
+  class="enumerate" id="x1-7x3">Let <span 
+class="cmmi-10">U </span>= <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">u</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x2026;</span><span 
+class="cmmi-10">,u</span><sub><span 
+class="cmmi-7">k</span></sub><span 
+class="cmsy-10">} </span>and <span 
+class="cmmi-10">W </span>= <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">w</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x2026;</span><span 
+class="cmmi-10">,w</span><sub><span 
+class="cmmi-7">k</span></sub><span 
+class="cmsy-10">} </span>be two disjoint subsets of the objects. Show that the
+     inequality
+     <table 
+class="equation"><tr><td><a 
+ id="x1-8r1"></a>
+     <center class="math-display" >
+     <img 
+src="hw4sol4x.png" alt="                    k
+     &#x2211;      xw ,u + &#x2211;  xu ,w  &#x2264; k2 - k+ 1
+ui&#x2208;U,wj&#x2208;W,i&#x2044;=j  j i  i=1  i i
+     " class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+     <!--l. 262--><p class="nopar" >
+     is valid for&#x00A0;<span 
+class="cmmi-10">P</span><sub><span 
+class="cmmi-7">LO</span></sub><sup><span 
+class="cmmi-7">n</span></sup>. Find a point <span class="bar-css"><span 
+class="cmmi-10">x</span></span> <span 
+class="cmsy-10"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10x-x-32" /> </span><span 
+class="msbm-10"><img 
+src="msbm10-52.png" alt="&#x211D;" class="10x-x-52" /></span><sup><span 
+class="cmmi-7">n</span><span 
+class="cmr-7">(</span><span 
+class="cmmi-7">n</span><span 
+class="cmsy-7">-</span><span 
+class="cmr-7">1)</span></sup>, 0 <span 
+class="cmsy-10">&#x2264;</span><span class="bar-css"><span 
+class="cmmi-10">x</span></span><sub><span 
+class="cmmi-7">ij</span></sub> <span 
+class="cmsy-10">&#x2264; </span>1, which satisfies <span class="bar-css"><span 
+class="cmmi-10">x</span></span><sub><span 
+class="cmmi-7">ij</span></sub> + <span class="bar-css"><span 
+class="cmmi-10">x</span></span><sub><span 
+class="cmmi-7">ji</span></sub> = 1 for 1 <span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">i,j </span><span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">n </span>and all
+     the triangle inequalities, but which violates&#x00A0;(<a 
+href="#x1-8r1">1<!--tex4ht:ref: eq:fence --></a>) with <span 
+class="cmmi-10">k </span>= 3. (Note that the inequality includes <span 
+class="cmmi-10">k </span>edges pointing
+     up in the picture and <span 
+class="cmmi-10">k</span>(<span 
+class="cmmi-10">k </span><span 
+class="cmsy-10">- </span>1) = <span 
+class="cmmi-10">k</span><sup><span 
+class="cmr-7">2</span></sup> <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">k </span>edges pointing down.) <a 
+ id="x1-63"></a>
+                                                                                         
+                                                                                         
+     <div class="center" 
+>
+<!--l. 272--><p class="noindent" >
+<!--l. 273--><p class="center" ><img 
+src="hw4sol5x.png" alt="PICT" >
+</div>
+     <!--l. 309--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 312--><p class="noindent" ><span 
+class="cmbx-10">The proof: </span>There are multiple ways to prove the constraint is valid. We give two.
+     <!--l. 316--><p class="noindent" ><span 
+class="cmti-10">First proof:</span>
+     <!--l. 319--><p class="noindent" >We show that any binary vector violating (<a 
+href="#x1-8r1">1<!--tex4ht:ref: eq:fence --></a>) cannot correspond to an ordering. Assume the binary solution
+     has <span 
+class="cmmi-10">p </span>edges with <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">u</span><sub><span 
+class="cmmi-5">i</span></sub><span 
+class="cmmi-7">,w</span><sub><span 
+class="cmmi-5">i</span></sub></sub> = 1, and let <span 
+class="cmmi-10">I </span>denote the corresponding set of indices. Note that we must have <span 
+class="cmmi-10">p </span><span 
+class="cmsy-10">&#x2265; </span>2.
+     We consider the objects
+     <center class="math-display" >
+     <img 
+src="hw4sol6x.png" alt="V := {wi : i &#x2208; I}
+     " class="math-display" ></center>
+     <!--l. 327--><p class="nopar" >
+     and show that the binary vector does not correspond to an ordering on these vertices.
+     <!--l. 331--><p class="noindent" >There are <span 
+class="cmmi-10">k</span>(<span 
+class="cmmi-10">k </span><span 
+class="cmsy-10">- </span>1) edges of the form (<span 
+class="cmmi-10">w</span><sub><span 
+class="cmmi-7">i</span></sub><span 
+class="cmmi-10">,u</span><sub><span 
+class="cmmi-7">j</span></sub>) with 1 <span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">i,j </span><span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">k</span>. Since (<a 
+href="#x1-8r1">1<!--tex4ht:ref: eq:fence --></a>) is violated, the number of edges with
+     <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">w</span><sub><span 
+class="cmmi-5">i</span></sub><span 
+class="cmmi-7">,u</span><sub><span 
+class="cmmi-5">j</span></sub></sub> = 1 with 1 <span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">i,j </span><span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">k </span>must be at least <span 
+class="cmmi-10">k</span><sup><span 
+class="cmr-7">2</span></sup> <span 
+class="cmsy-10">-</span><span 
+class="cmmi-10">k </span>+ 2 <span 
+class="cmsy-10">-</span><span 
+class="cmmi-10">p </span>with <span 
+class="cmmi-10">i </span><span 
+class="cmsy-10"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10x-x-32" /> </span><span 
+class="cmmi-10">I </span>and <span 
+class="cmmi-10">j </span><span 
+class="cmsy-10"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10x-x-32" /> </span><span 
+class="cmmi-10">I</span>. Hence the number of edges
+     with <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">w</span><sub><span 
+class="cmmi-5">i</span></sub><span 
+class="cmmi-7">,u</span><sub><span 
+class="cmmi-5">j</span></sub></sub> = 1 with <span 
+class="cmmi-10">i </span><span 
+class="cmsy-10"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10x-x-32" /> </span><span 
+class="cmmi-10">I </span>and <span 
+class="cmmi-10">j </span><span 
+class="cmsy-10"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10x-x-32" /> </span><span 
+class="cmmi-10">I </span>must be at least
+     <center class="math-display" >
+     <img 
+src="hw4sol7x.png" alt="(number of edges (w ,u ) with i,j &#x2208; I)- (number of edges with x = 0 with 1 &#x2264; i,j &#x2264; k)
+                 i  j                                   wi,uj
+      &#x2265;  p(p - 1) - (k(k- 1) - (k2 - k + 2- p))
+      =  p2 - 2p+ 2.
+     " class="math-display" ></center>
+     <!--l. 346--><p class="nopar" >
+     <!--l. 348--><p class="noindent" >Assume <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">w</span><sub><span 
+class="cmmi-5">i</span></sub><span 
+class="cmmi-7">,u</span><sub><span 
+class="cmmi-5">j</span></sub></sub> = 1 with <span 
+class="cmmi-10">i </span><span 
+class="cmsy-10"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10x-x-32" /> </span><span 
+class="cmmi-10">I </span>and <span 
+class="cmmi-10">j </span><span 
+class="cmsy-10"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10x-x-32" /> </span><span 
+class="cmmi-10">I</span>. Since <span 
+class="cmmi-10">x </span>satisfies the triangle inequalities, we must have <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">w</span><sub><span 
+class="cmmi-5">i</span></sub><span 
+class="cmmi-7">,w</span><sub><span 
+class="cmmi-5">j</span></sub></sub> = 1
+     also. So
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="hw4sol8x.png" alt="&#x2211;
+    xwi,wj &#x2265; p2 - 2p+ 2 &#x003E; p(p---1) for p &#x2265; 2.
+i,j&#x2208;I                       2
+     " class="math-display" ></center>
+     <!--l. 353--><p class="nopar" >
+     But from the equality constraints, we have
+     <center class="math-display" >
+     <img 
+src="hw4sol9x.png" alt="&#x2211;           p(p - 1)
+    xwi,wj = ---2---  for p &#x2265; 2.
+i,j&#x2208;I
+     " class="math-display" ></center>
+     <!--l. 357--><p class="nopar" >
+     So the binary vector cannot correspond to an ordering.
+     <!--l. 361--><p class="noindent" ><span 
+class="cmti-10">Second proof:</span>
+     <!--l. 364--><p class="noindent" >This is an inductive proof.
+     <!--l. 366--><p class="noindent" ><span 
+class="cmti-10">Base case: </span>The result holds when <span 
+class="cmmi-10">k </span>= 2, since <span 
+class="cmmi-10">k</span><sup><span 
+class="cmr-7">2</span></sup> <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">k </span>+ 1 = 3 in this case, and the only binary solution that
+     violates (<a 
+href="#x1-8r1">1<!--tex4ht:ref: eq:fence --></a>) has four edges that form a cycle, so it cannot correspond to an ordering.
+     <!--l. 370--><p class="noindent" ><span 
+class="cmti-10">Inductive step: </span>Assume the result holds for <span 
+class="cmmi-10">k </span><span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">p </span>where <span 
+class="cmmi-10">p </span><span 
+class="cmsy-10">&#x2265; </span>2, show it holds for <span 
+class="cmmi-10">k </span>= <span 
+class="cmmi-10">p </span>+ 1. When <span 
+class="cmmi-10">k </span>= <span 
+class="cmmi-10">p </span>+ 1,
+     the inequality (<a 
+href="#x1-8r1">1<!--tex4ht:ref: eq:fence --></a>) can be written:
+     <table 
+class="equation"><tr><td><a 
+ id="x1-9r2"></a>
+     <center class="math-display" >
+     <img 
+src="hw4sol10x.png" alt=" p    p           p         p            p
+&#x2211;    &#x2211;   x     + &#x2211;  x    + &#x2211;   x      + &#x2211;  x      + x        &#x2264; p2 - p +1 + 2p.
+ i=1j&#x2044;=i,j=1 wj,ui  i=1 ui,wi   i=1  wp+1,ui   j=1 wj,up+1   up+1,wp+1
+     " class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+     <!--l. 386--><p class="nopar" >
+     We argue that any binary solution that violates (<a 
+href="#x1-9r2">2<!--tex4ht:ref: eq:fence p+1 --></a>) does not correspond to an ordering. From the inductive
+     hypothesis, we know
+     <table 
+class="equation"><tr><td><a 
+ id="x1-10r3"></a>
+     <center class="math-display" >
+     <img 
+src="hw4sol11x.png" alt=" p    p           p
+&#x2211;    &#x2211;   xw ,u + &#x2211;  xu ,w &#x2264; p2 - p + 1.
+i=1j&#x2044;=i,j=1  j i   i=1  i i
+     " class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+     <!--l. 393--><p class="nopar" >
+     From a simple counting argument, we know
+     <table 
+class="equation"><tr><td><a 
+ id="x1-11r4"></a>
+     <center class="math-display" >
+     <img 
+src="hw4sol12x.png" alt="&#x2211;p          &#x2211;p
+   xwp+1,ui +   xwj,up+1 + xup+1,wp+1 &#x2264; 2p +1.
+i=1          j=1
+     " class="math-display" ></center></td><td class="equation-label">(4)</td></tr></table>
+     <!--l. 399--><p class="nopar" >
+     Thus, (<a 
+href="#x1-9r2">2<!--tex4ht:ref: eq:fence p+1 --></a>) can be violated by at most one, and only if both (<a 
+href="#x1-10r3">3<!--tex4ht:ref: eq:fence p --></a>) and (<a 
+href="#x1-11r4">4<!--tex4ht:ref: eq:p+1 --></a>) hold at equality. If (<a 
+href="#x1-10r3">3<!--tex4ht:ref: eq:fence p --></a>) holds at equality
+     then there must be an index q for which <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">u</span><sub><span 
+class="cmmi-5">q</span></sub><span 
+class="cmmi-7">,w</span><sub><span 
+class="cmmi-5">q</span></sub></sub> = 1, with 1 <span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">q </span><span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">p</span>. If (<a 
+href="#x1-11r4">4<!--tex4ht:ref: eq:p+1 --></a>) holds at equality then we must
+     have
+     <center class="math-display" >
+     <img 
+src="hw4sol13x.png" alt="x      = x        = x      = 1.
+ wq,up+1   up+1,wp+1   wp+1,uq
+     " class="math-display" ></center>
+     <!--l. 407--><p class="nopar" >
+     Thus, the solution contains a cycle of length four through the nodes <span 
+class="cmmi-10">u</span><sub><span 
+class="cmmi-7">q</span></sub> <span 
+class="cmsy-10">&#x2192; </span><span 
+class="cmmi-10">w</span><sub><span 
+class="cmmi-7">q</span></sub> <span 
+class="cmsy-10">&#x2192; </span><span 
+class="cmmi-10">u</span><sub><span 
+class="cmmi-7">k</span><span 
+class="cmr-7">+1</span></sub> <span 
+class="cmsy-10">&#x2192; </span><span 
+class="cmmi-10">w</span><sub><span 
+class="cmmi-7">k</span><span 
+class="cmr-7">+1</span></sub> <span 
+class="cmsy-10">&#x2192; </span><span 
+class="cmmi-10">u</span><sub><span 
+class="cmmi-7">q</span></sub>, so it
+     doesn&#8217;t correspond to an ordering.
+     <!--l. 415--><p class="noindent" ><span 
+class="cmbx-10">Violating point:</span>
+     <!--l. 418--><p class="noindent" >A point that satisfies all the linear constraints in the description of <span 
+class="cmmi-10">P</span><sub><span 
+class="cmmi-7">LO</span></sub><sup><span 
+class="cmmi-7">n</span></sup> but violates (<a 
+href="#x1-8r1">1<!--tex4ht:ref: eq:fence --></a>) for
+     <span 
+class="cmmi-10">k </span><span 
+class="cmsy-10">&#x2265; </span>3:
+     <center class="math-display" >
+     <img 
+src="hw4sol14x.png" alt="x      =  1     1 &#x2264; i,j &#x2264; k,i &#x2044;= j
+xwi,uj  =  0.5   1 &#x2264; i &#x2264; k
+xui,wj  =  0     1 &#x2264; i,j &#x2264; k,i &#x2044;= j
+xuj,wi  =  0.5   for any other edge (s,t).
+ s,t
+     " class="math-display" ></center>
+     <!--l. 427--><p class="nopar" >
+     No triangle contains more than one arc <span 
+class="cmmi-10">e </span>with <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">e</span></sub> = 1, so all the triangle inequalities are satisfied. The left
+     hand side of (<a 
+href="#x1-8r1">1<!--tex4ht:ref: eq:fence --></a>) evaluates to <span 
+class="cmmi-10">k</span>(<span 
+class="cmmi-10">k </span><span 
+class="cmsy-10">- </span>1) + 0<span 
+class="cmmi-10">.</span>5<span 
+class="cmmi-10">k</span><span style="margin-left:0.3em" class="thinspace"></span> = <span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10">k</span><sup><span 
+class="cmr-7">2</span></sup> <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">k </span>+ 0<span 
+class="cmmi-10">.</span>5<span 
+class="cmmi-10">k</span><span style="margin-left:0.3em" class="thinspace"></span> <span 
+class="cmmi-10">&#x003E;</span> <span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10">k</span><sup><span 
+class="cmr-7">2</span></sup> <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">k </span>+ 1 if <span 
+class="cmmi-10">k </span><span 
+class="cmsy-10">&#x2265; </span>3.
+                                                                                         
+                                                                                         
+     </li>
+     <li 
+  class="enumerate" id="x1-13x4">For each of the following binary knapsack problems, solve the linear programming relaxation, give a valid cover
+     inequality violated by the solution to the relaxation, and lift the inequality to give a facet defining
+     inequality.
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-15x1">
+         <center class="math-display" >
+         <img 
+src="hw4sol15x.png" alt="max   20x   +  30x   +  40x   +  42x
+s.t.    x1  +   3x2  +   5x3  +   6x4  &#x2264;  7
+         1        2        3       x4  binary
+                                     i
+         " class="math-display" ></center>
+         <!--l. 621--><p class="nopar" >
+         </li>
+         <li 
+  class="enumerate" id="x1-17x2">
+         <center class="math-display" >
+         <img 
+src="hw4sol16x.png" alt="max  4x1  +   15x2 +   22x3 +   42x4
+s.t.   x1  +    3x2 +    5x3 +    6x4  &#x2264;  7
+                                  xi  binary
+         " class="math-display" ></center>
+         <!--l. 629--><p class="nopar" >
+         </li>
+         <li 
+  class="enumerate" id="x1-19x3">
+         <center class="math-display" >
+         <img 
+src="hw4sol17x.png" alt="max   13x1  +  25x2  +  18x3  +  27x4
+s.t.   2x1  +   5x2  +   3x3  +   6x4  &#x2264;  7
+                                   xi  binary
+         " class="math-display" ></center>
+         <!--l. 637--><p class="nopar" >
+         </li></ol>
+     <!--l. 642--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-21x1">Solution to LP relaxation is <span 
+class="cmmi-10">x </span>= (1<span 
+class="cmmi-10">,</span>1<span 
+class="cmmi-10">,</span>0<span 
+class="cmmi-10">.</span>6<span 
+class="cmmi-10">,</span>0). This leads to the minimal cover <span 
+class="cmsy-10">{</span>2<span 
+class="cmmi-10">,</span>3<span 
+class="cmsy-10">} </span>and the minimal
+         cover inequality
+         <center class="math-display" >
+         <img 
+src="hw4sol18x.png" alt="x2 + x3 &#x2264; 1.
+         " class="math-display" ></center>
+         <!--l. 650--><p class="nopar" >
+         Lifting on <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> and then <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">4</span></sub> gives the facet defining inequality
+                                                                                         
+                                                                                         
+         <center class="math-display" >
+         <img 
+src="hw4sol19x.png" alt="x2 +x3 + x4 &#x2264; 1.
+         " class="math-display" ></center>
+         <!--l. 654--><p class="nopar" >
+         Lifting in the other order gives the same inequality.
+         </li>
+         <li 
+  class="enumerate" id="x1-23x2">Solution to LP relaxation is <span 
+class="cmmi-10">x </span>= (0<span 
+class="cmmi-10">,</span><img 
+src="hw4sol20x.png" alt="13"  class="frac" align="middle"><span 
+class="cmmi-10">,</span>0<span 
+class="cmmi-10">,</span>1). This leads to the minimal cover <span 
+class="cmsy-10">{</span>2<span 
+class="cmmi-10">,</span>4<span 
+class="cmsy-10">} </span>and the minimal cover
+         inequality
+         <center class="math-display" >
+         <img 
+src="hw4sol21x.png" alt="x2 + x4 &#x2264; 1.
+         " class="math-display" ></center>
+         <!--l. 661--><p class="nopar" >
+         Lifting on <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> and then <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub> gives the facet defining inequality
+         <center class="math-display" >
+         <img 
+src="hw4sol22x.png" alt="x2 +x3 + x4 &#x2264; 1.
+         " class="math-display" ></center>
+         <!--l. 665--><p class="nopar" >
+         Lifting in the other order gives the same inequality.
+         </li>
+         <li 
+  class="enumerate" id="x1-25x3">Solution to LP relaxation is <span 
+class="cmmi-10">x </span>= (1<span 
+class="cmmi-10">,</span>0<span 
+class="cmmi-10">.</span>4<span 
+class="cmmi-10">,</span>1<span 
+class="cmmi-10">,</span>0). This leads to the minimal cover <span 
+class="cmsy-10">{</span>1<span 
+class="cmmi-10">,</span>2<span 
+class="cmmi-10">,</span>3<span 
+class="cmsy-10">} </span>and the minimal
+         cover inequality
+         <center class="math-display" >
+         <img 
+src="hw4sol23x.png" alt="x2 + x3 &#x2264; 1.
+         " class="math-display" ></center>
+         <!--l. 672--><p class="nopar" >
+         Lifting on <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> and then <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">4</span></sub> gives the facet defining inequality
+         <center class="math-display" >
+         <img 
+src="hw4sol24x.png" alt="x2 +x3 + x4 &#x2264; 1.
+         " class="math-display" ></center>
+         <!--l. 676--><p class="nopar" >
+         Lifting in the other order gives the same inequality.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-27x5">The linearly dependent vectors <span 
+class="cmmi-10">x</span><sup><span 
+class="cmr-7">1</span></sup><span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x2026;</span><span 
+class="cmmi-10">,x</span><sup><span 
+class="cmmi-7">m</span></sup> in <span 
+class="msbm-10"><img 
+src="msbm10-52.png" alt="&#x211D;" class="10x-x-52" /></span><sup><span 
+class="cmmi-7">n</span></sup> are all on the hyperplane <span 
+class="cmmi-10">a</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x </span>= <span 
+class="cmmi-10">b</span>, where <span 
+class="cmmi-10">b</span><span 
+class="cmmi-10">&#x2260;</span>0. Show that they
+     are affinely dependent.
+     <!--l. 688--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 691--><p class="noindent" >There exist multipliers <span 
+class="cmmi-10">&#x03BB;</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x2026;</span><span 
+class="cmmi-10">,&#x03BB;</span><sub><span 
+class="cmmi-7">m</span></sub>, not all zero, with
+     <center class="math-display" >
+     <img 
+src="hw4sol25x.png" alt=" m
+&#x2211;  &#x03BB;ixi = 0.
+i=1
+     " class="math-display" ></center>
+     <!--l. 694--><p class="nopar" >
+     It follows that
+     <center class="math-display" >
+     <img 
+src="hw4sol26x.png" alt="       m&#x2211;         m&#x2211;           &#x2211;m
+0 = aT(   &#x03BB;ixi) =    &#x03BB;iaTxi = b  &#x03BB;i.
+       i=1        i=1          i=1
+     " class="math-display" ></center>
+     <!--l. 699--><p class="nopar" >
+     Hence, <span 
+class="cmex-10">&#x2211;</span>
+  <sub><span 
+class="cmmi-7">i</span><span 
+class="cmr-7">=1</span></sub><sup><span 
+class="cmmi-7">m</span></sup><span 
+class="cmmi-10">&#x03BB;</span><sub><span 
+class="cmmi-7">i</span></sub> = 0 so the vectors are affinely dependent.
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                     </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           x6915.                                               </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           Office hours: Tuesday, Wednesday, 2&#8211;4pm.</td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

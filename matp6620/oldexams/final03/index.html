@@ -1,0 +1,502 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Final Exam 2003</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="final03">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="final03.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="LEFT">Name:</TD>
+</TR>
+</TABLE>
+
+<P>
+
+<DIV ALIGN="CENTER">
+  <FONT SIZE="+1">
+  <a href=..>MATP6620/DSES6770 
+<BR>
+  <B>Combinatorial Optimization and Integer Programming </B> 
+</a>
+<BR>
+Spring 2003</FONT>
+
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER">
+  Final Exam, Tuesday, May 6, 2003.
+
+</DIV>
+
+<P>
+Please do all five problems. Show all work. No books or calculators allowed.
+You may use any result from class, the homeworks, or the texts, except where
+stated.
+You may use one sheet of handwritten notes.
+The exam lasts three hours.
+
+<P>
+
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER">Q1</TD>
+<TD></TD><TD ALIGN="CENTER">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+<TD ALIGN="RIGHT">/20</TD>
+</TR>
+<TR><TD ALIGN="CENTER">Q2</TD>
+<TD></TD><TD ALIGN="CENTER">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+<TD ALIGN="RIGHT">/20</TD>
+</TR>
+<TR><TD ALIGN="CENTER">Q3</TD>
+<TD></TD><TD ALIGN="CENTER">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+<TD ALIGN="RIGHT">/25</TD>
+</TR>
+<TR><TD ALIGN="CENTER">Q4</TD>
+<TD></TD><TD ALIGN="CENTER">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+<TD ALIGN="RIGHT">/15</TD>
+</TR>
+<TR><TD ALIGN="CENTER">Q5</TD>
+<TD></TD><TD ALIGN="CENTER">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+<TD ALIGN="RIGHT">/20</TD>
+</TR>
+<TR><TD ALIGN="CENTER">Total</TD>
+<TD></TD><TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="RIGHT">/100</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>(20 points) 
+<BR>
+The <EM>max clique</EM> feasibility problem can be described
+     as follows:
+     <BLOCKQUOTE>
+       An <EM>instance</EM> consists of a graph <I>G</I>=(<I>V</I>,<I>E</I>) and an integer <I>k</I>.
+       The answer is <EM>YES</EM> if the graph contains a clique with at
+       least <I>k</I> vertices; otherwise, the answer is&nbsp;<EM>NO</EM>.
+     
+</BLOCKQUOTE>
+     Show that the <EM>max clique</EM> problem is <I>NP</I>-complete.
+
+<P>
+
+(Hint: You may want to look at the <EM>complement</EM> of <I>G</I>=(<I>V</I>,<I>E</I>),
+     that is, the graph <I>G</I>'=(<I>V</I>,<I>E</I>') where <I>e</I> is in <I>E</I>' if and only if
+     it is not in&nbsp;<I>E</I>.
+     You may also want to look at the        <EM>node packing</EM> problem:
+    <BLOCKQUOTE>
+        Given a graph <I>G</I>=(<I>V</I>,<I>E</I>) and a integer <I>k</I>,
+        does there exist a subset <IMG
+ WIDTH="59" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$U \subseteq V$">
+        with <!-- MATH: $\mid \! U \! \mid = k$ -->
+<IMG
+ WIDTH="64" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\mid \! U \! \mid = k$">
+        where no two of the vertices in <I>U</I> share an edge?)
+   
+</BLOCKQUOTE>
+
+<P>
+
+<P>
+
+(intentionally left blank)
+
+<P>
+
+<P>
+
+<DT>2.
+<DD>(20 points, each part is worth five points)  
+<BR>
+Consider the 0-1 equality knapsack problem
+          <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\min \{x_{n+1} : 2x_1 + 2x_2 + \ldots + 2x_n + x_{n+1} = n,
+                         x \in B^n \},  \qquad\qquad (KE)
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="554" HEIGHT="33"
+ SRC="img3.gif"
+ ALT="\begin{displaymath}
+\min \{x_{n+1} : 2x_1 + 2x_2 + \ldots + 2x_n + x_{n+1} = n,
+x \in B^n \}, \qquad\qquad (KE)
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <I>n</I> is an odd integer.
+          We wish to solve this problem using a branch and bound algorithm
+          with linear programming relaxations.
+       <DL COMPACT>
+<DT>(a)
+<DD>Show that <I>x</I><SUB><I>n</I>+1</SUB>=1 in any feasible solution to&nbsp;(<I>KE</I>). 
+What is the optimal value of&nbsp;(<I>KE</I>)?
+         <DT>(b)
+<DD>Assume
+          we always separate using variable dichotomies
+          (ie, add the constraints <I>x</I><SUB><I>i</I></SUB> = 0 or <I>x</I><SUB><I>i</I></SUB> = 1 for some <I>i</I>).
+          Show that if no more than <!-- MATH: $\lfloor n/2 \rfloor$ -->
+<IMG
+ WIDTH="51" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\lfloor n/2 \rfloor$">
+          of the variables <!-- MATH: $x_1,\ldots,x_n$ -->
+<IMG
+ WIDTH="84" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$x_1,\ldots,x_n$">
+          have been fixed at 0 or 1 then the relaxation has value&nbsp;0.
+          Hence show that an exponential number of nodes of the
+          branch and bound tree must be considered to solve the problem.
+         <DT>(c)
+<DD>Derive the valid inequality
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+x_1 + x_2 + \ldots + x_n \leq \lfloor n/2 \rfloor
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="215" HEIGHT="33"
+ SRC="img6.gif"
+ ALT="\begin{displaymath}
+x_1 + x_2 + \ldots + x_n \leq \lfloor n/2 \rfloor
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+using the Chvatal-Gomory rounding procedure.
+         <DT>(d)
+<DD>What is the minimum number of nodes we need in the branch and bound
+          process if we can separate using <EM>any</EM> linear inequality?
+          (Assume that you obtain an extreme point optimal solution to any
+          relaxation that you set up, provided such a solution exists.)
+       </DL>
+
+<P>
+
+<P>
+
+(intentionally left blank)
+
+<P>
+
+<P>
+
+<DT>3.
+<DD>(25 points; each part is worth 5 points)  
+<BR>
+We have <I>n</I> objects and
+         we want to find an <EM>ordering</EM> of the objects,
+         so, given two objects <I>i</I> and <I>j</I>, either <I>i</I> is before <I>j</I>
+         or <I>j</I> is before&nbsp;<I>i</I>.
+         The ordering should be <EM>consistent</EM>;
+         that is, if <I>i</I> is before <I>j</I> and <I>j</I> is before <I>k</I> then <I>i</I> should
+         be before&nbsp;<I>k</I>.
+         We get a reward <I>w</I><SUB><I>ij</I></SUB> if <I>i</I> is before <I>j</I>
+         and a reward <I>w</I><SUB><I>ji</I></SUB> if <I>j</I> is before&nbsp;<I>i</I>.
+         The objective is to maximize
+         <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{cc}
+              \sum  & w_{ij}.  \\
+              \mbox{all pairs $i$ , $j$ ,}  &  \\
+              \mbox{$i$\space before $j$ }
+           \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="160" HEIGHT="76"
+ SRC="img7.gif"
+ ALT="\begin{displaymath}
+\begin{array}{cc}
+\sum &amp; w_{ij}. \\
+\mbox{all pairs $i$ , $j$ ,} &amp; \\
+\mbox{$i$\space before $j$ }
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+We can model this as an integer programming problem by introducing
+         variables <I>x</I><SUB><I>ij</I></SUB> defined as follows:
+         <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+x_{ij} = \left\{ \begin{array}{ll}
+                        1 & \mbox{if $i$\space is before $j$ } \\
+                        0 & \mbox{otherwise}
+                     \end{array}  \right.
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="204" HEIGHT="55"
+ SRC="img8.gif"
+ ALT="\begin{displaymath}
+x_{ij} = \left\{ \begin{array}{ll}
+1 &amp; \mbox{if $i$\space is before $j$ } \\
+0 &amp; \mbox{otherwise}
+\end{array} \right.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Let <I>S</I> be the set of points <I>x</I> which correspond to orderings;
+         let <I>conv</I>(<I>S</I>) be the convex hull of&nbsp;<I>S</I>.
+        This formulation has <I>n</I>(<I>n</I>-1) variables.
+        You may assume that the dimension of <I>conv</I>(<I>S</I>) is&nbsp;<I>n</I>(<I>n</I>-1)/2.
+         <DL COMPACT>
+<DT>(a)
+<DD>Show that <!-- MATH: $x_{ij}+x_{ji}=1$ -->
+<I>x</I><SUB><I>ij</I></SUB>+<I>x</I><SUB><I>ji</I></SUB>=1 is valid for every ordering.
+<A NAME="valideq">&#160;</A><DT>(b)
+<DD>Show that the inequality <!-- MATH: $x_{ij}+x_{jk}+x_{ki}\leq 2$ -->
+<IMG
+ WIDTH="155" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$x_{ij}+x_{jk}+x_{ki}\leq 2$">
+              is valid for <I>S</I> for any <I>i</I>, <I>j</I>, and&nbsp;<I>k</I>.   <A NAME="dicycle">&#160;</A>           <DT>(c)
+<DD>For this part only, let <I>n</I>=3. Show that
+              <!-- MATH: $x_{12}+x_{23}+x_{31}\leq 2$ -->
+<IMG
+ WIDTH="159" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$x_{12}+x_{23}+x_{31}\leq 2$">
+is a facet of&nbsp;<I>conv</I>(<I>S</I>).
+<DT>(d)
+<DD>Let <!-- MATH: $U=\{u_1,\ldots,u_k\}$ -->
+<IMG
+ WIDTH="142" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.gif"
+ ALT="$U=\{u_1,\ldots,u_k\}$">
+and <!-- MATH: $W=\{w_1,\ldots,w_k\}$ -->
+<IMG
+ WIDTH="153" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.gif"
+ ALT="$W=\{w_1,\ldots,w_k\}$">
+              be two subsets of the objects. Show that the inequality
+              <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\sum_{u_i \in U, w_j \in W, i \neq j} x_{w_j,u_i}
+                   + \sum_{i=1}^k x_{u_i,w_i} \leq k^2-k+1
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="344" HEIGHT="63"
+ SRC="img13.gif"
+ ALT="\begin{displaymath}
+\sum_{u_i \in U, w_j \in W, i \neq j} x_{w_j,u_i}
++ \sum_{i=1}^k x_{u_i,w_i} \leq k^2-k+1
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+is valid for&nbsp;<I>S</I>. (Note that the inequality includes <I>k</I> edges pointing
+up in the picture and <I>k</I>(<I>k</I>-1)=<I>k</I><SUP>2</SUP>-<I>k</I> edges pointing down.)
+ <A NAME="fence.ineq">&#160;</A>
+<P>
+
+<DIV ALIGN="CENTER">
+<BR>
+<IMG
+ WIDTH="499" HEIGHT="209" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.gif"
+ ALT="\begin{picture}
+(340,200)
+\put(20,50){\circle*{5}}
+\put(20,150){\circle*{5}}
+\pu...
+...t(320,150){\vector(-2,-1){198}}
+\put(320,150){\vector(-3,-1){298}}
+\end{picture}">
+<BR>
+</DIV>
+
+<P>
+
+<DT>(e)
+<DD>Find a point <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.gif"
+ ALT="$\bar{x}$">,
+<!-- MATH: $0\leq \bar{x}_i \leq 1$ -->
+<IMG
+ WIDTH="90" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.gif"
+ ALT="$0\leq \bar{x}_i \leq 1$">,
+              which satisfies all the equalities in part&nbsp;<A HREF="final03.html#valideq">3a</A>
+              and all the inequalities in part&nbsp;<A HREF="final03.html#dicycle">3b</A>,
+              but which violates the inequality in part&nbsp;<A HREF="final03.html#fence.ineq">3d</A>.
+             (Hint: such a point exists when <I>k</I>=3.)
+         </DL>
+
+<P>
+
+<P>
+
+(intentionally left blank)
+
+<P>
+
+<P>
+
+(intentionally left blank)
+
+<P>
+
+<P>
+
+<DT>4.
+<DD>(15 points; each part is worth 5 points) 
+<BR>
+Consider the integer programming problem
+     <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcrcrcl}
+       \min & -x_1 & + & 2x_2 & + & 3x_3 &
+                   - & 10x_4 & + & 7x_5 \\
+       \mbox{subject to} & 2x_1 & + & x_2 &&& + & 5x_4 & - & 3x_5 & = & 1 \\
+                         & -2x_1 &&& + & x_3 &- & 6x_4 & + & 4x_5 & = & 1 \\
+                     &&&&&&&   x  & \geq & 0, & \mbox{and} & \mbox{integer}
+       \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="563" HEIGHT="99"
+ SRC="img17.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcrcrcl}
+\min &amp; -x_1 &amp; + &amp; 2x_2 &amp; + &amp; 3...
+...&amp;&amp;&amp;&amp;&amp; x &amp; \geq &amp; 0, &amp; \mbox{and} &amp; \mbox{integer}
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+One feasible integral solution is <I>x</I>=(0,1,1,0,0), which has value&nbsp;5.
+The linear programming relaxation of this problem is obtained by ignoring
+the condition that the variables <I>x</I> should be integral.
+The optimal tableau for the LP relaxation is
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{tabular}{|rrrrr|r|}
+\hline
+2 & 1 & 0.5 & 0 & 0 & -3.5 \\\hline
+1 & 2 & 1.5 & 1 & 0 & 3.5 \\
+1 & 3 & 2.5 & 0 & 1 & 5.5 \\\hline
+\end{tabular}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="207" HEIGHT="78"
+ SRC="img18.gif"
+ ALT="\begin{displaymath}
+\begin{tabular}{\vert rrrrr\vert r\vert}
+\hline
+2 &amp; 1 &amp; 0.5 ...
+...&amp; 0 &amp; 3.5 \\
+1 &amp; 3 &amp; 2.5 &amp; 0 &amp; 1 &amp; 5.5 \\ \hline
+\end{tabular}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<DL COMPACT>
+<DT>(a)
+<DD>What is the dual problem to the LP relaxation?
+<DT>(b)
+<DD>Show that any feasible solution to the LP relaxation with
+<IMG
+ WIDTH="57" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$x_1 \geq 1$">
+has value at least 5.5.
+<DT>(c)
+<DD>What can you say about the value of <I>x</I><SUB>1</SUB> in any optimal solution?
+</DL>
+
+<P>
+
+<P>
+
+(intentionally left blank)
+
+<P>
+
+<P>
+
+<DT>5.
+<DD>(20 points) 
+<BR>
+When we looked at tabu search, we considered the problem of finding
+the minimum spanning tree in a graph subject to some side constraints.
+The tabu search process gives a feasible solution, and hence an upper bound
+on the optimal value.
+How would you find a <EM>lower</EM> bound on the optimal value?
+(Note: please include details. You will not get much credit for
+a two-word answer!)
+
+<P>
+
+<P>
+
+(intentionally left blank)
+
+<P>
+</DL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2005-11-28</I>
+</ADDRESS>
+</BODY>
+</HTML>

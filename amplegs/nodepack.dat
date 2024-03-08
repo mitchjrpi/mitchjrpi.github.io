@@ -1,0 +1,15 @@
+set NODES := A B C D E F G H J ;
+
+param k:= 9 ;
+
+set clique[1] := A B;
+set clique[2] := B C;
+set clique[3] := E F;
+set clique[4] := A F G;
+set clique[5] := C G H;
+set clique[6] := C J H;
+set clique[7] := C J D;
+set clique[8] := E J D;
+set clique[9] := F G H;
+
+param c := A 1 B 1 C 1 D 1 E 1 F 1 G 1 H 1 J 1 ;

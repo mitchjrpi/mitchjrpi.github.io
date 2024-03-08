@@ -1,0 +1,496 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw3sol.tex"> 
+<meta name="date" content="2020-02-23 12:01:00"> 
+<link rel="stylesheet" type="text/css" href="hw3sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 27--><p class="noindent" >
+<!--l. 30--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12x-x-120">MATP6640/DSES6770 Linear &amp; Conic Optimization</span></a><span 
+class="cmr-12x-x-120">, Homework 3.</span><br />
+<span 
+class="cmr-12x-x-120">Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 34--><p class="noindent" >
+ Due: Thursday, February 20, 2020.<br />
+10% penalty for each day late.</div>
+<!--l. 67--><p class="noindent" >The following is a primal-dual pair of linear programs:
+   <center class="par-math-display" >
+<img 
+src="hw3sol0x.png" alt="min   cTx                        max   bT y  +   hT u
+                                        T         T
+s.t.  Ax   =   b  (P )           s.t.   A  y  +  H   u  &#x2264;  c  (D )
+      Hx   =   h
+        x  &#x2265;   0
+" class="par-math-display" ></center>
+<!--l. 76--><p class="nopar" >
+Assume (<span 
+class="cmmi-12">P</span>) and (<span 
+class="cmmi-12">D</span>) are both feasible. Further, assume the polyhedron <span 
+class="cmmi-12">Q </span>:= <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0 : <span 
+class="cmmi-12">Ax </span>= <span 
+class="cmmi-12">b</span><span 
+class="cmsy-10x-x-120">} </span>is
+bounded. Let <span 
+class="cmmi-12">z </span>denote the optimal value of (<span 
+class="cmmi-12">P</span>) and (<span 
+class="cmmi-12">D</span>). For any appropriately dimensioned
+vector&#x00A0;<span 
+class="cmmi-12">&#x03C0;</span>, define
+   <center class="math-display" >
+<img 
+src="hw3sol1x.png" alt="              T      T
+&#x0398;(&#x03C0; ) := minx {c x + &#x03C0; (h - Hx ) : Ax = b,x &#x2265; 0}
+" class="math-display" ></center>
+<!--l. 84--><p class="nopar" >
+The function &#x0398;(<span 
+class="cmmi-12">&#x03C0;</span>) is concave and provides an underestimate of&#x00A0;<span 
+class="cmmi-12">z </span>for any&#x00A0;<span 
+class="cmmi-12">&#x03C0;</span>. The best lower
+bound is obtained by maximizing&#x00A0;&#x0398;(<span 
+class="cmmi-12">&#x03C0;</span>). This construction is used in Questions <a 
+href="#x1-63">3<!--tex4ht:ref: q1 --></a>, <a 
+href="#x1-84">4<!--tex4ht:ref: q2 --></a>
+and&#x00A0;<a 
+href="#x1-105">5<!--tex4ht:ref: q2followup --></a>.
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">Let the polyhedron <span 
+class="cmmi-12">Q </span>= <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208;</span> <span 
+class="cmmi-12">I</span><span style="margin-left:0.3em" class="thinspace"></span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">R</span><sup><span 
+class="cmr-8">2</span></sup> : 3<span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmr-8">1</span></sub>+5<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>15<span 
+class="cmmi-12">, </span>2<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>2<span 
+class="cmmi-12">,x</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>2<span 
+class="cmmi-12">,</span><span 
+class="cmsy-10x-x-120">-</span>3<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub>+<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>6<span 
+class="cmsy-10x-x-120">}</span>.
+      Graph this polyhedron, and hence find matrices <span 
+class="cmmi-12">B </span>and <span 
+class="cmmi-12">C </span>such that <span 
+class="cmmi-12">Q </span>= <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208;</span> <span 
+class="cmmi-12">I</span><span style="margin-left:0.3em" class="thinspace"></span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">R</span><sup><span 
+class="cmr-8">2</span></sup> :
+      <span 
+class="cmmi-12">x </span>= <span 
+class="cmmi-12">By </span>+ <span 
+class="cmmi-12">Cz,y </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmmi-12">,z </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmmi-12">,</span><span 
+class="cmex-10x-x-120">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">i</span></sub> = 1<span 
+class="cmsy-10x-x-120">}</span>.
+      <!--l. 112--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+                                                                                         
+                                                                                         
+      <div class="center" 
+>
+<img src=hw3q1.png>
+</div>
+      <center class="par-math-display" >
+      <img 
+src="hw3sol2x.png" alt="                      [           ]
+     [ 1  1 ]           - 5  2   5
+B =           ,  C =      6      3  .
+       2  3             3.5  2  2
+      " class="par-math-display" ></center>
+      <!--l. 161--><p class="nopar" >
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2">Let <span 
+class="cmmi-12">K</span><sub><span 
+class="cmr-8">1</span></sub> and <span 
+class="cmmi-12">K</span><sub><span 
+class="cmr-8">2</span></sub> be two finitely generated convex cones in <span 
+class="cmmi-12">I</span><span style="margin-left:0.3em" class="thinspace"></span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">R</span><sup><span 
+class="cmmi-8">n</span></sup>. Prove that <span 
+class="cmmi-12">K</span><sub>
+<span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">&#x2229; </span><span 
+class="cmmi-12">K</span><sub><span 
+class="cmr-8">2</span></sub> is a
+      finitely generated convex cone.
+      <!--l. 221--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 224--><p class="noindent" >Since <span 
+class="cmmi-12">K</span><sub><span 
+class="cmr-8">1</span></sub> and <span 
+class="cmmi-12">K</span><sub><span 
+class="cmr-8">2</span></sub> are finitely generated, they are also finitely constrained, by Weyl&#8217;s theorem.
+      So we can find matrices <span 
+class="cmmi-12">B </span>and <span 
+class="cmmi-12">C </span>such that
+      <center class="math-display" >
+      <img 
+src="hw3sol3x.png" alt="              n                              n
+K1 =  {x &#x2208; IR   : Bx &#x2265; 0},     K2 = {x  &#x2208; IR  : Cx &#x2265;  0}.
+      " class="math-display" ></center>
+      <!--l. 229--><p class="nopar" >
+      Then
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="hw3sol4x.png" alt="                    n
+K1  &#x2229; K2 =  {x &#x2208; IR  : Bx &#x2265;  0,Cx  &#x2265; 0}.
+      " class="math-display" ></center>
+      <!--l. 233--><p class="nopar" >
+      This is a finitely constrained convex cone, so by Minkowski&#8217;s theorem it is also finitely
+      generated.
+      </li>
+      <li 
+  class="enumerate" id="x1-7x3"><a 
+ id="x1-63"></a> Show that the maximum value of &#x0398;(<span 
+class="cmmi-12">&#x03C0;</span>) is equal to&#x00A0;<span 
+class="cmmi-12">z</span>.
+      <!--l. 239--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 242--><p class="noindent" >Since (<span 
+class="cmmi-12">P</span>) and (<span 
+class="cmmi-12">D</span>) are both feasible, they both have optimal solutions. Let (<span class="bar-css"><span 
+class="cmmi-12">y</span></span><span 
+class="cmmi-12">,</span><span class="bar-css"><span 
+class="cmmi-12">u</span></span>) be an
+      optimal solution to&#x00A0;(<span 
+class="cmmi-12">D</span>). Then
+      <center class="math-display" >
+      <img 
+src="hw3sol5x.png" alt="&#x0398; (¯u)  =   minx{cT x + ¯uT(h - Hx ) : Ax = b,x &#x2265; 0 }
+            T                 T  T
+       =   h ¯u +  minx{(c - H  ¯u ) x : Ax = b,x &#x2265; 0}
+       =   hT¯u +  max  {bT&#x03C0; : AT &#x03C0; &#x2264; c - HT ¯u}  from  LP duality
+                      &#x03C0;
+       &#x2265;   hT¯u + bTy¯  since (¯y, ¯u ) is feasible in (D )
+
+       =   z
+      " class="math-display" ></center>
+      <!--l. 255--><p class="nopar" >
+      We are given that &#x0398;(<span class="bar-css"><span 
+class="cmmi-12">u</span></span>) <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">z</span>.
+      <!--l. 258--><p class="noindent" >Thus, we have that <span class="bar-css"><span 
+class="cmmi-12">u</span></span> solves the Lagrangian dual problem with optimal value &#x0398;(<span class="bar-css"><span 
+class="cmmi-12">u</span></span>) = <span 
+class="cmmi-12">z</span>, as
+      required.
+      </li>
+      <li 
+  class="enumerate" id="x1-9x4"><a 
+ id="x1-84"></a> Assume the maximum value of the concave function &#x0398;(<span 
+class="cmmi-12">&#x03C0;</span>) can be overestimated
+      using a piecewise linear function, resulting in a linear programming problem of the
+      form
+      <center class="math-display" >
+      <img 
+src="hw3sol6x.png" alt="max             &#x03B8;
+s.t.   G &#x03C0;  +   d&#x03B8;  &#x2264;   v               (LD )
+      " class="math-display" ></center>
+      <!--l. 270--><p class="nopar" >
+      where <span 
+class="cmmi-12">G </span>is a matrix, <span 
+class="cmmi-12">v </span>is a vector, and <span 
+class="cmmi-12">d </span>is a nonnegative vector. The optimal value of (<span 
+class="cmmi-12">LD</span>)
+                                                                                         
+                                                                                         
+      overestimates the maximum possible value of&#x00A0;&#x0398;(<span 
+class="cmmi-12">&#x03C0;</span>). Assume an optimal solution <span class="bar-css"><span 
+class="cmmi-12">&#x03C0;</span></span>,
+      <span class="bar-css"><span 
+class="cmmi-12">&#x03B8;</span></span> for (<span 
+class="cmmi-12">LD</span>) is known. Let <span class="bar-css"><span 
+class="cmmi-12">x</span></span> solve &#x0398;(<span class="bar-css"><span 
+class="cmmi-12">&#x03C0;</span></span>). Assume <span class="bar-css"><span 
+class="cmmi-12">&#x03B8;</span></span> <span 
+class="cmmi-12">&#x003E; </span>&#x0398;(<span class="bar-css"><span 
+class="cmmi-12">&#x03C0;</span></span>). Give a valid linear
+      constraint that must be satisfied by <span 
+class="cmmi-12">&#x03C0; </span>and&#x00A0;&#x0398;(<span 
+class="cmmi-12">&#x03C0;</span>) for all&#x00A0;<span 
+class="cmmi-12">&#x03C0;</span>, and is violated by <span class="bar-css"><span 
+class="cmmi-12">&#x03C0;</span></span>,
+      <span class="bar-css"><span 
+class="cmmi-12">&#x03B8;</span></span>.
+      <!--l. 284--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <center class="par-math-display" >
+      <img 
+src="hw3sol7x.png" alt="           T
+- (h - H x¯) (&#x03C0; - ¯&#x03C0;) + &#x03B8; &#x2264; &#x0398; (¯&#x03C0;)
+      " class="par-math-display" ></center>
+      <!--l. 289--><p class="nopar" >
+      since <span 
+class="cmmi-12">h </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">H</span><span class="bar-css"><span 
+class="cmmi-12">x</span></span> is a subgradient of &#x0398;(<span 
+class="cmmi-12">&#x03C0;</span>) at&#x00A0;<span class="bar-css"><span 
+class="cmmi-12">&#x03C0;</span></span>. Equivalently,
+      <center class="math-display" >
+      <img 
+src="hw3sol8x.png" alt="- (h - H ¯x)T&#x03C0; +  &#x03B8; &#x2264; cT¯x
+      " class="math-display" ></center>
+      <!--l. 294--><p class="nopar" >
+      We can also derive this inequality by noting that
+      <center class="math-display" >
+      <img 
+src="hw3sol9x.png" alt="&#x0398; (&#x03C0;)  =   minx{cT x + &#x03C0;T(h - Hx  ) : Ax = b,x &#x2265; 0}
+            T     T
+       &#x2264;   c ¯x + &#x03C0;  (h -  H ¯x)  since x¯is feasible in the Lagrangian  LP for any &#x03C0;.
+      " class="math-display" ></center>
+      <!--l. 302--><p class="nopar" >
+      </li>
+      <li 
+  class="enumerate" id="x1-11x5"><a 
+ id="x1-105"></a> Now assume all of the constraints in (<span 
+class="cmmi-12">LD</span>) have the same form as the constraint you just
+      found in question&#x00A0;<a 
+href="#x1-84">4<!--tex4ht:ref: q2 --></a>. What is the relationship between this approach to solving (<span 
+class="cmmi-12">P</span>) and
+      Dantzig-Wolfe Decomposition?
+      <!--l. 311--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 314--><p class="noindent" >Since <span 
+class="cmmi-12">Q </span>is assumed bounded, the solution <span class="bar-css"><span 
+class="cmmi-12">x</span></span> to &#x0398;(<span 
+class="cmmi-12">&#x03C0;</span>) can be taken to be an extreme point of
+      <span 
+class="cmmi-12">Q </span>for any&#x00A0;<span 
+class="cmmi-12">&#x03C0;</span>. Hence (<span 
+class="cmmi-12">LD</span>) takes the form
+      <center class="math-display" >
+      <img 
+src="hw3sol10x.png" alt="max                       &#x03B8;
+s.t.   - (h - Hxj )T &#x03C0;  +   &#x03B8;  &#x2264;  cTxj       for extreme points xj of Q
+      " class="math-display" ></center>
+      <!--l. 322--><p class="nopar" >
+      The dual of this LP is
+      <center class="math-display" >
+      <img 
+src="hw3sol11x.png" alt="                &#x2211;
+min &#x03BB;       &#x2211;     j(cTxj)&#x03BB;j
+subject to    j(Hxj  - h)&#x03BB;j  =   0
+                     &#x2211;   &#x03BB;   =   1
+                        j j
+                         &#x03BB;j  &#x2265;   0  &#x2200;j
+      " class="math-display" ></center>
+      <!--l. 331--><p class="nopar" >
+      Equivalently, since <span 
+class="cmmi-12">h </span>is constant and using the convexity constraint, we obtain
+      <center class="math-display" >
+      <img 
+src="hw3sol12x.png" alt="            &#x2211;    T
+min &#x03BB;       &#x2211; j(c xj)&#x03BB;j
+subject to    j(Hx&#x2211;j )&#x03BB;j  =   h
+                    j &#x03BB;j =   1
+                     &#x03BB;j  &#x2265;   0  &#x2200;j
+      " class="math-display" ></center>
+      <!--l. 340--><p class="nopar" >
+      which is exactly the Dantzig-Wolfe Master Problem. (Note that we&#8217;ve reversed the roles of
+      the two sets of constraints <span 
+class="cmmi-12">Ax </span>= <span 
+class="cmmi-12">b </span>and <span 
+class="cmmi-12">Hx </span>= <span 
+class="cmmi-12">h </span>from the class notes.)
+      </li>
+      <li 
+  class="enumerate" id="x1-13x6">Let the ellipsoid <span 
+class="cmmi-12">E </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">I</span><span style="margin-left:0.3em" class="thinspace"></span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">R</span><sup><span 
+class="cmmi-8">n</span></sup> be defined using a symmetric positive definite <span 
+class="cmmi-12">n</span><span 
+class="cmsy-10x-x-120">&#x00D7;</span><span 
+class="cmmi-12">n </span>matrix <span 
+class="cmmi-12">M </span>and
+      an <span 
+class="cmmi-12">n</span>-vector&#x00A0;<span 
+class="cmmi-12">z </span>as
+      <center class="math-display" >
+      <img 
+src="hw3sol13x.png" alt="E := {x &#x2208;  IRn : (x - z )T M -1(x - z) &#x2264; 1},
+      " class="math-display" ></center>
+      <!--l. 372--><p class="nopar" >
+      where <span 
+class="cmmi-12">n &#x003E; </span>1. Let <span 
+class="cmmi-12">a </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">I</span><span style="margin-left:0.3em" class="thinspace"></span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">R</span><sup><span 
+class="cmmi-8">n</span></sup>. Define updated values of <span 
+class="cmmi-12">M </span>and <span 
+class="cmmi-12">z </span>as
+      <center class="math-display" >
+      <img 
+src="hw3sol14x.png" alt="          2             T
+¯M   :=  nn2-1 (M  -  (n2+M1a)aaTMMa-)
+ ¯z  :=  z - ----Ma&#x221A;-----.
+            (n+1) aTMa
+      " class="math-display" ></center>
+      <!--l. 380--><p class="nopar" >
+      Assume <span 
+class="cmmi-12">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>= <span 
+class="cmmi-12">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">z </span>and (<span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">z</span>)<sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">M</span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sup>(<span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">z</span>) = 1, so <span 
+class="cmmi-12">x </span>is on the intersection of the cutting
+      hyperplane and the boundary of the original ellipsoid. Show that (<span 
+class="cmmi-12">x</span><span 
+class="cmsy-10x-x-120">-</span><span class="bar-css"><span 
+class="cmmi-12">z</span></span>)<sup><span 
+class="cmmi-8">T</span> </sup><span class="bar-css"><span 
+class="cmmi-12">M</span></span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sup>(<span 
+class="cmmi-12">x</span><span 
+class="cmsy-10x-x-120">-</span><span class="bar-css"><span 
+class="cmmi-12">z</span></span>) = 1, so <span 
+class="cmmi-12">x </span>is
+      also on the boundary of the new ellipsoid. (Hint: You may assume <span class="bar-css"><span 
+class="cmmi-12">M</span></span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sup><span style="margin-left:0.3em" class="thinspace"></span> = <span style="margin-left:0.3em" class="thinspace"></span><img 
+src="hw3sol15x.png" alt=" 2
+nn-21"  class="frac" align="middle">(<span 
+class="cmmi-12">M</span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sup> + <span 
+class="cmmi-12">&#x03B2;aa</span><sup><span 
+class="cmmi-8">T</span> </sup>),
+      where&#x00A0;<span 
+class="cmmi-12">&#x03B2;</span><span style="margin-left:0.3em" class="thinspace"></span> = <span style="margin-left:0.3em" class="thinspace"></span><img 
+src="hw3sol16x.png" alt="(n-12)aTMa"  class="frac" align="middle">.)
+      <!--l. 390--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 393--><p class="noindent" >With the given formula for <span class="bar-css"><span 
+class="cmmi-12">M</span></span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sup> we get
+      <center class="math-display" >
+      <img 
+src="hw3sol17x.png" alt="(x - z¯)TM¯-1(x - ¯z)
+         2  (                   )T               (                   )
+    =   n-n21 x - z +  ---Ma&#x221A;-T----  (M - 1 + &#x03B2;aaT ) x - z + ----M&#x221A;a-T---
+        n2- 1(      ( T(n+1) a M2a)           T    -1      T   (n+1M)a a Ma
+    =   -n2- 1 + &#x03B2;  a  (x - z )  + 2(x - z)  (M    +  &#x03B2;aa  )(n+1)&#x221A;aTMa--
+                       ----aT-M----   -1       T ----Ma-----)
+            (        + (n+1)&#x221A;aTMa-(M    + &#x03B2;aa  )(n+1)&#x221A;a)T-Ma-
+        n2--1      ---aT&#x221A;M-----  -1       T ----Ma&#x221A;-----
+    =    n2  1 +  (n+1) aTMa (M    + &#x03B2;aa  )(n+1) aTMa
+            (   since aT(x - z) =) 0
+        n2--1      --1---  &#x03B2;aTMa-
+    =    n2 (1 +  (n+1)2 + (n+1)2    )
+    =   n2--1 1 +  --1--+  ----2-----    from value of &#x03B2;
+         n22       (n+1)22   (n- 1)(n+1)2
+    =   (n--1)((nn2-(n1-)(n1+)(1n)+1+)2n-1+2)-
+        (n+1)(n2--1+1)-                            2
+    =     n2(n+1)        since (n - 1)(n + 1) = n  - 1
+    =  1
+      " class="math-display" ></center>
+      <!--l. 421--><p class="nopar" >
+      as desired.
+      </li>
+      <li 
+  class="enumerate" id="x1-15x7">The <span 
+class="cmbx-12">Project: </span><br 
+class="newline" />Along with your solutions to this homework, hand in a brief description of what you
+      would like to do for the project part of this course. Your project can be one of the
+      following:
+           <ul class="itemize1">
+           <li class="itemize">a topic arising in your research that fits well with the topics covered in the course.
+           You would work on your own on such a project.
+                                                                                         
+                                                                                         
+           </li>
+           <li class="itemize">another project you suggest or I suggest. You can work in groups of up to three
+           people on such a project. All group members should contribute equally to the
+           project. Each individual should turn in a one-page description of their contribution
+           to the project along with the group report.</li></ul>
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                     </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Monday: 2&#8211;4pm, Wednesday: 11am&#8211;1pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

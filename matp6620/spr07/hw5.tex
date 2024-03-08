@@ -1,0 +1,245 @@
+\documentclass[12pt]{article}
+
+\pagestyle{empty}
+
+%\oddsidemargin -.1in
+%\textwidth 6.5in
+%\textheight 8.9in
+%\topmargin -30pt
+%\headsep 0in
+%\headheight 0in
+
+\usepackage{fullpage}
+
+\pagestyle{empty}
+
+\newcommand{\til}{\char '176}
+\newcommand{\re}{I\!\!R}
+
+
+\begin{document}
+
+\begin{center}
+  \begin{large}
+     MATP6620 / DSES6760 \\
+Combinatorial Optimization and Integer Programming \\
+       Homework 5.
+  \end{large}
+\end{center}
+
+\begin{flushright}
+   Due:  Friday, March 30, 2007.
+\end{flushright}
+
+%\vspace{\baselineskip}
+
+
+\begin{enumerate}
+\item Nemhauser and Wolsey, page 381, question 3.  \label{q.381.3}
+\item Find a valid cover inequality that is violated by the optimal solution to the initial LP relaxation
+for the problem in Question~\ref{q.381.3}.
+What do you get when you lift this inequality?
+What is the optimal solution when you add your lifted cover inequality to the LP relaxation?
+\item Nemhauser and Wolsey, page 381, question 8.
+
+%\item Nemhauser and Wolsey, page 346, question 14, parts (i), (ii), (iii), and (v).
+%\item Nemhauser and Wolsey, page 346, question 15.
+\item Nemhauser and Wolsey, page 346, question 13.
+\item Nemhauser and Wolsey, page 347, question 16.
+(Consider the criteria listed in question 15 on page 346.)
+
+\item Give a progress report on your project. Your report should be at least a couple of
+paragraphs long. It doesn't need to repeat anything from your initial report from February~23.
+
+%   \item  Consider the 0-1 equality knapsack problem
+%          \begin{displaymath}
+%             \max \{-x_{n+1} : 2x_1 + 2x_2 + \ldots + 2x_n + x_{n+1} = n,
+%                         x \in B^{n+1} \},
+%          \end{displaymath}
+%          where $n$ is an odd integer.
+%          We wish to solve this problem using a branch and bound algorithm
+%          with linear programming relaxations.
+%          Assume
+%          we always branch using variable dichotomies
+%          (ie, add the constraints $x_i = 0$ or $x_i = 1$ for some $i$).
+%          Show that an exponential number of nodes of the
+%          branch and bound tree must be considered to solve the problem.
+%%          What is the minimum number of nodes we need if we can separate
+%%          using any linear inequality?
+
+%   \item  Use branch-and-bound with LP relaxations to solve the knapsack problem
+%          \begin{displaymath}
+%           \begin{array}{lrrrrl}
+%            \max          &  20x_1 & + 30x_2 & + 40x_3 & + 42x_4  \\
+%            \mbox{s.t.}   &    x_1 & +  3x_2 & +  5x_3 & +  6x_4 & \leq 7 \\
+%                          &&&&     x_i & \mbox{binary,}
+%           \end{array}
+%          \end{displaymath}
+%          branching using variable dichotomies.
+%          Give a valid cover inequality violated by your solution to the root node.
+%          What do you get if you lift this inequality?
+
+%\item
+%   Consider the integer programming problem
+%     \begin{displaymath}
+%      \begin{array}{lrcrcrcrcrcl}
+%       \min & -x_1 & + & 2x_2 & + & 3x_3 &
+%                   - & 10x_4 & + & 7x_5 \\
+%       \mbox{subject to} & 2x_1 & + & x_2 &&& + & 5x_4 & - & 3x_5 & = & 1 \\
+%                         & -2x_1 &&& + & x_3 &- & 6x_4 & + & 4x_5 & = & 1 \\
+%                     &&&&&&&   x  & \geq & 0, & \mbox{and} & \mbox{integer}
+%       \end{array}
+%     \end{displaymath}
+%One feasible integral solution is $x=(0,1,1,0,0)$, which has value~5.
+%The linear programming relaxation of this problem is obtained by ignoring
+%the condition that the variables $x$ should be integral.
+%The optimal tableau for the LP relaxation is
+%\begin{displaymath}
+%\begin{tabular}{|rrrrr|r|}
+%\hline
+%2 & 1 & 0.5 & 0 & 0 & -3.5 \\  \hline
+%1 & 2 & 1.5 & 1 & 0 & 3.5 \\
+%1 & 3 & 2.5 & 0 & 1 & 5.5 \\ \hline
+%\end{tabular}
+%\end{displaymath}
+%\begin{enumerate}
+%% \item What is the dual problem to the LP relaxation?
+% \item Using the optimal tableau,
+% show that any feasible solution to the LP relaxation with
+%$x_1 \geq 1$ has value at least 5.5.
+%%(Hint: There are many ways to show this.
+%%For example, you could add the constraint $x_1 \geq 1$ to the
+%%given tableau and reoptimize using the dual simplex method.)
+% \item What can you say about the value of $x_1$ in any optimal solution?
+%\end{enumerate}
+
+%\item  \label{sdpclique}
+%Given a graph $G=(V,E)$, let $n=|V|$ be the number of nodes.
+%We can set up a semidefinite programming problem
+%with the $n \times n$ symmetric matrix $X$ of variables:
+%\begin{displaymath}
+%\begin{array}{lrcllr}
+%\max & \sum_{i=1}^n \sum_{j=1}^n X_{ij} &&\qquad \\
+%\mbox{subject to} & X_{ij} & = & 0 & \mbox{if } (i,j) \not\in E  & \qquad (P) \\
+%& \sum_{i=1}^n X_{ii} & = & 1  \\
+%& X & \succeq & 0
+%\end{array}
+%\end{displaymath}
+%Show that the optimal value of this SDP gives an upper bound on the
+%maximum cardinality of a clique in~$G$.
+
+%\item
+%Problem $(P)$ in question~\ref{sdpclique} has a dual:
+%\begin{displaymath}
+%\begin{array}{lrcrcrcllr}
+%\min &&& z \\
+%\mbox{subject to} & -S_{ii} & + & z &&& = & 1 & i=1,\ldots,n & \qquad (D)  \\
+%& -S_{ij} &&& + & y_{ij} & = & 1 &   \mbox{if } (i,j) \not\in E  \\
+%& -S_{ij} &&&&& = & 1 & \mbox{if } (i,j) \in E \\
+%& S &&&&& \succeq & 0
+%\end{array}
+%\end{displaymath}
+%Here, $S$ is constrained to be a symmetric positive semidefinite $n \times n$
+%matrix,
+%$z$ is a scalar, and each $y_{ij}$ for $(i,j) \not \in E$ is a scalar with
+%$y_{ij}=y_{ji}$.
+%Show that the optimal value of the dual problem gives a lower bound
+%on the minimum number of colours needed to colour the nodes of the
+%graph so that no adjacent nodes receive the same colour.
+%(Hint: An $n \times n$ symmetric matrix~$M$ is diagonally dominant if
+%$M_{ii} \geq \sum_{j \neq i, j=1}^n |M_{ij}|$ for each row~$i$.
+%A diagonally dominant matrix is positive semidefinite.)
+
+
+
+%   \item
+%In the examples below, $x$ is required to be a nonnegative vector
+%in~$\re^3$ and $y$ is constrained to be a binary vector with three
+%components.
+%A set of constraints that must be satisfied by $x$ and $y$ is given,
+%and a point that satisfies these constraints is also given.
+%Find a valid flow cover inequality that cuts off this point.
+%\begin{enumerate}
+%\item
+%Constraints:
+%\begin{displaymath}
+%x_1+x_2+x_3 \leq 7, \; x_1 \leq 3y_1, \; x_2 \leq 5y_2, \; x_3 \leq 6y_3.
+%\end{displaymath}
+%Point:
+%\begin{displaymath}x=(2,5,0), \; y=(\frac{2}{3},1,0).
+%\end{displaymath}
+%\item
+%Constraints:
+%\begin{displaymath}
+%7 \leq x_1+x_2+x_3, \; x_1 \leq 3y_1, \; x_2 \leq 5y_2, \; x_3 \leq 6y_3.
+%\end{displaymath}
+%Point:
+%\begin{displaymath}x=(2,5,0), \; y=(\frac{2}{3},1,0).
+%\end{displaymath}
+%\end{enumerate}
+
+%   \item
+%         Interpret the numbers on the edges in the graph
+%         below as both edge numbers and edge weights.
+%         We are looking for a minimum weight spanning tree,
+%         subject to the constraints
+%         \begin{displaymath}
+%           x_1 \leq x_6, \quad x_2 \leq x_7, \quad x_3 \leq x_8,
+%         \end{displaymath}
+%         where $x_i=1$ if edge $e_i$ is in the tree, and 0 otherwise.
+%         Use tabu search to find the minimum weight spanning tree subject
+%         to these constraints. The move should be from tree to tree,
+%         with one edge entering and one leaving.
+%         Use a penalty of 50 for each violated constraint.
+%         The tabu restrictions are that added edges can not leave for
+%         one iteration, and dropped edges can not enter for one iteration.
+%         The initial tree should be the minimum weight spanning tree,
+%         without considering the constraints.
+%         (You should not need to use aspiration criteria.
+%         You may assume that once you have visited two local minima,
+%         one of them is the optimal solution.)
+
+%\begin{picture}(420,140)(-80,0)
+%  \put(20,20){\line(1,0){100}}
+%  \put(20,20){\line(1,1){100}}
+%  \put(120,20){\line(0,1){100}}
+%  \put(120,120){\line(1,0){100}}
+%  \put(120,20){\line(1,0){100}}
+%  \put(220,20){\line(0,1){100}}
+%  \put(220,20){\line(1,1){100}}
+%  \put(220,120){\line(1,0){100}}
+
+%
+%  \put(20,20){\circle*{3}}
+%  \put(120,20){\circle*{3}}
+%  \put(120,120){\circle*{3}}
+%  \put(220,20){\circle*{3}}
+%  \put(220,120){\circle*{3}}
+%  \put(320,120){\circle*{3}}
+
+%
+%  \put(55,70){1}
+%  \put(70,10){8}
+%  \put(125,70){4}
+%  \put(170,10){5}
+%  \put(170,125){3}
+%  \put(210,70){6}
+%  \put(270,125){7}
+%  \put(270,60){2}
+%\end{picture}
+
+\end{enumerate}
+
+\vfill
+
+\begin{tabular}{@{\hspace{.5in}}l}
+   John Mitchell  \\
+   Amos Eaton 325  \\
+   x6915.  \\
+   mitchj@rpi.edu  \\
+   Office hours:
+   Tuesday 2pm -- 3pm, Wednesday 11am -- noon.
+\end{tabular}
+
+
+\end{document}

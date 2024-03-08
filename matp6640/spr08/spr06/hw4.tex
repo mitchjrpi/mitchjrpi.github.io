@@ -1,0 +1,116 @@
+\documentclass[12pt]{article}
+
+\pagestyle{empty}
+
+\oddsidemargin -.5in
+\textwidth 7.5in
+\textheight 10in
+\topmargin -30pt
+\headsep 0in
+\headheight 0in
+
+\newcommand{\re}{I \!\! R}
+
+\begin{document}
+
+\begin{center}
+  \begin{large}
+     MATP6640/DSES6770 Linear Programming, Homework 4.
+  \end{large}
+\end{center}
+
+\begin{flushright}
+   Due:  Tuesday, March 28, 2006.
+\end{flushright}
+
+
+%\vspace{\baselineskip}
+
+\begin{enumerate}
+\item
+Use the network simplex algorithm to find the minimum cost flow for the problem
+with
+the following linear programming representation:
+\begin{displaymath}
+\begin{array}{lrcrcrcrcrcrcl}
+\min & & - & 2x_{13}& - & x_{23} & - & 2x_{24} &&& - & 10 x_{41} \\
+\mbox{subject to} & -x_{12} & - & x_{13} &&&&&&& + & x_{41} & = & 0 \\
+& x_{12} &&& - & x_{23} & - & x_{24} &&&&& = & 0 \\
+&&& x_{13} & + & x_{23} &&& - & x_{34} &&& = & 0 \\
+&&&&&&& x_{24} & + & x_{34} & - & x_{41} & = & 0 \\
+& \multicolumn{11}{r}{0 \, \leq \, x_{12}, x_{13}, x_{23}, x_{24}, x_{34}}
+& \leq & 1 \\
+&&&&&&&&& 0 & \leq & x_{41} & \leq & 10
+\end{array}
+\end{displaymath}
+Use the initial basic feasible solution with basic variables
+$ %\begin{displaymath}
+x_{12} = 1, x_{34}=1, x_{41}=1
+$ %\end{displaymath}
+and nonbasic variables
+$ %\begin{displaymath}
+x_{13}=0, x_{23}=1, x_{24}=0.
+$ %\end{displaymath}
+You should need three iterations.
+\item   \label{q.multiform}
+A multicommodity network flow problem on a graph $G=(V,E)$ with $K$ commodities
+can be expressed in a path-based formulation, with a set of paths $P(k)$
+for each commodity~$k$.
+Assume each commodity has a single source node and a single sink node.
+This leads to the linear program
+\begin{displaymath}
+\begin{array}{lrcll}
+\min & \sum_{k=1}^K \sum_{p \in P(k)} w_p f_p \\
+\mbox{subject to} & \sum_{p \in P(k)} f_p & = & d_k & k = 1,\ldots,K  \\
+& \sum_{k=1}^K \sum_{p \in P(k): e \in p} f_p & \leq & u_e & \forall e \in E  \\
+& f_p & \geq & 0 & \forall p \in P(k), \mbox{ for } k=1,\ldots,K
+\end{array}
+\end{displaymath}
+where $d_k$ is the demand for commodity $k$,
+$u_e$ is the capacity of edge~$e$,
+and $w_p$ is the cost of sending one unit of flow along path~$p$.
+Let $c_e^k$ be the cost of shipping one unit of commodity $k$ on arc~$e$;
+we have $w_p=\sum_{e \in p} c_e^k$ for $p \in P(k)$.
+The set $P(k)$ typically does not include all paths that can be used by commodity~$k$.
+Assume the LP is solved, and you know a primal and dual optimal solution.
+Show that determining whether another path should be added to one of the
+sets $P(k)$ requires solving a shortest path problem.
+
+\item
+Consider a multicommodity network flow problem with three commodities
+on a graph $G=(V,E)$ with five nodes and seven edges.
+The seven edges and their costs and capacities are as follows:
+\begin{displaymath}
+\begin{array}{l|rrrrrrr}
+\mbox{edge} & (1,2) & (1,5) & (2,3) & (2,4) & (2,5) & (3,4) & (4,5) \\ \hline
+\mbox{cost}   &  10  &  11 &  7 & 10 & 6 & 6 & 8 \\
+\mbox{capacity} & 30 & 40 & 25 & 50 & 40 & 25 & 50
+\end{array}
+\end{displaymath}
+The costs are identical for each commodity.
+25 units of commodity A need to be moved from node 1 to node~3.
+20 units of commodity B need to be moved from node 5 to node~3.
+20 units of commodity C need to be moved from node 4 to node~1.
+The current set of paths consists of $1 \rightarrow 2 \rightarrow 3$
+and $1 \rightarrow 5 \rightarrow 4 \rightarrow 3$ for commodity~A,
+$5 \rightarrow 2 \rightarrow 3$ for commodity~B,
+and $4 \rightarrow 5 \rightarrow 1$ for commodity~$C$.
+Use the methodology of Question~\ref{q.multiform} to show
+that this is not an optimal set of paths.
+What is the optimal solution?
+\item
+Chvatal, Question 15.8 on page 238.
+\end{enumerate}
+
+
+\vfill
+
+\begin{tabular}{@{\hspace{.5in}}l}
+   John Mitchell  \\
+   Amos Eaton 325  \\
+   x6915.  \\
+   mitchj@rpi.edu  \\
+   Office hours: Tuesday: 2 -- 3.30pm.
+\end{tabular}
+
+\end{document}

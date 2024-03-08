@@ -1,0 +1,402 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Exam 3 Fall 2005</TITLE>
+<META NAME="description" CONTENT="exam3f05">
+<META NAME="keywords" CONTENT="exam3f05">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="exam3f05.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+
+<P>
+<DIV ALIGN="CENTER">
+<A href=http://www.rpi.edu/~mitchj/matp4700>
+Math Models of Operations Research, MATP 4700/ DSES 4770.
+</a>
+</DIV>
+<P>
+<DIV ALIGN="CENTER">Third Exam, Friday, December 9, 2005.
+
+</DIV>
+
+<P>
+
+<OL>
+<LI>(40 points)
+Consider the standard form LP
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lrcrcrcl}
+\min & 10x_1 & + & x_2 \\
+\mbox{s.t.} & x_1 & - & x_2 & + & 2x_3 & = & 3 \\
+&&&x_2 & - & x_3 & = & 2 \\
+& \multicolumn{5}{r}{x_1, x_2, x_3} & \geq & 0
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="255" HEIGHT="83" BORDER="0"
+ SRC="img1.png"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcl}
+\min &amp; 10x_1 &amp; + &amp; x_2 \\
+\mbox{s.t...
+... \\
+&amp; \multicolumn{5}{r}{x_1, x_2, x_3} &amp; \geq &amp; 0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+
+<OL>
+<LI>(7 points)
+Show that <!-- MATH
+ $x^{(0)}=(4,3,1)$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$x^{(0)}=(4,3,1)$"> is an appropriate point to start
+the affine scaling algorithm.
+</LI>
+<LI>(6 points)
+Derive the associated scaled standard form corresponding to
+the solution&nbsp;<IMG
+ WIDTH="31" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$x^{(0)}$">.
+</LI>
+<LI>(7 points)
+The move direction for the affine scaling algorithm is
+<!-- MATH
+ $\Delta x = 7.669(-1,1,1)$
+ -->
+<IMG
+ WIDTH="147" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$\Delta x = 7.669(-1,1,1)$">.
+Show that this direction is improving and feasible at&nbsp;<IMG
+ WIDTH="31" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$x^{(0)}$">.
+</LI>
+<LI>(6 points)
+Compute the <B>maximum possible steplength</B> <!-- MATH
+ $\lambda_{\max}$
+ -->
+<IMG
+ WIDTH="38" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$\lambda_{\max}$">
+in the direction&nbsp;<IMG
+ WIDTH="27" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.png"
+ ALT="$\Delta x$">.
+</LI>
+<LI>(7 points)
+For this problem,
+why must a log barrier method give a direction from
+<IMG
+ WIDTH="31" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$x^{(0)}$"> that is a multiple of&nbsp;<IMG
+ WIDTH="27" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.png"
+ ALT="$\Delta x$">?
+</LI>
+<LI>(7 points)
+The logarithmic barrier subproblem is
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lrcrcrcl}
+\min & 10x_1 & + & x_2 & - & \multicolumn{3}{l}{\mu \sum_{i=1}^3 \ln(x_i)} \\
+\mbox{s.t.} & x_1 & - & x_2 & + & 2x_3 & = & 3 \\
+&&&x_2 & - & x_3 & = & 2 \\
+& \multicolumn{5}{r}{x_1, x_2, x_3} & \geq & 0
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="270" HEIGHT="85" BORDER="0"
+ SRC="img7.png"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcl}
+\min &amp; 10x_1 &amp; + &amp; x_2 &amp; - &amp; \multic...
+... \\
+&amp; \multicolumn{5}{r}{x_1, x_2, x_3} &amp; \geq &amp; 0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+</LI>
+</OL>
+What equations would you solve to verify that <!-- MATH
+ $\bar{x}=(1,6,4)$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$\bar{x}=(1,6,4)$"> solves
+the barrier subproblem for <!-- MATH
+ $\mu=\frac{108}{7}$
+ -->
+<IMG
+ WIDTH="58" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$\mu=\frac{108}{7}$">?
+(Note: you do not need to actually solve the equations.)
+
+<P>
+</LI>
+<LI>(10 points)
+   Express the following fixed charge problem as an equivalent integer programming problem:
+   <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lll}
+   \begin{array}{lrcrcl}
+   \min & c_1(x_1) & + & c_2(x_2) \\
+   \mbox{s.t.} & x_1 & + & 2x_2 & \geq & 10  \\
+   & 2x_1 & +  & x_2 & \geq & 10  \\
+   & 0 & \leq & x_1,x_2 & \leq & 10
+   \end{array}
+&\mbox{  where } &
+ %  \begin{displaymath}
+   \begin{array}{rcl}
+   c_1(x_1) &=&
+   \left\{ \begin{array}{rl} 0 & \mbox{if } x_1=0 \\2+2x_1 & \mbox{otherwise} \end{array} \right. \\
+    c_2(x_2) &=&
+   \left\{ \begin{array}{rl} 0 & \mbox{if } x_2=0 \\1+3x_2 & \mbox{otherwise} \end{array} \right.
+   \end{array}
+    \end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="570" HEIGHT="83" BORDER="0"
+ SRC="img10.png"
+ ALT="\begin{displaymath}
+\begin{array}{lll}
+\begin{array}{lrcrcl}
+\min &amp; c_1(x_1) ...
+... \mbox{otherwise} \end{array} \right.
+\end{array} \end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+</LI>
+<LI>(20 points)
+
+<P>
+Consider the integer program
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lrcrclr}
+\max & x_1 & + & 2x_2 \\
+\mbox{s.t.} & x_1 & + & 5x_2 & \leq & 20 & \qquad (IP)\\
+& 4x_1 & + & x_2 & \leq & 16  \\
+& \multicolumn{3}{r}{x_1, x_2} & \geq & 0, \mbox{ integer}
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="329" HEIGHT="83" BORDER="0"
+ SRC="img11.png"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrclr}
+\max &amp; x_1 &amp; + &amp; 2x_2 \\
+\mbox{s.t.}...
+...icolumn{3}{r}{x_1, x_2} &amp; \geq &amp; 0, \mbox{ integer}
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The optimal solution to the linear programming relaxation of this problem
+is <!-- MATH
+ $\bar{x}=(3\frac{3}{19},3\frac{7}{19})$
+ -->
+<IMG
+ WIDTH="103" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$\bar{x}=(3\frac{3}{19},3\frac{7}{19})$">.
+The problem is illustrated below.
+
+<OL>
+<LI>(6 points)
+Show that the constraint <!-- MATH
+ $x_1+3x_2 \leq 12$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$x_1+3x_2 \leq 12$"> is a valid constraint (that is,
+the constraint is satisfied by all feasible solutions to&nbsp;<IMG
+ WIDTH="37" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$(IP)$">).
+</LI>
+<LI>(6 points)
+Solve graphically the LP relaxation with the extra constraint <!-- MATH
+ $x_1+3x_2 \leq 12$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$x_1+3x_2 \leq 12$">.
+</LI>
+<LI>(8 points)
+Find a valid constraint that is violated by the point you found in part (b).
+Add the constraint to the LP relaxation and graphically solve it again.
+</LI>
+</OL>
+
+<P>
+<DIV ALIGN="CENTER">
+<BR>
+<IMG
+ WIDTH="399" HEIGHT="399" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="\begin{picture}(250,250)(-25,-25)
+\put(-25,0){\vector(1,0){250}}
+\put(0,-25){\ve...
+...)\{$2 frac\{1\}\{3\}$\}
+\put(215,-15){$x_1$}
+\put(-12,215){$x_2$}
+\end{picture}">
+<BR>
+</DIV>
+
+<P>
+</LI>
+<LI>(15 points)
+
+<P>
+Use Dijkstra's algorithm to find the shortest path from vertex 1 to vertex&nbsp;<IMG
+ WIDTH="10" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$t$"> in the
+following graph, where the edge lengths are given on the graph:
+<DIV ALIGN="CENTER">
+<BR>
+<IMG
+ WIDTH="431" HEIGHT="274" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.png"
+ ALT="\begin{picture}(350,200)
+%labelled vertices
+% put(20,190)\{ circle\{20\}\}
+% put...
+...260,65){9}
+\put(260,100){\vector(1,0){50}} %(7,t)
+\put(280,105){3}
+\end{picture}">
+<BR>
+</DIV>
+<BR>
+
+<P>
+</LI>
+<LI>(15 points)
+
+<P>
+Burgess Fuel is planning its purchases of heating oil for the next four months.
+The forecasted demands and purchase costs per gallon are contained in
+the table:
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="RIGHT">month 1</TD>
+<TD ALIGN="RIGHT">month 2</TD>
+<TD ALIGN="RIGHT">month 3</TD>
+<TD ALIGN="RIGHT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT">demand</TD>
+<TD ALIGN="RIGHT">7000</TD>
+<TD ALIGN="RIGHT">8000</TD>
+<TD ALIGN="RIGHT">3000</TD>
+<TD ALIGN="RIGHT">&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="LEFT">price per gallon</TD>
+<TD ALIGN="RIGHT">$2</TD>
+<TD ALIGN="RIGHT">$3</TD>
+<TD ALIGN="RIGHT">$4</TD>
+<TD ALIGN="RIGHT">&nbsp;</TD>
+</TR>
+</TABLE>
+</DIV>
+If they purchase a gallon of oil for use in a later month, they
+pay an inventory cost of $1.20 per gallon per month in storage.
+Each order incurs a fixed delivery cost of $2000, regardless of the
+amount ordered.
+Burgess Fuel currently has no fuel on hand.
+This problem can be approached by dynamic programming,
+with states <IMG
+ WIDTH="86" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$k=1,\ldots,4$"> representing the reaching of month <IMG
+ WIDTH="13" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.png"
+ ALT="$k$"> with all earlier demand
+fulfilled and no inventory on hand.
+Sketch the digraph corresponding to the dynamic program structure.
+Include costs on all arcs.
+Explain why the feasible production plans correspond exactly to the paths from
+node <IMG
+ WIDTH="42" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.png"
+ ALT="$k=1$"> to node <IMG
+ WIDTH="42" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.png"
+ ALT="$k=4$"> in your digraph.
+(Note: you do not need to find the optimal solution.)
+
+<P>
+</LI>
+</OL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL>
+<LI><A NAME="tex2html3"
+  HREF="node1.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John Mitchell</a>
+<br>
+2008-11-26
+</ADDRESS>
+</BODY>
+</HTML>

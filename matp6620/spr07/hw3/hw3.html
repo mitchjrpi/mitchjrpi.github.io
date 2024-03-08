@@ -1,0 +1,301 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Homework 3</TITLE>
+<META NAME="description" CONTENT="hw3">
+<META NAME="keywords" CONTENT="hw3">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="hw3.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+
+<P>
+<DIV ALIGN="CENTER">
+</DIV>
+<a href=..>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">MATP6620 / DSES6760 Combinatorial Optimization and Integer Programming 
+</a>
+<BR>
+Homework 3.
+  </FONT>
+</DIV>
+
+<P>
+<DIV ALIGN="RIGHT">
+Due:  Friday, March 2, 2007.  
+<BR>
+Penalty for late homeworks: 10% for each day or part of a day.
+
+</DIV>
+
+<P>
+Each of the three questions on this homework is worth 20 points.
+
+<P>
+The following graph <IMG
+ WIDTH="94" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$G=(V,E)$"> is used in questions <A HREF="#q.nodepack">1</A> and&nbsp;<A HREF="#q.matching">2</A>.
+
+<P>
+<DIV ALIGN="CENTER">
+<BR>
+<IMG
+ WIDTH="542" HEIGHT="288" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="\begin{picture}(340,180)(-10,-10)
+\put(0,0){\circle{20}}
+\put(-4,-4){A}
+\put(0,1...
+...){66}}
+\put(167,153){\line(1,-1){66}}
+\put(87,73){\line(1,-1){66}}
+\end{picture}">
+<BR>
+</DIV>
+
+<P>
+
+<OL>
+<LI><A NAME="q.nodepack"></A>Consider a node packing problem on the above graph, with each vertex having weight&nbsp;1.
+The LP relaxation includes the clique constraints <!-- MATH
+ $\sum_{v \in C} x_v \leq 1$
+ -->
+<IMG
+ WIDTH="105" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$\sum_{v \in C} x_v \leq 1$">
+for each maximal clique&nbsp;<IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$C$"> in the graph.
+The point <IMG
+ WIDTH="75" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$x_A=0.4$">, <IMG
+ WIDTH="76" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$x_B=0.6$">, <IMG
+ WIDTH="76" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$x_C=0.4$">, <IMG
+ WIDTH="77" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$x_D=0.5$">, <IMG
+ WIDTH="76" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$x_E=0.4$">,
+<IMG
+ WIDTH="75" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$x_F=0.5$">, <IMG
+ WIDTH="76" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$x_G=0.1$">, <IMG
+ WIDTH="77" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$x_H=0.4$">, and <IMG
+ WIDTH="74" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$x_J=0.1$">
+is feasible in the LP relaxation.
+
+<OL>
+<LI>Show that the given point is not in the convex hull of feasible solutions,
+by giving a valid constraint that is violated by this point.
+</LI>
+<LI>Find an optimal solution to the node packing problem for this graph.
+Prove your solution is optimal.
+</LI>
+</OL>
+
+<P>
+</LI>
+<LI><A NAME="q.matching"></A>Consider a matching problem on the graph above.
+The LP relaxation consists of nonnegativity together with the constraints
+<!-- MATH
+ $\sum_{e \in \delta(v)}x_e \leq 1$
+ -->
+<IMG
+ WIDTH="117" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$\sum_{e \in \delta(v)}x_e \leq 1$"> for each vertex&nbsp;<IMG
+ WIDTH="14" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$v$">.
+A feasible solution to the LP relaxation is to take
+<IMG
+ WIDTH="86" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$x_{AB}=0.5$">, <IMG
+ WIDTH="71" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$x_{AF}=0$">, <IMG
+ WIDTH="86" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$x_{AG}=0.5$">, <IMG
+ WIDTH="86" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$x_{BC}=0.5$">, <IMG
+ WIDTH="73" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.png"
+ ALT="$x_{CD}=0$">, <IMG
+ WIDTH="72" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$x_{CG}=0$">,
+<IMG
+ WIDTH="88" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$x_{CH}=0.4$">, <IMG
+ WIDTH="84" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$x_{CJ}=0.1$">, <IMG
+ WIDTH="87" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$x_{DE}=0.2$">, <IMG
+ WIDTH="85" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$x_{DJ}=0.8$">,
+<IMG
+ WIDTH="86" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.png"
+ ALT="$x_{EF}=0.8$">, <IMG
+ WIDTH="70" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$x_{EJ}=0$">, <IMG
+ WIDTH="88" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$x_{FH}=0.2$">, <IMG
+ WIDTH="88" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$x_{GH}=0.4$">, and <IMG
+ WIDTH="71" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$x_{HJ}=0$">.
+
+<OL>
+<LI>Find a valid constraint for the matching problem that is violated by this solution.
+</LI>
+<LI>Assume the six diagonal edges each have weight two and the remaining 10 edges each
+have weight one.
+What is the maximum weight matching?
+Prove your solution is optimal.
+</LI>
+</OL>
+
+<P>
+</LI>
+<LI>Consider the integer programming problem
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lrcrcl}
+\max & x_1 & + & 4x_2  \\
+\mbox{subject to} & 2x_1 & + & 2x_2 & \geq & 3 \\
+& -x_1 & + & 2x_2 & \leq & 5  \\
+& 3x_1 & - & x_2 & \leq & 3  \\
+& \multicolumn{3}{r}{x_1, x_2} & \geq & 0, \mbox{ integer} 
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="331" HEIGHT="122" BORDER="0"
+ SRC="img31.png"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcl}
+\max &amp; x_1 &amp; + &amp; 4x_2 \\
+\mbox{subjec...
+...column{3}{r}{x_1, x_2} &amp; \geq &amp; 0, \mbox{ integer}
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Let <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img32.png"
+ ALT="$S$"> be the set of feasible solutions to this problem.
+
+<OL>
+<LI>Give an inequality description of the convex hull of&nbsp;<IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img32.png"
+ ALT="$S$">.
+</LI>
+<LI>What is the Chvatal rank of each of the facet-defining inequalities
+of the convex hull of&nbsp;<IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img32.png"
+ ALT="$S$">?
+</LI>
+<LI>Solve the LP relaxation of this problem.
+What is the Gomory cutting plane given by the objective function?
+What is the strong Gomory cutting plane given by the objective function,
+using the Gomory mixed integer cut?
+Express the constraints in terms of the original variables&nbsp;<IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.png"
+ ALT="$x_1$"> and <IMG
+ WIDTH="23" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.png"
+ ALT="$x_2$">.
+(You may want to use AMPL to solve the LP relaxation.
+You can then get the reduced costs directly.)
+</LI>
+</OL>
+
+<P>
+</LI>
+</OL>
+
+<P>
+
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT"><a href=../..>John
+Mitchell</a></TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT">Amos Eaton 325</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT">x6915.</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT"><a href=mailto:mitchj@rpi.edu>mitchj at rpi dot edu</a></TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT">Office hours:
+   Tuesday 2pm - 3pm, Wednesday 11am - noon.</TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL>
+<LI><A NAME="tex2html3"
+  HREF="node1.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<br>
+2007-02-16
+</ADDRESS>
+</BODY>
+</HTML>

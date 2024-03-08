@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw3sol2020.tex"> 
+<meta name="date" content="2020-09-21 21:15:00"> 
+<link rel="stylesheet" type="text/css" href="hw3sol2020.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 43--><p class="noindent" >
+<!--l. 45--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12x-x-120">Math Models of Operations Research</span></a><br />
+<a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12x-x-120">MATP 4700 </span></a><br /><br />
+<span 
+class="cmbx-12x-x-120">Homework 3</span><br /><br />
+<span 
+class="cmbx-12x-x-120">Solutions</span></div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 53--><p class="noindent" >
+ Due: Friday, September 25, 2020, 11.59pm on LMS.<br />
+Penalty for late homeworks: 25% for each day or part of a day.</div>
+<!--l. 60--><p class="noindent" >Questions 3.7.16 (lecture 5C), 4.6.20 (lecture 6), 4.6.24 (lecture 6), 4.6.28 (lecture 6), 4.6.42
+(lecture 5A), 4.6.45 (lecture 5A) from Kupferschmid, Chapters 3 and 4 (available on LMS). In
+addition, read Chapters 3 and 4 from the text.
+<!--l. 74--><p class="noindent" >You can consult with other students and you can use online resources, but you CANNOT submit
+the questions to any online answering service, including Chegg. Solving the homework problems
+(and other problems from the text) will improve your understanding of the material. It may be
+possible to find the solutions online or elsewhere: please do not use these solutions. Working out
+the problems yourself will greatly improve your understanding of the material and help you
+on the exams. You can ask questions on piazza, in addition to using office hours or
+email.
+      <ul class="itemize1">
+      <li class="itemize"><span 
+class="cmbx-12">3.7.16</span>
+      <!--l. 105--><p class="noindent" ><span 
+class="cmbx-12">(a) </span>Tableau B corresponds to an inequality constrained problem in the two variables <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub>
+      and&#x00A0;<span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">2</span></sub>, namely
+      <center class="math-display" >
+      <img 
+src="hw3sol20200x.png" alt="minx2,s2    -131x2  +   2s2
+subject to  -5 x2 -    s2  &#x2264;   4      slack: s1
+            - x2  +    s2  &#x2264;   2      slack: x1
+              x2  -    s2  &#x2264;   1      slack: s3
+
+              x2           &#x2264;   5      slack: s4
+                    x2,s2  &#x2265;   0
+      " class="math-display" ></center>
+                                                                                         
+                                                                                         
+      <!--l. 117--><p class="nopar" >
+      <!--l. 119--><p class="noindent" >Basic variables <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">1</span></sub> = 4, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> = 2, <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">3</span></sub> = 1, <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">4</span></sub> = 5.
+      <!--l. 121--><p class="noindent" >View from Tableau B:
+
+<img src=q16.png>
+
+      <!--l. 190--><p class="noindent" >Can read off the values of <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub>, <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">3</span></sub>, <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">4</span></sub> since the corresponding constraints have a coefficient of
+      &#8220;1&#8221; for one of the nonbasic variables.
+      <!--l. 194--><p class="noindent" >Value of <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub>: intersection of <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> = 0 constraint with the <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">2</span></sub>-axis.
+      <!--l. 196--><p class="noindent" >Value of <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">3</span></sub>: intersection of <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">3</span></sub> = 0 constraint with the <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub>-axis.
+      <!--l. 198--><p class="noindent" >Value of <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">4</span></sub>: intersection of <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">4</span></sub> = 0 constraint with the <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub>-axis.
+      <!--l. 200--><p class="noindent" >Value of <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">1</span></sub>: need to scale the intercept in the <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">1</span></sub> = 0 constraint by <img 
+src="hw3sol20202x.png" alt="11
+ 5"  class="frac" align="middle">. Intercept is at&#x00A0;<img 
+src="hw3sol20203x.png" alt="20-
+11"  class="frac" align="middle">, so
+      scaling returns&#x00A0;4.
+      <!--l. 205--><p class="noindent" ><span 
+class="cmbx-12">(b)</span>
+      <!--l. 207--><p class="noindent" >This is somewhat heuristic:
+      <!--l. 209--><p class="noindent" ><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub>: can read this off, since this is one of the axes in View A.
+      <!--l. 211--><p class="noindent" ><span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">4</span></sub>: can red this off, since the line <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">4</span></sub> = 0 is parallel to the <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub>-axis.
+      <!--l. 213--><p class="noindent" ><span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">3</span></sub>: could perhaps argue we moved perpendicular to the constraint <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">3</span></sub> = 0 when we
+      moved from A to B, so we could subtract the change in <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> from the old value
+      for&#x00A0;<span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">3</span></sub>.
+      <!--l. 217--><p class="noindent" ><span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">1</span></sub>: doesn&#8217;t look easy to read this from the graph.
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">4.6.20</span>
+                                                                                         
+                                                                                         
+      <!--l. 221--><p class="noindent" ><span 
+class="cmbx-12">(a) </span>Yes.
+      <!--l. 223--><p class="noindent" ><span 
+class="cmbx-12">(b) </span><span 
+class="cmmi-12">P </span>= <span 
+class="cmmi-12">Q</span><sub><span 
+class="cmr-8">3</span></sub><span 
+class="cmmi-12">Q</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-12">Q</span><sub><span 
+class="cmr-8">1</span></sub>.
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">4.6.24</span>
+      <center class="par-math-display" >
+      <img 
+src="hw3sol20204x.png" alt="                           &#x2193;
+       ratio |----x1--x2---x3--x4---x5---x6--x7-|
+            |--0-|0----0--- 2--7----2----5---0-|
+M0 =    20  | 80 |0    0   4   4    1  - 1   1 |    basic sequence S = (7,2,1).
+        -   |110 |0    1  - 1  1    3    1   0 |
+            |    |                             |
+        10  |-20--1----0--&#x25CB;2---3----4----2---0-|
+            |
+      " class="par-math-display" ></center>
+      <!--l. 239--><p class="nopar" >
+      <!--l. 241--><p class="noindent" >Pivot matrix is
+      <center class="math-display" >
+      <img 
+src="hw3sol20205x.png" alt="      &#x230A;              &#x230B;
+        1  0  0    1
+      | 0  1  0  - 2 |
+Q1 =  |&#x2308;            1 |&#x2309;
+        0  0  1    21
+        0  0  0    2
+      " class="math-display" ></center>
+      <!--l. 249--><p class="nopar" >
+      <!--l. 251--><p class="noindent" >so updated tableau is
+      <center class="math-display" >
+      <img 
+src="hw3sol20206x.png" alt="                                             &#x2193;
+                ratio      x1   x2  x3  x4   x5  x6  x7
+                     |-20--|1---0---0--10----2---7---0-|
+                 40  |-----|---------------------------|
+M1  = Q1M0  =     9  | 40  |*   *   *   *  &#x25CB;9    *   * |   basic sequence S =  (7,2,3).
+                120  |120  |*   *   *   *    1   *   * |
+                 -   |--*---*---*---*---*----2---*---*-|
+                     |
+      " class="math-display" ></center>
+                                                                                         
+                                                                                         
+      <!--l. 264--><p class="nopar" >
+      <!--l. 266--><p class="noindent" >Pivot matrix is
+      <center class="math-display" >
+      <img 
+src="hw3sol20207x.png" alt="      &#x230A;       2       &#x230B;                      &#x230A;      2       5 &#x230B;
+         1    9  0  0                          1    9  0    9
+      ||  0    19  0  0 ||                      || 0    19  0  - 29 ||
+Q2 =  &#x2308;  0  - 1  1  0 &#x2309;     so P2 = Q2Q1  =  &#x2308; 0  - 1  1    13-&#x2309;
+         0    92  0  1                          0    92  0    181-
+              9                                     9       18
+      " class="math-display" ></center>
+      <!--l. 283--><p class="nopar" >
+      <!--l. 285--><p class="noindent" >so updated tableau is
+      <center class="math-display" >
+      <img 
+src="hw3sol20208x.png" alt="                                             &#x2193;
+               ratio |-----x1--x2---x3--x4--x5--x6--x7-|
+                     |  260-| 5   0   0  86   0  53   2 |
+M   = P M   =        |---940-|*9---*---*--9*---*---9*---9*-|   basic sequence S  = (5,2,3).
+  2    2  0          |   95 |                           |
+                     |1151970 |*    *   *   *   *   *   * |
+                     |---9--*----*---*---*---*---*---*--
+                     |
+      " class="math-display" ></center>
+      <!--l. 298--><p class="nopar" >
+      In optimal form, so optimal solution has basic variables <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">5</span></sub> = <img 
+src="hw3sol20209x.png" alt="40
+ 9"  class="frac" align="middle">, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> = 115<img 
+src="hw3sol202010x.png" alt="5
+9"  class="frac" align="middle">, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> = <img 
+src="hw3sol202011x.png" alt="170
+ 9"  class="frac" align="middle">, with
+      value <span 
+class="cmsy-10x-x-120">-</span><img 
+src="hw3sol202012x.png" alt="260-
+9"  class="frac" align="middle">.
+      <!--l. 303--><p class="noindent" >It can be checked that this solution is feasible in the original tableau <span 
+class="cmmi-12">M</span><sub><span 
+class="cmr-8">0</span></sub>, and achieves the
+      given objective function value.
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">4.6.28</span>
+      <!--l. 308--><p class="noindent" ><span 
+class="cmbx-12">(a) </span>We have <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">B</span></sub> = <span 
+class="cmmi-12">B</span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sup><span 
+class="cmmi-12">b </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">B</span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sup><span 
+class="cmmi-12">Nx</span><sub>
+<span 
+class="cmmi-8">N</span></sub>, so
+      <center class="math-display" >
+      <img 
+src="hw3sol202013x.png" alt="     T       T (  -1     - 1    )     T  -1    ( T    T   -1  )
+z = cNxN  + cB  B   b - B  N xN   =  cBB   b +  cN - cBB    N  xN .
+      " class="math-display" ></center>
+                                                                                         
+                                                                                         
+      <!--l. 313--><p class="nopar" >
+      <!--l. 315--><p class="noindent" ><span 
+class="cmbx-12">(b) </span>The entries in the row vector <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">N</span></sub><sup><span 
+class="cmmi-8">T</span> </sup> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">c</span><sub>
+<span 
+class="cmmi-8">B</span></sub><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">B</span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sup><span 
+class="cmmi-12">N </span>are the reduced costs, and all the
+      variables in <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">N</span></sub> are 0 at the current BFS. So if we are not optimal then we can try
+      to improve by bringing in a variable with a negative component in the vector
+      <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">N</span></sub><sup><span 
+class="cmmi-8">T</span> </sup> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">c</span><sub>
+<span 
+class="cmmi-8">B</span></sub><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">B</span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sup><span 
+class="cmmi-12">N</span>.
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">4.6.42</span>
+      <!--l. 323--><p class="noindent" >The change in the objective function value at each iteration is the product of the cost <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">j</span></sub> with
+      the minimum ratio for the pivot column. If the linear program is nondegenerate then the
+      value of the minimum ratio is always nonzero, so there is a strict improvement in the
+      objective function value at every iteration. Thus, we can never return to an earlier tableau, so
+      we cannot cycle.
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">4.6.45</span>
+      <!--l. 331--><p class="noindent" ><span 
+class="cmbx-12">(a) </span>We can perturb the constraint <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>5 to be <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>4<img 
+src="hw3sol202014x.png" alt="56"  class="frac" align="middle">. Then the point <span 
+class="cmmi-12">E </span>splits into two
+      extreme points: (0<span 
+class="cmmi-12">, </span>4<img 
+src="hw3sol202015x.png" alt="5
+6"  class="frac" align="middle">) and (<img 
+src="hw3sol202016x.png" alt="1
+5"  class="frac" align="middle"><span 
+class="cmmi-12">, </span>4<img 
+src="hw3sol202017x.png" alt="5
+6"  class="frac" align="middle">). The optimal solution remains D and is unchanged.
+      Other perturbations could move D slightly, see the answer to the next part for an
+      example.
+      <!--l. 339--><p class="noindent" ><span 
+class="cmbx-12">(b) </span>We could have perturbed the constraint <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> + <img 
+src="hw3sol202018x.png" alt="6
+5"  class="frac" align="middle"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>6, for example to <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> + <img 
+src="hw3sol202019x.png" alt="6
+5"  class="frac" align="middle"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>6<img 
+src="hw3sol202020x.png" alt="1
+5"  class="frac" align="middle">.
+      Then D would have been perturbed to (3<span 
+class="cmmi-12">,</span><img 
+src="hw3sol202021x.png" alt="8
+3"  class="frac" align="middle">). The same constraints are active at the optimal
+      solution in the perturbed problem, so we could have recovered the original&#x00A0;<span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> by solving the
+      unperturbed constraints: <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> = 3 together with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> + <img 
+src="hw3sol202022x.png" alt="65"  class="frac" align="middle"><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> = 6.
+      </li></ul>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                           </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Tuesday, Friday, 11am&#8211;12noon, webex:                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-12">https://rensselaer.webex.com/meet/mitchj</span></a>  </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-7-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;                                                                            </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-8-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <span class="underline"><span 
+class="cmbx-12">TA:</span></span> Jun Tan, tanj8 at rpi dot edu.</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-9-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-9-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours Wednesday 7.30pm&#8211;8.30pm on webex:</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-10-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-10-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="https://rensselaer.webex.com/meet/tanj8" class="url" ><span 
+class="cmtt-12">https://rensselaer.webex.com/meet/tanj8</span></a>   </td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

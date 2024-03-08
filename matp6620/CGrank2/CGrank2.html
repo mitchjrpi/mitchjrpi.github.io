@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="CGrank2.tex"> 
+<meta name="date" content="2017-03-01 15:07:00"> 
+<link rel="stylesheet" type="text/css" href="CGrank2.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 128--><p class="noindent" >
+<!--l. 129--><p class="noindent" ><span 
+class="cmbx-12x-x-172">Showing Chvatal Rank is at least Two</span><br />
+<a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a></div>
+<!--l. 135--><p class="noindent" >Let
+   <center class="math-display" >
+<img 
+src="CGrank20x.png" alt="            n                           n
+P := {x &#x2208; &#x211D; + : Ax &#x2264; b},     S := P &#x2229; &#x2124;  .
+" class="math-display" ></center>
+<!--l. 138--><p class="nopar" >
+Let
+   <table 
+class="equation"><tr><td><a 
+ id="x1-2r1"></a>
+   <center class="math-display" >
+<img 
+src="CGrank21x.png" alt="&#x03C0;T x &#x2264; &#x03C0;0
+" class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+<!--l. 142--><p class="nopar" >
+be a valid inequality for&#x00A0;<span 
+class="cmmi-12">S</span>. Here is an argument for showing the inequality has Chvatal rank at
+least&#x00A0;2. The argument comes from Proposition 2.17 in section II.1.2 of&#x00A0;<span class="cite">[<a 
+href="#XNmWl">1</a>]</span>.
+<!--l. 147--><p class="indent" >   We use a proof by contradiction, so we assume the inequality has rank no larger than&#x00A0;1. Then
+the inequality is dominated by the rounddown of a valid inequality for&#x00A0;<span 
+class="cmmi-12">P</span>. Valid inequalities for <span 
+class="cmmi-12">P</span>
+have the form
+   <center class="math-display" >
+<img 
+src="CGrank22x.png" alt="(uT A )x &#x2264;  uTb,   with u &#x2265; 0.
+" class="math-display" ></center>
+<!--l. 153--><p class="nopar" >
+The rounddown of such an inequality dominates&#x00A0;(<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.pi --></a>) if
+   <center class="math-display" >
+<img 
+src="CGrank23x.png" alt="&#x230A;AT u&#x230B; &#x2265; &#x03C0;   and    &#x230A;bTu &#x230B; &#x2264; &#x03C0;0.
+" class="math-display" ></center>
+<!--l. 157--><p class="nopar" >
+Since <span 
+class="cmmi-12">&#x03C0; </span>and <span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmr-8">0</span></sub> are integer, this is equivalent to saying that (<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.pi --></a>) has rank no greater than one
+if
+   <center class="math-display" >
+<img 
+src="CGrank24x.png" alt="  T                T
+A  u &#x2265; &#x03C0;    and   b u &#x003C;  &#x03C0;0 + 1.
+" class="math-display" ></center>
+<!--l. 162--><p class="nopar" >
+for some <span 
+class="cmmi-12">u </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0. Equivalently, (<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.pi --></a>) has Chvatal rank no greater than one if and only if the following
+linear program has optimal value strictly smaller than <span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmr-8">0</span></sub> + 1:
+   <table 
+class="equation"><tr><td><a 
+ id="x1-3r2"></a>
+   <center class="math-display" >
+<img 
+src="CGrank25x.png" alt="minu         bTu
+subject to  AT u  &#x2265;   &#x03C0;
+               u  &#x2265;   0
+" class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+<!--l. 172--><p class="nopar" >
+We can express the requirement in terms of the dual LP, which has feasible region&#x00A0;<span 
+class="cmmi-12">P</span>:
+   <table 
+class="equation"><tr><td><a 
+ id="x1-4r3"></a>
+   <center class="math-display" >
+<img 
+src="CGrank26x.png" alt="maxx        &#x03C0;Tx
+subject to   Ax   &#x2264;  b
+              x   &#x2265;  0.
+" class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+                                                                                         
+                                                                                         
+<!--l. 180--><p class="nopar" >
+<!--l. 182--><p class="indent" >   Thus, we have the following proposition: <div class="newtheorem">
+<!--l. 183--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Proposition</span><span 
+class="cmbx-12">&#x00A0;1</span> </span>
+      <dl class="enumerate"><dt class="enumerate">
+   <span 
+class="cmti-12">1.</span> </dt><dd 
+class="enumerate"><span 
+class="cmti-12">If the integer part of the optimal value of (</span><a 
+href="#x1-4r3"><span 
+class="cmti-12">3</span><!--tex4ht:ref: eq.lp --></a><span 
+class="cmti-12">) is no greater than </span><span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmr-8">0</span></sub> <span 
+class="cmti-12">then inequality (</span><a 
+href="#x1-2r1"><span 
+class="cmti-12">1</span><!--tex4ht:ref: eq.pi --></a><span 
+class="cmti-12">)</span>
+      <span 
+class="cmti-12">has Chvatal-Gomory rank at most one.</span>
+      </dd><dt class="enumerate">
+   <span 
+class="cmti-12">2.</span> </dt><dd 
+class="enumerate"><span 
+class="cmti-12">If the optimal value of (</span><a 
+href="#x1-4r3"><span 
+class="cmti-12">3</span><!--tex4ht:ref: eq.lp --></a><span 
+class="cmti-12">) is at least </span><span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmr-8">0</span></sub> + 1 <span 
+class="cmti-12">then inequality (</span><a 
+href="#x1-2r1"><span 
+class="cmti-12">1</span><!--tex4ht:ref: eq.pi --></a><span 
+class="cmti-12">) has Chvatal-Gomory</span>
+      <span 
+class="cmti-12">rank at least two.</span></dd></dl>
+</div>
+                                                                                         
+                                                                                         
+<!--l. 195--><p class="noindent" ><span 
+class="cmbx-12x-x-120">Example</span>
+<!--l. 198--><p class="noindent" >We consider the node packing problem on a graph <span 
+class="cmmi-12">G </span>= (<span 
+class="cmmi-12">V,E</span>). The initial polyhedron
+is
+   <center class="math-display" >
+<img 
+src="CGrank27x.png" alt="P =  {x &#x2208; &#x211D;n : xu + xv &#x2264; 1&#x2200;(u,v) &#x2208; E, 0 &#x2264; xu &#x2264; 1 &#x2200;u &#x2208; V }.
+" class="math-display" ></center>
+<!--l. 202--><p class="nopar" >
+For any clique <span 
+class="cmmi-12">C </span><span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="cmmi-12">V </span>, we have the valid inequality
+   <table 
+class="equation"><tr><td><a 
+ id="x1-8r4"></a>
+   <center class="math-display" >
+<img 
+src="CGrank28x.png" alt="&#x2211;
+    xu &#x2264; 1.
+u&#x2208;C
+" class="math-display" ></center></td><td class="equation-label">(4)</td></tr></table>
+<!--l. 206--><p class="nopar" >
+We investigate the Chvatal-Gomory rank of this inequality for cliques of various sizes.
+      <ul class="itemize1">
+      <li class="itemize">Let <span 
+class="cmmi-12">C </span>= <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">u,v,w</span><span 
+class="cmsy-10x-x-120">} </span>be a clique of size 3 in&#x00A0;<span 
+class="cmmi-12">G</span>. The polyhedron <span 
+class="cmmi-12">P </span>includes the constraints
+      <center class="math-display" >
+      <img 
+src="CGrank29x.png" alt="xu + xv &#x2264; 1,xu + xw &#x2264;  1,xv + xw &#x2264;  1
+      " class="math-display" ></center>
+      <!--l. 213--><p class="nopar" >
+      and the sum of these constraints implies <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">u</span></sub> + <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">v</span></sub> + <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">w</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>1<span 
+class="cmmi-12">.</span>5. Thus,
+      <center class="math-display" >
+      <img 
+src="CGrank210x.png" alt="      &#x2211;
+max {     xu : x &#x2208; P } &#x2264; 1.5
+      u&#x2208;C
+      " class="math-display" ></center>
+      <!--l. 217--><p class="nopar" >
+      so by part 1 of the proposition, constraint (<a 
+href="#x1-8r4">4<!--tex4ht:ref: eq.clique --></a>) has rank no larger than 1 for this
+      clique.
+                                                                                         
+                                                                                         
+      </li>
+      <li class="itemize">Let <span 
+class="cmmi-12">C </span><span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="cmmi-12">V </span>be a clique of cardinality&#x00A0;4. The point <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">v</span></sub> = 0<span 
+class="cmmi-12">.</span>5 for all <span 
+class="cmmi-12">v </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">V </span>is in&#x00A0;<span 
+class="cmmi-12">P</span>,
+      so
+      <center class="math-display" >
+      <img 
+src="CGrank211x.png" alt="      &#x2211;
+max  {    xu : x &#x2208; P } &#x2265; 2.
+      u&#x2208;C
+      " class="math-display" ></center>
+      <!--l. 226--><p class="nopar" >
+      Thus, by part 2 of the proposition, constraint (<a 
+href="#x1-8r4">4<!--tex4ht:ref: eq.clique --></a>) has rank at least 2 for this clique.</li></ul>
+   <h3 class="likesectionHead"><a 
+ id="x1-1000"></a>References</h3>
+<!--l. 1--><p class="noindent" >
+   <div class="thebibliography">
+   <p class="bibitem" ><span class="biblabel">
+ [1]<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
+ id="XNmWl"></a>G.&#x00A0;L. Nemhauser and L.&#x00A0;A. Wolsey. <span 
+class="cmti-12">Integer and Combinatorial Optimization</span>. John
+   Wiley, New York, 1988.
+</p>
+   </div>
+    
+</body></html> 
+
+                                                                                         
+
+

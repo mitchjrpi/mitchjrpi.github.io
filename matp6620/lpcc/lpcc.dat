@@ -1,0 +1,5 @@
+param n := 20;
+param m := 25;
+param bdim := 50;
+param Mrank := 30;
+param spar := 0.2;

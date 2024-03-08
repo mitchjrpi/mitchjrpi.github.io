@@ -1,0 +1,31 @@
+ampl: reset data; data q2.dat; solve;
+CPLEX 12.9.0.0: optimal solution; objective 0.1715728752
+10 barrier iterations
+No basis.
+ampl: display 3-sqrt(8);
+3 - sqrt(8) = 0.171573
+
+ampl: display X;
+X :=
+1 1   0.171573
+1 2   0.656854
+2 1   0.656854
+2 2   2.51472
+;
+
+ampl: reset; model socpsdd.mod; data q2.dat; solve;
+CPLEX 12.9.0.0: optimal solution; objective 0.1715728751
+9 barrier iterations
+No basis.
+ampl: display y, S;
+y [*] :=
+1  -0.03033
+2   0.116116
+;
+
+S :=
+1 1    0.444544
+1 2   -0.116116
+2 1   -0.116116
+2 2    0.03033
+;

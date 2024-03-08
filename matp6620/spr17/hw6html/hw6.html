@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw6.tex"> 
+<meta name="date" content="2017-04-18 10:53:00"> 
+<link rel="stylesheet" type="text/css" href="hw6.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 30--><p class="noindent" >
+<!--l. 33--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6620" ><span 
+class="cmr-12x-x-120">MATP6620 / ISYE6760</span><br />
+<span 
+class="cmr-12x-x-120">Combinatorial Optimization and Integer Programming</span></a><br />
+<span 
+class="cmr-12x-x-120">Homework 6.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 38--><p class="noindent" >
+ Due: Friday, April 28, 2017.<br />
+Penalty for late homeworks: 10% for each day or part of a day.</div>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">Nemhauser and Wolsey, page 430, question 17, parts (i) and (ii).
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2">Nemhauser and Wolsey, page 430, question 17, parts (iii) and (iv).
+      </li>
+      <li 
+  class="enumerate" id="x1-7x3">Solve the Held-Karp 1-tree Lagrangian dual problem for the graph with edge costs given
+      below:
+      <center class="math-display" >
+      <img 
+src="hw60x.png" alt="   |
+---|--1---2---3---4---5---6-
+ 1 | -   10   9  14   5  14
+   |
+ 2 |10   -   11  10   7  10
+ 3 |  9  11  -    8   9  14
+ 4 |14   10   8  -    9  13
+ 5 |  5   7   9   9  -    8
+ 6 |14   10  14  13   8  -
+      " class="math-display" ></center>
+      <!--l. 120--><p class="nopar" >
+      (Hint: The optimal Lagrangian multipliers are integral.)
+      </li>
+      <li 
+  class="enumerate" id="x1-9x4">In the following picture,
+      <div class="center" 
+>
+                                                                                         
+                                                                                         
+<!--l. 316--><p class="noindent" >
+<!--l. 317--><p class="noindent" ><img 
+src="vietnam.png" alt="PIC"  
+></div>
+      <!--l. 319--><p class="noindent" >it is desired to place each of the numbers 1,&#x2026;,9 into exactly one of the nine empty positions so
+      that the equation is correct. Note that the colon symbol is used to denote division, and the
+      standard arithmetic rules apply so division and multiplication are performed before addition
+      and subtraction.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-11x1">Formulate the problem as a mixed integer nonlinear feasibility program.
+           </li>
+           <li 
+  class="enumerate" id="x1-13x2">Use the McCormick inequalities to express it as an equivalent mixed integer <span 
+class="cmti-12">linear</span>
+           feasibility program, and hence solve it.</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-15x5">A scheduling problem has 7 jobs and 2 machines. The release times, due dates, processing
+      times, and costs for the jobs are as follows:
+      <div class="center" 
+>
+<!--l. 370--><p class="noindent" >
+<div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><colgroup id="TBL-1-2g"><col 
+id="TBL-1-2"></colgroup><colgroup id="TBL-1-3g"><col 
+id="TBL-1-3"></colgroup><colgroup id="TBL-1-4g"><col 
+id="TBL-1-4"></colgroup><colgroup id="TBL-1-5g"><col 
+id="TBL-1-5"></colgroup><colgroup id="TBL-1-6g"><col 
+id="TBL-1-6"></colgroup><colgroup id="TBL-1-7g"><col 
+id="TBL-1-7"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td11">job</td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-2"  
+class="td11">release time</td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-3"  
+class="td11">due date</td><td colspan="2" style="white-space:nowrap; text-align:center;" id="TBL-1-1-4"  
+class="td11">   <div class="multicolumn"  style="white-space:nowrap; text-align:center;">processing time</div>   </td><td colspan="2" style="white-space:nowrap; text-align:center;" id="TBL-1-1-6"  
+class="td11">   <div class="multicolumn"  style="white-space:nowrap; text-align:center;">processing cost</div>
+</td></tr><tr 
+class="cline"><td></td><td></td><td></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-3-1"  
+class="td11">   </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-3-2"  
+class="td11">          </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-3-3"  
+class="td11">       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-3-4"  
+class="td11">machine 1</td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-3-5"  
+class="td11">machine 2</td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-3-6"  
+class="td11">machine 1</td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-3-7"  
+class="td11">machine 2</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-4-1"  
+class="td11"> 1  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-4-2"  
+class="td11">    0       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-4-3"  
+class="td11">   10    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-4-4"  
+class="td11">    3      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-4-5"  
+class="td11">    2      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-4-6"  
+class="td11">    4      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-4-7"  
+class="td11">    3      </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-5-1"  
+class="td11"> 2 </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-5-2"  
+class="td11"> 0 </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-5-3"  
+class="td11"> 10 </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-5-4"  
+class="td11"> 3 </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-5-5"  
+class="td11"> 4 </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-5-6"  
+class="td11"> 4 </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-5-7"  
+class="td11"> 3</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-6-1"  
+class="td11"> 3  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-6-2"  
+class="td11">    5       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-6-3"  
+class="td11">   7     </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-6-4"  
+class="td11">    1      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-6-5"  
+class="td11">    3      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-6-6"  
+class="td11">    3      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-6-7"  
+class="td11">    2      </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-7-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-7-1"  
+class="td11"> 4  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-7-2"  
+class="td11">    2       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-7-3"  
+class="td11">   6     </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-7-4"  
+class="td11">    3      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-7-5"  
+class="td11">    2      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-7-6"  
+class="td11">    3      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-7-7"  
+class="td11">    2      </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-8-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-8-1"  
+class="td11"> 5  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-8-2"  
+class="td11">    2       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-8-3"  
+class="td11">   6     </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-8-4"  
+class="td11">    2      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-8-5"  
+class="td11">    3      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-8-6"  
+class="td11">    3      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-8-7"  
+class="td11">    2      </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-9-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-9-1"  
+class="td11"> 6  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-9-2"  
+class="td11">    6       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-9-3"  
+class="td11">   10    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-9-4"  
+class="td11">    3      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-9-5"  
+class="td11">    2      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-9-6"  
+class="td11">    2      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-9-7"  
+class="td11">    3      </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-10-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-10-1"  
+class="td11"> 7  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-10-2"  
+class="td11">    6       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-10-3"  
+class="td11">   10    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-10-4"  
+class="td11">    2      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-10-5"  
+class="td11">    1      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-10-6"  
+class="td11">    3      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-10-7"  
+class="td11">    4      </td>
+</tr></table></div></div>
+      <!--l. 384--><p class="noindent" >We consider a logical Benders decomposition approach to this problem. Solve the initial
+      Master Problem of minimizing total costs subject to each job must be assigned to one of the
+      machines. Show that this solution is infeasible in the scheduling subproblems and generate
+      valid constraints for the Master Problem.
+      </li></ol>
+   <div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                   </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                              </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Tuesday 2-3pm, Wednesday 11am&#8211;1pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

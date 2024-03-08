@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>hw5</TITLE>
+<META NAME="description" CONTENT="hw5">
+<META NAME="keywords" CONTENT="hw5">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="hw5.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+
+<P>
+<DIV ALIGN="CENTER">
+</DIV>
+<a href=..>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">MATP6640/DSES6770 Linear Programming</a>,
+Homework 5.
+  </FONT>
+</DIV>
+
+<P>
+<DIV ALIGN="RIGHT">
+Due:  Friday, April 21, 2006.
+
+</DIV>
+
+<P>
+
+<OL>
+<LI>Let <IMG
+ WIDTH="16" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$x$"> be a nondegenerate basic feasible solution for the standard
+    form linear programming problem <!-- MATH
+ $\min\{c^Tx:Ax=b, x\geq 0 \}$
+ -->
+<IMG
+ WIDTH="212" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$\min\{c^Tx:Ax=b, x\geq 0 \}$">.
+    Let <IMG
+ WIDTH="75" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$\bar{A} = AX$">, where <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$X$"> is a diagonal matrix with <IMG
+ WIDTH="72" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$X_{ii}=x_i$"> for
+    <IMG
+ WIDTH="89" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$i=1,...,n$">. Simplify <IMG
+ WIDTH="28" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$P_{\bar{A}}$">, the projection matrix onto the
+    nullspace of <IMG
+ WIDTH="19" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$\bar{A}$">.
+    Hence show that <!-- MATH
+ $P_{\bar{A}} Xc = 0$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$P_{\bar{A}} Xc = 0$">.
+</LI>
+<LI><A NAME="MAd1"></A>The Monteiro-Adler short step algorithm presented in class (Algorithm SPF
+on page 86 of <EM>Wright</EM>) could be used as an infeasible interior point
+method, starting with <IMG
+ WIDTH="83" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.png"
+ ALT="$x=s=e$">, <IMG
+ WIDTH="49" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$y=0$">, and <IMG
+ WIDTH="51" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$\mu=1$">.
+Give an example to show that in this case we may not be able
+to take a step of length 1 and we may need to take a linesearch to
+preserve nonnegativity.
+(Note: We solve (1.20) to find the directions given in (1.25)
+at each iteration. Hint: you only need look at <B>small</B> examples.)
+</LI>
+<LI>Consider the primal-dual pair of linear programming problems:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lrclllrcll}
+\min & c^Tx &&&& \max & b^Ty \\
+\mbox{subject to} & Ax & = & b & \quad (P) \qquad &
+   \mbox{subject to} & A^Ty & \leq & c  & \quad (D)  \\
+& x & \geq & 0
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="549" HEIGHT="76" BORDER="0"
+ SRC="img13.png"
+ ALT="\begin{displaymath}
+\begin{array}{lrclllrcll}
+\min &amp; c^Tx &amp;&amp;&amp;&amp; \max &amp; b^Ty \\
+\...
+...o} &amp; A^Ty &amp; \leq &amp; c &amp; \quad (D) \\
+&amp; x &amp; \geq &amp; 0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <IMG
+ WIDTH="16" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$x$"> and <IMG
+ WIDTH="13" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.png"
+ ALT="$c$"> are <IMG
+ WIDTH="16" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$n$">-vectors, <IMG
+ WIDTH="13" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$b$"> and <IMG
+ WIDTH="15" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$y$"> are <IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$m$">-vectors,
+and <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.png"
+ ALT="$A$"> is an <IMG
+ WIDTH="56" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.png"
+ ALT="$m \times n$"> matrix.
+Let <IMG
+ WIDTH="92" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$\hat{b}=b-Ae$"> and <IMG
+ WIDTH="78" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$\hat{c}=c-e$">,
+where <IMG
+ WIDTH="14" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="$e$"> denotes the vector where every component is equal to one.
+Let <!-- MATH
+ $\hat{d}=c^Te+1$
+ -->
+<IMG
+ WIDTH="100" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$\hat{d}=c^Te+1$">.
+Now consider the linear programming problem
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lrcrcrcccl}
+\min &&&&&&& (n+1) w \\
+\mbox{subject to} &&& Ax & - & bt & + & \hat{b} w & = & 0  \\
+& -A^Ty &&& + & ct & - & \hat{c} w & \geq & 0 \qquad (HLP)  \\
+& b^Ty & - & c^T x &&& + & \hat{d} w & \geq & 0 \\
+& -\hat{b}^Ty & + & \hat{c}^Tx & - & \hat{d} t &&& = & -(n+1)  \\
+&&& x,t & \geq & 0, && y,w &&\mbox{free,}
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="554" HEIGHT="152" BORDER="0"
+ SRC="img25.png"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcccl}
+\min &amp;&amp;&amp;&amp;&amp;&amp;&amp; (n+1) w \\
+\mbox{sub...
+...(n+1) \\
+&amp;&amp;&amp; x,t &amp; \geq &amp; 0, &amp;&amp; y,w &amp;&amp;\mbox{free,}
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <IMG
+ WIDTH="12" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img26.png"
+ ALT="$t$"> and <IMG
+ WIDTH="19" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.png"
+ ALT="$w$"> are scalars.
+An interior point method can be used to find a <EM>strictly complementary</EM>
+optimal solution to <IMG
+ WIDTH="64" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$(HLP)$">.
+In such a solution, if the primal variable is equal to zero then
+the corresponding dual slack is strictly positive.
+Use this result to show that if <IMG
+ WIDTH="46" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img29.png"
+ ALT="$t=0$"> in a strictly complementary
+optimal solution then either there exists a vector <IMG
+ WIDTH="51" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$x\geq 0$"> with <IMG
+ WIDTH="64" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img31.png"
+ ALT="$Ax=0$"> and
+<IMG
+ WIDTH="69" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.png"
+ ALT="$c^Tx&lt;0$"> or there exists a vector <IMG
+ WIDTH="15" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$y$"> with <IMG
+ WIDTH="74" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img33.png"
+ ALT="$A^Ty\leq 0$"> and <IMG
+ WIDTH="68" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.png"
+ ALT="$b^Ty&gt;0$">.
+</LI>
+</OL>
+
+<P>
+
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT"><a href=../..>John
+Mitchell</a></TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT">Amos Eaton 325</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT">x6915.</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT"><a href=mailto:mitchj@rpi.edu>
+mitchj at rpi dot edu</a></TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT">Office hours: Tuesday: 2 - 3.30pm.</TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL>
+<LI><A NAME="tex2html3"
+  HREF="node1.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<br>
+2006-04-14
+</ADDRESS>
+</BODY>
+</HTML>

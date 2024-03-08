@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="proving_dimension.tex"> 
+<meta name="date" content="2017-02-26 16:35:00"> 
+<link rel="stylesheet" type="text/css" href="proving_dimension.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 128--><p class="noindent" >
+<!--l. 129--><p class="noindent" ><span 
+class="cmbx-12x-x-172">Proving a Face is a Facet</span><br />
+<a 
+href="http://www.rpi.edu/~mitchj" >John E. Mitchell</a></div>
+<!--l. 135--><p class="noindent" >We show how the dimension of a face can be determined using the construction of affinely
+independent points. This approach can be used to prove that a face of a polyhedron is a facet.
+Later, we will demonstrate another method for the MaxCut problem.
+<!--l. 141--><p class="indent" >   Recall two equivalent definitions of affine independence:
+   <div class="newtheorem">
+<!--l. 143--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Definition</span><span 
+class="cmbx-12">&#x00A0;1</span> </span><span 
+class="cmti-12">The </span><span 
+class="cmmi-12">k</span>+1 <span 
+class="cmti-12">points </span><span 
+class="cmmi-12">a</span><sup><span 
+class="cmr-8">0</span></sup><span 
+class="cmmi-12">,a</span><sup><span 
+class="cmr-8">1</span></sup><span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,a</span><sup><span 
+class="cmmi-8">k</span></sup> <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup> <span 
+class="cmti-12">are </span><span 
+class="cmbx-12">affinely independent </span><span 
+class="cmti-12">if the </span><span 
+class="cmmi-12">k</span><span 
+class="cmti-12">&#x00A0;vectors</span>
+<span 
+class="cmmi-12">a</span><sup><span 
+class="cmr-8">1</span></sup> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">a</span><sup><span 
+class="cmr-8">0</span></sup><span 
+class="cmmi-12">,a</span><sup><span 
+class="cmr-8">2</span></sup> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">a</span><sup><span 
+class="cmr-8">0</span></sup><span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,a</span><sup><span 
+class="cmmi-8">k</span></sup> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">a</span><sup><span 
+class="cmr-8">0</span></sup> <span 
+class="cmti-12">are linearly independent.</span>
+   </div>
+   <div class="newtheorem">
+<!--l. 148--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Definition</span><span 
+class="cmbx-12">&#x00A0;2</span> </span><a 
+ id="x1-32"></a> <span 
+class="cmti-12">The </span><span 
+class="cmmi-12">k </span>+ 1 <span 
+class="cmti-12">points </span><span 
+class="cmmi-12">a</span><sup><span 
+class="cmr-8">0</span></sup><span 
+class="cmmi-12">,a</span><sup><span 
+class="cmr-8">1</span></sup><span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,a</span><sup><span 
+class="cmmi-8">k</span></sup> <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup> <span 
+class="cmti-12">are </span><span 
+class="cmbx-12">affinely independent </span><span 
+class="cmti-12">if the only solution</span>
+<span 
+class="cmmi-12">&#x03BB;</span><sub><span 
+class="cmr-8">0</span></sub><span 
+class="cmmi-12">,&#x03BB;</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,&#x03BB;</span><sub><span 
+class="cmmi-8">k</span></sub> <span 
+class="cmti-12">to the system</span>
+   <center class="math-display" >
+<img 
+src="proving_dimension0x.png" alt="&#x2211; k    i       &#x2211;k
+    &#x03BB;ia =  0,      &#x03BB;i = 0
+ i=0             i=0
+" class="math-display" ></center>
+<!--l. 154--><p class="nopar" >
+<span 
+class="cmti-12">is </span><span 
+class="cmmi-12">&#x03BB;</span><sub><span 
+class="cmr-8">0</span></sub> = <span 
+class="cmmi-12">&#x03BB;</span><sub><span 
+class="cmmi-8">i</span></sub> = <span 
+class="cmmi-12">&#x2026;</span> = <span 
+class="cmmi-12">&#x03BB;</span><sub><span 
+class="cmmi-8">k</span></sub> = 0<span 
+class="cmti-12">.</span>
+   </div>
+<!--l. 157--><p class="noindent" >Note that Definition&#x00A0;<a 
+href="#x1-32">2<!--tex4ht:ref: def2 --></a> implies that if <span 
+class="cmmi-12">k </span>+ 1 points are <span 
+class="cmti-12">linearly </span>independent then they are also <span 
+class="cmti-12">affinely</span>
+independent. (The converse does not necessarily hold.)
+<!--l. 163--><p class="indent" >   We also have the following proposition:
+   <div class="newtheorem">
+<!--l. 165--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Proposition</span><span 
+class="cmbx-12">&#x00A0;1</span> </span><span 
+class="cmti-12">If a set </span><span 
+class="cmmi-12">S </span><span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup> <span 
+class="cmti-12">contains </span><span 
+class="cmmi-12">k</span>+1 <span 
+class="cmti-12">affinely independent points then the dimension</span>
+<span 
+class="cmti-12">of</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">S </span><span 
+class="cmti-12">is at least</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">k</span><span 
+class="cmti-12">.</span>
+                                                                                         
+                                                                                         
+   </div>
+<!--l. 170--><p class="indent" >   Thus, constructing a sufficiently large set of affinely independent points in&#x00A0;<span 
+class="cmmi-12">S </span>provides a lower
+bound on the dimension of&#x00A0;<span 
+class="cmmi-12">S</span>. If we can construct valid equalities <span 
+class="cmmi-12">Ax </span>= <span 
+class="cmmi-12">b </span>that are satisfied by all
+points in <span 
+class="cmmi-12">S </span>then we obtain an upper bound of <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">-</span> rank(<span 
+class="cmmi-12">A</span>) on the dimension of&#x00A0;<span 
+class="cmmi-12">S</span>. Getting these
+bounds to agree would then give the dimension of&#x00A0;<span 
+class="cmmi-12">S</span>.
+<!--l. 179--><p class="indent" >   When <span 
+class="cmmi-12">S </span>is a set of integer (or binary) points, the first step is to determine the dimension&#x00A0;<span 
+class="cmmi-12">d</span>
+of&#x00A0;<span 
+class="cmmi-12">S</span>. To then show that an inequality <span 
+class="cmmi-12">g</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">h </span>defines a facet of&#x00A0;<span 
+class="cmmi-12">S</span>, we need to:
+      <ul class="itemize1">
+      <li class="itemize">Show every point <span 
+class="cmmi-12">x </span>in <span 
+class="cmmi-12">S </span>satisfies <span 
+class="cmmi-12">g</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">h</span>, so the inequality is valid.
+      </li>
+      <li class="itemize">Find <span 
+class="cmmi-12">d </span>affinely independent points in <span 
+class="cmmi-12">S </span>satisfying <span 
+class="cmmi-12">g</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>= <span 
+class="cmmi-12">h</span>, so the dimension of the
+      face is at least <span 
+class="cmmi-12">d </span><span 
+class="cmsy-10x-x-120">- </span>1.
+      </li>
+      <li class="itemize">Find one point <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">S </span>satisfying <span 
+class="cmmi-12">g</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x &#x003E; h</span>, so the inequality defines a proper face of&#x00A0;<span 
+class="cmmi-12">S</span>.</li></ul>
+<!--l. 195--><p class="indent" >   This approach is used for <span 
+class="cmti-12">node packing </span>in a graph on <span 
+class="cmmi-12">n </span>vertices.
+<!--l. 197--><p class="indent" >   First, the convex hull of the set <span 
+class="cmmi-12">S </span>of feasible packings can be shown to have dimension&#x00A0;<span 
+class="cmmi-12">n</span>: we
+have <span 
+class="cmmi-12">n </span>+ 1 affinely independent points in&#x00A0;<span 
+class="cmmi-12">S</span>, namely the origin and all the unit vectors.
+<!--l. 201--><p class="indent" >   Then there exist <span 
+class="cmmi-12">n </span>affinely independent points in&#x00A0;<span 
+class="cmmi-12">S </span>satisfying <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> = 0 for any <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span>.
+Further, there exist <span 
+class="cmmi-12">n </span>affinely independent points in&#x00A0;<span 
+class="cmmi-12">S </span>satisfying <span 
+class="cmex-10x-x-120">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">i</span><span 
+class="cmsy-8">&#x2208;</span><span 
+class="cmmi-8">C</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> = 1 for any <span 
+class="cmti-12">maximal</span>
+clique <span 
+class="cmmi-12">C </span>in the graph.
+    
+</body></html> 
+
+                                                                                         
+
+

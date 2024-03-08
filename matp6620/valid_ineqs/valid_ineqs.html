@@ -1,0 +1,434 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="valid_ineqs.tex"> 
+<meta name="date" content="2015-02-20 16:15:00"> 
+<link rel="stylesheet" type="text/css" href="valid_ineqs.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 111--><p class="noindent" >
+<!--l. 112--><p class="noindent" ><span 
+class="cmbx-12x-x-172">Valid Inequalities for Integer Programs</span><br />
+<a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a></div>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Polarity</h3>
+   <div class="newtheorem">
+<!--l. 118--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Definition</span><span 
+class="cmbx-12">&#x00A0;1</span> </span><span 
+class="cmti-12">The cone</span>
+   <center class="math-display" >
+<img 
+src="valid_ineqs0x.png" alt="&#x03A0;  :=  {(&#x03C0;,&#x03C0;0) &#x2208; &#x211D;n+1  : &#x03C0;Tx - &#x03C0;0 &#x2264; 0  for all x &#x2208; Q}
+" class="math-display" ></center>
+<!--l. 122--><p class="nopar" >
+<span 
+class="cmti-12">is the </span>polar <span 
+class="cmti-12">of the polyhedron </span><span 
+class="cmmi-12">Q </span>= <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sub><span 
+class="cmr-8">+</span></sub><sup><span 
+class="cmmi-8">n</span></sup>  : <span 
+class="cmmi-12">Ax </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">b</span><span 
+class="cmsy-10x-x-120">}</span><span 
+class="cmti-12">.</span>
+   </div>
+   <div class="newtheorem">
+<!--l. 126--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Proposition</span><span 
+class="cmbx-12">&#x00A0;1</span> </span><span 
+class="cmti-12">Let </span><span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x</span><sup><span 
+class="cmmi-8">k</span></sup><span 
+class="cmsy-10x-x-120">}</span><sub>
+<span 
+class="cmmi-8">k</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">K</span></sub> <span 
+class="cmti-12">and </span><span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">r</span><sup><span 
+class="cmmi-8">j</span></sup><span 
+class="cmsy-10x-x-120">}</span><sub>
+<span 
+class="cmmi-8">j</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">J</span></sub> <span 
+class="cmti-12">be the extreme points and rays of</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">Q</span><span 
+class="cmti-12">. Then </span>&#x03A0; <span 
+class="cmti-12">is the</span>
+<span 
+class="cmti-12">polyhedral cone defined by </span><div class="eqnarray">
+   <center class="math-display" >
+<img 
+src="valid_ineqs1x.png" alt="&#x03C0;T xk - &#x03C0;   &#x2264;  0  &#x2200;k &#x2208; K
+       T 0j
+      &#x03C0; r   &#x2264;  0  &#x2200;j &#x2208; J.
+" class="math-display" ></center>
+</div>
+                                                                                         
+                                                                                         
+   </div>
+   <div class="newtheorem">
+<!--l. 136--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Proposition</span><span 
+class="cmbx-12">&#x00A0;2</span> </span><span 
+class="cmti-12">If dim(</span><span 
+class="cmmi-12">Q</span>) = <span 
+class="cmmi-12">n </span><span 
+class="cmti-12">and</span> <img 
+src="valid_ineqs2x.png" alt="¯&#x03C0;"  class="bar" ><span 
+class="cmmi-12">&#x2260;</span>0 <span 
+class="cmti-12">then </span>(<img 
+src="valid_ineqs3x.png" alt="¯&#x03C0;"  class="bar" ><span 
+class="cmmi-12">,</span><img 
+src="valid_ineqs4x.png" alt="&#x03C0;¯"  class="bar" ><sub><span 
+class="cmr-8">0</span></sub>) <span 
+class="cmti-12">is an extreme ray of </span>&#x03A0; <span 
+class="cmti-12">if and only if</span>
+<img 
+src="valid_ineqs5x.png" alt="¯&#x03C0;"  class="bar" ><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2264;</span><img 
+src="valid_ineqs6x.png" alt="¯&#x03C0;"  class="bar" ><sub>
+<span 
+class="cmr-8">0</span></sub> <span 
+class="cmti-12">defines a facet of</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">Q</span><span 
+class="cmti-12">.</span>
+   </div>
+<!--l. 145--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-20002"></a>Comparing Inequalities for Polyhedra</h3>
+<!--l. 147--><p class="noindent" >Assume we have two valid inequalities for <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">Q</span>, namely <div class="eqnarray">
+   <center class="math-display" >
+<img 
+src="valid_ineqs7x.png" alt="&#x03C0;Tx  &#x2264;   &#x03C0;0                                    (1)
+ T
+&#x03B3; x  &#x2264;   &#x03B3;0.                                   (2)
+" class="math-display" ><a 
+ id="x1-2001r1"></a><a 
+ id="x1-2001r2"></a></center>
+</div>
+   <div class="newtheorem">
+<!--l. 152--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Definition</span><span 
+class="cmbx-12">&#x00A0;2</span> </span><span 
+class="cmti-12">The inequalities are </span>equivalent <span 
+class="cmti-12">if </span>(<span 
+class="cmmi-12">&#x03B3;,&#x03B3;</span><sub><span 
+class="cmr-8">0</span></sub>) = <span 
+class="cmmi-12">&#x03BC;</span>(<span 
+class="cmmi-12">&#x03C0;,&#x03C0;</span><sub><span 
+class="cmr-8">0</span></sub>) <span 
+class="cmti-12">for some </span><span 
+class="cmmi-12">&#x03BC; &#x003E; </span>0<span 
+class="cmti-12">.</span>
+   </div>
+   <div class="newtheorem">
+<!--l. 156--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Definition</span><span 
+class="cmbx-12">&#x00A0;3</span> </span><span 
+class="cmti-12">If the inequalities are not equivalent and if there exists </span><span 
+class="cmmi-12">&#x03BC; &#x003E; </span>0 <span 
+class="cmti-12">such that </span><span 
+class="cmmi-12">&#x03B3; </span><span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">&#x03BC;&#x03C0; </span><span 
+class="cmti-12">and</span>
+<span 
+class="cmmi-12">&#x03B3;</span><sub><span 
+class="cmr-8">0</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">&#x03BC;&#x03C0;</span><sub><span 
+class="cmr-8">0</span></sub> <span 
+class="cmti-12">then</span>
+   <center class="math-display" >
+<img 
+src="valid_ineqs8x.png" alt="      n    T                   n    T
+{x &#x2208; &#x211D;+  : &#x03B3; x &#x2264;  &#x03B3;0} &#x2286; {x &#x2208;  &#x211D;+  : &#x03C0; x &#x2264; &#x03C0;0 }
+" class="math-display" ></center>
+                                                                                         
+                                                                                         
+<!--l. 163--><p class="nopar" >
+<span 
+class="cmti-12">and (</span><a 
+href="#x1-2001r2"><span 
+class="cmti-12">2</span><!--tex4ht:ref: eqn:gamma --></a><span 
+class="cmti-12">) </span>dominates <span 
+class="cmti-12">or </span>is stronger than <span 
+class="cmti-12">(</span><a 
+href="#x1-2001r1"><span 
+class="cmti-12">1</span><!--tex4ht:ref: eqn:pi --></a><span 
+class="cmti-12">). A </span>maximal <span 
+class="cmti-12">valid inequality is one that is not dominated</span>
+<span 
+class="cmti-12">by any other.</span>
+   </div>
+   <div class="newtheorem">
+<!--l. 168--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Proposition</span><span 
+class="cmbx-12">&#x00A0;3</span> </span><span 
+class="cmti-12">Let </span><span 
+class="cmmi-12">&#x03C0;</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">&#x03C0;</span><sub>
+<span 
+class="cmr-8">0</span></sub>  <span 
+class="cmti-12">be a valid inequality for </span><span 
+class="cmmi-12">Q </span>= <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sub><span 
+class="cmr-8">+</span></sub><sup><span 
+class="cmmi-8">n</span></sup>  :  <span 
+class="cmmi-12">Ax </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">b</span><span 
+class="cmsy-10x-x-120">}</span><span 
+class="cmti-12">. If </span><span 
+class="cmmi-12">Q</span><span 
+class="cmmi-12">&#x2260;</span><span 
+class="cmsy-10x-x-120">&#x2205;</span>
+<span 
+class="cmti-12">then </span><span 
+class="cmmi-12">&#x03C0;</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">&#x03C0;</span><sub>
+<span 
+class="cmr-8">0</span></sub> <span 
+class="cmti-12">is either equivalent to or dominated by an inequality of the form </span><span 
+class="cmmi-12">u</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">Ax </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">u</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">b</span>
+<span 
+class="cmti-12">for some </span><span 
+class="cmmi-12">u </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sub><span 
+class="cmr-8">+</span></sub><sup><span 
+class="cmmi-8">m</span></sup><span 
+class="cmti-12">.</span>
+   </div>
+                                                                                         
+                                                                                         
+<!--l. 176--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-30003"></a>Chvatal-Gomory Rounding Procedure</h3>
+<!--l. 178--><p class="noindent" >Let <span 
+class="cmmi-12">P </span>= <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sub><span 
+class="cmr-8">+</span></sub><sup><span 
+class="cmmi-8">n</span></sup>  : <span 
+class="cmmi-12">Ax </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">b</span><span 
+class="cmsy-10x-x-120">} </span>and <span 
+class="cmmi-12">S </span>= <span 
+class="cmmi-12">P </span><span 
+class="cmsy-10x-x-120">&#x2229; </span><span 
+class="msbm-10x-x-120">&#x2124;</span><sup><span 
+class="cmmi-8">n</span></sup>. Assume <span 
+class="cmmi-12">A </span>is <span 
+class="cmmi-12">m</span><span 
+class="cmsy-10x-x-120">&#x00D7;</span><span 
+class="cmmi-12">n</span>. Denote the entries of <span 
+class="cmmi-12">A </span>by <span 
+class="cmmi-12">a</span><sub>
+<span 
+class="cmmi-8">ij</span></sub>.
+The Chvatal-Gomory rounding procedure generates valid linear inequalities for <span 
+class="cmmi-12">S </span>from valid linear
+inequalities for <span 
+class="cmmi-12">P </span>as follows:
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3002x1"><span 
+class="cmbx-12">Choose multipliers </span><span 
+class="cmmi-12">u </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sub><span 
+class="cmr-8">+</span></sub><sup><span 
+class="cmmi-8">m</span></sup> and construct the following inequality that is valid
+      for&#x00A0;<span 
+class="cmmi-12">P</span>:
+      <center class="math-display" >
+      <img 
+src="valid_ineqs9x.png" alt=" T        T
+u Ax  &#x2264;  u b,
+      " class="math-display" ></center>
+      <!--l. 188--><p class="nopar" >
+      or equivalently
+      <table 
+class="equation"><tr><td><a 
+ id="x1-3003r3"></a>
+      <center class="math-display" >
+      <img 
+src="valid_ineqs10x.png" alt="&#x2211;n  ( &#x2211;m      )        &#x2211;m
+          uiaij   xj &#x2264;      uibi.
+j=1   i=1              i=1
+      " class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+      <!--l. 192--><p class="nopar" >
+      </li>
+      <li 
+  class="enumerate" id="x1-3005x2"><span 
+class="cmbx-12">Round down the left hand side</span>, giving an inequality that is still valid for&#x00A0;<span 
+class="cmmi-12">P</span>, since it is
+      weaker than the original inequality&#x00A0;(<a 
+href="#x1-3003r3">3<!--tex4ht:ref: eq:combo --></a>):
+      <center class="math-display" >
+      <img 
+src="valid_ineqs11x.png" alt="    &#x230A;         &#x230B;
+&#x2211;n    &#x2211;m               &#x2211;m
+          uiaij  xj &#x2264;      uibi.
+j=1   i=1              i=1
+      " class="math-display" ></center>
+      <!--l. 197--><p class="nopar" >
+      </li>
+      <li 
+  class="enumerate" id="x1-3007x3"><span 
+class="cmbx-12">Round down the right hand side</span>, giving an inequality that is valid for&#x00A0;<span 
+class="cmmi-12">S</span>, since the left
+      hand side must take an integral value:
+      <center class="math-display" >
+      <img 
+src="valid_ineqs12x.png" alt="     &#x230A;        &#x230B;        &#x230A;        &#x230B;
+&#x2211; n   &#x2211;m                &#x2211;m
+          uiaij  xj &#x2264;       uibi .
+ j=1    i=1                i=1
+      " class="math-display" ></center>
+      <!--l. 204--><p class="nopar" >
+      </li></ol>
+   <div class="newtheorem">
+<!--l. 208--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Theorem</span><span 
+class="cmbx-12">&#x00A0;1</span> </span><a 
+ id="x1-30081"></a> <span 
+class="cmti-12">Every valid linear inequality for </span><span 
+class="cmmi-12">S </span><span 
+class="cmti-12">can be obtained through a finite number of</span>
+
+<span 
+class="cmti-12">applications of the Chvatal-Gomory rounding procedure.</span>
+   </div>
+<!--l. 213--><p class="indent" >   It may take many rounds of application of the procedure to produce a particular inequality.
+The number of rounds is called the <span 
+class="cmbx-12">Chvatal rank</span>, which is defined in an inductive
+manner.
+   <div class="newtheorem">
+<!--l. 216--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Definition</span><span 
+class="cmbx-12">&#x00A0;4</span> </span><span 
+class="cmti-12">A valid linear inequality </span><span 
+class="cmmi-12">&#x03C0;</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">&#x03C0;</span><sub>
+<span 
+class="cmr-8">0</span></sub> <span 
+class="cmti-12">for </span><span 
+class="cmmi-12">S </span><span 
+class="cmti-12">has </span>Chvatal rank 0 <span 
+class="cmti-12">if it is equivalent to or</span>
+<span 
+class="cmti-12">dominated by a nonnegative linear combination of the inequalities defining</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">P</span><span 
+class="cmti-12">. It has </span>Chvatal rank
+<span 
+class="cmmi-12">k </span><span 
+class="cmti-12">if</span>
+      <ul class="itemize1">
+      <li class="itemize"><span 
+class="cmti-12">it is not equivalent to or dominated by any nonnegative linear combination of valid</span>
+      <span 
+class="cmti-12">inequalities for</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">S</span><span 
+class="cmti-12">, each of which has Chvatal rank at most</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">k </span><span 
+class="cmsy-10x-x-120">- </span>1<span 
+class="cmti-12">, and</span>
+                                                                                         
+                                                                                         
+      </li>
+      <li class="itemize"><span 
+class="cmti-12">it can be obtained by one application of the Chvatal-Gomory rounding procedure applied</span>
+      <span 
+class="cmti-12">to a collection of valid inequalities for</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">S</span><span 
+class="cmti-12">, each of which has Chvatal rank no larger</span>
+      <span 
+class="cmti-12">than</span><span 
+class="cmti-12">&#x00A0;</span><span 
+class="cmmi-12">k </span><span 
+class="cmsy-10x-x-120">- </span>1<span 
+class="cmti-12">.</span></li></ul>
+</div>
+<!--l. 232--><p class="indent" >   Theorem <a 
+href="#x1-30081">1<!--tex4ht:ref: thm:CG --></a> is equivalent to the statement that every valid linear inequality for <span 
+class="cmmi-12">S </span>has finite
+Chvatal rank.
+    
+</body></html> 
+
+                                                                                         
+
+

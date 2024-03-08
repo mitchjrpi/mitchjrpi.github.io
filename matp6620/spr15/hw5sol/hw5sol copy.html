@@ -1,0 +1,410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw5sol.tex"> 
+<meta name="date" content="2015-04-17 14:28:00"> 
+<link rel="stylesheet" type="text/css" href="hw5sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 26--><p class="noindent" >
+<!--l. 29--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6620" ><span 
+class="cmr-12x-x-120">MATP6620 / ISYE6760</span><br />
+<span 
+class="cmr-12x-x-120">Combinatorial Optimization and Integer Programming</span></a><br />
+<span 
+class="cmr-12x-x-120">Homework 5: </span><span 
+class="cmbx-12x-x-120">Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 34--><p class="noindent" >
+ Due: Friday, April 10, 2015.<br />
+Penalty for late homeworks: 10% for each day or part of a day.</div>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">Are the matrices in Nemhauser and Wolsey, page 603, question 9, parts (ii) and (iii)
+      totally unimodular?
+      <!--l. 63--><p class="noindent" ><span 
+class="cmbx-12">Solution</span>
+           <ul class="itemize1">
+           <li class="itemize">The submatrix consisting of rows 1 and 5 and of columns 1 and 5 is
+           <center class="math-display" >
+           <img 
+src="hw5sol0x.png" alt="(        )
+  1  - 1
+  1    1
+           " class="math-display" ></center>
+           <!--l. 68--><p class="nopar" >
+           which has determinant 2, so the matrix is not totally unimodular.
+           </li>
+           <li class="itemize">By pivoting and deleting unit rows and columns, we can make the following
+           reductions:
+           <center class="math-display" >
+           <img 
+src="hw5sol1x.png" alt="(                         )     (                        )
+|   1  - 1    0    0  - 1 |     |  1  - 1    0    0  - 1 |
+| - 1    1  - 1    0   0  |     |  0    0  - 1    0  - 1 |
+||   0  - 1    1  - 1   0  || - &#x2192; ||  0  - 1    1  - 1    0 ||
+(   0    0  - 1    1  - 1 )     (  0    0  - 1    1  - 1 )
+  - 1    0    0  - 1   1           0  - 1    0  - 1    0
+           " class="math-display" ></center>
+                                                                                         
+                                                                                         
+           <!--l. 77--><p class="nopar" >
+           <center class="math-display" >
+           <img 
+src="hw5sol2x.png" alt="    (                     )      (                  )
+       - 1    0    0  - 1           1   0    0    1
+    |    0  - 1    0  - 1 |      |  0  - 1   0  - 1 |
+- &#x2192; ||  - 1    1  - 1    0 || - &#x2192;  ||  0   1  - 1    1 ||
+    |(                     |)      |(                  |)
+         0  - 1    1  - 1           0  - 1   1  - 1
+       - 1    0  - 1    0           0   0  - 1    1
+           " class="math-display" ></center>
+           <!--l. 85--><p class="nopar" >
+           <center class="math-display" >
+           <img 
+src="hw5sol3x.png" alt="     (               )
+         0    0    1        (               )      (            )
+     | - 1    0  - 1 |         - 1   0  - 1           1    0  1
+     ||               ||      ||    1  - 1   1 ||      ||  0  - 1  0 ||
+- &#x2192;  |   1  - 1    1 |  -&#x2192;  (  - 1   1  - 1 )  -&#x2192;  (  0    1  0 )
+     ( - 1    1  - 1 )           0  - 1   1           0  - 1  1
+         0  - 1    1
+           " class="math-display" ></center>
+           <!--l. 96--><p class="nopar" >
+           <center class="math-display" >
+           <img 
+src="hw5sol4x.png" alt="    (         )
+         0  1
+    |  - 1  0 |      (        )
+-&#x2192;  |(         |) - &#x2192;    - 1  1
+         1  0
+       - 1  1
+           " class="math-display" ></center>
+           <!--l. 104--><p class="nopar" >
+           which is totally unimodular, so the original matrix is totally unimodular.</li></ul>
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2">Nemhauser and Wolsey, page 605, question 20.
+      <!--l. 114--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>Each column corresponds to a vertex and each row to a clique. Need to determine
+      whether the corresponding graph is perfect.
+           <ul class="itemize1">
+           <li class="itemize">First graph:
+                                                                                         
+                                                                                         
+           <div class="center" 
+>
+<!--l. 120--><p class="noindent" >
+<!--l. 149--><p class="noindent" >
+321654
+</div>
+           <!--l. 151--><p class="noindent" >An odd hole or odd antihole of cardinality 5 is a chordless cyle. To be chordless, it can
+           contain at most two of vertices 2, 3, and 6. If it includes 3 then it must include both 2
+           and 6 because these are the only neighbors of vertex&#x00A0;3. Thus, the cycle includes
+           vertices 2 and 6, and excludes vertex 3. Since it has cardinality 5, it must
+           include vertex 5, but then it is not chordless, since vertices 2, 5, and 6 form a
+           clique.
+           </li>
+           <li class="itemize">Second graph:
+           <div class="center" 
+>
+<!--l. 160--><p class="noindent" >
+<!--l. 190--><p class="noindent" >
+3216547
+</div>
+           <!--l. 192--><p class="noindent" >A graph is perfect if an only if its complement is perfect. Here, the complement
+           is:
+           <div class="center" 
+>
+                                                                                         
+                                                                                         
+<!--l. 193--><p class="noindent" >
+<!--l. 220--><p class="noindent" >
+3216547
+</div>
+           <!--l. 222--><p class="noindent" >This graph contains no cycle of length 5, so certainly no odd hole or antihole on
+           5 vertices. Vertex 6 is isolated, so it contains no odd hole or antihole on 7
+           vertices.</li></ul>
+      </li>
+      <li 
+  class="enumerate" id="x1-7x3"><a 
+ id="x1-63"></a> Consider the 0-1 equality knapsack problem
+      <center class="math-display" >
+      <img 
+src="hw5sol5x.png" alt="                                                    n+1
+max {- xn+1 : 2x1 + 2x2 + ...+ 2xn + xn+1 = n,x &#x2208; B    },
+      " class="math-display" ></center>
+      <!--l. 296--><p class="nopar" >
+      where <span 
+class="cmmi-12">n </span>is an odd integer. We wish to solve this problem using a branch and bound
+      algorithm with linear programming relaxations. Assume we always branch using variable
+      dichotomies (ie, add the constraints <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> = 0 or <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> = 1 for some <span 
+class="cmmi-12">i</span>). Show that an exponential
+      number of nodes of the branch and bound tree must be considered to solve the
+      problem.
+      <!--l. 308--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>The optimal value of the integer program is <span 
+class="cmsy-10x-x-120">-</span>1, since <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">n</span><span 
+class="cmr-8">+1</span></sub> must equal <span 
+class="cmsy-10x-x-120">-</span>1 in any
+      feasible solution, because <span 
+class="cmmi-12">n </span>is odd.
+      <!--l. 312--><p class="noindent" >If no more than <span 
+class="cmsy-10x-x-120">&#x230A;</span><span 
+class="cmmi-12">n&#x2215;</span>2<span 
+class="cmsy-10x-x-120">&#x230B; </span>variables have been fixed at 0 or 1 then the optimal solution to the LP
+      relaxation is equal to zero. Thus, the only nodes in the tree that can be pruned are those
+      with at least <span 
+class="cmsy-10x-x-120">&#x2308;</span><span 
+class="cmmi-12">n&#x2215;</span>2<span 
+class="cmsy-10x-x-120">&#x2309; </span>variables fixed. So the tree must contain at least 2<sup><span 
+class="cmmi-8">n&#x2215;</span><span 
+class="cmr-8">2</span><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sup> nodes, which is
+      exponential.
+                                                                                         
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-9x4">Use branch-and-bound with LP relaxations to find all the optimal solutions to the knapsack
+      problem
+      <center class="math-display" >
+      <img 
+src="hw5sol6x.png" alt="max   15x    +  11x   +   27x   +   20x   +   21x
+          1         2         3         4         5
+s.t.    4x1   +   3x2  +    8x3  +    6x4  +    7x5  &#x2264;   14
+                   xi binary  for i = 1,...,5,
+      " class="math-display" ></center>
+      <!--l. 336--><p class="nopar" >
+      branching using variable dichotomies. Give a valid cover inequality violated by your solution
+      to the root node. What do you get if you lift this inequality?
+      <!--l. 343--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>There are two optimal solutions, namely <span 
+class="cmmi-12">x </span>= (1<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>1) and <span 
+class="cmmi-12">x </span>= (0<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">, </span>0),
+      each with value&#x00A0;47. A violated cover inequality is <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> + <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> + <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>2, and lifting this gives the
+      same inequality.
+      </li>
+      <li 
+  class="enumerate" id="x1-11x5">In the examples below, <span 
+class="cmmi-12">x </span>is required to be a nonnegative vector in&#x00A0;<span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sup><span 
+class="cmr-8">3</span></sup> and <span 
+class="cmmi-12">y </span>is constrained to
+      be a binary vector with three components. A set of constraints that must be satisfied by <span 
+class="cmmi-12">x</span>
+      and <span 
+class="cmmi-12">y </span>is given, and a point that satisfies these constraints is also given. Find a valid flow
+      cover inequality that cuts off this point.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-13x1">Constraints:
+           <center class="math-display" >
+           <img 
+src="hw5sol7x.png" alt="x1 + x2 + x3 &#x2264; 7, x1 &#x2264; 3y1, x2 &#x2264; 5y2, x3 &#x2264; 6y3.
+           " class="math-display" ></center>
+           <!--l. 436--><p class="nopar" >
+           Point:
+           <center class="math-display" >
+           <img 
+src="hw5sol8x.png" alt="                  (      )
+                    2
+x =  (2,5,0), y =   3,1,0  .
+           " class="math-display" ></center>
+           <!--l. 439--><p class="nopar" >
+           </li>
+           <li 
+  class="enumerate" id="x1-15x2">Constraints:
+                                                                                         
+                                                                                         
+           <center class="math-display" >
+           <img 
+src="hw5sol9x.png" alt="7 &#x2264; x1 + x2 + x3, x1 &#x2264; 3y1, x2 &#x2264; 5y2, x3 &#x2264; 6y3.
+           " class="math-display" ></center>
+           <!--l. 444--><p class="nopar" >
+           Point:
+           <center class="math-display" >
+           <img 
+src="hw5sol10x.png" alt="                  (      )
+x =  (2,5,0), y =   2,1,0  .
+                    3
+           " class="math-display" ></center>
+           <!--l. 447--><p class="nopar" >
+           </li></ol>
+      <!--l. 452--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>The general form of the fixed charge inequality is
+      <center class="math-display" >
+      <img 
+src="hw5sol11x.png" alt="&#x2211;          &#x2211;                            &#x2211;          &#x2211;             &#x2211;
+    x  +      (a -  &#x03BB;)+(1 - y ) &#x2264;  b +      a  + &#x03BB;     y  +             x
+      j         j            j               j          j                j
+j&#x2208;C1      j&#x2208;C1                          j&#x2208;C2        j&#x2208;L2      j&#x2208;N2\(C2&#x222A;L2)
+      " class="math-display" ></center>
+      <!--l. 457--><p class="nopar" >
+      where <span 
+class="cmmi-12">C</span><sub><span 
+class="cmr-8">1</span></sub> is a subset of the variables on the LHS of the original inequality, <span 
+class="cmmi-12">C</span><sub><span 
+class="cmr-8">2</span></sub> and <span 
+class="cmmi-12">L</span><sub><span 
+class="cmr-8">2</span></sub> are
+      disjoint subsets of the variables on the RHS of the original inequality, <span 
+class="cmmi-12">b </span>is the constant term
+      on the RHS of the original inequality, <span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">j</span></sub> is the capacity in the <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">j</span></sub><span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">j</span></sub> constraints, and
+      <span 
+class="cmmi-12">&#x03BB; </span>= <span 
+class="cmex-10x-x-120">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">j</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">C</span><sub><span 
+class="cmr-6">1</span></sub></sub><span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmex-10x-x-120">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">j</span><span 
+class="cmsy-8"><img 
+src="cmsy8-32.png" alt="&#x2208;" class="8x-x-32" /></span><span 
+class="cmmi-8">C</span><sub><span 
+class="cmr-6">2</span></sub></sub><span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">b</span>.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-17x1">Let <span 
+class="cmmi-12">C</span><sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmmi-12">, </span>2<span 
+class="cmsy-10x-x-120">}</span>, <span 
+class="cmmi-12">C</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmmi-12">L</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmsy-10x-x-120">&#x2205;</span>. We obtain <span 
+class="cmmi-12">&#x03BB; </span>= 1 and the valid inequality
+           <center class="math-display" >
+           <img 
+src="hw5sol12x.png" alt="x1 + x2 + 2(1 - y1) + 4(1 - y2) &#x2264; 7,
+           " class="math-display" ></center>
+           <!--l. 468--><p class="nopar" >
+           which is violated by the given point.
+           </li>
+           <li 
+  class="enumerate" id="x1-19x2">Let <span 
+class="cmmi-12">C</span><sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmsy-10x-x-120">&#x2205;</span>, <span 
+class="cmmi-12">C</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmsy-10x-x-120">{</span>2<span 
+class="cmsy-10x-x-120">}</span>, <span 
+class="cmmi-12">L</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmsy-10x-x-120">}</span>. We obtain <span 
+class="cmmi-12">&#x03BB; </span>= 2 and the valid inequality
+           <center class="math-display" >
+           <img 
+src="hw5sol13x.png" alt="7 &#x2264;  5 + 2y1 +  x3,
+           " class="math-display" ></center>
+           <!--l. 474--><p class="nopar" >
+           which is violated by the given point.
+           <!--l. 477--><p class="noindent" >Alternatively, taking <span 
+class="cmmi-12">C</span><sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmsy-10x-x-120">&#x2205;</span>, <span 
+class="cmmi-12">C</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmsy-10x-x-120">{</span>2<span 
+class="cmsy-10x-x-120">}</span>, <span 
+class="cmmi-12">L</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmmi-12">, </span>3<span 
+class="cmsy-10x-x-120">} </span>gives <span 
+class="cmmi-12">&#x03BB; </span>= 2 and another valid
+           inequality violated by the current point:
+           <center class="math-display" >
+           <img 
+src="hw5sol14x.png" alt="7 &#x2264;  5 +  2y1 + 2y3.
+           " class="math-display" ></center>
+           <!--l. 481--><p class="nopar" >
+           </li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-21x6">Give a progress report on your project. Your report should be at least a couple of
+      paragraphs long. It doesn&#8217;t need to repeat anything from your initial report from
+      March&#x00A0;6.
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                    </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                               </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Tuesday, Wednesday, 2-4pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Homework 3</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="hw3">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="hw3.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+     <a href=..>MATP6640/DSES6770 Linear Programming</a>, Homework 3.
+  </FONT>
+</DIV>
+
+<P>
+
+<DIV ALIGN="RIGHT">
+   Due:  Thursday, February 28, 2002.
+
+</DIV>
+
+<P>
+
+<BR>
+
+<P>
+Each question is worth 20 points.
+
+<P>
+
+<BR>
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD><A NAME="DW1">&#160;</A>  Consider the linear programming problem
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcl}
+        \min          & c^Tx \\
+        \mbox{s.t.}   &  Ax  & = & b  \qquad \qquad (P)  \\
+                      &  Hx  & = & h  \\
+                      &   x & \geq & 0.
+      \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="232" HEIGHT="99"
+ SRC="img1.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcl}
+\min &amp; c^Tx \\
+\mbox{s.t.} &amp; Ax &amp; = ...
+...\qquad (P) \\
+&amp; Hx &amp; = &amp; h \\
+&amp; x &amp; \geq &amp; 0.
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+We solve this problem by Dantzig-Wolfe decomposition, so the subproblems
+    are of the form
+    <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lccl} 
+        \min          & (c^T - \pi^T A)x \\
+        \mbox{s.t.}   &  Hx  & = & h  \qquad \qquad (SP(\pi))  \\
+                      &   x & \geq & 0, 
+      \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="348" HEIGHT="76"
+ SRC="img2.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lccl}
+\min &amp; (c^T - \pi^T A)x \\
+\mbox{s....
+...h \qquad \qquad (SP(\pi)) \\
+&amp; x &amp; \geq &amp; 0,
+\end{array}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <IMG
+ WIDTH="49" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$(\pi,\sigma)$">
+is the current dual solution to the Master Problem.
+    Assume the current subproblem has an optimal solution <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\bar{x}$">
+with value
+    <I>v</I>.  Can you give a lower bound on the optimal value of (<I>P</I>)?
+    What does your lower bound become if <IMG
+ WIDTH="49" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$(\pi,\sigma)$">
+is dual feasible?
+Suppose (<I>P</I>) has been solved using decomposition. How would you find
+    the optimal dual solution to the original problem&nbsp;(<I>P</I>)?
+<DT>2.
+<DD><A NAME="stochprog1">&#160;</A>    The second-stage constraints of a two-stage stochastic program
+    look as follows:
+    <BR><P></P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="441" HEIGHT="77"
+ SRC="img5.gif"
+ ALT="\begin{eqnarray*}
+\left( \begin{array}{rrrr}1&amp;3&amp;-1&amp;0\\ 2&amp;-1&amp;2&amp;1\end{array}\righ...
+...array}{rrr}5&amp;-1&amp;0\\ 0&amp;2&amp;4\end{array}\right) x \\
+y &amp; \geq &amp; 0
+\end{eqnarray*}">
+</DIV><P></P>
+<BR CLEAR="ALL">
+    where <IMG
+ WIDTH="49" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$x\geq 0$">
+is the first stage variable, <IMG
+ WIDTH="13" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\xi$">
+is a random variable
+    which can take values in the interval [0,1],
+    and <I>y</I> is the second stage (or recourse) variable.
+    What is the linear program that must be checked to ensure that
+    a given <I>x</I> produces a feasible second-stage problem?
+    What is the dual of this LP?
+    Write down the LP in such a way that if you have a point <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.gif"
+ ALT="$\hat{x}$">
+that
+    is not feasible then the solution to the LP gives an inequality that
+    cuts off <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.gif"
+ ALT="$\hat{x}$">.
+    Find an inequality explicitly for <!-- MATH: $\hat{x}=(1,1,1)^T$ -->
+<IMG
+ WIDTH="110" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$\hat{x}=(1,1,1)^T$">.
+(You can use AMPL
+    or another LP package if you want for the last part.)
+</DL>
+
+<P>
+
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD></TD><TD ALIGN="LEFT"><a href=../..>John Mitchell</a></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Amos Eaton 325</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">x6915.</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">
+<a href=mailto:mitchj@rpi.edu>mitchj@rpi.edu</a></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Office hours: Wednesday: 10am - 12 noon.</TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John Mitchell</a>
+<BR><I>2002-02-19</I>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,34 @@
+ampl: model cglpgen_hw4q5.mod;
+ampl: data cglpgen3.dat;
+ampl: solve;
+CPLEX 12.6.2.0: optimal solution; objective -2.222222222
+7 dual simplex iterations (5 in phase I)
+ampl: display alpha, beta;
+alpha [*] :=
+1  -8
+2   0
+3  -8
+4   3
+;
+
+beta = -8
+
+ampl: display u1,s1,t1;
+:     u1     s1     t1       :=
+1   1.33333   0   1.66667
+2   1         0   0
+3      .      0   0
+4      .      0   0
+;
+
+ampl: display u2,s2,t2;
+:  u2  s2  t2    :=
+1   0   0   0
+2   0   0   0
+3   .   0   0
+4   .   3   0
+;
+
+ampl: display u1cv,u2cv;
+u1cv = 3.33333
+u2cv = 8

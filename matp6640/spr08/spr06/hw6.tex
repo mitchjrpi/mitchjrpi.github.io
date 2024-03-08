@@ -1,0 +1,140 @@
+\documentclass[12pt]{article}
+
+\pagestyle{empty}
+
+\usepackage{fullpage}
+
+%\oddsidemargin -.5in
+%\textwidth 7.5in
+%\textheight 10in
+%\topmargin -30pt
+%\headsep 0in
+%\headheight 0in
+
+\newcommand{\re}{I \!\! R}
+
+\begin{document}
+
+\begin{center}
+  \begin{large}
+     MATP6640/DSES6770 Linear Programming, Homework 6.
+  \end{large}
+\end{center}
+
+\begin{flushright}
+   Due:  Tuesday, May 2, 2006.
+\end{flushright}
+
+
+%\vspace{\baselineskip}
+
+%Note: In the following, $P_M$ denotes projection onto the nullspace
+%of the matrix~$M$. If $M$ has full row rank, then $P_M$ is given by
+%\begin{displaymath}
+%P_M = I - M^T (MM^T)^{-1} M.
+%\end{displaymath}
+%Note that if $M$ is a $m \times n$ matrix then $P_M$ is an $n \times n$
+%matrix.
+
+\begin{enumerate}
+%  \item  Let $f(x)=n \log (c^Tx) - \sum_{i=1}^n \log(x_i)$.
+%        Show that $f(x+\theta d)=f(x)$ if $d=kx$ for some scalar $k$,
+%        provided $x>0$, $x+\theta d>0$, $c^Tx>0$, and $c^T(x+\theta d)>0$.
+%  \item
+%Starting from equation (1.20) in {\em Wright},
+%show that there is a typo in equation (1.25a). It should read:
+%\begin{displaymath}
+%A D^2 A^T \Delta \lambda =
+%-r_b + A ( {\mathbf -}S^{-1}X r_c +x - \sigma \mu S^{-1} e).
+%\end{displaymath}
+%(Note: your version of the text may not contain the typo!)
+\item
+Let $K$ be a cone. A function $f:\mbox{int}(K) \rightarrow \re$ is
+{\em logarithmically homogeneous} if there exists a constant $\Theta$
+such that $f(tx)=f(x)-\Theta\ln(t)$ for all $x\in\mbox{int}(K)$ and $t>0$.
+(Here, $\mbox{int}(K)$ denotes the interior of~$K$.)
+Show that the barrier function for $\re^n$, namely $f(x)=-\sum_{i=1}^n\ln(x_i)$,
+and the barrier function for the semidefinite cone, namely $f(X)=-\ln\det(X)$,
+are both logarithmically homogeneous.
+%  \item
+%    Consider the linear programming problem $(P)$
+%    \begin{displaymath}
+%      \begin{array}{lrcrcrcr}
+%        \min        & 9x_1 & + & 6x_2 & - & 7x_3 \\
+%        \mbox{s.t.} &  x_1 & + & 2x_2 & + & 3x_3 & = & 6  \\
+%                    && x_1,& x_2,& x_3 & \geq & 0.
+%      \end{array}
+%    \end{displaymath}
+%    Assume the current point is $e=(1,1,1)^T$.
+%    Calculate the affine descent direction $-P_Ac$ and the centering direction
+%    $P_Ae$.  We wish to move in the direction $d=-P_Ac+\beta P_Ae$ for some
+%    $\beta \geq 0$.  Show that by choosing $\beta$ appropriately, we can find
+%    a steplength $\alpha \geq 0$ such that $e+\alpha d$ is optimal for
+%    the linear program.
+%    (Note: For this problem use the primal rescaling matrix~$X$.
+%    For the given point, we have $X=I$, the identity matrix.
+%    The projection matrix $P_A=I-A^T(AA^T)^{-1}A$.)
+%  \item
+%    Assume the standard form linear programming problem
+%    $\min\{c^Tx: Ax=b, x \geq 0\}$
+%    has a bounded set of optimal solutions.
+%    Let $\mu > 0$ and let $x$ be a strictly feasible solution.
+%    Assume $A$ has full row rank.
+%    Let $s^*$ solve the problem $\min \{|| Xs - \mu e ||^2 : A^Ty +s = c \}$.
+%    Find~$s^*$. Show that if the optimal value is smaller than $\mu^2$
+%    then $s^* > 0$.
+%  \item
+%    For the problem $(P)$ in question~1, with the given primal point $x=e$,
+%    find the choice of $y^*$, $s^*$, and $\mu^*$ which minimizes
+%    $\{|| Xs - \mu e ||^2 : A^Ty +s = c \}$.
+%     Verify that the optimal value is smaller than~$(\mu^*)^2$.
+%  \item
+%    Show that the standard dual form $\max\{b^Ty: A^Ty+s=c, s \geq 0\}$
+%    is equivalent to a problem of the form
+%    $\min\{g^Ts : Ms = Mc, s \geq 0\}$
+%    for some matrix $M$ and some vector~$g$.
+%    You may assume the rows of $A$ are linearly independent.
+%  \item
+%    Wright, Chapter 5, page 105, question 7.
+ \item
+   Let $x \in \re^n$. Show that the constraint
+   \begin{displaymath}
+   x_1 x_2 \geq \sum_{i=3}^n x_i^2
+   \end{displaymath}
+   is equivalent to a second order cone constraint.
+   Hence show that the constraint that a $2\times 2$ matrix be positive semidefinite
+   is equivalent to two linear constraints and a second order cone constraint.
+  \item
+    Let $X$ be a symmetric real $n \times n$ matrix.
+    Show that $X$ is positive semidefinite if and only if
+    $\mbox{trace}(MX) \geq 0$ for all symmetric positive semidefinite
+    $n \times n$ rank one matrices~$M=uu^T$ where $||u||=1$.
+    Hence show that the requirement that $X$ be positive semidefinite is
+    equivalent to a collection of linear constraints.
+  \item
+    Most semidefinite relaxations of combinatorial optimization problems
+    result in a linear constraint on the trace of the primal matrix~$X$.
+    For example, in the relaxation of MaxCut, the diagonal entries are
+    all required to equal one, so the trace must equal the number of nodes.
+    Show that if the primal problem contains a constraint of the form
+    trace$(X)=a$ for some constant $a$ then the feasible region
+    for the dual is unbounded.
+ \item
+    Assume the feasible region of the SDP $\min\{\mbox{trace}(CX): \mathcal{A}(X)=b, X \succeq 0\}$
+    is bounded.
+    Give an equivalent SDP which includes a linear equality constraint on the 
+    trace of the primal matrix.
+\end{enumerate}
+
+
+\vfill
+
+\begin{tabular}{@{\hspace{.5in}}l}
+   John Mitchell  \\
+   Amos Eaton 325  \\
+   x6915.  \\
+   mitchj@rpi.edu  \\
+   Office hours: Tuesday: 2 -- 3.30pm.
+\end{tabular}
+
+\end{document}

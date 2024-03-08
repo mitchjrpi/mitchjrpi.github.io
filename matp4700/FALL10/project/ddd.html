@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="ddd.tex"> 
+<meta name="date" content="2010-09-14 12:03:00"> 
+<link rel="stylesheet" type="text/css" href="ddd.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 24--><p class="noindent" >
+<!--l. 26--><p class="noindent" ><span class="underline"><span 
+class="cmbx-12x-x-144">Case Study:</span></span>
+<!--l. 28--><p class="noindent" ><span class="underline"><span 
+class="cmbx-12x-x-144">Drug Design and Development Inc</span></span> </div>
+<div class="center" 
+>
+<!--l. 32--><p class="noindent" >
+<!--l. 34--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmr-12x-x-120">MATP4700/ DSES4770 Math Models of Operations Research</span></a>
+<!--l. 36--><p class="noindent" ><span 
+class="cmr-12x-x-120">Fall 2010</span>
+</div>
+<!--l. 41--><p class="noindent" ><span 
+class="cmti-12">Students may work in groups of up to three people. You may consult only your textbooks, your</span>
+<span 
+class="cmti-12">notes, online information about AMPL, and me.</span>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Introduction</h3>
+<!--l. 48--><p class="noindent" >Drug Design and Development Inc (DDD) designs novel medicines. They have experimented with
+various compounds and they&#8217;d like to determine how to combine various parts of these compounds
+in order to create a more effective medicine.
+<!--l. 54--><p class="indent" >   Each compound contains several different factors in various known proportions, and the efficacy
+of each compound is measured. The aim is to determine the impact of the factors on the overall
+response.
+<!--l. 59--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-20002"></a>Constructing a Model</h3>
+<!--l. 61--><p class="noindent" >DDD is particularly interested in the impact of five factors, and has measured the response for 40
+different compounds. The responses <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">i</span></sub> to each of the compounds <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">, </span>40 and the
+amounts <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ij</span></sub> of each factor <span 
+class="cmmi-12">j </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">, </span>5 in each of the compounds <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">, </span>40 can be found
+online:
+      <div class="quote">
+
+      <a 
+href="http://www.rpi.edu/~mitchj/matp4700/project/ddd.dat" class="url" ><span 
+class="cmtt-12">http://www.rpi.edu/</span><span 
+class="cmtt-12">~</span><span 
+class="cmtt-12">mitchj/matp4700/project/ddd.dat</span></a></div>
+                                                                                         
+
+                                                                                         
+<!--l. 70--><p class="noindent" >As a first pass, they want to fit a linear model with parameters <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">j</span></sub> for the factors <span 
+class="cmmi-12">j </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">, </span>5. They also
+believe there could be a constant offset <span 
+class="cmmi-12">b </span>in the performance of the compounds, so the model they
+chose is: <table 
+class="equation"><tr><td><a 
+ id="x1-2001r1"></a>
+<img 
+src="ddd0x.png" alt="          &#x2211;5
+yi = b +     wjxij +  &#x03BD;i  for i = 1,...,40
+          j=1  "  class="math" >
+   </td><td class="equation-label">(1)</td></tr></table>
+<!--l. 77--><p class="indent" >   where <span 
+class="cmmi-12">&#x03BD;</span><sub><span 
+class="cmmi-8">i</span></sub> denotes the error in the calculated response to the <span 
+class="cmmi-12">i</span>th compound.
+<!--l. 80--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-30003"></a>Finding the Variables <span 
+class="cmmi-12">w </span>and <span 
+class="cmmi-12">b</span></h3>
+<!--l. 82--><p class="noindent" >A standard regression model would seek to minimize the sum of the squares of the errors <span 
+class="cmmi-12">&#x03BD;</span><sub><span 
+class="cmmi-8">i</span></sub>. DDD
+wishes to use an alternative. In particular, because of the difficulty of measuring the data exactly,
+DDD has decided to use an <span 
+class="cmmi-12">&#x03F5;</span>-tube regression model. In this model, only errors greater than <span 
+class="cmmi-12">&#x03F5; </span>are
+counted, where <span 
+class="cmmi-12">&#x03F5; </span>is a parameter. DDD will look to minimize the sum of all errors greater
+than&#x00A0;<span 
+class="cmmi-12">&#x03F5;</span>.
+<!--l. 91--><p class="indent" >   Further, the width of the tube can be increased by increasing the norm of&#x00A0;<span 
+class="cmmi-12">w</span>. Thus, to
+regularize the model, a penalty term is added consisting of the 1-norm of <span 
+class="cmmi-12">w</span>, scaled by a
+parameter&#x00A0;<span 
+class="cmmi-12">C</span>. Summing up, DDD wishes to choose <span 
+class="cmmi-12">b </span>and <span 
+class="cmmi-12">w </span>to <table 
+class="equation"><tr><td><a 
+ id="x1-3001r2"></a>
+<img 
+src="ddd1x.png" alt="               m&#x2211;          &#x2211;                    &#x2211;m
+minimizew,b  C    |wj| +     max {0, |yi - b -     wjxij| - &#x03F5;}
+               j=1        i&#x2208;I                  j=1 "  class="math" >
+   </td><td class="equation-label">(2)</td></tr></table>
+<!--l. 103--><p class="indent" >   for the <span 
+class="cmmi-12">m </span>= 5 factors and the set of <span 
+class="cmmi-12">I </span>= <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">, </span>40<span 
+class="cmsy-10x-x-120">} </span>compounds.
+<!--l. 108--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x1-40004"></a>Overfitting and Cross-validation</h3>
+<!--l. 110--><p class="noindent" >There is some variability in the response to any given compound. One concern with constructing a
+regression model is overfitting the data: the response variability is ignored and the observed
+response is taken to be more accurate than is justified. The effect is that the model gives a very
+accurate fit for the 40 data points, but does not predict the outcome value for subsequent
+compounds very well.
+                                                                                         
+
+                                                                                         
+<!--l. 118--><p class="indent" >   One technique used to overcome this phenomenon is cross-validation. We look at 2-fold
+cross-validation, where the data are split into two equal sized sets. Model (<a 
+href="#x1-3001r2">2<!--tex4ht:ref: eq:min --></a>) is solved for just
+<span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">, </span>20 (the training data) and the resulting choice of <span 
+class="cmmi-12">b </span>and <span 
+class="cmmi-12">w </span>is checked by using
+it to calculate the errors <span 
+class="cmmi-12">&#x03BD;</span><sub><span 
+class="cmmi-8">i</span></sub> for samples <span 
+class="cmmi-12">i </span>= 21<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">, </span>40 (the testing data). The roles of
+samples 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">, </span>20 and 21<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">, </span>40 are then reversed. If the model is good for the testing data
+then it is accepted; otherwise the parameters <span 
+class="cmmi-12">C </span>and <span 
+class="cmmi-12">&#x03F5; </span>are modified and the process
+repeated.
+<!--l. 129--><p class="indent" >   This leads to a procedure for calculating the value of a particular choice of <span 
+class="cmmi-12">C </span>and&#x00A0;<span 
+class="cmmi-12">&#x03F5;</span>:
+      <div class="quote">
+     <ul class="itemize1">
+     <li class="itemize">Solve (<a 
+href="#x1-3001r2">2<!--tex4ht:ref: eq:min --></a>) using <span 
+class="cmmi-12">I </span>= <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">, </span>20<span 
+class="cmsy-10x-x-120">}</span>, leading to <span 
+class="cmmi-12">b</span><sup><span 
+class="cmr-8">(</span><span 
+class="cmmi-8">a</span><span 
+class="cmr-8">)</span></sup> and <span 
+class="cmmi-12">w</span><sup><span 
+class="cmr-8">(</span><span 
+class="cmmi-8">a</span><span 
+class="cmr-8">)</span></sup>. Calculate
+     <center class="math-display" >
+     <img 
+src="ddd2x.png" alt="        &#x2211;40             &#x2211;m
+v(a) :=      |yi - b(a) -    w (aj)xij|.
+        i=21             j=1
+     " class="math-display" ></center>
+     <!--l. 137--><p class="nopar" >
+     </li>
+     <li class="itemize">Solve (<a 
+href="#x1-3001r2">2<!--tex4ht:ref: eq:min --></a>) using <span 
+class="cmmi-12">I </span>= <span 
+class="cmsy-10x-x-120">{</span>21<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">, </span>40<span 
+class="cmsy-10x-x-120">}</span>, leading to <span 
+class="cmmi-12">b</span><sup><span 
+class="cmr-8">(</span><span 
+class="cmmi-8">b</span><span 
+class="cmr-8">)</span></sup> and <span 
+class="cmmi-12">w</span><sup><span 
+class="cmr-8">(</span><span 
+class="cmmi-8">b</span><span 
+class="cmr-8">)</span></sup>. Calculate
+     <center class="math-display" >
+     <img 
+src="ddd3x.png" alt="       &#x2211;20             m&#x2211;   (b)
+v(b) :=    |yi - b(b) -     wj xij|.
+       i=1             j=1
+     " class="math-display" ></center>
+     <!--l. 142--><p class="nopar" >
+     </li>
+     <li class="itemize">Calculate the total error <span 
+class="cmmi-12">v</span>(<span 
+class="cmmi-12">C,&#x03F5;</span>) := <span 
+class="cmmi-12">v</span><sup><span 
+class="cmr-8">(</span><span 
+class="cmmi-8">a</span><span 
+class="cmr-8">)</span></sup> + <span 
+class="cmmi-12">v</span><sup><span 
+class="cmr-8">(</span><span 
+class="cmmi-8">b</span><span 
+class="cmr-8">)</span></sup>.</li></ul>
+      </div>
+                                                                                         
+
+                                                                                         
+<!--l. 149--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
+ id="x1-50005"></a>Questions</h3>
+<!--l. 150--><p class="noindent" >
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-5002x1">Due: <span 
+class="cmbx-12">Tuesday, October 5</span>, in class. (40 points) <br 
+class="newline" /><span 
+class="cmti-12">(Please submit a written report, a printout of your problem files, and any AMPL output used.</span>
+      <span 
+class="cmti-12">Also email me your model and data files.)</span>
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-5004x1">Formulate problem (<a 
+href="#x1-3001r2">2<!--tex4ht:ref: eq:min --></a>) as a linear program. Clearly define every variable in your
+           formulation. Explain every constraint including coefficients.
+           </li>
+           <li 
+  class="enumerate" id="x1-5006x2">Solve your linear program using <a 
+href="http://www.rpi.edu/~mitchj/ampldetails.html" >AMPL</a> for each of the nine combinations of the choices
+           of <span 
+class="cmmi-12">C </span>and <span 
+class="cmmi-12">&#x03F5; </span>given in Table&#x00A0;<a 
+href="#x1-50071">1<!--tex4ht:ref: table:Ceps --></a>. <div class="table">
+           <!--l. 167--><p class="noindent" ><a 
+ id="x1-50071"></a><hr class="float"><div class="float" 
+><table class="float"><tr class="float"><td class="float" 
+>
+<div class="center" 
+>
+<!--l. 167--><p class="noindent" >
+<div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"><col 
+id="TBL-1-2"><col 
+id="TBL-1-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td11"><span 
+class="cmmi-12">C</span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-2"  
+class="td11">=</td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-3"  
+class="td11">0, 0.1, 1    </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-1"  
+class="td11"> <span 
+class="cmmi-12">&#x03F5; </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-2"  
+class="td11">=</td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-3"  
+class="td11">0, 0.05, 0.3</td></tr></table>
+</div></div>
+           <br /> <table class="caption" 
+><tr style="vertical-align:baseline;" class="caption"><td class="id">Table&#x00A0;1: </td><td  
+class="content">Values for <span 
+class="cmmi-12">C </span>and <span 
+class="cmmi-12">&#x03F5;</span>. </td></tr></table><!--tex4ht:label?: x1-50071 -->
+           </td></tr></table></div><hr class="endfloat" />
+           </div>
+           <!--l. 175--><p class="noindent" >Give the optimal values of <span 
+class="cmmi-12">b </span>and <span 
+class="cmmi-12">w </span>for each choice. How do the solutions
+           compare?
+           </li>
+           <li 
+  class="enumerate" id="x1-5009x3">Perform 2-fold cross-validation for each combination of <span 
+class="cmmi-12">C </span>and <span 
+class="cmmi-12">&#x03F5; </span>from Table&#x00A0;<a 
+href="#x1-50071">1<!--tex4ht:ref: table:Ceps --></a>. Give the
+           total error <span 
+class="cmmi-12">v</span>(<span 
+class="cmmi-12">C,&#x03F5;</span>) for each combination. Which combination minimizes <span 
+class="cmmi-12">v</span>(<span 
+class="cmmi-12">C,&#x03F5;</span>)? Can you
+           find a better choice of (<span 
+class="cmmi-12">C,&#x03F5;</span>)?</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-5011x2"><span 
+class="cmbx-12">Sensitivity analysis </span>(40 points): To be distributed later.
+      </li>
+      <li 
+  class="enumerate" id="x1-5013x3"><span 
+class="cmbx-12">Extra conditions </span>(20 points): To be distributed later. Your answers will be due on Tuesday
+      December&#x00A0;7.</li></ol>
+                                                                                         
+
+                                                                                         
+<!--l. 196--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
+ id="x1-60006"></a>AMPL notes</h3>
+      <ul class="itemize1">
+      <li class="itemize">If you are working in a Windows operating system, you can edit your model and data
+      files in Office, for example. Save the files as plain text files. Windows may append the
+      suffix <span 
+class="cmtt-12">txt </span>to the file names, in which case you would need to include that suffix when
+      asking ampl to read the file.
+      </li>
+      <li class="itemize">If you want to read in a new model file <span 
+class="cmtt-12">chips.mod </span>and data file <span 
+class="cmtt-12">chips.dat</span>, you can use the
+      <span 
+class="cmtt-12">reset </span>command: <div class="verse">
+              <!--l. 214--><p class="noindent" > ampl: <span 
+class="cmtt-12">reset;</span><br />
+              ampl: <span 
+class="cmtt-12">model chips.mod;</span><br />
+              ampl: <span 
+class="cmtt-12">data chips.dat;</span>
+</div>
+      </li>
+      <li class="itemize">If you want to reset the whole data file and read in a new data file <span 
+class="cmtt-12">chips.dat</span>, but you want
+      to keep the model file as before, you can type <div class="verse">
+              <!--l. 224--><p class="noindent" > ampl: <span 
+class="cmtt-12">reset data;</span><br />
+              ampl: <span 
+class="cmtt-12">data chips.dat;</span>
+</div>
+      </li>
+      <li class="itemize">If you want to change one parameter, you can use the <span 
+class="cmbx-12">let </span>command as follows:
+      <div class="verse">
+              <!--l. 231--><p class="noindent" > (<span 
+class="cmmi-12">OS</span>)<span 
+class="cmmi-12">&#x00A0;</span><span 
+class="cmtt-12">ampl</span><br />
+              ampl: <span 
+class="cmtt-12">model sample/steel.mod;</span><br />
+              ampl: <span 
+class="cmtt-12">data sample/steel.dat;</span><br />
+              ampl: <span 
+class="cmtt-12">solve;</span><br />
+                                                                                         
+
+                                                                                         
+              MINOS 5.4: optimal solution found.<br />
+              2 iterations, objective 192000<br />
+              ampl: <span 
+class="cmtt-12">let rate["bands"]:=250;</span><br />
+              ampl: <span 
+class="cmtt-12">solve;</span><br />
+              MINOS 5.4: optimal solution found.<br />
+              1 iterations, objective 217200
+</div>
+      This changes the rate for bands and then resolves the problem.
+      </li>
+      <li class="itemize">More hints are available online from my page about AMPL.
+      </li>
+      <li class="itemize">This project is available online. You may find it helpful to cut-and-paste some of the data
+      from the web version to your model.</li></ul>
+<!--l. 254--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>
+    
+</body></html> 
+
+                                                                                         
+
+

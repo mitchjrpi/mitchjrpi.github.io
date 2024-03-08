@@ -1,0 +1,278 @@
+\batchmode
+\documentclass[12pt]{article}
+\makeatletter
+
+
+\usepackage[myheadings]{fullpage}
+
+
+\providecommand{\re}{I\!\!R}  
+
+
+\providecommand{\xab}{\mbox{$x_{1,2}$ }}  
+
+\providecommand{\xac}{\mbox{$x_{1,3}$ }}  
+
+\providecommand{\xad}{\mbox{$x_{1,4}$ }}  
+
+\providecommand{\xbc}{\mbox{$x_{2,3}$ }}  
+
+\providecommand{\xbd}{\mbox{$x_{2,4}$ }}  
+
+\providecommand{\xcd}{\mbox{$x_{3,4}$ }}  
+
+
+\markboth{COIP Final 2005}{COIP Final 2005}
+
+
+\usepackage[dvips]{color}
+\pagecolor[gray]{.7}
+
+
+
+\makeatletter
+
+\makeatletter
+\count@=\the\catcode`\_ \catcode`\_=8 
+\newenvironment{tex2html_wrap}{}{} \catcode`\_=\count@
+\makeatother
+\let\mathon=$
+\let\mathoff=$
+\ifx\AtBeginDocument\undefined \newcommand{\AtBeginDocument}[1]{}\fi
+\newbox\sizebox
+\setlength{\hoffset}{0pt}\setlength{\voffset}{0pt}
+\addtolength{\textheight}{\footskip}\setlength{\footskip}{0pt}
+\addtolength{\textheight}{\topmargin}\setlength{\topmargin}{0pt}
+\addtolength{\textheight}{\headheight}\setlength{\headheight}{0pt}
+\addtolength{\textheight}{\headsep}\setlength{\headsep}{0pt}
+\setlength{\textwidth}{349pt}
+\newwrite\lthtmlwrite
+\makeatletter
+\let\realnormalsize=\normalsize
+\global\topskip=2sp
+\def\preveqno{}\let\real@float=\@float \let\realend@float=\end@float
+\def\@float{\let\@savefreelist\@freelist\real@float}
+\def\end@float{\realend@float\global\let\@freelist\@savefreelist}
+\let\real@dbflt=\@dbflt \let\end@dblfloat=\end@float
+\let\@largefloatcheck=\relax
+\def\@dbflt{\let\@savefreelist\@freelist\real@dbflt}
+\def\adjustnormalsize{\def\normalsize{\mathsurround=0pt \realnormalsize
+ \parindent=0pt\abovedisplayskip=0pt\belowdisplayskip=0pt}\normalsize}%
+\def\lthtmltypeout#1{{\let\protect\string\immediate\write\lthtmlwrite{#1}}}%
+\newcommand\lthtmlhboxmathA{\adjustnormalsize\setbox\sizebox=\hbox\bgroup}%
+\newcommand\lthtmlvboxmathA{\adjustnormalsize\setbox\sizebox=\vbox\bgroup%
+ \let\ifinner=\iffalse }%
+\newcommand\lthtmlboxmathZ{\@next\next\@currlist{}{\def\next{\voidb@x}}%
+ \expandafter\box\next\egroup}%
+\newcommand\lthtmlmathtype[1]{\def\lthtmlmathenv{#1}}%
+\newcommand\lthtmllogmath{\lthtmltypeout{l2hSize %
+:\lthtmlmathenv:\the\ht\sizebox::\the\dp\sizebox::\the\wd\sizebox.\preveqno}}%
+\newcommand\lthtmlfigureA[1]{\let\@savefreelist\@freelist
+       \lthtmlmathtype{#1}\lthtmlvboxmathA}%
+\newcommand\lthtmlfigureZ{\lthtmlboxmathZ\lthtmllogmath\copy\sizebox
+       \global\let\@freelist\@savefreelist}%
+\newcommand\lthtmldisplayA[1]{\lthtmlmathtype{#1}\lthtmlvboxmathA}%
+\newcommand\lthtmldisplayB[1]{\edef\preveqno{(\theequation)}%
+  \lthtmldisplayA{#1}\let\@eqnnum\relax}%
+\newcommand\lthtmldisplayZ{\lthtmlboxmathZ\lthtmllogmath\lthtmlsetmath}%
+\newcommand\lthtmlinlinemathA[1]{\lthtmlmathtype{#1}\lthtmlhboxmathA  \vrule height1.5ex width0pt }%
+\newcommand\lthtmlinlineA[1]{\lthtmlmathtype{#1}\lthtmlhboxmathA}%
+\newcommand\lthtmlinlineZ{\egroup\expandafter\ifdim\dp\sizebox>0pt %
+  \expandafter\centerinlinemath\fi\lthtmllogmath\lthtmlsetinline}
+\newcommand\lthtmlinlinemathZ{\egroup\expandafter\ifdim\dp\sizebox>0pt %
+  \expandafter\centerinlinemath\fi\lthtmllogmath\lthtmlsetmath}
+\def\lthtmlsetinline{\hbox{\vrule width.1em\vtop{\vbox{%
+  \kern.1em\copy\sizebox}\ifdim\dp\sizebox>0pt\kern.1em\else\kern.3pt\fi
+  \ifdim\hsize>\wd\sizebox \hrule depth1pt\fi}}}
+\def\lthtmlsetmath{\hbox{\vrule width.1em\vtop{\vbox{%
+  \kern.1em\kern0.8 pt\hbox{\hglue.17em\copy\sizebox\hglue0.8 pt}}\kern.3pt%
+  \ifdim\dp\sizebox>0pt\kern.1em\fi \kern0.8 pt%
+  \ifdim\hsize>\wd\sizebox \hrule depth1pt\fi}}}
+\def\centerinlinemath{%\dimen1=\ht\sizebox
+  \dimen1=\ifdim\ht\sizebox<\dp\sizebox \dp\sizebox\else\ht\sizebox\fi
+  \advance\dimen1by.5pt \vrule width0pt height\dimen1 depth\dimen1 
+ \dp\sizebox=\dimen1\ht\sizebox=\dimen1\relax}
+
+\def\lthtmlcheckvsize{\ifdim\ht\sizebox<\vsize\expandafter\vfill
+  \else\expandafter\vss\fi}%
+\makeatletter \tracingstats = 1 
+
+
+\begin{document}
+\pagestyle{empty}\thispagestyle{empty}%
+\lthtmltypeout{latex2htmlLength hsize=\the\hsize}%
+\lthtmltypeout{latex2htmlLength vsize=\the\vsize}%
+\lthtmltypeout{latex2htmlLength hoffset=\the\hoffset}%
+\lthtmltypeout{latex2htmlLength voffset=\the\voffset}%
+\lthtmltypeout{latex2htmlLength topmargin=\the\topmargin}%
+\lthtmltypeout{latex2htmlLength topskip=\the\topskip}%
+\lthtmltypeout{latex2htmlLength headheight=\the\headheight}%
+\lthtmltypeout{latex2htmlLength headsep=\the\headsep}%
+\lthtmltypeout{latex2htmlLength parskip=\the\parskip}%
+\lthtmltypeout{latex2htmlLength oddsidemargin=\the\oddsidemargin}%
+\makeatletter
+\if@twoside\lthtmltypeout{latex2htmlLength evensidemargin=\the\evensidemargin}%
+\else\lthtmltypeout{latex2htmlLength evensidemargin=\the\oddsidemargin}\fi%
+\makeatother
+
+% !!! IMAGES START HERE !!!
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath26}%
+\begin{displaymath}
+\begin{array}{lrcrcrcrcrclr}
+\max & 23x_1 & + & 17x_2 & + & 30x_3 & + & 14x_4 & + & 9x_5 \\
+\mbox{subject to} & 6x_1 & + & 5x_2 & + & 10x_3 & + & 7x_4 & + & 5x_5 & \leq & 14 & \quad (KP) \\
+& \multicolumn{11}{c}{x_i \in \{0,1\},  \; i=1,\ldots, 5}
+\end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath37}%
+\begin{displaymath}
+x_1 + x_2 + x_4 + x_5 \leq 2
+\end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline276}%
+$P \cap \{x \in I\!\!R^5: x_3=0\}$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline284}%
+$i=1,\ldots,5$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline296}%
+$R \subseteq V$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlfigureA{picture44}%
+\begin{picture}
+(200,200)
+\put(100,180){\circle{15}}
+\put(97,176){1}
+\put(100,80){\circle{15}}
+\put(97,76){4}
+\put(00,30){\circle{15}}
+\put(-3,26){2}
+\put(200,30){\circle{15}}
+\put(197,26){3}
+\par
+\put(4,36){\line(2,3){92}}
+\put(196,36){\line(-2,3){92}}
+\put(8,30){\line(1,0){184}}
+\par
+\put(100,88){\line(0,1){84}}
+\put(94,76){\line(-2,-1){88}}
+\put(106,76){\line(2,-1){88}}
+\par
+\put(40,100){5}
+\put(155,100){5}
+\put(100,32){5}
+\par
+\put(102,120){3}
+\put(50,60){3}
+\put(140,60){3}
+\end{picture}%
+\lthtmlfigureZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath68}%
+\begin{displaymath}
+         \begin{array}{lrcrcrcrcrcrclr}
+         \min & 5\mbox{$x_{1,2}$ }& + & 5\mbox{$x_{1,3}$ }& + & 5\mbox{$x_{2,3}$ }& + & 3\mbox{$x_{1,4}$ }& + & 3 \mbox{$x_{2,4}$ }& + & 3\mbox{$x_{3,4}$ }\\
+         \mbox{s.t.} & \mbox{$x_{1,2}$ }& + & \mbox{$x_{1,3}$ }&&& + & \mbox{$x_{1,4}$ }&&&&& \geq & 1 \\
+         & \mbox{$x_{1,2}$ }&&& + & \mbox{$x_{2,3}$ }&&& + & \mbox{$x_{2,4}$ }&&& \geq & 1 & \qquad (IP)  \\
+         &&& \mbox{$x_{1,3}$ }& + & \mbox{$x_{2,3}$ }&&&&& + & \mbox{$x_{3,4}$ }& \geq & 1  \\
+         & \multicolumn{11}{c}{\mbox{$x_{1,2}$ }, \mbox{$x_{1,3}$ }, \mbox{$x_{2,3}$ }, \mbox{$x_{1,4}$ }, \mbox{$x_{2,4}$ }, \mbox{$x_{3,4}$ }\mbox{ binary}}
+         \end{array}
+         \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline356}%
+$x_e \leq 1$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath77}%
+\begin{displaymath}
+         \begin{array}{lrcrcrclr}
+         \max & y_1 & + & y_2 & + & y_3 \\
+         \mbox{s.t.} & y_1 & + & y_2 &&& \leq & 5  \\
+         & y_1 &&& + & y_3 & \leq & 5  \\
+         &&& y_2 & + & y_3 & \leq & 5 & \qquad (D) \\
+         & y_1 &&&&& \leq & 3 \\
+         &&& y_2 &&& \leq & 3 \\
+         &&&&& y_3 & \leq & 3 \\
+         & \multicolumn{5}{r}{y_1, y_2, y_3} & \geq & 0
+         \end{array}
+         \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath88}%
+\begin{displaymath}
+        \begin{array}{rcrcrcrcrcrcl}
+        \mbox{$x_{1,2}$ }& + & \mbox{$x_{1,3}$ }&&&&& + & \mbox{$x_{2,4}$ }& + & \mbox{$x_{3,4}$ }& \geq & 1  \\
+        \mbox{$x_{1,2}$ }&&& + & \mbox{$x_{2,3}$ }& + & \mbox{$x_{1,4}$ }&&& + & \mbox{$x_{3,4}$ }& \geq & 1 \\
+        && \mbox{$x_{1,3}$ }& + & \mbox{$x_{2,3}$ }& + & \mbox{$x_{1,4}$ }& + & \mbox{$x_{2,4}$ }&&& \geq & 1
+        \end{array}
+        \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath95}%
+\begin{displaymath}
+         3\mbox{$x_{1,2}$ }+ 3\mbox{$x_{1,3}$ }+ 3\mbox{$x_{2,3}$ }+ 2 \mbox{$x_{1,4}$ }+ 2 \mbox{$x_{2,4}$ }+ 2 \mbox{$x_{3,4}$ }\geq 6
+         \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath98}%
+\begin{displaymath}
+          \begin{array}{rcrcrcrcrcrcl}
+          \mbox{$x_{1,2}$ }& + & \mbox{$x_{1,3}$ }& + & \mbox{$x_{2,3}$ }& + & \mbox{$x_{1,4}$ }& + & \mbox{$x_{2,4}$ }&&& \geq & 2  \\
+          \mbox{$x_{1,2}$ }& + & \mbox{$x_{1,3}$ }& + & \mbox{$x_{2,3}$ }& + & \mbox{$x_{1,4}$ }&&& + & \mbox{$x_{3,4}$ }& \geq & 2  \\
+          \mbox{$x_{1,2}$ }& + & \mbox{$x_{1,3}$ }& + & \mbox{$x_{2,3}$ }&&& + & \mbox{$x_{2,4}$ }& + & \mbox{$x_{3,4}$ }& \geq & 2  \\
+          \end{array}
+          \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath105}%
+\begin{displaymath}
+   \begin{array}{lrclr}
+   \min & c^Tx \\
+   \mbox{s.t.} & Ax & \geq & b & \qquad (IP)  \\
+   & x && \mbox{binary}
+   \end{array}
+   \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmlinlinemathA{tex2html_wrap_inline450}%
+$a_{ij} \geq b_i$%
+\lthtmlinlinemathZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+
+\end{document}

@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="exam3aF10.tex"> 
+<meta name="date" content="2017-11-19 19:00:00"> 
+<link rel="stylesheet" type="text/css" href="exam3aF10.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 21--><p class="noindent" >
+<!--l. 22--><p class="noindent" >Math Models of Operations Research, MATP 4700/ ISYE 4770.</div>
+<div class="center" 
+>
+<!--l. 25--><p class="noindent" >
+<!--l. 26--><p class="noindent" >Third Exam, Friday, December 10, 2010.</div>
+<!--l. 29--><p class="noindent" >You may use any result from your notes or a homework that is clearly stated. You may use one sheet of
+handwritten notes, but no other sources. The exam consists of five questions, and lasts one hundred and ten
+minutes.
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">(30 points; each part is worth five points) Consider the linear programming problem
+      <center class="math-display" >
+      <img 
+src="exam3aF100x.png" alt="min   2x   -   5x
+        1        2
+s.t.   x1  +   2x2  &#x2264;   7
+      2x1  +   3x2  &#x2264;   11
+             x1,x2  &#x2265;   0.
+      " class="math-display" ></center>
+      <!--l. 45--><p class="nopar" >
+      (Note: Keep the constraints as <span 
+class="cmti-12">inequalities </span>throughout this problem, so don&#8217;t introduce slack variables. An
+      interior point must satisfy all the constraints strictly.)
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-5x1"><a 
+ id="x1-41"></a> Solve the problem graphically.
+           </li>
+           <li 
+  class="enumerate" id="x1-7x2">Determine the direction &#x0394;<span 
+class="cmmi-12">x </span>of most rapid improvement in the objective function. Is this direction
+           feasible at any interior point solution to the model?
+           </li>
+           <li 
+  class="enumerate" id="x1-9x3">Show that <span 
+class="cmmi-12">x </span>= (2<span 
+class="cmmi-12">, </span>1) is an interior point solution.
+           </li>
+           <li 
+  class="enumerate" id="x1-11x4"><a 
+ id="x1-104"></a> Determine the maximum step <span 
+class="cmmi-12">&#x03B1; </span>in the direction &#x0394;<span 
+class="cmmi-12">x </span>from the point <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">0</span></sup> that preserves feasibility.
+           Let <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">1</span></sup> = <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">0</span></sup> + <span 
+class="cmmi-12">&#x03B1;</span>&#x0394;<span 
+class="cmmi-12">x</span>.
+           </li>
+           <li 
+  class="enumerate" id="x1-13x5">Plot the move of part&#x00A0;<a 
+href="#x1-104">1d<!--tex4ht:ref: maxstep --></a> and the resulting point <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">1</span></sup> in the graph of part&#x00A0;<a 
+href="#x1-41">1a<!--tex4ht:ref: graph --></a>.
+           </li>
+           <li 
+  class="enumerate" id="x1-15x6">Explain why it is easier to find a good move direction at <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">0</span></sup> than at <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">1</span></sup>.</li></ol>
+                                                                                                       
+                                                                                                       
+      </li>
+      <li 
+  class="enumerate" id="x1-17x2">(15 points) <span 
+class="cmti-12">Use Dijkstra&#8217;s algorithm </span>to find the shortest path from node 1 to node 5 in the given graph. The
+      labels on the edges are the lengths of the edges.
+      <div class="center" 
+>
+<!--l. 71--><p class="noindent" >
+<!--l. 112--><p class="noindent" >  <img src=q2fig.png>
+</div>
+      </li>
+      <li 
+  class="enumerate" id="x1-19x3">(10 points) The point <span class="bar-css"><span 
+class="cmmi-12">x</span></span> = (3<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">, </span>2<span 
+class="cmmi-12">, </span>2) is an interior feasible solution to the linear program
+      <center class="math-display" >
+      <img 
+src="exam3aF101x.png" alt="min         6x1  +   5x2  +   0x3  +   7x4
+subject to  2x1  -   3x2  +    x3  +   3x4  =   11
+             x   +    x   -   2x   +    x   =   2
+              1        2        3        4
+                                 x1,...,x4  &#x2265;   0.
+      " class="math-display" ></center>
+      <!--l. 127--><p class="nopar" >
+      Show that <span class="bar-css"><span 
+class="cmmi-12">x</span></span> is <span 
+class="cmbx-12">not </span>an optimal solution to the barrier problem
+      <center class="math-display" >
+      <img 
+src="exam3aF102x.png" alt="min         6x   +   5x   +   0x   +   7x   -  &#x03BC; &#x2211;4   ln(x )
+              1        2        3        4         i=1    i
+subject to  2x1  -   3x2  +    x3  +   3x4  =  11
+             x1  +    x2  -   2x3  +    x4  =  2
+                                 x1,...,x4  &#x2265;  0
+      " class="math-display" ></center>
+      <!--l. 137--><p class="nopar" >
+      when <span 
+class="cmmi-12">&#x03BC; </span>= 6. (Hint: the dual problem to min<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>: <span 
+class="cmmi-12">Ax </span>= <span 
+class="cmmi-12">b,x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmsy-10x-x-120">} </span>is max<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span>: <span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">c</span><span 
+class="cmsy-10x-x-120">}</span>.)
+                                                                                                       
+                                                                                                       
+      </li>
+      <li 
+  class="enumerate" id="x1-21x4">(15 points.) Jim is deciding which graduate schools to apply to. He is choosing between <span 
+class="cmmi-12">n </span>schools. He has
+      determined a value <span 
+class="cmmi-12">v</span><sub><span 
+class="cmmi-8">i</span></sub> to him of each school, and his objective is to maximize the sum of the
+      values of the schools to which he applies. He has also determined the probability <span 
+class="cmmi-12">p</span><sub><span 
+class="cmmi-8">i</span></sub> that he is
+      rejected by school&#x00A0;<span 
+class="cmmi-12">i</span>, and he has assumed these probabilities are independent. He can afford
+      to apply to 5 schools. He wants to ensure that the probability that all 5 schools reject him
+      is no larger than&#x00A0;0<span 
+class="cmmi-12">.</span>05. Express his problem as an integer program. (Hint: Let <span 
+class="cmmi-12">I </span>be the set
+      of schools Jim applies to. The probability that he is rejected by all the schools he applies to
+      is
+      <center class="math-display" >
+      <img 
+src="exam3aF103x.png" alt="Pr (reject by all schools in I) =  &#x03A0;    p.
+                                  i&#x2208;I  i
+      " class="math-display" ></center>
+      <!--l. 159--><p class="nopar" >
+      Think about logarithms.)
+      </li>
+      <li 
+  class="enumerate" id="x1-23x5">(15 points) ABC Resorts give their guests souvenir boxes of chocolates, which they order from a supplier.
+      Each item costs $3 and there is a delivery charge of $50. They want to plan their deliveries for the next three
+      weeks, when they forecast the demand to be 20, 40, and 30. They can order extra boxes, but those need to
+      be refrigerated, at a cost of $1 each per week. Show that this problem can be approached by dynamic
+      programming, with states <span 
+class="cmmi-12">k </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">, </span>4 representing the reaching of week <span 
+class="cmmi-12">k </span>with all earlier demand fulfilled and
+      no inventory on hand. Sketch the digraph corresponding to the dynamic program structure. Include costs on
+      all arcs.
+      </li>
+      <li 
+  class="enumerate" id="x1-25x6">(15 points) The integer program
+      <center class="math-display" >
+      <img 
+src="exam3aF104x.png" alt="max        3x1   +   x2
+subject to 4x1   +   x2  &#x2264;   32
+            x1   +  3x2  &#x2264;   15
+                  x1,x2  &#x2265;   0, integer
+      " class="math-display" ></center>
+      <!--l. 190--><p class="nopar" >
+      is illustrated, with the feasible region for the LP relaxation shaded. The optimal solution to the LP
+      relaxation is <span class="bar-css"><span 
+class="cmmi-12">x</span></span> = (7<img 
+src="exam3aF105x.png" alt="4-
+11"  class="frac" align="middle"><span 
+class="cmmi-12">, </span>2<img 
+src="exam3aF106x.png" alt="-6
+11"  class="frac" align="middle">). Find a linear constraint that is satisfied by all feasible solutions to the integer
+      program but is violated by&#x00A0;<span class="bar-css"><span 
+class="cmmi-12">x</span></span>. What is the optimal solution to the LP relaxation with your additional
+      constraint (solve the LP graphically)?
+      <div class="center" 
+>
+<img src=q6fig.png>
+</div>
+      </li></ol>
+    
+</body></html> 
+
+                                                                                                       
+
+

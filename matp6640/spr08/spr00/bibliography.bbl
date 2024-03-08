@@ -1,0 +1,358 @@
+\begin{thebibliography}{10}
+
+\bibitem{alizadeh3}
+F.~Alizadeh, J.-P.\ Haeberly, and M.~L. Overton.
+\newblock Complementarity and nondegeneracy in semidefinite programming.
+\newblock {\em Mathematical Programming}, 77:111--128, 1997.
+
+\bibitem{alizadeh2}
+F.~Alizadeh, J.-P.\ Haeberly, and M.~L. Overton.
+\newblock Primal-dual interior-point methods for semidefinite programming:
+  Convergence rates, stability and numerical results.
+\newblock {\em SIAM Journal on Optimization}, 8:746--768, 1998.
+
+\bibitem{andersen7}
+E.~D. Andersen.
+\newblock On exploiting problem structure in a basis identifications procedure
+  for linear programming.
+\newblock {\em INFORMS Journal on Computing}, 11:95--103, 1999.
+
+\bibitem{andersen11}
+E.~D. Andersen and K.~D. Andersen.
+\newblock A parallel interior-point algorithm for linear programming on a
+  shared memory machine.
+\newblock Technical Report 9808, CORE, Universite Catholique de Louvain,
+  Belgium, January 1998.
+
+\bibitem{andersen6}
+E.~D. Andersen and Y.~Ye.
+\newblock A computational study of the homogeneous algorithm for large-scale
+  convex optimization.
+\newblock {\em Computational Optimization and Applications}, 10:243--269, 1998.
+
+\bibitem{anjos2}
+M.~F. Anjos and H.~Wolkowicz.
+\newblock A tight semidefinite relaxation of the cut polytope.
+\newblock Technical Report CORR--19, Combinatorics and Optimization, University
+  of Waterloo, Waterloo, Ontario, N2L 3G1 Canada, March 2000.
+
+\bibitem{anstreicher24}
+K.~M. Anstreicher.
+\newblock Eigenvalue bounds versus semidefinite relaxations for the quadratic
+  assignment problem.
+\newblock Technical report, Department of Management Sciences, University of
+  Iowa, Iowa City, Iowa 52242, February 1999.
+
+\bibitem{AnsBosch}
+K.~M. Anstreicher and R.~Bosch.
+\newblock Long steps in a {$O(n^3L)$} algorithm for linear programming.
+\newblock {\em Mathematical Programming}, 54(3), 1992.
+
+\bibitem{anstreicher25}
+K.~M. Anstreicher and N.~W. Brixius.
+\newblock A new bound for the quadratic assignment problem based on convex
+  quadratic programming.
+\newblock Technical report, Department of Management Sciences, University of
+  Iowa, Iowa City, Iowa 52242, May 1999.
+
+\bibitem{Atkinson1}
+D.~S. Atkinson and P.~M. Vaidya.
+\newblock A cutting plane algorithm for convex programming that uses analytic
+  centers.
+\newblock {\em Mathematical Programming}, 69:1--43, 1995.
+
+\bibitem{int:Bahn2}
+O.~Bahn, O.~Du Merle, J.~L. Goffin, and J.~P. Vial.
+\newblock A cutting plane method from analytic centers for stochastic
+  programming.
+\newblock {\em Mathematical Programming}, 69:45--73, 1995.
+
+\bibitem{BaLa1}
+D.~A. Bayer and J.~C. Lagarias.
+\newblock The nonlinear geometry of linear programming, {I}. {A}ffine and
+  projective scaling trajectories.
+\newblock {\em Transactions of the American Mathematical Society},
+  314:499--526, 1989.
+
+\bibitem{benson1}
+S.~J. Benson, Y.~Ye, and X.~Zhang.
+\newblock Solving large-scale sparse semidefinite programs for combinatorial
+  optimization.
+\newblock Technical report, Department of Management Sciences, University of
+  Iowa, Iowa City, Iowa 52242, September 1997.
+
+\bibitem{byrd2}
+R.~Byrd, M.~B. Hribar, and J.~Nocedal.
+\newblock An interior point algorithm for large scale nonlinear programming.
+\newblock {\em SIAM Journal on Optimization}, 9(4):877--900, 1999.
+
+\bibitem{deklerk6}
+E.~de~Klerk, H.~van Maaren, and J.~P. Warners.
+\newblock Relaxations of the satisfiability problem using semidefinite
+  programming.
+\newblock Technical report, ITS/TWI, Technical University of Delft, Delft, The
+  Netherlands, March 1999.
+
+\bibitem{elbakry1}
+A.~S. {El--Bakry}, R.~A. Tapia, and Y.~Zhang.
+\newblock A study of indicators for identifying zero variables in
+  interior--point methods.
+\newblock {\em SIAM Review}, 36:45--72, 1994.
+
+\bibitem{goemans1}
+Michel~X. Goemans and David~P. Williamson.
+\newblock {Improved Approximation Algorithms for Maximum Cut and Satisfiability
+  Problems Using Semidefinite Programming}.
+\newblock {\em {J. Assoc. Comput. Mach.}}, 42:1115--1145, 1995.
+
+\bibitem{goffin3}
+J.-L. Goffin, J.~Gondzio, R.~Sarkissian, and J.-P. Vial.
+\newblock Solving nonlinear multicommodity network flow problems by the
+  analytic center cutting plane method.
+\newblock {\em Mathematical Programming}, 76:131--154, 1997.
+
+\bibitem{goffin9}
+J.-L.\ Goffin and J.-P.\ Vial.
+\newblock Multiple cuts in the analytic center cutting plane method.
+\newblock Technical Report Logilab Technical Report 98.10, Logilab, Management
+  Studies, University of Geneva, Geneva, Switzerland, June 1998.
+\newblock To appear in {\em Mathematical Programming}.
+
+\bibitem{goffin10}
+J.-L.\ Goffin and J.-P.\ Vial.
+\newblock Convex nondifferentiable optimization: a survey focussed on the
+  analytic center cutting plane method.
+\newblock Technical Report Logilab Technical Report 99.02, Logilab, Management
+  Studies, University of Geneva, Geneva, Switzerland, February 1999.
+
+\bibitem{gondzio1}
+J.~Gondzio.
+\newblock Warm start of the primal-dual method applied in the cutting plane
+  scheme.
+\newblock {\em Mathematical Programming}, 83:125--143, 1998.
+
+\bibitem{Gon3}
+C.~C. Gonzaga.
+\newblock Polynomial affine algorithms for linear programming.
+\newblock {\em Mathematical Programming}, 49(1):7--21, 1990.
+
+\bibitem{int:Gonzaga25}
+C.~C. Gonzaga and R.~A. Tapia.
+\newblock On the convergence of the {Mizuno--Todd--Ye} algorithm to the
+  analytic center of the solution set.
+\newblock {\em SIAM Journal on Optimization}, 7:47--65, 1997.
+
+\bibitem{hall4}
+L.~Hall and R.~J. Vanderbei.
+\newblock Two-thirds is sharp for affine scaling.
+\newblock {\em Operations Research Letters}, 13(4):197--201, 1993.
+
+\bibitem{helmberg4}
+C.~Helmberg.
+\newblock Fixing variables in semidefinite relaxations.
+\newblock Technical Report SC-96-43, Konrad-Zuse-Zentrum fuer
+  Informationstechnik, Berlin, December 1996.
+
+\bibitem{helmberg7}
+C.~Helmberg and K.~Kiwiel.
+\newblock A spectral bundle method with bounds.
+\newblock Technical Report SC-99-37, Konrad-Zuse-Zentrum fuer
+  Informationstechnik, Berlin, December 1999.
+
+\bibitem{helmberg6}
+C.~Helmberg and F.~Rendl.
+\newblock A spectral bundle method for semidefinite programming.
+\newblock Technical Report SC-97-37, Konrad-Zuse-Zentrum fuer
+  Informationstechnik, Berlin, August 1997.
+\newblock Revised: October 1997.
+
+\bibitem{helmberg1}
+C.~Helmberg and F.~Rendl.
+\newblock Solving quadratic (0,1)-problems by semidefinite programs and cutting
+  planes.
+\newblock {\em Mathematical Programming}, 82:291--315, 1998.
+
+\bibitem{Kar1}
+N.~K. Karmarkar.
+\newblock A new polynomial-time algorithm for linear programming.
+\newblock {\em Combinatorica}, 4:373--395, 1984.
+
+\bibitem{mascarenhas1}
+W.~F. Mascarenhas.
+\newblock The affine scaling algorithm fails for stepsize 0.999.
+\newblock {\em SIAM Journal on Optimization}, 7:34--46, 1997.
+
+\bibitem{MeSh1}
+N.~Megiddo and M.~Shub.
+\newblock Boundary behaviour of interior point algorithms in linear
+  programming.
+\newblock {\em Mathematics of Operations Research}, 14(1):97--146, 1989.
+
+\bibitem{JEM_SDPbranch}
+J.~E. Mitchell.
+\newblock Restarting after branching in the {SDP} approach to {MAX-CUT} and
+  similar combinatorial optimization problems.
+\newblock Technical report, Mathematical Sciences, Rensselaer Polytechnic
+  Institute, Troy, NY 12180, June 1999.
+
+\bibitem{MB_combined}
+J.~E. Mitchell and B.~Borchers.
+\newblock Solving linear ordering problems with a combined interior
+  point/simplex cutting plane algorithm.
+\newblock In H.~L.~Frenk {\em et al.}, editor, {\em High Performance
+  Optimization}, chapter~14, pages 349--366. Kluwer Academic Publishers,
+  Dordrecht, The Netherlands, 2000.
+
+\bibitem{JEM_MGCR_PP}
+J.~E. Mitchell, P.~P. Pardalos, and M.~G.~C. Resende.
+\newblock Interior point methods for combinatorial optimization.
+\newblock In D.-Z. Du and P.~Pardalos, editors, {\em Handbook of Combinatorial
+  Optimization}, volume~1, pages 189--297. Kluwer Academic Publishers, 1998.
+
+\bibitem{Srini387}
+J.~E. Mitchell and S.~Ramaswamy.
+\newblock A long-step, cutting plane algorithm for linear and convex
+  programming.
+\newblock Technical Report 37--93--387, DSES, Rensselaer Polytechnic Institute,
+  Troy, NY 12180--3590, August 1993.
+\newblock Substantially revised: April 28, 1998.
+
+\bibitem{mizuno15}
+S.~Mizuno, M.~Kojima, and M.~J. Todd.
+\newblock Infeasible-interior-point primal-dual potential-reduction algorithms
+  for linear programming.
+\newblock {\em SIAM Journal on Optimization}, 5(1):52--67, 1995.
+
+\bibitem{monteiro5}
+R.~D.~C. Monteiro and T.~Tsuchiya.
+\newblock Global convergence of the affine scaling algorithm for convex
+  quadratic programming.
+\newblock {\em SIAM Journal on Optimization}, 8:26--58, 1998.
+
+\bibitem{muramatsu1}
+M.~Muramatsu.
+\newblock Affine scaling algorithm fails for semidefinite programming.
+\newblock {\em Mathematical Programming}, 83:393--406, 1998.
+
+\bibitem{muramatsu2}
+M.~Muramatsu and R.~J. Vanderbei.
+\newblock Primal-dual affine-scaling algorithms fail for semidefinite
+  programming.
+\newblock {\em Mathematics of Operations Research}, 24(1):149--175, 1999.
+
+\bibitem{pataki1}
+G.~Pataki.
+\newblock On the rank of extreme matrices in semidefinite programs and the
+  multiplicity of optimal eignevalues.
+\newblock {\em Mathematics of Operations Research}, 23:339--358, 1998.
+
+\bibitem{ramana1}
+M.~Ramana, L.~Tun\c{c}el, and H.~Wolkowicz.
+\newblock Strong duality for semidefinite programming.
+\newblock {\em SIAM Journal on Optimization}, 7:641--662, 1997.
+
+\bibitem{Ren}
+J.~Renegar.
+\newblock A polynomial-time algorithm based on {N}ewton's method for linear
+  programming.
+\newblock {\em Mathematical Programming}, 40:59--93, 1988.
+
+\bibitem{ResTsuVei94}
+M.~G.~C. Resende, T.~Tsuchiya, and G.~Veiga.
+\newblock Identifying the optimal face of a network linear program with a
+  globally convergent interior point method.
+\newblock In W.W. Hager, D.W. Hearn, and P.M. Pardalos, editors, {\em Large
+  Scale Optimization: State of the Art}, pages 362--387. Kluwer Academic
+  Publishers, 1994.
+
+\bibitem{ResVg2}
+M.~G.~C. Resende and G.~Veiga.
+\newblock An efficient implementation of a network interior point method.
+\newblock In D.S. Johnson and C.C. McGeogh, editors, {\em Network Flows and
+  Matching: First DIMACS Implementation Challenge,}, pages 299--348. American
+  Mathematical Society, 1993.
+\newblock DIMACS Series on Discrete Mathematics and Theoretical Computer
+  Science, vol. 12.
+
+\bibitem{terlaky2}
+T.~Terlaky.
+\newblock An easy way to teach interior point methods.
+\newblock Technical Report 98--24, TWI/SSOR, Delft University of Technology,
+  Delft, The Netherlands, July 1998.
+
+\bibitem{todd17}
+M.~J. Todd.
+\newblock A study of search directions in primal-dual interior-point methods
+  for semidefinite programming.
+\newblock {\em Optimization Methods and Software}, 11:1--46, 1999.
+
+\bibitem{tsuchiya3}
+T.~Tsuchiya.
+\newblock Global convergence of the affine scaling methods for degenerate
+  linear programming problems.
+\newblock {\em Mathematical Programming}, 52:377--404, 1991.
+
+\bibitem{vanderbei9}
+R.~J. Vanderbei and D.~F. Shanno.
+\newblock An interior point algorithm for nonconvex nonlinear programming.
+\newblock Technical Report SOR--97--21, Statistics and Operations Research,
+  Princeton University, Princeton, NJ, November 1997.
+\newblock Revised: May 1998.
+
+\bibitem{wachter1}
+A.~W\"achter and L.~T. Biegler.
+\newblock Failure of global convergence for a class of interior point methods
+  for nonlinear programming.
+\newblock Technical Report CAPD Technical Report B-99-07, Department of
+  Chemical Engineering, Carnegie Mellon University, Pittsburgh, PA 15213,
+  December 1999.
+
+\bibitem{swright11}
+S.~Wright.
+\newblock Recent developments in interior point methods.
+\newblock Technical Report Preprint ANL/MCS-P783-0999, Mathematics and Computer
+  Science Division, Argonne National Laboratory, Argonne, Illinois 60439,
+  September 1999.
+
+\bibitem{xu1}
+X.~Xu, P.~F. Hung, and Y.~Ye.
+\newblock A simplified homogeneous and self-dual linear programming algorithm
+  and its implementation.
+\newblock {\em Annals of Operations Research}, 62:151--171, 1996.
+
+\bibitem{Ye3}
+Y.~Ye.
+\newblock An {$O(n^3L)$} potential reduction algorithm for linear programming.
+\newblock {\em Mathematical Programming}, 50(2):239--258, 1991.
+
+\bibitem{YeTd1}
+Y.~Ye and M.~J. Todd.
+\newblock Containing and shrinking ellipsoids in the path following algorithm.
+\newblock {\em Mathematical Programming}, 47(1):1--9, 1990.
+
+\bibitem{yildirim2}
+E.~A. Yildirim and S.~J. Wright.
+\newblock Warm-start strategies in interior-point methods for linear
+  programming.
+\newblock Technical Report 1258, School of Operations Research and Industrial
+  Engineering, Cornell University, Ithaca, NY 14853, March 2000.
+
+\bibitem{zhang2}
+Y.~Zhang.
+\newblock On extending some primal-dual interior-point algorithms from linear
+  programming to semidefinite programming.
+\newblock {\em SIAM Journal on Optimization}, 8:365--386, 1998.
+
+\bibitem{int:Zhang1}
+Y.~Zhang, R.~A. Tapia, and J.~E. Dennis.
+\newblock On the superlinear and quadratic convergence of primal--dual interior
+  point linear programming algorithms.
+\newblock {\em SIAM Journal on Optimization}, 2(2):304--324, 1992.
+
+\bibitem{qzhao1}
+Q.~Zhao, S.~E. Karisch, F.~Rendl, and H.~Wolkowicz.
+\newblock Semidefinite programming relaxations for the quadratic assignment
+  problem.
+\newblock {\em Journal of Combinatorial Optimization}, 2:71--109, 1998.
+
+\end{thebibliography}

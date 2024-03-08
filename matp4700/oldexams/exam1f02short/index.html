@@ -1,0 +1,331 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Exam 1, Fall 2002</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="exam1f02short">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="exam1f02short.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  <a href=..>Math Models of Operations Research, MATP 4700/ DSES 4770</a>.
+
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER">
+  First Exam, Tuesday, October 1, 2002.
+
+</DIV>
+
+<P>
+
+
+<P>
+You may use any result from your notes or a homework that is clearly stated.
+You may use one sheet of handwritten notes, but no other sources.
+The exam consists of five questions, and lasts one hundred minutes.
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>(20 points)
+Wiley Wiz is a mutual fund manager trying to decide how to divide up
+$12 million between domestic and foreign stocks.
+Domestic stocks have been returning 11% per year and foreign 17%.
+Naturally, Wiley would like to maximize the annual return from his
+investments. Still, he wants to exercise some caution.
+No more than $10 million of the fund should go into domestic stocks
+and no more than $7 million into foreign.
+Also, at least half as much should be invested in domestic as
+foreign to maintain some balance.
+<DL COMPACT>
+<DT>(a)
+<DD>(10 points)
+Formulate a mathematical programming model with 5 main constraints
+to decide Wiley's optimal investment plan using decision variables
+<I>x</I><SUB>1</SUB> := millions of dollars invested in domestic stocks
+and <I>x</I><SUB>2</SUB> := millions of dollars invested in foreign stocks.
+<DT>(b)
+<DD>(10 points)
+Using a 2-dimensional plot, solve your model graphically for an optimal
+investment plan.
+</DL>
+<DT>2.
+<DD>(12 points)
+Find a basic feasible solution with basic variables <I>x</I><SUB>2</SUB> and <I>x</I><SUB>4</SUB>
+for the linear programming problem
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcrcl}
+\min & 2x_1 & + & 3x_2 & + & 2x_3 & - & 5x_4  \\
+\mbox{subject to} & 2x_1 & + & x_2 & - & x_3 & - & 2x_4 & = & 2  \\
+& -x_1 & + & 2x_2 & + & 2x_3 & - & 3x_4 & = & 5  \\
+\multicolumn{10}{c}{x_i \geq 0, \quad i=1,\ldots,4.}
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="370" HEIGHT="83"
+ SRC="img1.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcrcl}
+\min &amp; 2x_1 &amp; + &amp; 3x_2 &amp; + &amp; 2x_3 ...
+...multicolumn{10}{c}{x_i \geq 0, \quad i=1,\ldots,4.}
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Is this basic feasible solution optimal?
+   <DT>3.
+<DD>(10 points)
+<DL COMPACT>
+<DT>(a)
+<DD>(7 points)
+Put the following problem into standard form:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcl}
+\min & x_1 & + & x_2 \\
+\mbox{subject to} & x_1 & - & x_2 & \geq & 1 \\
+                  & x_1 & + & 3x_2 & \leq & 3 \\
+                  & \multicolumn{5}{c}{x_1 \geq 0, \; x_2 \mbox{ free}}
+\end{array}
+\end{displaymath} -->
+
+<IMG
+ WIDTH="222" HEIGHT="83"
+ SRC="img2.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcl}
+\min &amp; x_1 &amp; + &amp; x_2 \\
+\mbox{subject...
+...\multicolumn{5}{c}{x_1 \geq 0, \; x_2 \mbox{ free}}
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<DT>(b)
+<DD>(3 points, no partial credit. Lose one point for incorrect answer.)
+For the problem in part&nbsp;(a),
+use the graphical method with the original variables <I>x</I><SUB>1</SUB> and <I>x</I><SUB>2</SUB>
+to determine which of the following is true:
+
+<UL>
+
+<LI><B>A:</B> The LP has an optimal solution.
+
+<LI><B>B:</B> The LP is infeasible.
+
+<LI><B>C:</B> The LP has an unbounded optimal value.
+
+</UL>
+Circle your choice:  <B>A   B   C</B>
+</DL>
+   <DT>4.
+<DD>(18 points; 3 points for each correct answer,
+lose one point for each incorrect answer. No partial credit.)
+For each part, either the statement is always true or there exists
+a counterexample to the statement.
+If the statement is always true, circle <B>TRUE</B>, otherwise
+circle <B>FALSE</B>.
+     <DL COMPACT>
+<DT>(a)
+<DD>If an artificial variable
+remains as a basic variable after the artificial problem has been
+         solved, then the original linear program is infeasible.
+
+<P>
+
+<DIV ALIGN="RIGHT">
+ TRUE   FALSE  
+</DIV>
+
+<P>
+
+<DT>(b)
+<DD>Given a linear program in canonical form, if we pivot using the
+         simplex rule, then a strict decrease in the objective function
+         value is obtained.
+
+<P>
+
+<DIV ALIGN="RIGHT">
+ TRUE   FALSE  
+</DIV>
+
+<P>
+
+<DT>(c)
+<DD>A linear program in canonical form always has a feasible solution.
+
+<P>
+
+<DIV ALIGN="RIGHT">
+ TRUE   FALSE  
+</DIV>
+
+<P>
+
+<DT>(d)
+<DD>If the feasible region for a linear program is unbounded,
+         then no finite optimal value exists.
+
+<P>
+
+<DIV ALIGN="RIGHT">
+ TRUE   FALSE  
+</DIV>
+
+<P>
+
+<DT>(e)
+<DD>Every tableau in standard form can be put into canonical form
+         by an appropriate sequence of pivots.
+
+<P>
+
+<DIV ALIGN="RIGHT">
+ TRUE   FALSE  
+</DIV>
+
+<P>
+
+<DT>(f)
+<DD>If a linear program has a unique optimal solution, that optimum
+most occur at an extreme point of the feasible region.
+
+<P>
+
+<DIV ALIGN="RIGHT">
+ TRUE   FALSE  
+</DIV>
+
+<P>
+</DL>
+   <DT>5.
+<DD>(40 points; each part is worth 5 points.)
+Consider the linear programming problem with tableau:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+M_0 =
+\begin{array}{|r|rrrrr|}
+\multicolumn{1}{r}{}&x_1&x_2&x_3&x_4&\multicolumn{1}{r}{x_5}\\\hline
+-3 & 0 & 2 & 0 & 0 & -1 \\\hline
+0 & 0 & -2 & 1 & 0 & 1 \\
+3 & 1 & 2 & 0 & 0 & -1 \\
+1 & 0 & 1 & 0 & 1 & -1 \\\hline
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="250" HEIGHT="104"
+ SRC="img3.gif"
+ ALT="\begin{displaymath}M_0 =
+\begin{array}{\vert r\vert rrrrr\vert}
+\multicolumn{1}{...
+...2 &amp; 0 &amp; 0 &amp; -1 \\
+1 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; -1 \\ \hline
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The corresponding basic feasible solution is <!-- MATH: $\bar{x}=(3,0,0,1,0)$ -->
+<IMG
+ WIDTH="114" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\bar{x}=(3,0,0,1,0)$">,
+and <I>x</I><SUB>1</SUB>, <I>x</I><SUB>3</SUB>, and <I>x</I><SUB>4</SUB> are the basic variables.
+<DL COMPACT>
+<DT>(a)
+<DD>Construct a graph of the feasible set in <I>x</I><SUB>2</SUB><I>x</I><SUB>5</SUB> space
+and label each hyperplane as <I>x</I><SUB><I>i</I></SUB>=0 for some&nbsp;<I>i</I>, <IMG
+ WIDTH="81" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$i=1,\ldots,5$">.
+<DT>(b)
+<DD>The given basic feasible solution is degenerate.
+What feature of the graph corresponds to this property?
+ <DT>(c)
+<DD>This tableau is not in optimal form.
+If you try to take a simplex pivot, what is the simplex direction?
+ <DT>(d)
+<DD>What is the minimum ratio for the simplex direction in
+part&nbsp;(c)?
+ <DT>(e)
+<DD>What will be the new point after the pivot? Why?
+(Don't make the pivot. It does not suffice to quote from part&nbsp;(f).)
+<DT>(f)
+<DD>After making the pivot, the following tableau is obtained:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+M_1 =
+\begin{array}{|r|rrrrr|}
+\multicolumn{1}{r}{}&x_1&x_2&x_3&x_4&\multicolumn{1}{r}{x_5}\\\hline
+-3 & 0 & 0 & 1 & 0 & 0 \\\hline
+0 & 0 & -2 & 1 & 0 & 1 \\
+3 & 1 & 0 & 1 & 0 & 0 \\
+1 & 0 & -1 & 1 & 1 & 0 \\\hline
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="246" HEIGHT="104"
+ SRC="img6.gif"
+ ALT="\begin{displaymath}M_1 =
+\begin{array}{\vert r\vert rrrrr\vert}
+\multicolumn{1}{...
+... 0 &amp; 1 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; -1 &amp; 1 &amp; 1 &amp; 0 \\ \hline
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Find a point <I>x</I><SUP>*</SUP> and a vector <I>v</I> such that the set of optimal solutions
+is <I>x</I><SUP>*</SUP>+<I>tv</I> for any scalar <IMG
+ WIDTH="38" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$t\geq 0$">.
+<DT>(g)
+<DD>Graph the set of optimal solutions in your picture in part&nbsp;(a).
+<DT>(h)
+<DD>Plot a contour of the objective function in your picture in part&nbsp;(a).
+</DL></DL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2003-09-09</I>
+</ADDRESS>
+</BODY>
+</HTML>

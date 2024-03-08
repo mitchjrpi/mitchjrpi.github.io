@@ -1,0 +1,14 @@
+set nodes := a b c d e f g h j;
+
+set edges := (a,b),(b,c), (c,d), (d,e), (e,f), (a,f), (a,g), (f,g), (c,g), (c,h), (c,j), (e,j), (f,h), (g,h), (h,j), (d,j);
+
+param c := a 5 b 4 c 7 d 5 e 5 f 6 g 6 h 6 j 6;
+
+param noh := 1;
+
+set oddhole[1] := a b c f g h;
+
+# Note: if don’t lift the odd hole to include node g, then solution
+# is fractional with value 18. The IP solution value is only 17.
+
+param rhsoh := 1 2;

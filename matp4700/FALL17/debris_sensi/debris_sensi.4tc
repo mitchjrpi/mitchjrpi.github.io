@@ -1,0 +1,4 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-21}{}{\ignorespaces Map of optimal solution. Open origins are indicated in green; destinations are indicated in red. }}{figure}\relax 
+\doTocEntry\tocsection{1}{\csname a:TocLink\endcsname{1}{x1-10001}{QQ2-1-2}{Questions}}{4}\relax 
+\doTocEntry\tocsection{2}{\csname a:TocLink\endcsname{1}{x1-20002}{QQ2-1-3}{AMPL notes}}{4}\relax 

@@ -1,0 +1,183 @@
+\documentclass[12pt]{article}
+
+\pagestyle{empty}
+
+\oddsidemargin -.5in
+\textwidth 7.5in
+\textheight 10in
+\topmargin -30pt
+\headsep 0in
+\headheight 0in
+
+\newcommand{\re}{I \!\! R}
+
+\begin{document}
+
+\begin{center}
+  \begin{large}
+     MATP6640/DSES6770 Linear Programming, Homework 2.
+  \end{large}
+\end{center}
+
+\begin{flushright}
+   Due:  Friday, February 17, 2006.
+\end{flushright}
+
+%\vspace{\baselineskip}
+
+\begin{enumerate}
+%  \item  In class, we saw that if a problem of the form $(P)$ has a feasible
+%         solution then it has a basic feasible solution.
+%         Construct a similar proof to show that if $(P)$ has an optimal
+%         solution, it has a basic feasible solution that is optimal.
+%  \item  Let $Q$ be a convex polyhedron in ${\re}^n$ and let $F$ be a nonempty
+%         face of $Q$.
+%         Let $x$ be a point on the face $F$.
+%         Show that $x$ is an extreme point of $Q$ if and only if it is an
+%         extreme point of $F$.
+%  \item  Recall that the polar cone of~$S$ is
+%         $S^+=\{x:x^Ty \leq 0 \mbox{ for all } y \in S\}$.
+%         A constrained cone is a set of points
+%         $T$ satisfying $T=\{x:a^Tx \leq 0 \mbox{ for all } a \in A\}$
+%         for some set $A$.
+%         \begin{enumerate}
+%           \item Let $S$ be a subset of $\re^n$. Show that $S\subseteq S^{++}$.
+%           \item Let $S$ be a subset of $\re^n$. Show that $S^+=S^{+++}$.
+%           \item Let $S$ be a constrained cone. Show that $S=S^{++}$.
+%         \end{enumerate}
+%  \item  Show that a convex cone has at most one extreme point,
+%         namely the origin.
+%  \item  Consider the subspace alternative theorem:  \\ \label{altthm}
+%         For $A\in{\re}^{m{\times}n}$ and $c\in{\re}^n$, exactly one of the
+%         following holds:
+%         \begin{enumerate}
+%           \item  $  \exists y \in {\re}^m  \mbox{ s.t. }  A^Ty=c   $
+%           \item  $  \exists x \in {\re}^n  \mbox{ s.t. }  Ax=0, c^Tx \neq 0.
+%$
+%         \end{enumerate}
+%         Develop a proof for this using linear programming duality.
+%         \begin{quote}
+%            First observe that both (a) and (b) can not hold simultaneously.
+%            Thus, it suffices to show that when (a) fails, (b) must hold.
+%            Next assume (a) fails
+%            and then construct an $x$ which satisfies (b).
+%         \end{quote}
+%         (Hint: You may assume that,
+%             given a matrix $M \in {\re}^{m \times n}$ and a vector
+%             $p \in {\re}^n$, there exist unique $p'$ and $p''$ such that
+%             $p=p'+p''$, $Mp'=0$, $p''=M^Tq$ for some $q$, and ${p'}^Tp''=0$.)
+
+%  \item  Let $c=[1,1,0]^T$.  Use the theorem of the alternative given in
+%           question~\ref{altthm} to show that
+%           there does not exist a $y$ with $A^Ty=c$, where
+%           \begin{displaymath}
+%              A = \left[ \begin{array}{rrr} 2 & 1 & -1 \\
+%                            3 & -3 & 1 \end{array} \right].
+%           \end{displaymath}
+%  \item  Find a convex cone $T$ for which $T \neq T^{++}$.
+%           (Note: There are no restrictions on the cone, other than it be
+%            convex.)
+%  \item  Let $A$ be an $m \times n$ matrix with at least one nonzero entry
+%         in each column. Prove that the cone $C=\{x: x = Ay, y \geq 0\}$
+%         has an extreme point if and only if $\{y \geq 0: Ay = 0 \}=\{0\}$.
+%  \item  Show that the system $Ax \leq b$, $x \geq 0$ is infeasible by
+%         applying Fourier-Motzkin elimination, where
+%         \begin{displaymath}
+%           A = \left[ \begin{array}{rr} 4 & 3 \\ 3 & -2 \end{array}  \right],
+%             \;\;\;  b = \left[ \begin{array}{r} 1 \\ -3 \end{array} \right].
+%         \end{displaymath}
+  \item  Let the polyhedron $Q=\{x \in {\re}^2: x_1+x_2 \geq 2, x_1 - 2x_2 \leq
+            2,  x_1 \geq 1, x_1 - x_2 \leq 3 \}$.
+            Graph this polyhedron, and hence find matrices $B$ and $C$ such that
+            $Q = \{x \in {\re}^2: x = By + Cz,
+                      y \geq 0, z \geq 0, \sum_i z_i = 1  \}$.
+%  \item  Let $K$ be a finitely generated pointed convex cone in ${\re}^2$.
+%            Prove (algebraically) that $K$ can be written as
+%              $K = \{ x \in {\re}^2: x = a^1 y_1 + a^2 y_2,
+%                          y_1 \geq 0, y_2 \geq 0 \}$
+%            (ie, $K$ can be generated using just the two generators
+%             $a^1$ and $a^2$, vectors in ${\re}^2$).
+%         Give an example of a finitely generated pointed convex cone in
+%            ${\re}^3$ which can not be generated using just three generators.
+%  \item  Construct a linear programming problem in the standard form
+%            $\min\{c^Tx:Ax=b, x\geq 0\}$ which has an optimal basis,
+%            but, for this basis, not all the reduced costs are nonnegative.
+%  \item  Let $Q$ be the polyhedron
+%           \begin{displaymath}
+%             Q := \{x \in {\re}^2: x =
+%                \left[ \begin{array}{r} 1 \\ 1 \end{array}  \right] y_1 +
+%                \left[ \begin{array}{r} 1 \\ 0 \end{array}  \right] z_1 +
+%                \left[ \begin{array}{r} 0 \\ 1 \end{array}  \right] z_2,
+%                y_1 \geq 0, z_1 \geq 0, z_2 \geq 0, z_1 + z_2 = 1 \}.
+%           \end{displaymath}
+%           Use the proof of the affine Weyl theorem (so use
+%           Fourier-Motzkin elimination explicitly) to construct constraints
+%           $Ax \geq b$ such that
+%           \begin{displaymath}
+%             Q = \{x \in {\re}^2: Ax \geq b\}.
+%           \end{displaymath}
+%  \item  Let $K_1$ and $K_2$ be two finitely generated convex cones
+%           in ${\re}^n$. Prove that $K_1 \cap K_2$ is a finitely generated
+%           convex cone.
+  \item  Consider the linear programming problem  \label{q.ray}
+           \begin{displaymath}
+             \begin{array}{lrcrcrcrcrcl}
+      \min          & 4x_1 & + & x_2 &   &    & + & x_4 & - & 5x_5 \\
+      \mbox{s.t. }  & 2x_1 & + & x_2 &   &    & + & x_4 & - & 2x_5 & = & 3 \\
+                    & -x_1 & + & x_2 & + & x_3&   &     &   &      & = & 3 \\
+                    &  x_1 &   &     &   &    & + & x_4 & - &  x_5 & = & 1 \\
+                    &      &   &     &   & x_i& \geq & 0, & & i & = & 1,...,5.
+             \end{array}
+           \end{displaymath}
+         Show that this problem has unbounded objective function value by
+         using the revised simplex algorithm starting from the basic feasible
+         solution $x = [0,2,1,1,0]^T$. Use the eta factorization of the
+         inverse, so you should first factorize the initial basis $B$ as
+         $LB=U$, where $L$ is lower triangular and $U$ is upper triangular.
+         On subsequent iterations, update the basis matrix by using eta
+         matrices.  What is the ray that you find?
+         (Hint: you should find the ray on the second iteration.)
+  \item Use {\bf AMPL} or another linear programming package to solve the linear
+programming problem
+           \begin{displaymath}
+             \begin{array}{lrcrcrcrcrcl}
+      \min          & 4x_1 & + & 4x_2 &   &    & + & x_4 & + & 5x_5 \\
+      \mbox{s.t. }  & 2x_1 & + & x_2 &   &    & + & x_4 & - & 2x_5 & = & 3 \\
+                    & -x_1 & + & x_2 & + & x_3&   &     &   &      & = & 3 \\
+                    &  x_1 &   &     &   &    & + & x_4 & - &  x_5 & = & 1 \\
+                    &      &   &     &   & x_i& \geq & 0, & & i & = & 1,...,5.
+             \end{array}
+           \end{displaymath}
+           (See the course webpage for more information on AMPL.)
+  \item Give an example of a linear programming problem that has a degenerate
+  optimal solution and for which the dual problem has a unique solution.
+  \item Show how the ray you found for the linear programming problem in
+  question~\ref{q.ray} can be used to construct a linear combination of the dual
+  constraints that is infeasible.
+  \item The next sheet is part of a paper which was submitted to
+    {\em Mathematical Programming}. The authors propose an algorithm for linear
+    programming and then claim the algorithm is polynomial.
+    Does this claim seem reasonable? Justify your answer.
+    (Note that the algorithm is stated in terms of an LP of the form
+    \begin{displaymath}
+    \begin{array}{lrcl}
+    \max & c^Tx \\
+    \mbox{subject to} & Ax & \leq & b
+    \end{array}
+    \end{displaymath}
+    which is the dual problem in our standard dual pair.
+    The notation $a_i$ represents the $i$th row of~$A$.
+    A restriction on the sign of the variables is included in the $A$ matrix.)
+\end{enumerate}
+
+\vfill
+
+\begin{tabular}{@{\hspace{.5in}}l}
+   John Mitchell  \\
+   Amos Eaton 325  \\
+   x6915.  \\
+   mitchj@rpi.edu  \\
+   Office hours: Tuesday: 2 -- 3.30pm.
+\end{tabular}
+
+\end{document}

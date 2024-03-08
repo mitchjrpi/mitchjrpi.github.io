@@ -1,0 +1,592 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="midtermS19sol.tex"> 
+<meta name="date" content="2019-03-29 16:05:00"> 
+<link rel="stylesheet" type="text/css" href="midtermS19sol.css"> 
+</head><body 
+>
+<!--l. 37--><p class="noindent" >
+                                                                                         
+
+                                                                                         
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"><col 
+id="TBL-1-2"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td11">&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                                                                          </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-2"  
+class="td11">Name:</td> </tr></table>
+</div>
+<div class="center" 
+>
+<!--l. 44--><p class="noindent" >
+<!--l. 46--><p class="noindent" ><span 
+class="cmr-12x-x-120">MATP6620/ISYE6770</span><br />
+<span 
+class="cmbx-12x-x-120">Integer and Combinatorial Optimization</span><br />
+<span 
+class="cmr-12x-x-120">Spring 2019</span></div>
+<div class="center" 
+>
+<!--l. 51--><p class="noindent" >
+<!--l. 52--><p class="noindent" >Midterm Exam, Friday, March 29, 2019.<br />
+<span 
+class="cmbx-12x-x-120">Solutions</span></div>
+<!--l. 55--><p class="indent" >   Please do all four problems. Show all work. No books or calculators allowed. You may use any
+result from class, the homeworks, or the texts, except where stated. You may use one sheet of
+handwritten notes. The exam lasts 110 minutes.
+<div class="center" 
+>
+<!--l. 63--><p class="noindent" >
+<div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><colgroup id="TBL-2-2g"><col 
+id="TBL-2-2"><col 
+id="TBL-2-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-1"  
+class="td10"> Q1 &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-1-3"  
+class="td11"> /20</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-1"  
+class="td10"> Q2  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-2-3"  
+class="td11"> /20</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-1"  
+class="td10"> Q3  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-3-3"  
+class="td11"> /20</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-1"  
+class="td10"> Q4  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-4-3"  
+class="td11"> /20</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-1"  
+class="td10"> Q5  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-5-3"  
+class="td11"> /20</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-6-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-6-1"  
+class="td10">Total&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-6-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-6-3"  
+class="td11">/100</td></tr></table>
+</div></div>
+                                                                                         
+
+                                                                                         
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">(20 points) For each of the following feasibility problems, indicate if it is polynomially
+      solvable or <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /></span>-complete. (No partial credit. 4 points per part, -1 point for incorrect
+      answers.)
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-5x1"><span 
+class="cmti-12">Node packing with lower bound</span>: Given a graph <span 
+class="cmmi-12">G </span>= (<span 
+class="cmmi-12">V,E</span>) and an integer <span 
+class="cmmi-12">k</span>, does
+           there exist a node packing of cardinality at least&#x00A0;<span 
+class="cmmi-12">k</span>?
+               <div class="quote">
+               <!--l. 90--><p class="noindent" >Polynomially solvable             <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /></span><span 
+class="cmbx-12">-complete</span></div>
+           </li>
+           <li 
+  class="enumerate" id="x1-7x2"><span 
+class="cmti-12">Perfect matching</span>: Given a graph <span 
+class="cmmi-12">G </span>= (<span 
+class="cmmi-12">V,E</span>), does there exist a perfect matching?
+               <div class="quote">
+               <!--l. 101--><p class="noindent" ><span 
+class="cmbx-12">Polynomially solvable</span>           <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /></span>-complete</div>
+           </li>
+           <li 
+  class="enumerate" id="x1-9x3"><span 
+class="cmti-12">Minimum spanning tree with upper bound </span>Given a graph <span 
+class="cmmi-12">G </span>= (<span 
+class="cmmi-12">V,E</span>), edge weights <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">e</span></sub> for
+           <span 
+class="cmmi-12">e </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">E</span>, and an integer <span 
+class="cmmi-12">W</span>, does there exist a spanning tree with total weight no larger
+           than&#x00A0;<span 
+class="cmmi-12">W</span>?
+               <div class="quote">
+               <!--l. 114--><p class="noindent" ><span 
+class="cmbx-12">Polynomially solvable</span>           <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /></span>-complete</div>
+           </li>
+           <li 
+  class="enumerate" id="x1-11x4"><span 
+class="cmti-12">Traveling salesman problem with upper bound</span>: Given a complete graph on vertices <span 
+class="cmmi-12">V </span>,
+           with integer edge weights&#x00A0;<span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">e</span></sub>, and a positive integer <span 
+class="cmmi-12">W</span>, does there exist a traveling
+           salesman tour of length no more than&#x00A0;<span 
+class="cmmi-12">W</span>?
+               <div class="quote">
+               <!--l. 128--><p class="noindent" >Polynomially solvable             <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /></span><span 
+class="cmbx-12">-complete</span></div>
+           </li>
+           <li 
+  class="enumerate" id="x1-13x5"><span 
+class="cmti-12">Binary knapsack problem with lower bound</span>: Given <span 
+class="cmmi-12">a </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x2124;</span><sup><span 
+class="cmmi-8">n</span></sup>, <span 
+class="cmmi-12">c </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x2124;</span><sup><span 
+class="cmmi-8">n</span></sup>, and scalars <span 
+class="cmmi-12">b </span>and <span 
+class="cmmi-12">z</span>,
+           does there exist a binary <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x2124;</span><sup><span 
+class="cmmi-8">n</span></sup> with <span 
+class="cmmi-12">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">b </span>and <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">z</span>?
+                                                                                         
+
+                                                                                         
+               <div class="quote">
+               <!--l. 140--><p class="noindent" >Polynomially solvable             <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /></span><span 
+class="cmbx-12">-complete</span></div>
+           </li></ol>
+                                                                                         
+
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-15x2">The binary variables <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,x</span><sub><span 
+class="cmr-8">5</span></sub> satisfy the constraints
+      <center class="math-display" >
+      <img 
+src="midtermS19sol0x.png" alt="2xi + 2xj + 2xk &#x2264; 5  for 1 &#x2264; i &#x003C; j &#x003C; k &#x2264; 5.
+      " class="math-display" ></center>
+      <!--l. 161--><p class="nopar" >
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-17x1">(4 points) Show the constraints
+           <center class="math-display" >
+           <img 
+src="midtermS19sol1x.png" alt="xi + xj + xk &#x2264; 2  for 1 &#x2264; i &#x003C; j &#x003C; k &#x2264;  5
+           " class="math-display" ></center>
+           <!--l. 167--><p class="nopar" >
+           have Chvatal rank equal to one.
+           </li>
+           <li 
+  class="enumerate" id="x1-19x2">(8 points) Show the valid constraint
+           <center class="math-display" >
+           <img 
+src="midtermS19sol2x.png" alt="x1 + x2 + x3 + x4 + x5 &#x2264; 2
+           " class="math-display" ></center>
+           <!--l. 173--><p class="nopar" >
+           has Chvatal rank no greater than 3.
+           </li>
+           <li 
+  class="enumerate" id="x1-21x3">(8 points) Show the valid constraint
+           <center class="math-display" >
+           <img 
+src="midtermS19sol3x.png" alt="x1 + x2 + x3 + x4 + x5 &#x2264; 2
+           " class="math-display" ></center>
+           <!--l. 179--><p class="nopar" >
+           has Chvatal rank at least 2.</li></ol>
+      <!--l. 183--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+                                                                                         
+
+                                                                                         
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-23x1">We take 0.5 of the original constraint and round down:
+           <center class="math-display" >
+           <img 
+src="midtermS19sol4x.png" alt="                &#x230A; &#x230B;
+                 5-
+xi + xj + xk &#x2264;   2   = 2   for 1 &#x2264; i &#x003C; j &#x003C; k &#x2264; 5.
+           " class="math-display" ></center>
+           <!--l. 189--><p class="nopar" >
+           </li>
+           <li 
+  class="enumerate" id="x1-25x2">We use the rank 1 inequality from part (a) to construct the rank 2 inequalities with
+           sums of 4 variables, and then combine these to give the desired inequality, so it has rank
+           no greater than&#x00A0;3:
+           <!--l. 194--><p class="noindent" >For any 1 <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">i &#x003C; j &#x003C; k &#x003C; l </span><span 
+class="cmsy-10x-x-120">&#x2264; </span>5, we take <img 
+src="midtermS19sol5x.png" alt="1
+3"  class="frac" align="middle"> of the four inequaities from part (a) involving
+           these variables:
+           <center class="math-display" >
+           <img 
+src="midtermS19sol6x.png" alt="                    &#x230A; 8&#x230B;
+xi + xj + xk + xl &#x2264;   -- =  2  for 1 &#x2264; i &#x003C; j &#x003C; k &#x003C; l &#x2264; 5.
+                      3
+           " class="math-display" ></center>
+           <!--l. 198--><p class="nopar" >
+           We now take <img 
+src="midtermS19sol7x.png" alt="1
+4"  class="frac" align="middle"> of these 5 inequalities to give
+           <center class="math-display" >
+           <img 
+src="midtermS19sol8x.png" alt="                         &#x230A;   &#x230B;
+                          10-
+x1 + x2 + x3 + x4 + x5 &#x2264;   4   =  2
+           " class="math-display" ></center>
+           <!--l. 202--><p class="nopar" >
+           as required.
+           </li>
+           <li 
+  class="enumerate" id="x1-27x3">The optimal solution to the LP relaxation with objective function max <span 
+class="cmex-10x-x-120">&#x2211;</span>
+     <sub><span 
+class="cmmi-8">j</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmr-8">5</span></sup><span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmmi-8">j</span></sub> is
+           <span 
+class="cmmi-12">x </span>= (<img 
+src="midtermS19sol9x.png" alt="56"  class="frac" align="middle"><span 
+class="cmmi-12">,</span><img 
+src="midtermS19sol10x.png" alt="56"  class="frac" align="middle"><span 
+class="cmmi-12">,</span><img 
+src="midtermS19sol11x.png" alt="56"  class="frac" align="middle"><span 
+class="cmmi-12">,</span><img 
+src="midtermS19sol12x.png" alt="56"  class="frac" align="middle"><span 
+class="cmmi-12">,</span><img 
+src="midtermS19sol13x.png" alt="56"  class="frac" align="middle">), with value 4<img 
+src="midtermS19sol14x.png" alt="16"  class="frac" align="middle">. Since this value is greater than 3, the desired inequality
+           cannot have Chvatal rank&#x00A0;1.</li></ol>
+                                                                                         
+
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-29x3">Consider the problem
+      <center class="math-display" >
+      <img 
+src="midtermS19sol15x.png" alt="max    4    &#x2211;5    xj
+    x&#x2208;&#x211D;       j=1
+subject to  2xi + 2xj + 2xk &#x2264; 5  for 1 &#x2264; i &#x003C; j &#x003C; k &#x2264; 5
+
+            xj binary for 1 &#x2264; j &#x2264; 5
+      " class="math-display" ></center>
+      <!--l. 231--><p class="nopar" >
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-31x1">(10 points) Give the next level of the branch-and-bound tree using standard
+           branch-and-bound. You need only give the optimal value at each node, together with
+           the fathoming decision. Note that in an optimal solution to a relaxation, all the
+           variables that take non binary values take the same value.
+           <div class="center" 
+>
+<img src=q3sol.png>
+</div>
+                                                                                         
+
+                                                                                         
+           </li>
+           <li 
+  class="enumerate" id="x1-33x2">(10 points) Give the tree you obtain if you use orbital branching. How many LP
+           subproblems do you solve?
+           <div class="center" 
+>
+<img src=q3bsol.png>
+</div>
+           <!--l. 346--><p class="noindent" >Thus, we need only solve 7 linear programs.</li></ol>
+                                                                                         
+
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-35x4">(20 points)
+      <div class="center" 
+>
+<img src=q4.png>
+</div>
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-37x1">(8 points) <a 
+ id="x1-361"></a>The nonnegative integer variable <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> and the nonnegative continuous variable
+           <span 
+class="cmmi-12">x </span>must satisfy
+           <center class="math-display" >
+           <img 
+src="midtermS19sol77x.png" alt="          1-
+x + y1 &#x2265; 43 .
+           " class="math-display" ></center>
+           <!--l. 413--><p class="nopar" >
+           Give a valid linear constraint that is violated by the point <span 
+class="cmmi-12">x </span>= 0, <span 
+class="cmmi-12">y </span>= 4<img 
+src="midtermS19sol78x.png" alt="1
+3"  class="frac" align="middle">.
+           </li>
+           <li 
+  class="enumerate" id="x1-39x2">(12 points) Let <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub> be a binary variable. Assume in addition that <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> and <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub> must
+           satisfy
+           <center class="math-display" >
+           <img 
+src="midtermS19sol79x.png" alt="y1 + 3y2 &#x2264; 4.
+           " class="math-display" ></center>
+           <!--l. 420--><p class="nopar" >
+           Lift the constraint you found in part&#x00A0;<a 
+href="#x1-361">4a<!--tex4ht:ref: mip.parta --></a> to give a valid constraint in <span 
+class="cmmi-12">x</span>, <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub>,
+           and&#x00A0;<span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub>.</li></ol>
+      <!--l. 425--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+                                                                                         
+
+                                                                                         
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-41x1">The mixed integer cut is
+           <center class="math-display" >
+           <img 
+src="midtermS19sol80x.png" alt="           &#x2308;   &#x2309;
+1-           1-
+f x + y1 &#x2265;  43
+           " class="math-display" ></center>
+           <!--l. 431--><p class="nopar" >
+           where <span 
+class="cmmi-12">f </span>= <img 
+src="midtermS19sol81x.png" alt="1
+3"  class="frac" align="middle">, the fractional part of the right hand side. Can rewrite this
+           as
+           <center class="math-display" >
+           <img 
+src="midtermS19sol82x.png" alt="3x + y1 &#x2265; 5.
+           " class="math-display" ></center>
+           <!--l. 436--><p class="nopar" >
+           </li>
+           <li 
+  class="enumerate" id="x1-43x2">The lifting subproblem is
+           <center class="math-display" >
+           <img 
+src="midtermS19sol83x.png" alt="minx,y1,y2    3x + y1
+subject to    x + y   &#x2265;   41
+                   1       3
+            y1 + 3y2  &#x2264;   4
+                  y2  =   1
+             x,y1,y2  &#x2265;   0
+               y1,y2      binary
+           " class="math-display" ></center>
+           <!--l. 448--><p class="nopar" >
+           Optimal solution is <span 
+class="cmmi-12">x </span>= 3<img 
+src="midtermS19sol84x.png" alt="1
+3"  class="frac" align="middle">, <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> = 1, <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub> = 1, with value&#x00A0;11. Taking the difference between
+           this value and the right hand side of 5 for the constraint shows that <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub> has coefficient -6,
+           so the lifted constraint is
+           <center class="math-display" >
+           <img 
+src="midtermS19sol85x.png" alt="3x + y1 - 6y2 &#x2265; 5.
+           " class="math-display" ></center>
+           <!--l. 455--><p class="nopar" >
+                                                                                         
+
+                                                                                         
+           </li></ol>
+                                                                                         
+
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-45x5">The wheel <span 
+class="cmmi-12">W</span><sub><span 
+class="cmmi-8">n</span></sub> is a graph <span 
+class="cmmi-12">G </span>= (<span 
+class="cmmi-12">V,E</span>) with <span 
+class="cmmi-12">n </span>+ 1 vertices labelled 0<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span>. It has 2<span 
+class="cmmi-12">n </span>edges, of
+      the form (1<span 
+class="cmmi-12">, </span>2), (2<span 
+class="cmmi-12">, </span>3), &#x2026;, (<span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">- </span>1<span 
+class="cmmi-12">,n</span>), (1<span 
+class="cmmi-12">,n</span>), and (0<span 
+class="cmmi-12">,i</span>) for <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span>. Our feasible region <span 
+class="cmmi-12">S</span>
+      consists of all incidence vectors of Hamiltonian cycles on&#x00A0;<span 
+class="cmmi-12">W</span><sub><span 
+class="cmmi-8">n</span></sub>.
+      <div class="center" 
+>
+<img src=q5.png>
+</div>
+      <!--l. 499--><p class="noindent" >Every feasible solution satisfies the <span 
+class="cmmi-12">n </span>+ 1 degree constraints
+      <center class="math-display" >
+      <img 
+src="midtermS19sol86x.png" alt=" &#x2211;
+     xe = 2     for all v &#x2208; V.
+e&#x2208;&#x03B4;(v)
+      " class="math-display" ></center>
+      <!--l. 502--><p class="nopar" >
+      You may assume these equality constraints are linearly independent. (Hint: Let <span 
+class="cmmi-12">M </span>be a
+      square matrix with every entry equal to one. Let <span 
+class="cmmi-12">I </span>be the identity matrix. You may assume
+      that the columns of the matrix <span 
+class="cmmi-12">M </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">I </span>are linearly independent.)
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-47x1">(4 points) How many feasible solutions are there?
+           </li>
+           <li 
+  class="enumerate" id="x1-49x2">(8 points) Show that the dimension of the feasible region is <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">- </span>1.
+           </li>
+           <li 
+  class="enumerate" id="x1-51x3">(8 points) Show that the constraints <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">e</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>1 define facets of conv(<span 
+class="cmmi-12">S</span>) for the edges
+           (1<span 
+class="cmmi-12">, </span>2), (2<span 
+class="cmmi-12">, </span>3), &#x2026;, (<span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">- </span>1<span 
+class="cmmi-12">,n</span>), (1<span 
+class="cmmi-12">,n</span>).</li></ol>
+      <!--l. 517--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+                                                                                         
+
+                                                                                         
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-53x1">There are <span 
+class="cmmi-12">n </span>feasible solutions: omit one of the rim edges.
+           </li>
+           <li 
+  class="enumerate" id="x1-55x2">If we order the <span 
+class="cmmi-12">n </span>rim edges first, the first <span 
+class="cmmi-12">n </span>components of the incidence vectors
+           of our <span 
+class="cmmi-12">n </span>solutions give the columns of the matrix <span 
+class="cmmi-12">M </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">I</span>. Thus, these incidence
+           vectors are linearly independent, so they are affinely independent. Therefore, the
+           dimension of the feasible region is at least <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">- </span>1.
+           <!--l. 527--><p class="noindent" >The  region  <span 
+class="cmmi-12">S </span>satisfies  <span 
+class="cmmi-12">n </span>+ 1  linearly  independent  equality  constraint,  so  the
+           dimension of the feasible region is no greater than 2<span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">- </span>(<span 
+class="cmmi-12">n </span>+ 1) = <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">- </span>1.
+           </li>
+           <li 
+  class="enumerate" id="x1-57x3">Just one of the feasible solutions does not satisfy <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">e</span></sub>  = 1 for the listed edges.
+           Hence, we have <span 
+class="cmmi-12">n</span><span 
+class="cmsy-10x-x-120">-</span>1 feasible solutions that satisfy the constraint at equality. From
+           part (b), these feasible solutions are linearly independent, so they are affinely
+           independent. Thus, the dimension of the face is at least <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">- </span>2, so it is a facet.</li></ol>
+      </li></ol>
+    
+</body></html> 
+
+                                                                                         
+
+

@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw6sol.tex"> 
+<meta name="date" content="2018-04-24 12:21:00"> 
+<link rel="stylesheet" type="text/css" href="hw6sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 15--><p class="noindent" >
+<!--l. 17--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12x-x-120">MATP6640/ISYE6770 Linear Programming</span></a><span 
+class="cmr-12x-x-120">, Homework 6.</span><br /><br />
+<span 
+class="cmr-12x-x-120">Solutions</span>
+</div>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">Let  <span 
+class="cmmi-12">x  </span>be  a  nondegenerate  basic  feasible  solution  for  the  standard  form  linear
+      programming problem min<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>: <span 
+class="cmmi-12">Ax </span>= <span 
+class="cmmi-12">b,</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmsy-10x-x-120">}</span>, where <span 
+class="cmmi-12">A </span>is <span 
+class="cmmi-12">m </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>and the vectors
+      are dimensioned appropriately. Assume the rank of <span 
+class="cmmi-12">A </span>is&#x00A0;<span 
+class="cmmi-12">m</span>. Let <span class="bar-css"><span 
+class="cmmi-12">A</span></span> = <span 
+class="cmmi-12">AX</span>, where <span 
+class="cmmi-12">X </span>is
+      a diagonal matrix with <span 
+class="cmmi-12">X</span><sub><span 
+class="cmmi-8">ii</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> for <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,...,n</span>. Simplify <span 
+class="cmmi-12">P</span><sub><span class="bar-css"><span 
+class="cmmi-8">A</span></span></sub>, the projection matrix
+      onto the nullspace of <span class="bar-css"><span 
+class="cmmi-12">A</span></span>. Hence show that <span 
+class="cmmi-12">P</span><sub><span class="bar-css"><span 
+class="cmmi-8">A</span></span></sub><span 
+class="cmmi-12">Xc </span>= 0.
+      <!--l. 48--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 51--><p class="noindent" >We write <span 
+class="cmmi-12">A </span>= [<span 
+class="cmmi-12">B,N</span>] and <span 
+class="cmmi-12">x </span>= (<span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">B</span></sub><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">,x</span><sub>
+<span 
+class="cmmi-8">N</span></sub><sup><span 
+class="cmmi-8">T</span> </sup>)<sup><span 
+class="cmmi-8">T</span> </sup>. For a nondegenerate BFS, we have <span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmmi-8">B</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0 and
+      <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">N</span></sub> = 0. This leads to
+      <center class="math-display" >
+      <img 
+src="hw6sol0x.png" alt="                 [           ]
+       [        ]   XB     0      [                  ]
+AX   =   B   N        0  X     =    BXB    0m&#x00D7; (n- m)
+                           N
+      " class="math-display" ></center>
+      <!--l. 58--><p class="nopar" >
+      and so <div class="eqnarray">
+      <center class="math-display" >
+      <img 
+src="hw6sol1x.png" alt="PA¯  =  I - (AX  )T(AX2AT  )-1AX
+        [       ]   [       T ](             [       T ]) -1
+     =    I   0   -    XBB       [ BX     0 ]  XBB          [ BX     0 ]
+          0  I           0             B          0               B
+        [       ]   [       T ](         )  [          ]
+     =    I   0   -    XBB      BX2BBT    -1  BXB    0
+          0  I           0
+        [ I   0 ]   [  XBBT   ]             [          ]
+     =            -            B -T X -B2B -1  BXB    0
+        [ 0  I  ]   [    0  ]
+          I   0        I  0
+     =    0  I    -    0  0
+        [       ]
+     =    0  0
+          0  I
+      " class="math-display" ></center>
+      </div>We then obtain <div class="eqnarray">
+      <center class="math-display" >
+      <img 
+src="hw6sol2x.png" alt="           [      ] [        ]
+P ¯Xc  =     0  0     XBcB
+ A           0  I     XN  cN
+           [      ] [        ]
+       =     0  0     XBcB
+             0  I       0
+           [ 0 ]
+       =
+             0
+      " class="math-display" ></center>
+      </div>
+      </li>
+      <li 
+  class="enumerate" id="x1-7x2"><a 
+ id="x1-62"></a> The Monteiro-Adler short step algorithm presented in class (Algorithm SPF on page 86 of
+      <span 
+class="cmti-12">Wright</span>) could be used as an infeasible interior point method, starting with <span 
+class="cmmi-12">x </span>= <span 
+class="cmmi-12">s </span>= <span 
+class="cmmi-12">e</span>, <span 
+class="cmmi-12">y </span>= 0,
+      and <span 
+class="cmmi-12">&#x03BC; </span>= 1. Give an example to show that in this case we may not be able to take a step of
+      length 1 and we may need to take a linesearch to preserve nonnegativity. (Note: We solve
+      (1.20) to find the directions given in (1.25) at each iteration. Hint: you only need look at
+      <span 
+class="cmbx-12">small </span>examples.)
+                                                                                         
+                                                                                         
+      <!--l. 102--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 105--><p class="noindent" >We need to construct an example where the step results in a new iterate with <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2044;</span> <span 
+class="cmmi-12">&#x003E;</span>0 or <span 
+class="cmmi-12">s </span><span 
+class="cmsy-10x-x-120">&#x2044;</span> <span 
+class="cmmi-12">&#x003E;</span>0.
+      The following is an example with <span 
+class="cmmi-12">n </span>= 1:
+      <center class="math-display" >
+      <img 
+src="hw6sol3x.png" alt="minx&#x2208; &#x211D;  x                     maxy &#x2208;&#x211D;,s&#x2208;&#x211D;  2y
+s.t.      x  =  2     (P)       s.t.          y  +   s  =   1    (D )
+         x  &#x2265;  0                                   s  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 114--><p class="nopar" >
+      The initial solution is <span 
+class="cmmi-12">x </span>= 1, <span 
+class="cmmi-12">y </span>= 0, <span 
+class="cmmi-12">s </span>= 1, so <span 
+class="cmmi-12">r</span><sub><span 
+class="cmmi-8">b</span></sub> = <span 
+class="cmsy-10x-x-120">-</span>1, <span 
+class="cmmi-12">r</span><sub><span 
+class="cmmi-8">c</span></sub> = 0. We have <span 
+class="cmmi-12">&#x03C3; </span>= 1 <span 
+class="cmsy-10x-x-120">- </span>0<span 
+class="cmmi-12">.</span>4<span 
+class="cmmi-12">&#x2215;</span><img 
+src="hw6sol4x.png" alt="&#x221A; --
+  n"  class="sqrt" > = 0<span 
+class="cmmi-12">.</span>6.
+      We get <div class="eqnarray">
+      <center class="math-display" >
+      <img 
+src="hw6sol5x.png" alt="                     -1               -1
+&#x0394; &#x03BB;  =   - rb + A (- S Xrc  + x - &#x03C3;&#x03BC;S   e)
+     =   1 + 1(0 + 1 - 0.6) = 1.4,
+                 T
+&#x0394;s   =   - rc - A &#x0394; &#x03BB; =  - 1.4
+&#x0394;x   =   - x + &#x03C3;&#x03BC;S -1e - S- 1X &#x0394;s
+
+     =   - 1 + 0.6 + 1.4 = 1
+      " class="math-display" ></center>
+      </div>so the updated iterate with a full step is <span 
+class="cmmi-12">x </span>= 2, <span 
+class="cmmi-12">y </span>= 1<span 
+class="cmmi-12">.</span>4, <span 
+class="cmmi-12">s </span>= <span 
+class="cmsy-10x-x-120">-</span>0<span 
+class="cmmi-12">.</span>4. Thus, we violate
+      <span 
+class="cmmi-12">s &#x003E; </span>0.
+      </li>
+      <li 
+  class="enumerate" id="x1-10x3">Let (&#x0394;<span 
+class="cmmi-12">x, </span>&#x0394;<span 
+class="cmmi-12">y, </span>&#x0394;<span 
+class="cmmi-12">s</span>) solve
+      <center class="math-display" >
+      <img 
+src="hw6sol6x.png" alt="&#x230A; 0   AT   I  &#x230B; &#x230A; &#x0394;x  &#x230B;    &#x230A;   0  &#x230B;
+&#x2308;             &#x2309; &#x2308;     &#x2309;    &#x2308;      &#x2309;
+  A   0    0      &#x0394;y     =   - rb   .
+  S   0    X      &#x0394;s           0
+      " class="math-display" ></center>
+                                                                                         
+                                                                                         
+      <!--l. 158--><p class="nopar" >
+      Assume <span 
+class="cmmi-12">r</span><sub><span 
+class="cmmi-8">b</span></sub><span 
+class="cmmi-12">&#x2260;</span>0, <span 
+class="cmmi-12">S </span>and <span 
+class="cmmi-12">X </span>are positive definite diagonal matrices, and <span 
+class="cmmi-12">A </span>is <span 
+class="cmmi-12">m</span><span 
+class="cmsy-10x-x-120">&#x00D7;</span><span 
+class="cmmi-12">n </span>with rank&#x00A0;<span 
+class="cmmi-12">m</span>.
+      Show that &#x0394;<span 
+class="cmmi-12">x</span><sup><span 
+class="cmmi-8">T</span> </sup>&#x0394;<span 
+class="cmmi-12">s</span><span 
+class="cmmi-12">&#x2260;</span>0.
+      <!--l. 162--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 165--><p class="noindent" >Note that <span 
+class="cmmi-12">A</span>&#x0394;<span 
+class="cmmi-12">x </span>= <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">r</span><sub><span 
+class="cmmi-8">b</span></sub>, so &#x0394;<span 
+class="cmmi-12">x</span><span 
+class="cmmi-12">&#x2260;</span>0. Also,
+      <center class="math-display" >
+      <img 
+src="hw6sol7x.png" alt="           -1
+&#x0394;s  =  - X   S &#x0394;x.
+      " class="math-display" ></center>
+      <!--l. 169--><p class="nopar" >
+      Let <span 
+class="cmmi-12">D </span>= <span 
+class="cmmi-12">X</span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sup><span 
+class="cmmi-12">S</span>, a diagonal matrix with every diagonal entry strictly positive. Thus, <span 
+class="cmmi-12">D </span>is
+      positive definite, so
+      <center class="math-display" >
+      <img 
+src="hw6sol8x.png" alt="   T            T   -1             T
+&#x0394;x  &#x0394;s  =  - &#x0394;x   X   S&#x0394;x  =  - &#x0394;x   D &#x0394;x &#x003C;  0.
+      " class="math-display" ></center>
+      <!--l. 176--><p class="nopar" >
+      </li>
+      <li 
+  class="enumerate" id="x1-12x4">Wright, Chapter 2, Question 11, page 47.
+      <!--l. 250--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 253--><p class="noindent" >Problem (2.36) is a strictly convex problem, so it has a unique global minimizer (assuming it
+      is feasible). This point satisfies the KKT conditions, because the constraints are linear. The
+      KKT conditions for (2.36) are <div class="eqnarray">
+      <center class="math-display" >
+      <img 
+src="hw6sol9x.png" alt="---n----c - X -1e - AT y  =   0
+Z - cT x
+                     Ax   =   b
+      " class="math-display" ></center>
+      </div>since the inequalities must hold strictly at the global minimizer. Let <span 
+class="cmmi-12">&#x03C4; </span>= <img 
+src="hw6sol10x.png" alt="Z--cTx
+   n"  class="frac" align="middle">. The solution
+      to the KKT conditions then satisfies <div class="eqnarray">
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="hw6sol11x.png" alt="       - 1     T
+c - &#x03C4;X   e - A  y  =   0
+              Ax   =   b
+      " class="math-display" ></center>
+      </div>after rescaling&#x00A0;<span 
+class="cmmi-12">y</span>. Thus, the solution to (2.36) satisfies the KKT conditions (2,34) for the
+      strictly convex problem (2.33), so it solves (2.33) with this choice of&#x00A0;<span 
+class="cmmi-12">&#x03C4;</span>.
+      </li>
+      <li 
+  class="enumerate" id="x1-16x5">Let <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) = <span 
+class="cmmi-12">n</span> log(<span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x</span>) <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmex-10x-x-120">&#x2211;</span><sub>
+<span 
+class="cmmi-8">i</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmmi-8">n</span></sup> log(<span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmmi-8">i</span></sub>). Show that <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x </span>+ <span 
+class="cmmi-12">&#x03B8;d</span>) = <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) if <span 
+class="cmmi-12">d </span>= <span 
+class="cmmi-12">kx </span>for some scalar
+      <span 
+class="cmmi-12">k</span>, provided <span 
+class="cmmi-12">x &#x003E; </span>0, <span 
+class="cmmi-12">x </span>+ <span 
+class="cmmi-12">&#x03B8;d &#x003E; </span>0, <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x &#x003E; </span>0, and <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup>(<span 
+class="cmmi-12">x </span>+ <span 
+class="cmmi-12">&#x03B8;d</span>) <span 
+class="cmmi-12">&#x003E; </span>0.
+      <!--l. 276--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 279--><p class="noindent" >We have <div class="eqnarray">
+      <center class="math-display" >
+      <img 
+src="hw6sol12x.png" alt="f(x + &#x03B8;d)  =   f(x + &#x03B8;kx )
+           =   f((1 + &#x03B8;k)x)
+                                     n
+                             T      &#x2211;
+           =   n log ((1 + &#x03B8;k)c  x) -    log((1 + &#x03B8;k)xi)
+                                    i=1
+                                     T     &#x2211;n               &#x2211;n
+           =   n log (1 + &#x03B8;k ) + n log(c x) -    log(1 + &#x03B8;k ) -    log(xi)
+                                           i=1               i=1
+                            &#x2211;n
+           =   n log (cT x) -    log(xi)
+                            i=1
+           =   f(x),
+      " class="math-display" ></center>
+      </div>as required.
+                                                                                         
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-19x6">Prove that when <span 
+class="cmmi-12">n </span>= 2, the neighborhoods <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><sub><span 
+class="cmr-8">2</span></sub>(<span 
+class="cmmi-12">&#x03B8;</span>) and <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><sub><span 
+class="cmsy-8">-&#x221E;</span></sub>(1 <span 
+class="cmsy-10x-x-120">-</span><img 
+src="hw6sol13x.png" alt="&#x221A;&#x03B8;-
+  2"  class="frac" align="middle">) are identical, for any
+      <span 
+class="cmmi-12">&#x03B8; </span><span 
+class="cmsy-10x-x-120">&#x2208; </span>(0<span 
+class="cmmi-12">, </span>1). (See page 84 in Wright for a definition of these neighborhoods.)
+      <!--l. 362--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 365--><p class="noindent" >We have <span 
+class="cmmi-12">&#x03BC; </span>= <img 
+src="hw6sol14x.png" alt="1
+2"  class="frac" align="middle">(<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">1</span></sub> + <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">2</span></sub>), so <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">1</span></sub> + <span 
+class="cmmi-12">v </span>= <span 
+class="cmmi-12">&#x03BC; </span>= <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">v </span>for some scalar&#x00A0;<span 
+class="cmmi-12">v </span>(<span 
+class="cmmi-12">v</span>&#x00A0;can be positive
+      or negative).
+      <!--l. 369--><p class="noindent" >We have (<span 
+class="cmmi-12">x,y,s</span>) <span 
+class="cmsy-10x-x-120">&#x2208;<img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><sub><span 
+class="cmsy-8">-&#x221E;</span></sub>(1 <span 
+class="cmsy-10x-x-120">-</span><img 
+src="hw6sol15x.png" alt="-&#x03B8;-
+&#x221A;2"  class="frac" align="middle">) if and only if
+      <center class="math-display" >
+      <img 
+src="hw6sol16x.png" alt="       (        )
+xisi &#x2265;  1 - &#x221A;&#x03B8;--  &#x03BC;   for i = 1,2
+              2
+      " class="math-display" ></center>
+      <!--l. 373--><p class="nopar" >
+      or equivalently
+      <center class="math-display" >
+      <img 
+src="hw6sol17x.png" alt="        (        )
+&#x03BC; ± v &#x2265;   1 - &#x221A;&#x03B8;-- &#x03BC;
+                2
+      " class="math-display" ></center>
+      <!--l. 377--><p class="nopar" >
+      or equivalently
+      <center class="math-display" >
+      <img 
+src="hw6sol18x.png" alt="   &#x03B8;           &#x03B8;
+- &#x221A;--&#x03BC; &#x2264;  v &#x2264; &#x221A;--&#x03BC;
+    2           2
+      " class="math-display" ></center>
+      <!--l. 381--><p class="nopar" >
+      or equivalently
+      <center class="math-display" >
+      <img 
+src="hw6sol19x.png" alt="     &#x03B8;2
+v2 &#x2264; ---&#x03BC;2.
+      2
+      " class="math-display" ></center>
+      <!--l. 385--><p class="nopar" >
+      <!--l. 387--><p class="noindent" >We have (<span 
+class="cmmi-12">x,y,s</span>) <span 
+class="cmsy-10x-x-120">&#x2208;<img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><sub><span 
+class="cmr-8">2</span></sub>(<span 
+class="cmmi-12">&#x03B8;</span>) if and only if
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="hw6sol20x.png" alt="          2             2    2 2
+(x1s1 - &#x03BC;)  + (x2s2 - &#x03BC;) &#x2264;  &#x03B8; &#x03BC;
+      " class="math-display" ></center>
+      <!--l. 391--><p class="nopar" >
+      or equivalently
+      <center class="math-display" >
+      <img 
+src="hw6sol21x.png" alt=" 2    2    2 2
+v  + v  &#x2264; &#x03B8; &#x03BC;
+      " class="math-display" ></center>
+      <!--l. 395--><p class="nopar" >
+      or equivalently
+      <center class="math-display" >
+      <img 
+src="hw6sol22x.png" alt=" 2   &#x03B8;2  2
+v  &#x2264; ---&#x03BC; .
+      2
+      " class="math-display" ></center>
+      <!--l. 399--><p class="nopar" >
+      <!--l. 401--><p class="noindent" >Thus, exactly the same points sit in the two neighborhoods.
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                       </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                 </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Tuesday: 12&#8211;2pm, Wednesday: 11am&#8211;1pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

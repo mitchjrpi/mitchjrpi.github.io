@@ -1,0 +1,307 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Midterm Exam</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="midterm">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="midterm.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+     <A HREF=..>MATP6640/DSES6770 Linear Programming</A>
+  </FONT>
+</DIV>
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+                Midterm Exam, Spring 2000
+  </FONT>
+</DIV>
+
+<P>
+Take Home   Due:  Tuesday, March 7, 2000, in class.
+
+<P>
+
+<BR>
+
+<P>
+This is to be all your own work.  You may use any result from class,
+homeworks, the textbook, or the books on reserve in the library.
+You may use the result of one question in a different question.
+Do not consult anybody or anything else. 
+I can dispense hints to help you if you are stuck.
+My email address is <A HREF=mailto:mitchj@rpi.edu>mitchj@rpi.edu</A> and
+my phone numbers are 276-6915(O) and 346-2811(H).
+I'll have my regular office hours on Wednesday from 12 noon to 2pm;
+I'll also have office hours next Monday, between 2pm and 4pm.
+
+<P>
+In order that I can display grades, please write a 4 digit number
+on the front of your solution set.
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>(20 points)
+A <B>Markov chain</B> has <I>n</I> different states and at each time period
+it may change its state. Given that it is in state <I>i</I> at time <I>t</I>,
+the probability that it is in state <I>j</I> at time <I>t</I>+1 is
+given by <I>M</I><SUB><I>ij</I></SUB>.
+The matrix <I>M</I> is the transition matrix for the chain.
+Notice that every entry <IMG
+ WIDTH="64" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$M_{ij} \geq 0$">.
+Further, we must have <!-- MATH: $\sum_{j=1}^n M_{ij} = 1$ -->
+<IMG
+ WIDTH="108" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\sum_{j=1}^n M_{ij} = 1$">.
+If <I>p</I><SUP><I>t</I></SUP> is the probability that the chain is in each
+different position at time <I>t</I>, then the probability distribution at
+time
+<I>t</I>+1 is given by <!-- MATH: $p^{t+1}=M^T p^t$ -->
+<I>p</I><SUP><I>t</I>+1</SUP>=<I>M</I><SUP><I>T</I></SUP> <I>p</I><SUP><I>t</I></SUP>.
+A <B>stationary distribution</B> <I>p</I> for this chain satisfies
+<I>M</I><SUP><I>T</I></SUP><I>p</I>=<I>p</I>, <IMG
+ WIDTH="44" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$p \geq 0$">,
+<I>e</I><SUP><I>T</I></SUP><I>p</I>=1, where <I>e</I> is the vector of ones.
+Use linear programming duality to show that every Markov chain has a
+stationary distribution.
+(Hint: Note that it suffices to show the existence of a nonzero <IMG
+ WIDTH="44" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$p \geq 0$">
+satisfying
+<I>M</I><SUP><I>T</I></SUP><I>p</I>=<I>p</I>, since any such <I>p</I> can be scaled to satisfy <I>e</I><SUP><I>T</I></SUP><I>p</I>=1.)
+<DT>2.
+<DD>(20 points)
+Construct a linear programming problem of the form
+    <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcl} 
+        \min          & c^Tx \\
+        \mbox{s.t.}   &  Ax  & \leq & b  \qquad \qquad (P)  \\
+                      &   x & \geq & 0. 
+      \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="221" HEIGHT="85"
+ SRC="img4.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcl}
+\min &amp; c^Tx \\
+\mbox{s.t.} &amp; Ax &amp; \leq &amp; b \qquad \qquad (P) \\
+&amp; x &amp; \geq &amp; 0.
+\end{array}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <I>A</I> is a 4  x  2 matrix, <I>x</I> and <I>c</I> are 2-vectors and <I>b</I> is a
+    4-vector,  such that the simplex algorithm takes 4 steps when started
+    from an appropriate vertex with any rule for choosing the entering variable
+    (provided it picks a variable with negative reduced cost).
+  <DT>3.
+<DD>(20 points)
+The attached sheet is part of a paper which was submitted to
+    <EM>Mathematical Programming</EM>. The authors propose an algorithm for linear
+    programming and then make some claims about the performance of this
+    algorithm. Do these claims seem reasonable? Justify your answer.
+
+<P>
+
+
+<DT>4.
+<DD>(40 points)
+We wish to partition a set <I>S</I> of <I>n</I> objects into <I>K</I>
+clusters, where <I>K</I> is given.
+There is a cost <I>d</I><SUB><I>ij</I></SUB>&gt;0 associated with placing objects <I>i</I> and <I>j</I>
+in the same cluster.
+In one formulation of this problem, we use binary variables <I>x</I><SUB><I>k</I></SUB>
+corresponding to the nonempty subsets of the objects, with
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+x_k = \left\{ \begin{array}{ll}
+1 & \mbox{if subset } $k$\space \mbox{ is one of the $K$\space chosen clusters}\\
+0 & \mbox{otherwise.}
+\end{array}   \right.
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="404" HEIGHT="59"
+ SRC="img5.gif"
+ ALT="\begin{displaymath}
+x_k = \left\{ \begin{array}{ll}
+1 &amp; \mbox{if subset } $k$\sp...
+... chosen clusters}\\
+0 &amp; \mbox{otherwise.}
+\end{array} \right.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Let <I>S</I><SUP><I>k</I></SUP> be the <I>k</I>th nonempty subset of <I>S</I> for <!-- MATH: $k=1,\ldots,2^n-1$ -->
+<IMG
+ WIDTH="131" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$k=1,\ldots,2^n-1$">.
+Define
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+w_k := \sum_{i,j \in S^k, i<j} d_{ij}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="137" HEIGHT="57"
+ SRC="img7.gif"
+ ALT="\begin{displaymath}
+w_k := \sum_{i,j \in S^k, i&lt;j} d_{ij}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+to be the weight of&nbsp;<I>S</I><SUP><I>k</I></SUP>.
+We are going to examine the linear programming relaxation of
+this formulation, which we will denote (<I>MP</I>), or Master Problem:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrclr}
+\min & \sum_{k=1}^{2^n-1} w_k x_k \\
+\mbox{subject to } & A x & = & e & \qquad \qquad (MP) \\
+& e^Tx & = & K \\
+&   x  & \geq & 0
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="380" HEIGHT="111"
+ SRC="img8.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrclr}
+\min &amp; \sum_{k=1}^{2^n-1} w_k x_k \\
+\...
+...d \qquad (MP) \\
+&amp; e^Tx &amp; = &amp; K \\
+&amp; x &amp; \geq &amp; 0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Here, <I>e</I> denotes a vector of ones of the appropriate dimension,
+and the <I>k</I>th column of <I>A</I> is the incidence vector of&nbsp;<I>S</I><SUP><I>k</I></SUP>.
+Note that <I>A</I> is an <!-- MATH: $n \times (2^n -1)$ -->
+<I>n</I>  x  (2<SUP><I>n</I></SUP> -1) matrix.
+<DL COMPACT>
+<DT>(a)
+<DD>(15 points)
+Since there is an exponential number of
+subsets of the objects, we use a column generation approach.
+Thus, we work with a Revised Master Problem (<I>RMP</I>),
+which only contains a subset of the variables.
+Show that we can determine whether the optimal solution to (<I>RMP</I>)
+is optimal in (<I>MP</I>) by solving
+a quadratic programming problem with integrality constraints.
+<DT>(b)
+<DD>Consider the problem with <!-- MATH: $S:=\{1,2,3,4,5\}$ -->
+<I>S</I>:={1,2,3,4,5} and <I>K</I>=3.
+The distances <I>d</I><SUB><I>ij</I></SUB> are given by the following matrix:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+D := \left( \begin{array}{rrrrr} 0 & 8 & 21 & 17 & 18 \\
+& 0 & 22 & 15 & 20 \\&& 0 & 2 & 4 \\
+&&& 0 & 3 \\&&&& 0
+\end{array}  \right) .
+\end{displaymath} -->
+
+<IMG
+ WIDTH="226" HEIGHT="137"
+ SRC="img9.gif"
+ ALT="\begin{displaymath}
+D := \left( \begin{array}{rrrrr} 0 &amp; 8 &amp; 21 &amp; 17 &amp; 18 \\
+&amp; ...
+... \\ &amp;&amp; 0 &amp; 2 &amp; 4 \\
+&amp;&amp;&amp; 0 &amp; 3 \\ &amp;&amp;&amp;&amp; 0
+\end{array} \right) .
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Initially, use the subsets {1}, {2}, {3}, {4},
+{5}, {1,2}, and {3,4} to provide the variables for
+(<I>RMP</I>).
+<DL COMPACT>
+<DT>i.
+<DD>(5 points)
+Show that there is only one feasible solution to (<I>RMP</I>).
+Call it&nbsp;<IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.gif"
+ ALT="$\bar{x}$">.
+<DT>ii.
+<DD>(10 points)
+The point <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.gif"
+ ALT="$\bar{x}$">
+is a degenerate BFS.
+Find a basis for which the reduced costs are all nonnegative.
+<DT>iii.
+<DD>(10 points)
+Show that <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img10.gif"
+ ALT="$\bar{x}$">
+does not solve (<I>MP</I>) by finding a column
+in (<I>MP</I>) with negative reduced cost. Add this column to (<I>RMP</I>)
+and make one pivot using the revised simplex method.
+Is the new iterate optimal in (<I>RMP</I>)?
+<DT>iv.
+<DD>(Extra credit: up to 10 points)
+Is the new iterate optimal in (<I>MP</I>)?
+</DL></DL></DL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<A HREF=../..>John E Mitchell</A>
+<BR><I>2000-02-29</I>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,635 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw2sol.tex"> 
+<meta name="date" content="2016-09-22 21:21:00"> 
+<link rel="stylesheet" type="text/css" href="hw2sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 14--><p class="noindent" >
+<!--l. 16--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6600" ><span 
+class="cmr-12x-x-120">MATP6600/ISYE6780 Nonlinear Programming</span></a><span 
+class="cmr-12x-x-120">, Homework 2. Solutions</span>
+</div>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">For each <span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">m</span></sup>, define the function <span 
+class="cmmi-12">r </span>: <span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">m</span></sup> <span 
+class="cmsy-10x-x-120">&#x2192; </span><span 
+class="msbm-10x-x-120">&#x211D; </span>by
+      <center class="math-display" >
+      <img 
+src="hw2sol0x.png" alt="r(y) :=   inf {f (x) : gi(x) + hi(y) &#x2264; 0,i = 1,...,p},
+        x&#x2208;&#x211D;n
+      " class="math-display" ></center>
+      <!--l. 33--><p class="nopar" >
+      where <span 
+class="cmmi-12">g</span><sub><span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-12">x</span>) and <span 
+class="cmmi-12">h</span><sub><span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-12">y</span>) are convex functions for <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,p</span>, and <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) is a convex
+      function. Note that the only variables in the minimization problem are&#x00A0;<span 
+class="cmmi-12">x</span>, with
+      <span 
+class="cmmi-12">y </span>playing the role of a parameter. If the minimization problem is infeasible for
+      some <span class="bar-css"><span 
+class="cmmi-12">y</span></span> then we define <span 
+class="cmmi-12">r</span>(<span class="bar-css"><span 
+class="cmmi-12">y</span></span>) = +<span 
+class="cmsy-10x-x-120">&#x221E;</span>. Is <span 
+class="cmmi-12">r</span>(<span 
+class="cmmi-12">y</span>) a convex function of&#x00A0;<span 
+class="cmmi-12">y</span>? Prove or give a
+      counterexample.
+      <!--l. 43--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span><br 
+class="newline" />The function <span 
+class="cmmi-12">r</span>(<span 
+class="cmmi-12">y</span>) is convex. Let <span 
+class="cmmi-12">y</span><sup><span 
+class="cmr-8">1</span></sup><span 
+class="cmmi-12">,y</span><sup><span 
+class="cmr-8">2</span></sup> <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">m</span></sup> and <span 
+class="cmmi-12">&#x03BB; </span><span 
+class="cmsy-10x-x-120">&#x2208; </span>[0<span 
+class="cmmi-12">, </span>1]. Define
+      <center class="math-display" >
+      <img 
+src="hw2sol1x.png" alt="¯y = &#x03BB;y1 +  (1 - &#x03BB; )y2.
+      " class="math-display" ></center>
+      <!--l. 49--><p class="nopar" >
+      If either <span 
+class="cmmi-12">r</span>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">j</span></sup>) = +<span 
+class="cmsy-10x-x-120">&#x221E; </span>for <span 
+class="cmmi-12">j </span>= 1 or 2 then we immediately have <span 
+class="cmmi-12">r</span>(<span class="bar-css"><span 
+class="cmmi-12">y</span></span>) <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">&#x03BB;r</span>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmr-8">1</span></sup>)<span style="margin-left:0.3em" class="thinspace"></span> + <span style="margin-left:0.3em" class="thinspace"></span>(1 <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03BB;</span>)<span 
+class="cmmi-12">r</span>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmr-8">2</span></sup>).
+      Thus, in what follows, we assume <span 
+class="cmmi-12">r</span>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">j</span></sup>) <span 
+class="cmmi-12">&#x003C; </span>+<span 
+class="cmsy-10x-x-120">&#x221E; </span>for <span 
+class="cmmi-12">j </span>= 1<span 
+class="cmmi-12">, </span>2. Let <span 
+class="cmmi-12">x</span><sup><span 
+class="cmmi-8">j</span></sup> satisfy
+      <center class="math-display" >
+      <img 
+src="hw2sol2x.png" alt="g (xj) + h (yj) &#x2264; 0,i = 1,...,p
+ i        i
+      " class="math-display" ></center>
+      <!--l. 56--><p class="nopar" >
+      for <span 
+class="cmmi-12">j </span>= 1<span 
+class="cmmi-12">, </span>2. Set
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="hw2sol3x.png" alt="       1           2
+¯x = &#x03BB;x  +  (1 - &#x03BB; )x .
+      " class="math-display" ></center>
+      <!--l. 61--><p class="nopar" >
+      By convexity, we have
+      <center class="math-display" >
+      <img 
+src="hw2sol4x.png" alt="gi(¯x) + hi(¯y) &#x2264; 0,i = 1,...,p,
+      " class="math-display" ></center>
+      <!--l. 65--><p class="nopar" >
+      and also
+      <center class="math-display" >
+      <img 
+src="hw2sol5x.png" alt="             1              2
+f (¯x) &#x2264; &#x03BB;f(x  ) + (1 - &#x03BB;)f(x ).
+      " class="math-display" ></center>
+      <!--l. 69--><p class="nopar" >
+      We can use these observations as follows. We have <div class="eqnarray">
+      <center class="math-display" >
+      <img 
+src="hw2sol6x.png" alt="r(y¯) =    inf {f (x) : gi(x) + hi(¯y) &#x2264; 0,i = 1,...,p}
+         x&#x2208;&#x211D;n
+     &#x2264;    inf {f (x) : x = &#x03BB;x1 + (1 - &#x03BB;)x2,gi(xj) + hi(yj) &#x2264; 0,i = 1,...,p,j = 1, 2}
+         x&#x2208;&#x211D;n
+              since we have  shrunk  the feasible set
+                      1              2       j       j
+     &#x2264;    1in2f n{&#x03BB;f (x ) + (1 - &#x03BB; )f(x ) : gi(x ) + hi(y ) &#x2264; 0,i = 1,...,p,j = 1,2}
+         x ,x &#x2208;&#x211D;
+              since f(x ) convex
+                    1       1       1
+     =   &#x03BB; xin1&#x2208;f&#x211D;n{f(x ) : gi(x ) + hi(y ) &#x2264; 0,i = 1,...,p}
+                                2       2       2
+              +(1 - &#x03BB;) xin2&#x2208;f&#x211D;n {f(x ) : gi(x ) + hi(y ) &#x2264; 0,i = 1,...,p}
+
+              since the problem  is separable
+     =   &#x03BB;r(y1) + (1 - &#x03BB;)r(y2).
+      " class="math-display" ></center>
+      </div>Thus, <span 
+class="cmmi-12">r</span>(<span 
+class="cmmi-12">y</span>) is a convex function.
+      </li>
+      <li 
+  class="enumerate" id="x1-6x2">Let <span 
+class="cmmi-12">C </span>= <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmr-8">3</span></sup> : <span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmr-8">2</span></sup> + <span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmr-8">2</span></sub><sup><span 
+class="cmr-8">2</span></sup> + <span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmr-8">3</span></sub><sup><span 
+class="cmr-8">2</span></sup> <span 
+class="cmsy-10x-x-120">&#x2264; </span>1<span 
+class="cmsy-10x-x-120">} </span>and <span 
+class="cmmi-12">y </span>= (2<span 
+class="cmmi-12">,</span><span 
+class="cmsy-10x-x-120">-</span>1<span 
+class="cmmi-12">,</span><span 
+class="cmsy-10x-x-120">-</span>2)<sup><span 
+class="cmmi-8">T</span> </sup>. Find the minimum distance
+      from <span 
+class="cmmi-12">y </span>to <span 
+class="cmmi-12">C</span>, the unique minimizing point, and a separating hyperplane.
+      <!--l. 111--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span><br 
+class="newline" />Since <span 
+class="cmmi-12">C </span>is the unit sphere, this question is straightforward. Closest point is <span class="bar-css"><span 
+class="cmmi-12">x</span></span> = (<img 
+src="hw2sol7x.png" alt="2
+3"  class="frac" align="middle"><span 
+class="cmmi-12">,</span><img 
+src="hw2sol8x.png" alt="-1-
+3"  class="frac" align="middle"><span 
+class="cmmi-12">,</span><img 
+src="hw2sol9x.png" alt="-2-
+ 3"  class="frac" align="middle">)<sup><span 
+class="cmmi-8">T</span> </sup>.
+      Distance is <span 
+class="cmsy-10x-x-120">||</span><span 
+class="cmmi-12">y</span><span 
+class="cmsy-10x-x-120">||</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120">- </span>1 = 2. Separating hyperplane is 2<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120">- </span>2<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> = 6.
+      </li>
+      <li 
+  class="enumerate" id="x1-8x3">Let
+      <center class="math-display" >
+      <img 
+src="hw2sol10x.png" alt="           3   x1 + x2 &#x2264; 1,
+S =  {x &#x2208; &#x211D;  : x1 + x3 &#x2264; 1, xi = 0 or 1,i = 1,...,3}
+               x2 + x3 &#x2264; 1,
+      " class="math-display" ></center>
+      <!--l. 146--><p class="nopar" >
+      Show that the point <span class="bar-css"><span 
+class="cmmi-12">x</span></span> = 0<span 
+class="cmmi-12">.</span>5(1<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">, </span>1)<sup><span 
+class="cmmi-8">T</span> </sup> is not in the convex hull of&#x00A0;<span 
+class="cmmi-12">S</span>, by finding a hyperplane
+      which separates the point from the set.
+      <!--l. 150--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span><br 
+class="newline" />We have <span 
+class="cmmi-12">S </span>= <span 
+class="cmsy-10x-x-120">{</span>(0<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>0)<span 
+class="cmmi-12">, </span>(1<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>0)<span 
+class="cmmi-12">, </span>(0<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">, </span>0)<span 
+class="cmmi-12">, </span>(0<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>1)<span 
+class="cmsy-10x-x-120">}</span>, since every other binary point violates at
+      least one of the constraints. A constraint that is satisfied by <span 
+class="cmmi-12">S </span>and violated by <span class="bar-css"><span 
+class="cmmi-12">x</span></span>
+      is
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="hw2sol11x.png" alt="x1 + x2 + x3 &#x2264; 1.
+      " class="math-display" ></center>
+      <!--l. 157--><p class="nopar" >
+      </li>
+      <li 
+  class="enumerate" id="x1-10x4">Let <span 
+class="cmmi-12">C </span>be the open interval (<span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">&#x03B1;,&#x03B1;</span>). Let <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) := (<span 
+class="cmmi-12">&#x03B1;</span><sup><span 
+class="cmr-8">2</span></sup> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">2</span></sup>)<sup><span 
+class="cmsy-8">-</span><img 
+src="hw2sol12x.png" alt="12"  class="frac" align="middle">
+     </sup>. Show that <span 
+class="cmmi-12">f </span>is convex on
+      <span 
+class="cmmi-12">C</span>.
+      <!--l. 177--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span><br 
+class="newline" />The first and second derivatives of <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) are
+      <center class="math-display" >
+      <img 
+src="hw2sol13x.png" alt="df                3
+---=  x(&#x03B1;2 - x2)- 2
+dx
+      " class="math-display" ></center>
+      <!--l. 182--><p class="nopar" >
+      and
+      <center class="math-display" >
+      <img 
+src="hw2sol14x.png" alt="d2f-     2    2 - 3    2   2    2- 5      2    2   2    2 - 5
+dx2 =  (&#x03B1; -  x ) 2 + 3x (&#x03B1;  - x )  2 = (2x  + &#x03B1; )(&#x03B1;  - x )  2 &#x003E; 0
+      " class="math-display" ></center>
+      <!--l. 187--><p class="nopar" >
+      for <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">&#x03B1; &#x003C; x &#x003C; &#x03B1;</span>.
+      </li>
+      <li 
+  class="enumerate" id="x1-12x5">Consider the problem min<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) := (<span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">- </span>1)<sup><span 
+class="cmr-8">4</span></sup> + <span 
+class="cmmi-12">e</span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmmi-8">x</span></sup><span 
+class="cmsy-10x-x-120">}</span>.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-14x1">Show that <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) is a strictly convex function for <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span>.
+           </li>
+           <li 
+  class="enumerate" id="x1-16x2">We want to get a lower bound on the optimal value of this problem. Use the subgradient
+           inequality
+           <center class="math-display" >
+           <img 
+src="hw2sol15x.png" alt="f(x) &#x2265; f(¯x) + &#x2207;f (¯x)T (x -  ¯x)
+           " class="math-display" ></center>
+                                                                                         
+                                                                                         
+           <!--l. 242--><p class="nopar" >
+           to find an interval [<span 
+class="cmmi-12">a,a </span>+ 0<span 
+class="cmmi-12">.</span>1] that contains the optimal solution. What lower bound do
+           you get on the optimal value from your interval?</li></ol>
+      <!--l. 250--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span><br 
+class="newline" />
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-18x1">The first and second derivatives of <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) are
+           <center class="math-display" >
+           <img 
+src="hw2sol16x.png" alt="df-=  4(x - 1)3 - e- x
+dx
+           " class="math-display" ></center>
+           <!--l. 256--><p class="nopar" >
+           and
+           <center class="math-display" >
+           <img 
+src="hw2sol17x.png" alt=" 2
+d-f-            2   - x
+dx2 = 12 (x - 1) + e   &#x003E;  0
+           " class="math-display" ></center>
+           <!--l. 260--><p class="nopar" >
+           for all <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span>.
+           </li>
+           <li 
+  class="enumerate" id="x1-20x2">We want to find an interval with negative derivative at the left hand end point&#x00A0;<span 
+class="cmmi-12">a </span>and
+           positive derivative at the right hand end point&#x00A0;<span 
+class="cmmi-12">a </span>+ 0<span 
+class="cmmi-12">.</span>1. Using binary search, we can find
+           an interval:
+           <div class="center" 
+>
+<!--l. 267--><p class="noindent" >
+<div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><colgroup id="TBL-1-2g"><col 
+id="TBL-1-2"></colgroup><colgroup id="TBL-1-3g"><col 
+id="TBL-1-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-1-1"  
+class="td11"> <span 
+class="cmmi-12">x</span></td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-1-2"  
+class="td11">  <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>)</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-1-3"  
+class="td11">    <img 
+src="hw2sol18x.png" alt="df
+dx"  class="frac" align="middle"></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-2-1"  
+class="td11">1.1</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-2-2"  
+class="td11">0.3330</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-2-3"  
+class="td11">-0.3289</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-3-1"  
+class="td11">1.5</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-3-2"  
+class="td11">0.2856</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-3-3"  
+class="td11"> 0.2787</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-4-1"  
+class="td11">1.3</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-4-2"  
+class="td11">0.2806</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-4-3"  
+class="td11">-0.1645</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-5-1"  
+class="td11">1.4</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-5-2"  
+class="td11">0.2722</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-5-3"  
+class="td11"> 0.0094</td></tr></table></div></div>
+           <!--l. 278--><p class="noindent" >Thus, we take <span 
+class="cmmi-12">a </span>= 1<span 
+class="cmmi-12">.</span>3, giving the interval [1<span 
+class="cmmi-12">.</span>3<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">.</span>4].
+           <!--l. 280--><p class="noindent" >The subgradient inequalities from <span 
+class="cmmi-12">x </span>= 1<span 
+class="cmmi-12">.</span>3 and <span 
+class="cmmi-12">x </span>= 1<span 
+class="cmmi-12">.</span>4 are <div class="eqnarray">
+                                                                                         
+                                                                                         
+           <center class="math-display" >
+           <img 
+src="hw2sol19x.png" alt="f (x ) &#x2265;   0.2806 - 0.1645(x - 1.3)                         (1)
+f (x ) &#x2265;   0.2722 + 0.0094(x - 1.4)                         (2)
+           " class="math-display" ><a 
+ id="x1-21r1"></a><a 
+ id="x1-21r2"></a></center>
+           </div>Adding 0.0094(<a 
+href="#x1-21r1">1<!--tex4ht:ref: eq1.3 --></a>) and 0.1645 (<a 
+href="#x1-21r2">2<!--tex4ht:ref: eq1.4 --></a>) and then dividing by 0<span 
+class="cmmi-12">.</span>0094 + 0<span 
+class="cmmi-12">.</span>1645 gives the valid
+           inequality <div class="eqnarray">
+           <center class="math-display" >
+           <img 
+src="hw2sol20x.png" alt="f(x)  &#x2265;   0.0094(0.2806-+-1.3 &#x00D7;-0.1645-) +-0.1645-(0.2722---1.4-&#x00D7;-0.0094)-
+                                 0.0094 + 0.1645
+      =   0.2718,
+           " class="math-display" ></center>
+           </div>so this is our valid lower bound.
+           <!--l. 293--><p class="noindent" >Pushing the binary search further, we can get:
+           <div class="center" 
+>
+<!--l. 294--><p class="noindent" >
+<div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><colgroup id="TBL-2-2g"><col 
+id="TBL-2-2"></colgroup><colgroup id="TBL-2-3g"><col 
+id="TBL-2-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:right;" id="TBL-2-1-1"  
+class="td11">     <span 
+class="cmmi-12">x</span></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-1-2"  
+class="td11">              <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>)</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-1-3"  
+class="td11">                    <img 
+src="hw2sol21x.png" alt="df-
+dx"  class="frac" align="middle"></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:right;" id="TBL-2-2-1"  
+class="td11">1.395618</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-2-2"  
+class="td11">0.27217643045492262</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-2-3"  
+class="td11">-1.5302038221254310E-006</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:right;" id="TBL-2-3-1"  
+class="td11">1.395619</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-3-2"  
+class="td11">0.27217643045445539</td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-3-3"  
+class="td11"> 5.9564394724875847E-007</td></tr></table></div></div>
+           </li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-24x6">Let <span 
+class="cmmi-12">f </span>be a convex function defined on the open convex set <span 
+class="cmmi-12">C </span><span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup>. Define the directional
+      derivative <span 
+class="cmmi-12">D</span><sub><span 
+class="cmmi-8">d</span></sub><span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) := lim<sub><span 
+class="cmmi-8">&#x03BB;</span><span 
+class="cmsy-8">&#x2192;</span><span 
+class="cmr-8">0</span><span 
+class="cmmi-8">,&#x03BB;&#x003E;</span><span 
+class="cmr-8">0</span></sub><img 
+src="hw2sol22x.png" alt="f(x+&#x03BB;d)--f(x)
+     &#x03BB;"  class="frac" align="middle">. Let <span class="bar-css"><span 
+class="cmmi-12">x</span></span> <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">C</span>. Show that <span 
+class="cmmi-12">&#x03BE; </span>is a subgradient of <span 
+class="cmmi-12">f </span>at
+      <span class="bar-css"><span 
+class="cmmi-12">x</span></span> if and only if <span 
+class="cmmi-12">D</span><sub><span 
+class="cmmi-8">d</span></sub><span 
+class="cmmi-12">f</span>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span>) <span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">&#x03BE;</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">d </span>for any direction <span 
+class="cmmi-12">d</span>.
+      <!--l. 355--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span><br 
+class="newline" />We know the ratio <img 
+src="hw2sol23x.png" alt="f(x+-&#x03BB;d)-f(x)
+     &#x03BB;"  class="frac" align="middle"> is monotonically increasing as <span 
+class="cmmi-12">&#x03BB; </span>increases.
+                                                                                         
+                                                                                         
+      <!--l. 360--><p class="noindent" ><span 
+class="cmti-12">First assume the inequality holds: </span><br 
+class="newline" />Pick any point <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">C</span>. Define <span 
+class="cmmi-12">d </span>= <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">-</span><span class="bar-css"><span 
+class="cmmi-12">x</span></span>. We have
+      <center class="math-display" >
+      <img 
+src="hw2sol24x.png" alt="               f(¯x-+-d)---f(x-)              T
+f (x) - f (¯x) =       1        &#x2265;  Ddf (¯x) &#x2265; &#x03BE; d.
+      " class="math-display" ></center>
+      <!--l. 365--><p class="nopar" >
+      Rearranging, we get
+      <center class="math-display" >
+      <img 
+src="hw2sol25x.png" alt="f (x ) &#x2265; f(¯x) + &#x03BE;T(x - ¯x)
+      " class="math-display" ></center>
+      <!--l. 369--><p class="nopar" >
+      so <span 
+class="cmmi-12">&#x03BE; </span>is a subgradient of <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) at&#x00A0;<span class="bar-css"><span 
+class="cmmi-12">x</span></span>.
+      <!--l. 373--><p class="noindent" ><span 
+class="cmti-12">Now assume </span><span 
+class="cmmi-12">&#x03BE; </span><span 
+class="cmti-12">is a subgradient at</span> <span class="bar-css"><span 
+class="cmmi-12">x</span></span><span 
+class="cmti-12">: </span><br 
+class="newline" />Pick any direction <span 
+class="cmmi-12">d </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup>. There exists <span class="bar-css"><span 
+class="cmmi-12">&#x03BB;</span></span> <span 
+class="cmmi-12">&#x003E; </span>0 such that for 0 <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">&#x03BB; </span><span 
+class="cmsy-10x-x-120">&#x2264;</span><span class="bar-css"><span 
+class="cmmi-12">&#x03BB;</span></span>, we have <span class="bar-css"><span 
+class="cmmi-12">x</span></span> + <span 
+class="cmmi-12">&#x03BB;d </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">C</span>.
+      Since <span 
+class="cmmi-12">&#x03BE; </span>is a subgradient, we know
+      <center class="math-display" >
+      <img 
+src="hw2sol26x.png" alt="                      T
+f(¯x + &#x03BB;d ) &#x2265; f(x) + &#x03BB;&#x03BE; d
+      " class="math-display" ></center>
+      <!--l. 381--><p class="nopar" >
+      for 0 <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">&#x03BB; </span><span 
+class="cmsy-10x-x-120">&#x2264;</span><span class="bar-css"><span 
+class="cmmi-12">&#x03BB;</span></span>. It follows that
+      <center class="math-display" >
+      <img 
+src="hw2sol27x.png" alt="f(¯x + &#x03BB;d) - f(x)
+-----------------&#x2265;  &#x03BE;Td
+       &#x03BB;
+      " class="math-display" ></center>
+      <!--l. 386--><p class="nopar" >
+      for 0 <span 
+class="cmmi-12">&#x003C; &#x03BB; </span><span 
+class="cmsy-10x-x-120">&#x2264;</span><span class="bar-css"><span 
+class="cmmi-12">&#x03BB;</span></span>. Taking the limit as <span 
+class="cmmi-12">&#x03BB; </span><span 
+class="cmsy-10x-x-120">&#x2192; </span>0 gives the required result, namely
+      <center class="math-display" >
+      <img 
+src="hw2sol28x.png" alt="Ddf (¯x) &#x2265; &#x03BE;T d.
+      " class="math-display" ></center>
+                                                                                         
+                                                                                         
+      <!--l. 391--><p class="nopar" >
+      </li></ol>
+   <div class="tabular"> <table id="TBL-3" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-3-1g"><col 
+id="TBL-3-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-3-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                    </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                               </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Monday 2.0 &#8211; 4.0, Wednesday 11.0 &#8211; 1.0.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

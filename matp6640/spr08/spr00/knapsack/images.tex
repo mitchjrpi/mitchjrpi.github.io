@@ -1,0 +1,235 @@
+\batchmode
+\documentstyle[12pt]{article}
+\makeatletter
+
+
+
+
+
+
+
+\makeatletter
+
+\makeatletter
+\count@=\the\catcode`\_ \catcode`\_=8 
+\newenvironment{tex2html_wrap}{}{} \catcode`\_=\count@
+\makeatother
+\let\mathon=$
+\let\mathoff=$
+\ifx\AtBeginDocument\undefined \newcommand{\AtBeginDocument}[1]{}\fi
+\newbox\sizebox
+\setlength{\hoffset}{0pt}\setlength{\voffset}{0pt}
+\addtolength{\textheight}{\footskip}\setlength{\footskip}{0pt}
+\addtolength{\textheight}{\topmargin}\setlength{\topmargin}{0pt}
+\addtolength{\textheight}{\headheight}\setlength{\headheight}{0pt}
+\addtolength{\textheight}{\headsep}\setlength{\headsep}{0pt}
+\setlength{\textwidth}{349pt}
+\newwrite\lthtmlwrite
+\makeatletter
+\let\realnormalsize=\normalsize
+\global\topskip=2sp
+\def\preveqno{}\let\real@float=\@float \let\realend@float=\end@float
+\def\@float{\let\@savefreelist\@freelist\real@float}
+\def\end@float{\realend@float\global\let\@freelist\@savefreelist}
+\let\real@dbflt=\@dbflt \let\end@dblfloat=\end@float
+\let\@largefloatcheck=\relax
+\def\@dbflt{\let\@savefreelist\@freelist\real@dbflt}
+\def\adjustnormalsize{\def\normalsize{\mathsurround=0pt \realnormalsize
+ \parindent=0pt\abovedisplayskip=0pt\belowdisplayskip=0pt}\normalsize}%
+\def\lthtmltypeout#1{{\let\protect\string\immediate\write\lthtmlwrite{#1}}}%
+\newcommand\lthtmlhboxmathA{\adjustnormalsize\setbox\sizebox=\hbox\bgroup}%
+\newcommand\lthtmlvboxmathA{\adjustnormalsize\setbox\sizebox=\vbox\bgroup%
+ \let\ifinner=\iffalse }%
+\newcommand\lthtmlboxmathZ{\@next\next\@currlist{}{\def\next{\voidb@x}}%
+ \expandafter\box\next\egroup}%
+\newcommand\lthtmlmathtype[1]{\def\lthtmlmathenv{#1}}%
+\newcommand\lthtmllogmath{\lthtmltypeout{l2hSize %
+:\lthtmlmathenv:\the\ht\sizebox::\the\dp\sizebox::\the\wd\sizebox.\preveqno}}%
+\newcommand\lthtmlfigureA[1]{\let\@savefreelist\@freelist
+       \lthtmlmathtype{#1}\lthtmlvboxmathA}%
+\newcommand\lthtmlfigureZ{\lthtmlboxmathZ\lthtmllogmath\copy\sizebox
+       \global\let\@freelist\@savefreelist}%
+\newcommand\lthtmldisplayA[1]{\lthtmlmathtype{#1}\lthtmlvboxmathA}%
+\newcommand\lthtmldisplayB[1]{\edef\preveqno{(\theequation)}%
+  \lthtmldisplayA{#1}\let\@eqnnum\relax}%
+\newcommand\lthtmldisplayZ{\lthtmlboxmathZ\lthtmllogmath\lthtmlsetmath}%
+\newcommand\lthtmlinlinemathA[1]{\lthtmlmathtype{#1}\lthtmlhboxmathA  \vrule height1.5ex width0pt }%
+\newcommand\lthtmlinlineA[1]{\lthtmlmathtype{#1}\lthtmlhboxmathA}%
+\newcommand\lthtmlinlineZ{\egroup\expandafter\ifdim\dp\sizebox>0pt %
+  \expandafter\centerinlinemath\fi\lthtmllogmath\lthtmlsetinline}
+\newcommand\lthtmlinlinemathZ{\egroup\expandafter\ifdim\dp\sizebox>0pt %
+  \expandafter\centerinlinemath\fi\lthtmllogmath\lthtmlsetmath}
+\def\lthtmlsetinline{\hbox{\vrule width.1em\vtop{\vbox{%
+  \kern.1em\copy\sizebox}\ifdim\dp\sizebox>0pt\kern.1em\else\kern.3pt\fi
+  \ifdim\hsize>\wd\sizebox \hrule depth1pt\fi}}}
+\def\lthtmlsetmath{\hbox{\vrule width.1em\vtop{\vbox{%
+  \kern.1em\kern0.8 pt\hbox{\hglue.17em\copy\sizebox\hglue0.8 pt}}\kern.3pt%
+  \ifdim\dp\sizebox>0pt\kern.1em\fi \kern0.8 pt%
+  \ifdim\hsize>\wd\sizebox \hrule depth1pt\fi}}}
+\def\centerinlinemath{%\dimen1=\ht\sizebox
+  \dimen1=\ifdim\ht\sizebox<\dp\sizebox \dp\sizebox\else\ht\sizebox\fi
+  \advance\dimen1by.5pt \vrule width0pt height\dimen1 depth\dimen1 
+ \dp\sizebox=\dimen1\ht\sizebox=\dimen1\relax}
+
+\def\lthtmlcheckvsize{\ifdim\ht\sizebox<\vsize\expandafter\vfill
+  \else\expandafter\vss\fi}%
+\makeatletter \tracingstats = 1 
+
+
+\begin{document}
+\pagestyle{empty}\thispagestyle{empty}%
+\lthtmltypeout{latex2htmlLength hsize=\the\hsize}%
+\lthtmltypeout{latex2htmlLength vsize=\the\vsize}%
+\lthtmltypeout{latex2htmlLength hoffset=\the\hoffset}%
+\lthtmltypeout{latex2htmlLength voffset=\the\voffset}%
+\lthtmltypeout{latex2htmlLength topmargin=\the\topmargin}%
+\lthtmltypeout{latex2htmlLength topskip=\the\topskip}%
+\lthtmltypeout{latex2htmlLength headheight=\the\headheight}%
+\lthtmltypeout{latex2htmlLength headsep=\the\headsep}%
+\lthtmltypeout{latex2htmlLength parskip=\the\parskip}%
+\lthtmltypeout{latex2htmlLength oddsidemargin=\the\oddsidemargin}%
+\makeatletter
+\if@twoside\lthtmltypeout{latex2htmlLength evensidemargin=\the\evensidemargin}%
+\else\lthtmltypeout{latex2htmlLength evensidemargin=\the\oddsidemargin}\fi%
+\makeatother
+
+% !!! IMAGES START HERE !!!
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath6}%
+\begin{displaymath}
+  \begin{array}{lrcrcrcl}
+    \min & -3x_1 & - & 4x_2 & - & 6x_3 \\
+   \mbox{subject to} & x_1 & + & 3x_2 & + & 5x_3 & \leq & 7 \\
+         &&& x_i & = & 0,1 && i=1,...,3
+  \end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath14}%
+\begin{displaymath}
+  \begin{array}{lrcrcrcl}
+    \min & -3x_1 & - & 4x_2 & - & 6x_3 \\
+   \mbox{subject to} & x_1 & + & 3x_2 & + & 5x_3 & \leq & 7 \\
+         & 0 & \leq & x_i & \leq & 1 && i=1,...,3
+  \end{array}
+\end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath20}%
+\begin{displaymath}
+         M =
+         \begin{array}{|r|rrrrrrr|}
+            \multicolumn{1}{c}{\quad} & x_1 & x_2 & x_3 & s_4 & s_5 & s_6 &
+                \multicolumn{1}{c}{s_7} \\\hline
+             0 & -3 & -4 & -6 & 0 & 0 & 0 & 0 \\\hline
+             7 & 1 & 3 & 5 & 1 & 0 & 0 & 0 \\
+             1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+             1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 \\
+             1 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \\\hline
+         \end{array}
+       \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath31}%
+\begin{displaymath}
+         M^1 =
+         \begin{array}{|r|rrrrrrr|}
+            \multicolumn{1}{c}{\quad} & x_1 & x_2 & x_3 & s_4 & s_5 & s_6 &
+                \multicolumn{1}{c}{s_7} \\\hline
+             10.6 & 0 & 0 & 0 & 1.2 & 1.8 & 0.4 & 0 \\\hline
+             0.6 & 0 & 0 & 1 & 0.2 & -0.2 & -0.6 & 0 \\
+             1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+             1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 \\
+             0.4 & 0 & 0 & 0 & -0.2 & 0.2 & 0.6 & 1 \\\hline
+         \end{array}
+       \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath42}%
+\begin{displaymath}
+  x_1=1, \quad x_2=1, \quad x_3=0.6
+\end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath44}%
+\begin{displaymath}
+  x_2 + x_3 \leq 1
+\end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath46}%
+\begin{displaymath}
+         M^2 =
+         \begin{array}{|r|rrrrrrrr|}
+            \multicolumn{1}{c}{\quad} & x_1 & x_2 & x_3 & s_4 & s_5 & s_6 &
+                s_7 & \multicolumn{1}{c}{s_8} \\\hline
+             10.6 & 0 & 0 & 0 & 1.2 & 1.8 & 0.4 & 0 & 0 \\\hline
+             0.6 & 0 & 0 & 1 & 0.2 & -0.2 & -0.6 & 0 & 0 \\
+             1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+             1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+             0.4 & 0 & 0 & 0 & -0.2 & 0.2 & 0.6 & 1 & 0 \\
+             1 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 1 \\\hline
+         \end{array}
+       \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath57}%
+\begin{displaymath}
+         M^3 =
+         \begin{array}{|r|rrrrrrrr|}
+            \multicolumn{1}{c}{\quad} & x_1 & x_2 & x_3 & s_4 & s_5 & s_6 &
+                s_7 & \multicolumn{1}{c}{s_8} \\\hline
+             10.6 & 0 & 0 & 0 & 1.2 & 1.8 & 0.4 & 0 & 0 \\\hline
+             0.6 & 0 & 0 & 1 & 0.2 & -0.2 & -0.6 & 0 & 0 \\
+             1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+             1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+             0.4 & 0 & 0 & 0 & -0.2 & 0.2 & 0.6 & 1 & 0 \\
+             -0.6 & 0 & 0 & 0 & -0.2 & 0.2 & -0.4 & 0 & 1 \\\hline
+         \end{array}
+       \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath69}%
+\begin{displaymath}
+         M^3 =
+         \begin{array}{|r|rrrrrrrr|}
+            \multicolumn{1}{c}{\quad} & x_1 & x_2 & x_3 & s_4 & s_5 & s_6 &
+                s_7 & \multicolumn{1}{c}{s_8} \\\hline
+             9 & 0 & 2 & 0 & 0 & 3 & 0 & 0 & 6 \\\hline
+             1 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 \\
+             1 & 1 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+             1 & 0 & -2 & 0 & 1 & -1 & 0 & 0 & -5 \\
+             0 & 0 & -1 & 0 & 0 & 0 & 0 & 1 & -1 \\
+             1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0 \\\hline
+         \end{array}
+       \end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+{\newpage\clearpage
+\lthtmldisplayA{displaymath80}%
+\begin{displaymath}
+  x_1=1, \quad x_2=0, \quad x_3=1
+\end{displaymath}%
+\lthtmldisplayZ
+\hfill\lthtmlcheckvsize\clearpage}
+
+
+\end{document}

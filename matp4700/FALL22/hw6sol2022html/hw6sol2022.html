@@ -1,0 +1,822 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw6sol2022.tex"> 
+<meta name="date" content="2022-11-04 14:55:00"> 
+<link rel="stylesheet" type="text/css" href="hw6sol2022.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 42--><p class="noindent" >
+<!--l. 44--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12x-x-120">Math Models of Operations Research</span></a><br />
+<a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12x-x-120">MATP 4700 </span></a><br /><br />
+<span 
+class="cmbx-12x-x-120">Homework 6</span><br /><br />
+<span 
+class="cmbx-12x-x-120">Solutions</span></div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 52--><p class="noindent" >
+ This homework will not be collected or graded.</div>
+<!--l. 58--><p class="noindent" >Questions based on Kupferschmid, Chapter 6 (available on LMS):
+      <ul class="itemize1">
+      <li class="itemize">6.6.45 (lecture 17): use the method in Lecture 18 to find an initial bfs and then solve
+      the problem.
+      </li>
+      <li class="itemize">6.6.50 (lecture 17): use the network simplex method from class. For an initial BFS,
+      take the optimal solution given on page 216, modified so that <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">15</span></sub>  is nonbasic at its
+      upper bound, and <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">45</span></sub>  is basic. Note that just one edge has a capacity constraint, so
+      this is the only variable that can be nonbasic at its upper bound. Note also that rhs
+      values give net demand in the book while the notes use net supply.
+      </li>
+      <li class="itemize">6.6.54 (lectures 16 and 17): Assume all edge lengths are positive. Hint: one approach is
+      to map each node in the shortest path problem to one source node and one destination
+      node in the transportation problem. You then have to choose the edge lengths so that
+      the solution to the assignment problem gives an optimal solution to the shortest path
+      problem.
+      </li>
+      <li class="itemize">(Lecture 18) Use the augmenting path algorithm of lecture 18 to find the maximum flow from
+      node 1 to node 6 in the graph, where the edge capacities are indicated.
+      <div class="center" 
+>
+<!--l. 90--><p class="noindent" >
+                                                                                         
+                                                                                         
+<!--l. 110--><p class="noindent" >  
+ <img src=q4.png></div>
+      </li>
+      <li class="itemize">(Lectures 16 and 18) A transportation problem has optimal transportation tableau
+      <center class="math-display" >
+      <img 
+src="hw6sol20220x.png" alt="          |destinations-|
+          |210  410 30  |
+sources   |1    5   220 |
+          |1    120 6   |
+          |--------------
+          |
+      " class="math-display" ></center>
+      <!--l. 128--><p class="nopar" >
+           <ol  class="enumerate1" >
+           <li 
+  class="enumerate" id="x1-3x1">Find an optimal dual solution, and verify it is dual feasible.
+           </li>
+           <li 
+  class="enumerate" id="x1-5x2">Assume the supply at source 3 changes to 20+<span 
+class="cmmi-12">t </span>and the demand at destination 1
+           changes to 10+<span 
+class="cmmi-12">t</span>. <span 
+class="cmbx-12">Use the dual solution </span>to determine the change in the optimal
+           value for small values of&#x00A0;<span 
+class="cmmi-12">t</span>. For what range of <span 
+class="cmmi-12">t </span>is your answer accurate?</li></ol>
+      </li></ul>
+<!--l. 138--><p class="noindent" >In addition, read Chapter 6 from the text.
+<!--l. 149--><p class="noindent" >Solving the homework problems (and other problems from the text) will improve your
+understanding of the material.
+<!--l. 155--><p class="noindent" >Working out the problems yourself will greatly improve your understanding of the material and
+help you on the exams.
+<!--l. 164--><p class="noindent" >You can ask questions on piazza, in addition to using office hours or email.
+      <ul class="itemize1">
+      <li class="itemize"><span 
+class="cmbx-12">6.6.45 </span>After deleting all edges that are either (i) incident to a transshipment node,
+      or (ii) leaving a demand node, or (iii) entering a supply node, and adding in artificial
+      edges, we get a transshipment problem. The transportation tableau for the artificial
+      problem, the NW corner rule solution, and the initial dual variables are
+                                                                                         
+                                                                                         
+      <center class="par-math-display" >
+      <img 
+src="hw6sol20221x.png" alt="        25      20       15
+   |-----25------20--------5-|
+50 |1000        9        2510 |u1 = 0
+10 -----12------17----1000---|u2 = 975
+ v1 = 1000  v2 = 9  v3 = 25
+      " class="par-math-display" ></center>
+      <!--l. 189--><p class="nopar" >
+      Calculate reduced costs:
+      <center class="math-display" >
+      <img 
+src="hw6sol20222x.png" alt="   |----25------20--------15-|
+50 |    025     020       05 |u1 = 0
+10 ---1963-----967-------010-|u2 = 975
+ v1 = 1000   v2 = 9  v3 = 25
+      " class="math-display" ></center>
+      <!--l. 200--><p class="nopar" >
+      <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">23</span></sub> enters the basis:
+      <center class="math-display" >
+      <img 
+src="hw6sol20223x.png" alt="   |-----25------20-------15-|
+50 |  025-t     020     05+t |u1 = 0
+   |      t              10-t |
+10 ---1963------967----0------u2 = 975
+ v1 = 1000   v2 = 9  v3 = 25
+      " class="math-display" ></center>
+      <!--l. 211--><p class="nopar" >
+      Min ratio shows <span 
+class="cmmi-12">t </span>= 10, with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">25</span></sub> leaving the basis, and updating the dual variables:
+      <center class="math-display" >
+      <img 
+src="hw6sol20224x.png" alt="          25      20      15
+    |------15------20------15-|
+50  |     0       0       0   |u1 = 0
+10  -- 196310----967-------0--|u2 = - 1963
+      v1 = 0  v2 = 0  v3 = 0
+      " class="math-display" ></center>
+      <!--l. 223--><p class="nopar" >
+      Updated reduced costs:
+      <center class="math-display" >
+      <img 
+src="hw6sol20225x.png" alt="   |-25------20------15-|
+50 |015     020     015 |u1 = 0
+10 |010     994    1963 |u2 = - 1963
+   ---------------------
+ v1 = 0  v2 = 0  v3 = 0
+      " class="math-display" ></center>
+      <!--l. 234--><p class="nopar" >
+      Optimal for artificial transportation problem.
+      <!--l. 237--><p class="noindent" >Note that artificial edge <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">25</span></sub> is nonbasic, so we can delete it.
+      <!--l. 239--><p class="noindent" >Add in one edge for transshipment node to get BFS for network flow problem: choose
+      <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">16</span></sub> = 0. Basic arcs are indicated in blue. Calculate dual variables, in red, starting with
+      <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">5</span></sub> = 0. Use <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">j</span></sub> = <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub>.
+      <div class="center" 
+>
+<!--l. 245--><p class="noindent" >
+<!--l. 283--><p class="noindent" >
+<img src=q45a.png>
+</div>
+      <!--l. 286--><p class="noindent" >Replace costs <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub> by reduced costs <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">i</span></sub> + <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">j</span></sub>:
+      <div class="center" 
+>
+<!--l. 287--><p class="noindent" >
+                                                                                         
+                                                                                         
+<!--l. 325--><p class="noindent" >
+<img src=q45b.png>
+</div>
+      <!--l. 327--><p class="noindent" >Choose <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">63</span></sub> to enter basis. Need to find steplength <span 
+class="cmmi-12">t </span>and leaving variable. Flows are given on
+      the basic arcs and the incoming arc.
+      <div class="center" 
+>
+<!--l. 330--><p class="noindent" >
+                                                                                         
+                                                                                         
+<!--l. 368--><p class="noindent" >
+<img src=q45c.png>
+</div>
+      <!--l. 370--><p class="noindent" >Choose <span 
+class="cmmi-12">t </span>= 15, with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">13</span></sub> leaving the basis. Updated basis, with original costs, used to
+      calculate updated dual variables in red, starting from <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">5</span></sub> = 0.
+      <div class="center" 
+>
+<!--l. 374--><p class="noindent" >
+                                                                                         
+                                                                                         
+<!--l. 414--><p class="noindent" >
+<img src=q45d.png>
+</div>
+      <!--l. 417--><p class="noindent" >Update reduced costs:
+      <div class="center" 
+>
+<!--l. 418--><p class="noindent" >
+<!--l. 458--><p class="noindent" >
+<img src=q45e.png>
+                                                                                         
+</div>
+      <!--l. 460--><p class="noindent" >All reduced costs are nonnegative, so this is optimal. The optimal flow is indicated on the
+      basic arcs. Agrees with the optimal tableau given on page 216.
+      </li>
+      <li class="itemize">6.6.50 (lecture 17): use the network simplex method from class. For an initial BFS, take the
+      optimal solution given on page 216, modified so that <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">15</span></sub> is nonbasic at its upper bound, and
+      <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">45</span></sub> is basic. Note that just one edge has a capacity constraint, so this is the only variable
+      that can be nonbasic at its upper bound. Note also that rhs values give net demand in the
+      book while the notes use net supply.
+      <!--l. 474--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 476--><p class="noindent" >We now need <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">15</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>10 in the problem <span 
+class="cmtt-12">nf1</span>&#x00A0;and we can modify the solution found in the
+      previous problem by
+           <ul class="itemize2">
+           <li class="itemize">having <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">15</span></sub> = 10, with it nonbasic at its upper bound,
+           </li>
+           <li class="itemize">increasing the flow <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">14</span></sub> = 25,
+           </li>
+           <li class="itemize">making arc (4,5) basic, with flow <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">45</span></sub> = 5.</li></ul>
+      <!--l. 483--><p class="noindent" >We set <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">5</span></sub> = 0 and require <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">j</span></sub> = <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub> for all basic arcs. This gives the initial BFS and dual
+      solution
+      <div class="center" 
+>
+<!--l. 486--><p class="noindent" >
+                                                                                         
+                                                                                         
+<!--l. 528--><p class="noindent" >
+<img src=q50a.png>
+<span 
+</div>
+      <!--l. 531--><p class="noindent" >We calculate <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">ij</span></sub> = <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">i</span></sub> + <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">j</span></sub> for arcs nonbasic with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ij</span></sub> = 0:
+      <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><colgroup id="TBL-1-2g"><col 
+id="TBL-1-2"></colgroup><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td11"> arc </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-2"  
+class="td11"><span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">ij</span></sub></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-1"  
+class="td11">(2,4)</td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-2"  
+class="td11"> 12 </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-3-1"  
+class="td11">(4,1)</td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-3-2"  
+class="td11"> 18 </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-4-1"  
+class="td11">(4,2)</td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-4-2"  
+class="td11"> 22 </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-5-1"  
+class="td11">(6,5)</td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-5-2"  
+class="td11">-31</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-6-1"  
+class="td11">    </td></tr></table>
+      </div>
+      <!--l. 543--><p class="noindent" >We also examine the arc nonbasic at its upper bound: <span 
+class="cmmi-12">w</span><sub><span 
+class="cmr-8">15</span></sub> = <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">c</span><sub><span 
+class="cmr-8">15</span></sub> + <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">5</span></sub> = <span 
+class="cmsy-10x-x-120">-</span>25 + 60 + 0 = 35.
+      <!--l. 546--><p class="noindent" >So the only candidate to enter the basis is arc (6,5). This creates a cycle including arcs (1,6),
+      (1,4), and (4,5). Calculate the change in flow around this cycle:
+      <div class="center" 
+>
+<img src=q50b.png>
+</div>
+      <!--l. 595--><p class="noindent" >The network simplex pivot chooses <span 
+class="cmmi-12">t </span>= 5, and <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">65</span></sub> replaces <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">45</span></sub> in the basis, leading to
+      updated primal and dual variables:
+      <div class="center" 
+>
+<img src=q50c.png>
+</div>
+      <!--l. 643--><p class="noindent" >We calculate <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">ij</span></sub> = <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">i</span></sub> + <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">j</span></sub> for arcs nonbasic with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ij</span></sub> = 0:
+      <div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><colgroup id="TBL-2-2g"><col 
+id="TBL-2-2"></colgroup><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-1"  
+class="td11"> arc </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-2"  
+class="td11"><span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">ij</span></sub></td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-1"  
+class="td11">(2,4)</td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-2"  
+class="td11">12</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-1"  
+class="td11">(4,1)</td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-2"  
+class="td11">18</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-1"  
+class="td11">(4,2)</td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-2"  
+class="td11">22</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-1"  
+class="td11">(4,5)</td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-2"  
+class="td11">31</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-6-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-6-1"  
+class="td11">    </td></tr></table>
+      </div>
+      <!--l. 655--><p class="noindent" >We also examine the arc nonbasic at its upper bound: <span 
+class="cmmi-12">w</span><sub><span 
+class="cmr-8">15</span></sub> = <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">c</span><sub><span 
+class="cmr-8">15</span></sub> + <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">5</span></sub> = <span 
+class="cmsy-10x-x-120">-</span>25 + 29 + 0 = 4.
+      <!--l. 658--><p class="noindent" >Since all the reduced costs <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">ij</span></sub> and <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">ij</span></sub> are nonnegative, we are optimal.
+      </li>
+      <li class="itemize">6.6.54 (lectures 16 and 17): Assume all edge lengths are <span 
+class="cmbx-12">positive</span>. Hint: one approach is to
+      map each node in the shortest path problem to one source node and one destination node in
+      the transportation problem. You then have to choose the edge lengths so that the
+      solution to the assignment problem gives an optimal solution to the shortest path
+      problem.
+      <!--l. 670--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 672--><p class="noindent" >We have a graph with <span 
+class="cmmi-12">n </span>nodes, and we want to find the shortest path from node 1 to node&#x00A0;<span 
+class="cmmi-12">n</span>
+      when the graph has edge lengths <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">e</span></sub> for the edges in the graph. We construct an assignment
+      problem with <span 
+class="cmmi-12">n </span>sources <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,s</span><sub><span 
+class="cmmi-8">n</span></sub>, and <span 
+class="cmmi-12">n </span>sinks <span 
+class="cmmi-12">t</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,t</span><sub><span 
+class="cmmi-8">n</span></sub>.
+      <!--l. 678--><p class="noindent" >The aim is to have edges in the optimal assignment (<span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">,t</span><sub><span 
+class="cmmi-8">j</span></sub>) with <span 
+class="cmmi-12">i</span><span 
+class="cmmi-12">&#x2260;</span><span 
+class="cmmi-12">j </span>correspond
+      to edges in the shortest path in the original graph. If the assignment uses the
+                                                                                         
+                                                                                         
+      &#8220;horizontal&#8221; edge (<span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">,t</span><sub><span 
+class="cmmi-8">i</span></sub>) for some <span 
+class="cmmi-12">i </span>then we regard <span 
+class="cmmi-12">i </span>as not being on the shortest
+      path.
+      <!--l. 683--><p class="noindent" >We will need to ensure some edges don&#8217;t show up in the chosen assignment, so we
+      need a big-<span 
+class="cmmi-12">M</span>. We choose <span 
+class="cmmi-12">M </span>to be the sum of all the edge lengths in the original
+      graph.
+      <!--l. 687--><p class="noindent" >For example, if <span 
+class="cmmi-12">n </span>= 4 and the shortest path is 1 <span 
+class="cmsy-10x-x-120">- </span>3 <span 
+class="cmsy-10x-x-120">- </span>4 then we would like to return the
+      assignment:
+      <center class="math-display" >
+      <img 
+src="hw6sol20226x.png" alt="(s1,t3),(s3,t4), with (s2,t2),(s4,t1).
+      " class="math-display" ></center>
+      <!--l. 691--><p class="nopar" >
+      <!--l. 693--><p class="noindent" >We define the edge lengths in the assignment problem as follows:
+           <ul class="itemize2">
+           <li class="itemize">(<span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">n</span></sub><span 
+class="cmmi-12">,t</span><sub><span 
+class="cmr-8">1</span></sub>) has length 0, so we pick this edge.
+           </li>
+           <li class="itemize">(<span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">,t</span><sub><span 
+class="cmr-8">1</span></sub>) has length <span 
+class="cmmi-12">M </span>for <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n </span><span 
+class="cmsy-10x-x-120">- </span>1 so we don&#8217;t pick any of these edges.
+           </li>
+           <li class="itemize">If edge (<span 
+class="cmmi-12">i,j</span>) is in the original graph with length <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub> then edges (<span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">,t</span><sub><span 
+class="cmmi-8">j</span></sub>) and (<span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">j</span></sub><span 
+class="cmmi-12">,t</span><sub><span 
+class="cmmi-8">i</span></sub>)
+           in the assignment problem have length <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub> (with the exception of edges (<span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">,t</span><sub><span 
+class="cmr-8">1</span></sub>) for
+           <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span>.)
+           </li>
+           <li class="itemize">Edges (<span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">,t</span><sub><span 
+class="cmmi-8">i</span></sub>) have length 0 for <span 
+class="cmmi-12">i </span>= 2<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n </span><span 
+class="cmsy-10x-x-120">- </span>1, so there is no cost for node <span 
+class="cmmi-12">i </span>not
+           appearing on the path.
+           </li>
+           <li class="itemize">Edge (<span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">n</span></sub><span 
+class="cmmi-12">,t</span><sub><span 
+class="cmmi-8">n</span></sub>) has length <span 
+class="cmmi-12">M</span>, so we don&#8217;t pick this edge.
+           </li>
+           <li class="itemize">Edges (<span 
+class="cmmi-12">s</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">,t</span><sub><span 
+class="cmmi-8">j</span></sub>) with <span 
+class="cmmi-12">i</span><span 
+class="cmmi-12">&#x2260;</span><span 
+class="cmmi-12">j </span>have length <span 
+class="cmmi-12">M </span>if edge (<span 
+class="cmmi-12">i,j</span>) is not in the original graph, so
+           we don&#8217;t pick any of these edges.</li></ul>
+      <!--l. 709--><p class="noindent" >Then any feasible solution to the assignment problem with cost smaller than&#x00A0;<span 
+class="cmmi-12">M </span>corresponds
+      to a path from 1 to <span 
+class="cmmi-12">n </span>in the original graph, possibly together with one or more cycles.
+      We can improve the assignment solution by choosing &#8220;horizontal&#8221; edges instead
+      of the edges in any cycle. So the optimal assignment corresponds to a shortest
+      path.
+      </li>
+      <li class="itemize">(Lecture 18) Use the augmenting path algorithm of lecture 18 to find the maximum flow from
+      node 1 to node 6 in the graph, where the edge capacities are indicated.
+                                                                                         
+                                                                                         
+      <div class="center" 
+>
+<!--l. 720--><p class="noindent" >
+<!--l. 740--><p class="noindent" >  
+<img src=q4.png></div>
+      <!--l. 743--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 745--><p class="noindent" >We augment using the augmenting path with fewest edges. Initially, there are 2
+      paths with 3 edges, so we push 5 units along 1 <span 
+class="cmsy-10x-x-120">- </span>2 <span 
+class="cmsy-10x-x-120">- </span>4 <span 
+class="cmsy-10x-x-120">- </span>6 and 4 units along
+      1 <span 
+class="cmsy-10x-x-120">- </span>3 <span 
+class="cmsy-10x-x-120">- </span>5 <span 
+class="cmsy-10x-x-120">- </span>6. This gives the updated flows, with the labels on each arc represent
+      (capacity,flow).
+      <div class="center" 
+>
+<img src=q4a.png>
+</div>
+      <!--l. 773--><p class="noindent" >We use breadth first search to find another augmenting path:
+           <ul class="itemize2">
+           <li class="itemize">We can push flow from 1 to 3.
+           </li>
+           <li class="itemize">We can push flow from 3 to 2 or 4.
+           </li>
+           <li class="itemize">We can push flow from 2 to 4, and from 4 to 5.
+           </li>
+           <li class="itemize">We can push flow from 5 to 6.</li></ul>
+                                                                                         
+                                                                                         
+      <!--l. 780--><p class="noindent" >Thus, we&#8217;ve found an augmenting path with 4 edges: 1 <span 
+class="cmsy-10x-x-120">- </span>3 <span 
+class="cmsy-10x-x-120">- </span>4 <span 
+class="cmsy-10x-x-120">- </span>5 <span 
+class="cmsy-10x-x-120">- </span>6. We can push 1 unit
+      down this path, giving an updated flow
+      <div class="center" 
+>
+<img src=q4b.png>
+</div>
+      <!--l. 806--><p class="noindent" >We use breadth first search to find another augmenting path:
+           <ul class="itemize2">
+           <li class="itemize">We can push flow from 1 to 3.
+           </li>
+           <li class="itemize">We can push flow from 3 to 2
+           </li>
+           <li class="itemize">We can push flow from 2 to 4.
+           </li>
+           <li class="itemize">We can push flow from 4 to 5.
+           </li>
+           <li class="itemize">We can push flow from 5 to 6.</li></ul>
+      <!--l. 814--><p class="noindent" >Thus, we&#8217;ve found an augmenting path with 5 edges: 1 <span 
+class="cmsy-10x-x-120">- </span>3 <span 
+class="cmsy-10x-x-120">- </span>4 <span 
+class="cmsy-10x-x-120">- </span>5 <span 
+class="cmsy-10x-x-120">- </span>6. We can push 1 unit
+      down this path, giving an updated flow
+      <div class="center" 
+>
+<img src=q4c.png>
+</div>
+                                                                                         
+                                                                                         
+      <!--l. 840--><p class="noindent" >No more augmenting paths exist, so the maximum flow is 11. There are 2 saturated cuts with
+      capacity 11:
+           <ul class="itemize2">
+           <li class="itemize"><span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmmi-12">, </span>2<span 
+class="cmmi-12">, </span>3<span 
+class="cmsy-10x-x-120">} </span>on one side, <span 
+class="cmsy-10x-x-120">{</span>4<span 
+class="cmmi-12">, </span>5<span 
+class="cmmi-12">, </span>6<span 
+class="cmsy-10x-x-120">} </span>on the other.
+           </li>
+           <li class="itemize"><span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmmi-12">, </span>2<span 
+class="cmmi-12">, </span>3<span 
+class="cmmi-12">, </span>4<span 
+class="cmsy-10x-x-120">} </span>on one side, <span 
+class="cmsy-10x-x-120">{</span>5<span 
+class="cmmi-12">, </span>6<span 
+class="cmsy-10x-x-120">} </span>on the other.</li></ul>
+      </li>
+      <li class="itemize">(Lectures 16 and 18) A transportation problem has optimal transportation tableau
+      <center class="math-display" >
+      <img 
+src="hw6sol20227x.png" alt="          |de1s0tina1t0ions0-|
+          |2    4   3   |
+sources   |1    5   220 |
+          |1----120-6----
+          |
+      " class="math-display" ></center>
+      <!--l. 860--><p class="nopar" >
+           <ol  class="enumerate1" >
+           <li 
+  class="enumerate" id="x1-7x1">Find an optimal dual solution, and verify it is dual feasible.
+           </li>
+           <li 
+  class="enumerate" id="x1-9x2">Assume the supply at source 3 changes to 20+<span 
+class="cmmi-12">t </span>and the demand at destination 1
+           changes to 10+<span 
+class="cmmi-12">t</span>. <span 
+class="cmbx-12">Use the dual solution </span>to determine the change in the optimal
+           value for small values of&#x00A0;<span 
+class="cmmi-12">t</span>. For what range of <span 
+class="cmmi-12">t </span>is your answer accurate?</li></ol>
+      <!--l. 870--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <ol  class="enumerate1" >
+           <li 
+  class="enumerate" id="x1-11x1">Calculate dual variables:
+           <center class="math-display" >
+           <img 
+src="hw6sol20228x.png" alt="                  destinations
+             10      30      20
+         20 |210-----410-----30-----|u  = 0
+sources     |                 20    | 1
+         20 |1       520     2      |u2 = - 1
+         20 -1-------1-------6-------u3 = - 3
+             v1 = 2  v2 = 4  v3 = 3
+           " class="math-display" ></center>
+                                                                                         
+                                                                                         
+           <!--l. 888--><p class="nopar" >
+           Calculate reduced costs <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">u</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">v</span><sub><span 
+class="cmmi-8">j</span></sub>:
+           <center class="math-display" >
+           <img 
+src="hw6sol20229x.png" alt="                  destinations
+             10      30      20
+         20 |010-----010-----00-----|u  = 0
+sources     |                 20    | 1
+         20 |0       220     0      |u2 = - 1
+         20 -2-------0-------6-------u3 = - 3
+             v1 = 2  v2 = 4  v3 = 3
+           " class="math-display" ></center>
+           <!--l. 903--><p class="nopar" >
+           Thus, we are dual feasible and hence optimal.
+           <!--l. 906--><p class="noindent" >This is the problem considered in Lecture 16, and the optimal reduced costs here agree
+           with those found in Lecture 16.
+           </li>
+           <li 
+  class="enumerate" id="x1-13x2">The dual objective function value is
+           <center class="math-display" >
+           <img 
+src="hw6sol202210x.png" alt="    &#x2211;          &#x2211;
+z =     aiui +     bjvj =  - 20 - 60 + 20 + 120 + 60 = 120.
+      i         j
+           " class="math-display" ></center>
+           <!--l. 912--><p class="nopar" >
+           If we keep the same <span 
+class="cmmi-12">u </span>and <span 
+class="cmmi-12">v </span>and set <span 
+class="cmmi-12">a</span><sub><span 
+class="cmr-8">3</span></sub> = 20 + <span 
+class="cmmi-12">t</span>, <span 
+class="cmmi-12">b</span><sub><span 
+class="cmr-8">1</span></sub> = 10 + <span 
+class="cmmi-12">t</span>, then the value changes
+           to
+           <center class="math-display" >
+           <img 
+src="hw6sol202211x.png" alt="     &#x2211;         &#x2211;
+z =     aiui +     bjvj = - 20 - 3t - 60 + 20 + 2t + 120 + 60 = 120 - t,
+      i         j
+           " class="math-display" ></center>
+           <!--l. 918--><p class="nopar" >
+           so the optimal value <span 
+class="cmbx-12">decreases </span>by <span 
+class="cmmi-12">t</span>.
+           <!--l. 921--><p class="noindent" >In a sensitivity analysis setting, we are looking to modify the value of the basic variables
+           to accomodate this change in supplies and demands. The path from source 3 to
+           destination 1 is <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">3</span></sub> <span 
+class="cmsy-10x-x-120">&#x2192; </span><span 
+class="cmmi-12">d</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120">&#x2192; </span><span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">&#x2192; </span><span 
+class="cmmi-12">d</span><sub><span 
+class="cmr-8">1</span></sub>, indicated below in the transportation
+           tableau:
+           <center class="math-display" >
+           <img 
+src="hw6sol202212x.png" alt="                    destinations
+              |10+t----30------20-----|
+          20  |010+t   010-t   00     |u1 =  0
+sources       |                 20    |
+          20  |0       220+t   0      |u2 =  - 1
+         20+t -2-------0-------6-------u3 =  - 3
+               v1 = 2  v2 = 4  v3 = 3
+           " class="math-display" ></center>
+           <!--l. 939--><p class="nopar" >
+           We need to keep <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0 for all edges for the given BFS to be optimal. Thus the
+           rate of change in the objective function value given above is accurate for
+           <span 
+class="cmsy-10x-x-120">-</span>10 <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120">&#x2264; </span>10.</li></ol>
+      </li></ul>
+   <div class="tabular"> <table id="TBL-3" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-3-1g"><col 
+id="TBL-3-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-3-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                             </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                                        </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Tuesday 2.30&#8211;4pm in AE 325;                                                         </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Thursday 1&#8211;3pm webex: <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-12">https://rensselaer.webex.com/meet/mitchj</span></a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-3-7-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;                                                                                                         </td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

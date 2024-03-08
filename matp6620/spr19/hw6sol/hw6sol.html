@@ -1,0 +1,747 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw6sol.tex"> 
+<meta name="date" content="2019-04-26 12:18:00"> 
+<link rel="stylesheet" type="text/css" href="hw6sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 30--><p class="noindent" >
+<!--l. 33--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6620" ><span 
+class="cmr-12x-x-120">MATP6620 / ISYE6760</span><br />
+<span 
+class="cmr-12x-x-120">Combinatorial Optimization and Integer Programming</span></a><br />
+<span 
+class="cmr-12x-x-120">Homework 6.</span><br />
+<span 
+class="cmbx-12x-x-120">Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 39--><p class="noindent" >
+ Due: Friday, April 26, 2019.<br />
+Penalty for late homeworks: 10% for each day or part of a day.</div>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">Use subgradients to show that the optimal solution to the Held-Karp 1-tree Lagrangian dual
+      problem is <span 
+class="cmmi-12">&#x03BB; </span>= 0 for the traveling salesman problem on the graph with edge costs given
+      below:
+      <center class="math-display" >
+      <img 
+src="hw6sol0x.png" alt="  | 1   2  3   4  5   6  7   8
+--|-----------------------------
+ 1|-    5  5   5  9   9  9   9
+ 2| 5  -   5   5  9   1  9   9
+ 3| 5   5  -   5  9   9  1   9
+ 4| 5   5  5  -   9   9  9   1
+ 5| 9   9  9   9  -   5  5   5
+ 6| 9   1  9   9  5  -   5   5
+ 7| 9   9  1   9  5   5  -   5
+ 8| 9   9  9   1  5   5  5  -
+  |
+      " class="math-display" ></center>
+      <!--l. 143--><p class="nopar" >
+      (Hint: There are multiple solutions to the 1-tree relaxation when <span 
+class="cmmi-12">&#x03BB; </span>= 0. Show that a
+      convex combination of these solutions satisfies the degree constraints.)
+      <!--l. 150--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span><br 
+class="newline" />
+      <div class="center" 
+>
+<!--l. 152--><p class="noindent" >
+                                                                                         
+                                                                                         
+<!--l. 199--><p class="noindent" >              
+<img src=tsp.png>
+</div>
+      <!--l. 202--><p class="noindent" >With <span 
+class="cmmi-12">&#x03BB; </span>= 0, there are multiple optimal solutions to the Held-Karp subproblem. We can
+      construct the following six solutions:
+           <ul class="itemize1">
+           <li class="itemize">The tree contains edges (2,6), (3,7), and (4,8) in each solution.
+           </li>
+           <li class="itemize">The tree contains two of the edges (5,6), (5,7), (5,8) in each solution, with each
+           edge appearing in four of the solutions.
+           </li>
+           <li class="itemize">The tree contains one of the edges (2,3), (3,4), (2,4) and (6,7), (7,8), (6,8). An
+           appropriate edge is chosen so that a spanning tree is obtained on vertices 2<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">, </span>8.
+           </li>
+           <li class="itemize">Each of the three edges (1,2), (1,3), (1,4) appears in exactly 4 of the solutions.</li></ul>
+      <!--l. 214--><p class="noindent" >The vector of values of <span 
+class="cmsy-10x-x-120">{</span>2 <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmex-10x-x-120">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">e</span><span 
+class="cmsy-8">&#x2208;</span><span 
+class="cmmi-8">&#x03B4;</span><span 
+class="cmr-8">(</span><span 
+class="cmmi-8">v</span><span 
+class="cmr-8">)</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">e</span></sub><span style="margin-left:0.3em" class="thinspace"></span> : <span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">v </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">, </span>8<span 
+class="cmsy-10x-x-120">} </span>gives a subgradient of the Lagrangian
+      dual function for each of these solutions.
+      <!--l. 218--><p class="noindent" >Further, any convex combination of these subgradients is also a subgradient.
+      <!--l. 220--><p class="noindent" >Consider the subgradient where we weight each of the six original subgradients equally. In
+      this subgradient, we have 2 <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmex-10x-x-120">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">e</span><span 
+class="cmsy-8">&#x2208;</span><span 
+class="cmmi-8">&#x03B4;</span><span 
+class="cmr-8">(</span><span 
+class="cmmi-8">v</span><span 
+class="cmr-8">)</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">e</span></sub> = 0 for each of the eight vertices.
+      <!--l. 225--><p class="noindent" >Therefore, the zero vector is a subgradient of the Lagrangian dual function when <span 
+class="cmmi-12">&#x03BB; </span>= 0 for
+      this example.
+      <!--l. 228--><p class="noindent" >Thus, <span 
+class="cmmi-12">&#x03BB; </span>= 0 is optimal.
+      <!--l. 233--><p class="noindent" >Note that each of the 1-trees has value 28, from 5 edges of length 5 and 3 edges of length 1.
+      In contrast, the best tours have length 32: either they include only two of the edges (2,6),
+      (3,7), (4,8) and 6 edges of length 5, or they include all three of the short edges and one of the
+      long edges between <span 
+class="cmsy-10x-x-120">{</span>2<span 
+class="cmmi-12">, </span>3<span 
+class="cmmi-12">, </span>4<span 
+class="cmsy-10x-x-120">} </span>and <span 
+class="cmsy-10x-x-120">{</span>6<span 
+class="cmmi-12">, </span>7<span 
+class="cmmi-12">, </span>8<span 
+class="cmsy-10x-x-120">}</span>.
+      <!--l. 241--><p class="noindent" >A <span 
+class="cmbx-12">simpler solution </span>can be obtained by combining the subgradients of the following two
+      1-trees:
+                                                                                         
+                                                                                         
+           <ul class="itemize1">
+           <li class="itemize">(1,2), (1,3), (2,6), (3,7), (4,8), (5,6), (5,7), (6,8)
+           </li>
+           <li class="itemize">(1,3), (1,4), (2,4), (2,6), (3,7), (4,8), (5,7), (5,8)</li></ul>
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2">In class, we considered a Lagrangian relaxation of a vehicle routing problem with time
+      windows. In this question, we have a VRP, but we don&#8217;t have time windows. The part
+      of the Lagrangian relaxation corresponding to a single vehicle can be written:
+      <div class="subequations">
+      <table 
+class="align">
+              <tr><td 
+class="align-odd"></td>              <td 
+class="align-even"><span 
+class="cmr-10x-x-109">min</span></td>                       <td 
+class="align-odd"><span 
+class="cmex-10x-x-109">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">i</span><span 
+class="cmsy-8">&#x2208;</span><span 
+class="cmmi-8">N</span></sub> <span 
+class="cmex-10x-x-109">&#x2211;</span>
+       <sub><span 
+class="cmmi-8">j</span><span 
+class="cmsy-8">&#x2208;</span><span 
+class="cmmi-8">N</span></sub><span 
+class="cmr-10x-x-109">(</span><span 
+class="cmmi-10x-x-109">c</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">&#x03BB;</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmr-10x-x-109">)</span><span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">ij</span></sub></td>                                                           <td 
+class="align-even"></td>                              <td 
+class="align-odd"></td>                <td 
+class="align-even"></td>                <td 
+class="align-label"><a 
+ id="x1-7r1"></a><span 
+class="cmr-10x-x-109">(1a)</span>
+               </td></tr><tr><td 
+class="align-odd"></td>               <td 
+class="align-even"><span 
+class="cmr-10x-x-109">subject to</span></td>               <td 
+class="align-odd"><span 
+class="cmex-10x-x-109">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">i</span><span 
+class="cmsy-8">&#x2208;</span><span 
+class="cmmi-8">C</span></sub><span 
+class="cmmi-10x-x-109">d</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmex-10x-x-109">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">j</span><span 
+class="cmsy-8">&#x2208;</span><span 
+class="cmmi-8">N</span></sub><span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">ij</span></sub></td>                           <td 
+class="align-even"> <span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmmi-10x-x-109">q</span></td>                <td 
+class="align-odd"></td>             <td 
+class="align-even"></td>                                                                                        <td 
+class="align-label"><a 
+ id="x1-8r2"></a><span 
+class="cmr-10x-x-109">(1b)</span>
+               </td></tr><tr><td 
+class="align-odd"></td>               <td 
+class="align-even"></td>                            <td 
+class="align-odd"><span 
+class="cmex-10x-x-109">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">j</span><span 
+class="cmsy-8">&#x2208;</span><span 
+class="cmmi-8">N</span></sub><span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">0</span><span 
+class="cmmi-8">j</span></sub></td>                                        <td 
+class="align-even"> <span 
+class="cmr-10x-x-109">= 1</span></td>                   <td 
+class="align-odd"></td>               <td 
+class="align-even"></td>                                                                                                       <td 
+class="align-label"><a 
+ id="x1-9r3"></a><span 
+class="cmr-10x-x-109">(1c)</span>
+               </td></tr><tr><td 
+class="align-odd"></td>               <td 
+class="align-even"></td>                            <td 
+class="align-odd"><span 
+class="cmex-10x-x-109">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">i</span><span 
+class="cmsy-8">&#x2208;</span><span 
+class="cmmi-8">N</span></sub><span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">ih</span></sub> <span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmex-10x-x-109">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">j</span><span 
+class="cmsy-8">&#x2208;</span><span 
+class="cmmi-8">N</span></sub><span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">hj</span></sub></td>                     <td 
+class="align-even"> <span 
+class="cmr-10x-x-109">= 0</span></td>                   <td 
+class="align-odd"></td>               <td 
+class="align-even"><span 
+class="cmsy-10x-x-109">&#x2200;</span><span 
+class="cmmi-10x-x-109">h </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">C</span></td>                                                                                <td 
+class="align-label"><a 
+ id="x1-10r4"></a><span 
+class="cmr-10x-x-109">(1d)</span>
+               </td></tr><tr><td 
+class="align-odd"></td>               <td 
+class="align-even"></td>                            <td 
+class="align-odd"><span 
+class="cmex-10x-x-109">&#x2211;</span>
+   <sub><span 
+class="cmmi-8">i</span><span 
+class="cmsy-8">&#x2208;</span><span 
+class="cmmi-8">N</span></sub><span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">i,n</span><span 
+class="cmr-8">+1</span></sub></td>                                           <td 
+class="align-even"> <span 
+class="cmr-10x-x-109">= 1</span></td>                   <td 
+class="align-odd"></td>               <td 
+class="align-even"></td>                                                                                                       <td 
+class="align-label"><a 
+ id="x1-11r5"></a><span 
+class="cmr-10x-x-109">(1e)</span>
+               </td></tr><tr><td 
+class="align-odd"></td>               <td 
+class="align-even"></td>                            <td 
+class="align-odd"><span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">ih</span></sub> <span 
+class="cmr-10x-x-109">+ </span><span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">hi</span></sub></td>                                           <td 
+class="align-even"> <span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmr-10x-x-109">1</span></td>                   <td 
+class="align-odd"></td>               <td 
+class="align-even"><span 
+class="cmsy-10x-x-109">&#x2200;</span><span 
+class="cmmi-10x-x-109">i,h </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">C</span></td>                                                                              <td 
+class="align-label"><a 
+ id="x1-12r6"></a><span 
+class="cmr-10x-x-109">(1f)</span>
+               </td></tr><tr><td 
+class="align-odd"></td>               <td 
+class="align-even"></td>                            <td 
+class="align-odd"><span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">ij</span></sub></td>                                                    <td 
+class="align-even"> <span 
+class="cmr-10x-x-109">binary</span></td>               <td 
+class="align-odd"></td>               <td 
+class="align-even"><span 
+class="cmsy-10x-x-109">&#x2200;</span><span 
+class="cmmi-10x-x-109">i,j </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">N.</span></td>                                                                              <td 
+class="align-label"><a 
+ id="x1-13r7"></a><span 
+class="cmr-10x-x-109">(1g)</span>               </td></tr></table>
+      </div>
+      <!--l. 271--><p class="noindent" >The Lagrangian dual problem is
+      <center class="math-display" >
+      <img 
+src="hw6sol1x.png" alt="                &#x2211;
+max &#x03B8;,&#x03BB;     v&#x03B8; +   i&#x2208;C &#x03BB;i
+               &#x2211;    &#x2211;        p    p
+subject to &#x03B8; +   i&#x2208;C   j&#x2208;N &#x03BB;ixij &#x2264; b  &#x2200;subtours p &#x2208; P
+      " class="math-display" ></center>
+      <!--l. 284--><p class="nopar" >
+      where <span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">p</span></sup> is the length of subtour&#x00A0;<span 
+class="cmmi-12">p</span>. Let the vehicle capacity <span 
+class="cmmi-12">q </span>= 40. Let <span 
+class="cmmi-12">d</span><sub>
+<span 
+class="cmmi-8">i</span></sub> = 15 for each
+      customer&#x00A0;<span 
+class="cmmi-12">i</span>. The distances <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">ij</span></sub> are given in the table:
+      <center class="math-display" >
+      <img 
+src="hw6sol2x.png" alt="        |
+cij = ---|0---1---2--3--
+      0 |0   5   6  7
+      1 |5  -    7  6
+        |
+      2 |6   7  -   2
+      3 |7   6   2  -
+      " class="math-display" ></center>
+      <!--l. 296--><p class="nopar" >
+      Enumerate all valid subtours and hence show that an optimal solution to the Lagrangian
+      dual is to take <span 
+class="cmmi-12">&#x03BB;</span><sub><span 
+class="cmr-8">1</span></sub> = 10, <span 
+class="cmmi-12">&#x03BB;</span><sub><span 
+class="cmr-8">2</span></sub> = 7, <span 
+class="cmmi-12">&#x03BB;</span><sub><span 
+class="cmr-8">3</span></sub> = 8.
+      <!--l. 303--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 306--><p class="noindent" >There are 6 nontrivial feasible subtours that obey the vehicle capacity constraints. The tours
+      that visit two customers can be traversed in either direction. We have <span 
+class="cmmi-12">n </span>= 3 so the depot is
+      node 0 and node&#x00A0;4. The tours and their values are as follows:
+      <div class="center" 
+>
+<!--l. 311--><p class="noindent" >
+<div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><colgroup id="TBL-1-2g"><col 
+id="TBL-1-2"></colgroup><colgroup id="TBL-1-3g"><col 
+id="TBL-1-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td11">customers</td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-2"  
+class="td11">     edges        </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-3"  
+class="td11">subtour length</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-1"  
+class="td11">    <span 
+class="cmsy-10x-x-120">&#x2205;   </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-2"  
+class="td11">       <span 
+class="cmsy-10x-x-120">&#x2205;    </span></td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-3"  
+class="td11">      0         </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-3-1"  
+class="td11">    1      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-3-2"  
+class="td11">   (0,1), (1,0)    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-3-3"  
+class="td11">     10        </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-4-1"  
+class="td11">    2      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-4-2"  
+class="td11">   (0,2), (2,0)    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-4-3"  
+class="td11">     12        </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-5-1"  
+class="td11">    3      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-5-2"  
+class="td11">   (0,3), (3,0)    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-5-3"  
+class="td11">     14        </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-6-1"  
+class="td11">   1, 2     </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-6-2"  
+class="td11">(0,1), (1,2), (2,0)</td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-6-3"  
+class="td11">     18        </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-7-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-7-1"  
+class="td11">   1, 3     </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-7-2"  
+class="td11">(0,1), (1,3), (3,0)</td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-7-3"  
+class="td11">     18        </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-8-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-8-1"  
+class="td11">   2, 3     </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-8-2"  
+class="td11">(0,2), (2,3), (3,0)</td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-8-3"  
+class="td11">     15        </td>
+</tr></table></div></div>
+      <!--l. 323--><p class="noindent" >The Lagrangian dual problem with all feasible subtours is then
+      <center class="math-display" >
+      <img 
+src="hw6sol3x.png" alt="max &#x03B8;,&#x03BB;     3&#x03B8;  +   &#x03BB;1 + &#x03BB;2 + &#x03BB;3
+
+subject to   &#x03B8;                    &#x2264;   0            &#x2205;
+            &#x03B8;  +   &#x03BB;1            &#x2264;   10        {1 }
+            &#x03B8;  +   &#x03BB;2            &#x2264;   12        {2 }
+            &#x03B8;  +   &#x03BB;             &#x2264;   14        {3 }
+                    3
+            &#x03B8;  +   &#x03BB;1 + &#x03BB;2       &#x2264;   18      {1, 2}
+            &#x03B8;  +   &#x03BB;1 + &#x03BB;3       &#x2264;   18      {1, 3}
+            &#x03B8;  +   &#x03BB;2 + &#x03BB;3       &#x2264;   15      {2, 3}
+      " class="math-display" ></center>
+      <!--l. 336--><p class="nopar" >
+      The given <span 
+class="cmmi-12">&#x03BB; </span>is feasible with <span 
+class="cmmi-12">&#x03B8; </span>= 0, with value&#x00A0;25. Thus, we have a lower bound of 25 on the
+      optimal value of the vehicle routing problem.
+      <!--l. 341--><p class="noindent" >One feasible primal solution is to use the two subtours <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmsy-10x-x-120">} </span>and <span 
+class="cmsy-10x-x-120">{</span>2<span 
+class="cmmi-12">, </span>3<span 
+class="cmsy-10x-x-120">}</span>, which has value 25.
+      Since this feasible solution achieves the Lagrangian lower bound, we must be optimal to both
+      the primal problem and the Lagrangian relaxation.
+      <!--l. 346--><p class="noindent" >We can also show <span 
+class="cmmi-12">&#x03BB; </span>is optimal using LP duality. Let <span 
+class="cmmi-12">&#x03C0; </span>be the variables in the dual of the
+      dual. The dual of the dual can be written
+      <center class="math-display" >
+      <img 
+src="hw6sol4x.png" alt="min &#x03C0;       0&#x03C0;&#x2205;  +   10&#x03C0;1  +   12&#x03C0;2  +   14&#x03C0;3  +   18&#x03C0;12  +  18 &#x03C0;13  +  15&#x03C0;23
+
+subject to   &#x03C0;&#x2205;  +     &#x03C0;1  +     &#x03C0;2  +     &#x03C0;3  +     &#x03C0;12  +     &#x03C0;13  +    &#x03C0;23  =   3
+                       &#x03C0;1                      +     &#x03C0;12  +     &#x03C0;13            =   1
+                                 &#x03C0;2            +     &#x03C0;12             +    &#x03C0;23  =   1
+                                           &#x03C0;              +     &#x03C0;    +    &#x03C0;    &#x2264;   1
+                                            3                    13         23
+                                                                            &#x03C0;  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 360--><p class="nopar" >
+      One feasible solution is to take <span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmmi-12">&#x03C0;</span><sub><span 
+class="cmr-8">23</span></sub> = 1, with all other <span 
+class="cmmi-12">&#x03C0; </span>values equal to zero. This
+      solution has value 25. Since we have primal and dual feasibility and the values agree, we have
+      optimality.
+      </li>
+      <li 
+  class="enumerate" id="x1-15x3">An ampl model and data set for a vehicle routing problem can be found on the course
+      webpage. The solution to the model as written results in subtours. Add sets of valid subtour
+      elimination constraints so that the resulting integer program results in a feasible solution. For
+      this model, there are <span 
+class="cmmi-12">n </span>= 10 customers and the vehicle capacity is <span 
+class="cmmi-12">D </span>= 40, with demands
+      between 7 and 11 for each customer.
+                                                                                         
+                                                                                         
+      <!--l. 381--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 384--><p class="noindent" >It suffices to add the following four sets of subtour elimination constraints:
+                                                                                         
+                                                                                         
+      <div class="verbatim" id="verbatim-1">
+      subject&#x00A0;to&#x00A0;prevent2cycle&#x00A0;{i&#x00A0;in&#x00A0;1..n,&#x00A0;j&#x00A0;in&#x00A0;1..n,&#x00A0;k&#x00A0;in&#x00A0;1..v&#x00A0;:&#x00A0;i&#x003C;j}:
+      &#x00A0;<br />x[i,j,k]+x[j,i,k]&#x00A0;&#x003C;=&#x00A0;1;
+      &#x00A0;<br />
+      &#x00A0;<br />subject&#x00A0;to&#x00A0;prevent3cycle&#x00A0;{i&#x00A0;in&#x00A0;1..n,&#x00A0;j&#x00A0;in&#x00A0;1..n,&#x00A0;h&#x00A0;in&#x00A0;1..n,&#x00A0;k&#x00A0;in&#x00A0;1..v&#x00A0;:&#x00A0;i&#x003C;j&#x003C;h}:
+      &#x00A0;<br />&#x00A0;&#x00A0;x[i,j,k]+x[j,i,k]+x[i,h,k]+x[h,i,k]+x[j,h,k]+x[h,j,k]&#x00A0;&#x003C;=&#x00A0;2;
+      &#x00A0;<br />
+      &#x00A0;<br />subject&#x00A0;to&#x00A0;prevent4cycle&#x00A0;{i&#x00A0;in&#x00A0;1..n,&#x00A0;j&#x00A0;in&#x00A0;1..n,&#x00A0;h&#x00A0;in&#x00A0;1..n,&#x00A0;l&#x00A0;in&#x00A0;1..n,
+      &#x00A0;<br />k&#x00A0;in&#x00A0;1..v&#x00A0;:&#x00A0;i&#x00A0;&#x003C;j&#x00A0;&#x003C;h&#x003C;l}:
+      &#x00A0;<br />&#x00A0;&#x00A0;x[i,j,k]+x[j,i,k]+x[i,h,k]+x[h,i,k]+x[j,h,k]+x[h,j,k]
+      &#x00A0;<br />&#x00A0;&#x00A0;+x[i,l,k]+x[l,i,k]+x[l,h,k]+x[h,l,k]+x[j,l,k]+x[l,j,k]
+      &#x00A0;<br />&#x00A0;&#x00A0;&#x003C;=&#x00A0;3;
+      &#x00A0;<br />
+      &#x00A0;<br />subject&#x00A0;to&#x00A0;prevent5cycle&#x00A0;{i&#x00A0;in&#x00A0;1..n,&#x00A0;j&#x00A0;in&#x00A0;1..n,&#x00A0;h&#x00A0;in&#x00A0;1..n,&#x00A0;l&#x00A0;in&#x00A0;1..n,&#x00A0;g&#x00A0;in&#x00A0;1..n,
+      &#x00A0;<br />k&#x00A0;in&#x00A0;1..v&#x00A0;:&#x00A0;i&#x00A0;&#x003C;j&#x00A0;&#x003C;h&#x003C;l&#x003C;g&#x00A0;&amp;&amp;&#x00A0;d[i]+d[j]+d[h]+d[l]+d[g]&#x00A0;&#x003C;=&#x00A0;D}:
+      &#x00A0;<br />&#x00A0;&#x00A0;x[i,j,k]+x[j,i,k]+x[i,h,k]+x[h,i,k]+x[j,h,k]+x[h,j,k]
+      &#x00A0;<br />&#x00A0;&#x00A0;+x[i,l,k]+x[l,i,k]+x[l,h,k]+x[h,l,k]+x[j,l,k]+x[l,j,k]
+      &#x00A0;<br />&#x00A0;&#x00A0;+x[i,g,k]+x[g,i,k]+x[g,h,k]+x[h,g,k]+x[j,g,k]+x[g,j,k]
+      &#x00A0;<br />&#x00A0;&#x00A0;+x[l,g,k]+x[g,l,k]
+      &#x00A0;<br />&#x00A0;&#x00A0;&#x003C;=&#x00A0;4;
+      &#x00A0;<br />
+</div>
+      <!--l. 408--><p class="nopar" >  With all these constraints, we find the optimal solution has value 529 and uses the three
+      subtours
+      <center class="math-display" >
+      <img 
+src="hw6sol5x.png" alt="0 - 1 - 8 - 10 - 3 - 0,  0 - 7 - 6 - 5 - 4 - 0,  0 - 2 - 9 - 0
+      " class="math-display" ></center>
+      <!--l. 414--><p class="nopar" >
+      </li>
+      <li 
+  class="enumerate" id="x1-17x4">Reformulate the following binary polynomial problem as an equivalent binary linear program,
+      and solve it (using AMPL or otherwise):
+      <center class="math-display" >
+      <img 
+src="hw6sol6x.png" alt="max         6x31 + 5x22 + 5x23 + 4x34 + 2x1x32 + 3x1x4 + 4x2x3 + 4x2x4
+subject to             x1x3 +  x22x4 + x1x2x4  &#x2264;   1
+            3x2x3x4 + 2x2 x3 + 5x1x3x5 + 4x2  &#x2264;   6
+                         1           4
+                       5x1 + 4x2 + 6x3 + 4x4  &#x2264;   144
+                                           x  &#x2208;   B .
+      " class="math-display" ></center>
+      <!--l. 625--><p class="nopar" >
+      <!--l. 629--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>Note first that <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmmi-8">p</span></sup> = <span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmmi-8">i</span></sub> for any positive integer power <span 
+class="cmmi-12">p </span>for any binary variable&#x00A0;<span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub>.
+      Let <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ijk</span></sub> denote a variable that is supposed to equal the product <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">k</span></sub>, etc. The original
+      problem is equivalent to:
+      <center class="math-display" >
+      <img 
+src="hw6sol7x.png" alt="max         6x1 + 5x2 + 5x3 + 4x4 + 2x12 + 3x14 + 4x23 + 4x24
+subject to                    x13 + x24 + x124 &#x2264;   1
+                   3x234 + 2x13 + 5x134 + 4x2  &#x2264;   6
+
+                       5x1 +  4x2 + 6x3 + 4x4  &#x2264;   14
+                                     x12 - x1  &#x2264;   0
+                                     x12 - x2  &#x2264;   0
+                                x1 + x2 - x12  &#x2264;   1
+                                     x  -  x   &#x2264;   0
+                                      13    1
+                                     x13 - x3  &#x2264;   0
+                                x1 + x3 - x13  &#x2264;   1
+                                     x14 - x1  &#x2264;   0
+                                     x14 - x4  &#x2264;   0
+                                x  + x  - x    &#x2264;   1
+                                 1    4    14
+                                     x23 - x2  &#x2264;   0
+                                     x23 - x3  &#x2264;   0
+                                x2 + x3 - x23  &#x2264;   1
+                                     x24 - x2  &#x2264;   0
+                                     x  -  x   &#x2264;   0
+                                      24    4
+                                x2 + x4 - x24  &#x2264;   1
+                                    x124 - x1  &#x2264;   0
+                                    x124 - x2  &#x2264;   0
+                                    x124 - x4  &#x2264;   0
+
+                          x1 + x2 + x4 - x124  &#x2264;   2
+                                    x134 - x1  &#x2264;   0
+                                    x134 - x3  &#x2264;   0
+                                    x134 - x4  &#x2264;   0
+                          x1 + x3 + x4 - x134  &#x2264;   2
+
+                                    x234 - x2  &#x2264;   0
+                                    x234 - x3  &#x2264;   0
+                                    x234 - x4  &#x2264;   0
+                          x2 + x3 + x4 - x234  &#x2264;   2
+            x  ,x  ,x  ,x  ,x  ,x  ,x   ,x     &#x2208;   B
+             12  13  14  23  24  124   134  234       4
+                                            x  &#x2208;   B .
+      " class="math-display" ></center>
+      <!--l. 671--><p class="nopar" >
+      All the additional constraints are the McCormick inequalities that force the additional binary
+      variables to take the correct value. The optimal solution is <span 
+class="cmmi-12">x </span>= (0<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">, </span>0) with value
+      14.
+      </li>
+      <li 
+  class="enumerate" id="x1-19x5">Show how the quadratic integer program
+      <center class="math-display" >
+                                                                                         
+                                                                                         
+      <img 
+src="hw6sol8x.png" alt="minx&#x2208;&#x211D;n,z&#x2208;Bk  xTQz
+subject to     Ax +  Hz =  b
+
+              0 &#x2264; x &#x2264; u
+      " class="math-display" ></center>
+      <!--l. 686--><p class="nopar" >
+      can be written as an equivalent mixed integer <span 
+class="cmti-12">linear </span>program, where <span 
+class="cmmi-12">u </span>is a finite positive
+      vector in&#x00A0;<span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup>, <span 
+class="cmmi-12">A </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">m</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup>, <span 
+class="cmmi-12">H </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">m</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">k</span></sup>, <span 
+class="cmmi-12">b </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">m</span></sup>, and <span 
+class="cmmi-12">Q </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">k</span></sup>. Note that <span 
+class="cmmi-12">Q </span>may contain both
+      positive and negative entries.
+      <!--l. 695--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>Introduce new variables <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">ij</span></sub> to capture the product <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">j</span></sub>. The problem is
+      equivalent to
+      <center class="math-display" >
+      <img 
+src="hw6sol9x.png" alt="                    &#x2211;     &#x2211;
+minx&#x2208;&#x211D;n,z&#x2208;Bk,w&#x2208;&#x211D;n&#x00D7;k     ni=1   kj=1 Qijwij
+subject to           Ax  + Hz  = b
+
+                    0 &#x2264; wij &#x2264;  xi  &#x2200;i,j
+                    wij &#x2264; uizj  &#x2200;i,j
+                    wij &#x2265; xi - ui(1 - zj)  &#x2200;i,j
+                    0 &#x2264; x &#x2264;  u
+      " class="math-display" ></center>
+      <!--l. 708--><p class="nopar" >
+      The linear constraints force <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">ij</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">j</span></sub> provided <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">j</span></sub> is binary and 0 <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">u</span><sub><span 
+class="cmmi-8">i</span></sub>. In particular, if
+      <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">j</span></sub> = 0 then we must have <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">u</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">j</span></sub> = 0 together with <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0, and if <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">j</span></sub> = 1
+      then we must have <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> together with <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub>. If <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">j</span></sub> = 1 then the constraint
+      <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">u</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">j</span></sub> is redundant, and if <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">j</span></sub> = 0 then the constraint <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">u</span><sub><span 
+class="cmmi-8">i</span></sub>(1 <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">j</span></sub>) is
+      redundant.
+      </li></ol>
+   <div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                          </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                     </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Tuesday 10am&#8211;12pm, Wednesday 11am&#8211;1pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

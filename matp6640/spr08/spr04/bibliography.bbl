@@ -1,0 +1,276 @@
+\begin{thebibliography}{10}
+
+\bibitem{ahuja3}
+R.~K. Ahuja and J.~B. Orlin.
+\newblock Inverse optimization.
+\newblock {\em Operations Research}, 49(5):771--783, 2001.
+{\bf Lawsirirat}
+
+\bibitem{alizadeh1}
+F.~Alizadeh.
+\newblock Interior point methods in semidefinite programming with applications
+  to combinatorial optimization.
+\newblock {\em SIAM Journal on Optimization}, 5(1):13--51, 1995.
+
+\bibitem{andersen7}
+E.~D. Andersen.
+\newblock On exploiting problem structure in a basis identifications procedure
+  for linear programming.
+\newblock {\em INFORMS Journal on Computing}, 11:95--103, 1999.
+{\bf Demers}
+
+\bibitem{anjos5}
+M.~F. Anjos.
+\newblock On semidefinite programming relaxations for the satisfiability
+  problem.
+\newblock Technical report, Operational Research Group, School of Mathematics,
+  University of Southampton, Southampton SO47 1BJ, UK, 2003.
+
+\bibitem{bental10}
+A.~Ben-Tal and A.~Nemirovskii.
+\newblock Robust solutions of linear programming problems contaminated with
+  uncertain data.
+\newblock {\em Mathematical Programming}, 88(3):411--424, 2000.
+{\bf Petrie}
+
+\bibitem{benson5}
+S.~J. Benson.
+\newblock Parallel computing on semidefinite programs.
+\newblock Technical Report ANL/MCS-P939-0302, Mathematics and Computer Science
+  Division, Argonne National Laboratory, Argonne, IL, 2002.
+
+\bibitem{bertsimas9}
+D.~Bertsimas and M.~Sym.
+\newblock The price of robustness.
+\newblock {\em Operations Research}, 52(1):35--53, 2004.
+{\bf Campbell}
+
+\bibitem{boon1}
+B.~H. Boon and G.~Sierksma.
+\newblock Team formation: Matching quality supply and quality demand.
+\newblock {\em European Journal of Operational Research}, 148(2):277--292,
+  2003.
+{\bf Pesce}
+
+\bibitem{burer13}
+S.~Burer and R.~D.~C. Monteiro.
+\newblock Local minima and convergence in low-rank semidefinite programming.
+\newblock Technical report, Department of Management Sciences, University of
+  Iowa, Iowa City, IA, September 2003.
+
+\bibitem{elhedhli1}
+S.~Elhedhli and J.-L.\ Goffin.
+\newblock The integration of an interior-point cutting-plane method within a
+  branch-and-price algorithm.
+\newblock Technical report, Faculty of Management, McGill University,
+  Montr\'{e}al, Qu\'{e}bec, Canada, March 2001.
+
+\bibitem{ferris10}
+M.~C. Ferris and T.~S. Munson.
+\newblock Interior point methods for massive support vector machines.
+\newblock {\em SIAM Journal on Optimization}, 13(3):783--804, 2003.
+{\bf Lee}
+
+\bibitem{fliege1}
+J.~Fliege.
+\newblock An efficient interior-point method for convex multicriteria
+  optimization problems.
+\newblock Technical Report 248, Ergebnisberichte Angewandte Mathematik,
+  Fachbereich Mathematik, Universit{\"a}t Dortmund, 44221 Dortmund, Germany,
+  March 2004.
+{\bf Glackin}
+
+\bibitem{fujisawa4}
+K.~Fujisawa, M.~Fukuda, and M.~Kojima.
+\newblock Preprocessing sparse semidefinite programs via matrix completion.
+\newblock Technical Report B-401, Department of Mathematical and Computing
+  Sciences, Tokyo Institute of Technology, 2-12-1 Oh-Okayama, Meguro-ku, Tokyo
+  152, Japan, March 2004.
+{\bf Pei Ke}
+
+\bibitem{goffin9}
+J.-L.\ Goffin and J.-P.\ Vial.
+\newblock Multiple cuts in the analytic center cutting plane method.
+\newblock {\em SIAM Journal on Optimization}, 11(1):266--288, 2001.
+
+\bibitem{goffin10}
+J.-L.\ Goffin and J.-P.\ Vial.
+\newblock Convex nondifferentiable optimization: a survey focussed on the
+  analytic center cutting plane method.
+\newblock {\em Optimization Methods and Software}, 17(5):805--867, 2002.
+
+\bibitem{goldfarb6}
+D.~Goldfarb.
+\newblock The simplex method for conic programming.
+\newblock Technical report, Department of Industrial Engineering and Operations
+  Research, Columbia University, New York, October 2002.
+{\bf Westcott}
+
+\bibitem{goldfarb5}
+D.~Goldfarb and G.~Iyengar.
+\newblock Robust convex quadratically constrained programs.
+\newblock {\em Mathematical Programming}, 97(3):495--515, 2003.
+{\bf Ramsden}
+
+\bibitem{gondzio8}
+J.~Gondzio and R.~Kouwenberg.
+\newblock High-performance computing for asset-liability management.
+\newblock {\em Operations Research}, 49(6):879--891, 2001.
+{\bf Fu Yan}
+
+\bibitem{gondzio9}
+J.~Gondzio and R.~Sarkissian.
+\newblock Parallel interior point solver for structured linear programs.
+\newblock {\em Mathematical Programming}, 96(3):561--584, 2003.
+{\bf White}
+
+\bibitem{helmberg4}
+C.~Helmberg.
+\newblock Fixing variables in semidefinite relaxations.
+\newblock {\em SIAM Journal on Matrix Analysis and Applications},
+  21(3):952--969, 2000.
+{\bf Payne}
+
+\bibitem{helmberg6}
+C.~Helmberg and F.~Rendl.
+\newblock A spectral bundle method for semidefinite programming.
+\newblock {\em SIAM Journal on Optimization}, 10(3):673--696, 2000.
+
+\bibitem{skim4}
+S.~Kim, M.~Kojima, and M.~Yamashita.
+\newblock Second order cone programming relaxation of a positive semidefinite
+  constraint.
+\newblock {\em Optimization Methods and Software}, 18(5):535--541, 2003.
+
+\bibitem{lanckriet1}
+Gert R.~G. Lanckriet, Laurent~El Ghaoui, Chiranjib Bhattacharyya, and
+  Michael~I. Jordan.
+\newblock A robust minimax approach to classification.
+\newblock {\em Journal of Machine Learning Research}, 3:555--582, December
+  2002.
+{\bf Jing Gong}
+
+\bibitem{lisser1}
+A.~Lisser and F.~Rendl.
+\newblock Graph partitioning using linear and semidefinite programming.
+\newblock {\em Mathematical Programming}, 95(1):91--101, 2003.
+
+\bibitem{maros3}
+I.~Maros.
+\newblock A generalized dual phase-2 simplex algorithm.
+\newblock {\em European Journal of Operational Research}, 149(1):1--16, 2003.
+{\bf Ryder}
+
+\bibitem{JEMising}
+J.~E. Mitchell.
+\newblock Computational experience with an interior point cutting plane
+  algorithm.
+\newblock {\em SIAM Journal on Optimization}, 10(4):1212--1227, 2000.
+
+\bibitem{JEM_logvolcuts}
+J.~E. Mitchell.
+\newblock Polynomial interior point cutting plane methods.
+\newblock {\em Optimization Methods and Software}, 18(5):507--534, 2003.
+
+\bibitem{MB_combined}
+J.~E. Mitchell and B.~Borchers.
+\newblock Solving linear ordering problems with a combined interior
+  point/simplex cutting plane algorithm.
+\newblock In H.~L.~Frenk {\em et al.}, editor, {\em High Performance
+  Optimization}, chapter~14, pages 349--366. Kluwer Academic Publishers,
+  Dordrecht, The Netherlands, 2000.
+
+\bibitem{monteiro21}
+R.~D.~C. Monteiro, J.~W. O'Neal, and T.~Tsuchiya.
+\newblock Uniform boundedness of a preconditioned normal matrix used in
+  interior point methods.
+\newblock Technical report, School of Industrial and Systems Engineering,
+  Georgia Institute of Technology, Atlanta, GA 30332, March 2003.
+{\bf Li Zhisheng}
+
+\bibitem{muramatsu1}
+M.~Muramatsu.
+\newblock Affine scaling algorithm fails for semidefinite programming.
+\newblock {\em Mathematical Programming}, 83:393--406, 1998.
+
+\bibitem{muramatsu5}
+M.~Muramatsu.
+\newblock A pivotting procedure for a class of second-order cone programming.
+\newblock Technical Report CS--03--02, Dept. of Computer Science, The
+  University of Electro-Communications, 1-5-1 Chofugaoka, Chofu-shi, Tokyo,
+  182-8585, Japan, September 2003.
+\newblock Revised: November 2003.
+
+\bibitem{muramatsu2}
+M.~Muramatsu and R.~J. Vanderbei.
+\newblock Primal-dual affine-scaling algorithms fail for semidefinite
+  programming.
+\newblock {\em Mathematics of Operations Research}, 24(1):149--175, 1999.
+
+\bibitem{nemhauser8}
+G.~L. Nemhauser and M.~A. Trick.
+\newblock Scheduling a major college basketball conference.
+\newblock {\em Operations Research}, 46:1--8, 1998.
+{\bf Pesce}
+
+\bibitem{osborne1}
+M.~Osborne.
+\newblock When {LP} is not a good idea --- using structure in polyhedral
+  optimization problems.
+\newblock Technical report, Mathematical Sciences Institute, Australian
+  National University, A.C.T 0200, Australia, December 2003.
+{\bf Chaoxiong Wang}
+
+\bibitem{ramana1}
+M.~Ramana, L.~Tun\c{c}el, and H.~Wolkowicz.
+\newblock Strong duality for semidefinite programming.
+\newblock {\em SIAM Journal on Optimization}, 7:641--662, 1997.
+{\bf Lanshan Han}
+
+\bibitem{terlaky2}
+T.~Terlaky.
+\newblock An easy way to teach interior point methods.
+\newblock Technical Report 98--24, TWI/SSOR, Delft University of Technology,
+  Delft, The Netherlands, July 1998.
+
+\bibitem{todd22}
+M.~J. Todd.
+\newblock Detecting infeasibility in infeasible-interior-point methods for
+  optimization.
+\newblock Technical Report 1363, School of Operations Research and Industrial
+  Engineering, Cornell University, Ithaca, NY 14853, January 2003.
+
+\bibitem{tutuncu6}
+R.~H. T\"{u}t\"{u}nc\"{u}.
+\newblock Asymptotic behavior of continuous trajectories for primal-dual
+  potential-reduction methods.
+\newblock Technical Report 01--CNA--012, Department of Mathematical Sciences,
+  Carnegie Mellon University, Pittsburgh, PA 15213, September 2001.
+
+\bibitem{vandenberghe1}
+L.~Vandenberghe and S.~Boyd.
+\newblock Semidefinite programming.
+\newblock {\em SIAM Review}, 38:49--95, 1996.
+
+\bibitem{wachter3}
+A.~W\"achter and L.~T. Biegler.
+\newblock On the implementation of an interior-point filter line-search
+  algorithm for large-scale nonlinear programming.
+\newblock Technical Report RC 23149, IBM T.J. Watson Research Center, Yorktown
+  Heights, NY, March 2004.
+
+\bibitem{waltz1}
+R.~Waltz, J.~L. Morales, J.~Nocedal, and D.~Orban.
+\newblock {KNITRO}-direct: a hybrid interior algorithm for nonlinear
+  optimization.
+\newblock Technical report, Optimization Technology Center, Northwestern
+  University, Evanston IL, August 2003.
+
+\bibitem{swright11}
+S.~Wright.
+\newblock Recent developments in interior point methods.
+\newblock In M.~J.~D. Powell and S.~Scholtes, editors, {\em Systems Modeling
+  and Optimization: Methods, Theory, and Applications}, pages 311--333. Kluwer
+  Academic Publishers, Dordrecht, The Netherlands, 2000.
+
+\end{thebibliography}

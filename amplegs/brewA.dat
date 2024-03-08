@@ -1,0 +1,11 @@
+set PRODUCTS = golden amber;
+set RESOURCES = malt yeast hops;
+
+param price := golden 8 amber 7;
+
+param avail := malt 40 hops 60 yeast 30;
+
+param use :  golden  amber :=
+   malt        1      2
+   hops        3      2
+   yeast       1      1;

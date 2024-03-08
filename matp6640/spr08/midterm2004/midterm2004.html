@@ -1,0 +1,409 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Midterm</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="midterm2004">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="midterm2004.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+     <a href=..>MATP6640/DSES6770 Linear Programming</a>
+  </FONT>
+</DIV>
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+                Midterm Exam, Spring 2004
+  </FONT>
+</DIV>
+
+<P>
+Take Home   Due:  Monday, March 29, 2004, in class.
+
+<P>
+
+<BR>
+
+<P>
+This is to be all your own work.  You may use any result from class,
+homeworks, the textbook, or the books on reserve in the library.
+Do not consult anybody or anything else. 
+My email address is <a href=mailto:mitchj@rpi.edu>mitchj@rpi.edu</a> and
+my phone number is 276-6915.
+I'll have my regular office hours on Thursday from 2pm to 4pm.
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>(15 points.)
+Use linear programming duality to show that exactly one of the
+    following alternatives holds.
+    
+<UL>
+
+<LI>There exists an <I>x</I> &gt; 0 with <I>Ax</I>=0.
+
+<LI>There exists a <I>y</I> with <IMG
+ WIDTH="73" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$A^Ty \leq 0$">,
+<IMG
+ WIDTH="73" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$A^Ty \neq 0$">.
+    
+</UL>
+
+<P>
+
+<DT>2.
+<DD>(20 points; each part is worth 10 points.)
+    Consider the linear program
+    <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcl}
+        \min               & 2x_1 & - & 3x_2 & + & 4x_3 \\
+        \mbox{subject to } & x_1 & - & x_2 & + & 3x_3 & = & 2 \\
+                           & x & \in & X
+      \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="335" HEIGHT="90"
+ SRC="img3.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcl}
+\min &amp; 2x_1 &amp; - &amp; 3x_2 &amp; + &amp; 4x_3 ...
+...1 &amp; - &amp; x_2 &amp; + &amp; 3x_3 &amp; = &amp; 2 \\
+&amp; x &amp; \in &amp; X
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <!-- MATH: $X=\{x:0\leq x_1 \leq 1, 0 \leq x_2, 0\leq x_3 \leq 1\}$ -->
+<IMG
+ WIDTH="337" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$X=\{x:0\leq x_1 \leq 1, 0 \leq x_2, 0\leq x_3 \leq 1\}$">.
+    <DL COMPACT>
+<DT>(a)
+<DD>Solve the linear program
+using Dantzig-Wolfe decomposition.
+    Initialize with the extreme points <I>x</I><SUP>1</SUP>=(1,0,0)<SUP><I>T</I></SUP> and <I>x</I><SUP>2</SUP>=(0,0,1)<SUP><I>T</I></SUP>.
+    <DT>(b)
+<DD>Solve the linear program using the simplex method with the standard modification
+    for handling upper bounds. That is, only include one constraint, and allow
+    variables to be nonbasic at either their upper or lower bounds.
+    Initialize with the basic feasible solution <!-- MATH: $x=(0,0,\frac{2}{3})$ -->
+<IMG
+ WIDTH="100" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$x=(0,0,\frac{2}{3})$">.
+    </DL>
+
+<P>
+
+<DT>3.
+<DD>(40 points)
+We wish to partition a set <I>S</I> of <I>n</I> objects into <I>K</I>
+clusters, where <I>K</I> is given.
+There is a cost <I>d</I><SUB><I>ij</I></SUB>&gt;0 associated with placing objects <I>i</I> and <I>j</I>
+in the same cluster.
+In one formulation of this problem, we use binary variables <I>x</I><SUB><I>k</I></SUB>
+corresponding to the nonempty subsets of the objects, with
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+x_k = \left\{ \begin{array}{ll}
+1 & \mbox{if subset } $k$\space \mbox{ is one of the $K$\space chosen clusters}\\
+0 & \mbox{otherwise.}
+\end{array}   \right.
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="433" HEIGHT="64"
+ SRC="img6.gif"
+ ALT="\begin{displaymath}
+x_k = \left\{ \begin{array}{ll}
+1 &amp; \mbox{if subset } $k$\sp...
+... chosen clusters}\\
+0 &amp; \mbox{otherwise.}
+\end{array} \right.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Let <I>S</I><SUP><I>k</I></SUP> be the <I>k</I>th nonempty subset of <I>S</I> for <!-- MATH: $k=1,\ldots,2^n-1$ -->
+<IMG
+ WIDTH="142" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$k=1,\ldots,2^n-1$">.
+Define
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+w_k := \sum_{i,j \in S^k, i<j} d_{ij}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="141" HEIGHT="58"
+ SRC="img8.gif"
+ ALT="\begin{displaymath}
+w_k := \sum_{i,j \in S^k, i&lt;j} d_{ij}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+to be the weight of&nbsp;<I>S</I><SUP><I>k</I></SUP>.
+We are going to examine the linear programming relaxation of
+this formulation, which we will denote (<I>MP</I>), or Master Problem:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrclr}
+\min & \sum_{k=1}^{2^n-1} w_k x_k \\
+\mbox{subject to } & A x & = & e & \qquad \qquad (MP) \\
+& e^Tx & = & K \\
+&   x  & \geq & 0
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="398" HEIGHT="118"
+ SRC="img9.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrclr}
+\min &amp; \sum_{k=1}^{2^n-1} w_k x_k \\
+\...
+...d \qquad (MP) \\
+&amp; e^Tx &amp; = &amp; K \\
+&amp; x &amp; \geq &amp; 0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Here, <I>e</I> denotes a vector of ones of the appropriate dimension,
+and the <I>k</I>th column of <I>A</I> is the incidence vector of&nbsp;<I>S</I><SUP><I>k</I></SUP>.
+Note that <I>A</I> is an <!-- MATH: $n \times (2^n -1)$ -->
+<I>n</I>  x  (2<SUP><I>n</I></SUP> -1) matrix.
+<DL COMPACT>
+<DT>(a)
+<DD>(15 points)
+Since there is an exponential number of
+subsets of the objects, we use a column generation approach.
+Thus, we work with a Revised Master Problem (<I>RMP</I>),
+which only contains a subset of the variables.
+Show that we can determine whether the optimal solution to (<I>RMP</I>)
+is optimal in (<I>MP</I>) by solving
+a quadratic programming problem with integrality constraints.
+<DT>(b)
+<DD>Consider the problem with <!-- MATH: $S:=\{1,2,3,4,5\}$ -->
+<I>S</I>:={1,2,3,4,5} and <I>K</I>=3.
+The distances <I>d</I><SUB><I>ij</I></SUB> are given by the following matrix:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+D := \left( \begin{array}{rrrrr} 0 & 8 & 21 & 17 & 18 \\
+& 0 & 22 & 15 & 20 \\&& 0 & 2 & 4 \\
+&&& 0 & 3 \\&&&& 0
+\end{array}  \right) .
+\end{displaymath} -->
+
+<IMG
+ WIDTH="234" HEIGHT="146"
+ SRC="img10.gif"
+ ALT="\begin{displaymath}
+D := \left( \begin{array}{rrrrr} 0 &amp; 8 &amp; 21 &amp; 17 &amp; 18 \\
+&amp; ...
+... \\ &amp;&amp; 0 &amp; 2 &amp; 4 \\
+&amp;&amp;&amp; 0 &amp; 3 \\ &amp;&amp;&amp;&amp; 0
+\end{array} \right) .
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Initially, use the subsets {1}, {2}, {3}, {4},
+{5}, {1,2}, and {3,4} to provide the variables for
+(<I>RMP</I>).
+<DL COMPACT>
+<DT>i.
+<DD>(5 points)
+Show that there is only one feasible solution to (<I>RMP</I>).
+Call it&nbsp;<IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.gif"
+ ALT="$\bar{x}$">.
+<DT>ii.
+<DD>(10 points)
+The point <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.gif"
+ ALT="$\bar{x}$">
+is a degenerate BFS.
+Find a basis for which the reduced costs are all nonnegative.
+<DT>iii.
+<DD>(10 points)
+Show that <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.gif"
+ ALT="$\bar{x}$">
+does not solve (<I>MP</I>) by finding a column
+in (<I>MP</I>) with negative reduced cost. Add this column to (<I>RMP</I>)
+and solve using the revised simplex method.
+</DL></DL>
+
+<P>
+
+<DT>4.
+<DD>(25 points; each part is worth 5 points.)
+Consider the primal-dual pair of linear programming problems:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrclllrcll}
+\min & c^Tx &&&& \max & b^Ty \\
+\mbox{subject to} & Ax & = & b & \quad (P) \qquad &
+   \mbox{subject to} & A^Ty & \leq & c  & \quad (D)  \\
+& x & \geq & 0
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="548" HEIGHT="90"
+ SRC="img12.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrclllrcll}
+\min &amp; c^Tx &amp;&amp;&amp;&amp; \max &amp; b^Ty \\
+\...
+...o} &amp; A^Ty &amp; \leq &amp; c &amp; \quad (D) \\
+&amp; x &amp; \geq &amp; 0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <I>x</I> and <I>c</I> are <I>n</I>-vectors, <I>b</I> and <I>y</I> are <I>m</I>-vectors,
+and <I>A</I> is an <I>m</I>  x  <I>n</I> matrix.
+Let <IMG
+ WIDTH="91" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$\hat{b}=b-Ae$">
+and <IMG
+ WIDTH="77" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$\hat{c}=c-e$">,
+where <I>e</I> denotes a vector of appropriate dimension
+with every component is equal to one.
+Let <!-- MATH: $\hat{d}=c^Te+1$ -->
+<IMG
+ WIDTH="99" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.gif"
+ ALT="$\hat{d}=c^Te+1$">.
+Now consider the linear programming problem
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcccl}
+\min &&&&&&& (n+1)w \\
+\mbox{subject to} &&& Ax & - & bt & + & \hat{b} w & = & 0  \\
+& -A^Ty &&& + & ct & - & \hat{c} w & \geq & 0 \qquad (HLP)  \\
+& b^Ty & - & c^T x &&& + & \hat{d} w & \geq & 0 \\
+& -\hat{b}^Ty & + & \hat{c}^Tx & - & \hat{d} t &&& = & -(n+1)  \\
+&&& x,t & \geq & 0, && y,w &&\mbox{free,}
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="554" HEIGHT="173"
+ SRC="img16.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcccl}
+\min &amp;&amp;&amp;&amp;&amp;&amp;&amp; (n+1)w \\
+\mbox{subj...
+...(n+1) \\
+&amp;&amp;&amp; x,t &amp; \geq &amp; 0, &amp;&amp; y,w &amp;&amp;\mbox{free,}
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <I>t</I> and <I>w</I> are scalars.
+<DL COMPACT>
+<DT>(a)
+<DD>Find a feasible solution to (<I>HLP</I>) which satisfies all the inequalities strictly.
+<DT>(b)
+<DD>Show that  (<I>HLP</I>) is self-dual, that is, the dual to (<I>HLP</I>) is again the
+problem (<I>HLP</I>).
+<DT>(c)
+<DD>Show that the optimal value of (<I>HLP</I>) is zero.
+<DT>(d)
+<DD>Suppose the optimal solution to (<I>HLP</I>) is <!-- MATH: $(\tilde{x},\tilde{y},\tilde{t},\tilde{w})$ -->
+<IMG
+ WIDTH="85" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.gif"
+ ALT="$(\tilde{x},\tilde{y},\tilde{t},\tilde{w})$">,
+with <IMG
+ WIDTH="45" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.gif"
+ ALT="$\tilde{t}&gt;0$">
+and <IMG
+ WIDTH="52" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$\tilde{w}=0$">.
+How would you use this solution to find optimal solutions to (<I>P</I>) and (<I>D</I>)?
+<DT>(e)
+<DD>An interior point method can be used to find a <EM>strictly complementary</EM>
+optimal solution to (<I>HLP</I>).
+In such a solution, if the primal variable is equal to zero then
+the corresponding dual slack is strictly positive.
+Use this result to show that if <I>t</I>=0 in a strictly complementary
+optimal solution then either there exists a vector <IMG
+ WIDTH="49" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.gif"
+ ALT="$x\geq 0$">
+with <I>Ax</I>=0 and
+<I>c</I><SUP><I>T</I></SUP><I>x</I>&lt;0 or there exists a vector <I>y</I> with <IMG
+ WIDTH="73" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$A^Ty \leq 0$">
+and <I>b</I><SUP><I>T</I></SUP><I>y</I>&gt;0.
+What can you conclude about (<I>P</I>) and (<I>D</I>)?
+</DL></DL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2004-03-18</I>
+</ADDRESS>
+</BODY>
+</HTML>

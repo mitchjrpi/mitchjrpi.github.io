@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="gomory_mixed_integer.tex"> 
+<meta name="date" content="2017-02-20 09:08:00"> 
+<link rel="stylesheet" type="text/css" href="gomory_mixed_integer.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 128--><p class="noindent" >
+<!--l. 129--><p class="noindent" ><span 
+class="cmbx-12x-x-172">The Gomory Mixed Integer Cut</span><br />
+<a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a></div>
+<!--l. 135--><p class="noindent" >The derivation of the Gomory mixed integer cut exploits the mixed integer rounding approach for
+a simple two variable inequality. Let <span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x2124; </span>be a scalar integer variable, which can be negative. Let
+<span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sub><span 
+class="cmr-8">+</span></sub> be a nonnegative continuous variable. Let <span 
+class="cmmi-12">b </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D; </span>be a parameter. Assume <span 
+class="cmmi-12">y </span>and <span 
+class="cmmi-12">x </span>satisfy
+the constraint
+   <table 
+class="equation"><tr><td><a 
+ id="x1-2r1"></a>
+   <center class="math-display" >
+<img 
+src="gomory_mixed_integer0x.png" alt="y &#x2264; b + x.
+" class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+<!--l. 143--><p class="nopar" >
+Assume <span 
+class="cmmi-12">b </span>is non-integral, with fractional part&#x00A0;<span 
+class="cmmi-12">f</span>. Then a valid constraint is
+   <table 
+class="equation"><tr><td><a 
+ id="x1-3r2"></a>
+   <center class="math-display" >
+<img 
+src="gomory_mixed_integer1x.png" alt="          --1---
+y &#x2264; &#x230A;b&#x230B; + 1 - fx,
+" class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+<!--l. 148--><p class="nopar" >
+which cuts off the point (<span 
+class="cmmi-12">x,y</span>) = (0<span 
+class="cmmi-12">,b</span>) that satisfies the LP relaxation of&#x00A0;(<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.2var --></a>).
+<!--l. 154--><p class="indent" >   Assume we have a valid equality in nonnegative integer variables <span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x2124;</span><sub><span 
+class="cmr-8">+</span></sub><sup><span 
+class="cmmi-8">p</span></sup> and nonnegative
+continuous variables <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sub><span 
+class="cmr-8">+</span></sub><sup><span 
+class="cmmi-8">q</span></sup>:
+                                                                                         
+                                                                                         
+   <table 
+class="equation"><tr><td><a 
+ id="x1-4r3"></a>
+   <center class="math-display" >
+<img 
+src="gomory_mixed_integer2x.png" alt="      &#x2211;           &#x2211;
+yi +      ¯aijyj +      ¯aijxj = b.
+     j&#x2208;N1        j&#x2208;N2
+" class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+<!--l. 158--><p class="nopar" >
+The parameter <span 
+class="cmmi-12">b </span>is non-integral and the terms <span class="bar-css"><span 
+class="cmmi-12">a</span></span><sub><span 
+class="cmmi-8">ij</span></sub> are all nonzero. We relax this to the
+inequality
+   <table 
+class="equation"><tr><td><a 
+ id="x1-5r4"></a>
+   <center class="math-display" >
+<img 
+src="gomory_mixed_integer3x.png" alt="      &#x2211;           &#x2211;
+yi +      ¯aijyj +     a¯ijxj &#x2264; b.
+     j&#x2208;N         j&#x2208;N
+        1           2
+" class="math-display" ></center></td><td class="equation-label">(4)</td></tr></table>
+<!--l. 163--><p class="nopar" >
+Let <span 
+class="cmmi-12">f</span><sub><span 
+class="cmr-8">0</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0 denote the fractional part of&#x00A0;<span 
+class="cmmi-12">b </span>and let <span 
+class="cmmi-12">f</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0 denote the fractional parts of <span class="bar-css"><span 
+class="cmmi-12">a</span></span><sub><span 
+class="cmmi-8">ij</span></sub> for
+<span 
+class="cmmi-12">j </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">N</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">&#x222A; </span><span 
+class="cmmi-12">N</span><sub><span 
+class="cmr-8">2</span></sub>. The set <span 
+class="cmmi-12">N</span><sub><span 
+class="cmr-8">1</span></sub> can be divided using the sizes of the fractional parts&#x00A0;<span 
+class="cmmi-12">f</span><sub><span 
+class="cmmi-8">j</span></sub>:
+   <table 
+class="equation"><tr><td><a 
+ id="x1-6r5"></a>
+   <center class="math-display" >
+<img 
+src="gomory_mixed_integer4x.png" alt="       &#x2211;                &#x2211;             &#x2211;
+y +           ¯a y  +          ¯a  y +      ¯a  x  &#x2264; b.
+ i             ij j              ij j        ij j
+     j&#x2208;N1:fj&#x2264;f0        j&#x2208;N1:fj&#x003E;f0        j&#x2208;N2
+" class="math-display" ></center></td><td class="equation-label">(5)</td></tr></table>
+                                                                                         
+                                                                                         
+<!--l. 170--><p class="nopar" >
+By splitting <span class="bar-css"><span 
+class="cmmi-12">a</span></span><sub><span 
+class="cmmi-8">ij</span></sub> into integer and fractional parts for <span 
+class="cmmi-12">j </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">N</span><sub><span 
+class="cmr-8">1</span></sub>, this can be written equivalently
+as
+   <table 
+class="equation"><tr><td><a 
+ id="x1-7r6"></a>
+   <center class="math-display" >
+<img 
+src="gomory_mixed_integer5x.png" alt="y + &#x2211;           &#x230A;¯a &#x230B;y  + &#x2211;           &#x2308;¯a &#x2309;y
+ i     j&#x2208;N1:fj&#x2264;f0  ij  j      j&#x2208;N1:fj&#x003E;f0  ij  j
+         &#x2264; b - &#x2211;           f y +  &#x2211;          (1 - f )y  -  &#x2211;     ¯a  x .
+                 j&#x2208;N1:fj&#x2264;f0  j j     j&#x2208;N1:fj&#x003E;f0      j  j     j&#x2208;N2  ij j
+" class="math-display" ></center></td><td class="equation-label">(6)</td></tr></table>
+<!--l. 182--><p class="nopar" >
+This can be weakened by removing terms from the right hand side which must be nonpositive:
+   <table 
+class="equation"><tr><td><a 
+ id="x1-8r7"></a>
+   <center class="math-display" >
+<img 
+src="gomory_mixed_integer6x.png" alt="    &#x2211;                    &#x2211;
+yi +            &#x230A;¯aij&#x230B;yj +             &#x2308;¯aij&#x2309;yj
+       j&#x2208;N1:fj&#x2264;f0            j&#x2208;N1:fj&#x003E;f0
+         &#x2264; b + &#x2211;          (1 - fj)yj - &#x2211;          ¯aijxj.
+                 j&#x2208;N1:fj&#x003E;f0               j&#x2208;N2:¯aij&#x003C;0
+" class="math-display" ></center></td><td class="equation-label">(7)</td></tr></table>
+<!--l. 193--><p class="nopar" >
+(This is the step where we need <span 
+class="cmmi-12">y </span>to be nonnegative.)
+<!--l. 197--><p class="indent" >   This inequality is now in the form of (<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.2var --></a>), with the correspondence
+   <table 
+class="equation"><tr><td><a 
+ id="x1-9r8"></a>
+   <center class="math-display" >
+<img 
+src="gomory_mixed_integer7x.png" alt="            &#x2211;                    &#x2211;
+ y  =  yi +    j&#x2208;N1:fj&#x2264;f0&#x230A;¯aij&#x230B;yj +   j&#x2208;N1:fj&#x003E;f0&#x2308;¯aij&#x2309;yj
+       &#x2211;                       &#x2211;
+x   =     j&#x2208;N1:fj&#x003E;f0(1 - fj)yj -    j&#x2208;N2:¯aij&#x003C;0 ¯aijxj.
+" class="math-display" ></center></td><td class="equation-label">(8)</td></tr></table>
+<!--l. 205--><p class="nopar" >
+Thus the construction of (<a 
+href="#x1-3r2">2<!--tex4ht:ref: eq.mir --></a>) gives us the valid constraint
+   <table 
+class="equation"><tr><td><a 
+ id="x1-10r9"></a>
+   <center class="math-display" >
+<img 
+src="gomory_mixed_integer8x.png" alt="     &#x2211;                    &#x2211;
+yi +    j&#x2208;N1:fj&#x2264;f0&#x230A;¯aij&#x230B;yj +    j&#x2208;N1:fj&#x003E;f0&#x2308;¯aij&#x2309;yj
+                  &#x2211;           1- f      &#x2211;           ¯a
+         &#x2264;  &#x230A;b&#x230B; +   j&#x2208;N1:fj&#x003E;f0 1--f0jyj -   j&#x2208;N2:¯aij&#x003C;01-ijf0xj.
+" class="math-display" ></center></td><td class="equation-label">(9)</td></tr></table>
+<!--l. 216--><p class="nopar" >
+<!--l. 218--><p class="indent" >   Note that
+   <table 
+class="equation"><tr><td><a 
+ id="x1-11r10"></a>
+   <center class="math-display" >
+<img 
+src="gomory_mixed_integer9x.png" alt="        1 --fj                   1 --fj        f0(1---fj)
+&#x2308;¯aij&#x2309; - 1 - f0 = ¯aij + (1 - fj) - 1 - f0 = ¯aij -  1 - f0
+" class="math-display" ></center></td><td class="equation-label">(10)</td></tr></table>
+<!--l. 223--><p class="nopar" >
+and that
+   <table 
+class="equation"><tr><td><a 
+ id="x1-12r11"></a>
+                                                                                         
+                                                                                         
+   <center class="math-display" >
+<img 
+src="gomory_mixed_integer10x.png" alt="--¯aij--         f0¯aij-
+1 - f0 = ¯aij + 1 - f0.
+" class="math-display" ></center></td><td class="equation-label">(11)</td></tr></table>
+<!--l. 227--><p class="nopar" >
+Collecting variables on the left hand side, (<a 
+href="#x1-10r9">9<!--tex4ht:ref: eq.mig1 --></a>) is equivalent to
+   <table 
+class="equation"><tr><td><a 
+ id="x1-13r12"></a>
+   <center class="math-display" >
+<img 
+src="gomory_mixed_integer11x.png" alt="                                          (            )
+yi + &#x2211;          (¯aij - fj)yj + &#x2211;           ¯aij - f0(1-fj) yj
+       j&#x2208;N1:fj&#x2264;f0                 j&#x2208;N1:fj&#x003E;f0        1-f0
+                 &#x2211;          (      f0¯aij)
+              +    j&#x2208;N2:¯aij&#x003C;0 ¯aij + 1-f0  xj &#x2264; &#x230A;b&#x230B;.
+" class="math-display" ></center></td><td class="equation-label">(12)</td></tr></table>
+<!--l. 237--><p class="nopar" >
+<!--l. 241--><p class="indent" >   Thus, by exploiting the equality (<a 
+href="#x1-4r3">3<!--tex4ht:ref: eq.tableau --></a>), we can write (<a 
+href="#x1-10r9">9<!--tex4ht:ref: eq.mig1 --></a>) in the equivalent form
+   <table 
+class="equation"><tr><td><a 
+ id="x1-14r13"></a>
+   <center class="math-display" >
+<img 
+src="gomory_mixed_integer12x.png" alt="&#x2211;                  &#x2211;                      &#x2211;                   &#x2211;
+   j&#x2208;N1:f &#x2264;f0 fjyj +  j&#x2208;N1:f&#x003E;f0 f0(11--ffj)yj +    j&#x2208;N2:¯a &#x003E;0 ¯aijxj -    j&#x2208;N2:¯a  &#x003C;0 f10-¯afijxj &#x2265; f0.
+        j                 j        0              ij                 ij     0
+" class="math-display" ></center></td><td class="equation-label">(13)</td></tr></table>
+<!--l. 251--><p class="nopar" >
+                                                                                         
+                                                                                         
+<!--l. 253--><p class="indent" >   This is the <span 
+class="cmti-12">Gomory mixed integer cut</span>.
+   <h3 class="likesectionHead"><a 
+ id="x1-1000"></a>References</h3>
+<!--l. 1--><p class="noindent" >
+   <div class="thebibliography">
+   <p class="bibitem" ><span class="biblabel">
+ [1]<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
+ id="XNmWl"></a>G.&#x00A0;L. Nemhauser and L.&#x00A0;A. Wolsey. <span 
+class="cmti-12">Integer and Combinatorial Optimization</span>. John
+   Wiley, New York, 1988.
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+ [2]<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
+ id="Xwolsey3"></a>L.&#x00A0;A. Wolsey. <span 
+class="cmti-12">Integer Programming</span>. John Wiley, New York, 1998.
+</p>
+   </div>
+    
+</body></html> 
+
+                                                                                         
+
+

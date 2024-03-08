@@ -1,0 +1,132 @@
+reset;
+display _total_solve_elapsed_time;
+model lpccRT.mod;
+data lpcc.dat;
+
+param temp;
+param nviol;
+param ftrue{i in 1..m};
+
+problem LPrelax: x, y, w, LPCCobj, bcon, qcon;
+problem LPint: x, y, w, z, LPCCobj, bcon, qcon, yz, wz;
+
+problem LPrelaxRT: x, y, w, f, fbar, xf, xfbar, yf, yfbar, wf, wfbar,
+  LPCCobj, bcon, qcon,
+  bconf, bconfbar, qconf, qconfbar, ffbar, xffbar, yffbar, qffbar,
+  yfid, yfidbar, wfid, wfidbar;
+
+problem LPrelaxRTl: x, y, w, f, fbar, xf, xfbar, yf, yfbar, wf, wfbar,
+  LPCCobj, bcon, qcon,
+  bconfl, bconfbarl, qconfl, qconfbarl, ffbar, xffbarl, yffbarl, qffbarl,
+  yfid, yfidbar, wfid, wfidbar;
+
+#
+# solve the LP relaxation
+#
+
+printf "Solve LP relaxation\n";
+solve LPrelax;
+display y, w;
+display _nvars, _ncons;
+display _total_solve_elapsed_time;
+printf "\n\n";
+
+#
+# construct the set of lifted variables
+#
+
+let nviol := 0;
+
+for {i in 1..m} {
+   if y[i] * w[i] >= 0.01 then {
+     let LIFTS := LIFTS union {i};
+     let nviol := nviol +1;
+   }
+}
+display LIFTS;
+display nviol;
+
+#
+# solve the lifted LP relaxation with just the selected lifts
+#
+
+printf "Solve lifted LP relaxation with selected lifts\n";
+solve LPrelaxRTl;
+
+for {i in 1..m} {
+#     let ftrue[i] := -2;
+#}
+#for {i in LIFTS} {
+     let ftrue[i] := 0;
+     if y[i] + w[i] >= 0.000001 then {
+       let ftrue[i] := y[i] / (y[i]+w[i])
+     }
+}
+
+display y, w, f, ftrue;
+display _nvars, _ncons;
+
+let nviol := 0;
+
+for {i in 1..m} {
+   if y[i] * w[i] >= 0.01 then {
+     let nviol := nviol +1;
+   }
+}
+display nviol;
+
+
+display _total_solve_elapsed_time;
+
+printf "\n\n";
+
+#
+# solve the lifted LP relaxation
+#
+
+printf "Solve lifted LP relaxation\n";
+solve LPrelaxRT;
+
+for {i in 1..m} {
+   let ftrue[i] := 0;
+   if y[i] + w[i] >= 0.000001 then {
+     let ftrue[i] := y[i] / (y[i]+w[i])
+   }
+}
+
+display y, w, f, ftrue;
+display _nvars, _ncons;
+
+let nviol := 0;
+
+for {i in 1..m} {
+   if y[i] * w[i] >= 0.01 then {
+     let nviol := nviol +1;
+   }
+}
+display nviol;
+
+display _total_solve_elapsed_time;
+
+printf "\n\n";
+
+#
+# solve the LPCC as an integer program
+#
+
+printf "Solve the LPCC as an IP\n";
+solve LPint;
+
+display y, w;
+display _nvars, _ncons;
+
+let nviol := 0;
+
+for {i in 1..m} {
+   if y[i] * w[i] >= 0.01 then {
+     let nviol := nviol +1;
+   }
+}
+display nviol;
+
+display _total_solve_elapsed_time;

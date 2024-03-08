@@ -1,0 +1,338 @@
+\documentclass[11pt]{article}
+
+\usepackage{fullpage}
+
+\pagestyle{empty}
+
+%\oddsidemargin -.5in
+%\textwidth 7.5in
+%\textheight 10in
+%\topmargin -30pt
+%\headsep 0in
+%\headheight 0in
+
+\newcommand{\til}{\char '176}
+\newcommand{\re}{I\!\!R}
+\newcommand{\binary}{I\!\! B}
+
+
+\begin{document}
+
+\begin{center}
+  \begin{large}
+     MATP6620 / DSES6760 Combinatorial Optimization and Integer Programming \\
+       Homework 4.
+  \end{large}
+\end{center}
+
+\begin{flushright}
+   Due:  Friday, March 16, 2007.  \\
+Penalty for late homeworks: 10\% for each day or part of a day.
+\end{flushright}
+
+%The {\em linear ordering problem} is the subject of questions~\ref{q.linord}--\ref{q.facet}.
+         Given $n$ objects,
+         we want to find an {\em ordering} (or permutation) of the objects.
+%         Mathematically, $\sigma$ is a 1-1 mapping from the set of integers
+%         $1,\ldots,n$ onto itself, and $i$ is before $j$ in the ordering
+%         if and only if $\sigma(i)<\sigma(j)$.
+%%         The ordering should be {\em consistent};
+%%         that is, if $i$ is before $j$ and $j$ is before $k$ then $i$ should
+%%         be before~$k$.
+%         We get a reward $w_{ij}$ if $i$ is somewhere before $j$
+%         and a reward $w_{ji}$ if $j$ is somewhere before~$i$.
+%         The objective is to maximize the total reward.
+%         \begin{displaymath}
+%           \begin{array}{cc}
+%              \sum  & w_{ij}.  \\
+%              \mbox{all pairs $i$, $j$,}  &  \\
+%              \mbox{$i$ before $j$}
+%           \end{array}
+%         \end{displaymath}
+         We can model the set of orderings by introducing
+         variables $x_{ij}$ for $1 \leq i < j \leq n$  defined as follows:
+         \begin{displaymath}
+            x_{ij} = \left\{ \begin{array}{ll}
+                        1 & \mbox{if $i$ is before $j$} \\
+                        0 & \mbox{otherwise}
+                     \end{array}  \right.
+         \end{displaymath}
+%         The resulting model is
+%         \begin{displaymath}
+%           \begin{array}{lccl}
+%              \max & \sum_{i=1}^n & \sum_{j=1}^n  & w_{ij}x_{ij}  \\
+%              && j \neq i & \\
+%             \mbox{subject to} &&& x \mbox{ is the incidence vector of an ordering}
+%           \end{array}
+%         \end{displaymath}
+%         Let $S$ be the set of points $x$ which correspond to orderings;
+%         let $conv(S)$ be the convex hull of~$S$.
+%        This formulation has $n(n-1)$ variables.
+%        You may assume that the dimension of $conv(S)$ is~$n(n-1)/2$.
+         Given two objects $i$ and $j$, either $i$ is before $j$
+         or $j$ is before~$i$.
+The set of feasible solutions can be written as
+\begin{displaymath}
+S :=
+\left\{ x \in \binary^{n(n-1)/2} :
+\begin{array}{rcll}
+x_{ij} + x_{jk} - x_{ik} & \leq & 1 & \mbox{for }1 \leq i < j < k \leq n  \\
+- x_{ij} - x_{jk} + x_{ik} & \leq & 0 & \mbox{for } 1 \leq i < j < k \leq n  \\
+\end{array}   \right\}
+\end{displaymath}
+The inequalities are called triangle inequalities.
+
+\begin{enumerate}
+\item Show that $S$ is full dimensional.
+\item Show that the triangle inequality $x_{ij} + x_{jk} - x_{ik}  \leq  1$
+defines a facet of conv$(S)$ for any $1 \leq i < j < k \leq n $.
+\item Let $1 \leq i < j < k < l \leq n$.
+Show that the valid inequality $x_{ij} + x_{jk} + x_{kl} - x_{il} \leq 2$ is
+not a facet of~conv$(S)$.
+\item Solve the integer program $\min\{c^Tx : x \in S\}$ with $n=8$ using a cutting plane
+algorithm, adding violated triangle inequalities as cutting planes.
+The objective function coefficients $c$ are as follows:
+\begin{displaymath}
+\begin{array}{l|rrrrrrrr}
+    & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8  \\  \hline
+1  & * &-3 & 2 &-4 & 1 & 3 &-1 &-2  \\
+2  & * & * &-3 & 2 & 4 &-1 &-5 & 2  \\
+3  & * & * & * & 1 &-4 & 5 & 1 &-3  \\
+4  & * & * & * & * &-3 & 1 & 2 &-3  \\
+5  & * & * & * & * & * & 3 &-1 &-1  \\
+6  & * & * & * & * & * & * &-1 & 4  \\
+7  & * & * & * & * & * & * & * & 5  \\
+8  & * & * & * & * & * & * & * & *
+\end{array}
+\end{displaymath}
+What is the optimal ordering?
+(Hint: the optimal value is $-22$.)
+%   \item  Consider the 0-1 equality knapsack problem
+%          \begin{displaymath}
+%             \max \{-x_{n+1} : 2x_1 + 2x_2 + \ldots + 2x_n + x_{n+1} = n,
+%                         x \in B^{n+1} \},
+%          \end{displaymath}
+%          where $n$ is an odd integer.
+%          We wish to solve this problem using a branch and bound algorithm
+%          with linear programming relaxations.
+%          Assume
+%          we always branch using variable dichotomies
+%          (ie, add the constraints $x_i = 0$ or $x_i = 1$ for some $i$).
+%          Show that an exponential number of nodes of the
+%          branch and bound tree must be considered to solve the problem.
+%%          What is the minimum number of nodes we need if we can separate
+%%          using any linear inequality?
+
+%   \item  Use branch-and-bound with LP relaxations to solve the knapsack problem
+%          \begin{displaymath}
+%           \begin{array}{lrrrrl}
+%            \max          &  20x_1 & + 30x_2 & + 40x_3 & + 42x_4  \\
+%            \mbox{s.t.}   &    x_1 & +  3x_2 & +  5x_3 & +  6x_4 & \leq 7 \\
+%                          &&&&     x_i & \mbox{binary,}
+%           \end{array}
+%          \end{displaymath}
+%          branching using variable dichotomies.
+%          Give a valid cover inequality violated by your solution to the root node.
+%          What do you get if you lift this inequality?
+
+%   \item \label{q.linord}
+%         \begin{enumerate}
+%           \item Show that $x_{ij}+x_{ji}=1$ is valid for every ordering. (Here, $i \neq j$.)
+%              \label{valideq}
+%%           \item Show that the dimension of $conv(S)$ is~$n(n-1)/2$.
+%%              (Hint: This means that only linear combinations of the
+%%              equalities given in part~\ref{valideq} are valid throughout~$S$.
+%%              Assume the contrary and derive a contradiction.)
+%           \item Show that the inequality $x_{ij}+x_{jk}+x_{ki}\leq 2$
+%              is valid for $S$ for any $i$, $j$, and~$k$.   \label{dicycle}
+%              (Here, $i \neq j \neq k \neq i$.)
+%        \end{enumerate}
+%%           \item By lifting, or otherwise, show that the inequality
+%%              $x_{ij}+x_{jk}+x_{ki}\leq 2$ is a facet of $conv(S)$ for any
+%%              $i$, $j$, and~$k$.
+%           \item %This question concerns the linear ordering problem of question~\ref{q.linord}.
+%           Let $U=\{u_1,\ldots,u_k\}$ and $W=\{w_1,\ldots,w_k\}$
+%              be two subsets of the objects. Show that the inequality
+%              \begin{displaymath}
+%                \sum_{u_i \in U, w_j \in W, i \neq j} x_{w_j,u_i}
+%                   + \sum_{i=1}^k x_{u_i,w_i} \leq k^2-k+1
+%              \end{displaymath}
+%              is valid for~$S$. (Note that the inequality includes $k$ edges pointing
+%up in the picture and $k(k-1)=k^2-k$ edges pointing down.)
+% \label{fence.ineq}
+
+%\begin{center}
+%\begin{picture}(340,200)
+%\put(20,50){\circle*{5}}
+%\put(20,150){\circle*{5}}
+%\put(120,50){\circle*{5}}
+%\put(120,150){\circle*{5}}
+%\put(220,50){\circle*{5}}
+%\put(220,150){\circle*{5}}
+%\put(320,50){\circle*{5}}
+%\put(320,150){\circle*{5}}
+
+%\put(20,35){$u_1$}
+%\put(120,35){$u_2$}
+%\put(220,35){$u_3$}
+%\put(320,35){$u_4$}
+%\put(20,160){$w_1$}
+%\put(120,160){$w_2$}
+%\put(220,160){$w_3$}
+%\put(320,160){$w_4$}
+
+%\put(20,50){\vector(0,1){97}}
+%\put(120,50){\vector(0,1){97}}
+%\put(220,50){\vector(0,1){97}}
+%\put(320,50){\vector(0,1){97}}
+
+%\put(20,150){\vector(1,-1){98}}
+%\put(20,150){\vector(2,-1){198}}
+%\put(20,150){\vector(3,-1){298}}
+
+%\put(120,150){\vector(1,-1){98}}
+%\put(120,150){\vector(2,-1){198}}
+%\put(120,150){\vector(-1,-1){98}}
+
+%\put(220,150){\vector(1,-1){98}}
+%\put(220,150){\vector(-2,-1){198}}
+%\put(220,150){\vector(-1,-1){98}}
+
+%\put(320,150){\vector(-1,-1){98}}
+%\put(320,150){\vector(-2,-1){198}}
+%\put(320,150){\vector(-3,-1){298}}
+%\end{picture}
+%\end{center}
+
+%           \item Find a point $\bar{x}$, $0\leq \bar{x}_i \leq 1$,
+%              which satisfies all the equalities in part~\ref{valideq}
+%              and all the inequalities in part~\ref{dicycle},
+%              but which violates the inequality in question~\ref{fence.ineq}.
+%             (Hint: such a point exists when $k=3$.)
+
+%\item  \label{q.facet}
+%%Consider again the linear ordering problem of Question~\ref{q.linord}.
+%We can use part~\ref{valideq} to eliminate half the variables,
+%namely those $x_{ij}$ with $j<i$.
+%The resulting polytope is full-dimensional.
+%The valid inequality from part~\ref{dicycle} for objects 1, 2, and 3 is then
+%\begin{displaymath}
+%              x_{12}+x_{23}-x_{13}\leq 1.
+%\end{displaymath}
+%Show that this defines a facet of this full-dimensional polytope.
+
+%Given the complete graph $K_n=:(V,E)$ on $n$ vertices,
+%a {\bf clustering}
+%of the vertices is obtained by choosing an integer $p$
+%and a partition of the vertices into $p$ sets $V_1,\ldots,V_p$ satisfying:
+%\begin{itemize}
+% \item $V_s \cap V_t = \emptyset$ for $1\leq s < t \leq p$.
+% \item $\cup_{s=1}^p V_s=V$.
+%\end{itemize}
+%Note that $p$ is {\em not fixed}.
+%The {\em incidence vector} of this clustering is defined by
+%\begin{displaymath}
+%  x_e = \left\{ \begin{array}{ll} 1 & \mbox{if the two endpoints of $e$
+%               are in the same set $V_s$}  \\  0 & \mbox{otherwise.}
+%        \end{array}  \right.
+%\end{displaymath}
+%Let edge $e$ have weight~$w_e$.
+%The {\bf clustering problem} for this set of edge weights is then
+%\begin{displaymath}
+%\begin{array}{ll}
+% \max & z:=\sum_{e\in E}w_ex_e \\
+%  \mbox{subject to } & x \mbox{ is the incidence vector of a}
+%                         \mbox{ clustering}
+%\end{array}
+%\end{displaymath}
+%The edge weights $w_e$ can be positive or negative.
+%The weights $w_e$ measure the ``similarity'' between two vertices:
+%the larger this value, the more likely the vertices should be
+%in the same subset~$V_s$, and if $w_e$ is very negative,
+%the vertices will probably be in different sets in the optimal
+%solution.
+
+%Let $Q$ be the set of incidence vectors of clusterings
+%for $K_n$.
+%\begin{enumerate}
+% \item
+%Show that if
+%all the edge weights are positive, the optimal solution
+%is to put all the vertices in one set,
+%giving a value $z=\sum_{e \in E}w_e$.
+%Show that if all the edge weights are negative, the optimal solution is
+%to put each vertex in its own set, giving a value $z=0$.
+% \item Show that the dimension of $Q$ is $n(n-1)/2$, that is, $Q$
+%is full dimensional.
+% \item Show that the inequality
+%\label{q_ineq}
+%\begin{equation}  \label{eqn.cluster}
+%  x_{ij} + x_{jk} - x_{ik}  \leq  1, \;\;  1 \leq i<j<k \leq n
+%\end{equation}
+%is valid for any point in Q.
+% \item Show that inequality $(\ref{eqn.cluster})$ defines
+%a facet of the convex hull of~$Q$.
+% \item \label{part.k4}
+%%Take $n=4$.
+%%Choose edge weights $w_e$ so that
+%%the optimal solution to the following relaxation of the
+%%clustering problem is not in the convex hull of~$Q$:
+%%One LP relaxation of the clustering problem is the following:
+%%\begin{displaymath}
+%% \begin{array}{lccll}
+%%  \max & \sum_{e \in E} w_e x_e \\
+%%  \mbox{subject to} &
+%It follows from question~\ref{q_ineq} that any point in~$Q$ satisfies the
+%{\em triangle inequalities:}
+%\begin{displaymath}
+%\begin{array}{ccll}
+% x_{ij}+x_{jk}-x_{ik} & \leq & 1 & \mbox{ for }
+%      1 \leq i < j < k \leq n \\
+% x_{ij}-x_{jk}+x_{ik} & \leq & 1 & \mbox{ for }
+%      1 \leq i < j < k \leq n \\
+% -x_{ij}+x_{jk}+x_{ik} & \leq & 1 & \mbox{ for }
+%      1 \leq i < j < k \leq n.
+% \end{array}
+%\end{displaymath}
+%%\item
+%The point $\bar{x}$ given by
+%\begin{displaymath}
+%\bar{x}_e = \left\{ \begin{array}{ll}
+%\frac{1}{2} & \mbox{if }
+%e=(1,2), (1,3), (1,4) \\
+%0 & \mbox{otherwise}
+%\end{array}  \right.
+%\end{displaymath}
+%satisfies these constraints.
+%Find a valid inequality that cuts off the point~$\bar{x}$.
+% \item
+%Solve the five vertex
+%instance of the clustering problem given in the AMPL files
+%\begin{quote}
+%http://www.math.rpi.edu/\til mitchj/matp6620/hw4/hw4q.mod
+%\end{quote}
+%and
+%\begin{quote}
+%http://www.rpi.edu/\til mitchj/matp6620/hw4/hw4q.dat
+%\end{quote}
+%using a cutting plane approach, where the only cuts added are violated triangle
+%inequalities as in question~\ref{part.k4}.
+%Note that the initial relaxation contains just simple bound constraints.
+
+%
+
+\end{enumerate}
+
+\vfill
+
+\begin{tabular}{@{\hspace{.5in}}l}
+   John Mitchell  \\
+   Amos Eaton 325  \\
+   x6915.  \\
+   mitchj@rpi.edu  \\
+   Office hours:
+   Tuesday 2pm -- 3pm, Wednesday 11am -- noon.
+\end{tabular}
+
+
+\end{document}

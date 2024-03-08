@@ -1,0 +1,111 @@
+\documentstyle[12pt]{article}
+
+\oddsidemargin -.5in
+\textwidth 7.5in
+\textheight 9in
+\topmargin -30pt
+
+\begin{document}
+
+\setcounter{page}{0}
+
+\begin{tabular}{cl}
+  \hspace{5in} & Name:
+\end{tabular}
+
+\begin{center}
+  67.612  Combinatorial Optimization and Integer Programming, Spring 91.
+\end{center}
+
+\begin{center}
+  Midterm Exam, Tuesday, March 5, 1991.
+\end{center}
+
+Please do all five problems. Show all work. No books or calculators allowed.
+You may use any result from class, the homeworks, or the texts.
+
+\vspace{2in}
+
+\begin{center}
+\begin{tabular}{c|@{\hspace*{1in}}c}
+  Q1 & \qquad \\ \hline
+  Q2 & \qquad \\ \hline
+  Q3 & \qquad \\ \hline
+  Q4 & \qquad \\ \hline
+  Q5 & \qquad \\ \hline \hline
+  Total &
+\end{tabular}
+\end{center}
+
+\pagebreak
+
+\begin{enumerate}
+   \item (20 points)
+     Let $G=(V,E)$ be a bipartite graph with $(W_1,W_2)$ being a
+     bipartition of $V$. Assume $\mid W_1\mid =\mid W_2\mid =n$.
+     Show that $G$ has a matching of cardinality $n$ if
+     \begin{displaymath}
+       \mid \{ \mbox{neighbours of } S \} \mid =
+       \mid \{u\in W_2: (v,u) \in E \mbox{ for some } v \in S \}\mid  \; \geq \;
+               \mid S\mid
+     \end{displaymath}
+     for all $S \subseteq W_1$.
+   \pagebreak
+   \item (15 points)  Show that the graph feasibility problem
+     \begin{quote}
+       Is $G$ bipartite?
+     \end{quote}
+     is in both $NP$ and $CoNP$.
+   \pagebreak
+   \item (25 points)  Consider the graph
+     \vspace{1in}
+     \begin{enumerate}
+       \item (5 points) Give a maximum cardinality matching for this graph.
+       \item (5 points) \label{formIP}
+         Formulate the problem of finding the maximum cardinality
+         matching in the form
+         $\max\{c^Tx : Ax \leq b, x \geq 0, x \mbox{ integer} \}$.
+       \item (5 points) Give an optimal solution
+         to the linear programming relaxation of the integer
+         program given in part~\ref{formIP}.
+       \item (5 points) Suggest an additional constraint for the LP relaxation.
+       \item (5 points) Formulate and solve the dual of the LP relaxation with
+         the additional constraint.
+         (The dual of the problem $\max\{c^Tx : Ax \leq b, x \geq 0 \}$ is
+         $\min\{b^Ty : A^Ty \geq c, y \geq 0 \}$.)
+     \end{enumerate}
+   \pagebreak
+   \item (15 points)  Let $G=(V,E)$ be a graph with weights $w_e$ on the edges.
+     Assume $w_{e_i}\neq w_{e_j}$ for any pair of edges $e_i$ and $e_j$.
+     Let $T$ be a minimum weight
+     spanning tree on this graph.  Divide the vertices into two sets
+     $U$ and $V\setminus U$. Show that $T$ must contain the shortest
+     edge between $U$ and $V \setminus U$.
+   \pagebreak
+   \item (25 points. Each part is worth five points.)
+     Give short justifications for your answers.
+     \begin{enumerate}
+       \item An instance $d$ of a feasibility problem $X \in NP$
+         depends upon two positive integer parameters $m$ and $n$.
+         Assume $d$ requires storage $m2^n$ in binary, and that we
+         know an algorithm $A$ which solves $d$ in time $2^{m+n}$.
+         \begin{enumerate}
+           \item Can we conclude $X$ is in $P$?
+             \vspace*{1in}
+           \item Can we conclude $X$ is not in $P$?
+             \vspace*{1in}
+           \item Assume we know in addition that $m\leq n$ for every
+             instance $d$ of $X$.  What can we conclude now?
+             \vspace*{1in}
+         \end{enumerate}
+       \item
+         \begin{enumerate}
+           \item Is the given $(s,t)$ flow optimal? (The numbers on the
+             arcs indicate the capacity and the flow.)
+             \vspace*{1.8in}
+           \item Is the given matching optimal?
+         \end{enumerate}
+     \end{enumerate}
+\end{enumerate}
+
+\end{document}

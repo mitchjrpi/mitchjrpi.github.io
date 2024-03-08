@@ -1,0 +1,843 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw6sol.tex"> 
+<meta name="date" content="2017-05-01 09:12:00"> 
+<link rel="stylesheet" type="text/css" href="hw6sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 30--><p class="noindent" >
+<!--l. 33--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6620" ><span 
+class="cmr-12x-x-120">MATP6620 / ISYE6760</span><br />
+<span 
+class="cmr-12x-x-120">Combinatorial Optimization and Integer Programming</span></a><br />
+<span 
+class="cmr-12x-x-120">Homework 6.</span><br />
+<span 
+class="cmbx-12x-x-120">Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 38--><p class="noindent" >
+ Due: Friday, April 28, 2017.<br />
+Penalty for late homeworks: 10% for each day or part of a day.</div>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">Nemhauser and Wolsey, page 430, question 17, parts (i) and (ii).
+      <!--l. 107--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 110--><p class="noindent" >The integer program is a facility location problem. It is:
+      <table 
+class="equation"><tr><td><a 
+ id="x1-4r1"></a>
+      <center class="math-display" >
+      <img 
+src="hw6sol0x.png" alt="z = minx,y  &#x2211;    &#x2211;     cijyij + &#x2211;     fjxj
+              i&#x2208;I   j&#x2208;N            j&#x2208;N
+subject to   &#x2211;
+D :         &#x2211;   j&#x2208;N yij  =   1        for all i &#x2208; I
+C :            i&#x2208;I diyij  &#x2264;   sjxj      for all j &#x2208; N
+B :            0 &#x2264; yij  &#x2264;   xj       for all i &#x2208; I,j &#x2208; N
+            &#x2211;               &#x2211;
+S :           j&#x2208;N sjxj  &#x2265;     i&#x2208;I di
+I :                 xj  &#x2208;   {0,1}    for all j &#x2208; N
+      " class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+      <!--l. 121--><p class="nopar" >
+                                                                                         
+                                                                                         
+      <!--l. 123--><p class="noindent" ><span 
+class="cmbx-12">(i) </span>We have
+      <table 
+class="equation"><tr><td><a 
+ id="x1-5r2"></a>
+      <center class="math-display" >
+      <img 
+src="hw6sol1x.png" alt=" I           &#x2211;     &#x2211;             &#x2211;
+z  = minx,y     i&#x2208;I   j&#x2208;N cijyij +   j&#x2208;N fjxj
+subject to
+D  :           &#x2211;     yij =   1        for all i &#x2208; I
+              &#x2211;  j&#x2208;N
+C  :            i&#x2208;I diyij &#x2264;  sjxj     for all j &#x2208; N
+B  :         &#x2211;   0 &#x2264; yij &#x2264;   x&#x2211;j       for all i &#x2208; I,j &#x2208; N
+S :             j&#x2208;N sjxj  &#x2265;     i&#x2208;I di
+      " class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+      <!--l. 135--><p class="nopar" >
+      and
+      <table 
+class="equation"><tr><td><a 
+ id="x1-6r3"></a>
+      <center class="math-display" >
+      <img 
+src="hw6sol2x.png" alt="                 &#x2211;    &#x2211;             &#x2211;            &#x2211;       (&#x2211;            )
+zSD (u ) = minx,y             cijyij +       fjxj +       ui        yij - 1
+                   i&#x2208;I  j&#x2208;N           j&#x2208;N           i&#x2208;I       j&#x2208;N
+subject to       &#x2211;
+C :                i&#x2208;I diyij &#x2264;   sjxj   for all j &#x2208; N
+B  :                0 &#x2264; yij  &#x2264;   xj     for all i &#x2208; I,j &#x2208; N
+I :                     x   &#x2208;   {0,1}  for all j &#x2208; N
+                         j
+      " class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+      <!--l. 148--><p class="nopar" >
+      with
+      <center class="math-display" >
+      <img 
+src="hw6sol3x.png" alt="zSD =  max zSD (u).
+       u
+      " class="math-display" ></center>
+      <!--l. 152--><p class="nopar" >
+      We interpret <span 
+class="cmmi-12">z</span><sup><span 
+class="cmmi-8">I</span></sup> as the LP relaxation of the original problem, so we keep the constraints
+      0 <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>1 for all <span 
+class="cmmi-12">j </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">N</span>. (Constraint B implies <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0, but there may be an advantage to
+      taking some <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmmi-12">&#x003E; </span>1 for constraint C, for some choices of the parameters.)
+      <!--l. 159--><p class="noindent" >Note that <span 
+class="cmmi-12">z</span><sup><span 
+class="cmmi-8">I</span></sup> = <span 
+class="cmmi-12">z</span><sup><span 
+class="cmmi-8">IS</span></sup> since constraint <span 
+class="cmmi-12">S </span>is redundant in (<a 
+href="#x1-5r2">2<!--tex4ht:ref: eq.lpr --></a>) since it can be obtained by
+      summing <span 
+class="cmmi-12">C </span>over all <span 
+class="cmmi-12">j </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">N </span>and exploiting&#x00A0;<span 
+class="cmmi-12">D</span>.
+      <!--l. 162--><p class="noindent" >Thus, the required result will follow from Theorem 6.2 on page 327 of the text if we can show
+      that the extreme points of the LP relaxation of (<a 
+href="#x1-6r3">3<!--tex4ht:ref: eq.LRzSD --></a>) are all binary in&#x00A0;<span 
+class="cmmi-12">x</span>. Let (<span class="bar-css"><span 
+class="cmmi-12">x</span></span><span 
+class="cmmi-12">,</span><span class="bar-css"><span 
+class="cmmi-12">y</span></span>) be
+      a feasible solution to the LP relaxation of&#x00A0;(<a 
+href="#x1-6r3">3<!--tex4ht:ref: eq.LRzSD --></a>) with 0 <span 
+class="cmmi-12">&#x003C;</span> <span class="bar-css"><span 
+class="cmmi-12">x</span></span><sub><span class="bar-css"><span 
+class="cmmi-8">j</span></span></sub> <span 
+class="cmmi-12">&#x003C; </span>1 for some <span class="bar-css"><span 
+class="cmmi-12">j</span></span> <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">N</span>. We construct
+      two new feasible points to the LP relaxation of&#x00A0;(<a 
+href="#x1-6r3">3<!--tex4ht:ref: eq.LRzSD --></a>):
+           <ul class="itemize1">
+           <li class="itemize">(<span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">0</span></sup><span 
+class="cmmi-12">,y</span><sup><span 
+class="cmr-8">0</span></sup>): set <span 
+class="cmmi-12">x</span><sub><span class="bar-css">
+<span 
+class="cmmi-8">j</span></span></sub><sup><span 
+class="cmr-8">0</span></sup> = 0, <span 
+class="cmmi-12">y</span><sub>
+<span 
+class="cmmi-8">i</span><span class="bar-css"><span 
+class="cmmi-8">j</span></span></sub><sup><span 
+class="cmr-8">0</span></sup> = 0 for <span 
+class="cmmi-12">i </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">I</span>, with <span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmmi-8">j</span></sub><sup><span 
+class="cmr-8">0</span></sup> = <span class="bar-css"><span 
+class="cmmi-12">x</span></span><sub>
+<span 
+class="cmmi-8">j</span></sub> for <span 
+class="cmmi-12">j </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">N</span>, <span 
+class="cmmi-12">j</span><span 
+class="cmmi-12">&#x2260;</span><span class="bar-css"><span 
+class="cmmi-12">j</span></span> and <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">ij</span></sub><sup><span 
+class="cmr-8">0</span></sup> = <span class="bar-css"><span 
+class="cmmi-12">y</span></span><sub>
+<span 
+class="cmmi-8">ij</span></sub>
+           for <span 
+class="cmmi-12">i </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">I</span>, <span 
+class="cmmi-12">j </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">N</span>, <span 
+class="cmmi-12">j</span><span 
+class="cmmi-12">&#x2260;</span><span class="bar-css"><span 
+class="cmmi-12">j</span></span>.
+           </li>
+           <li class="itemize">(<span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">1</span></sup><span 
+class="cmmi-12">,y</span><sup><span 
+class="cmr-8">1</span></sup>): set <span 
+class="cmmi-12">x</span><sub><span class="bar-css">
+<span 
+class="cmmi-8">j</span></span></sub><sup><span 
+class="cmr-8">1</span></sup>  = 1, <span 
+class="cmmi-12">y</span><sub>
+<span 
+class="cmmi-8">i</span><span class="bar-css"><span 
+class="cmmi-8">j</span></span></sub><sup><span 
+class="cmr-8">1</span></sup>  = <img 
+src="hw6sol4x.png" alt="¯yi¯j
+x¯¯j"  class="frac" align="middle">  for <span 
+class="cmmi-12">i </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">I</span>, with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub><sup><span 
+class="cmr-8">1</span></sup>  = <span class="bar-css"><span 
+class="cmmi-12">x</span></span><sub>
+<span 
+class="cmmi-8">j</span></sub>  for <span 
+class="cmmi-12">j </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">N</span>, <span 
+class="cmmi-12">j</span><span 
+class="cmmi-12">&#x2260;</span><span class="bar-css"><span 
+class="cmmi-12">j</span></span> and
+           <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">ij</span></sub><sup><span 
+class="cmr-8">1</span></sup> = <span class="bar-css"><span 
+class="cmmi-12">y</span></span><sub>
+<span 
+class="cmmi-8">ij</span></sub> for <span 
+class="cmmi-12">i </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">I</span>, <span 
+class="cmmi-12">j </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">N</span>, <span 
+class="cmmi-12">j</span><span 
+class="cmmi-12">&#x2260;</span><span class="bar-css"><span 
+class="cmmi-12">j</span></span>.</li></ul>
+      <!--l. 177--><p class="noindent" >Then
+      <center class="math-display" >
+      <img 
+src="hw6sol5x.png" alt="¯x = (1 - ¯x¯j)x0 + ¯x¯jx1,
+      " class="math-display" ></center>
+      <!--l. 180--><p class="nopar" >
+      so <span class="bar-css"><span 
+class="cmmi-12">x</span></span> is not an extreme point of the LP relaxation of&#x00A0;(<a 
+href="#x1-6r3">3<!--tex4ht:ref: eq.LRzSD --></a>). Thus, by Thm 6.2 we have
+      <span 
+class="cmmi-12">z</span><sup><span 
+class="cmmi-8">I</span></sup> = <span 
+class="cmmi-12">z</span><sub>
+<span 
+class="cmmi-8">D</span></sub><sup><span 
+class="cmmi-8">S</span></sup>.
+      <!--l. 185--><p class="noindent" ><span 
+class="cmbx-12">(ii) </span>We have
+      <table 
+class="equation"><tr><td><a 
+ id="x1-7r4"></a>
+      <center class="math-display" >
+      <img 
+src="hw6sol6x.png" alt="                &#x2211;     &#x2211;             &#x2211;            &#x2211;        (&#x2211;               )
+zSC (u ) = minx,y    i&#x2208;I   j&#x2208;N cijyij +   j&#x2208;N fjxj +    j&#x2208;N ui    i&#x2208;I diyij - sjxj
+subject to
+D  :            &#x2211;      y   =   1      for all i &#x2208; I
+                   j&#x2208;N  ij
+B  :              0 &#x2264;  yij  &#x2264;   xj     for all i &#x2208; I,j &#x2208; N
+I :                    xj  &#x2208;   {0,1}  for all j &#x2208; N
+      " class="math-display" ></center></td><td class="equation-label">(4)</td></tr></table>
+      <!--l. 199--><p class="nopar" >
+      for <span 
+class="cmmi-12">u </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0, with
+      <center class="math-display" >
+      <img 
+src="hw6sol7x.png" alt="zSC =  max zSC (u).
+       u
+      " class="math-display" ></center>
+      <!--l. 203--><p class="nopar" >
+      Since the value of the LP relaxation is <span 
+class="cmmi-12">z</span><sup><span 
+class="cmmi-8">I</span></sup> = <span 
+class="cmmi-12">z</span><sup><span 
+class="cmmi-8">SI</span></sup>, we have the value <span 
+class="cmmi-12">z</span><sub>
+<span 
+class="cmmi-8">C</span></sub><sup><span 
+class="cmmi-8">S</span></sup> of a Lagrangian
+      relaxation satisfies
+      <center class="math-display" >
+      <img 
+src="hw6sol8x.png" alt=" S    I    S
+zC &#x2265; z  = zD
+      " class="math-display" ></center>
+      <!--l. 208--><p class="nopar" >
+      from part (i), as required.
+      </li>
+      <li 
+  class="enumerate" id="x1-9x2">Nemhauser and Wolsey, page 430, question 17, parts (iii) and (iv).
+      <!--l. 214--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 217--><p class="noindent" ><span 
+class="cmbx-12">(iii) </span>It is immediate that <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">C</span></sub><sup><span 
+class="cmmi-8">S</span></sup> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">z</span><sub>
+<span 
+class="cmmi-8">SC</span></sub>.
+      <!--l. 221--><p class="noindent" >To show the reverse inequality, we have
+      <table 
+class="equation"><tr><td><a 
+ id="x1-10r5"></a>
+      <center class="math-display" >
+      <img 
+src="hw6sol9x.png" alt="                     &#x2211;    &#x2211;               (   &#x2211;            &#x2211;      )
+zSC(u0,u ) = minx,y             cijyij + u0  -       sjxj +      di
+                       i&#x2208;I  j&#x2211;&#x2208;N           &#x2211;     j&#x2208;N(&#x2211;         i&#x2208;I   )
+                          +    j&#x2208;N fjxj +    j&#x2208;N ui   i&#x2208;I diyij - sjxj
+subject to           &#x2211;
+D :                        yij  =   1      for all i &#x2208; I
+B :                    j0&#x2208; &#x2264;N y   &#x2264;   x      for all i &#x2208; I,j &#x2208; N
+                            ij       j
+I :                        xj  &#x2208;   {0,1}  for all j &#x2208; N
+      " class="math-display" ></center></td><td class="equation-label">(5)</td></tr></table>
+      <!--l. 235--><p class="nopar" >
+      for <span 
+class="cmmi-12">u </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0, with
+      <center class="math-display" >
+      <img 
+src="hw6sol10x.png" alt="zSC =  max  zSC(u0,u ).
+         u
+      " class="math-display" ></center>
+      <!--l. 239--><p class="nopar" >
+      From Thm 6.2, <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">C</span></sub><sup><span 
+class="cmmi-8">S</span></sup> is equal to the optimal value of the original objective function over points
+      satisfying <span 
+class="cmmi-12">C </span>that are also in the convex hull of constraints <span 
+class="cmmi-12">D</span>, <span 
+class="cmmi-12">B</span>, and&#x00A0;<span 
+class="cmmi-12">I</span>. Any such point
+      satisfies <span 
+class="cmmi-12">C </span>and&#x00A0;<span 
+class="cmmi-12">D</span>, so it also satisfies&#x00A0;<span 
+class="cmmi-12">S</span>. Thus, it satisfies <span 
+class="cmmi-12">S</span>, <span 
+class="cmmi-12">C</span>, and lies in the convex hull of
+      constraints <span 
+class="cmmi-12">D</span>, <span 
+class="cmmi-12">B</span>, and&#x00A0;<span 
+class="cmmi-12">I</span>. The value <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">SC</span></sub> is calculated using exactly this set of feasible points,
+      so <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">C</span></sub><sup><span 
+class="cmmi-8">S</span></sup> <span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">z</span><sub>
+<span 
+class="cmmi-8">SC</span></sub>.
+      <!--l. 251--><p class="noindent" ><span 
+class="cmbx-12">(iv) </span>The value of the integer program is 2. The value of the LP relaxation is 1.5, which is
+      equal to <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">D</span></sub><sup><span 
+class="cmmi-8">S</span></sup> as shown in part&#x00A0;(i).
+      <!--l. 256--><p class="noindent" >If we take all <span 
+class="cmmi-12">u</span><sub><span 
+class="cmmi-8">j</span></sub> = 0 for <span 
+class="cmmi-12">j </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">N</span>, the value of <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">C</span></sub><sup><span 
+class="cmmi-8">S</span></sup> is 2.
+      <!--l. 258--><p class="noindent" >Thus, we have <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">D</span></sub><sup><span 
+class="cmmi-8">S</span></sup> = 1<span 
+class="cmmi-12">.</span>5 <span 
+class="cmmi-12">&#x003C; </span>2 = <span 
+class="cmmi-12">z</span><sub>
+<span 
+class="cmmi-8">C</span></sub><sup><span 
+class="cmmi-8">S</span></sup>, as required.
+      <!--l. 260--><p class="noindent" >The results were obtained with AMPL, using these <a 
+href="cfl.mod" >model</a>, <a 
+href="cfl.dat" >data</a>, and <a 
+href="cfl.run" >run</a> files, giving this
+      <a 
+href="cfl.out" >output</a>.
+                                                                                         
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-12x3">Solve the Held-Karp 1-tree Lagrangian dual problem for the graph with edge costs given
+      below:
+      <center class="math-display" >
+      <img 
+src="hw6sol11x.png" alt="   |  1   2   3   4   5   6
+---|------------------------
+ 1 | -   10   9  14   5  14
+ 2 |10   -   11  10   7  10
+ 3 |  9  11  -    8   9  14
+ 4 |14   10   8  -    9  13
+ 5 |  5   7   9   9  -    8
+   |
+ 6 |14   10  14  13   8  -
+      " class="math-display" ></center>
+      <!--l. 280--><p class="nopar" >
+      (Hint: The optimal Lagrangian multipliers are integral.)
+      <!--l. 283--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 286--><p class="noindent" >We initialize with all Lagrangian multipliers equal to zero, giving a solution:
+      <div class="center" 
+>
+<!--l. 288--><p class="noindent" >
+<!--l. 300--><p class="noindent" >
+<img src=q3firsttree.png></div>
+      <!--l. 303--><p class="noindent" >Following equation (3.14) on page 484 of the text, we set up the Lagrangian relaxation
+      as
+      <table 
+class="equation"><tr><td><a 
+ id="x1-13r6"></a>
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="hw6sol12x.png" alt="                           (                       )
+           &#x2211;               {  &#x2211;                    }
+z1T(&#x03BB; ) = 2    &#x03BB;i + xm iisn1-tree(       (cij - &#x03BB;i - &#x03BB;j)xij) .
+           i&#x2208;V               (i,j)&#x2208;E
+      " class="math-display" ></center></td><td class="equation-label">(6)</td></tr></table>
+      <!--l. 307--><p class="nopar" >
+      <!--l. 309--><p class="noindent" >We adjust <span 
+class="cmmi-12">&#x03BB; </span>according to the degrees of the vertices in the initial 1-tree, leading to the
+      choice
+      <center class="math-display" >
+      <img 
+src="hw6sol13x.png" alt="&#x03BB; = (0,1, 0,0,- 2,1).
+      " class="math-display" ></center>
+      <!--l. 313--><p class="nopar" >
+      <!--l. 315--><p class="noindent" >The modified cost matrix and an optimal 1-tree are then:
+      <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"><col 
+id="TBL-1-2"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:wrap; text-align:left;" id="TBL-1-1-1"  
+class="td11"><center class="par-math-display" >
+<img 
+src="hw6sol14x.png" alt="   |
+---|-1----2---3---4---5---6-
+ 1 | -    9   9  14   7  13
+ 2 | 9   -   10   9   8   8
+   |
+ 3 | 9  10   -    8  11  13
+ 4 |14    9   8  -   11  12
+ 5 | 7    8  11  11  -    9
+ 6 |13    8  13  12   9  -
+" class="par-math-display" ></center>
+<!--l. 328--><p class="nopar" >                        </td><td  style="white-space:wrap; text-align:left;" id="TBL-1-1-2"  
+class="td11"><!--l. 341--><p class="noindent" >
+<img src=q3secondtree.png>                                                          </td>
+</tr></table></div>
+      <!--l. 345--><p class="noindent" >We adjust <span 
+class="cmmi-12">&#x03BB; </span>according to the degrees of the vertices in the current 1-tree, leading to the
+      choice
+      <center class="math-display" >
+      <img 
+src="hw6sol15x.png" alt="&#x03BB; = (0,0, 0,0,- 2,2).
+      " class="math-display" ></center>
+      <!--l. 349--><p class="nopar" >
+      <!--l. 351--><p class="noindent" >The modified cost matrix and an optimal 1-tree are then:
+      <div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"><col 
+id="TBL-2-2"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:wrap; text-align:left;" id="TBL-2-1-1"  
+class="td11"><center class="par-math-display" >
+<img 
+src="hw6sol16x.png" alt="   |
+   | 1    2   3   4   5   6
+-1-|----10----9--14---7--12-
+   |
+ 2 |10   -   11  10   9   8
+ 3 | 9  11   -    8  11  12
+ 4 |14  10    8  -   11  11
+ 5 | 7    9  11  11  -    8
+ 6 |12    8  12  11   8  -
+   |
+" class="par-math-display" ></center>
+<!--l. 364--><p class="nopar" >                        </td><td  style="white-space:wrap; text-align:left;" id="TBL-2-1-2"  
+class="td11"><!--l. 377--><p class="noindent" >
+<img src=q3thirdtree.png>                                                          </td>
+</tr></table></div>
+      <!--l. 381--><p class="noindent" >Since this is a tour, it is optimal, with value 50.
+                                                                                         
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-15x4">In the following picture,
+      <div class="center" 
+>
+<!--l. 584--><p class="noindent" >
+<!--l. 585--><p class="noindent" ><img 
+src="vietnam.png" alt="PIC"  
+></div>
+      <!--l. 587--><p class="noindent" >it is desired to place each of the numbers 1,&#x2026;,9 into exactly one of the nine empty positions so
+      that the equation is correct. Note that the colon symbol is used to denote division, and the
+      standard arithmetic rules apply so division and multiplication are performed before addition
+      and subtraction.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-17x1">Formulate the problem as a mixed integer nonlinear feasibility program.
+           </li>
+           <li 
+  class="enumerate" id="x1-19x2">Use the McCormick inequalities to express it as an equivalent mixed integer <span 
+class="cmti-12">linear</span>
+           feasibility program, and hence solve it.</li></ol>
+      <!--l. 606--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-21x1">We index the nine positions from the start of the snake to the end. We define binary
+           variables
+           <center class="math-display" >
+           <img 
+src="hw6sol17x.png" alt="      {
+         1  if number  i is placed in position j
+xij =    0  otherwise
+           " class="math-display" ></center>
+           <!--l. 618--><p class="nopar" >
+           We also define binary variables <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">ik</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">k</span><span 
+class="cmr-8">3</span></sub> to represent the division at the end of the
+           first column, and <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">ikl</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span><span 
+class="cmr-8">7</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">k</span><span 
+class="cmr-8">8</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">l</span><span 
+class="cmr-8">9</span></sub> to represent the choice for the last three slots. We can
+           then set up the feasibility problem
+           <center class="math-display" >
+           <img 
+src="hw6sol18x.png" alt="Fi&#x2211;nd  x, y, z satis&#x2211;fying&#x2211;           &#x2211;              &#x2211;           &#x2211;
+    9i=1 ixi1 + 13  9i=1   9k=1-iyik +    9i=1 ixi4 + 12   9i=1ixi5 -   9i=1ixi6 - 11
+              &#x2211;9   &#x2211;9    &#x2211;9k
+           +    i=1   k=1   l=1 ikl zikl - 10 = 66
+ &#x2211;9
+    j=1xij = 1 for i = 1,...,9
+ &#x2211;9    xij = 1 for j = 1,...,9
+    i=1
+ yik = xi2xk3 for i = 1,...,9,k = 1,...,9
+ zikl = xi7xk8xl9 for i = 1,...,9,k = 1, ...,9,l = 1, ...,9
+ &#x2211;9           &#x2211;9
+    i=1 ixi1 &#x2265;   k=1 kxk4 + 1 for i = 1,...,9,k = 1,...,9
+ &#x2211;9           &#x2211;9
+    i=1 ixi7 &#x2265;   k=1 kxk8 + 1 for i = 1,...,9,k = 1,...,9
+ xij binary  for i = 1,...,9,j = 1,...,9.
+           " class="math-display" ></center>
+           <!--l. 645--><p class="nopar" >
+           The inequality constraints are for symmetry-busting. Note that the constraints imply
+           each <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">ik</span></sub> and <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">ikl</span></sub> are binary, and that <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">ii</span></sub> = 0<span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10x-x-120">&#x2200;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">i</span>, <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">iil</span></sub> = <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">ili</span></sub> = <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">lii</span></sub> = 0<span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10x-x-120">&#x2200;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">i,l</span>.
+           </li>
+           <li 
+  class="enumerate" id="x1-23x2">We can express the problem as the following equivalent mixed integer <span 
+class="cmti-12">linear </span>program by
+           using the McCormick inequalities:
+           <center class="math-display" >
+           <img 
+src="hw6sol19x.png" alt="Fi&#x2211;nd  x, y, z, w s&#x2211;atisfy&#x2211;ing        &#x2211;              &#x2211;           &#x2211;
+    9i=1 ixi1 + 13  9i=1   9k=1-iyik +    9i=1 ixi4 + 12   9i=1ixi5 -   9i=1ixi6 - 11
+              &#x2211;9   &#x2211;9    &#x2211;9k
+           +    i=1   k=1   l=1 ikl zikl - 10 = 66
+ &#x2211;9
+    j=1xij = 1 for i = 1,...,9
+ &#x2211;9    xij = 1 for j = 1,...,9
+    i=1
+ yik &#x2264; xi2 for i = 1,...,9,k = 1,...,9
+ yik &#x2264; xk3 for i = 1,...,9,k = 1,...,9
+ yik &#x2265; xi2 + xk3 - 1 for i = 1, ...,9,k = 1,...,9
+
+ wik &#x2264;  xi7 for i = 1,...,9, k = 1,...,9
+ wik &#x2264;  xk8 for i = 1,...,9,k = 1,...,9
+ wik &#x2265;  xi7 + xk8 - 1 for i = 1,...,9,k =  1,...,9
+ zikl &#x2264; wik for i = 1,...,9,k = 1,...,9
+ z   &#x2264;  x  for i = 1,...,9,k = 1,...,9
+  ikl    l9
+ zikl &#x2265; wik + xl9 - 1 for i = 1,...,9,k = 1, ...,9
+ &#x2211;9    ixi1 &#x2265; &#x2211;9    kxk4 + 1 for i = 1,...,9,k = 1,...,9
+ &#x2211;9 i=1        &#x2211;9k=1
+    i=1 ixi7 &#x2265;   k=1 kxk8 + 1 for i = 1,...,9,k = 1,...,9
+
+ xij binary  for i = 1,...,9,j = 1,...,9
+ yik binary  for i = 1,...,9,k = 1,...,9
+ wik binary  for i = 1,...,9, k = 1,...,9
+ zikl binary for i = 1,...,9,k = 1,...,9,l = 1,...,9
+           " class="math-display" ></center>
+           <!--l. 684--><p class="nopar" >
+           Note we&#8217;ve represented <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">ikl</span></sub> = <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">ik</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">l</span><span 
+class="cmr-8">9</span></sub> and <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">ik</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span><span 
+class="cmr-8">7</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">k</span><span 
+class="cmr-8">8</span></sub>.</li></ol>
+      <!--l. 688--><p class="noindent" >One solution returned by AMPL is:
+      <center class="math-display" >
+      <img 
+src="hw6sol20x.png" alt="x   = x   = x   = x   = x   = x   = x   = x   = x   = 1.
+  13     25     32     49     56     64     77     88     91
+      " class="math-display" ></center>
+      <!--l. 691--><p class="nopar" >
+      <!--l. 703--><p class="noindent" >Apparently, there are multiple solutions to this problem, see <a 
+href="https://www.theguardian.com/science/alexs-adventures-in-numberland/2015/may/20/can-you-do-the-maths-puzzle-for-vietnamese-eight-year-olds-that-has-stumped-parents-and-teachers" >this article</a>.
+                                                                                         
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-25x5">A scheduling problem has 7 jobs and 2 machines. The release times, due dates, processing
+      times, and costs for the jobs are as follows:
+      <div class="center" 
+>
+<!--l. 740--><p class="noindent" >
+<div class="tabular"> <table id="TBL-3" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-3-1g"><col 
+id="TBL-3-1"></colgroup><colgroup id="TBL-3-2g"><col 
+id="TBL-3-2"></colgroup><colgroup id="TBL-3-3g"><col 
+id="TBL-3-3"></colgroup><colgroup id="TBL-3-4g"><col 
+id="TBL-3-4"></colgroup><colgroup id="TBL-3-5g"><col 
+id="TBL-3-5"></colgroup><colgroup id="TBL-3-6g"><col 
+id="TBL-3-6"></colgroup><colgroup id="TBL-3-7g"><col 
+id="TBL-3-7"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-3-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-3-1-1"  
+class="td11">job</td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-1-2"  
+class="td11">release time</td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-1-3"  
+class="td11">due date</td><td colspan="2" style="white-space:nowrap; text-align:center;" id="TBL-3-1-4"  
+class="td11">   <div class="multicolumn"  style="white-space:nowrap; text-align:center;">processing time</div>   </td><td colspan="2" style="white-space:nowrap; text-align:center;" id="TBL-3-1-6"  
+class="td11">   <div class="multicolumn"  style="white-space:nowrap; text-align:center;">processing cost</div>
+</td></tr><tr 
+class="cline"><td></td><td></td><td></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-3-3-1"  
+class="td11">   </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-3-2"  
+class="td11">          </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-3-3"  
+class="td11">       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-3-4"  
+class="td11">machine 1</td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-3-5"  
+class="td11">machine 2</td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-3-6"  
+class="td11">machine 1</td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-3-7"  
+class="td11">machine 2</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-3-4-1"  
+class="td11"> 1  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-4-2"  
+class="td11">    0       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-4-3"  
+class="td11">   10    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-4-4"  
+class="td11">    3      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-4-5"  
+class="td11">    2      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-4-6"  
+class="td11">    4      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-4-7"  
+class="td11">    3      </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-5-"><td  style="white-space:nowrap; text-align:center;" id="TBL-3-5-1"  
+class="td11"> 2 </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-5-2"  
+class="td11"> 0 </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-5-3"  
+class="td11"> 10 </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-5-4"  
+class="td11"> 3 </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-5-5"  
+class="td11"> 4 </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-5-6"  
+class="td11"> 4 </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-5-7"  
+class="td11"> 3</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-6-"><td  style="white-space:nowrap; text-align:center;" id="TBL-3-6-1"  
+class="td11"> 3  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-6-2"  
+class="td11">    5       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-6-3"  
+class="td11">   7     </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-6-4"  
+class="td11">    1      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-6-5"  
+class="td11">    3      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-6-6"  
+class="td11">    3      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-6-7"  
+class="td11">    2      </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-7-"><td  style="white-space:nowrap; text-align:center;" id="TBL-3-7-1"  
+class="td11"> 4  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-7-2"  
+class="td11">    2       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-7-3"  
+class="td11">   6     </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-7-4"  
+class="td11">    3      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-7-5"  
+class="td11">    2      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-7-6"  
+class="td11">    3      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-7-7"  
+class="td11">    2      </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-8-"><td  style="white-space:nowrap; text-align:center;" id="TBL-3-8-1"  
+class="td11"> 5  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-8-2"  
+class="td11">    2       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-8-3"  
+class="td11">   6     </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-8-4"  
+class="td11">    2      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-8-5"  
+class="td11">    3      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-8-6"  
+class="td11">    3      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-8-7"  
+class="td11">    2      </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-9-"><td  style="white-space:nowrap; text-align:center;" id="TBL-3-9-1"  
+class="td11"> 6  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-9-2"  
+class="td11">    6       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-9-3"  
+class="td11">   10    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-9-4"  
+class="td11">    3      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-9-5"  
+class="td11">    2      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-9-6"  
+class="td11">    2      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-9-7"  
+class="td11">    3      </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-3-10-"><td  style="white-space:nowrap; text-align:center;" id="TBL-3-10-1"  
+class="td11"> 7  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-10-2"  
+class="td11">    6       </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-10-3"  
+class="td11">   10    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-10-4"  
+class="td11">    2      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-10-5"  
+class="td11">    1      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-10-6"  
+class="td11">    3      </td><td  style="white-space:nowrap; text-align:center;" id="TBL-3-10-7"  
+class="td11">    4      </td>
+</tr></table></div></div>
+      <!--l. 754--><p class="noindent" >We consider a logical Benders decomposition approach to this problem. Solve the initial
+      Master Problem of minimizing total costs subject to each job must be assigned to one of the
+      machines. Show that this solution is infeasible in the scheduling subproblems and generate
+      valid constraints for the Master Problem.
+      <!--l. 760--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 763--><p class="noindent" >The solution to the initial Master Problem is
+      <table 
+class="equation"><tr><td><a 
+ id="x1-26r7"></a>
+      <center class="math-display" >
+      <img 
+src="hw6sol21x.png" alt="x12 = x22 = x32 = x42 = x52 = x61 = x71 = 1
+      " class="math-display" ></center></td><td class="equation-label">(7)</td></tr></table>
+      <!--l. 766--><p class="nopar" >
+      where <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">ij</span></sub> = 1 if job <span 
+class="cmmi-12">i </span>is assigned to machine&#x00A0;<span 
+class="cmmi-12">j</span>.
+      <!--l. 769--><p class="noindent" >The total required processing time on machine 2 is then 2 + 4 + 3 + 2 + 3 = 14 <span 
+class="cmmi-12">&#x003E; </span>10, so not
+      all jobs can be finished by the latest due date of&#x00A0;10. This immediately leads to the valid
+      constraint
+      <table 
+class="equation"><tr><td><a 
+ id="x1-27r8"></a>
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="hw6sol22x.png" alt="x12 + x22 + x32 + x42 + x52 &#x2264; 4.
+      " class="math-display" ></center></td><td class="equation-label">(8)</td></tr></table>
+      <!--l. 774--><p class="nopar" >
+      Tighter valid constraints include <div class="eqnarray">
+      <center class="math-display" >
+      <img 
+src="hw6sol23x.png" alt="x12 + x22 + x32 + x42 &#x2264;   3,                            (9)
+
+x12 + x22 + x32 + x52 &#x2264;   3,                           (10)
+            x42 + x52 &#x2264;   1,                           (11)
+                 x    =   0.                           (12)
+                   32
+      " class="math-display" ><a 
+ id="x1-28r11"></a><a 
+ id="x1-28r12"></a></center>
+      </div>Note that the first two are implied by the last one, so it is only necessary to add constraints
+      (<a 
+href="#x1-28r11">11<!--tex4ht:ref: eq.45 --></a>) and&#x00A0;(<a 
+href="#x1-28r12">12<!--tex4ht:ref: eq.3 --></a>). We also obtain a constraint from machine 1:
+      <table 
+class="equation"><tr><td><a 
+ id="x1-29r13"></a>
+      <center class="math-display" >
+      <img 
+src="hw6sol24x.png" alt="x61 + x71 &#x2264; 1.
+      " class="math-display" ></center></td><td class="equation-label">(13)</td></tr></table>
+                                                                                         
+                                                                                         
+      <!--l. 791--><p class="nopar" >
+      </li></ol>
+   <div class="tabular"> <table id="TBL-4" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-4-1g"><col 
+id="TBL-4-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-4-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-4-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                   </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-4-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-4-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                              </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-4-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-4-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-4-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Tuesday 2-3pm, Wednesday 11am&#8211;1pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

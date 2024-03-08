@@ -1,0 +1,434 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw5.tex"> 
+<meta name="date" content="2016-11-14 17:59:00"> 
+<link rel="stylesheet" type="text/css" href="hw5.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 43--><p class="noindent" >
+<!--l. 45--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6600" ><span 
+class="cmr-12x-x-120">MATP6600/ISYE6780 Nonlinear Programming</span></a><span 
+class="cmr-12x-x-120">, Homework 5.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 49--><p class="noindent" >
+ edited Nov 10 to correct typos, expand Q3.<br />
+Due: Thursday, November 17, 2016, in class.<br />
+10% penalty for each day late.</div>
+<!--l. 57--><p class="noindent" ><span 
+class="cmbx-12">Kelley&#8217;s cutting plane algorithm </span>is a method for solving optimization problems of the
+form
+   <center class="math-display" >
+<img 
+src="hw50x.png" alt="max     bTy
+
+s.t.   &#x03D5;i(yT)  &#x2264;   0        i = 1,...,m       (N LP )
+       A  y  &#x2264;   c
+" class="math-display" ></center>
+<!--l. 66--><p class="nopar" >
+where <span 
+class="cmmi-12">A </span>is a <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">p </span>matrix, <span 
+class="cmmi-12">c </span>is a <span 
+class="cmmi-12">p</span>-vector, <span 
+class="cmmi-12">y </span>is an <span 
+class="cmmi-12">n</span>-vector, and each <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-12">y</span>) is a convex function.
+The algorithm can be written as follows:
+      <div class="quote">
+     <dl class="description"><dt class="description">
+<span 
+class="cmbx-12">Initialization:</span> </dt><dd 
+class="description">Let <span 
+class="cmmi-12">Y</span> <sub><span 
+class="cmr-8">1</span></sub>  <span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup> be a polyhedral set such that <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">y </span>: <span 
+class="cmmi-12">&#x03D5;</span><sub>
+<span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-12">y</span>) <span 
+class="cmsy-10x-x-120">&#x2264; </span>0<span 
+class="cmmi-12">,i </span>=
+     1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,m</span><span 
+class="cmsy-10x-x-120">}&#x2286; </span><span 
+class="cmmi-12">Y</span> <sub><span 
+class="cmr-8">1</span></sub>, and let <span 
+class="cmmi-12">Z</span><sup><span 
+class="cmr-8">1</span></sup> := <span 
+class="cmmi-12">Y</span> <sub>
+<span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">&#x2229;{</span><span 
+class="cmmi-12">y </span>: <span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">c</span><span 
+class="cmsy-10x-x-120">}</span>. (You may assume <span 
+class="cmmi-12">Z</span><sup><span 
+class="cmr-8">1</span></sup>  is
+     bounded.) Set <span 
+class="cmmi-12">k </span>= 1 and go to the <span 
+class="cmbx-12">Main Step</span>.
+     </dd><dt class="description">
+<span 
+class="cmbx-12">Main Step:</span> </dt><dd 
+class="description">
+         <ol  class="enumerate1" >
+         <li 
+  class="enumerate" id="x1-3x1">Solve the linear program max<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span>: <span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">Z</span><sup><span 
+class="cmmi-8">k</span></sup><span 
+class="cmsy-10x-x-120">}</span>. Let <span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>  be the optimal
+         solution. If <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>) <span 
+class="cmsy-10x-x-120">&#x2264; </span>0 for <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,m </span>then <span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup> is an optimal solution to
+         (<span 
+class="cmmi-12">NLP</span>) so <span 
+class="cmbx-12">STOP</span>.
+         </li>
+         <li 
+  class="enumerate" id="x1-5x2">Let <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">j</span></sub>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>) = max <sub>
+<span 
+class="cmr-8">1</span><span 
+class="cmsy-8">&#x2264;</span><span 
+class="cmmi-8">i</span><span 
+class="cmsy-8">&#x2264;</span><span 
+class="cmmi-8">m</span></sub><span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>) and let
+                                                                                         
+                                                                                         
+         <center class="math-display" >
+         <img 
+src="hw51x.png" alt=" k+1      k           k     k T      k
+Z    := Z  &#x2229; {y : &#x03D5;j(y ) + (&#x03BE;j) (y - y ) &#x2264; 0 },
+         " class="math-display" ></center>
+         <!--l. 88--><p class="nopar" >
+         where <span 
+class="cmmi-12">&#x03BE;</span><sub><span 
+class="cmmi-8">j</span></sub><sup><span 
+class="cmmi-8">k</span></sup> is a subgradient of <span 
+class="cmmi-12">&#x03D5;</span><sub>
+<span 
+class="cmmi-8">j</span></sub>(<span 
+class="cmmi-12">y</span>) at <span 
+class="cmmi-12">y </span>= <span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>. Replace <span 
+class="cmmi-12">k </span>by <span 
+class="cmmi-12">k </span>+ 1 and return
+         to Step&#x00A0;1.</li></ol>
+     </dd></dl>
+      </div>
+<!--l. 94--><p class="noindent" >This algorithm is the subject of Questions <a 
+href="#x1-103">3<!--tex4ht:ref: kelley1 --></a>&#8211;<a 
+href="#x1-166">6<!--tex4ht:ref: kelley4 --></a>.
+<!--l. 97--><p class="indent" >
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-7x1">Consider the quadratically constrained quadratic program
+      <center class="math-display" >
+      <img 
+src="hw52x.png" alt="min         12xT Qx
+subject to    1xT x  &#x2264;   1             (QP )
+             x2&#x2208; X   :=   2&#x211D;n
+      " class="math-display" ></center>
+      <!--l. 164--><p class="nopar" >
+      where <span 
+class="cmmi-12">Q </span>is an indefinite symmetric rational <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>matrix. Show that the primal and dual
+      optimal values are equal for this nonconvex program.
+      </li>
+      <li 
+  class="enumerate" id="x1-9x2">Consider the map <span 
+class="cmmi-12">A</span>, where <span 
+class="cmmi-12">A</span>(<span 
+class="cmmi-12">x</span>) is the nonnegative square root of <span 
+class="cmmi-12">x</span>. Starting from any
+      positive <span 
+class="cmmi-12">x</span>, show that the algorithm defined by map <span 
+class="cmmi-12">A </span>converges to <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> = 1. (Hint: Let the
+      descent function be <span 
+class="cmmi-12">&#x03B1;</span>(<span 
+class="cmmi-12">x</span>) := <span 
+class="cmsy-10x-x-120">|</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">- </span>1<span 
+class="cmsy-10x-x-120">|</span>.)
+      </li>
+      <li 
+  class="enumerate" id="x1-11x3"><a 
+ id="x1-103"></a> We are going to use Kelley&#8217;s algorithm to attack the Lagrangian dual of the problem
+      <center class="math-display" >
+      <img 
+src="hw53x.png" alt="min    2      f(x)  :=   - (x1 - 4)2 - (x2 - 4)2
+    x&#x2208; &#x211D;
+subject to    g1(x)  :=   - x1 +    x2  -   2  &#x2264;   0
+             g2(x)  :=   - x1 -   2x2  +   6  &#x2264;   0
+            x &#x2208; X   :=   {x &#x2208; &#x211D;2+ : x1 + x2 - 4 &#x2264; 0} .
+      " class="math-display" ></center>
+                                                                                         
+                                                                                         
+      <!--l. 271--><p class="nopar" >
+      We initialize with bounds on the dual variables <span 
+class="cmmi-12">u </span>and optimal value&#x00A0;<span 
+class="cmmi-12">z</span>, so <span 
+class="cmmi-12">y </span>= (<span 
+class="cmmi-12">z,u</span>) with
+      <span 
+class="cmmi-12">u </span>= (<span 
+class="cmmi-12">u</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,u</span><sub><span 
+class="cmr-8">2</span></sub>), and Kelley&#8217;s algorithm is applied to the problem
+      <center class="math-display" >
+      <img 
+src="hw54x.png" alt="max        2    z
+    z&#x2208;&#x211D;,u&#x2208;&#x211D;
+subject to      z  -      &#x03B8; (u ) &#x2264;   0
+              - 64 &#x2264;   &#x2211;     z  &#x2264;   0
+                          2i=1 ui &#x2264;   11
+                             u  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 282--><p class="nopar" >
+      which has just the one convex nonlinear constraint <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmr-8">1</span></sub>(<span 
+class="cmmi-12">z,u</span>) := <span 
+class="cmmi-12">z </span><span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">&#x03B8;</span>(<span 
+class="cmmi-12">u</span>) <span 
+class="cmsy-10x-x-120">&#x2264; </span>0, where <span 
+class="cmmi-12">&#x03B8;</span>(<span 
+class="cmmi-12">u</span>) is the
+      dual function. In the first iteration, take the solution as <span 
+class="cmmi-12">z</span><sup><span 
+class="cmr-8">1</span></sup> = 0, <span 
+class="cmmi-12">u</span><sup><span 
+class="cmr-8">1</span></sup> = (0<span 
+class="cmmi-12">, </span>0)<sup><span 
+class="cmmi-8">T</span> </sup>. With <span 
+class="cmmi-12">u </span>= <span 
+class="cmmi-12">u</span><sup><span 
+class="cmr-8">1</span></sup>,
+      the optimal solution to the Lagrangian relaxation is <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">1</span></sup> = (0<span 
+class="cmmi-12">, </span>0) with <span 
+class="cmmi-12">&#x03B8;</span>(<span 
+class="cmmi-12">u</span><sup><span 
+class="cmr-8">1</span></sup>) = <span 
+class="cmsy-10x-x-120">-</span>32, and we
+      have <span 
+class="cmmi-12">g</span><sub><span 
+class="cmr-8">1</span></sub>(<span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">1</span></sup>) = <span 
+class="cmsy-10x-x-120">-</span>2 and <span 
+class="cmmi-12">g</span><sub>
+<span 
+class="cmr-8">2</span></sub>(<span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">1</span></sup>) = 6. Thus, <span 
+class="cmmi-12">&#x03D5;</span>(<span 
+class="cmmi-12">z</span><sup><span 
+class="cmr-8">1</span></sup><span 
+class="cmmi-12">,u</span><sup><span 
+class="cmr-8">1</span></sup>) = 0 <span 
+class="cmsy-10x-x-120">- </span>(<span 
+class="cmsy-10x-x-120">-</span>32) = 32 <span 
+class="cmmi-12">&#x003E; </span>0. We have seen in
+      class how subgradients of <span 
+class="cmmi-12">&#x03B8;</span>(<span 
+class="cmmi-12">u</span>) depend on optimal solutions to the Lagrangian relaxation. The
+      first Kelley cutting plane is
+      <center class="math-display" >
+      <img 
+src="hw55x.png" alt="32 + 1(z - 0) + 2(u - 0) - 6(u  - 0) &#x2264; 0.
+                   1          2
+      " class="math-display" ></center>
+      <!--l. 294--><p class="nopar" >
+      Take four iterations of Kelley&#8217;s algorithm. Show that <span 
+class="cmmi-12">z</span><sup><span 
+class="cmr-8">4</span></sup> and&#x00A0;<span 
+class="cmmi-12">u</span><sup><span 
+class="cmr-8">4</span></sup> satisfy the termination
+      criterion listed in Step&#x00A0;1. (You may want to use AMPL to solve the linear programs in
+      Step&#x00A0;1.)
+      </li>
+      <li 
+  class="enumerate" id="x1-13x4">Show that if <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">j</span></sub>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>) <span 
+class="cmmi-12">&#x003E; </span>0 and <span 
+class="cmmi-12">&#x03BE;</span><sub>
+<span 
+class="cmmi-8">j</span></sub><sup><span 
+class="cmmi-8">k</span></sup> = 0 in Kelley&#8217;s algorithm then (<span 
+class="cmmi-12">NLP</span>) is infeasible.
+      </li>
+      <li 
+  class="enumerate" id="x1-15x5"><a 
+ id="x1-145"></a> Show that the feasible region for (<span 
+class="cmmi-12">NLP</span>) is contained in <span 
+class="cmmi-12">Z</span><sup><span 
+class="cmmi-8">k</span></sup> at each iteration <span 
+class="cmmi-12">k </span>of Kelley&#8217;s
+      algorithm and that the stopping criterion in Step&#x00A0;1 is valid.
+      </li>
+      <li 
+  class="enumerate" id="x1-17x6"><a 
+ id="x1-166"></a> Show that Kelley&#8217;s algorithm converges to an optimal solution to (<span 
+class="cmmi-12">NLP</span>), under the
+      assumptions that (<span 
+class="cmmi-12">NLP</span>) is feasible and that each function <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">j</span></sub>(<span 
+class="cmmi-12">y</span>) is smooth over&#x00A0;<span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup>. (Hint:
+      (1) You may assume that the map from <span 
+class="cmmi-12">x</span><sup><span 
+class="cmmi-8">k</span></sup> to the new inequality is closed. (2)
+      Show that for any <span 
+class="cmmi-12">k</span>, we must have <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">j</span></sub>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>) + (<span 
+class="cmmi-12">&#x03BE;</span><sub>
+<span 
+class="cmmi-8">j</span></sub><sup><span 
+class="cmmi-8">k</span></sup>)<sup><span 
+class="cmmi-8">T</span> </sup>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">l</span></sup> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>) <span 
+class="cmsy-10x-x-120">&#x2264; </span>0 for all <span 
+class="cmmi-12">l </span><span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">k </span>+ 1.
+      Let <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup><span 
+class="cmsy-10x-x-120">}</span><sub>
+<span 
+class="cmsy-8"><img 
+src="cmsy8-4b.png" alt="K" class="8x-x-4b" /></span></sub> be a convergent subsequence with limit&#x00A0;<span class="bar-css"><span 
+class="cmmi-12">y</span></span>. Taking limits, show that
+      <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">j</span></sub>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>) + (<span 
+class="cmmi-12">&#x03BE;</span><sub>
+<span 
+class="cmmi-8">j</span></sub><sup><span 
+class="cmmi-8">k</span></sup>)<sup><span 
+class="cmmi-8">T</span> </sup>(<span class="bar-css"><span 
+class="cmmi-12">y</span></span> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>) <span 
+class="cmsy-10x-x-120">&#x2264; </span>0. Use this to obtain a contradiction if <span class="bar-css"><span 
+class="cmmi-12">y</span></span> is not a solution to
+                                                                                         
+                                                                                         
+      (<span 
+class="cmmi-12">NLP</span>).)
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                                                                      </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                                                                                 </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: <!--tex4ht:inline--><div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-1"  
+class="td11">Monday November 7: 2&#8211;2.45pm       </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-1"  
+class="td11">Monday November 14: 2&#8211;3pm          </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-1"  
+class="td11">Tuesday November 15: 11am&#8211;1pm     </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-1"  
+class="td11">Wednesday November 16: 11am&#8211;1pm.</td> </tr></table>                                                                   </div></td> 
+</tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

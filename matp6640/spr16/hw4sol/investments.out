@@ -1,0 +1,20 @@
+ILOG AMPL 11.000, licensed to "- Site Replacement Keys 3.2".
+AMPL Version 20080102 (Darwin 8.10.1)
+ampl: model investments.mod; data investments.dat; solve;
+CPLEX 12.6.2.0: optimal solution; objective -0.06266666666
+1 dual simplex iterations (0 in phase I)
+ampl: display x;
+x [*] :=
+        bonds  0.35
+     domestic  0.2
+international  0.35
+          mmf  0.1
+;
+
+ampl: display y;
+y [*] :=
+1   0.1245
+2   0.14
+3  -0.0765
+;
+

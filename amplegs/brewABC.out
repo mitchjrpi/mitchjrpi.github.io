@@ -1,0 +1,61 @@
+ampl: model brewABC.mod;
+ampl: data brewA.dat;
+ampl: solve;
+CPLEX 6.6.0: 
+CPLEX 6.6.0: 
+CPLEX 6.6.0: optimal solution; objective 185
+2 simplex iterations (0 in phase I)
+ampl: display x;
+x [*] :=
+ amber  15
+golden  10
+;
+
+ampl: display resourcelimit, resourcelimit.slack;
+:     resourcelimit resourcelimit.slack    :=
+hops       2.25               0
+malt       1.25               0
+yeast      0                  5
+;
+
+
+ampl: reset data;
+ampl: data brewB.dat;
+ampl: solve;
+CPLEX 6.6.0: 
+CPLEX 6.6.0: optimal solution; objective 117.5
+3 simplex iterations (0 in phase I)
+ampl: display x;
+x [*] :=
+ amber  17.5
+golden   5
+;
+
+ampl: display resourcelimit.slack, resourcelimit;
+:     resourcelimit.slack resourcelimit    :=
+hops           0               0.375
+malt           0               1.75
+yeast          2.5             0
+;
+
+
+ampl: reset;
+ampl: model brewery.mod;
+ampl: data brewC.dat;
+ampl: solve;
+CPLEX 6.6.0: 
+CPLEX 6.6.0: optimal solution; objective 176.6666667
+2 simplex iterations (0 in phase I)
+ampl: display x;
+x [*] :=
+ amber  10
+golden  16.6667
+;
+
+ampl: display resourcelimit, resourcelimit.slack;
+:     resourcelimit resourcelimit.slack    :=
+hops     0.666667          0
+malt     1.66667           0
+yeast    0                 3.33333
+;
+

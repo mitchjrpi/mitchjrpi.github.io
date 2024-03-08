@@ -1,0 +1,421 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Final Exam 1999</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="final99">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="final99.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+     <a href=..>MATP6620/DSES6760 
+<BR>
+ <B>Combinatorial Optimization and Integer Programming</B>
+</a>
+  </FONT>
+</DIV>
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+                Final Exam, Spring 1999
+  </FONT>
+</DIV>
+
+<P>
+Take Home   Due: 5pm, Tuesday, 4 May, 1999.
+
+<P>
+
+<BR>
+
+<P>
+This is to be all your own work.  You may use any result from class,
+homeworks, or the books and papers on reserve in the library.
+Do not consult anybody or anything else. 
+I can dispense hints to help you if you are stuck.
+My phone numbers are 276-6915(O) and 346-2811(H).
+You can also reach me by email at mitchj@rpi.edu.
+I will have office hours Thursday from 1-2pm
+and Monday 2-5pm.
+The exam consists of five questions and is worth 100 points.
+
+<P>
+In order that I can display grades, please write a 4 digit number
+on the front of your solution set.
+
+<P>
+
+<BR>
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>(20 points)
+<DL COMPACT>
+<DT>(a)
+<DD>(5 points)
+How is the optimal solution to an instance of the traveling
+salesman problem altered if a constant <I>k</I> is added to every edge length?
+<DT>(b)
+<DD>(10 points)
+Show that any instance of the traveling salesman problem
+can be transformed into an equivalent instance satisfying the
+triangle inequality.
+<DT>(c)
+<DD>(5 points)
+Why doesn't the Christofides heuristic applied to the equivalent
+instance give a solution to the original instance that is within
+a factor of 3/2 of optimality?
+</DL>
+<DT>2.
+<DD>(20 points)
+          Consider a graph <I>G</I>=(<I>V</I>,<I>E</I>). Let <IMG
+ WIDTH="71" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$n=\mid V \mid$">.
+          Let the set of node packings on <I>G</I> be <IMG
+ WIDTH="101" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="$S=P \cap Z^n$">,
+          where
+           <!-- MATH: $P = \{x \in \Re_+^n : x_i + x_j \leq 1 \; \forall (i,j) \in E \}$ -->
+<IMG
+ WIDTH="322" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$P = \{x \in \Re_+^n : x_i + x_j \leq 1 \; \forall (i,j) \in E \}$">.
+          Show that the Chvatal rank of a clique constraint
+          <!-- MATH: $\sum_{j \in C} x_j \leq 1$ -->
+<IMG
+ WIDTH="103" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\sum_{j \in C} x_j \leq 1$">
+is <!-- MATH: $O(\log(\mid C \mid))$ -->
+<IMG
+ WIDTH="108" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$O(\log(\mid C \mid))$">,
+          where <I>C</I> is a clique of the graph.
+          (See question 3 for the definition of a clique.)
+
+<P>
+
+<DT>3.
+<DD>(20 points)
+         You are given a graph <I>G</I>=(<I>V</I>,<I>E</I>), and weights <I>w</I><SUB><I>v</I></SUB> on the vertices
+         <I>v</I> in&nbsp;<I>V</I>.
+         Let <I>m</I> be the number of vertices in&nbsp;<I>V</I>.
+         A <EM>clique</EM> in <I>G</I> is a subset <I>U</I> of <I>V</I> where every vertex
+         in <I>U</I> is adjacent to every other one in&nbsp;<I>U</I>.
+         The <EM>max-clique</EM> problem is to find the clique <I>U</I> in <I>G</I> with
+         largest weight <!-- MATH: $\sum_{v \in U} w_v$ -->
+<IMG
+ WIDTH="72" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\sum_{v \in U} w_v$">.
+This can be written as the
+         following integer programming problem:
+         <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lccll}
+             \max & \sum_{v \in V} w_v x_v  \\
+             \mbox{s.t. } & x_i+x_j & \leq & 1 &
+               \mbox{ if vertex $i$\space is not adjacent to vertex $j$ }  \\
+                          & x_i & = & 0 \mbox{ or } 1 &
+               \mbox{ for all vertices $i$ }
+           \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="554" HEIGHT="76"
+ SRC="img7.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lccll}
+\max &amp; \sum_{v \in V} w_v x_v \\
+\m...
+... 0 \mbox{ or } 1 &amp;
+\mbox{ for all vertices $i$ }
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Let <I>S</I> be the set of incidence vectors of cliques.
+         <DL COMPACT>
+<DT>(a)
+<DD>(5 points)
+Show that the dimension of <I>S</I> is&nbsp;<I>m</I>.
+             (Note: The empty set is a clique in&nbsp;<I>G</I>.)
+           <DT>(b)
+<DD>(5 points)
+             Let <I>W</I> be a maximal node packing in <I>G</I>. Show that
+             the inequality
+             <BR><P></P>
+<DIV ALIGN="CENTER">
+
+<!-- MATH: \begin{equation}
+\sum_{v \in W} x_v \leq 1
+\end{equation} -->
+
+<TABLE WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE"><TD ALIGN="CENTER" NOWRAP><A NAME="nodepack">&#160;</A><IMG
+ WIDTH="86" HEIGHT="50"
+ SRC="img8.gif"
+ ALT="\begin{displaymath}
+\sum_{v \in W} x_v \leq 1
+\end{displaymath}"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(1)</TD></TR>
+</TABLE>
+</DIV>
+<BR CLEAR="ALL"><P></P>
+is a facet defining inequality for&nbsp;<I>S</I>.
+           <DT>(c)
+<DD>(10 points)
+             Find the maximum cardinality clique in the graph
+             with ten nodes and with every edge <EM>except</EM> the following:
+             (1,2), (1,3), (1,6), (2,3), (2,4), (3,4), (4,5), (4,7),
+             (4,10), (5,6), (5,7), (5,8), (6,7), (6,8), (6,9), (7,8), (7,10),
+             (8,9), and (9,10).
+             (In the maximum cardinality problem, each vertex has weight
+             <I>w</I><SUB><I>v</I></SUB>=1.)
+             Prove your solution is optimal by looking at the
+             linear programming relaxation of the clique problem
+             and adding selected inequalities of the form&nbsp;(<A HREF="final99.html#nodepack">1</A>).
+             (The AMPL model file for the initial relaxation is in the file
+             <BLOCKQUOTE>
+             http://www.math.rpi.edu/~mitchj/matp6620/finalq3.mod
+             
+</BLOCKQUOTE>
+             and the data file is in
+             <BLOCKQUOTE>
+             http://www.math.rpi.edu/~mitchj/matp6620/finalq3.dat.
+             
+</BLOCKQUOTE>
+             You may not be able to get an integral solution to the
+             relaxation. Do you need to?)
+         </DL>
+
+<P>
+
+<DT>4.
+<DD>(20 points)
+Consider the mixed integer programming problem (<I>MIP</I>):
+     <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrrrrrrcl}
+         \max         & 8x_1 & +9x_2 & +5x_3 & +6x_4 & -15y_1 & -10y_2 \\
+         \mbox{s.t. } & x_1 &&  +x_3 &&&& \leq & 1 \\
+                      & x_1 &&& +x_4  &&& \leq & 1 \\
+                      && x_2 &  +x_3 &&&& \leq & 1 \\
+                      && x_2 && +x_4  &&& \leq & 1 \\
+                      &&&&& -y_1 & -y_2 & \leq & -1 \\
+                      &    x_1 &&&&  -y_1 && \leq & 0 \\
+                      &&   x_2  &&&  -y_1 && \leq & 0 \\
+                      &&&   x_3   &&& -y_2 & \leq & 0 \\
+                      &&&&  x_4    && -y_2 & \leq & 0 \\
+                      &&&&&& x_j & \geq & 0  \\
+                      &&&&&& y_i && \mbox{binary} \\
+       \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="483" HEIGHT="284"
+ SRC="img9.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrrrrrrcl}
+\max &amp; 8x_1 &amp; +9x_2 &amp; +5x_3 &amp; +6x...
+...j &amp; \geq &amp; 0 \\
+&amp;&amp;&amp;&amp;&amp;&amp; y_i &amp;&amp; \mbox{binary} \\
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Solve this problem using Bender's decomposition.
+     (Take the problem
+     <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrrrcl}
+         \max         & z & -15y_1 & -10y_2 \\
+         \mbox{s.t}   & z &&& \leq & 28 \\
+                      &&& y_i && \mbox{binary}
+       \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="292" HEIGHT="76"
+ SRC="img10.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrrrcl}
+\max &amp; z &amp; -15y_1 &amp; -10y_2 \\
+\mbo...
+...} &amp; z &amp;&amp;&amp; \leq &amp; 28 \\
+&amp;&amp;&amp; y_i &amp;&amp; \mbox{binary}
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+as the initial relaxation (<I>RMP</I>).)
+
+<P>
+
+<DT>5.
+<DD>(20 points)
+The solution to the MAXCUT problem on three vertices with edge weights
+<I>c</I><SUB>12</SUB>=1, <I>c</I><SUB>13</SUB>=2, <I>c</I><SUB>23</SUB>=4 is to place vertex 3 on one side
+of the cut and the other two vertices on the other side.
+The semidefinite programming relaxation that is used to solve this
+problem is
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcllr}
+\min & \mbox{trace}(CX) \\
+\mbox{subject to} & X_{ii} & = & 1, & i=1,\ldots,3  & \qquad (SDP)\\
+& X & \succeq & 0,
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="462" HEIGHT="76"
+ SRC="img11.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcllr}
+\min &amp; \mbox{trace}(CX) \\
+\mbox{subj...
+...&amp; i=1,\ldots,3 &amp; \qquad (SDP)\\
+&amp; X &amp; \succeq &amp; 0,
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where the final constraint requires that <I>X</I> be a symmetric positive
+semidefinite matrix, and <I>C</I> is given by
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+C = \left[ \begin{array}{rrr}0&1&2\\1&0&4\\2&4&0\end{array} \right] .
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="142" HEIGHT="76"
+ SRC="img12.gif"
+ ALT="\begin{displaymath}
+C = \left[ \begin{array}{rrr}0&amp;1&amp;2\\ 1&amp;0&amp;4\\ 2&amp;4&amp;0\end{array} \right] .
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Recall that we obtain this relaxation by replacing the requirement
+that <I>X</I>=<I>xx</I><SUP><I>T</I></SUP> with the requirement <IMG
+ WIDTH="56" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$X\succeq 0$">,
+and that <IMG
+ WIDTH="69" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$x_i=\pm 1$">,
+depending on which side of the cut vertex&nbsp;<I>i</I> is on.
+<DL COMPACT>
+<DT>(a)
+<DD>(5 points)
+Let <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.gif"
+ ALT="$\hat{x}$">
+be the vector corresponding to the solution given
+above for our instance of MAXCUT.
+Let <!-- MATH: $\hat{X}=\hat{x}\hat{x}^T$ -->
+<IMG
+ WIDTH="78" HEIGHT="22" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.gif"
+ ALT="$\hat{X}=\hat{x}\hat{x}^T$">.
+What is the value of <IMG
+ WIDTH="21" HEIGHT="22" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$\hat{X}$">
+in (<I>SDP</I>)?
+<DT>(b)
+<DD>(15 points)
+The dual problem to (<I>SDP</I>) is
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{llr}
+\max & \sum_{i=1}^3 Y_{ii}  \\
+\mbox{subject to} & C - Y \succeq 0 & \qquad (SDD),
+\end{array}
+\end{displaymath} -->
+
+<IMG
+ WIDTH="301" HEIGHT="53"
+ SRC="img18.gif"
+ ALT="\begin{displaymath}
+\begin{array}{llr}
+\max &amp; \sum_{i=1}^3 Y_{ii} \\
+\mbox{subject to} &amp; C - Y \succeq 0 &amp; \qquad (SDD),
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <I>Y</I> is a diagonal matrix,
+so <I>Y</I><SUB><I>ij</I></SUB>=0 if <IMG
+ WIDTH="44" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$i\neq j$">.
+The value of any dual feasible solution provides a lower bound on the
+optimal value of (<I>SDP</I>).
+You may assume that the optimal primal and dual solutions <I>X</I><SUP>*</SUP>
+and <I>Y</I><SUP>*</SUP> for (<I>SDP</I>) and (<I>SDD</I>) satisfy a variant of
+complementary slackness, namely, <I>X</I>(<I>C</I>-<I>Y</I>)=0, where the product
+is the usual matrix product, and so 0 here denotes a 3 x  3
+matrix of zeroes.
+Use this to construct a matrix <IMG
+ WIDTH="19" HEIGHT="22" ALIGN="BOTTOM" BORDER="0"
+ SRC="img20.gif"
+ ALT="$\hat{Y}$">
+that shows that the
+matrix <IMG
+ WIDTH="21" HEIGHT="22" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$\hat{X}$">
+solves (<I>SDP</I>).
+</DL></DL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2005-11-28</I>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw1sol2021.tex"> 
+<meta name="date" content="2021-09-13 13:39:00"> 
+<link rel="stylesheet" type="text/css" href="hw1sol2021.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 31--><p class="noindent" >
+<!--l. 33--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12x-x-120">Math Models of Operations Research</span></a><br />
+<a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12x-x-120">MATP 4700 </span></a><br /><br />
+<span 
+class="cmbx-12x-x-120">Homework 1</span><br /><br />
+<span 
+class="cmbx-12x-x-120">Solutions</span></div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 41--><p class="noindent" >
+ Due: Friday, September 10, 2021, 11.59pm, on LMS.<br />
+Penalty for late homeworks: 25% for each day or part of a day.</div>
+<!--l. 48--><p class="noindent" >Questions 1.9.6, 1.9.10, 1.9.23, and 1.9.26, from Kupferschmid, Chapter 1 (available on LMS). In
+addition, read Chapter&#x00A0;1 from the text.
+<!--l. 61--><p class="indent" >   Hint for 1.9.6: A resource allocation problem has the form max<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>: <span 
+class="cmmi-12">Ax </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">b,x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmsy-10x-x-120">}</span>, where all
+parameters in <span 
+class="cmmi-12">A,b,c </span>are nonnegative. For both parts, it&#8217;s enough to think of problems with 2
+variables.
+<!--l. 68--><p class="noindent" >You can consult with other students and you can use online resources, but you CANNOT submit
+the questions to any online answering service, including Chegg. Solving the homework problems
+(and other problems from the text) will improve your understanding of the material. It may be
+possible to find the solutions online or elsewhere: please do not use these solutions. Working out
+the problems yourself will greatly improve your understanding of the material and help
+you on the exams. You can ask questions on slack, in addition to using office hours or
+email.
+      <ul class="itemize1">
+      <li class="itemize"><span 
+class="cmbx-12">1.9.6</span>
+           <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+        a. </dt><dd 
+class="enumerate-enumitem">If we have more resources than products then it is unlikely that there exists a
+           production program that uses up all of the resources. For example, consider the
+           problem:
+           <center class="math-display" >
+           <img 
+src="hw1sol20210x.png" alt="max    2  3x   +   5x
+    x&#x2208;&#x211D;     1        2
+s.t.        x1  +   2x2  &#x2264;  9
+          2x1  +    x2  &#x2264;  9
+           x1  +    x2  &#x2264;  5
+             x1,x2      &#x2265;  0
+                                                                                         
+                                                                                         
+           " class="math-display" ></center>
+           <!--l. 110--><p class="nopar" >
+           There is no point that satisfies all three constraints at equality. Exactly two
+           of the three resources are used up at the points (1<span 
+class="cmmi-12">, </span>4), (4<span 
+class="cmmi-12">, </span>1). There is no
+           feasible production plan that satisfies both of the first two constraints at
+           equality.
+           </dd><dt class="enumerate-enumitem">
+        b. </dt><dd 
+class="enumerate-enumitem">Consider the problem
+           <center class="math-display" >
+           <img 
+src="hw1sol20211x.png" alt="maxx &#x2208;&#x211D;2  3x1  +   7x2
+s.t.        x1  +   2x2  &#x2264;  6
+          2x1  +    x2  &#x2264;  6
+             x ,x       &#x2265;  0
+              1   2
+           " class="math-display" ></center>
+           <!--l. 124--><p class="nopar" >
+           The unique point that uses up all the resources is (<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,x</span><sub><span 
+class="cmr-8">2</span></sub>) = (2<span 
+class="cmmi-12">, </span>2), but the optimal
+           solution is (<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,x</span><sub><span 
+class="cmr-8">2</span></sub>) = (0<span 
+class="cmmi-12">, </span>3).</dd></dl>
+      </li>
+
+      <li class="itemize"><span 
+class="cmbx-12">1.9.10</span>
+      <!--l. 207--><p class="noindent" >
+<img src=1.9.10.png>
+
+<br>
+
+As total study time drops below 12,
+the upper diagonal constraint is pushed
+down.
+
+
+<br>
+
+When the right hand side is 7<img 
+src="hw1sol20214x.png" alt="23"  class="frac" align="middle">,
+the constraint only just touches
+the blue region.
+
+
+<br>
+
+Problem is infeasible if fewer than
+7<img 
+src="hw1sol20215x.png" alt="2
+3"  class="frac" align="middle"> hours are available.
+                                                                                         
+                                                                                         
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">1.9.23</span>
+      <center class="par-math-display" >
+      <img 
+src="hw1sol20216x.png" alt="maxx &#x2208; &#x211D;2    x1
+subject to  3x   +    x   &#x2264;   9
+              1        2
+             x1  +   3x2  &#x2264;   9
+            2x1  +   2x2  &#x2264;   16
+             x1  -    x2  &#x2264;   0
+            2x1  -    x2  &#x2265;   0
+                   x ,x   &#x2265;   0
+                    1  2
+      " class="par-math-display" ></center>
+
+<img src=1.9.23.png>
+
+      </li>
+
+      <li class="itemize"><span 
+class="cmbx-12">1.9.26</span>
+           <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+                                                                                         
+                                                                                         
+        a. </dt><dd 
+class="enumerate-enumitem">Let <span 
+class="cmmi-12">y </span>be the number of hours per day spent on school. The expected change in the
+           average grade is 0<span 
+class="cmmi-12">.</span>125 <span 
+class="cmsy-10x-x-120">&#x00D7; </span>(<span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">- </span>8). The corresponding change in the probability of success
+           is
+           <center class="math-display" >
+           <img 
+src="hw1sol20217x.png" alt="       0.125-&#x00D7;--(y---8-)
+0.06 &#x00D7;        0.1       =  0.075 (y - 8)
+           " class="math-display" ></center>
+           <!--l. 290--><p class="nopar" >
+           which gives the objective function.
+           <!--l. 293--><p class="noindent" >The overall GPA can not go higher than 4.0, so it cannot increase by more than&#x00A0;1, so
+           the largest possible value for <span 
+class="cmmi-12">y </span>is&#x00A0;16.
+           <!--l. 296--><p class="noindent" >We also impose a constraint that the resulting probability is no larger than&#x00A0;1
+           (optional).
+           <center class="math-display" >
+           <img 
+src="hw1sol20218x.png" alt="max (x,y)&#x2208;&#x211D;2  0.05x  +   0.075 (y - 8)
+subject to       x  +             y  &#x2264;   24
+             0.05x  +        0.075y  &#x2264;   1.6
+                                  y  &#x2264;   16
+
+                                x,y  &#x2265;   0
+           " class="math-display" ></center>
+           <!--l. 305--><p class="nopar" >
+           </dd><dt class="enumerate-enumitem">
+        b. </dt><dd 
+class="enumerate-enumitem">
+										<img src=1.9.26.png>
+
+<br>
+
+   <p class="noindent" >He can increase the probability to 1 by using allocation <span 
+class="cmmi-12">A</span>: <span 
+class="cmmi-12">x </span>= 8, <span 
+class="cmmi-12">y </span>= 16. This leaves 0
+           hours for eating, sleeping, etc.
+           </dd><dt class="enumerate-enumitem">
+        c. </dt><dd 
+class="enumerate-enumitem">Eg: put a different upper bound on <span 
+class="cmmi-12">x </span>+ <span 
+class="cmmi-12">y</span>. Make the tradeoffs nonlinear.</dd></dl>
+      </li></ul>
+   <div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                             </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                        </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Monday 1&#8211;2pm, Thursday, 2pm&#8211;3pm, webex:     </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-12">https://rensselaer.webex.com/meet/mitchj</span></a> </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-7-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;                                                                          </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-8-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <span class="underline"><span 
+class="cmbx-12">TA:</span></span> She&#8217;ifa Punla-Green, punlas at rpi dot edu.</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-9-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-9-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours Tuesday 10&#8211;11.30am on webex:       </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-10-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-10-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="https://rensselaer.webex.com/meet/punlas" class="url" ><span 
+class="cmtt-12">https://rensselaer.webex.com/meet/punlas</span></a> </td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

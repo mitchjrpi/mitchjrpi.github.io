@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.tug.org/tex4ht/)"> 
+<!-- html --> 
+<meta name="src" content="ampl_overview.tex"> 
+<meta name="date" content="2017-09-27 12:40:00"> 
+<link rel="stylesheet" type="text/css" href="ampl_overview.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 20--><p class="noindent" >
+<!--l. 22--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12x-x-120">Math Models of Operations Research</span></a><br />
+<a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12x-x-120">MATP 4700 / ISYE 4770 </span></a><br /><br />
+<span 
+class="cmbx-12x-x-120">AMPL Overview</span></div>
+<!--l. 32--><p class="noindent" >AMPL is an optimization modeling language. It provides an easy interface to use optimization
+software solver packages. We have a license for AMPL for this course, so AMPL can be downloaded
+from the course LMS page. The LMS AMPL folder contains:
+      <ul class="itemize1">
+      <li class="itemize">The software itself, compiled for various different operating systems.
+      </li>
+      <li class="itemize">Installation instructions to get the software up and running on your computer.
+      </li>
+      <li class="itemize">The chapters of the book. The introduction and the first four chapters should help
+      you get started understanding the software and how to get the best from it. The
+      files for Chapters 1&#8211;4 are called <span 
+class="cmtt-12">04-tut1.pdf </span>through <span 
+class="cmtt-12">07-tut4.pdf</span>, with &#8220;tut&#8221; an
+      abbreviation for &#8220;tutorial&#8221;. You will probably need to use material in the later chapters
+      to complete the project.</li></ul>
+<!--l. 49--><p class="noindent" >You will need to choose a solver to get ampl to work. I suggest using either <span 
+class="cmtt-12">cplex </span>or <span 
+class="cmtt-12">gurobi</span>. You can
+choose the solver once you&#8217;ve started ampl by responding to the ampl prompt with the
+command
+      <div class="quote">
+      <!--l. 53--><p class="noindent" ><span 
+class="cmtt-12">ampl: option solver cplex;</span></div>
+<!--l. 55--><p class="noindent" >Notice the semicolon ; at the end of the line: you need to finish every line in ampl with a
+semicolon.
+<!--l. 58--><p class="noindent" >I have an overview page for ampl at
+      <div class="quote">
+      <!--l. 61--><p class="noindent" ><a 
+href="http://homepages.rpi.edu/~mitchj/ampldetails.html" class="url" ><span 
+class="cmtt-12">http://homepages.rpi.edu/</span><span 
+class="cmtt-12">~</span><span 
+class="cmtt-12">mitchj/ampldetails.html</span></a></div>
+<!--l. 63--><p class="noindent" >There are several links to collections of examples in this page. In particular, you might find the
+following collection useful:
+                                                                                         
+                                                                                         
+      <div class="quote">
+      <!--l. 66--><p class="noindent" ><a 
+href="http://homepages.rpi.edu/~mitchj/amplegs/" class="url" ><span 
+class="cmtt-12">http://homepages.rpi.edu/</span><span 
+class="cmtt-12">~</span><span 
+class="cmtt-12">mitchj/amplegs/</span></a></div>
+<!--l. 68--><p class="noindent" >From this page, <span 
+class="cmtt-12">brewery </span>is a simple all-in-one model, and <span 
+class="cmtt-12">brewABC.mod </span>along with <span 
+class="cmtt-12">brewA.dat </span>show
+you how to set up a model and data file. For a far larger version of this problem with randomly
+generated data, see <span 
+class="cmtt-12">standard</span><span 
+class="cmtt-12">_rand.mod </span>and <span 
+class="cmtt-12">standard</span><span 
+class="cmtt-12">_rand.dat</span>. A collection of commands for
+running this model can be found in <span 
+class="cmtt-12">standard</span><span 
+class="cmtt-12">_rand.run</span>.
+<!--l. 77--><p class="indent" >   You need to be careful of your <span 
+class="cmbx-12">path</span>: you will install ampl in a folder or a directory. The
+problems you want to solve may well be in another folder. You can modify your path so that it can
+find the software from any directory. Alternatively, you can start ampl from its installation
+directory and then use commands to change the current working directory to the one containing
+the problem you want to work on.
+                                                                                         
+                                                                                         
+<!--l. 89--><p class="noindent" ><span 
+class="cmbx-12">Some display commands</span>
+      <ul class="itemize1">
+      <li class="itemize">If you want to find out how long your code is running, use the command <br 
+class="newline" /><span 
+class="cmtt-12">display </span><span 
+class="cmtt-12">_total</span><span 
+class="cmtt-12">_solve</span><span 
+class="cmtt-12">_elapsed</span><span 
+class="cmtt-12">_time;</span>
+      </li>
+      <li class="itemize">To only display the nonzero variables in your output, use the command <br 
+class="newline" /><span 
+class="cmtt-12">option omit</span><span 
+class="cmtt-12">_zero</span><span 
+class="cmtt-12">_rows 1;</span>
+      </li>
+      <li class="itemize">To control the width of the display, you can use the command <br 
+class="newline" /><span 
+class="cmtt-12">option display</span><span 
+class="cmtt-12">_1col 10000; </span><br 
+class="newline" />This will then only display one output variable per line, as long as the number of
+      displayed variables doesn&#8217;t exceed 10000.</li></ul>
+<!--l. 103--><p class="noindent" >Other suggestions for working with ampl can be found at
+      <div class="quote">
+      <!--l. 106--><p class="noindent" ><a 
+href="http://homepages.rpi.edu/~mitchj/amplhints/" class="url" ><span 
+class="cmtt-12">http://homepages.rpi.edu/</span><span 
+class="cmtt-12">~</span><span 
+class="cmtt-12">mitchj/amplhints/</span></a></div>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                       </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                 </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Tuesdays 12-2pm, Wednesdays 11am&#8211;1pm.</td> </tr></table></div>
+                                                                                         
+                                                                                         
+<!--l. 132--><p class="noindent" ><span 
+class="cmbx-12">A typical ampl session</span>
+<!--l. 137--><p class="indent" >   You need to set the solver, read in your model and data files, solve the problem, and
+display the results. You can display dual variables and slack variables. The <span 
+class="cmtt-12">reset;</span>
+command is very useful: it lets ampl forget the model and data file it already has in
+storage.
+                                                                                         
+                                                                                         
+   <div class="verbatim" id="verbatim-1">
+ampl:&#x00A0;option&#x00A0;solver&#x00A0;cplex;
+&#x00A0;<br />ampl:&#x00A0;model&#x00A0;brewery;
+&#x00A0;<br />ampl:&#x00A0;solve;
+&#x00A0;<br />CPLEX&#x00A0;12.7.1.0:&#x00A0;optimal&#x00A0;solution;&#x00A0;objective&#x00A0;380
+&#x00A0;<br />3&#x00A0;dual&#x00A0;simplex&#x00A0;iterations&#x00A0;(1&#x00A0;in&#x00A0;phase&#x00A0;I)
+&#x00A0;<br />ampl:&#x00A0;display&#x00A0;x1,x2,x3,x4;
+&#x00A0;<br />x1&#x00A0;=&#x00A0;40
+&#x00A0;<br />x2&#x00A0;=&#x00A0;10
+&#x00A0;<br />x3&#x00A0;=&#x00A0;30
+&#x00A0;<br />x4&#x00A0;=&#x00A0;0
+&#x00A0;<br />
+&#x00A0;<br />ampl:&#x00A0;reset;
+&#x00A0;<br />ampl:&#x00A0;model&#x00A0;brewABC.mod;
+&#x00A0;<br />ampl:&#x00A0;data&#x00A0;brewC.dat;
+&#x00A0;<br />ampl:&#x00A0;solve;
+&#x00A0;<br />CPLEX&#x00A0;12.7.1.0:&#x00A0;optimal&#x00A0;solution;&#x00A0;objective&#x00A0;176.6666667
+&#x00A0;<br />2&#x00A0;dual&#x00A0;simplex&#x00A0;iterations&#x00A0;(1&#x00A0;in&#x00A0;phase&#x00A0;I)
+&#x00A0;<br />ampl:&#x00A0;display&#x00A0;x;
+&#x00A0;<br />x&#x00A0;[*]&#x00A0;:=
+&#x00A0;<br />&#x00A0;amber&#x00A0;&#x00A0;10
+&#x00A0;<br />golden&#x00A0;&#x00A0;16.6667
+&#x00A0;<br />;
+&#x00A0;<br />
+&#x00A0;<br />ampl:&#x00A0;display&#x00A0;resourcelimit;
+&#x00A0;<br />resourcelimit&#x00A0;[*]&#x00A0;:=
+&#x00A0;<br />&#x00A0;hops&#x00A0;&#x00A0;0.666667
+&#x00A0;<br />&#x00A0;malt&#x00A0;&#x00A0;1.66667
+&#x00A0;<br />yeast&#x00A0;&#x00A0;0
+&#x00A0;<br />;
+&#x00A0;<br />
+&#x00A0;<br />ampl:&#x00A0;display&#x00A0;resourcelimit.slack;
+&#x00A0;<br />resourcelimit.slack&#x00A0;[*]&#x00A0;:=
+&#x00A0;<br />&#x00A0;hops&#x00A0;&#x00A0;0
+&#x00A0;<br />&#x00A0;malt&#x00A0;&#x00A0;0
+&#x00A0;<br />yeast&#x00A0;&#x00A0;3.33333
+&#x00A0;<br />;
+&#x00A0;<br />
+&#x00A0;<br />ampl:&#x00A0;reset;
+&#x00A0;<br />ampl:&#x00A0;model&#x00A0;standard_rand.mod;
+                                                                                         
+                                                                                         
+&#x00A0;<br />ampl:&#x00A0;data&#x00A0;standard_rand.dat;
+&#x00A0;<br />ampl:&#x00A0;solve;
+&#x00A0;<br />CPLEX&#x00A0;12.7.1.0:&#x00A0;optimal&#x00A0;solution;&#x00A0;objective&#x00A0;734.4700585
+&#x00A0;<br />0&#x00A0;dual&#x00A0;simplex&#x00A0;iterations&#x00A0;(0&#x00A0;in&#x00A0;phase&#x00A0;I)
+&#x00A0;<br />16&#x00A0;barrier&#x00A0;iterations
+&#x00A0;<br />ampl:&#x00A0;display&#x00A0;m,n;
+&#x00A0;<br />m&#x00A0;=&#x00A0;1000
+&#x00A0;<br />n&#x00A0;=&#x00A0;5000
+&#x00A0;<br />
+&#x00A0;<br />ampl:&#x00A0;display&#x00A0;_total_solve_elapsed_time;
+&#x00A0;<br />_total_solve_elapsed_time&#x00A0;=&#x00A0;34.9501
+</div>
+<!--l. 194--><p class="nopar" >
+    
+</body></html> 
+
+                                                                                         
+
+

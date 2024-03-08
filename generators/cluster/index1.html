@@ -1,0 +1,104 @@
+<TITLE>  Generating clustering problems </TITLE>
+
+<H1>  Generating clustering problems </H1>
+
+
+These problems are generated using the fortran program
+<A HREF=initpGP.f>initpGP.f</A>.
+This program calls
+<A HREF=random.f>random.f</A> as a subroutine.
+You can compile them using
+<CENTER>
+<TT>
+f77 initpGP.f random.f -o initpGP
+</TT>
+</CENTER>
+for example.
+If you are using SunOS 5.6 (Solaris), you can download the
+<A HREF=initpGP>executable</A> directly.
+
+<P>
+
+A sample input file is contained in
+<A HREF=fort.17>fort.17</A>;
+this produces the output contained in
+<A HREF=in40a>in40a</A>.
+The output produced by my cutting plane code for this problem
+is contained in <A HREF=out40a>out40a</A>.
+In general, an input file must be placed in <tt>fort.17</tt>,
+and the generated problem will be sent to the standard output.
+
+<P>
+
+The code generates some <I>observations</I>, each with various
+<I>characteristics</I>.
+The input file <tt>fort.17</tt> contains these two parameters
+and also a parameter for a random seed.
+The first three rows of output returns the value of these three
+parameters.
+The remaining rows contain the observations and their characteristics.
+Each characteristic can take the value 0, 1, or 2.
+It is desired to identify observations that are similar to one another.
+
+<P>
+The method we use to formulate this problem as an integer programming problem
+is due to Grotschel and Wakabayashi:
+<PRE>
+    AUTHOR  =  {M. Gr{\"{o}}tschel and Y. Wakabayashi},
+    TITLE   =  {A cutting plane algorithm for a clustering problem},
+    JOURNAL =  {Mathematical Programming},
+    YEAR    =  1989,
+    VOLUME  =  45,
+    PAGES   =  {59--96}
+</PRE>
+
+The observations can be regarded as vertices of a graph.
+The length of the edge connecting two graphs is given by
+<CENTER>
+(Number of observations in which they disagree)
+- (Number of observations in which they agree)
+</CENTER>
+Thus, in the file <A HREF=out40a>out40a</A>,
+the distance between observations 1 and 2 is (4-8)=-4.
+
+<P>
+
+We then wish to choose a subset of the edges such that:
+<OL>
+<LI> The cost of the chosen edges is as small as possible.
+<LI> The chosen edges correspond to the edges of cliques,
+that is, if edges <TT>(i,j)</TT> and <TT>(j,k)</TT> are chosen
+then edge <TT>(i,k)</TT> must also be chosen.
+</OL>
+
+The objective is to choose a cut that minimizes the sum of the
+weights of the edges appearing in the cut.
+Every edge has cost +1 or -1, evenly distributed.
+
+<P>
+
+
+Seeds and optimal values for selected problems are available:
+<UL>
+<LI><A HREF=probs12>Problems with 12 characteristics</A>.
+<LI><A HREF=probs15>Problems with 15 characteristics</A>.
+</UL>
+
+<P>
+A paper describing the problem in more detail and giving computational
+results is
+<A HREF=../../papers/compMar99.html>
+"Computational experience with
+an interior point cutting plane algorithm."</A>
+
+<HR>
+
+<A HREF=../..>Back to my homepage</A>.
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-924637-3";
+urchinTracker();
+</script>
+

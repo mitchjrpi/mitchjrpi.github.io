@@ -1,0 +1,685 @@
+<TITLE> MATP6620 / ISYE6760 Integer Programming.</TITLE>
+
+<H1> Combinatorial Optimization and Integer
+ Programming</H1>
+<H2> Spring 2015</H1>
+<H2> MATP6620 / ISYE6760 </H2>
+
+
+<h3>Course basics:</h3>
+
+<ul>
+  <li>
+    <b><A HREF =outline/outline.html>
+       Course outline</A></B>.
+
+
+  <li><a href=https://lms.rpi.edu/>LMS</a>.
+
+<!--
+  <li><a href=matp6620spr13display.htm>Scores</a> on the first five homeworks
+and the midterm.
+-->
+
+
+  <li>
+    Some books are
+   <B>
+<A HREF="http://www.lib.rpi.edu/cgi-bin/crsind.pl/MATP662001">on reserve</A>
+</B>
+in the library.
+You can borrow the materials for up to an hour.
+<!--
+Further, you can borrow the books <B>overnight</B>
+if you check them out less than an hour before
+<a href=http://library.rpi.edu/update.do?artcenterkey=27>closing
+time</A> and return them early the following day.
+-->
+
+</ul>
+
+
+
+  <h3>  Midterm Exam:</h3>
+In class on Friday, April 24.
+You can bring one sheet of handwritten notes.
+(You can write on both sides, the paper can be no larger than 8.5x11 inches).
+The exam will cover everything in class up to April 14.
+Here are some
+<a href=oldexams.html>old exams</a>.
+
+Here are the
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6620/midtermS15solns.pdf>solutions</a>.
+<img src=../images/new.gif>
+
+
+  <h3> Projects</h3>
+
+<a href=schedule/schedule.html>More information about the final
+report and the presentation</a>.
+<p>
+<b>Note: the presentations will now take place in Amos Eaton 214,
+from 3-6pm on March 21.</b>
+<img src=../images/new.gif>
+
+<!--
+  <h3> Projects</h3>
+<ul>
+<li>
+The remaining presentations will take place on
+<b>Friday May 17, from 3-6pm, in Troy 2012</b>.
+The presentations should be <b>no more than 12 minutes</b> long.
+There will be 13 presentations.
+The order of the presentations will be determined on the day.
+<li>
+You should prepare 20 copies of your slides to hand out in advance.
+Send me an electronic version of your slides.
+<li>Please ask questions during the presentations.
+I will award bonus points for good questions;
+I will not deduct points for difficulties in answering questions from students.
+
+<li>
+Your writeup is due on May 15. 
+Your report should be about 5-10 pages long.
+It must be typewritten: send me an electronic copy as a pdf file.
+It should describe the problem you worked on,
+what you did to solve the problem, and the significance of what you did.
+You should also cite relevant references and state what was novel about
+your approach.
+For group projects, also hand in one sheet from each group member
+discussing his or her individual contribution.
+<li><a href=schedule/schedule.html>Presentation schedule</a>
+<img src=../images/new.gif>
+</ul>
+-->
+
+
+  <h3>  Homeworks:</h3>
+<ul>
+<li><a href=hw1html/hw1.html>Homework 1</a>.
+Here are the <a href=hw1sol/hw1sol.html>solutions</a>.
+<li><a href=hw2html/hw2.html>Homework 2</a>.
+Here are the <a href=hw2sol/hw2sol.html>solutions</a>.
+<li><a href=hw3html/hw3.html>Homework 3</a>.
+Here are the <a href=hw3sol/hw3sol.html>solutions</a>.
+<li><a href=hw4html/hw4.html>Homework 4</a>.
+     (See this brief note on
+<a href=../handouts/continuousknapsack>solving continuous
+knapsack problems</a>.)
+Here are the <a href=hw4sol/hw4sol.html>solutions</a>.
+<li><a href=hw5html/hw5.html>Homework 5</a>.
+Here are the <a href=hw5sol/hw5sol.html>solutions</a>.
+<li><a href=hw6html/hw6.html>Homework 6</a>.
+Here are the <a href=hw6sol/hw6sol.html>solutions</a>.
+<img src=../images/new.gif>
+</ul>
+
+
+<h3>Notes:</h3>
+
+(Handwritten notes, not the most legible in places.)
+
+<p>
+
+
+<b>Introduction:</b>
+<ul>
+<li><a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/intro.pdf>Introduction: example problems, linear programming</a>.
+<ul>
+<li>Lecture 1, Jan 27: Pages 1-7.
+<li>Lecture 2, Jan 30: Pages 8-15, including the typewritten handouts on
+<A HREF="http:../handouts/simplexalgo/simplexalgo.html">the simplex
+        algorithm</A> and
+     <A HREF="http:../handouts/simplex/simplex.html">an iteration of it</a>.
+</ul>
+<li><a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/graph1.pdf>Graph theory: introduction, max flow</a>.
+<ul>
+<li>Lecture 1, Jan 27: Pages 1-6, via the typewritten handout on
+<A HREF="http:../handouts/graph/graph.html">graph theory</A>
+(also available as a
+<a href=https://dl.dropboxusercontent.com/u/4254161/courses/handouts/graphbeamer.pdf>pdf with more pictures but more page breaks</a>).
+<li>Lecture 2, Jan 30: Pages 14-20, 24
+</ul>
+<li><a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/graph2.pdf>Graph theory: minimum spanning trees, matchings</a>.
+Most of this material is not covered in class.
+<ul>
+<li>Lecture 3, Feb 3: Pages 1-3, 6-8 (skimmed).
+</ul>
+</ul>
+
+<b>Computational complexity</b>
+<ul>
+<li><a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/NPintro.pdf>Introduction to NP-completeness</a>.
+See also some <a href=NPdefs/NPdefs.html>typewritten notes</a>.
+<ul>
+<li>Lecture 3, Feb 3: Pages 1-10.
+<li>Lecture 4, Feb 6: Pages 11-14.
+</ul>
+<li><a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/NPred1.pdf>NP-completeness reductions: Hamiltonian cycle</a>.
+For a nice presentation of the reduction of 3-SAT to Hamiltonian cycle,
+see
+<a href=https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/sat.pdf>this link</a>
+from
+<a href=https://www.cs.cmu.edu/~ckingsf/>Carl Kingsford</a>.
+<ul>
+<li>Lecture 4, Feb 6: Pages 1-10.
+<li>Lecture 5, Feb 10: Page 11.
+</ul>
+<li><a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/NPred2.pdf>NP-completeness: node packing, knapsack, linear programming</a>.
+<ul>
+<li>Lecture 4, Feb 6: Pages 1-3.
+<li>Lecture 5, Feb 10: Pages 4-14.
+</ul>
+<li><a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/sep_equiv_opt.pdf>Polynomial equivalence of separation and optimization</a>.
+<ul>
+<li>Lecture 5, Feb 10: Pages 1-4.
+</ul>
+</ul>
+
+<b>Polyhedral theory and cutting planes:</b>
+<ul>
+<li><a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/polyhedra1.pdf>Introduction to polyhedral theory</a>.
+
+There is a <a href=LPrelaxations/LPrelaxations.html>typewritten version
+of most of these notes</a>.
+<br>
+(See also the four typewritten <a href=#linalg>handouts</a> from February 13.)
+<ul>
+<li>Lecture 6, Feb 13: Pages 1-10.
+</ul>
+<li><a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/polyhedra2.pdf>Facets</a>.
+<ul>
+<li>Lecture 6, Feb 13: Pages 1-3.
+<li>Lecture 7, Feb 20: Pages 4-10.
+See also these
+<a href=valid_ineqs/valid_ineqs.html>typewritten notes</a>
+for some of the definitions.
+</ul>
+<li><a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/polyhedra3.pdf>Chvatal-Gomory rounding</a>.
+See also these
+<a href=valid_ineqs/valid_ineqs.html>typewritten notes</a>
+for some of the definitions.
+<ul>
+<li>Lecture 7, Feb 20: Pages 1-5, 13 (skip 6-12).
+<li>Lecture 8, Feb 24: Pages 14-19.
+See also
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6620/CGrank2.PDF>this method for showing the Chvatal rank is at least 2</a>.
+</ul>
+<li><a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/cutsa.pdf>Gomory's cutting plane algorithm</a>.
+<ul>
+<li>Lecture 8, Feb 24: Pages 1-11.
+See also the recent
+<a href=http://www.dei.unipd.it/~fisch/papers/lexGomory_new.pdf>paper
+by Fischetti et al.</a> (pdf).
+</ul>
+<li><a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/mip.pdf>Mixed integer programming, including Gomory's mixed integer cut</a>.
+<ul>
+<li>Lecture 9, Feb 27: Pages 1-6.
+<li>Lecture 15, Mar 20: Pages 1, 7-8.
+See also this example of a
+<a href=https://dl.dropboxusercontent.com/u/4254161/courses/matp6620/flowcover.pdf>flow cover constraint</a>.
+</ul>
+<li><a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/cutsd.pdf>Maxcut problems and linear ordering problems</a>.
+<ul>
+<li>Lecture 9, Feb 27: Pages 4-5.
+<li>Lecture 10, Mar 3: Pages 6-7.
+See also the handout on the
+<A HREF=../handouts/barahonamahjoub/>Barahona-Mahjoub routine</a>
+for finding violated constraints for MAXCUT problems.
+<li>Lecture 11, Mar 6: Pages 1-3.
+Also available in <a href=maxcutProofs/maxcutProofs.html>typewritten form</a>
+(although the symbol for "not in" was not converted quite correctly
+from the latex).
+<!--
+<li>Lecture 14, Mar 19: Pages 8-13.
+-->
+</ul>
+<li><a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/cutsb.pdf>Node packing. Lifting</a>.
+<ul>
+<li>Lecture 10, Mar 3: Pages 1-2.
+<li>Lecture 11, Mar 6: Pages 3-7.
+<li>Lecture 12, Mar 10: Pages 8-9.
+</ul>
+<li><a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/cutsc.pdf>Knapsack problems and satisfiability problems</a>.
+<ul>
+<li>Lecture 12, Mar 10: Pages 1-3.
+<!--
+<li>Lecture 14, Mar 19: Pages 4-6.
+-->
+</ul>
+<li><a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/tsp.pdf>The traveling salesman problem</a>.
+The Concorde TSP solver is available from
+<a href=http://www.tsp.gatech.edu/>this TSP website</a>
+at Georgia Tech.
+The website also includes images of TSPs and information about
+the history of the TSP.
+<a href=http://www.mathopt.org/Optima-Issues/optima90.pdf>Optima 90</a>
+contains a discussion of approximation algorithms for the TSP.
+<ul>
+<li>Lecture 13, Mar 13: Pages 1-10.
+</ul>
+<li><a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/liftnproject.pdf>Lift and project, and disjunctive cuts</a>.
+<ul>
+<li>Lecture 14, Mar 17: Pages 1-9.
+<li>Lecture 15, Mar 20: Pages 10-11.
+</ul>
+<li><a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/tu.pdf>Total unimodularity</a>.
+<ul>
+<li>Lecture 16, Mar 31.  See also
+<a href=totallyunimodular/totallyunimodular.html>typewritten notes</a>
+for part of this material.
+</ul>
+<li><a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6620/perfect.pdf>Perfect graphs</a>.
+<ul>
+<li>Lecture 16, Mar 31: all pages.
+</ul>
+</ul>
+
+<b>Branch and bound:</b>
+
+<ul><li>
+<a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/bnb1.pdf>Part
+1</a>
+<ul>
+<li>Lecture 17, Apr 3: all pages.
+See also the handout of an
+     <a href=../handouts/bnbeg>example of branch-and-bound</a>.
+</ul>
+<li>
+<a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/bnb2.pdf>Part
+2</a>.
+<ul>
+<li>Lecture 18, Apr 7: Pages 1-8.
+Notes updated to include material on variable fixing on 2015-04-17.
+</ul>
+<li>
+See also the handouts of an
+<a href=http://www.rpi.edu/~mitchj/handouts/bc_eg>example of
+branch-and-cut</a>, and
+the <a href=http://www.rpi.edu/~mitchj/handouts/bc_algo>branch-and-cut
+algorithm</a>.
+Also handed out were some
+<a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/achterbergP7_10.pdf>computational results</a>
+from a
+<a href=http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.92.7117>paper
+by Achterberg, Koch, and Martin</a>
+(see
+<a href=http://citeseer.ist.psu.edu/viewdoc/summary?doi=10.1.1.87.9887>here</a>
+for more tables of results).
+</ul>
+
+<b>Semidefinite programming:</b>
+
+<ul>
+<li>
+<a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/sdp.pdf>MaxCut,
+Lovasz Theta number, node packing, completely positive programs.</a>
+<ul>
+<li>Lecture 19, Apr 10: Pages 1-6, 10, 12-14.
+<li>Lecture 20, Apr 14: Pages 7, 9, 17-23.
+</ul>
+</ul>
+
+
+<b>Decomposition approaches:</b>
+
+<ul>
+<li>
+<a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/lagrangian.pdf>Lagrangian relaxation.</a>
+<ul>
+<li>Lecture 21, Apr 17: Pages 1-9.
+See also <a href=lagrangianrelaxation/lagrangianrelaxation.html>typewritten
+notes for the theorems</a>.
+<li>Lecture 22, Apr 21, and Lecture 24, Apr 28: Pages 10-11.
+<li><a href=lagrangianexamples/lagrangianexamples.html>Two examples of
+Lagrangian relaxation</a>: Lecture 22, Apr 21.
+</ul>
+<li>
+<a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/nonsmooth.pdf>Cutting plane and bundle methods for solving Lagrangian relaxations.</a>
+<ul>
+<li>Lecture 22, Apr 21, and Lecture 24, Apr 28: Pages 2-7. (Skimmed.)
+</ul>
+<li>
+<a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/benders.pdf>Benders decomposition.</a>
+<ul>
+<li>Lecture 24, Apr 28: pages 1-3.
+<li>Lecture 25, May 1: pages 4 and 6.
+See also a
+<a href=benders_eg/benders_eg_slides.html>typewritten example</a>.
+</ul>
+<li>
+<a href=benders_logical/benders_logical.html>Logical Benders decomposition</a>.
+<ul>
+<li>Lecture 25, May 1: all pages.
+</ul>
+<li>
+<a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/setpartitioning.pdf>Branch and price.</a>
+<ul>
+<li>Lecture 26, May 5: all pages.
+</ul>
+</ul>
+
+<b>
+<a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/minlp.pdf>Mixed integer nonlinear programming.</a></b>
+<ul>
+<li>Lecture 27, May 8.
+<li>See also typewritten notes on
+<a href=mccormick/mccormick.html>McCormick inequalities</a>.
+</ul>
+
+<b>Metaheuristic approaches:</b>
+
+<ul>
+<li>
+<a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/grasp.pdf>GRASP.</a>
+<ul>
+<li>Lecture 27, May 8: Pages 1-3.
+</ul>
+<li>
+<a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/heuristics.pdf>Simulated annealing.</a>
+<li>
+<a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/tabusearch.pdf>Tabu search.</a>
+<ul>
+<li><strike>Lecture 27, May 8.</strike>
+</ul>
+<li>
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6620/feasibilitypump.PDF>Feasibility pump</a>.
+<ul>
+<li>Lecture 28, May 12.
+</ul>
+</ul>
+
+<p>
+
+<b>
+<a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/cp.pdf>Constraint programming.</a></b>
+     See also a handout on the
+<a href=../handouts/lustigJobShop.pdf>job shop scheduling OPL example</a>
+from an Interfaces paper by Lustig and Puget,
+and
+<a href=http://mat.gsia.cmu.edu/trick/>Michael
+Trick</a>'s powerpoint presentation on
+<a href=http://mat.gsia.cmu.edu/trick/cp.ppt>constraint programming</a>.
+<ul>
+<li><strike>Lecture 27, May 8.</strike>
+</ul>
+
+<b>Other approaches using linear programming:</b>
+
+<ul>
+<li>
+<a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/approximation.pdf>Approximation algorithms.</a>
+<ul>
+<li>Lecture 28, May 12: Pages 13-15.
+</ul>
+<li>
+<a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/primaldual.pdf>The primal-dual method.</a>
+<ul>
+<li>Lecture 28, May 12: Pages 1-4.
+</ul>
+<li>
+<a href=http://eaton.math.rpi.edu/faculty/Mitchell/courses/matp6620/matroids.PDF>Matroids</a>.
+<ul>
+<li>Lecture 28, May 12.
+</ul>
+</ul>
+
+
+
+  <h3>  Handouts:</h3>
+    <UL>
+     <LI> <A HREF="http:../handouts/graph/graph.html">Graph theory.</A>
+(Handed out on January 27.)
+     <LI> <A HREF="http:../handouts/simplexalgo/simplexalgo.html">The simplex
+        algorithm</A> and
+     <A HREF="http:../handouts/simplex/simplex.html">an iteration of it</a>.
+(Handed out on January 30.)
+     <LI>
+<a name=linalg>
+ <A HREF="http:../handouts/linalg/linalg.html">Linear algebra.</A>
+(Handed out on February 13.)
+     <LI> <A HREF="http:../handouts/affine">Affine spaces.</A>
+(Handed out on February 13.)
+     <LI> <A HREF="http:../handouts/faces">Dimension, polyhedra, and faces.</A>
+(Handed out on February 13.)
+     <LI> <A HREF="http:../handouts/extreme/extreme.html">Extreme points
+and extreme rays of polyhedra.</A>
+(Handed out on February 13.)
+     <LI> <A HREF=../handouts/barahonamahjoub/>The Barahona-Mahjoub routine for
+finding violated constraints for MAXCUT problems.</A>
+(Handed out on Mar 3.)
+     <li> A brief note on
+<a href=../handouts/continuousknapsack>solving continuous
+knapsack problems</a>.
+(Handed out on Apr 3.)
+     <li> <a href=../handouts/bnbeg>An example of branch-and-bound.</a>
+(Handed out on Apr 3.)
+     <li> The branch-and-cut
+<a href=http://www.rpi.edu/~mitchj/handouts/bc_eg>example</a> and
+<a href=http://www.rpi.edu/~mitchj/handouts/bc_algo>algorithm</a> were taken
+from <a href=../papers/bc_annot.html>this paper</a>.
+(Handed out on April 7.)
+     <li>
+<a href=http://eaton.math.rpi.edu/CourseMaterials/Spring09/JM6620/achterbergP7_10.pdf>Computational results</a> with various branching rules,
+from a paper by Achterberg, Koch, and Martin.
+(Handed out on April 7.)
+    </UL>
+
+  <h3>
+Papers and resources:</h3>
+Most of these pointers do not lead  to sites at RPI.
+<UL>
+<li>
+Two libraries of MINLP problems:
+<a href=http://www.gamsworld.org/minlp/minlplib.htm>MINLPlib</a>
+and
+<a href=http://www-unix.mcs.anl.gov/~leyffer/macminlp/>MacMINLP</a>.
+<li>
+MINLP references:
+<ul>
+<li>
+J.-P. Goux and S. Leyffer,
+<i>Solving large MINLPs on computational grids</i>,
+Optimization and Engineering 3(3), 2002, pages 327-346.
+<li>
+I. E. Grossmann, <i>Review of Nonlinear Mixed Integer
+    and Disjunctive Programming Techniques</i>,
+Optimization and Engineering 3(3), 2002, pages 227-252.
+<li>
+S. Leyffer,
+<i>Integrating SQP and branch-and-bound for mixed integer
+    nonlinear programming</i>,
+Computational Optimization and Applications 18, 2001,
+pages 295-309.
+<li>
+M. Tawarmalani and N. V. Sahinidis,
+<i>Global optimization of mixed integer nonlinear programs:
+    a theoretical and computational study</i>,
+Mathematical Programming 99, 2004, pages 563-591.
+</ul>
+<li>
+<b>Tutorial on Computational Complexity</b>,
+by
+<a href=http://www.isye.gatech.edu/faculty/Craig_Tovey/>Craig Tovey</a>.
+Appeared in <b>Interfaces</b>
+32(3), pages 30-61, 2002.
+Can be downloaded via the library website.
+  <LI> The <B>P=NP</B> conjecture is one of the
+<A HREF=http://www.claymath.org/millennium/P_vs_NP/>Millennium
+Prize Problems</A>.
+A problem based on
+<a href=http://www.claymath.org/Popular_Lectures/Minesweeper/>Minesweeper</a>
+is NP-complete.
+<li>
+<a href=http://crypto.cs.mcgill.ca/~stiglic/PRIMES_P_FAQ.html>PRIMES is in
+P</a>; see also
+<a href=http://www.cse.iitk.ac.in/users/manindra/>here</a>.
+<li><a href=http://www.research.att.com/~dsj/columns/>NP-Completeness
+columns</a> by <a href=http://www.research.att.com/~dsj/>David S. Johnson</a>.
+<LI>
+Survey papers on
+<A HREF=../papers/mitche1.html>cutting plane algorithms</A>,
+<A HREF=../papers/leeejem.html>branch-and-bound</A>,
+and
+<a href=../papers/EORMS_JEM_BnC.html>branch-and-cut</a>.
+<LI>
+An amusing
+<A HREF=http://www.cs.rutgers.edu/~mcgrew/Explorer/1.2/#Farmers>interview</A>
+with
+<A HREF=http://www.cs.concordia.ca/~chvatal>Vasek Chvatal</A>
+regarding cutting plane methods for the TSP.
+<LI>
+Here is a page on the
+<A HREF=http://www.tsp.gatech.edu/history/index.html>history</A>
+of the TSP, with pictures (including one involving Car 54
+and one of the optimal tour for a graph with 13,509 cities).
+This is part of a larger site at Georgia Tech on the
+<A HREF=http://www.tsp.gatech.edu/>TSP</A>.
+The website also includes the downloadable software
+<a href=http://www.tsp.gatech.edu/concorde/index.html>Concorde</a>.
+Two further references for this problem are
+<A HREF=http://www.ing.unlp.edu.ar/cetad/mos/TSPBIB_home.html>TSPBIB</A>
+and
+<A HREF=http://www.cs.concordia.ca/~chvatal/tsp/tsp.html>Vasek Chvatal's
+page on the TSP</A>.
+Instances of TSP can be obtained from the
+<A HREF=http://www.iwr.uni-heidelberg.de/iwr/comopt/software/TSPLIB95>
+TSPLIB</A>.
+Hamilton called the problem of finding a route through the vertices
+of a icosahedron the
+<A HREF=http://www-groups.dcs.st-and.ac.uk:80/~history/Diagrams/Icosian_game.jpeg>
+Icosian game</A>.
+A similar problem was posed by Euler: Is it possible for a knight
+to visit every square of a chessboard without visiting any square twice?
+<LI><B>A list of selected
+<A HREF=http://www.nmt.edu/~borchers/readings/coptreadings.ps>textbooks
+and articles</A></B>
+in combinatorial optimization, compiled by Brian Borchers. (Postscript file.)
+Updated Feb 9, 1999.
+<li>
+<a href=http://www.dei.unipd.it/~fisch/papers/lexGomory_new.pdf>
+A. Zanette, M. Fischetti, E. Balas.
+<i>Lexicography and degeneracy: can a pure cutting plane algorithm work?</i>,
+Mathematical Programming A, 2009, online first.</a>
+(pdf).
+    <LI>
+<A HREF="http://www.iwr.uni-heidelberg.de/iwr/comopt/software/PORTA/">
+PORTA</A>,
+a polyhedral representation algorithm.
+If you provide the algorithm with an integer programming problem,
+it will return a list of all the extreme points and information about the
+facets.
+Also available from the same site is
+<A HREF="http://www.iwr.uni-heidelberg.de/iwr/comopt/software/SMAPO/">
+SMAPO</A>,
+a library of linear descriptions of polytopes of small instances of
+various integer programming problems.
+<!--
+<LI><B><A HREF=http://www.ms.uky.edu/~jlee/jlsup/jlsup.html>Computational
+Materials for Combinatorial Optimization</A></B>, maintained by
+<A HREF=http://ioe.engin.umich.edu/people/fac/jonxlee.php>Jon Lee</A>.
+-->
+<LI><B><A HREF=http://www.ampl.com/>AMPL</A></B>
+is a mathematical programming and optimization modeling language.
+       You can input your model into AMPL in a reasonably intuitive
+       way and it will use a solver (such as MINOS or CPLEX) for solving
+       the problem.
+       It is capable of solving linear, nonlinear, and integer programs.
+It is available from the LMS page for the course.
+Here is <a href=../ampldetails.html>local information about AMPL</a>,
+including information about using it on RCS.
+       You can download the
+       <A HREF=http://www.ampl.com/BOOK/index.html>the whole of the book</A>,
+       chapter by chapter.
+<LI>
+A survey paper on
+<a href=http://www.research.att.com/~mgcr/abstracts/grasp-hao.html>GRASP</a>.
+<LI>
+A survey paper on
+<A HREF=http://www.research.att.com/~dsj/papers.html>metaheuristics
+for the TSP</A> (scroll down to the last couple of papers on the TSP,
+since the papers are in chronological order).
+<LI>
+A survey paper on
+<A HREF=http://joc.pubs.informs.org/BackIssuesVol009TOC.html>genetic
+algorithms</A> (volume 9, number 3 of INFORMS Journal on Computing, by
+Colin Reeves).
+<LI>
+A survey paper on
+<A HREF=http://leeds-faculty.colorado.edu/laguna/articles/ts2.html>tabu
+search</A>.
+<LI>
+The <B>semidefinite programming</B>
+homepage maintained by
+    <A HREF=http://www-user.tu-chemnitz.de/~helmberg/semidef.html>
+Christof Helmberg</A>.
+<LI>
+A survey paper by
+<a href=http://www.orie.cornell.edu/~miketodd>Mike Todd</a> on
+<A HREF=http://www.orie.cornell.edu/~miketodd/soa5.ps>semidefinite
+programming</A>, with an emphasis on algorithms.
+(Acta Numerica 10 (2001), pp. 515-560.)
+<li>
+A survey paper by
+<a href=http://www-math.mit.edu/~goemans/>Michel Goemans</a>
+on
+<a href=http://www-math.mit.edu/~goemans/semidef-survey.ps>semidefinite
+programming in combinatorial optimization</a>.
+(Mathematical Programming, 79 (1997), pages 143-161.)
+<LI><A HREF=http://glossary.computing.society.informs.org/index.php?page=myths.html>Myths
+and counterexamples in optimization</A>. This site shows that you have
+to be careful about your assumptions when you state some things that are
+"obvious" in optimization.
+<LI><A HREF=../sites_or.html>A list of operations research sites</A>.
+
+<LI><B>
+<A HREF="http://www.nada.kth.se/nada/theory/problemlist.html">A
+compendium of approximability results for NP optimization problems</A></B>.
+<LI>
+Some papers on the
+<B><A HREF="http://www.cs.princeton.edu/~arora/publist.html">hardness of
+approximation</A></B> by Sanjeev Arora.
+</UL>
+
+ </UL>
+
+
+<HR>
+
+<A HREF="http://www.rpi.edu/~mitchj"> Back to John Mitchell's homepage</A>
+
+
+|
+
+<A HREF="http://rpi.edu/dept/math/">RPI Math</A>
+
+|
+
+<A HREF=http://ise.rpi.edu/>ISYE</A>
+
+<hr>
+
+<script
+  type="text/JavaScript"
+  language="JavaScript">
+<!--
+//
+// get last modified date of the
+// current document.
+//
+
+document.write(
+  "Last updated: " +
+   document.lastModified );
+
+// -->
+</script>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-924637-1";
+_udn ="rpi.edu";
+urchinTracker();
+</script>
+

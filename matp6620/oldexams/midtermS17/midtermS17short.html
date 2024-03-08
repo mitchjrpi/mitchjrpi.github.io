@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="midtermS17short.tex"> 
+<meta name="date" content="2019-03-15 11:07:00"> 
+<link rel="stylesheet" type="text/css" href="midtermS17short.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 37--><p class="noindent" >
+<!--l. 39--><p class="noindent" ><span 
+class="cmr-12x-x-120">MATP6620/ISYE6770</span><br />
+<span 
+class="cmbx-12x-x-120">Combinatorial Optimization and Integer Programming </span><br />
+<span 
+class="cmr-12x-x-120">Spring 2017</span></div>
+<div class="center" 
+>
+<!--l. 44--><p class="noindent" >
+<!--l. 45--><p class="noindent" >Midterm Exam, Friday, March 31, 2017.</div>
+<!--l. 48--><p class="noindent" >Please do all four problems. Show all work. No books or calculators allowed. You may use any
+result from class, the homeworks, or the texts, except where stated. You may use one sheet of
+handwritten notes. The exam lasts 110 minutes.
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">(20 points) You wish to choose from a set of possible investments <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">, </span>7<span 
+class="cmsy-10x-x-120">}</span>, subject to the
+      following constraints:
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-5x1">You cannot invest in all of them.
+           </li>
+           <li 
+  class="enumerate" id="x1-7x2">Investment 1 must be chosen if investment 3 is chosen.
+           </li>
+           <li 
+  class="enumerate" id="x1-9x3">Investment 5 can be chosen only if investment 2 is also chosen.
+           </li>
+           <li 
+  class="enumerate" id="x1-11x4">You must choose either both investments 1 and 6 or neither.
+           </li>
+           <li 
+  class="enumerate" id="x1-13x5">You must choose either at least one of the investments 1,2,3, and/or at least two
+           investments from 2,5,6,7.</li></ol>
+      <!--l. 67--><p class="noindent" >Model this as a 0-1 integer programming feasibility problem.
+      </li>
+      <li 
+  class="enumerate" id="x1-15x2">
+                                                                                         
+
+                                                                                         
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-17x1">(15 points) We have a collection of 2<span 
+class="cmmi-12">k </span><span 
+class="cmsy-10x-x-120">- </span>1 objects, where <span 
+class="cmmi-12">k </span>is a positive integer.
+           Let
+           <center class="math-display" >
+           <img 
+src="midtermS17short0x.png" alt="     {
+        1  if object i selected
+xi =    0  otherwise
+           " class="math-display" ></center>
+           <!--l. 86--><p class="nopar" >
+           Assume that at most one item can be selected from each subset of size&#x00A0;<span 
+class="cmmi-12">k</span>. Show that the
+           constraint
+           <center class="math-display" >
+           <img 
+src="midtermS17short1x.png" alt="2&#x2211;k-1
+    xi &#x2264; 1
+ i=1
+           " class="math-display" ></center>
+           <!--l. 91--><p class="nopar" >
+           has Chvatal rank at most one.
+           </li>
+           <li 
+  class="enumerate" id="x1-19x2">(10 points) In a particular node packing problem on a graph <span 
+class="cmmi-12">G </span>= (<span 
+class="cmmi-12">V,E</span>), we have a
+           clique <span 
+class="cmmi-12">C </span>of size 17. The initial LP relaxation only includes constraints for the
+           edges,
+           <center class="math-display" >
+           <img 
+src="midtermS17short2x.png" alt="xi + xj &#x2264; 1   for all edges (i,j) &#x2208; E.
+           " class="math-display" ></center>
+           <!--l. 98--><p class="nopar" >
+           Show that the clique constraint
+           <center class="math-display" >
+           <img 
+src="midtermS17short3x.png" alt="&#x2211;
+    x &#x2264;  1
+     i
+i&#x2208;C
+           " class="math-display" ></center>
+           <!--l. 102--><p class="nopar" >
+           has Chvatal rank at most&#x00A0;4.</li></ol>
+                                                                                         
+
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-21x3">An integer program of the form
+      <center class="math-display" >
+      <img 
+src="midtermS17short4x.png" alt="minx        cTx
+subject to  Ax   =   b
+
+              x  &#x2265;   0, integer
+      " class="math-display" ></center>
+      <!--l. 121--><p class="nopar" >
+      has an LP relaxation which has optimal form
+      <center class="math-display" >
+      <img 
+src="midtermS17short5x.png" alt="min         3.2x           +  0.7x           +   7.2
+                1                 3
+subject to  2.1x1  +   x2  +  1.3x3          =   5.2
+            1.3x1          -  0.6x3  +   x4  =   2.6
+                                         xi  &#x2265;   0  &#x2200;i
+      " class="math-display" ></center>
+      <!--l. 130--><p class="nopar" >
+      with optimal basic feasible solution <span 
+class="cmmi-12">x </span>= (0<span 
+class="cmmi-12">, </span>5<span 
+class="cmmi-12">.</span>2<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>2<span 
+class="cmmi-12">.</span>6) with value&#x00A0;7<span 
+class="cmmi-12">.</span>2.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-23x1">(10 points) Assume we know a feasible integer solution with value 10. Does this tell
+           us anything about the nonbasic variables <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> or <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> in an optimal integer solution?
+           </li>
+           <li 
+  class="enumerate" id="x1-25x2">(10  points)  What  are  the  Gomory  cutting  planes  corresponding  to  the  two
+           constraints?</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-27x4">
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-29x1">(10 points) Solve the minimum spanning tree problem on the following graph:
+           <div class="center" 
+>
+<!--l. 163--><p class="noindent" >
+                                                                                        <img src=q4graph.png> 
+
+                                                                                         
+<!--l. 252-->
+</div>
+           </li>
+           <li 
+  class="enumerate" id="x1-31x2">We could imagine a cutting plane approach to solve the minimum spanning tree
+           problem, initializing with the constraints that every vertex is adjacent to at least one
+           edge in the solution, and the total number of edges is one less than the number of
+           vertices.
+               <ol  class="enumerate3" >
+               <li 
+  class="enumerate" id="x1-33x1">(10 points) <a 
+ id="x1-321"></a>Show that such a relaxation for the graph above has a feasible
+               solution with value&#x00A0;36.
+               </li>
+               <li 
+  class="enumerate" id="x1-35x2">(10 points) Can you find valid constraints that are violated by your solution
+               in part&#x00A0;<a 
+href="#x1-321">4(b)<span class="roman-numeral">i</span><!--tex4ht:ref: q.spanrelax --></a>?
+               </li>
+               <li 
+  class="enumerate" id="x1-37x3">(5 points) Consider now a general graph. Let <span 
+class="cmmi-12">S </span>denote the set of incidence
+               vectors  of  spanning  trees.  Given  a  feasible  solution  <span class="bar-css"><span 
+class="cmmi-12">x</span></span> to  a  relaxation  of
+               the minimum spanning tree with <span class="bar-css"><span 
+class="cmmi-12">x</span></span> <span 
+class="cmsy-10x-x-120">&#x2044;&#x2208;</span> conv(<span 
+class="cmmi-12">S</span>), a separation routine can be
+               designed to find a violated valid constraint for conv(<span 
+class="cmmi-12">S</span>). In the best case,
+               would you expect such a routine to run in polynomial time? Justify your
+               answer.</li></ol>
+           </li></ol>
+      </li></ol>
+    
+</body></html> 
+
+                                                                                         
+
+

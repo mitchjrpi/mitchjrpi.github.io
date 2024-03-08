@@ -1,0 +1,1063 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw3sol.tex"> 
+<meta name="date" content="2019-02-26 11:57:00"> 
+<link rel="stylesheet" type="text/css" href="hw3sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 34--><p class="noindent" >
+<!--l. 36--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6620" ><span 
+class="cmr-12">MATP6620/ISYE6760 Combinatorial Optimization &amp; Integer Programming</span></a><br />
+<span 
+class="cmr-12">Homework 3.</span><br />
+<span 
+class="cmr-12">Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 41--><p class="noindent" >
+ Due: Friday February 22nd, 2019.<br />
+Penalty for late homeworks: 10% for each day or part of a day.</div>
+<!--l. 58--><p class="noindent" >The following graph <span 
+class="cmmi-10">G </span>= (<span 
+class="cmmi-10">V,E</span>) is used in question&#x00A0;<a 
+href="#x1-21">1<!--tex4ht:ref: q.matching --></a>.
+<div class="center" 
+>
+<!--l. 61--><p class="noindent" >
+<!--l. 62--><p class="center" ><img 
+src="hw3sol0x.png" alt="PICT" >
+</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1"><a 
+ id="x1-21"></a> Consider a matching problem on the graph above. The LP relaxation consists of nonnegativity together with
+     the constraints <span 
+class="cmex-10">&#x2211;</span>
+  <sub><span 
+class="cmmi-7">e</span><span 
+class="cmsy-7">&#x2208;</span><span 
+class="cmmi-7">&#x03B4;</span><span 
+class="cmr-7">(</span><span 
+class="cmmi-7">v</span><span 
+class="cmr-7">)</span></sub><span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">e</span></sub> <span 
+class="cmsy-10">&#x2264; </span>1 for each vertex&#x00A0;<span 
+class="cmmi-10">v</span>. A feasible solution to the LP relaxation is to take <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">AB</span></sub> = 0<span 
+class="cmmi-10">.</span>5,
+     <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">AF</span></sub> = 0, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">AG</span></sub> = 0<span 
+class="cmmi-10">.</span>5, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">BC</span></sub> = 0<span 
+class="cmmi-10">.</span>5, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">CD</span></sub> = 0, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">CG</span></sub> = 0, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">CH</span></sub> = 0<span 
+class="cmmi-10">.</span>4, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">CJ</span></sub> = 0<span 
+class="cmmi-10">.</span>1, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">DE</span></sub> = 0<span 
+class="cmmi-10">.</span>2, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">DJ</span></sub> = 0<span 
+class="cmmi-10">.</span>8, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">EF</span></sub> = 0<span 
+class="cmmi-10">.</span>8,
+     <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">EJ</span></sub> = 0, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">FH</span></sub> = 0<span 
+class="cmmi-10">.</span>2, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">GH</span></sub> = 0<span 
+class="cmmi-10">.</span>4, and <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">HJ</span></sub> = 0.
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-5x1">Find a valid constraint for the matching problem that is violated by this solution.
+         </li>
+         <li 
+  class="enumerate" id="x1-7x2">Assume the six diagonal edges each have weight two and the remaining 10 edges each have weight
+         one. What is the maximum weight matching? Prove your solution is optimal.</li></ol>
+     <!--l. 133--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+                                                                                         
+                                                                                         
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-9x1">There are (at least) two choices for a set of vertices <span 
+class="cmmi-10">U </span><span 
+class="cmsy-10">&#x2286; </span><span 
+class="cmmi-10">V </span>leading to a violated odd subset
+         constraint:
+             <ul class="itemize1">
+             <li class="itemize"><span 
+class="cmmi-10">U </span>= <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">A,B,C,G,H</span><span 
+class="cmsy-10">}</span>: Then <span 
+class="cmex-10">&#x2211;</span>
+  <sub><span 
+class="cmmi-7">e</span><span 
+class="cmsy-7">&#x2208;</span><span 
+class="cmmi-7">E</span><span 
+class="cmr-7">(</span><span 
+class="cmmi-7">U</span><span 
+class="cmr-7">)</span></sub><span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">e</span></sub> = 2<span 
+class="cmmi-10">.</span>3 <span 
+class="cmmi-10">&#x003E;</span> <span class="bbig"><img 
+src="hw3sol1x.png" alt="&#x230A;"  class="left" align="middle"></span><img 
+src="hw3sol2x.png" alt="|U2|-"  class="frac" align="middle"><span class="bbig"><img 
+src="hw3sol3x.png" alt="&#x230B;"  class="left" align="middle"></span>.
+             </li>
+             <li class="itemize"><span 
+class="cmmi-10">U </span>= <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">A,B,C,D,E,F,G,H,J</span><span 
+class="cmsy-10">}</span>: Then <span 
+class="cmex-10">&#x2211;</span>
+  <sub><span 
+class="cmmi-7">e</span><span 
+class="cmsy-7">&#x2208;</span><span 
+class="cmmi-7">E</span><span 
+class="cmr-7">(</span><span 
+class="cmmi-7">U</span><span 
+class="cmr-7">)</span></sub><span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">e</span></sub> = 4<span 
+class="cmmi-10">.</span>4 <span 
+class="cmmi-10">&#x003E;</span> <span class="bbig"><img 
+src="hw3sol4x.png" alt="&#x230A;"  class="left" align="middle"></span><img 
+src="hw3sol5x.png" alt="|U|
+ 2"  class="frac" align="middle"><span class="bbig"><img 
+src="hw3sol6x.png" alt="&#x230B;"  class="left" align="middle"></span>.</li></ul>
+         <!--l. 143--><p class="noindent" >In both cases the violated constraint is
+         <center class="math-display" >
+         <img 
+src="hw3sol7x.png" alt=" &#x2211;   xe &#x2264; &#x230A;|U-|&#x230B;.
+e&#x2208;E(U )      2
+         " class="math-display" ></center>
+         <!--l. 146--><p class="nopar" >
+         </li>
+         <li 
+  class="enumerate" id="x1-11x2">Since <span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">V </span><span 
+class="cmsy-10">| </span>= 9, any feasible solution uses at most 4 edges. Any feasible solution can use at most 2 of the
+         edges with weight two: one each adjacent to <span 
+class="cmmi-10">G </span>and to&#x00A0;<span 
+class="cmmi-10">J</span>. So any feasible solution has value at most
+         2 + 2 + 1 + 1 = 6. One optimal solution is to use the edges
+         <center class="math-display" >
+         <img 
+src="hw3sol8x.png" alt="xAB = xCD = xEJ = xFG = 1
+         " class="math-display" ></center>
+         <!--l. 154--><p class="nopar" >
+         with all other <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">e</span></sub> equal to zero.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-13x2"><a 
+ id="x1-122"></a> Let <span 
+class="cmmi-10">S </span>be the set of feasible solutions to the integer programming problem
+     <center class="math-display" >
+     <img 
+src="hw3sol9x.png" alt="min       - 2x1  -   x2
+subject to  - x1  +  2x2  &#x2264;  4
+            5x1  +   x2  &#x2264;  20
+          - 2x1  -  2x2  &#x2264;  - 7
+                  x1,x2  &#x2265;  0, integer
+     " class="math-display" ></center>
+     <!--l. 232--><p class="nopar" >
+     What is the Chvatal rank of the valid inequality 3<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> + <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> <span 
+class="cmsy-10">&#x2264; </span>12?
+     <!--l. 249--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 252--><p class="noindent" ><span 
+class="cmti-10">Rank is no larger than 2:</span>
+     <!--l. 255--><p class="noindent" >Number the equations as follows: <div class="eqnarray">
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="hw3sol10x.png" alt=" - x1 + 2x2 &#x2264;  4                                   (1)
+  5x1 + x2 &#x2264;   20                                   (2)
+- 2x1 - 2x2 &#x2264;  - 7                                 (3)
+     " class="math-display" ><a 
+ id="x1-14r1"></a><a 
+ id="x1-14r2"></a><a 
+ id="x1-14r3"></a></center>
+     </div>
+     <!--l. 262--><p class="noindent" ><img 
+src="hw3sol11x.png" alt="-4
+11"  class="frac" align="middle">(<a 
+href="#x1-14r1">1<!--tex4ht:ref: eq2.1 --></a>) + <img 
+src="hw3sol12x.png" alt="3-
+11"  class="frac" align="middle">(<a 
+href="#x1-14r2">2<!--tex4ht:ref: eq2.2 --></a>) gives
+     <table 
+class="equation"><tr><td><a 
+ id="x1-15r4"></a>
+     <center class="math-display" >
+     <img 
+src="hw3sol13x.png" alt="x + x &#x2264;  76  =&#x21D2;    x + x &#x2264; 6.
+ 1   2   11         1   2
+     " class="math-display" ></center></td><td class="equation-label">(4)</td></tr></table>
+     <!--l. 266--><p class="nopar" >
+     <!--l. 268--><p class="noindent" ><img 
+src="hw3sol14x.png" alt="111"  class="frac" align="middle">(<a 
+href="#x1-14r1">1<!--tex4ht:ref: eq2.1 --></a>) + <img 
+src="hw3sol15x.png" alt="911"  class="frac" align="middle">(<a 
+href="#x1-14r2">2<!--tex4ht:ref: eq2.2 --></a>) gives
+     <table 
+class="equation"><tr><td><a 
+ id="x1-16r5"></a>
+     <center class="math-display" >
+     <img 
+src="hw3sol16x.png" alt="          184
+4x1 + x2 &#x2264; 11  =&#x21D2;    4x1 + x2 &#x2264; 16.
+     " class="math-display" ></center></td><td class="equation-label">(5)</td></tr></table>
+     <!--l. 272--><p class="nopar" >
+     <!--l. 274--><p class="noindent" >Combining the two rank one inequalities in the form <img 
+src="hw3sol17x.png" alt="13"  class="frac" align="middle">(<a 
+href="#x1-15r4">4<!--tex4ht:ref: eq2.4 --></a>) + <img 
+src="hw3sol18x.png" alt="23"  class="frac" align="middle">(<a 
+href="#x1-16r5">5<!--tex4ht:ref: eq2.5 --></a>) gives
+     <table 
+class="equation"><tr><td><a 
+ id="x1-17r6"></a>
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="hw3sol19x.png" alt="          38
+3x1 +x2 &#x2264; -3   =&#x21D2;   3x1 +x2 &#x2264; 12.
+     " class="math-display" ></center></td><td class="equation-label">(6)</td></tr></table>
+     <!--l. 279--><p class="nopar" >
+     <!--l. 284--><p class="noindent" ><span 
+class="cmti-10">Rank is at least 2:</span>
+     <!--l. 287--><p class="noindent" >The point <span class="bar-css"><span 
+class="cmmi-10">x</span></span> = (36<span 
+class="cmmi-10">&#x2215;</span>11<span 
+class="cmmi-10">,</span>40<span 
+class="cmmi-10">&#x2215;</span>11) is feasible, so any valid inequality for the LP relaxation of the
+     form
+     <center class="math-display" >
+     <img 
+src="hw3sol20x.png" alt="3x + x  &#x2264; &#x03B1;
+  1   2
+     " class="math-display" ></center>
+     <!--l. 292--><p class="nopar" >
+     must have <span 
+class="cmmi-10">&#x03B1; </span><span 
+class="cmsy-10">&#x2265; </span>148<span 
+class="cmmi-10">&#x2215;</span>11 <span 
+class="cmmi-10">&#x003E; </span>13.
+     <!--l. 295--><p class="noindent" >Alternatively, the feasible region contains
+     <center class="math-display" >
+     <img 
+src="hw3sol21x.png" alt="(      )
+  36-, 35 = -3(4,1)+ -8(3,4)
+  11  11    11       11
+     " class="math-display" ></center>
+     <!--l. 298--><p class="nopar" >
+     so any rounded inequality must be satisfied by either (4<span 
+class="cmmi-10">,</span>1) or (3<span 
+class="cmmi-10">,</span>4). For both of these points, we have
+     3<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> + <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> = 13.
+     <!--l. 302--><p class="noindent" >A third proof: <br 
+class="newline" />Any feasible rank-1 C-G cut has the form
+     <table 
+class="equation"><tr><td><a 
+ id="x1-18r7"></a>
+     <center class="math-display" >
+     <img 
+src="hw3sol22x.png" alt="&#x230A;- u1 + 5u2 - 2u3&#x230B;x1 + &#x230A;2u1 + u2 - 2u3&#x230B;x2 &#x2264; &#x230A;4u1 + 20u2 - 7u3&#x230B;
+     " class="math-display" ></center></td><td class="equation-label">(7)</td></tr></table>
+                                                                                         
+                                                                                         
+     <!--l. 307--><p class="nopar" >
+     for some nonnegative <span 
+class="cmmi-10">u </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="msbm-10">&#x211D;</span><sup><span 
+class="cmr-7">3</span></sup>. For this to imply the given inequality 3<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> + <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> <span 
+class="cmsy-10">&#x2264; </span>12, we need to find variables <span 
+class="cmmi-10">u</span>
+     so that the optimal value of the following LP is strictly smaller than 13:
+     <center class="math-display" >
+     <img 
+src="hw3sol23x.png" alt="min        4u1  +  20u2  -  7u3
+subject to - u1 +   5u2  -  2u3  &#x2265;   3
+           2u1  +    u2  -  2u3  &#x2265;   1
+                        u1,u2,u3  &#x2265;   0.
+     " class="math-display" ></center>
+     <!--l. 318--><p class="nopar" >
+     The dual of this problem is
+     <center class="math-display" >
+     <img 
+src="hw3sol24x.png" alt="max         3y1  +   y2
+subject to  - y1  +  2y2  &#x2264;  4
+            5y1  +   y2  &#x2264;  20
+          - 2y1  -  2y2  &#x2264;  - 7
+                  y1,y2  &#x2265;  0.
+     " class="math-display" ></center>
+     <!--l. 328--><p class="nopar" >
+     One feasible solution to this problem is <span 
+class="cmmi-10">y </span>= (3<img 
+src="hw3sol25x.png" alt="-3
+11"  class="frac" align="middle"><span 
+class="cmmi-10">,</span>3<img 
+src="hw3sol26x.png" alt="7-
+11"  class="frac" align="middle">), which has value 13<img 
+src="hw3sol27x.png" alt="5-
+11"  class="frac" align="middle">. So there is no
+     primal solution with value strictly less than 13, so the given constraint must have Chvatal rank at
+     least&#x00A0;2.
+     </li>
+     <li 
+  class="enumerate" id="x1-20x3">The optimal tableau to the linear programming relaxation of the integer program given in Question&#x00A0;<a 
+href="#x1-122">2<!--tex4ht:ref: notesEG --></a>
+     is
+     <center class="math-display" >
+     <img 
+src="hw3sol28x.png" alt="min  - 10 2  +  -3x3  +   5x4
+         11      111        112-               3-
+s.t.  x1      -  11x3  +   11x4         =   311
+         x2  +  151x3  +   111x4         =   3 711
+                -8        6-               9-
+                11x3  +   11x4  +  x5  =   611
+                       x1,x2,x3,x4,x5  &#x2265;   0
+     " class="math-display" ></center>
+     <!--l. 345--><p class="nopar" >
+     where <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub>, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">4</span></sub> and <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">5</span></sub> are the slack variables in the three constraints. Find the Gomory and strong Gomory
+     cutting planes implied by the three constraints. Express these constraints in terms of the original variables <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub>
+     and&#x00A0;<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> and draw them on a graph of the feasible region.
+     <!--l. 351--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 354--><p class="noindent" ><span 
+class="cmti-10">Gomory cuts:</span>
+         <ul class="itemize1">
+         <li class="itemize"><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> <span 
+class="cmsy-10">-</span><img 
+src="hw3sol29x.png" alt="1-
+11"  class="frac" align="middle"><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub> + <img 
+src="hw3sol30x.png" alt="2-
+11"  class="frac" align="middle"><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">4</span></sub> = 3<img 
+src="hw3sol31x.png" alt="-3
+11"  class="frac" align="middle">:
+         <!--l. 360--><p class="noindent" ><span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">3</span></sub> = <img 
+src="hw3sol32x.png" alt="10
+11"  class="frac" align="middle">, <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">4</span></sub> = <img 
+src="hw3sol33x.png" alt="2-
+11"  class="frac" align="middle">, <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">0</span></sub> = <img 
+src="hw3sol34x.png" alt="-3
+11"  class="frac" align="middle">. So the Gomory cut is:
+                                                                                         
+                                                                                         
+         <table 
+class="equation"><tr><td><a 
+ id="x1-21r8"></a>
+         <center class="math-display" >
+         <img 
+src="hw3sol35x.png" alt="10-x3 +-2x4 &#x2265; 3-.
+11     11     11
+         " class="math-display" ></center></td><td class="equation-label">(8)</td></tr></table>
+         <!--l. 364--><p class="nopar" >
+         Substituting <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub> = 4 + <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> <span 
+class="cmsy-10">- </span>2<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> and <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">4</span></sub> = 20 <span 
+class="cmsy-10">- </span>5<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> and simplifying gives:
+         <table 
+class="equation"><tr><td><a 
+ id="x1-22r9"></a>
+         <center class="math-display" >
+         <img 
+src="hw3sol36x.png" alt="2x  &#x2264; 7    or  x  &#x2264; 3.5.
+  2             2
+         " class="math-display" ></center></td><td class="equation-label">(9)</td></tr></table>
+         <!--l. 369--><p class="nopar" >
+         </li>
+         <li class="itemize"><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> + <img 
+src="hw3sol37x.png" alt="5-
+11"  class="frac" align="middle"><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub> + <img 
+src="hw3sol38x.png" alt="1-
+11"  class="frac" align="middle"><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">4</span></sub> = 3<img 
+src="hw3sol39x.png" alt="-7
+11"  class="frac" align="middle">:
+         <!--l. 374--><p class="noindent" ><span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">3</span></sub> = <img 
+src="hw3sol40x.png" alt="5
+11"  class="frac" align="middle">, <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">4</span></sub> = <img 
+src="hw3sol41x.png" alt="1
+11-"  class="frac" align="middle">, <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">0</span></sub> = <img 
+src="hw3sol42x.png" alt=" 7
+11"  class="frac" align="middle">. So the Gomory cut is:
+         <table 
+class="equation"><tr><td><a 
+ id="x1-23r10"></a>
+         <center class="math-display" >
+         <img 
+src="hw3sol43x.png" alt="5-x3 +-1x4 &#x2265; 7-.
+11     11     11
+         " class="math-display" ></center></td><td class="equation-label">(10)</td></tr></table>
+         <!--l. 378--><p class="nopar" >
+         Substituting <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub> = 4 + <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> <span 
+class="cmsy-10">- </span>2<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> and <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">4</span></sub> = 20 <span 
+class="cmsy-10">- </span>5<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> and simplifying gives:
+         <table 
+class="equation"><tr><td><a 
+ id="x1-24r11"></a>
+                                                                                         
+                                                                                         
+         <center class="math-display" >
+         <img 
+src="hw3sol44x.png" alt="x  &#x2264; 3.
+  2
+         " class="math-display" ></center></td><td class="equation-label">(11)</td></tr></table>
+         <!--l. 383--><p class="nopar" >
+         </li>
+         <li class="itemize"><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">5</span></sub> + <img 
+src="hw3sol45x.png" alt="8-
+11"  class="frac" align="middle"><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub> + <img 
+src="hw3sol46x.png" alt="6-
+11"  class="frac" align="middle"><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">4</span></sub> = 6<img 
+src="hw3sol47x.png" alt="-9
+11"  class="frac" align="middle">:
+         <!--l. 388--><p class="noindent" ><span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">3</span></sub> = <img 
+src="hw3sol48x.png" alt="8
+11"  class="frac" align="middle">, <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">4</span></sub> = <img 
+src="hw3sol49x.png" alt="6
+11-"  class="frac" align="middle">, <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">0</span></sub> = <img 
+src="hw3sol50x.png" alt=" 9
+11"  class="frac" align="middle">. So the Gomory cut is:
+         <table 
+class="equation"><tr><td><a 
+ id="x1-25r12"></a>
+         <center class="math-display" >
+         <img 
+src="hw3sol51x.png" alt="8-x3 +-6x4 &#x2265; 9-.
+11     11     11
+         " class="math-display" ></center></td><td class="equation-label">(12)</td></tr></table>
+         <!--l. 392--><p class="nopar" >
+         Substituting <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub> = 4 + <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> <span 
+class="cmsy-10">- </span>2<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> and <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">4</span></sub> = 20 <span 
+class="cmsy-10">- </span>5<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> and simplifying gives:
+         <table 
+class="equation"><tr><td><a 
+ id="x1-26r13"></a>
+         <center class="math-display" >
+         <img 
+src="hw3sol52x.png" alt="2x1 + 2x2 &#x2264; 13   or  x1 + x2 &#x2264; 6.5.
+         " class="math-display" ></center></td><td class="equation-label">(13)</td></tr></table>
+         <!--l. 397--><p class="nopar" >
+         </li></ul>
+     <!--l. 400--><p class="noindent" ><span 
+class="cmti-10">Strong Gomory cuts:</span>
+         <ul class="itemize1">
+         <li class="itemize"><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> <span 
+class="cmsy-10">-</span><img 
+src="hw3sol53x.png" alt="1-
+11"  class="frac" align="middle"><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub> + <img 
+src="hw3sol54x.png" alt="2-
+11"  class="frac" align="middle"><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">4</span></sub> = 3<img 
+src="hw3sol55x.png" alt="-3
+11"  class="frac" align="middle">:
+         <!--l. 406--><p class="noindent" ><span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">3</span></sub> = <img 
+src="hw3sol56x.png" alt="10
+11"  class="frac" align="middle">, <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">4</span></sub> = <img 
+src="hw3sol57x.png" alt="2-
+11"  class="frac" align="middle">, <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">0</span></sub> = <img 
+src="hw3sol58x.png" alt="-3
+11"  class="frac" align="middle">. We have <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">3</span></sub> <span 
+class="cmmi-10">&#x003E; f</span><sub><span 
+class="cmr-7">0</span></sub>. So the strong Gomory cut is:
+         <table 
+class="equation"><tr><td><a 
+ id="x1-27r14"></a>
+                                                                                         
+                                                                                         
+         <center class="math-display" >
+         <img 
+src="hw3sol59x.png" alt="    (     10 - 3-)                        1
+x1 + - 1+ 11---113- x3 + 0x4 &#x2264; 3    or   x1 - 8x3 &#x2264; 3.
+           1- 11
+         " class="math-display" ></center></td><td class="equation-label">(14)</td></tr></table>
+         <!--l. 413--><p class="nopar" >
+         Substituting <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub> = 4 + <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> <span 
+class="cmsy-10">- </span>2<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> and simplifying gives:
+         <table 
+class="equation"><tr><td><a 
+ id="x1-28r15"></a>
+         <center class="math-display" >
+         <img 
+src="hw3sol60x.png" alt="7x1 + 1x2 &#x2264; 3.5   or   7x1 + 2x2 &#x2264; 28
+8     4
+         " class="math-display" ></center></td><td class="equation-label">(15)</td></tr></table>
+         <!--l. 419--><p class="nopar" >
+         which is tight at (4<span 
+class="cmmi-10">,</span>0) and (3<span 
+class="cmmi-10">,</span>3<span 
+class="cmmi-10">.</span>5).
+         </li>
+         <li class="itemize"><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> + <img 
+src="hw3sol61x.png" alt="5-
+11"  class="frac" align="middle"><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub> + <img 
+src="hw3sol62x.png" alt="1-
+11"  class="frac" align="middle"><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">4</span></sub> = 3<img 
+src="hw3sol63x.png" alt="-7
+11"  class="frac" align="middle">:
+         <!--l. 425--><p class="noindent" ><span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">3</span></sub> = <img 
+src="hw3sol64x.png" alt="5-
+11"  class="frac" align="middle">, <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">4</span></sub> = <img 
+src="hw3sol65x.png" alt="1-
+11"  class="frac" align="middle">, <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">0</span></sub> = <img 
+src="hw3sol66x.png" alt="-7
+11"  class="frac" align="middle">. Since <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">3</span></sub> and <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">4</span></sub> are both smaller than <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">0</span></sub>, the strong Gomory cut is the same
+         as the original Gomory cut.
+         </li>
+         <li class="itemize"><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">5</span></sub> + <img 
+src="hw3sol67x.png" alt="811-"  class="frac" align="middle"><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub> + <img 
+src="hw3sol68x.png" alt="611"  class="frac" align="middle"><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">4</span></sub> = 6<img 
+src="hw3sol69x.png" alt="191"  class="frac" align="middle">:
+         <!--l. 432--><p class="noindent" ><span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">3</span></sub> = <img 
+src="hw3sol70x.png" alt="811"  class="frac" align="middle">, <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">4</span></sub> = <img 
+src="hw3sol71x.png" alt="611-"  class="frac" align="middle">, <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">0</span></sub> = <img 
+src="hw3sol72x.png" alt="191"  class="frac" align="middle">. Since <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">3</span></sub> and <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">4</span></sub> are both smaller than <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">0</span></sub>, the strong Gomory cut is the same
+         as the original Gomory cut.</li></ul>
+     <!--l. 437--><p class="noindent" ><span 
+class="cmti-10">Graph:</span>
+     <div class="center" 
+>
+<!--l. 440--><p class="noindent" >
+<img src=q3.png>
+                                                                                         
+                                                                                         
+</div>
+     </li>
+     <li 
+  class="enumerate" id="x1-30x4">The optimal solution of the LP relaxation of the mixed integer program
+     <center class="math-display" >
+     <img 
+src="hw3sol74x.png" alt="min       2x1  +  5x2  +   y1  +  y2
+subject to  x           +   y          &#x2265;  2.5
+            1               1
+           x1  +  2x2  +  3y1  +  y2  &#x2265;  8.5
+                  3x2          +  y2  &#x2265;  1.2
+
+           xi  &#x2265;   0,  i = 1,2    yi  &#x2265;  0, integral, i = 1,2
+     " class="math-display" ></center>
+     <!--l. 712--><p class="nopar" >
+     is <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> = <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> = 0, <span 
+class="cmmi-10">y</span><sub><span 
+class="cmr-7">1</span></sub> = 2<span 
+class="cmmi-10">.</span>5, <span 
+class="cmmi-10">y</span><sub><span 
+class="cmr-7">2</span></sub> = 1<span 
+class="cmmi-10">.</span>2.
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-32x1">Give  three  mixed  integer  rounding  inequalities  that  are  violated  by  the  solution  to  the  LP
+         relaxation.
+         </li>
+         <li 
+  class="enumerate" id="x1-34x2">Show that none of your inequalities is implied by the other two.</li></ol>
+     <!--l. 721--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 726--><p class="noindent" >The general form of a mixed integer rounding (MIR) inequality derived from a valid constraint <span 
+class="cmmi-10">x </span>+ <span 
+class="cmmi-10">y </span><span 
+class="cmsy-10">&#x2265; </span><span 
+class="cmmi-10">b </span>with
+     <span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2265; </span>0, <span 
+class="cmmi-10">y </span>integral, is
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="hw3sol75x.png" alt=" 1
+--x+ y &#x2265; &#x2308;b&#x2309;,   with f = b- &#x230A;b&#x230B; &#x003E; 0.
+f
+     " class="math-display" ></center>
+     <!--l. 730--><p class="nopar" >
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-36x1">
+             <ol  class="enumerate3" >
+             <li 
+  class="enumerate" id="x1-38x1">The first constraint has <span 
+class="cmmi-10">f </span>= 0<span 
+class="cmmi-10">.</span>5, so the MIR is
+             <table 
+class="equation"><tr><td><a 
+ id="x1-39r16"></a>
+             <center class="math-display" >
+             <img 
+src="hw3sol76x.png" alt="2x1 + y1 &#x2265; 3
+             " class="math-display" ></center></td><td class="equation-label">(16)</td></tr></table>
+             <!--l. 738--><p class="nopar" >
+             </li>
+             <li 
+  class="enumerate" id="x1-41x2">The second constraint has <span 
+class="cmmi-10">f </span>= 0<span 
+class="cmmi-10">.</span>5, so the MIR is
+             <table 
+class="equation"><tr><td><a 
+ id="x1-42r17"></a>
+             <center class="math-display" >
+             <img 
+src="hw3sol77x.png" alt="2x1 + 4x2 + 3y1 + y2 &#x2265; 9
+             " class="math-display" ></center></td><td class="equation-label">(17)</td></tr></table>
+             <!--l. 742--><p class="nopar" >
+             </li>
+             <li 
+  class="enumerate" id="x1-44x3">The third constraint has <span 
+class="cmmi-10">f </span>= 0<span 
+class="cmmi-10">.</span>2, so the MIR is
+             <table 
+class="equation"><tr><td><a 
+ id="x1-45r18"></a>
+                                                                                         
+                                                                                         
+             <center class="math-display" >
+             <img 
+src="hw3sol78x.png" alt="15x2 +y2 &#x2265; 2
+             " class="math-display" ></center></td><td class="equation-label">(18)</td></tr></table>
+             <!--l. 746--><p class="nopar" >
+             </li></ol>
+         </li>
+         <li 
+  class="enumerate" id="x1-47x2">To show one constraint is not implied by the others, we need to find a point that violates the one
+         constraint and satisfies the others.
+             <ol  class="enumerate3" >
+             <li 
+  class="enumerate" id="x1-49x1">(<a 
+href="#x1-39r16">16<!--tex4ht:ref: eq.derive1 --></a>) is not implied by (<a 
+href="#x1-42r17">17<!--tex4ht:ref: eq.derive2 --></a>), (<a 
+href="#x1-45r18">18<!--tex4ht:ref: eq.derive3 --></a>), and the original linear constraints: <br 
+class="newline" />The point <span 
+class="cmmi-10">x </span>= (0<span 
+class="cmmi-10">,</span>0), <span 
+class="cmmi-10">y </span>= (2<span 
+class="cmmi-10">.</span>5<span 
+class="cmmi-10">,</span>2) satisfies (<a 
+href="#x1-42r17">17<!--tex4ht:ref: eq.derive2 --></a>), (<a 
+href="#x1-45r18">18<!--tex4ht:ref: eq.derive3 --></a>), and the original linear constraints, but
+             violates&#x00A0;(<a 
+href="#x1-39r16">16<!--tex4ht:ref: eq.derive1 --></a>).
+             </li>
+             <li 
+  class="enumerate" id="x1-51x2">(<a 
+href="#x1-42r17">17<!--tex4ht:ref: eq.derive2 --></a>) is not implied by (<a 
+href="#x1-39r16">16<!--tex4ht:ref: eq.derive1 --></a>), (<a 
+href="#x1-45r18">18<!--tex4ht:ref: eq.derive3 --></a>), and the original linear constraints: <br 
+class="newline" />The point <span 
+class="cmmi-10">x </span>= (<img 
+src="hw3sol79x.png" alt="49-
+150"  class="frac" align="middle"><span 
+class="cmmi-10">,</span><img 
+src="hw3sol80x.png" alt="-1
+15"  class="frac" align="middle">), <span 
+class="cmmi-10">y </span>= (2<img 
+src="hw3sol81x.png" alt="26
+75"  class="frac" align="middle"><span 
+class="cmmi-10">,</span>1) satisfies (<a 
+href="#x1-39r16">16<!--tex4ht:ref: eq.derive1 --></a>), (<a 
+href="#x1-45r18">18<!--tex4ht:ref: eq.derive3 --></a>), and the original linear constraints,
+             but violates&#x00A0;(<a 
+href="#x1-42r17">17<!--tex4ht:ref: eq.derive2 --></a>). (This was found by solving an LP: minimize the left hand side of (<a 
+href="#x1-42r17">17<!--tex4ht:ref: eq.derive2 --></a>)
+             subject to satisfying the other linear constraints.)
+             </li>
+             <li 
+  class="enumerate" id="x1-53x3">(<a 
+href="#x1-45r18">18<!--tex4ht:ref: eq.derive3 --></a>) is not implied by (<a 
+href="#x1-39r16">16<!--tex4ht:ref: eq.derive1 --></a>), (<a 
+href="#x1-42r17">17<!--tex4ht:ref: eq.derive2 --></a>), and the original linear constraints: <br 
+class="newline" />The point <span 
+class="cmmi-10">x </span>= (0<span 
+class="cmmi-10">,</span>0), <span 
+class="cmmi-10">y </span>= (3<span 
+class="cmmi-10">,</span>1<span 
+class="cmmi-10">.</span>2) satisfies (<a 
+href="#x1-39r16">16<!--tex4ht:ref: eq.derive1 --></a>), (<a 
+href="#x1-42r17">17<!--tex4ht:ref: eq.derive2 --></a>), and the original linear constraints, but
+             violates&#x00A0;(<a 
+href="#x1-45r18">18<!--tex4ht:ref: eq.derive3 --></a>).</li></ol>
+         </li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-55x5">In the examples below, <span 
+class="cmmi-10">x </span>is required to be a nonnegative vector in&#x00A0;<span 
+class="msbm-10">&#x211D;</span><sup><span 
+class="cmr-7">3</span></sup> and <span 
+class="cmmi-10">y </span>is constrained to be a binary
+     vector with three components. A set of constraints that must be satisfied by <span 
+class="cmmi-10">x </span>and <span 
+class="cmmi-10">y </span>is given, and a point
+     that satisfies these constraints is also given. Find a valid flow cover inequality that cuts off this
+     point.
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-57x1">Constraints:
+         <center class="math-display" >
+         <img 
+src="hw3sol82x.png" alt="x1 + x2 + x3 &#x2264; 7,x1 &#x2264; 3y1,x2 &#x2264; 5y2,x3 &#x2264; 6y3.
+         " class="math-display" ></center>
+         <!--l. 781--><p class="nopar" >
+         Point:
+         <center class="math-display" >
+         <img 
+src="hw3sol83x.png" alt="              (      )
+x = (2,5,0),y =  2,1,0 .
+                3
+         " class="math-display" ></center>
+         <!--l. 784--><p class="nopar" >
+                                                                                         
+                                                                                         
+         </li>
+         <li 
+  class="enumerate" id="x1-59x2">Constraints:
+         <center class="math-display" >
+         <img 
+src="hw3sol84x.png" alt="7 &#x2264; x1 + x2 + x3,x1 &#x2264; 3y1,x2 &#x2264; 5y2,x3 &#x2264; 6y3.
+         " class="math-display" ></center>
+         <!--l. 789--><p class="nopar" >
+         Point:
+         <center class="math-display" >
+         <img 
+src="hw3sol85x.png" alt="              (      )
+x = (2,5,0),y =  2,1,0 .
+                3
+         " class="math-display" ></center>
+         <!--l. 792--><p class="nopar" >
+         </li></ol>
+     <!--l. 795--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 798--><p class="noindent" >The general form of the fixed charge inequality is
+     <center class="math-display" >
+     <img 
+src="hw3sol86x.png" alt="&#x2211;        &#x2211;                       &#x2211;        &#x2211;           &#x2211;
+    xj +    (aj - &#x03BB;)+(1- yj) &#x2264; b+   aj +&#x03BB;     yj +           xj
+j&#x2208;C1    j&#x2208;C1                    j&#x2208;C2      j&#x2208;L2    j&#x2208;N2\(C2&#x222A;L2)
+     " class="math-display" ></center>
+     <!--l. 802--><p class="nopar" >
+     where <span 
+class="cmmi-10">C</span><sub><span 
+class="cmr-7">1</span></sub> is a subset of the variables on the LHS of the original inequality, <span 
+class="cmmi-10">C</span><sub><span 
+class="cmr-7">2</span></sub> and <span 
+class="cmmi-10">L</span><sub><span 
+class="cmr-7">2</span></sub> are disjoint subsets of
+     the variables on the RHS of the original inequality, <span 
+class="cmmi-10">b </span>is the constant term on the RHS of the original
+     inequality, <span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">j</span></sub> is the capacity in the <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">j</span></sub> <span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">j</span></sub><span 
+class="cmmi-10">y</span><sub><span 
+class="cmmi-7">j</span></sub> constraints, and <span 
+class="cmmi-10">&#x03BB; </span>= <span 
+class="cmex-10">&#x2211;</span>
+  <sub><span 
+class="cmmi-7">j</span><span 
+class="cmsy-7">&#x2208;</span><span 
+class="cmmi-7">C</span><sub><span 
+class="cmr-5">1</span></sub></sub><span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">j</span></sub> <span 
+class="cmsy-10">-</span><span 
+class="cmex-10">&#x2211;</span>
+  <sub><span 
+class="cmmi-7">j</span><span 
+class="cmsy-7">&#x2208;</span><span 
+class="cmmi-7">C</span><sub><span 
+class="cmr-5">2</span></sub></sub><span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">j</span></sub> <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">b</span>.
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-61x1">Let <span 
+class="cmmi-10">C</span><sub><span 
+class="cmr-7">1</span></sub> = <span 
+class="cmsy-10">{</span>1<span 
+class="cmmi-10">,</span>2<span 
+class="cmsy-10">}</span>, <span 
+class="cmmi-10">C</span><sub><span 
+class="cmr-7">2</span></sub> = <span 
+class="cmmi-10">L</span><sub><span 
+class="cmr-7">2</span></sub> = <span 
+class="cmsy-10">&#x2205;</span>. We obtain <span 
+class="cmmi-10">&#x03BB; </span>= 1 and the valid inequality
+         <center class="math-display" >
+         <img 
+src="hw3sol87x.png" alt="x1 + x2 + 2(1- y1)+ 4(1 - y2) &#x2264; 7,
+         " class="math-display" ></center>
+         <!--l. 813--><p class="nopar" >
+         which is violated by the given point.
+         </li>
+         <li 
+  class="enumerate" id="x1-63x2">Let <span 
+class="cmmi-10">C</span><sub><span 
+class="cmr-7">1</span></sub> = <span 
+class="cmsy-10">&#x2205;</span>, <span 
+class="cmmi-10">C</span><sub><span 
+class="cmr-7">2</span></sub> = <span 
+class="cmsy-10">{</span>2<span 
+class="cmsy-10">}</span>, <span 
+class="cmmi-10">L</span><sub><span 
+class="cmr-7">2</span></sub> = <span 
+class="cmsy-10">{</span>1<span 
+class="cmsy-10">}</span>. We obtain <span 
+class="cmmi-10">&#x03BB; </span>= 2 and the valid inequality
+         <center class="math-display" >
+         <img 
+src="hw3sol88x.png" alt="7 &#x2264; 5+ 2y1 + x3,
+         " class="math-display" ></center>
+         <!--l. 819--><p class="nopar" >
+         which is violated by the given point.
+         <!--l. 822--><p class="noindent" >Alternatively, taking <span 
+class="cmmi-10">C</span><sub><span 
+class="cmr-7">1</span></sub> = <span 
+class="cmsy-10">&#x2205;</span>, <span 
+class="cmmi-10">C</span><sub><span 
+class="cmr-7">2</span></sub> = <span 
+class="cmsy-10">{</span>2<span 
+class="cmsy-10">}</span>, <span 
+class="cmmi-10">L</span><sub><span 
+class="cmr-7">2</span></sub> = <span 
+class="cmsy-10">{</span>1<span 
+class="cmmi-10">,</span>3<span 
+class="cmsy-10">} </span>gives <span 
+class="cmmi-10">&#x03BB; </span>= 2 and another valid inequality violated by
+         the current point:
+                                                                                         
+                                                                                         
+         <center class="math-display" >
+         <img 
+src="hw3sol89x.png" alt="7 &#x2264; 5 + 2y1 + 2y3.
+         " class="math-display" ></center>
+         <!--l. 826--><p class="nopar" >
+         </li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-65x6">The <span 
+class="cmbx-10">Project: </span><br 
+class="newline" />Along with your solutions to this homework, hand in a brief description of what you would like to do for the
+     project part of this course.
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                               </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           x6915.                                          </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           Office hours: Wednesdays, 11am&#8211;1pm.</td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

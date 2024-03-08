@@ -1,0 +1,539 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Final Exam SPring 2007</TITLE>
+<META NAME="description" CONTENT="final">
+<META NAME="keywords" CONTENT="final">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="final.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+
+<P>
+
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="LEFT">Name:</TD>
+</TR>
+</TABLE>
+
+<P>
+<DIV ALIGN="CENTER">
+<FONT SIZE="+1">  <a href=../..>MATP6620/DSES6770 
+<BR>  <B>Combinatorial Optimization and Integer Programming</a></B> 
+<BR>
+Spring 2007</FONT>
+
+</DIV>
+
+<P>
+<DIV ALIGN="CENTER">
+Final Exam, Tuesday, May 8, 2007.
+
+</DIV>
+
+<P>
+Please do all three problems. Show all work. No books or calculators allowed.
+You may use any result from class, the homeworks, or the texts, except where
+stated.
+You may use one sheet of handwritten notes.
+The exam lasts three hours.
+
+<P>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER">Q1</TD>
+<TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="CENTER">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+<TD ALIGN="RIGHT">/56</TD>
+</TR>
+<TR><TD ALIGN="CENTER">Q2</TD>
+<TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="CENTER">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+<TD ALIGN="RIGHT">/28</TD>
+</TR>
+<TR><TD ALIGN="CENTER">Q3</TD>
+<TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="CENTER">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+<TD ALIGN="RIGHT">/16</TD>
+</TR>
+<TR><TD ALIGN="CENTER">Total</TD>
+<TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="RIGHT">/100</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<P>
+
+<OL>
+<LI>(56 points; each part is worth 7 points)
+
+<OL>
+<LI>Show that the following matrix <IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$M$"> is not totally unimodular:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+M = \left[ \begin{array}{rrr}
+1 & 1 & 0 \\
+1 & 0 & 1 \\
+0 & 1 & 1
+\end{array}
+\right]
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="137" HEIGHT="76" BORDER="0"
+ SRC="img2.png"
+ ALT="\begin{displaymath}
+M = \left[ \begin{array}{rrr}
+1 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 1
+\end{array}\right]
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+</LI>
+<LI>Show that the constraints
+<BR>
+<DIV ALIGN="CENTER"><A NAME="eqn1"></A><A NAME="eqn2"></A><A NAME="eqn3"></A><A NAME="eqn4"></A>
+<!-- MATH
+ \begin{eqnarray}
+x_1 + x_2 & = & 1\\
+x_1 + x_3 & \leq & 1\\
+x_2 + x_3 & \leq & 1\\
+x_i & & \mbox{binary, } i=1,2,3
+\end{eqnarray}
+ -->
+<TABLE ALIGN="CENTER" CELLPADDING="0" WIDTH="100%">
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="64" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$\displaystyle x_1 + x_2$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$\textstyle =$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$\displaystyle 1$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(1)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="64" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$\displaystyle x_1 + x_3$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$\textstyle \leq$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$\displaystyle 1$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(2)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="64" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$\displaystyle x_2 + x_3$"></TD>
+<TD ALIGN="CENTER" NOWRAP><IMG
+ WIDTH="19" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$\textstyle \leq$"></TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$\displaystyle 1$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(3)</TD></TR>
+<TR VALIGN="MIDDLE"><TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="21" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$\displaystyle x_i$"></TD>
+<TD>&nbsp;</TD>
+<TD ALIGN="LEFT" NOWRAP><IMG
+ WIDTH="143" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$\displaystyle \mbox{binary, } i=1,2,3$"></TD>
+<TD WIDTH=10 ALIGN="RIGHT">
+(4)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+imply <IMG
+ WIDTH="57" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$x_3=0$">.
+</LI>
+<LI>Given (<A HREF="#eqn1">1</A>)-(<A HREF="#eqn4">4</A>), what is the Chvatal rank of the valid
+inequality <IMG
+ WIDTH="58" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$x_3 \leq 0$">?
+
+<P>
+
+<P>
+
+<P>
+
+(this page intentionally left blank)
+
+<P>
+
+<P>
+
+<P>
+</LI>
+<LI><A NAME="part.eg"></A>The directed graph <IMG
+ WIDTH="94" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$G=(V,E)$"> is as follows:
+<DIV ALIGN="CENTER">
+<BR>
+<IMG
+ WIDTH="352" HEIGHT="351" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.png"
+ ALT="\begin{picture}(200,220)(0,-10)
+\put(0,0){\circle{20}}
+\put(0,200){\circle{20}}
+...
+...
+\put(50,58){2}
+\put(150,59){1}
+\put(120,132){17}
+\put(175,183){3}
+\end{picture}">
+<BR>
+</DIV>
+
+<P>
+One unit of commodity A must be shipped from <IMG
+ WIDTH="13" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img15.png"
+ ALT="$b$"> to <IMG
+ WIDTH="13" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$c$">
+and one unit of commodity B must be shipped from <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$f$"> to <IMG
+ WIDTH="13" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$e$">.
+The flows must be integral.
+The cost of shipping one unit of flow along an arc is indicated in the figure.
+The cost is the same for each commodity.
+Each arc <IMG
+ WIDTH="52" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$e \in E$"> in the graph has capacity equal to one;
+this is the maximum total flow along the arc for the combination of the two commodities.
+Using the earlier parts of this question, show that the optimal integral multicommodity
+flow has value equal to&nbsp;27.
+
+<P>
+</LI>
+<LI>Show that the optimal solution to the linear programming relaxation
+of the multicommodity flow problem in part&nbsp;<A HREF="#part.eg">1d</A> does not give the optimal solution
+to the integral multicommodity flow problem.
+
+<P>
+
+<P>
+
+<P>
+
+(this page intentionally left blank)
+
+<P>
+
+<P>
+
+<P>
+</LI>
+<LI>A Lagrangian relaxation for the integer multicommodity flow problem in part&nbsp;<A HREF="#part.eg">1d</A>
+could be constructed
+by placing the upper bound constraints on the arcs in the objective function.
+If the Lagrangian multipliers are set equal to zero, what is the value of the
+Lagrangian relaxation?
+
+<P>
+</LI>
+<LI>How does the optimal value of the Lagrangian dual problem compare with the
+value of the LP relaxation of the integer multicommodity flow problem in part&nbsp;<A HREF="#part.eg">1d</A>?
+
+<P>
+
+<P>
+
+<P>
+
+(this page intentionally left blank)
+
+<P>
+
+<P>
+
+<P>
+</LI>
+<LI>A version of the integer multicommodity flow with lower bound feasibility problem can be stated
+<BLOCKQUOTE>
+Given a directed graph <IMG
+ WIDTH="94" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$G=(V,E)$">,
+commodities <IMG
+ WIDTH="66" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.png"
+ ALT="$1,\ldots,k$"> each with a single origin and destination and with available
+supply&nbsp;<IMG
+ WIDTH="20" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$d_i$">,
+upper bounds <IMG
+ WIDTH="22" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$u_e$"> for the total flow on arc <IMG
+ WIDTH="13" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$e$">,
+and a positive number <IMG
+ WIDTH="19" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$Q$">,
+does there exist an integer multicommodity flow of size at least&nbsp;<IMG
+ WIDTH="19" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$Q$">?
+
+</BLOCKQUOTE>
+Show this problem is NP-Complete, using the Node Packing with lower bound
+feasibility problem or otherwise.
+(The node packing with lower bound feasibility problem can be stated:
+<BLOCKQUOTE>
+Given a graph <IMG
+ WIDTH="95" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$G=(U,F)$"> and a positive integer <IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.png"
+ ALT="$P$">, find a node packing
+of cardinality at least&nbsp;<IMG
+ WIDTH="19" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.png"
+ ALT="$P$">.
+
+</BLOCKQUOTE>
+You can assume this problem is NP-Complete.)
+</LI>
+</OL>
+
+<P>
+
+<P>
+
+<P>
+
+(this page intentionally left blank)
+
+<P>
+
+<P>
+</LI>
+<LI>(28 points)  
+<BR>
+Consider the following nonlinear integer programming problem:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lrcrcl}
+\max & 7 x_1^2 x_2 x_3 & + & 3 x_2 x_3 x_4 \\
+\mbox{subject to} & 9 x_1 x_2^2 & + & 5 x_3 x_4 & \leq & 12  \\
+& 4 x_1 x_3^2 & + & 7 x_2 x_4 & \geq & 3  \\
+&&& x_i & & \mbox{binary, } i=1,\ldots,4
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="473" HEIGHT="99" BORDER="0"
+ SRC="img26.png"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcl}
+\max &amp; 7 x_1^2 x_2 x_3 &amp; + &amp; 3 x_2 x_3...
+...eq &amp; 3 \\
+&amp;&amp;&amp; x_i &amp; &amp; \mbox{binary, } i=1,\ldots,4
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+       
+<OL>
+<LI>(20 points)
+The nonlinear terms can be replaced by binary variables, for example we can
+use <IMG
+ WIDTH="21" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img27.png"
+ ALT="$z_4$"> instead of <IMG
+ WIDTH="41" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img28.png"
+ ALT="$x_3x_4$"> in the first constraint.
+By introducing extra binary variables, model this problem as an
+equivalent integer <B>linear</B> program.
+Try to make the LP relaxation strong, but do not eliminate or fix any of the variables&nbsp;<IMG
+ WIDTH="21" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.png"
+ ALT="$x_i$">.
+Argue why your formulation is equivalent to the original problem.
+</LI>
+<LI>(8 points)
+Solve the problem.
+        
+</LI>
+</OL>
+ 
+<P>
+
+(intentionally left blank)
+
+<P>
+
+<P>
+</LI>
+<LI>(16 points)  
+<BR>
+Let <!-- MATH
+ $S:=\{ x \in I\!\!B^3 : -2x_1 + 3x_2 + 4x_3 \leq 3 \}$
+ -->
+<IMG
+ WIDTH="321" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.png"
+ ALT="$S:=\{ x \in I\!\!B^3 : -2x_1 + 3x_2 + 4x_3 \leq 3 \}$">
+and <!-- MATH
+ $S^0 := \{x \in S : x_1 = 0 \}$
+ -->
+<IMG
+ WIDTH="189" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.png"
+ ALT="$S^0 := \{x \in S : x_1 = 0 \}$">.
+         
+<OL>
+<LI>(6 points)
+Give an inequality description of the convex hull of&nbsp;<IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img32.png"
+ ALT="$S$">.
+</LI>
+<LI>(10 points)
+For any two scalars <IMG
+ WIDTH="15" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img33.png"
+ ALT="$u$"> and <IMG
+ WIDTH="14" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img34.png"
+ ALT="$v$">, the set <IMG
+ WIDTH="25" HEIGHT="22" ALIGN="BOTTOM" BORDER="0"
+ SRC="img35.png"
+ ALT="$S^0$"> can be written:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+S^0 = \{x \in I\!\!B^3 : x_1=0, x_2 + vx_3 \leq 1, -x_2 + ux_3 \leq 0, x_3 \leq 0 \}.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="498" HEIGHT="33" BORDER="0"
+ SRC="img36.png"
+ ALT="\begin{displaymath}
+S^0 = \{x \in I\!\!B^3 : x_1=0, x_2 + vx_3 \leq 1, -x_2 + ux_3 \leq 0, x_3 \leq 0 \}.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Show that there is only one choice of <IMG
+ WIDTH="14" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img34.png"
+ ALT="$v$"> for which the lifted version of the
+constraint <!-- MATH
+ $x_2+vx_3 \leq 1$
+ -->
+<IMG
+ WIDTH="109" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.png"
+ ALT="$x_2+vx_3 \leq 1$"> defines a facet of&nbsp;<IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img32.png"
+ ALT="$S$">.
+         
+</LI>
+</OL>         
+ 
+<P>
+
+<P>
+(this page deliberately left blank)
+
+<P>
+</LI>
+</OL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL>
+<LI><A NAME="tex2html3"
+  HREF="node1.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../../..>John Mitchell</a>
+<br>
+2009-03-05
+</ADDRESS>
+</BODY>
+</HTML>

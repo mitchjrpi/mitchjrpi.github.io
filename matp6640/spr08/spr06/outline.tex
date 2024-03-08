@@ -1,0 +1,194 @@
+\documentclass[11pt]{article}
+
+\pagestyle{empty}
+\newcommand{\til}{\char '176}
+
+\oddsidemargin -.5in
+\textwidth 7.5in
+\textheight 9.5in
+\topmargin -30pt
+\headsep 0in
+\headheight 0in
+
+\renewcommand{\baselinestretch}{1.2}
+
+\begin{document}
+
+\begin{center}
+  {\large\bf  MATP6640/DSES6770 Linear Programming}
+\end{center}
+%\begin{flushright} \today \end{flushright}
+
+\begin{flushright}  TF 12:00--1:50, Darrin 232
+       \hspace*{\fill}   Spring 2006  \end{flushright}
+
+{\raggedright  {\bf \underline{Course Outline:}} }
+The first half of the course will examine polyhedral theory, the simplex method,
+decomposition and column generation methods for large scale linear
+programming problems, and the ellipsoid method.
+The second half will cover interior point methods for linear programming.
+Interior point methods can be regarded as methods for nonlinear programming
+applied to linear programming. They can also be used to solve nonlinear
+programming problems.
+
+\begin{enumerate}
+  \item {\bf Polyhedral theory:} (2 weeks)
+    The feasible region of a linear programming problem is a polyhedron,
+    ie, the intersection of a finite collection of half spaces.
+    The structure of polyhedra is discussed, including the Goldman
+    Resolution theorem, and the Weyl and Minkowski theorems.
+  \item {\bf The simplex algorithm:} (1--2 weeks)
+    The simplex method is the traditional method for solving linear
+    programming problems.
+    I will discuss the simplex method in matrix terms, and indicate
+    how it can be implemented efficiently.
+  \item {\bf Decomposition and column generation
+    methods for large scale problems:} (2 weeks)
+    Some large linear programs can be broken into smaller ones and the
+    polyhedral structure of linear programming can be exploited to develop
+    an algorithm.
+    For other problems, the number of variables is very large and an
+    attractive approach is to generate columns of the constraint
+    matrix only as needed.
+  \item {\bf The ellipsoid algorithm:} (1 week)
+    The ellipsoid algorithm was the first polynomial algorithm for linear
+    programming. It was developed originally as an algorithm for nonlinear
+    programming.
+  \item {\bf Interior point methods:} (8 weeks)
+    Topics to be discussed include the similarity of these algorithms
+    to traditional nonlinear programming methods, the polynomial complexity
+    of many of these algorithms, the asymptotic rate of convergence of
+    the algorithms, and the computational results achieved.
+    Interior point methods for semidefinite programming and
+    second order cone programming problems will be discussed.
+    Efficient linear algebra techniques will also be discussed.
+\end{enumerate}
+
+%\begin{flushleft}  \underline{Homework:}  Every two weeks.  \end{flushleft}
+
+{\raggedright  {\bf \underline{Grading policy:}} }
+The grade will be determined by three elements: homework, a midterm exam,
+and a presentation. The three elements will be equally important.
+
+I will give out a {\bf homework} approximately every two weeks.
+The homeworks will probably contain some computational work.
+You should learn a fair amount from the homeworks.
+  Therefore, try working out the solutions on your own.
+  If you have difficulties,
+  you may talk to me or to other students about the homeworks,
+  but you must write up your solutions on your own.
+
+There will be an {\bf in-class midterm exam} on about Friday, April~7.
+The exam must be all your own work.
+
+The {\bf presentation} will be of either one or two recent papers in interior
+point methods or a research project.
+You will also have to write a summary/analysis of the paper(s) or project.
+You can work in pairs for the presentation part of the course.
+You may discuss your paper(s) with other people and with me,
+but your writeup must be your own work.
+The presentations will take place in the last week of class and in
+exam week during the time-slot for the final exam.
+
+
+%\begin{flushleft}  \underline{Exams:}  One midterm, one final.  \end{flushleft}
+
+%\begin{flushleft}  \underline{Grading policy:} 25\% homeworks, 25\% midterm,
+%                        50\% final.  \end{flushleft}
+
+\vspace{\fill}
+
+\begin{flushright}   /over     \end{flushright}
+
+\pagebreak
+
+{\raggedright   {\bf \underline{Textbooks:}}   }  \\
+
+\begin{tabular}{l@{\hspace{.2in}}p{7in}}
+              &   {\bf V. Chv\'{a}tal,} {\em Linear Programming.} Freeman, 1983.
+                    Covers most of the first half of the course.  \\
+              &   {\bf S. Wright,} {\em Primal-dual Interior Point Methods.}
+                    SIAM, 1997.
+                    Covers most of the second half of the course.
+\end{tabular}
+Because there is a great deal of continuing research on interior point methods,
+I will draw some material from current papers.
+I will put links to several
+papers on the course webpage as the course progresses.
+The following textbooks each cover part of the course and
+are on reserve in the library.  \\
+
+\begin{tabular}{l@{\hspace{.2in}}p{7in}}
+              &   {\bf K. G. Murty,} {\em Linear Programming.} Wiley, 1983.
+                    Similar to Chv\'{a}tal.  \\
+              &   {\bf Roos, Terlaky, and Vial,} 
+                     {\em Theory and Algorithms for Linear Optimization.}
+                    Wiley, 1997.
+                     Excellent for interior point methods.\\
+              &   {\bf R. Vanderbei,}  {\em Linear Programming.} Kluwer, 1996.
+                    Good coverage of both simplex and interior point methods. \\
+              &   {\bf Y. Ye,} {\em Interior Point Algorithms.}
+                    Wiley, 1997.
+                    Very good for interior point methods, with an emphasis on
+                    potential reduction methods.  \\
+              &   {\bf Fiacco and McCormick,} {\em Nonlinear programming;
+                    sequential unconstrained minimization techniques.}
+                    Wiley, 1968. Reprinted by SIAM.
+                    The techniques presented in this book
+                    can be specialized to give interior point methods for
+                    linear programming.  \\
+\end{tabular}
+
+\quad  \\
+
+{\raggedright   {\bf \underline{Prerequisites:}}  }
+MATP4700/DSES4770, or permission of instructor.
+Familiarity with linear programming and linear algebra will be assumed.
+Some elements of MATP6600/DSES6780 and MATP4820/DSES4780,
+such as the Karush-Kuhn-Tucker
+optimality conditions and Newton's
+method, will be used, although it is not necessary to have seen this material
+before.  \\
+
+{\raggedright  {\bf \underline{The World Wide Web:}}  }
+This outline, the homeworks, and other information
+will be available via my homepage,
+\begin{quote}
+  http://www.rpi.edu/\til mitchj/matp6640
+\end{quote}
+
+{\raggedright   {\bf \underline{Academic Integrity:}}  }
+Student-teacher relationships are based on mutual trust.
+Acts which violate this trust undermine the educational process.
+The {\em Rensselaer Handbook} defines various forms of academic
+dishonesty and procedures for responding to them.
+The penalties for cheating can include failure in the course,
+as well as harsher punishments. \\
+
+
+{\raggedright   {\bf \underline{Appealing grades:}} }
+As with any other administrative question regarding this course,
+see me in the first instance.  If we are unable to reach agreement,
+you may appeal my decision to the Chair of the Math Sciences department. \\
+
+
+{\raggedright  {\bf\underline {Cell phones:}}}
+Please make sure that cell phones and pagers are turned off during class. If your cell phone
+disrupts class, you are expected to bring candy or cookies for everyone at our next class.
+
+\vspace{\fill}
+
+
+\begin{tabular}{@{\hspace{2in}}ll}
+   John Mitchell    &  276--6915 \\
+   Amos Eaton 325   &  mitchj@rpi.edu  \\
+   \multicolumn{2}{l}{{\hspace{1.92in}}Office hours:
+Tuesday, 2pm -- 3.30pm or by appointment.}
+\end{tabular}
+
+
+
+
+
+
+\end{document}

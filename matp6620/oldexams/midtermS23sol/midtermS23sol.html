@@ -1,0 +1,456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (https://tug.org/tex4ht/)"> 
+<meta name="originator" content="TeX4ht (https://tug.org/tex4ht/)"> 
+<!-- html --> 
+<meta name="src" content="midtermS23sol.tex"> 
+<link rel="stylesheet" type="text/css" href="midtermS23sol.css"> 
+</head><body 
+>
+<!--l. 37--><p class="noindent" >
+                                                                                         
+
+                                                                                         
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+ 
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"><col 
+id="TBL-1-2"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td11">&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                                                                          </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-2"  
+class="td11">Name:</td> </tr></table>
+</div>
+<div class="center" 
+>
+<!--l. 44--><p class="noindent" >
+<!--l. 46--><p class="noindent" ><span 
+class="cmr-12x-x-120">MATP6620/ISYE6770</span><br />
+<span 
+class="cmbx-12x-x-120">Integer and Combinatorial Optimization</span><br />
+<span 
+class="cmr-12x-x-120">Spring 2023.</span><br /><br />
+<span 
+class="cmbx-12x-x-120">Solutions</span></div>
+<div class="center" 
+>
+<!--l. 52--><p class="noindent" >
+<!--l. 53--><p class="noindent" >Midterm Exam, Tuesday, March 28, 2023.</div>
+<!--l. 56--><p class="indent" >   Please do all four problems. Show all work. No books or calculators allowed. You may use any
+result from class, the homeworks, or the texts, except where stated. You may use one sheet of
+handwritten notes. The exam lasts 110 minutes.
+<div class="center" 
+>
+<!--l. 64--><p class="noindent" >
+<div class="tabular"> <table id="TBL-2" class="tabular" 
+ 
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><colgroup id="TBL-2-2g"><col 
+id="TBL-2-2"><col 
+id="TBL-2-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-1"  
+class="td10"> Q1 &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-1-3"  
+class="td11"> /30</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-1"  
+class="td10"> Q2  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-2-3"  
+class="td11"> /30</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-1"  
+class="td10"> Q3  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-3-3"  
+class="td11"> /15</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-1"  
+class="td10"> Q4  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-4-3"  
+class="td11"> /25</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-1"  
+class="td10">Total&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-5-3"  
+class="td11">/100</td></tr></table>
+</div></div>
+                                                                                         
+
+                                                                                         
+      <ol  class="enumerate1" >
+<li 
+  class="enumerate" id="x1-3x1">
+      <!--l. 77--><p class="noindent" >(30 points) We consider a fixed charge network flow problem where there are both
+      incoming and outgoing arcs at a node&#x00A0;<span 
+class="cmmi-12">D</span>, as illustrated below.
+      <div class="center" 
+>
+<img src=q1.png>
+</div>
+      <!--l. 106--><p class="noindent" >The flow variables satisfy the fixed charge constraints 0 <tspan font-family="cmsy" font-size="10">&#x2264; </tspan><tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x2264; </tspan>3<tspan font-family="cmmi" font-size="12">y</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> and 0 <tspan font-family="cmsy" font-size="10">&#x2264; </tspan><tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x2264; </tspan>9<tspan font-family="cmmi" font-size="12">y</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> where
+      <tspan font-family="cmmi" font-size="12">y</tspan><sub><tspan font-family="cmmi" font-size="8">j</tspan></sub> is a binary variable. The set of feasible solutions at <tspan font-family="cmmi" font-size="12">D </tspan>is given by
+<div class="math-display" >
+<img 
+src="midtermS23sol0x.png" alt="            2       2
+T  = {x &#x2208; &#x211D; +,y &#x2208; B  : x2 - x1 &#x2264; 2,0 &#x2264; x1 &#x2264; 3y1,0 &#x2264;  x2 &#x2264; 9y2}.
+" class="math-display" ></div>
+      <!--l. 117--><p class="noindent" >A fixed charge inequality is
+      <table 
+class="equation"><tr><td>
+<div class="math-display" >
+<img 
+src="midtermS23sol1x.png" alt="                               &#x2211;           &#x2211;             &#x2211;
+x2 +  (9 - &#x03BB;)+(1 - y2) &#x2264;  2 +      aj +  &#x03BB;     yj +              xj
+                                 -           -         -   -   -
+                              j&#x2208;C         j&#x2208;L       j&#x2208;N  \(C  &#x222A;L )
+" class="math-display" ><a 
+ id="x1-4r1"></a></div>
+      </td><td class="equation-label">(1)</td></tr></table>
+      <!--l. 123--><p class="nopar" >
+      where <tspan font-family="cmmi" font-size="12">C</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> <tspan font-family="cmsy" font-size="10">&#x2286; </tspan><tspan font-family="cmmi" font-size="12">N</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> = <tspan font-family="cmsy" font-size="10">{</tspan>1<tspan font-family="cmsy" font-size="10">} </tspan>and <tspan font-family="cmmi" font-size="12">L</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> <tspan font-family="cmsy" font-size="10">&#x2286; </tspan><tspan font-family="cmmi" font-size="12">N</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup><tspan font-family="cmsy" font-size="10">\ </tspan><tspan font-family="cmmi" font-size="12">C</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> are disjoint subsets and <tspan font-family="cmmi" font-size="12">a</tspan><sub>
+<tspan font-family="cmr" font-size="8">1</tspan></sub> = 3 denotes the
+      capacity of the incoming arc. The parameter <tspan font-family="cmmi" font-size="12">&#x03BB; </tspan>= 9 <tspan font-family="cmsy" font-size="10">-</tspan><tspan font-family="cmex" font-size="10">&#x2211;</tspan>
+  <sub><tspan font-family="cmmi" font-size="8">j</tspan><tspan font-family="cmsy" font-size="8">&#x2208;</tspan><tspan font-family="cmmi" font-size="8">C</tspan><sup><tspan font-family="cmsy" font-size="6">-</tspan></sup></sub><tspan font-family="cmmi" font-size="12">a</tspan><sub><tspan font-family="cmmi" font-size="8">j</tspan></sub> <tspan font-family="cmsy" font-size="10">- </tspan>2.
+      <!--l. 129--><p class="noindent" >Note: We have three choices for <tspan font-family="cmmi" font-size="12">C</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> and <tspan font-family="cmmi" font-size="12">L</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup>: (i) <tspan font-family="cmmi" font-size="12">C</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> = <tspan font-family="cmsy" font-size="10">{</tspan>1<tspan font-family="cmsy" font-size="10">}</tspan><tspan font-family="cmmi" font-size="12">,L</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> = <tspan font-family="cmsy" font-size="10">&#x2205;</tspan><tspan font-family="cmmi" font-size="12">,N</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup><tspan font-family="cmsy" font-size="10">\ </tspan>(<tspan font-family="cmmi" font-size="12">C</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup><tspan font-family="cmsy" font-size="10">&#x222A; </tspan><tspan font-family="cmmi" font-size="12">L</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup>) = <tspan font-family="cmsy" font-size="10">&#x2205;</tspan>, (ii)
+      <tspan font-family="cmmi" font-size="12">C</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> = <tspan font-family="cmsy" font-size="10">&#x2205;</tspan><tspan font-family="cmmi" font-size="12">,L</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> = <tspan font-family="cmsy" font-size="10">{</tspan>1<tspan font-family="cmsy" font-size="10">}</tspan><tspan font-family="cmmi" font-size="12">,N</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup><tspan font-family="cmsy" font-size="10">\ </tspan>(<tspan font-family="cmmi" font-size="12">C</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup><tspan font-family="cmsy" font-size="10">&#x222A; </tspan><tspan font-family="cmmi" font-size="12">L</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup>) = <tspan font-family="cmsy" font-size="10">&#x2205;</tspan>, (iii) <tspan font-family="cmmi" font-size="12">C</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> = <tspan font-family="cmsy" font-size="10">&#x2205;</tspan><tspan font-family="cmmi" font-size="12">,L</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> = <tspan font-family="cmsy" font-size="10">&#x2205;</tspan><tspan font-family="cmmi" font-size="12">,N</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup><tspan font-family="cmsy" font-size="10">\ </tspan>(<tspan font-family="cmmi" font-size="12">C</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup><tspan font-family="cmsy" font-size="10">&#x222A; </tspan><tspan font-family="cmmi" font-size="12">L</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup>) = <tspan font-family="cmsy" font-size="10">{</tspan>1<tspan font-family="cmsy" font-size="10">}</tspan>.
+           <ol  class="enumerate2" >
+<li 
+  class="enumerate" id="x1-6x1">
+           <!--l. 135--><p class="noindent" >(10 points) Show equation (<a 
+href="#x1-4r1">1<!--tex4ht:ref: fixedcharge --></a>) is satisfied by all points in <tspan font-family="cmmi" font-size="12">T </tspan>when <tspan font-family="cmmi" font-size="12">y</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> = 1, regardless
+           of the choice of <tspan font-family="cmmi" font-size="12">C</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> and&#x00A0;<tspan font-family="cmmi" font-size="12">L</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup>.
+           <!--l. 139--><p class="noindent" ><tspan font-family="cmbx" font-size="12">Solution: </tspan>We consider the three cases: In each case, the left hand side of (<a 
+href="#x1-4r1">1<!--tex4ht:ref: fixedcharge --></a>) becomes
+           <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> when <tspan font-family="cmmi" font-size="12">y</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> = 1
+               <ul class="itemize1">
+               <li class="itemize">
+               <!--l. 143--><p class="noindent" ><tspan font-family="cmmi" font-size="12">C</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> = <tspan font-family="cmsy" font-size="10">{</tspan>1<tspan font-family="cmsy" font-size="10">}</tspan>: Here, the right hand side of (<a 
+href="#x1-4r1">1<!--tex4ht:ref: fixedcharge --></a>) is 2 + <tspan font-family="cmmi" font-size="12">a</tspan><sub>
+<tspan font-family="cmr" font-size="8">1</tspan></sub> = 5 <tspan font-family="cmsy" font-size="10">&#x2265; </tspan>2 + <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub>. So (<a 
+href="#x1-4r1">1<!--tex4ht:ref: fixedcharge --></a>) is
+               weaker than <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> <tspan font-family="cmsy" font-size="10">- </tspan><tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x2264; </tspan>2.
+               </li>
+               <li class="itemize">
+               <!--l. 145--><p class="noindent" ><tspan font-family="cmmi" font-size="12">L</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> = <tspan font-family="cmsy" font-size="10">{</tspan>1<tspan font-family="cmsy" font-size="10">}</tspan>: Here, <tspan font-family="cmmi" font-size="12">&#x03BB; </tspan>= 7. Two subcases: (<tspan font-family="cmmi" font-size="12">&#x03B1;</tspan>) <tspan font-family="cmmi" font-size="12">y</tspan><sub>
+<tspan font-family="cmr" font-size="8">1</tspan></sub> = 0: Then <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> = 0 so from the
+               definition of <tspan font-family="cmmi" font-size="12">T </tspan>we need <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub>  <tspan font-family="cmsy" font-size="10">&#x2264; </tspan>2, which is equivalent to (<a 
+href="#x1-4r1">1<!--tex4ht:ref: fixedcharge --></a>) in this case. (<tspan font-family="cmmi" font-size="12">&#x03B2;</tspan>)
+               <tspan font-family="cmmi" font-size="12">y</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> = 1: then (<a 
+href="#x1-4r1">1<!--tex4ht:ref: fixedcharge --></a>) becomes <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x2264; </tspan>2 + 7 = 9, which is weaker than defined in&#x00A0;<tspan font-family="cmmi" font-size="12">T</tspan>.
+               </li>
+               <li class="itemize">
+               <!--l. 150--><p class="noindent" ><tspan font-family="cmmi" font-size="12">N</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> <tspan font-family="cmsy" font-size="10">\ </tspan>(<tspan font-family="cmmi" font-size="12">C</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> <tspan font-family="cmsy" font-size="10">&#x222A; </tspan><tspan font-family="cmmi" font-size="12">L</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup>) = <tspan font-family="cmsy" font-size="10">{</tspan>1<tspan font-family="cmsy" font-size="10">}</tspan>: In this case, (<a 
+href="#x1-4r1">1<!--tex4ht:ref: fixedcharge --></a>) becomes <tspan font-family="cmmi" font-size="12">x</tspan><sub>
+<tspan font-family="cmr" font-size="8">2</tspan></sub>  <tspan font-family="cmsy" font-size="10">&#x2264; </tspan>2 + <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub>, as in the
+               definition of&#x00A0;<tspan font-family="cmmi" font-size="12">T</tspan>.</li></ul>
+           <!--l. 153--><p class="noindent" >Hence (<a 
+href="#x1-4r1">1<!--tex4ht:ref: fixedcharge --></a>) is satisfied by all points in <tspan font-family="cmmi" font-size="12">T </tspan>with <tspan font-family="cmmi" font-size="12">y</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> = 1.
+                                                                                         
+
+                                                                                         
+           </li>
+<li 
+  class="enumerate" id="x1-8x2">
+           <!--l. 158--><p class="noindent" >(15 points) Show equation (<a 
+href="#x1-4r1">1<!--tex4ht:ref: fixedcharge --></a>) is satisfied by all points in <tspan font-family="cmmi" font-size="12">T </tspan>when <tspan font-family="cmmi" font-size="12">y</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> = 0, regardless of
+           the choice of <tspan font-family="cmmi" font-size="12">C</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> and&#x00A0;<tspan font-family="cmmi" font-size="12">L</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup>.
+           <!--l. 162--><p class="noindent" ><tspan font-family="cmbx" font-size="12">Solution: </tspan>Note that <tspan font-family="cmmi" font-size="12">y</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> = 0 implies <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> = 0, so the left hand side of (<a 
+href="#x1-4r1">1<!--tex4ht:ref: fixedcharge --></a>) is (9 <tspan font-family="cmsy" font-size="10">- </tspan><tspan font-family="cmmi" font-size="12">&#x03BB;</tspan>)<sup><tspan font-family="cmr" font-size="8">+</tspan></sup>. We
+           consider the three cases:
+               <ul class="itemize1">
+               <li class="itemize">
+               <!--l. 166--><p class="noindent" ><tspan font-family="cmmi" font-size="12">C</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> = <tspan font-family="cmsy" font-size="10">{</tspan>1<tspan font-family="cmsy" font-size="10">}</tspan>: Here, <tspan font-family="cmmi" font-size="12">&#x03BB; </tspan>= 4 so the left hand side of (<a 
+href="#x1-4r1">1<!--tex4ht:ref: fixedcharge --></a>) is&#x00A0;5. The right hand side
+               of (<a 
+href="#x1-4r1">1<!--tex4ht:ref: fixedcharge --></a>) is 2 + <tspan font-family="cmmi" font-size="12">a</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> = 5 also, so (<a 
+href="#x1-4r1">1<!--tex4ht:ref: fixedcharge --></a>) is satisfied..
+               </li>
+               <li class="itemize">
+               <!--l. 169--><p class="noindent" ><tspan font-family="cmmi" font-size="12">L</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> = <tspan font-family="cmsy" font-size="10">{</tspan>1<tspan font-family="cmsy" font-size="10">}</tspan>: Here, <tspan font-family="cmmi" font-size="12">&#x03BB; </tspan>= 7 so the left hand side of (<a 
+href="#x1-4r1">1<!--tex4ht:ref: fixedcharge --></a>) is&#x00A0;2. The right hand side
+               of (<a 
+href="#x1-4r1">1<!--tex4ht:ref: fixedcharge --></a>) is 2 + <tspan font-family="cmmi" font-size="12">&#x03BB;y</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x2265; </tspan>2, so the equation is satisfied.
+               </li>
+               <li class="itemize">
+               <!--l. 172--><p class="noindent" ><tspan font-family="cmmi" font-size="12">N</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup><tspan font-family="cmsy" font-size="10">\ </tspan>(<tspan font-family="cmmi" font-size="12">C</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup><tspan font-family="cmsy" font-size="10">&#x222A; </tspan><tspan font-family="cmmi" font-size="12">L</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup>) = <tspan font-family="cmsy" font-size="10">{</tspan>1<tspan font-family="cmsy" font-size="10">}</tspan>: In this case, <tspan font-family="cmmi" font-size="12">&#x03BB; </tspan>= 7 so the left hand side of (<a 
+href="#x1-4r1">1<!--tex4ht:ref: fixedcharge --></a>) is&#x00A0;2,
+               and as in the previous case, the right hand side is at least as large.</li></ul>
+           <!--l. 175--><p class="noindent" >Hence (<a 
+href="#x1-4r1">1<!--tex4ht:ref: fixedcharge --></a>) is satisfied by all points in <tspan font-family="cmmi" font-size="12">T </tspan>with <tspan font-family="cmmi" font-size="12">y</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> = 0.
+                                                                                         
+
+                                                                                         
+           </li>
+<li 
+  class="enumerate" id="x1-10x3">
+           <!--l. 180--><p class="noindent" >(5 points) The point <tspan font-family="cmmi" font-size="12">x </tspan>= (3<tspan font-family="cmmi" font-size="12">, </tspan>5), <tspan font-family="cmmi" font-size="12">y </tspan>= (1<tspan font-family="cmmi" font-size="12">,</tspan><img 
+src="midtermS23sol2x.png" alt="59"  class="frac" align="middle">) is in the LP relaxation of the feasible region.
+           Show equation (<a 
+href="#x1-4r1">1<!--tex4ht:ref: fixedcharge --></a>) is violated by this point, for two different choices of <tspan font-family="cmmi" font-size="12">C</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup>
+           and&#x00A0;<tspan font-family="cmmi" font-size="12">L</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup>.
+           <!--l. 185--><p class="noindent" ><tspan font-family="cmbx" font-size="12">Solution: </tspan>Two cases:
+               <ul class="itemize1">
+               <li class="itemize">
+               <!--l. 188--><p class="noindent" ><tspan font-family="cmmi" font-size="12">C</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> = <tspan font-family="cmsy" font-size="10">{</tspan>1<tspan font-family="cmsy" font-size="10">}</tspan><tspan font-family="cmmi" font-size="12">,L</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> = <tspan font-family="cmsy" font-size="10">&#x2205;</tspan>: Here, <tspan font-family="cmmi" font-size="12">&#x03BB; </tspan>= 4 so (<a 
+href="#x1-4r1">1<!--tex4ht:ref: fixedcharge --></a>) becomes
+<div class="math-display" >
+<img 
+src="midtermS23sol3x.png" alt="       4
+5 + 5 *-- &#x2264; 2 + 3
+       9
+" class="math-display" ></div>
+               <!--l. 193--><p class="noindent" >which is clearly violated.
+               </li>
+               <li class="itemize">
+               <!--l. 194--><p class="noindent" ><tspan font-family="cmmi" font-size="12">C</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> = <tspan font-family="cmsy" font-size="10">&#x2205;</tspan><tspan font-family="cmmi" font-size="12">,L</tspan><sup><tspan font-family="cmsy" font-size="8">-</tspan></sup> = <tspan font-family="cmsy" font-size="10">&#x2205;</tspan>: Here, <tspan font-family="cmmi" font-size="12">&#x03BB; </tspan>= 7 so (<a 
+href="#x1-4r1">1<!--tex4ht:ref: fixedcharge --></a>) becomes
+<div class="math-display" >
+<img 
+src="midtermS23sol4x.png" alt="       4-
+5 + 2 * 9 &#x2264; 2 + x1  &#x2264; 2 + 3
+" class="math-display" ></div>
+               <!--l. 199--><p class="noindent" >which is clearly violated.
+               </li></ul>
+           </li></ol>
+                                                                                         
+
+                                                                                         
+      </li>
+<li 
+  class="enumerate" id="x1-12x2">
+      <!--l. 207--><p class="noindent" >Let
+<div class="math-display" >
+<img 
+src="midtermS23sol5x.png" alt="           5
+S = {x &#x2208;  B  : 5x1 + 7x2 + 4x3 + 3x4 + 5x5 &#x2264; 13 }.
+" class="math-display" ></div>
+           <ol  class="enumerate2" >
+<li 
+  class="enumerate" id="x1-14x1">
+           <!--l. 213--><p class="noindent" >(10 points) Show the valid inequality <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> + <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">4</tspan></sub> + <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">5</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x2264; </tspan>2 has Chvatal-Gomory rank
+           equal to one.
+           <!--l. 216--><p class="noindent" ><tspan font-family="cmbx" font-size="12">Solution</tspan>: We take the following nonnegative combination of the original
+           constraints:
+<div class="math-display" >
+<img 
+src="midtermS23sol6x.png" alt="1(5x  + 7x  + 4x  + 3x  + 5x    &#x2264;  1)
+7    1     2     3     4     5
+                        + 47(x4   &#x2264;  1)
+                          2
+                        + 7(x5   &#x2264;  1)
+" class="math-display" ></div>
+           <!--l. 225--><p class="noindent" >giving the valid inequality
+                                                                                         
+
+                                                                                         
+<div class="math-display" >
+<img 
+src="midtermS23sol7x.png" alt="5          4                 19
+-x1 + x2 + --x3 + x4 + x5 &#x2264;  ---
+7          7                 7
+" class="math-display" ></div>
+           <!--l. 229--><p class="noindent" >Rounding down the left hand side then rounding down the right hand side gives the
+           valid inequality <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> + <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">4</tspan></sub> + <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">5</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x2264; </tspan>2, showing the inequality does indeed have C-G rank
+           equal to&#x00A0;2.
+                                                                                         
+
+                                                                                         
+           <!--l. 236--><p class="noindent" >
+<div class="math-display" >
+<img 
+src="midtermS23sol8x.png" alt="S = {x &#x2208;  B5 : 5x1 + 7x2 + 4x3 + 3x4 + 5x5 &#x2264; 13 }.
+" class="math-display" ></div>
+           </li>
+<li 
+  class="enumerate" id="x1-16x2">
+           <!--l. 240--><p class="noindent" >(10 points) Show that <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> + <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">4</tspan></sub> + <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">5</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x2264; </tspan>2 defines a facet of&#x00A0;conv(<tspan font-family="cmmi" font-size="12">S</tspan>).
+           <!--l. 243--><p class="noindent" ><tspan font-family="cmbx" font-size="12">Solution</tspan>: Note first that the knapsack polytope is full-dimensional.
+           <!--l. 246--><p class="noindent" >There are at least 2 methods to show the inequality defines a facet: using lifting, or
+           finding 5 affinely independent feasible solutions on the face. We use the second
+           approach.
+           <!--l. 250--><p class="noindent" >The five points are:
+<div class="math-display" >
+<img 
+src="midtermS23sol9x.png" alt="(A) : x = (0,1,0,1,0)
+
+(B ) : x = (0,1,0,0,1)
+(C) : x = (0,0,0,1,1)
+(D ) : x = (1,0,0,1,1 )
+(E) : x = (0,0,1,1,1)
+" class="math-display" ></div>
+           <!--l. 260--><p class="noindent" >We show these 5 vectors are linearly independent, placing them as columns of a matrix
+           after permuting the components:
+                                                                                         
+
+                                                                                         
+<div class="math-display" >
+<img 
+src="midtermS23sol10x.png" alt="      A   B   C  D   E
+     &#x230A;                &#x230B;
+x2      1  1  0  0  0
+x4   ||  1  0  1  1  1 ||
+x5   ||  0  1  1  1  1 ||
+x1   &#x2308;  0  0  0  1  0 &#x2309;
+x       0  0  0  0  1
+  3
+" class="math-display" ></div>
+           <!--l. 284--><p class="noindent" >Subtracting the <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> row from the <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">4</tspan></sub> row, and then adding the <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">4</tspan></sub> row to the <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">5</tspan></sub> row gives
+           an upper-triangular matrix with nonzeroes on the diagonal. Hence the 5 vectors are
+           linearly independent, so they are affinely independent, so the constraint defines a facet
+           of&#x00A0;<tspan font-family="cmmi" font-size="12">S</tspan>.
+                                                                                         
+
+                                                                                         
+           <!--l. 294--><p class="noindent" >
+<div class="math-display" >
+<img 
+src="midtermS23sol11x.png" alt="S = {x &#x2208;  B5 : 5x1 + 7x2 + 4x3 + 3x4 + 5x5 &#x2264; 13 }.
+" class="math-display" ></div>
+           </li>
+<li 
+  class="enumerate" id="x1-18x3">
+           <!--l. 298--><p class="noindent" >(10 points) Strengthen the valid inequality <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> + <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> + <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">5</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x2264; </tspan>2 by lifting it.
+           <!--l. 301--><p class="noindent" ><tspan font-family="cmbx" font-size="12">Solution</tspan>: Lifting first on <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">3</tspan></sub>: We solve
+<div class="math-display" >
+<img 
+src="midtermS23sol12x.png" alt="maxx   x1 + x2 + x5
+s.t    x &#x2208;  S
+       x  = 1
+        3
+       x4 = 0
+" class="math-display" ></div>
+           <!--l. 311--><p class="noindent" >Optimal value is <tspan font-family="cmmi" font-size="12">&#x03B6; </tspan>= 11 so lifting coefficient for <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">3</tspan></sub> is <tspan font-family="cmmi" font-size="12">&#x03B1; </tspan>= 2 <tspan font-family="cmsy" font-size="10">- </tspan><tspan font-family="cmmi" font-size="12">&#x03B6; </tspan>= 1.
+           <!--l. 314--><p class="noindent" >Now lifting on <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">4</tspan></sub>: We solve
+<div class="math-display" >
+<img 
+src="midtermS23sol13x.png" alt="maxx   x1 + x2 + x3 + x5
+s.t     x &#x2208; S
+       x =  1
+        4
+" class="math-display" ></div>
+           <!--l. 322--><p class="noindent" >Optimal value is <tspan font-family="cmmi" font-size="12">&#x03B6; </tspan>= 2 so lifting coefficient for <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">4</tspan></sub> is <tspan font-family="cmmi" font-size="12">&#x03B1; </tspan>= 2 <tspan font-family="cmsy" font-size="10">- </tspan><tspan font-family="cmmi" font-size="12">&#x03B6; </tspan>= 0.
+           <!--l. 324--><p class="noindent" >Hence we obtain a lifted inequality of <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> + <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> + <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">3</tspan></sub> + <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">5</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x2264; </tspan>2.
+           <!--l. 326--><p class="noindent" >Note that even if we lift in the opposite order, we obtain the same inequality.</li></ol>
+                                                                                         
+
+                                                                                         
+      </li>
+<li 
+  class="enumerate" id="x1-20x3">
+      <!--l. 333--><p class="noindent" >Consider the <tspan font-family="cmcsc" font-size="10">M<span 
+class="small-caps">a</span><span 
+class="small-caps">x</span>C<span 
+class="small-caps">u</span><span 
+class="small-caps">t</span> </tspan>problem on <tspan font-family="cmmi" font-size="12">K</tspan><sub><tspan font-family="cmr" font-size="8">5</tspan></sub>, the complete graph on 5 vertices. Let <tspan font-family="cmmi" font-size="12">V </tspan>and <tspan font-family="cmmi" font-size="12">E</tspan>
+      denote the sets of vertices and edges of <tspan font-family="cmmi" font-size="12">K</tspan><sub><tspan font-family="cmr" font-size="8">5</tspan></sub>, respectively. You may assume the convex hull of
+      feasible solutions is full-dimensional.
+           <ol  class="enumerate2" >
+<li 
+  class="enumerate" id="x1-22x1">
+           <!--l. 338--><p class="noindent" >(5 points) Show from first principles that the maximum number of edges in any
+           cut is&#x00A0;6.
+           <!--l. 341--><p class="noindent" ><tspan font-family="cmbx" font-size="12">Solution</tspan>:
+           <!--l. 343--><p class="noindent" >If all 5 vertices are on the same side of the cut then 0 edges are in the cut.
+           <!--l. 345--><p class="noindent" >If 4 vertices are on 1 side and the last vertex on the other side, then the cut
+           contains 4 edges. If 3 vertices are on 1 side and 2 on the other, then 6 edges are
+           in the cut.
+                                                                                         
+
+                                                                                         
+           </li>
+<li 
+  class="enumerate" id="x1-24x2">
+           <!--l. 350--><p class="noindent" >(10 points) It follows from part <a 
+href="#x1-22x1">3a<!--tex4ht:ref: q.maxcut_a --></a> that the constraint <tspan font-family="cmex" font-size="10">&#x2211;</tspan>
+  <sub><tspan font-family="cmmi" font-size="8">e</tspan><tspan font-family="cmsy" font-size="8">&#x2208;</tspan><tspan font-family="cmmi" font-size="8">E</tspan></sub><tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmmi" font-size="8">e</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x2264; </tspan>6 is valid for
+           the <tspan font-family="cmcsc" font-size="10">M<span 
+class="small-caps">a</span><span 
+class="small-caps">x</span>C<span 
+class="small-caps">u</span><span 
+class="small-caps">t</span> </tspan>problem on&#x00A0;<tspan font-family="cmmi" font-size="12">K</tspan><sub><tspan font-family="cmr" font-size="8">5</tspan></sub>. How would you try to show that this constraint
+           gives a facet of the convex hull of cuts? (Note: I do not want you to show that
+           it is a facet; instead, I want you to tell me what points you might consider, and
+           what you might try to do with those points.)
+           <!--l. 355--><p class="noindent" ><tspan font-family="cmbx" font-size="12">Solution</tspan>:
+           <!--l. 357--><p class="noindent" >It  was  proved  in  class  that  the  convex  hull  of  the  <tspan font-family="cmcsc" font-size="10">M<span 
+class="small-caps">a</span><span 
+class="small-caps">x</span>C<span 
+class="small-caps">u</span><span 
+class="small-caps">t</span>  </tspan>polytope  is
+           full-dimensional. <tspan font-family="cmmi" font-size="12">K</tspan><sub><tspan font-family="cmr" font-size="8">5</tspan></sub> has 10 edges, so the dimension of the convex hull is 10.
+           <!--l. 360--><p class="noindent" >Thus, to prove our inequality is a facet, we need to find 10 affinely independent
+           points that satisfy the constraint at equality.
+           <!--l. 363--><p class="noindent" >There are 10 ways to put three vertices on one side of the cut and 2 on the other,
+           so the incidence vectors of these cuts give the candidate points.
+           </li></ol>
+                                                                                         
+
+                                                                                         
+      </li>
+<li 
+  class="enumerate" id="x1-26x4">
+      <!--l. 370--><p class="noindent" >(25 points; each part is worth 5 points) For each of the following statements, determine
+      whether it is <tspan font-family="cmbx" font-size="12">TRUE </tspan>or <tspan font-family="cmbx" font-size="12">FALSE</tspan>, and give a short justification (one or two sentences).
+           <ol  class="enumerate2" >
+<li 
+  class="enumerate" id="x1-28x1">
+           <!--l. 375--><p class="noindent" >If <tspan font-family="cmmi" font-size="12">G </tspan>= (<tspan font-family="cmmi" font-size="12">V,E</tspan>) is a perfect graph then its complement graph is also perfect.
+           <!--l. 377--><p class="noindent" ><tspan font-family="cmbx" font-size="12">Solution</tspan>:
+           <!--l. 379--><p class="noindent" >TRUE: This is a result from the notes.
+           </li>
+<li 
+  class="enumerate" id="x1-30x2">
+           <!--l. 383--><p class="noindent" >Let <tspan font-family="cmmi" font-size="12">G </tspan>= (<tspan font-family="cmmi" font-size="12">V,E</tspan>) be a graph. If the maximum cardinality node packing on <tspan font-family="cmmi" font-size="12">G </tspan>has
+           the same size as the minimum cardinality clique cover on&#x00A0;<tspan font-family="cmmi" font-size="12">G </tspan>then <tspan font-family="cmmi" font-size="12">G </tspan>is a perfect
+           graph.
+           <!--l. 388--><p class="noindent" ><tspan font-family="cmbx" font-size="12">Solution</tspan>:
+           <!--l. 390--><p class="noindent" >FALSE: need the equality to also hold for every subgraph of&#x00A0;<tspan font-family="cmmi" font-size="12">G</tspan>.
+                                                                                         
+
+                                                                                         
+           </li>
+<li 
+  class="enumerate" id="x1-32x3">
+           <!--l. 395--><p class="noindent" >The node-arc incidence matrix of an undirected graph is totally unimodular.
+           <!--l. 397--><p class="noindent" ><tspan font-family="cmbx" font-size="12">Solution</tspan>:
+           <!--l. 399--><p class="noindent" >FALSE: It&#8217;s true for bipartite graphs and for directed graphs. It&#8217;s not true for
+           odd cycles; eg, the 3-cycle gives a node-arc incidence matrix of determinant 2 or
+           -2 (the sign depends on the ordering of the columns).
+           </li>
+<li 
+  class="enumerate" id="x1-34x4">
+           <!--l. 405--><p class="noindent" >Assume <tspan font-family="cmmi" font-size="12">x </tspan><tspan font-family="cmsy" font-size="10">&#x2208; </tspan><tspan font-family="msbm" font-size="10">&#x211D;</tspan><sub><tspan font-family="cmr" font-size="8">+</tspan></sub><sup><tspan font-family="cmmi" font-size="8">n</tspan></sup> satisfies the inequalities <tspan font-family="cmmi" font-size="12">g</tspan><sup><tspan font-family="cmmi" font-size="8">T</tspan> </sup><tspan font-family="cmmi" font-size="12">x </tspan><tspan font-family="cmsy" font-size="10">&#x2265; </tspan>1 and <tspan font-family="cmmi" font-size="12">h</tspan><sup><tspan font-family="cmmi" font-size="8">T</tspan> </sup><tspan font-family="cmmi" font-size="12">x </tspan><tspan font-family="cmsy" font-size="10">&#x2265; </tspan>1. Then <tspan font-family="cmmi" font-size="12">x </tspan>also
+           satisfies <tspan font-family="cmex" font-size="10">&#x2211;</tspan>
+  <sub><tspan font-family="cmmi" font-size="8">j</tspan><tspan font-family="cmr" font-size="8">=1</tspan></sub><sup><tspan font-family="cmmi" font-size="8">n</tspan></sup> max<tspan font-family="cmsy" font-size="10">{</tspan><tspan font-family="cmmi" font-size="12">g</tspan><sub>
+<tspan font-family="cmmi" font-size="8">j</tspan></sub><tspan font-family="cmmi" font-size="12">,h</tspan><sub><tspan font-family="cmmi" font-size="8">j</tspan></sub><tspan font-family="cmsy" font-size="10">}</tspan><tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmmi" font-size="8">j</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x2265; </tspan>1.
+           <!--l. 408--><p class="noindent" ><tspan font-family="cmbx" font-size="12">Solution</tspan>:
+           <!--l. 410--><p class="noindent" >TRUE: This is a result from the notes.
+                                                                                         
+
+                                                                                         
+           </li>
+<li 
+  class="enumerate" id="x1-36x5">
+           <!--l. 415--><p class="noindent" >Assume the nonnegative integer vector <tspan font-family="cmmi" font-size="12">x </tspan>satisfies <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> + 0<tspan font-family="cmmi" font-size="12">.</tspan>7<tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> + 0<tspan font-family="cmmi" font-size="12">.</tspan>2<tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">3</tspan></sub> = 5<tspan font-family="cmmi" font-size="12">.</tspan>4. Then
+           <tspan font-family="cmmi" font-size="12">x </tspan>also satisfies 0<tspan font-family="cmmi" font-size="12">.</tspan>2<tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> + 0<tspan font-family="cmmi" font-size="12">.</tspan>2<tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">3</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x2265; </tspan>0<tspan font-family="cmmi" font-size="12">.</tspan>4.
+           <!--l. 420--><p class="noindent" ><tspan font-family="cmbx" font-size="12">Solution</tspan>:
+           <!--l. 422--><p class="noindent" >TRUE: this is the strong Gomory cut from the original constraint.
+           <!--l. 424--><p class="noindent" >Alternatively, the constraint is equivalent for <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> + <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">3</tspan></sub> <tspan font-family="cmsy" font-size="10">&#x2265; </tspan>2. If we look at the three
+           nonnegative integers choices of <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">1</tspan></sub> and <tspan font-family="cmmi" font-size="12">x</tspan><sub><tspan font-family="cmr" font-size="8">2</tspan></sub> that violate this constraint, it is easy to
+           see that none of them lead to an integer solution to the original equation.</li></ol>
+      </li></ol>
+    
+</body></html> 
+
+                                                                                         
+
+                                                                                         
+                                                                                         
+
+

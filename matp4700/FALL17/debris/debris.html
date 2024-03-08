@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="debris.tex"> 
+<meta name="date" content="2017-10-03 13:15:00"> 
+<link rel="stylesheet" type="text/css" href="debris.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 31--><p class="noindent" >
+<!--l. 33--><p class="noindent" ><span class="underline"><span 
+class="cmbx-12x-x-144">Case Study:</span></span>
+<!--l. 37--><p class="noindent" ><span class="underline"><span 
+class="cmbx-12x-x-144">Post Disaster Debris Removal</span></span> </div>
+<div class="center" 
+>
+<!--l. 41--><p class="noindent" >
+<!--l. 43--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmr-12x-x-120">MATP4700/ ISYE4770 Math Models of Operations Research</span></a>
+<!--l. 45--><p class="noindent" ><span 
+class="cmr-12x-x-120">Fall 2017</span>
+</div>
+<!--l. 50--><p class="noindent" ><span 
+class="cmti-12">Students may work in groups of up to three people. You may consult your textbooks,</span>
+<span 
+class="cmti-12">your notes, online information, the TA, and me. You may not solicit help from other</span>
+<span 
+class="cmti-12">sources.</span>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Introduction</h3>
+<!--l. 58--><p class="noindent" >One of the challenges in responding to a natural disaster is in the removal of debris from roads to
+allow access to people in need of help. It is critical that road clearing be performed quickly,
+although there may be limited trucks available immediately after the disaster. In this project, you
+will develop an optimization model to determine a set of roads to be cleared in order to reach
+people in need as efficiently as possible.
+<!--l. 66--><p class="indent" >   The model can be written more exactly as an integer program with binary variables. For the
+first part of the project, you will relax the integrality constraints, instead using simple bounds
+0 <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>1 on all the variables&#x00A0;<span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub>.
+<!--l. 71--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-20002"></a>Constructing a Model</h3>
+<!--l. 73--><p class="noindent" >We are given a <span 
+class="cmti-12">directed graph </span><span 
+class="cmmi-12">G </span>= (<span 
+class="cmmi-12">V,</span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-45.png" alt="E" class="10-120x-x-45" /></span>) of edges and arcs. There are possible access points on the
+boundary of the graph and demand points that are not immediately accessible. The aim is to
+develop routes through the graph to reach the demand points.
+
+<br>
+<img src=picture.png>
+<br>
+
+<!--l. 219--><p class="indent" >   The time to access the demand points depends on the resources available, particularly the
+number of trucks for clearing the roads. For example, in the picture, assume we only have one
+crew available for clearing the roads. We have decided to use access point <span 
+class="cmmi-12">a </span>and we
+clear roads (<span 
+class="cmmi-12">a,d</span>), (<span 
+class="cmmi-12">d,j</span>), (<span 
+class="cmmi-12">j,b</span>), (<span 
+class="cmmi-12">j,k</span>), and (<span 
+class="cmmi-12">k,f</span>). Then the total time to clear the roads
+is:
+                                                                                         
+                                                                                         
+   <center class="math-display" >
+<img 
+src="debris0x.png" alt="time to clear roads: 6 + 7 + 10 + 4 + 7 = 34
+" class="math-display" ></center>
+<!--l. 228--><p class="nopar" >
+After the roads are cleared, goods can be transported. Many different types of vehicles can be used
+for transporting goods, so we can assume all the different demand points can be supplied
+simultaneously. However, we have to wait for the roads to be cleared. With the numbers in the
+graph, the time to transport goods to the various demand points after the roads are cleared
+are:
+   <center class="math-display" >
+<img 
+src="debris1x.png" alt="b :      2 + 4 + 6 = 12
+k :      2 + 4 + 8 = 14
+
+f :      2 + 4 + 8 + 3 = 17
+" class="math-display" ></center>
+<!--l. 241--><p class="nopar" >
+We set up an <span 
+class="cmbx-12">objective function </span>that combines the clearing time and the transportation
+time:
+   <center class="math-display" >
+<img 
+src="debris2x.png" alt="minimize (time to clear roads  +  max {transportation time  over demand  nodes }).
+" class="math-display" ></center>
+<!--l. 247--><p class="nopar" >
+Note that the road clearance time is &#8220;wall-clock&#8221; time, so the total time needed by all the trucks to
+clear the roads should be divided by the number of trucks available. For the example, since there is
+only one truck, the value of the objective function is
+   <center class="math-display" >
+<img 
+src="debris3x.png" alt="value for indicated  feasible solution is 34 + 17,
+" class="math-display" ></center>
+<!--l. 255--><p class="nopar" >
+since demand point <span 
+class="cmmi-12">f </span>requires 17 units of time for transportation, the largest of all the demand
+points.
+<!--l. 260--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-30003"></a>The data</h3>
+                                                                                         
+                                                                                         
+<!--l. 262--><p class="noindent" >The data instance consists of a directed graph with 600 nodes and 1150 arcs. You can think of the
+nodes as arranged in a 30 <span 
+class="cmsy-10x-x-120">&#x00D7; </span>20 grid, with all arcs pointing either down or to the right. The 49
+nodes on the top and the left hand side are possible access points. There are 10 demand points
+scattered through the grid. Because of resource limitations, at most 4 access points can be opened;
+this is the number of trucks available for road clearance. Each opened access point can supply at
+most 10 units of goods.
+<!--l. 273--><p class="indent" >   Files containing the list of nodes, the list of access points, the list of demand points with their
+demands, the clearance and transportation times can be found on LMS, and also on the course
+webpage at
+      <div class="quote">
+      <!--l. 279--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700/projectdata" class="url" ><span 
+class="cmtt-12">http://www.rpi.edu/</span><span 
+class="cmtt-12">~</span><span 
+class="cmtt-12">mitchj/matp4700/projectdata</span></a></div>
+<!--l. 282--><p class="indent" >   Also available is a small version of the problem, which might be useful for debugging your
+model.
+<!--l. 285--><p class="indent" >   (An aside on the units for the demands: The stated demands are daily demands for each
+destination. Each open access point can send out up to 10 units of goods each day. The access
+points have plenty of trucks available for transportation of goods, so they can send supplies to each
+demand point each day.)
+<!--l. 291--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x1-40004"></a>Constraints and Variables</h3>
+<!--l. 293--><p class="noindent" >The following constraints are necessary:
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-4002x1">Roads can only be used for transportation if they have been cleared.
+      </li>
+      <li 
+  class="enumerate" id="x1-4004x2">There is a limit on the number of access points that can be opened.
+      </li>
+      <li 
+  class="enumerate" id="x1-4006x3">The supply limit of 10 has to be observed at each open access point.
+      </li>
+      <li 
+  class="enumerate" id="x1-4008x4">The demands for each destination must be met.
+      </li>
+      <li 
+  class="enumerate" id="x1-4010x5">The demand flows for each destination point must satisfy flow conservation:
+           <div class="quote">
+           <!--l. 306--><p class="noindent" >if the demand is <span 
+class="cmmi-12">d</span><sub><span 
+class="cmmi-8">k</span></sub> for destination&#x00A0;<span 
+class="cmmi-12">k </span>then:
+                                                                                         
+                                                                                         
+    <ul class="itemize1">
+    <li class="itemize"><span 
+class="cmmi-12">k </span>units must leave a supply node destined for <span 
+class="cmmi-12">k</span>.
+    </li>
+    <li class="itemize"><span 
+class="cmmi-12">k </span>units must arrive at destination&#x00A0;<span 
+class="cmmi-12">k</span>.
+    </li>
+    <li class="itemize">for every other node, for the goods destined for <span 
+class="cmmi-12">k</span>: what comes in is equal
+    to what goes out.</li></ul>
+           </div>
+      </li></ol>
+<!--l. 315--><p class="noindent" >Also note that the objective function is piecewise linear, so you will need to represent this using linear
+constraints.
+<!--l. 320--><p class="indent" >   Ideally, each demand node should be supplied along a single path. We can use <span 
+class="cmti-12">binary </span>variables
+with three indices (<span 
+class="cmmi-12">k,i,j</span>) to indicate whether the flow to destination <span 
+class="cmmi-12">k </span>uses arc (<span 
+class="cmmi-12">i,j</span>).
+Thus, I suggest using variables of the form flow(<span 
+class="cmmi-12">k,i,j</span>) for each destination&#x00A0;<span 
+class="cmmi-12">k </span>and each
+arc&#x00A0;(<span 
+class="cmmi-12">i,j</span>).
+<!--l. 326--><p class="indent" >   Let <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-44.png" alt="D" class="10-120x-x-44" /> </span>denote the set of demand nodes. Then for each possible supply node&#x00A0;<span 
+class="cmmi-12">i</span>, the total net flow
+out of node <span 
+class="cmmi-12">i </span>is
+   <center class="math-display" >
+<img 
+src="debris4x.png" alt="    (                                     )
+&#x2211;     &#x2211;                   &#x2211;
+    (      dkflow (k,i,j) -      dkflow (k,l,i))  .
+k&#x2208;D   (i,j)&#x2208;E               (l,i)&#x2208;E
+" class="math-display" ></center>
+<!--l. 334--><p class="nopar" >
+This should be zero if supply node <span 
+class="cmmi-12">i </span>is not used, and it should be no larger than 10 if the
+supply node is used. This can lead you to a way to represent constraint 3 from the list
+above. The other constraints can be expressed using the flow variables and other binary
+variables.
+<!--l. 342--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
+ id="x1-50005"></a>Questions</h3>
+<!--l. 343--><p class="noindent" >
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-5002x1">Due: <span 
+class="cmbx-12">Friday, October 20</span>, in class. (40 points) <br 
+class="newline" /><span 
+class="cmti-12">(Please submit a written report, a printout of your problem files, and any AMPL output</span>
+      <span 
+class="cmti-12">used. Also email me your model and data files.)</span>
+      <!--l. 350--><p class="noindent" >Formulate the problem as a binary integer program. Clearly define every variable in
+      your formulation. Explain every constraint including coefficients.
+                                                                                         
+                                                                                         
+      <!--l. 354--><p class="noindent" >Solve the <span 
+class="cmti-12">linear programming relaxation </span>of your problem by relaxing all the binary
+      restrictions; instead, require all variables to be nonnegative with upper bounds of&#x00A0;one.
+      The interpretation of flow(<span 
+class="cmmi-12">k,i,j</span>) in the relaxation is that it represents the <span 
+class="cmti-12">proportion</span>
+      of destination node <span 
+class="cmmi-12">k</span>&#8217;s demand that travels along arc (<span 
+class="cmmi-12">i,j</span>). This may allow multiple
+      supply nodes to ship goods to a given node&#x00A0;<span 
+class="cmmi-12">k</span>; it is OK if your model does this.
+      </li>
+      <li 
+  class="enumerate" id="x1-5004x2"><span 
+class="cmbx-12">Sensitivity analysis </span>(30 points): To be distributed later. Will be due in November.
+      </li>
+      <li 
+  class="enumerate" id="x1-5006x3"><span 
+class="cmbx-12">Extra conditions </span>(30 points): To be distributed later. This will include the solution to
+      the binary version of the problem. Your answers will be due on Friday December&#x00A0;8.</li></ol>
+<!--l. 371--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
+ id="x1-60006"></a>AMPL notes</h3>
+      <ul class="itemize1">
+      <li class="itemize">If you are working in a Windows operating system, you can edit your model and data
+      files in Office, for example. Save the files as plain text files. Windows may append the
+      suffix <span 
+class="cmtt-12">txt </span>to the file names, in which case you would need to include that suffix when
+      asking ampl to read the file.
+      </li>
+      <li class="itemize">If you want to read in a new model file <span 
+class="cmtt-12">chips.mod </span>and data file <span 
+class="cmtt-12">chips.dat</span>, you can use the
+      <span 
+class="cmtt-12">reset </span>command: <div class="verse">
+              <!--l. 389--><p class="noindent" > ampl: <span 
+class="cmtt-12">reset;</span><br />
+              ampl: <span 
+class="cmtt-12">model chips.mod;</span><br />
+              ampl: <span 
+class="cmtt-12">data chips.dat;</span>
+</div>
+      </li>
+      <li class="itemize">If you want to reset the whole data file and read in a new data file <span 
+class="cmtt-12">chips.dat</span>, but you want
+      to keep the model file as before, you can type <div class="verse">
+              <!--l. 399--><p class="noindent" > ampl: <span 
+class="cmtt-12">reset data;</span><br />
+              ampl: <span 
+class="cmtt-12">data chips.dat;</span>
+                                                                                         
+                                                                                         
+</div>
+      </li>
+      <li class="itemize">More hints are available online from my page about AMPL:
+           <div class="quote">
+           <!--l. 422--><p class="noindent" ><a 
+href="http://homepages.rpi.edu/~mitchj/ampldetails.html" class="url" ><span 
+class="cmtt-12">http://homepages.rpi.edu/</span><span 
+class="cmtt-12">~</span><span 
+class="cmtt-12">mitchj/ampldetails.html</span></a></div>
+      </li>
+      <li class="itemize">This project is available from LMS and also from the course webpage, at
+           <div class="quote">
+           <!--l. 427--><p class="noindent" ><a 
+href="http://homepages.rpi.edu/~mitchj/matp4700/#project" class="url" ><span 
+class="cmtt-12">http://homepages.rpi.edu/</span><span 
+class="cmtt-12">~</span><span 
+class="cmtt-12">mitchj/matp4700/#project</span></a></div>
+      <!--l. 429--><p class="noindent" >where you will also find more information about AMPL.</li></ul>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                       </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                 </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Tuesdays 12-2pm, Wednesdays 11am&#8211;1pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

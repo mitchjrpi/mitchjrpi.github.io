@@ -1,0 +1,227 @@
+\documentstyle[12pt]{article}
+
+%\pagestyle{empty}
+
+\oddsidemargin -.5in
+\textwidth 7in
+\textheight 9.5in
+\topmargin -30pt
+\headsep 0in
+\headheight 0in
+
+\begin{document}
+
+\begin{center}
+  \begin{large}
+     67.612/92.672/66.612 \\
+ {\bf Combinatorial Optimization and Integer Programming}
+  \end{large}
+\end{center}
+\begin{center}
+  \begin{large}
+                Final Exam, Spring 1997
+  \end{large}
+\end{center}
+
+Take Home   \hfill    Due: 12 noon, Friday, 9 May, 1997.
+
+\vspace{\baselineskip}
+
+This is to be all your own work.  You may use any result from class,
+homeworks, or the books and papers on reserve in the library.
+Do not consult anybody or anything else. 
+I can dispense hints to help you if you are stuck.
+My phone numbers are 276--6915(O) and 346--2811(H).
+You can also reach me by email at mitchj@rpi.edu.
+I will have office hours each Thursday from 2--5pm.
+I will be out of town between Friday, 2 May and Wednesday, 7 May,
+inclusive.
+The exam consists of four questions and is worth 100 points.
+
+In order that I can display grades, please write a 4 digit number
+on the front of your solution set.
+
+\vspace{\baselineskip}
+
+\begin{enumerate}
+   \item (25 points)
+         Consider the complete undirected graph $G=(V,E)$ on $n$ vertices.
+         A travelling salesman tour on this graph
+         can be described as a collection of edges
+         $T$ such that the graph $G'=(V,T)$ is connected,
+         $T$ contains $n$ edges, and each vertex is adjacent to two edges.
+         Let $c_e$ be the cost of edge $e$ in~$E$.
+         The travelling salesman problem is to find the minimum weight tour,
+         that is
+         \begin{displaymath}
+            \min\{\sum_{e \in T}c_ex_e : \mbox{$T$ is a tour}\}.
+         \end{displaymath}
+         Let $\delta(i)$ denote the edges which are incident to vertex~$i$.
+         \begin{enumerate}
+           \item (10 points)
+              Verify that the following problem is a Lagrangian
+              relaxation of the travelling salesman problem:
+              \begin{displaymath}
+                \begin{array}{llr}
+                   \min      & \sum_{e \in  T}c_ex_e +
+         \sum_{i \in V}\lambda_i(2-\sum_{e \in \delta(i)}x_e)
+               &     \qquad  \qquad  LR(\lambda)  \\
+                   \mbox{st } & \mbox{$T$ is a spanning tree together with
+                                        one additional edge.}
+                \end{array}
+              \end{displaymath}
+           \item (5 points)
+              What would it imply if the optimal solution to $LR(\lambda)$
+              was a tour?
+           \item (10 points)
+              Solve $LR(\lambda)$ for the graph with edge lengths as in
+              the following table,
+%              with vertex weights $\lambda_1=1$, $\lambda_2=2$,
+%              $\lambda_3=3$, $\lambda_4=2$, $\lambda_5=0$, and~$\lambda_6=1$.
+              with vertex weights $\lambda_1=2$, $\lambda_2=4$,
+              $\lambda_3=6$, $\lambda_4=4$, $\lambda_5=0$, and~$\lambda_6=2$.
+              (You may assume that the solution to a problem of the form
+              \begin{displaymath}
+                 \min\{\sum_{e \in T}w_ex_e :
+                    \mbox{$T$ is a spanning tree together with
+                                        one additional edge}\}
+              \end{displaymath}
+              is obtained by finding the minimum weight spanning tree and then
+              adding in the remaining shortest edge.)
+\begin{displaymath}
+%   \left[ \begin{array}{rrrrrr} -- & 6  & 10 & 10 & 9  & 7 \\
+%                                6  & -- & 9  & 10 & 10 & 10 \\
+%                                10 & 9  & -- & 10 & 12 & 10 \\
+%                                10 & 10 & 10 & -- & 8  & 9 \\
+%                                9  & 10 & 12 & 8  & -- & 4 \\
+%                                7  & 10 & 10 & 9  & 4  & -- 
+   \left[ \begin{array}{rrrrrr} -- & 12 & 20 & 20 & 17 & 15 \\
+                                12 & -- & 18 & 21 & 17 & 20 \\
+                                20 & 18 & -- & 20 & 24 & 21 \\
+                                20 & 19 & 20 & -- & 16 & 19 \\
+                                17 & 17 & 24 & 16 & -- &  8 \\
+                                15 & 20 & 21 & 19 &  8 & -- 
+           \end{array}  \right]  \quad
+    \left. \begin{array}{c} v_1 \\ v_2 \\ v_3 \\ v_4 \\ v_5 \\ v_6 \end{array}
+             \right.
+\end{displaymath}
+          \end{enumerate}
+   \item (25 points; each part is worth 5 points.)
+%The {\em Clustering Problem} is defined as follows:
+%\begin{quote}
+%  {\bf The Clustering Problem:}
+Given the complete graph $K_n=:(V,E)$ on $n$ vertices
+and edge weights $w_e$ on the edges, a {\em clustering}
+of the vertices is obtained by choosing an integer $p$
+and a partition of the vertices into $p$ sets $V_1,\ldots,V_p$ satisfying:
+\begin{itemize}
+ \item $V_i \cap V_j = \emptyset$ for $1\leq i < j \leq p$.
+ \item $\cup_{i=1}^p V_i=V$.
+\end{itemize}
+The {\em incidence vector} of this clustering is defined by
+\begin{displaymath}
+  x_e = \left\{ \begin{array}{ll} 1 & \mbox{if the two endpoints of $e$
+               are in the same set $V_j$}  \\  0 & \mbox{otherwise}
+        \end{array}  \right.
+\end{displaymath}
+The {\em clustering problem} for this set of edge weights is then
+\begin{displaymath}
+\begin{array}{ll}
+ \max & z:=\sum_{e\in E}w_ex_e \\
+  \mbox{subject to } & x \mbox{ is the incidence vector of a}
+                         \mbox{ clustering}
+\end{array}
+\end{displaymath}
+The edge weights $w_e$ can be positive or negative.
+If all the edge weights are positive, the optimal solution
+is to set $p=1$ and put all the vertices in one set,
+giving a value $z=\sum_{e \in E}w_e$.
+If all the edge weights are negative, the optimal solution is
+to set $p=n$ and put each vertex in its own set,
+giving a value $z=0$.
+The weights $w_e$ measure a ``distance'' between two vertices:
+the larger this value, the more likely the vertices should be
+in the same subset~$V_j$, and if $w_e$ is very negative,
+the vertices will probably be in different sets in the optimal
+solution.
+
+Let $Q$ be the set of incidence vectors of clusterings
+for $K_n$.
+\begin{enumerate}
+ \item Show that the dimension of $Q$ is $n(n-1)/2$, ie, $Q$
+is full dimensional.
+ \item Show that the inequality
+\begin{equation}  \label{eqn.cluster}
+  x_{ij} + x_{jk} - x_{ik}  \leq  1, \;\;  1 \leq i <j<k \leq n
+\end{equation}
+is valid for any point in Q.
+ \item Show that inequality $(\ref{eqn.cluster})$ defines
+a facet of the convex hull of~$Q$.
+ \item \label{part.k4}
+Take $n=4$.
+Choose edge weights $w_e$ so that
+the optimal solution to the following relaxation of the
+clustering problem is not in the convex hull of~$Q$:
+\begin{displaymath}
+ \begin{array}{lccll}
+  \max & \sum_{e \in E} w_e x_e \\
+  \mbox{subject to} & x_{ij}+x_{jk}-x_{ik} & \leq & 1 & \mbox{ for }
+      1 \leq i < j < k \leq 4 \\
+  & 0 \;\;\; \leq \;\;\;  x_e & \leq & 1 & \mbox{ for } e \in E
+ \end{array}
+\end{displaymath}
+ \item
+Find a valid inequality that cuts off the point you found in
+part~(\ref{part.k4}).
+\end{enumerate}
+
+   \item (25 points)
+         Consider the travelling salesman problem (TSP) on the complete
+         undirected graph. Let $X$ be an instance of the travelling salesman
+         problem, let $OPT(X)$ be the optimal value of this instance, and
+         let $A$ be a polynomial time algorithm for the TSP which finds a
+         tour of length~$A(X)$. We know that (unless $\cal{P}=\cal{NP}$)
+         algorithm $A$ will not find the optimal solution to every instance~$X$.
+         Let $r$ be a given constant, $1 < r < \infty$.
+         Show that we can not even guarantee $A(X) \leq rOPT(X)$,
+         unless $\cal{P}=\cal{NP}$.
+
+         If the edge lengths $c_{ij}$ satisfy the triangle inequality
+         $c_{ij}+c_{jk}\geq c_{ik}$ for every three vertices $i$, $j$,
+         and $k$ then Christofides Heuristic generates a tour that is
+         guaranteed to be no more than $1.5 OPT(X)$.
+         How does your earlier proof break down if the edge lengths
+         must satisfy the triangle inequality?
+
+   \item (25 points)
+Consider the mixed integer programming problem $(MIP)$:
+     \begin{displaymath}
+       \begin{array}{lrrrrrrcl}
+         \max         & 8x_1 & +9x_2 & +5x_3 & +6x_4 & -15y_1 & -10y_2 \\
+         \mbox{s.t. } & x_1 &&  +x_3 &&&& \leq & 1 \\
+                      & x_1 &&& +x_4  &&& \leq & 1 \\
+                      && x_2 &  +x_3 &&&& \leq & 1 \\
+                      && x_2 && +x_4  &&& \leq & 1 \\
+                      &&&&& -y_1 & -y_2 & \leq & -1 \\
+                      &    x_1 &&&&  -y_1 && \leq & 0 \\
+                      &&   x_2  &&&  -y_1 && \leq & 0 \\
+                      &&&   x_3   &&& -y_2 & \leq & 0 \\
+                      &&&&  x_4    && -y_2 & \leq & 0 \\
+                      &&&&&& x_j & \geq & 0  \\
+                      &&&&&& y_i && \mbox{binary} \\
+       \end{array}
+     \end{displaymath}
+     Solve this problem using Bender's decomposition.
+     (Take the problem
+     \begin{displaymath}
+       \begin{array}{lrrrcl}
+         \max         & z & -15y_1 & -10y_2 \\
+         \mbox{s.t}   & z &&& \leq & 28 \\
+                      &&& y_i && \mbox{binary}
+       \end{array}
+     \end{displaymath}
+     as the initial relaxation $(RMP)$.)
+\end{enumerate}
+
+
+\end{document}

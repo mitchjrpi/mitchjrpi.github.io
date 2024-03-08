@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="midterm2016.tex"> 
+<meta name="date" content="2016-10-24 20:41:00"> 
+<link rel="stylesheet" type="text/css" href="midterm2016.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 27--><p class="noindent" >
+<!--l. 29--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6600" ><span 
+class="cmr-12">MATP6600 / ISYE6780 Nonlinear Programming</span></a>
+</div>
+<div class="center" 
+>
+<!--l. 32--><p class="noindent" >
+<!--l. 34--><p class="noindent" ><span 
+class="cmr-12">Midterm Exam, Fall 2016</span>
+</div>
+<!--l. 38--><p class="noindent" >Take Home                                                    Due: Beginning of class, Thursday, 3 November
+2016.
+<!--l. 44--><p class="noindent" >This is to be all your own work. You may use any result from class, homeworks, or the books on reserve in
+the library. You may also use anything that is linked directly from the course webpage. I will have office
+hours on Mondays from 2-3pm, Tuesdays from 11am-1pm and Wednesdays from 11am-1pm. Do not
+consult anybody or anything else. The exam consists of five questions and is worth a total of 100
+points.
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1"><a 
+ id="x1-21"></a> (25 points) Consider the problem
+     <center class="math-display" >
+     <img 
+src="midterm20160x.png" alt="minx &#x2208;Rn    f(x) := (aTx)(bTx)
+                       T
+subject to            x x &#x2264; 1
+     " class="math-display" ></center>
+     <!--l. 62--><p class="nopar" >
+     where <span 
+class="cmmi-10x-x-109">a,b </span><span 
+class="cmsy-10x-x-109">&#x2208;<img 
+src="cmsy10-52.png" alt="R" class="10-109x-x-52" /></span><sup><span 
+class="cmmi-8">n</span></sup>, <span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">a </span>= <span 
+class="cmmi-10x-x-109">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">b </span>= 1, <span 
+class="cmmi-10x-x-109">a</span><span 
+class="cmmi-10x-x-109">&#x2260;</span> <span 
+class="cmsy-10x-x-109">± </span><span 
+class="cmmi-10x-x-109">b</span>.
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-5x1">(5 points) Show that <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> = (<span 
+class="cmmi-10x-x-109">a</span><span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">b</span>)<span 
+class="cmmi-10x-x-109">&#x2215;</span><span 
+class="cmsy-10x-x-109">||</span><span 
+class="cmmi-10x-x-109">a</span><span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">b</span><span 
+class="cmsy-10x-x-109">||</span><sub><span 
+class="cmr-8">2</span></sub> is a KKT point for this problem, with negative
+          objective function value.
+          </li>
+          <li 
+  class="enumerate" id="x1-7x2">(10 points) Are there any other points that satisfy the first order KKT conditions?
+          </li>
+          <li 
+  class="enumerate" id="x1-9x3">(5 points) What is the Hessian matrix of the objective function? Is the objective function
+          convex?
+          </li>
+          <li 
+  class="enumerate" id="x1-11x4">(5 points) What are the optimal value and the optimal solution(s)?</li></ol>
+                                                                                         
+                                                                                         
+     </li>
+     <li 
+  class="enumerate" id="x1-13x2"><a 
+ id="x1-122"></a> (20 points) Consider again the problem of Question&#x00A0;<a 
+href="#x1-21">1<!--tex4ht:ref: q.kkt1 --></a>. The dual function is
+     <table 
+class="equation"><tr><td><a 
+ id="x1-14r1"></a>
+     <center class="math-display" >
+     <img 
+src="midterm20161x.png" alt="              T    T        T
+&#x03B8;(u) :=  mxi&#x2208;nRn(a  x)(b  x)+ u(x  x- 1)
+     " class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+     <!--l. 85--><p class="nopar" >
+     where <span 
+class="cmmi-10x-x-109">u </span><span 
+class="cmsy-10x-x-109">&#x2265; </span>0 is a scalar. Express the dual function in closed form (that is, solve the minimization
+     problem in (<a 
+href="#x1-14r1">1<!--tex4ht:ref: eq.theta --></a>) for each value of <span 
+class="cmmi-10x-x-109">u </span><span 
+class="cmsy-10x-x-109">&#x2265; </span>0). Hence solve the dual problem
+     <center class="math-display" >
+     <img 
+src="midterm20162x.png" alt=" max   &#x03B8;(u).
+u&#x2208;R,u&#x2265;0
+     " class="math-display" ></center>
+     <!--l. 92--><p class="nopar" >
+     </li>
+     <li 
+  class="enumerate" id="x1-16x3"><a 
+ id="x1-153"></a> (20 points) In the following convex nonsmooth optimization problem
+     <table 
+class="equation"><tr><td><a 
+ id="x1-17r2"></a>
+     <center class="math-display" >
+     <img 
+src="midterm20163x.png" alt="                    &#x2211;n
+minx &#x2208;Rn   f(x) :=     i=1|xi|
+subject to               Ax   =   b,
+     " class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+     <!--l. 101--><p class="nopar" >
+     we have <span 
+class="cmmi-10x-x-109">b </span><span 
+class="cmsy-10x-x-109">&#x2208;<img 
+src="cmsy10-52.png" alt="R" class="10-109x-x-52" /></span><sup><span 
+class="cmmi-8">m</span></sup> and <span 
+class="cmmi-10x-x-109">A </span><span 
+class="cmsy-10x-x-109">&#x2208;<img 
+src="cmsy10-52.png" alt="R" class="10-109x-x-52" /></span><sup><span 
+class="cmmi-8">m</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup>. Let <span 
+class="cmmi-10x-x-109">e </span>denote the vector of ones. The problem can be expressed
+     equivalently as the linear program
+                                                                                         
+                                                                                         
+     <table 
+class="equation"><tr><td><a 
+ id="x1-18r3"></a>
+     <center class="math-display" >
+     <img 
+src="midterm20164x.png" alt="            T        T
+minu,v&#x2208;Rn   e u  +   e v
+subject to  Au   -   Av   =  b
+                    u,v  &#x2265;  0.
+     " class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+     <!--l. 111--><p class="nopar" >
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-20x1">What is the dual linear program to (<a 
+href="#x1-18r3">3<!--tex4ht:ref: eq.nsprimal --></a>)?
+          </li>
+          <li 
+  class="enumerate" id="x1-22x2">Assume you have an optimal solution (<span 
+class="cmmi-10x-x-109">u</span><sup><span 
+class="cmsy-8">*</span></sup><span 
+class="cmmi-10x-x-109">,v</span><sup><span 
+class="cmsy-8">*</span></sup>) to (<a 
+href="#x1-18r3">3<!--tex4ht:ref: eq.nsprimal --></a>) along with an optimal dual solution. Let
+          <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmsy-8">*</span></sup> = <span 
+class="cmmi-10x-x-109">u</span><sup><span 
+class="cmsy-8">*</span></sup><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">v</span><sup><span 
+class="cmsy-8">*</span></sup>. Construct a subgradient <span 
+class="cmmi-10x-x-109">&#x03BE; </span>to <span 
+class="cmmi-10x-x-109">f</span>(<span 
+class="cmmi-10x-x-109">x</span>) at <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmsy-8">*</span></sup> such that
+          <center class="math-display" >
+          <img 
+src="midterm20165x.png" alt="      f(x)  &#x2265;  f (x *) + &#x03BE;T(x - x*) &#x2200;x &#x2208; Rn
+&#x03BE;T(x - x*)  &#x2265;  0                  &#x2200;x  feasible in (2).
+          " class="math-display" ></center>
+          <!--l. 125--><p class="nopar" >
+          Make sure you explain why these conditions hold for your choice of&#x00A0;<span 
+class="cmmi-10x-x-109">&#x03BE;</span>.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-24x4">(10 points.) Let <span 
+class="cmmi-10x-x-109">a </span>be a positive scalar and let <span 
+class="cmmi-10x-x-109">f </span>: <span 
+class="cmsy-10x-x-109"><img 
+src="cmsy10-52.png" alt="R" class="10-109x-x-52" /></span><sup><span 
+class="cmmi-8">n</span></sup> <span 
+class="cmsy-10x-x-109">&#x2192;<img 
+src="cmsy10-52.png" alt="R" class="10-109x-x-52" /> </span>be defined as
+     <center class="math-display" >
+     <img 
+src="midterm20166x.png" alt="f(x) = (||x|| - a)2.
+           2
+     " class="math-display" ></center>
+     <!--l. 133--><p class="nopar" >
+     Is <span 
+class="cmmi-10x-x-109">f</span>(<span 
+class="cmmi-10x-x-109">x</span>) convex?
+     </li>
+     <li 
+  class="enumerate" id="x1-26x5">(25 points) Consider the problem
+     <center class="math-display" >
+     <img 
+src="midterm20167x.png" alt="                    2    2
+minx &#x2208;R2   f (x ) := x1 + x(2     )  (       ) (        )
+                          x1 - 1  T    2  1     x1 - 1
+subject to  g(x) :=  24-    x2 - 1       1  2     x2 - 1   &#x2264;  0.
+     " class="math-display" ></center>
+     <!--l. 147--><p class="nopar" >
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-28x1">(10 points) Verify that <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">1</span></sup> = (3<span 
+class="cmmi-10x-x-109">,</span>3) and <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">2</span></sup> = (<span 
+class="cmsy-10x-x-109">-</span>1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmsy-10x-x-109">-</span>1) are KKT points.
+          </li>
+          <li 
+  class="enumerate" id="x1-30x2">(15 points) What do the second order necessary and sufficient conditions imply about
+          <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">1</span></sup> and&#x00A0;<span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">2</span></sup>?</li></ol>
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                               </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                                                          </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours: Monday 2&#8211;3pm, Tuesday 11am&#8211;1pm, Wednesday 11am&#8211;1pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

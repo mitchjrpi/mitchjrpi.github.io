@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Homework 6</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="hw6">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="hw6.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+<a href=..>
+     MATP6620 / DSES6760 
+<BR>
+Combinatorial Optimization and Integer Programming 
+</a>
+<BR>
+Homework 6.
+  </FONT>
+</DIV>
+
+<P>
+
+<DIV ALIGN="RIGHT">
+   Due:  Friday, April 20, 2007.
+
+</DIV>
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>Given a complete graph <I>G</I>=(<I>V</I>,<I>E</I>) with edge weights <I>w</I><SUB><I>e</I></SUB> and <I>n</I>=<I>kp</I> nodes,
+we wish to partition the vertices into
+<I>k</I> sets each containing exactly <I>p</I> vertices so as to minimize the sum of the edge weights of the edges with endpoints in the same set.
+Let <I>e</I> denote the <I>n</I>-vector of ones and let <I>w</I><SUB><I>ii</I></SUB>=0 for <IMG
+ WIDTH="92" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$i=1,\ldots,n$">.
+Show that the following semidefinite program gives a lower bound
+on the optimal value of this problem, where <I>X</I> is an <I>n</I>  x  <I>n</I> matrix:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcll}
+\min & 0.5  \sum_{i=1}^n \sum_{j=1}^n w_{ij} X_{ij}  \\
+\mbox{subject to} & X_{ii} & = & 1 & i = 1,\ldots,n \\
+& Xe & = & pe \\
+& X && \multicolumn{2}{l}{\mbox{symmetric and positive semidefinite}}
+\end{array}
+\end{displaymath} -->
+
+<IMG
+ WIDTH="571" HEIGHT="94"
+ SRC="img2.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcll}
+\min &amp; 0.5 \sum_{i=1}^n \sum_{j=1}^n w_...
+...n{2}{l}{\mbox{symmetric and positive semidefinite}}
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+
+<DT>2.
+<DD><A NAME="q.greedy">&#160;</A>Define a greedy algorithm for the weighted node packing problem.
+How does your algorithm do on the instance given in Figure 9.1 on page 343 of the text?
+
+<P>
+
+<DT>3.
+<DD>How would you modify your algorithm of question&nbsp;<A HREF="hw6.html#q.greedy">2</A>
+to construct a GRASP routine for weighted node packing?
+Give five sample packings found by your algorithm for the
+instance given in Figure 9.1 on page 343 of the text.
+
+<P>
+
+<DT>4.
+<DD>Describe a tabu search algorithm for weighted node packing.
+Be sure to define your valid solutions, your neighbourhoods,
+your tabu criteria,
+and what you would do with violated constraints.
+Run your algorithm on the instance given in Figure 9.1 on page 343 of the text,
+starting from the solution you found in Question&nbsp;<A HREF="hw6.html#q.greedy">2</A>
+and running until the algorithm finds three more local minima.
+
+<P>
+
+<DT>5.
+<DD>We have an integer program of the form
+   <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrclr}
+   \min & c^Tx \\
+   \mbox{s.t.} & Ax & \geq & b & \qquad (IP)  \\
+   & x && \mbox{binary}
+   \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="253" HEIGHT="72"
+ SRC="img3.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrclr}
+\min &amp; c^Tx \\
+\mbox{s.t.} &amp; Ax &amp; \geq &amp; b &amp; \qquad (IP) \\
+&amp; x &amp;&amp; \mbox{binary}
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <I>b</I>&gt;0 and <I>c</I>&gt;0, and each nonzero element <I>a</I><SUB><I>ij</I></SUB> of <I>A</I> satisfies
+   <!-- MATH: $a_{ij} \geq b_i$ -->
+<IMG
+ WIDTH="62" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$a_{ij} \geq b_i$">.
+         <DL COMPACT>
+<DT>(a)
+<DD>Show that the optimal solution to the LP relaxation of (<I>IP</I>)
+can be used to find a feasible integer solution.
+            <DT>(b)
+<DD>Let <I>p</I> be the maximum number of nonzeroes in any row of&nbsp;<I>A</I>.
+           Give a polynomial time algorithm to find a feasible integer
+           solution that has value within a factor of <I>p</I> of the optimal value.
+         </DL>
+
+<P>
+</DL>
+
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD></TD><TD ALIGN="LEFT"><a href=../..>John Mitchell</a></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Amos Eaton 325</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">x6915.</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT"><a href=mailto:mitchj@rpi.edu</a></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Office hours:
+   Tuesday 2pm - 3pm, Wednesday 11am - noon.</TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2007-04-17</I>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,706 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw1sol.tex"> 
+<meta name="date" content="2018-01-30 09:25:00"> 
+<link rel="stylesheet" type="text/css" href="hw1sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 21--><p class="noindent" >
+<!--l. 23--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12">MATP6640/ISYE6770 Linear and Conic Optimization</span></a><span 
+class="cmr-12">, Homework 1.</span><br /><br />
+<span 
+class="cmr-12">Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 28--><p class="noindent" >
+ Due: Friday, January 26, 2018.<br />
+10% penalty for each day late.</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1">Let <span 
+class="cmmi-10x-x-109">a,b </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">L</span>, where <span 
+class="cmmi-10x-x-109">L </span>is an affine space in <span 
+class="cmmi-10x-x-109">IR</span><sup><span 
+class="cmmi-8">n</span></sup>. Let <span 
+class="cmmi-10x-x-109">L</span><sup><span 
+class="cmmi-8">a</span></sup> := <span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">IR</span><sup><span 
+class="cmmi-8">n</span></sup> : <span 
+class="cmmi-10x-x-109">x </span>= <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span><span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">a</span> for some <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> <span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">L</span><span 
+class="cmsy-10x-x-109">}</span>.
+     Define <span 
+class="cmmi-10x-x-109">L</span><sup><span 
+class="cmmi-8">b</span></sup> similarly. Let <span 
+class="cmmi-10x-x-109">x </span>be a point in <span 
+class="cmmi-10x-x-109">L</span><sup><span 
+class="cmmi-8">a</span></sup>. Show that <span 
+class="cmmi-10x-x-109">x </span>is also in <span 
+class="cmmi-10x-x-109">L</span><sup><span 
+class="cmmi-8">b</span></sup>. How are <span 
+class="cmmi-10x-x-109">L</span><sup><span 
+class="cmmi-8">a</span></sup> and <span 
+class="cmmi-10x-x-109">L</span><sup><span 
+class="cmmi-8">b</span></sup>
+     related?
+     <!--l. 51--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution: </span>Assume <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">L</span><sup><span 
+class="cmmi-8">a</span></sup>. It follows that <div class="eqnarray">
+     <center class="math-display" >
+     <img 
+src="hw1sol0x.png" alt="x  =  x¯- a   for some ¯x &#x2208; L
+   =  x¯- a + b- b
+
+   =  (¯x - a + b)- b
+   &#x2208;  Lb
+     " class="math-display" ></center>
+     </div>since <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span>, <span 
+class="cmmi-10x-x-109">a</span>, and <span 
+class="cmmi-10x-x-109">b </span>are all in <span 
+class="cmmi-10x-x-109">L </span>and so <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> <span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">a </span>+ <span 
+class="cmmi-10x-x-109">b </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">L </span>since it is an affine combination of points
+     in&#x00A0;<span 
+class="cmmi-10x-x-109">L</span>.
+     <!--l. 64--><p class="noindent" >It follows similarly that if <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">L</span><sup><span 
+class="cmmi-8">b</span></sup> then <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">L</span><sup><span 
+class="cmmi-8">a</span></sup>. Thus <span 
+class="cmmi-10x-x-109">L</span><sup><span 
+class="cmmi-8">a</span></sup> = <span 
+class="cmmi-10x-x-109">L</span><sup><span 
+class="cmmi-8">b</span></sup>.
+     </li>
+     <li 
+  class="enumerate" id="x1-6x2">Let <span 
+class="cmmi-10x-x-109">Q </span>be a convex polyhedron in <span 
+class="cmmi-10x-x-109">IR</span><sup><span 
+class="cmmi-8">n</span></sup> and let <span 
+class="cmmi-10x-x-109">F </span>be a nonempty face of&#x00A0;<span 
+class="cmmi-10x-x-109">Q</span>. Let <span 
+class="cmmi-10x-x-109">x </span>be a point on
+     the face&#x00A0;<span 
+class="cmmi-10x-x-109">F</span>. Show that <span 
+class="cmmi-10x-x-109">x </span>is an extreme point of <span 
+class="cmmi-10x-x-109">Q </span>if and only if it is an extreme point
+     of&#x00A0;<span 
+class="cmmi-10x-x-109">F</span>.
+     <!--l. 113--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution: </span>We prove both directions by contradiction.
+                                                                                         
+                                                                                         
+          <ul class="itemize1">
+          <li class="itemize"><span 
+class="cmbx-10x-x-109">Assume</span> <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> <span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">F </span><span 
+class="cmbx-10x-x-109">is not an extreme point of </span><span 
+class="cmmi-10x-x-109">F</span><span 
+class="cmbx-10x-x-109">, show it is not an extreme point</span>
+          <span 
+class="cmbx-10x-x-109">of</span><span 
+class="cmbx-10x-x-109">&#x00A0;</span><span 
+class="cmmi-10x-x-109">Q</span><span 
+class="cmbx-10x-x-109">:</span>
+          <!--l. 119--><p class="noindent" >By assumption, there exist points <span 
+class="cmmi-10x-x-109">y,z </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">F</span>, <span 
+class="cmmi-10x-x-109">y</span><span 
+class="cmmi-10x-x-109">&#x2260;</span><span 
+class="cmmi-10x-x-109">z</span>, and scalar <span 
+class="cmmi-10x-x-109">&#x03BB; </span>with 0 <span 
+class="cmmi-10x-x-109">&#x003C; &#x03BB; &#x003C; </span>1 satisfying
+          <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> = <span 
+class="cmmi-10x-x-109">&#x03BB;y </span>+ (1 <span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">&#x03BB;</span>)<span 
+class="cmmi-10x-x-109">z</span>. Since <span 
+class="cmmi-10x-x-109">F </span><span 
+class="cmsy-10x-x-109">&#x2286; </span><span 
+class="cmmi-10x-x-109">Q</span>, we see immediately that <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> is not an extreme point
+          of&#x00A0;<span 
+class="cmmi-10x-x-109">Q</span>.
+          </li>
+          <li class="itemize"><span 
+class="cmbx-10x-x-109">Assume</span> <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> <span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">F </span><span 
+class="cmbx-10x-x-109">is not an extreme point of </span><span 
+class="cmmi-10x-x-109">Q</span><span 
+class="cmbx-10x-x-109">, show it is not an extreme point</span>
+          <span 
+class="cmbx-10x-x-109">of</span><span 
+class="cmbx-10x-x-109">&#x00A0;</span><span 
+class="cmmi-10x-x-109">F</span><span 
+class="cmbx-10x-x-109">:</span>
+          <!--l. 125--><p class="noindent" >Since <span 
+class="cmmi-10x-x-109">F </span>is a face of <span 
+class="cmmi-10x-x-109">Q</span>, there exists a vector <span 
+class="cmmi-10x-x-109">a </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">IR</span><sup><span 
+class="cmmi-8">n</span></sup> and a scalar&#x00A0;<span 
+class="cmmi-10x-x-109">&#x03B1; </span>such that (i) <span 
+class="cmmi-10x-x-109">F </span>= <span 
+class="cmmi-10x-x-109">Q</span><span 
+class="cmsy-10x-x-109">&#x2229;</span><span 
+class="cmmi-10x-x-109">H</span>
+          with <span 
+class="cmmi-10x-x-109">H </span>= <span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">IR</span><sup><span 
+class="cmmi-8">n</span></sup> : <span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">x </span>= <span 
+class="cmmi-10x-x-109">&#x03B1;</span><span 
+class="cmsy-10x-x-109">} </span>and (ii) <span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2265; </span><span 
+class="cmmi-10x-x-109">&#x03B1; </span>for all <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">Q</span>. By assumption, there
+          exist points <span 
+class="cmmi-10x-x-109">y,z </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">Q</span>, <span 
+class="cmmi-10x-x-109">y</span><span 
+class="cmmi-10x-x-109">&#x2260;</span><span 
+class="cmmi-10x-x-109">z</span>, and scalar <span 
+class="cmmi-10x-x-109">&#x03BB; </span>with 0 <span 
+class="cmmi-10x-x-109">&#x003C; &#x03BB; &#x003C; </span>1 satisfying <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> = <span 
+class="cmmi-10x-x-109">&#x03BB;y</span>+(1<span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">&#x03BB;</span>)<span 
+class="cmmi-10x-x-109">z</span>. Now,
+          <span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> = <span 
+class="cmmi-10x-x-109">&#x03B1;</span>, <span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">y </span><span 
+class="cmsy-10x-x-109">&#x2265; </span><span 
+class="cmmi-10x-x-109">&#x03B1;</span>, <span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">z </span><span 
+class="cmsy-10x-x-109">&#x2265; </span><span 
+class="cmmi-10x-x-109">&#x03B1;</span>. If <span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">y &#x003E; &#x03B1; </span>or <span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">z &#x003E; &#x03B1; </span>then <span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> = <span 
+class="cmmi-10x-x-109">&#x03BB;a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">y </span>+(1<span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">&#x03BB;</span>)<span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">z &#x003E; &#x03B1;</span>,
+          a contradiction. Thus, we must have <span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">y </span>= <span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">z </span>= <span 
+class="cmmi-10x-x-109">&#x03B1;</span>, so <span 
+class="cmmi-10x-x-109">y,z </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">F</span>, so <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> is not an extreme
+          point of&#x00A0;<span 
+class="cmmi-10x-x-109">F</span>.</li></ul>
+     </li>
+     <li 
+  class="enumerate" id="x1-8x3">Consider the optimization problem
+     <table 
+class="equation"><tr><td>
+     <center class="math-display" >
+     <img 
+src="hw1sol1x.png" alt="            T        T
+minx,w     c x  +   d w
+subject to  Ax  +   Hw    &#x2264;  b
+           |xi| =     wi     &#x2200; i
+     " class="math-display" ><a 
+ id="x1-9r1"></a></center></td><td class="equation-label">(1)</td></tr></table>
+     <!--l. 146--><p class="nopar" >
+     where <span 
+class="cmmi-10x-x-109">x,w </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">IR</span><sup><span 
+class="cmmi-8">n</span></sup>, <span 
+class="cmmi-10x-x-109">b </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">IR</span><sup><span 
+class="cmmi-8">m</span></sup>, and all other vectors and matrices are dimensioned appropriately.
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-11x1">Assume all entries in <span 
+class="cmmi-10x-x-109">d </span>and <span 
+class="cmmi-10x-x-109">H </span>are nonnegative. Show that (<a 
+href="#x1-9r1">1<!--tex4ht:ref: eq.abs --></a>) can be formulated as an
+          equivalent linear program, in the sense that the LP and (<a 
+href="#x1-9r1">1<!--tex4ht:ref: eq.abs --></a>) have the same optimal value
+          if they are feasible, and each is infeasible if the other is infeasible.
+          </li>
+          <li 
+  class="enumerate" id="x1-13x2">Provide a counterexample with <span 
+class="cmmi-10x-x-109">n </span>= 1 where your LP and (<a 
+href="#x1-9r1">1<!--tex4ht:ref: eq.abs --></a>) are not equivalent when <span 
+class="cmmi-10x-x-109">d</span>
+          and/or <span 
+class="cmmi-10x-x-109">H </span>contain negative entries.</li></ol>
+     <!--l. 157--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution:</span>
+                                                                                         
+                                                                                         
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-15x1">LP formulations can be constructed in (at least) two ways: either split <span 
+class="cmmi-10x-x-109">x </span>into positive and
+          negative components, or set <span 
+class="cmmi-10x-x-109">w</span><sub><span 
+class="cmmi-8">i</span></sub> to be at least as large as both <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">i</span></sub> and <span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">i</span></sub>.
+              <ol  class="enumerate3" >
+              <li 
+  class="enumerate" id="x1-17x1">Split <span 
+class="cmmi-10x-x-109">x </span>into positive and negative components: We introduce nonnegative variables <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmr-8">+</span></sup> and
+              <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">-</span></sup> for each&#x00A0;<span 
+class="cmmi-10x-x-109">i</span>, replace the absolute value of <span 
+class="cmmi-10x-x-109">x </span>by <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">+</span></sup> + <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmsy-8">-</span></sup>, and then construct the
+              LP
+              <table 
+class="equation"><tr><td>
+              <center class="math-display" >
+              <img 
+src="hw1sol2x.png" alt="            T +       T -       T  +      T  -
+minx+,x-   c x+  -   c x-   +  d x +  +  d  x-
+subject to Ax    -    Ax    +   Hx    +   Hx    &#x2264;   b
+            x+,        x-                       &#x2265;   0
+              " class="math-display" ><a 
+ id="x1-18r2"></a></center></td><td class="equation-label">(2)</td></tr></table>
+              <!--l. 174--><p class="nopar" >
+              If (<span 
+class="cmmi-10x-x-109">x,w</span>) is feasible in (<a 
+href="#x1-9r1">1<!--tex4ht:ref: eq.abs --></a>) then we can construct a feasible solution to (<a 
+href="#x1-18r2">2<!--tex4ht:ref: eq.LP1 --></a>) with the same
+              value by setting:
+              <center class="math-display" >
+              <img 
+src="hw1sol3x.png" alt="     {                             {
+x+ =    xi  if xi &#x2265; 0    and  x- =     0   if xi &#x2265; 0
+ i      0   otherwise          i      - xi otherwise
+              " class="math-display" ></center>
+              <!--l. 185--><p class="nopar" >
+              for <span 
+class="cmmi-10x-x-109">i </span>= 1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,n</span>. Hence (<a 
+href="#x1-18r2">2<!--tex4ht:ref: eq.LP1 --></a>) is feasible if (<a 
+href="#x1-9r1">1<!--tex4ht:ref: eq.abs --></a>) is feasible, with optimal value that is at least as
+              good. This observation does not exploit the sign of <span 
+class="cmmi-10x-x-109">H </span>or&#x00A0;<span 
+class="cmmi-10x-x-109">d</span>.
+              <!--l. 193--><p class="noindent" >If (<span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">+</span></sup><span 
+class="cmmi-10x-x-109">,x</span><sup><span 
+class="cmsy-8">-</span></sup>) is feasible in (<a 
+href="#x1-18r2">2<!--tex4ht:ref: eq.LP1 --></a>) then we can construct a feasible solution to (<a 
+href="#x1-9r1">1<!--tex4ht:ref: eq.abs --></a>) with the same
+              or better value by setting
+              <center class="math-display" >
+              <img 
+src="hw1sol4x.png" alt="     +     -
+x = x  - x  ,  w = |x|.
+              " class="math-display" ></center>
+              <!--l. 197--><p class="nopar" >
+              The feasibility of this solution in (<a 
+href="#x1-9r1">1<!--tex4ht:ref: eq.abs --></a>) follows from the nonnegativity of the entries in&#x00A0;<span 
+class="cmmi-10x-x-109">H</span>.
+              Similarly, <span 
+class="cmmi-10x-x-109">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">w </span><span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmmi-10x-x-109">d</span><sup><span 
+class="cmmi-8">T</span> </sup>(<span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">+</span></sup> + <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmsy-8">-</span></sup>) because of the nonnegativity of&#x00A0;<span 
+class="cmmi-10x-x-109">d</span>.
+              </li>
+              <li 
+  class="enumerate" id="x1-20x2">Impose two linear constraints on&#x00A0;<span 
+class="cmmi-10x-x-109">w</span>:
+              <table 
+class="equation"><tr><td>
+                                                                                         
+                                                                                         
+              <center class="math-display" >
+              <img 
+src="hw1sol5x.png" alt="            T        T
+minx,w     c x  +   d w
+subject to  Ax  +   Hw    &#x2264;  b
+             xi -     wi  &#x2264;  0  &#x2200; i
+           - xi -     wi  &#x2264;  0  &#x2200; i
+              " class="math-display" ><a 
+ id="x1-21r3"></a></center></td><td class="equation-label">(3)</td></tr></table>
+              <!--l. 210--><p class="nopar" >
+              If (<span 
+class="cmmi-10x-x-109">x,w</span>) is feasible in (<a 
+href="#x1-9r1">1<!--tex4ht:ref: eq.abs --></a>) then it is feasible in (<a 
+href="#x1-21r3">3<!--tex4ht:ref: eq.LP2 --></a>), with the same value.
+              <!--l. 214--><p class="noindent" >If (<span 
+class="cmmi-10x-x-109">x,w</span>) is feasible in (<a 
+href="#x1-21r3">3<!--tex4ht:ref: eq.LP2 --></a>) then we can construct a feasible solution in (<a 
+href="#x1-9r1">1<!--tex4ht:ref: eq.abs --></a>) by decreasing each
+              component of <span 
+class="cmmi-10x-x-109">w </span>to <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmsy-10x-x-109">| </span>(if necessary). Feasibility of this modified solution follows from the
+              nonnegativity of&#x00A0;<span 
+class="cmmi-10x-x-109">H</span>, and the objective value is no worse because of the nonnegativity
+              of&#x00A0;<span 
+class="cmmi-10x-x-109">d</span>.</li></ol>
+          </li>
+          <li 
+  class="enumerate" id="x1-23x2">We use the same example in both formulations, with <span 
+class="cmmi-10x-x-109">m </span>= 1:
+          <center class="math-display" >
+          <img 
+src="hw1sol6x.png" alt="minx,w&#x2208;IR   - x -   w
+subject to   x         &#x2264;   0
+           |x| =   w
+          " class="math-display" ></center>
+          <!--l. 226--><p class="nopar" >
+          If <span 
+class="cmmi-10x-x-109">x </span>is feasible then <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2264; </span>0, so <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">x</span><span 
+class="cmsy-10x-x-109">| </span>= <span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">x</span>, so the objective function value is&#x00A0;0. Thus, the optimal
+          value is&#x00A0;0, with every <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2264; </span>0 optimal.
+              <ol  class="enumerate3" >
+              <li 
+  class="enumerate" id="x1-25x1">The corresponding version of (<a 
+href="#x1-18r2">2<!--tex4ht:ref: eq.LP1 --></a>) is
+              <center class="math-display" >
+              <img 
+src="hw1sol7x.png" alt="min        - x+   +  x-   -  x+   -  x-
+subject to   x+   -  x-                  &#x2264;   0
+             x+,     x-                  &#x2265;   0
+              " class="math-display" ></center>
+              <!--l. 237--><p class="nopar" >
+              For any <span 
+class="cmmi-10x-x-109">t </span><span 
+class="cmsy-10x-x-109">&#x2265; </span>0, we can set <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">+</span></sup> = <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmsy-8">-</span></sup> = <span 
+class="cmmi-10x-x-109">t</span>, which has value&#x00A0;<span 
+class="cmsy-10x-x-109">-</span>2<span 
+class="cmmi-10x-x-109">t</span>. Thus, this LP has unbounded
+              optimal value.
+              </li>
+              <li 
+  class="enumerate" id="x1-27x2">The corresponding version of (<a 
+href="#x1-21r3">3<!--tex4ht:ref: eq.LP2 --></a>) is
+              <center class="math-display" >
+                                                                                         
+                                                                                         
+              <img 
+src="hw1sol8x.png" alt="minx,w      - x -   w
+subject to   x         &#x2264;   0
+            x  -   w  &#x2264;   0
+           - x -   w  &#x2264;   0
+              " class="math-display" ></center>
+              <!--l. 248--><p class="nopar" >
+              We can set <span 
+class="cmmi-10x-x-109">x </span>= 0 and then any <span 
+class="cmmi-10x-x-109">w </span><span 
+class="cmsy-10x-x-109">&#x2265; </span>0 is feasible, with value <span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">w</span>. Thus, the LP has
+              unbounded optimal value.</li></ol>
+          </li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-29x4">What is the dual of the following linear programming problem?
+     <center class="math-display" >
+     <img 
+src="hw1sol9x.png" alt="min  3x1  -   5x2   +    8x3
+s.t.   x1            -     x3  =    6
+              2x2   -     x3  &#x2265;  - 5
+      x1  +    x2             &#x2264;    6
+               x2  &#x2264; 0,   x3  &#x2265;   0.
+     " class="math-display" ></center>
+     <!--l. 294--><p class="nopar" >
+     Use complementary slackness to show that <span 
+class="cmmi-10x-x-109">x </span>= (6<span 
+class="cmmi-10x-x-109">,</span>0<span 
+class="cmmi-10x-x-109">,</span>0) is optimal for this problem. Find two
+     different dual optimal solutions.
+     <!--l. 299--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution: </span>The dual is
+     <center class="math-display" >
+     <img 
+src="hw1sol10x.png" alt="maxy &#x2208;IR3    6y1 -   5y2   +    6y3
+subject to   y1           +     y3 =     3
+                    2y2   +     y3 &#x2265;   - 5
+           - y  -    y             &#x2264;     8
+              1       2
+                     y2  &#x2265; 0,   y3 &#x2264;     0
+     " class="math-display" ></center>
+     <!--l. 310--><p class="nopar" >
+     The slack in the second primal constraint is positive at the given solution, so by complementary
+     slackness we need&#x00A0;<span 
+class="cmmi-10x-x-109">y</span><sub><span 
+class="cmr-8">2</span></sub> = 0. Two dual feasible solutions that satisfy complementary slackness are
+     <span 
+class="cmmi-10x-x-109">y </span>= (3<span 
+class="cmmi-10x-x-109">,</span>0<span 
+class="cmmi-10x-x-109">,</span>0) and <span 
+class="cmmi-10x-x-109">y </span>= (8<span 
+class="cmmi-10x-x-109">,</span>0<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmsy-10x-x-109">-</span>5) (and any convex combination of them). Since primal and dual
+     feasibility and complementary slackness are satisfied, the given solutions are optimal, with optimal
+     value 18.
+     </li>
+     <li 
+  class="enumerate" id="x1-31x5">Let <span 
+class="cmmi-10x-x-109">A </span><span 
+class="cmsy-10x-x-109">&#x2208;</span> <span 
+class="cmmi-10x-x-109">IR</span><sup><span 
+class="cmmi-8">m</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup> and <span 
+class="cmmi-10x-x-109">c </span><span 
+class="cmsy-10x-x-109">&#x2208;</span> <span 
+class="cmmi-10x-x-109">IR</span><sup><span 
+class="cmmi-8">n</span></sup>. Show that exactly one of the following holds:
+                                                                                         
+                                                                                         
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-33x1"><span 
+class="cmsy-10x-x-109">&#x2203;</span><span 
+class="cmmi-10x-x-109">y </span><span 
+class="cmsy-10x-x-109">&#x2208;</span> <span 
+class="cmmi-10x-x-109">IR</span><sup><span 
+class="cmmi-8">m</span></sup> s.t. <span 
+class="cmmi-10x-x-109">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">y </span>= <span 
+class="cmmi-10x-x-109">c</span>
+          </li>
+          <li 
+  class="enumerate" id="x1-35x2"><span 
+class="cmsy-10x-x-109">&#x2203;</span><span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208;</span> <span 
+class="cmmi-10x-x-109">IR</span><sup><span 
+class="cmmi-8">n</span></sup> s.t. <span 
+class="cmmi-10x-x-109">Ax </span>= 0<span 
+class="cmmi-10x-x-109">,c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">x</span><span 
+class="cmmi-10x-x-109">&#x2260;</span>0<span 
+class="cmmi-10x-x-109">.</span></li></ol>
+     <!--l. 395--><p class="noindent" >(Hint: You may assume that, given a matrix <span 
+class="cmmi-10x-x-109">M </span><span 
+class="cmsy-10x-x-109">&#x2208;</span> <span 
+class="cmmi-10x-x-109">IR</span><sup><span 
+class="cmmi-8">m</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup> and a vector <span 
+class="cmmi-10x-x-109">p </span><span 
+class="cmsy-10x-x-109">&#x2208;</span> <span 
+class="cmmi-10x-x-109">IR</span><sup><span 
+class="cmmi-8">n</span></sup>, there exist unique <span 
+class="cmmi-10x-x-109">p</span><span 
+class="cmsy-10x-x-109">&#x2032;</span>
+     and <span 
+class="cmmi-10x-x-109">p</span><span 
+class="cmsy-10x-x-109">&#x2032;&#x2032;</span> such that <span 
+class="cmmi-10x-x-109">p </span>= <span 
+class="cmmi-10x-x-109">p</span><span 
+class="cmsy-10x-x-109">&#x2032; </span>+ <span 
+class="cmmi-10x-x-109">p</span><span 
+class="cmsy-10x-x-109">&#x2032;&#x2032;</span>, <span 
+class="cmmi-10x-x-109">Mp</span><span 
+class="cmsy-10x-x-109">&#x2032; </span>= 0, <span 
+class="cmmi-10x-x-109">p</span><span 
+class="cmsy-10x-x-109">&#x2032;&#x2032;</span> = <span 
+class="cmmi-10x-x-109">M</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">q </span>for some <span 
+class="cmmi-10x-x-109">q</span>, and <span 
+class="cmmi-10x-x-109">p</span><span 
+class="cmsy-10x-x-109">&#x2032;</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">p</span><span 
+class="cmsy-10x-x-109">&#x2032;&#x2032;</span> = 0. Note that <span 
+class="cmmi-10x-x-109">p</span><span 
+class="cmsy-10x-x-109">&#x2032; </span>is in the
+     nullspace of <span 
+class="cmmi-10x-x-109">M </span>and <span 
+class="cmmi-10x-x-109">p</span><span 
+class="cmsy-10x-x-109">&#x2032;&#x2032;</span> is in the row space.)
+     <!--l. 401--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution:</span>
+     <!--l. 404--><p class="noindent" >(Note: the hint is unnecessary. We just use LP duality.)
+     <!--l. 406--><p class="noindent" >Consider the primal-dual pair of LPs:
+     <center class="math-display" >
+     <img 
+src="hw1sol11x.png" alt="minx       cT x                    max        0Ty
+subject to   Ax   =  0    (P )      subject to  ATy  =   c    (D)
+     " class="math-display" ></center>
+     <!--l. 412--><p class="nopar" >
+     <!--l. 414--><p class="noindent" >If System (a) is consistent then (<span 
+class="cmmi-10x-x-109">D</span>) is feasible. So (<span 
+class="cmmi-10x-x-109">D</span>) has optimal value&#x00A0;0. By strong duality, (<span 
+class="cmmi-10x-x-109">P</span>)
+     has optimal value&#x00A0;0 also. Thus, if <span 
+class="cmmi-10x-x-109">Ax </span>= 0 then <span 
+class="cmmi-10x-x-109">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2265; </span>0. Note that if there exists <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> with <span 
+class="cmmi-10x-x-109">A</span><span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> = 0 and
+     <span 
+class="cmmi-10x-x-109">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> <span 
+class="cmmi-10x-x-109">&#x003E; </span>0 then we can set <img 
+src="hw1sol12x.png" alt="&#x02C6;x"  class="circ" > = <span 
+class="cmsy-10x-x-109">-</span><span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> and <span 
+class="cmmi-10x-x-109">A</span><img 
+src="hw1sol13x.png" alt="&#x02C6;x"  class="circ" > = 0, <span 
+class="cmmi-10x-x-109">c</span><sup><span 
+class="cmmi-8">T</span> </sup><img 
+src="hw1sol14x.png" alt="&#x02C6;x"  class="circ" > <span 
+class="cmmi-10x-x-109">&#x003C; </span>0, contradicting the observation that the
+     optimal value of&#x00A0;(<span 
+class="cmmi-10x-x-109">P</span>) is&#x00A0;0. Thus, System (b) is inconsistent.
+     <!--l. 423--><p class="noindent" >If System (a) is inconsistent then (<span 
+class="cmmi-10x-x-109">D</span>) is infeasible, so (<span 
+class="cmmi-10x-x-109">P</span>) is infeasible or unbounded. Now, <span 
+class="cmmi-10x-x-109">x </span>= 0 is
+     always feasible for (<span 
+class="cmmi-10x-x-109">P</span>), so (<span 
+class="cmmi-10x-x-109">P</span>) must be unbounded. Thus, there exist <span 
+class="cmmi-10x-x-109">x </span>with <span 
+class="cmmi-10x-x-109">Ax </span>= 0 and <span 
+class="cmmi-10x-x-109">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">x &#x003C; </span>0, so
+     System (b) is consistent.
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                     </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                                </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours: Tuesday 12&#8211;2pm; Wednesday 11am&#8211;1pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

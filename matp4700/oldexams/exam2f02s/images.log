@@ -1,0 +1,171 @@
+This is TeX, Version 3.14159 (Web2c 7.1) (format=latex 98.1.13)  9 OCT 2003 08:40
+**./images.tex
+(./images.tex
+LaTeX2e <1997/06/01>
+
+(/campus/text/tex/3.14159/common/texmf/tex/latex/base/article.cls
+Document Class: article 1997/06/16 v1.3v Standard LaTeX document class
+(/campus/text/tex/3.14159/common/texmf/tex/latex/base/size12.clo
+File: size12.clo 1997/06/16 v1.3v Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (/campus/text/tex/3.14159/common/texmf/tex/latex/graphics/color.sty
+Package: color 1997/06/07 v1.0e Standard LaTeX Color (DPC)
+(/campus/text/tex/3.14159/common/texmf/tex/latex/graphics/color.cfg)
+Package color Info: Driver file: dvips.def on input line 129.
+(/campus/text/tex/3.14159/common/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1996/12/12 v3.0d Driver-dependant file (DPC,SPQR)
+) (/campus/text/tex/3.14159/common/texmf/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1996/12/12 v3.0d Driver-dependant file (DPC,SPQR)
+))
+\sizebox=\box26
+\lthtmlwrite=\write3
+(images.aux)
+\openout1 = `images.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+latex2htmlLength hsize=349.0pt
+latex2htmlLength vsize=687.43pt
+latex2htmlLength hoffset=0.0pt
+latex2htmlLength voffset=0.0pt
+latex2htmlLength topmargin=0.0pt
+latex2htmlLength topskip=0.00003pt
+latex2htmlLength headheight=0.0pt
+latex2htmlLength headsep=0.0pt
+latex2htmlLength parskip=0.0pt plus 1.0pt
+latex2htmlLength oddsidemargin=-36.135pt
+latex2htmlLength evensidemargin=-36.135pt
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 113.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 113.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 113.
+l2hSize :displaymath11:73.49992pt::0.0pt::349.0pt.
+[1
+
+
+]
+l2hSize :tex2html_wrap_inline198:8.25pt::8.25pt::9.33336pt.
+[2
+
+
+]
+l2hSize :eqnarraystar21:51.13165pt::0.0pt::349.0pt.
+[3
+
+
+]
+l2hSize :displaymath24:74.6999pt::0.0pt::349.0pt.
+[4
+
+
+]
+l2hSize :picture52:120.0pt::0.0pt::349.0pt.
+[5
+
+
+]
+Overfull \hbox (128.97162pt too wide) detected at line 205
+[]
+ []
+
+l2hSize :displaymath86:58.99994pt::0.0pt::349.0pt.
+[6
+
+
+]
+l2hSize :tex2html_wrap_inline236:8.66922pt::8.66922pt::53.28156pt.
+[7
+
+
+]
+l2hSize :tex2html_wrap_inline238:8.66922pt::8.66922pt::53.47612pt.
+[8
+
+
+]
+l2hSize :tex2html_wrap_inline242:8.25pt::8.25pt::26.93173pt.
+[9
+
+
+]
+l2hSize :tex2html_wrap_inline244:8.25pt::8.25pt::26.93173pt.
+[10
+
+
+]
+l2hSize :tex2html_wrap_inline246:8.25pt::8.25pt::54.68153pt.
+[11
+
+
+]
+l2hSize :tex2html_wrap_inline248:8.25pt::8.25pt::32.80667pt.
+[12
+
+
+]
+l2hSize :tex2html_wrap_inline250:8.25pt::8.25pt::26.93173pt.
+[13
+
+
+]
+Overfull \hbox (51.0pt too wide) in paragraph at lines 278--279
+[][] 
+ []
+
+l2hSize :picture107:100.0pt::0.0pt::349.0pt.
+[14
+
+
+]
+l2hSize :displaymath135:31.00029pt::0.0pt::349.0pt.
+[15
+
+
+]
+Overfull \hbox (1.58076pt too wide) detected at line 306
+[]
+ []
+
+l2hSize :displaymath142:118.19986pt::0.0pt::349.0pt.
+[16
+
+
+]
+l2hSize :displaymath153:17.5pt::0.0pt::349.0pt.
+[17
+
+
+] (images.aux) ) 
+Here is how much of TeX's memory you used:
+ 514 strings out of 10991
+ 6435 string characters out of 74034
+ 51271 words of memory out of 263001
+ 3430 multiletter control sequences out of 10000+0
+ 6376 words of font info for 23 fonts, out of 100000 for 500
+ 14 hyphenation exceptions out of 1000
+ 22i,9n,21p,182b,215s stack positions out of 300i,100n,500p,10000b,4000s
+
+Output written on images.dvi (17 pages, 8628 bytes).

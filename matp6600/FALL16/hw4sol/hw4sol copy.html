@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw4sol.tex"> 
+<meta name="date" content="2015-11-03 20:48:00"> 
+<link rel="stylesheet" type="text/css" href="hw4sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 22--><p class="noindent" >
+<!--l. 24--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6600" ><span 
+class="cmr-12">MATP6600/DSES6780 Nonlinear Programming</span></a><span 
+class="cmr-12">, Homework 4 Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 28--><p class="noindent" >
+ Due: Friday, October 23, 2015, in class.<br />
+10% penalty for each day late.</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1"><a 
+ id="x1-21"></a> Let <span 
+class="cmmi-10">y </span>denote the KKT multipliers for the constraints of the quadratic program
+     <center class="math-display" >
+     <img 
+src="hw4sol0x.png" alt="min  q(x ) := cTx + 1xTQx
+s.t.  Ax  &#x2264;   b   2
+     " class="math-display" ></center>
+     <!--l. 45--><p class="nopar" >
+     where <span 
+class="cmmi-10">A </span>is an <span 
+class="cmmi-10">m </span><span 
+class="cmsy-10">&#x00D7; </span><span 
+class="cmmi-10">n </span>matrix and all other vectors and matrices are dimensioned appropriately. Assume the
+     feasible region is bounded. Show that the optimal solution can be obtained by solving the following <span 
+class="cmti-10">linear</span>
+     <span 
+class="cmti-10">program with complementarity constraints, LPCC</span>:
+     <center class="math-display" >
+     <img 
+src="hw4sol1x.png" alt="        T    T
+min    c x - b yT
+s.t.   c+ Qx + A y   =  0
+     0 &#x2264; y &#x22A5; b- Ax  &#x2265;  0.
+     " class="math-display" ></center>
+     <!--l. 57--><p class="nopar" >
+     <!--l. 59--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 62--><p class="noindent" >The constraints are linear, so CQ holds. The feasible region is compact and the objective function is
+     continuous, so an optimal solution exists. Since CQ holds, this optimal solution is a KKT point. So it suffices
+     to find the best KKT point. The KKT conditions can be written
+     <center class="math-display" >
+     <img 
+src="hw4sol2x.png" alt="          T
+ c+ Qx + A  y  =  0
+0 &#x2264; y &#x22A5; b- Ax  &#x2265;  0.
+     " class="math-display" ></center>
+     <!--l. 72--><p class="nopar" >
+     where <span 
+class="cmmi-10">y </span><span 
+class="cmsy-10"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10x-x-32" /> </span><span 
+class="msbm-10"><img 
+src="msbm10-52.png" alt="&#x211D;" class="10x-x-52" /></span><sup><span 
+class="cmmi-7">m</span></sup> denotes the vector of multipliers for the constraints. Note that if <span 
+class="cmmi-10">x </span>is a KKT point with
+     multipliers <span 
+class="cmmi-10">y </span>then its objective function value is <div class="eqnarray">
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="hw4sol3x.png" alt=" T    1 T         1 T   1        T
+c x + 2x Qx   =   2c x+ 2 (c+ Qx)  x
+                  1 T   1 (   T )T
+              =   2c x+ 2  - A y  x
+                  1 T   1  T
+              =   2c x- 2 y Ax
+                  1 T   1        T    1 T
+              =   2c x+ 2 (b- Ax)  y- 2b y
+                  1 T   1 T
+              =   2c x- 2 b y
+     " class="math-display" ></center>
+     </div>a scalar multiple of the objective function in the LPCC.
+     </li>
+     <li 
+  class="enumerate" id="x1-6x2">Let <span 
+class="cmmi-10">x</span><sup><span 
+class="cmr-7">1</span></sup> and <span 
+class="cmmi-10">x</span><sup><span 
+class="cmr-7">2</span></sup> be KKT points for the quadratic program in Question&#x00A0;<a 
+href="#x1-21">1<!--tex4ht:ref: q.LPCC --></a>, with KKT multipliers <span 
+class="cmmi-10">y</span><sup><span 
+class="cmr-7">1</span></sup> and <span 
+class="cmmi-10">y</span><sup><span 
+class="cmr-7">2</span></sup>
+     respectively. Assume
+     <center class="math-display" >
+     <img 
+src="hw4sol4x.png" alt="y1i(b- Ax2)i = y2i(b- Ax1)i = 0  for i = 1,...,m.
+     " class="math-display" ></center>
+     <!--l. 89--><p class="nopar" >
+     Show <span 
+class="cmmi-10">q</span>(<span 
+class="cmmi-10">x</span><sup><span 
+class="cmr-7">1</span></sup>) = <span 
+class="cmmi-10">q</span>(<span 
+class="cmmi-10">x</span><sup><span 
+class="cmr-7">2</span></sup>).
+     <!--l. 92--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 95--><p class="noindent" >We have <div class="eqnarray">
+     <center class="math-display" >
+     <img 
+src="hw4sol5x.png" alt=" (           )
+2 q(x1)- q(x2)  =  cT x1 - cTx2 - bTy1 + bTy2 from Question 1
+                    T  1   T 2     2 T 1      1T 2
+                =  cT x1- cTx2- (Ax2 )T y + (A1x ) y1 Tfrom  ass2umption
+                =  c  x - c x + (x ) (c + Qx )- (x ) (c + Qx )  from KKT  gradient condition
+                =  (x2)TQx1 - (x1)T Qx2
+                =  0  since Q is symmetric.
+     " class="math-display" ></center>
+     </div>
+                                                                                         
+                                                                                         
+     </li>
+     <li 
+  class="enumerate" id="x1-9x3">Find all the KKT points for the following quadratic programming problem:
+     <center class="math-display" >
+     <img 
+src="hw4sol6x.png" alt="min           x1x2  -   x1
+subject to     - x1 &#x2264;   - 1
+               - x2 &#x2264;    0
+           - x1 - x2 &#x2264;  - 5
+     " class="math-display" ></center>
+     <!--l. 216--><p class="nopar" >
+     Is one of the KKT points a globally optimal solution? Why or why not?
+     <!--l. 220--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 223--><p class="noindent" >The KKT conditions require: <div class="eqnarray">
+     <center class="math-display" >
+     <img 
+src="hw4sol7x.png" alt="x2 - 1 - u1 - u3 = 0                                 (1)
+   x1 - u2 - u3 =  0                                 (2)
+
+     u1(1- x1)  =  0                                 (3)
+          u2x2  =  0                                 (4)
+ u3(5- x1 - x2) =  0                                 (5)
+      u1,u2,u3  &#x2265;  0                                 (6)
+
+         1- x1  &#x2264;  0                                 (7)
+          - x2  &#x2264;  0                                 (8)
+    5 - x1 - x2 &#x2264;  0.                                (9)
+     " class="math-display" ><a 
+ id="x1-10r1"></a><a 
+ id="x1-10r2"></a><a 
+ id="x1-10r3"></a><a 
+ id="x1-10r4"></a><a 
+ id="x1-10r5"></a><a 
+ id="x1-10r6"></a><a 
+ id="x1-10r7"></a><a 
+ id="x1-10r8"></a><a 
+ id="x1-10r9"></a></center>
+     </div>First notice from (<a 
+href="#x1-10r1">1<!--tex4ht:ref: eq:grad1 --></a>), we have <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> = 1 + <span 
+class="cmmi-10">u</span><sub><span 
+class="cmr-7">1</span></sub> + <span 
+class="cmmi-10">u</span><sub><span 
+class="cmr-7">3</span></sub> <span 
+class="cmmi-10">&#x003E; </span>0, so from (<a 
+href="#x1-10r4">4<!--tex4ht:ref: eq:comp2 --></a>) we must have <span 
+class="cmmi-10">u</span><sub><span 
+class="cmr-7">2</span></sub> = 0. From (<a 
+href="#x1-10r7">7<!--tex4ht:ref: eq:feas1 --></a>) we have
+     <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> <span 
+class="cmsy-10">&#x2265; </span>1, and from (<a 
+href="#x1-10r2">2<!--tex4ht:ref: eq:grad2 --></a>) we have <span 
+class="cmmi-10">u</span><sub><span 
+class="cmr-7">3</span></sub> = <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub>. So we must have <span 
+class="cmmi-10">u</span><sub><span 
+class="cmr-7">3</span></sub> <span 
+class="cmmi-10">&#x003E; </span>0, so we must have <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> + <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> = 5, from
+     (<a 
+href="#x1-10r5">5<!--tex4ht:ref: eq:comp3 --></a>).
+     <!--l. 240--><p class="noindent" >Break into cases. First assume <span 
+class="cmmi-10">u</span><sub><span 
+class="cmr-7">1</span></sub> <span 
+class="cmmi-10">&#x003E; </span>0:
+         <div class="quote">
+         <!--l. 242--><p class="noindent" >From (<a 
+href="#x1-10r3">3<!--tex4ht:ref: eq:comp1 --></a>), we have <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> = 1, so <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> = 4 from (<a 
+href="#x1-10r5">5<!--tex4ht:ref: eq:comp3 --></a>). Also, from (<a 
+href="#x1-10r2">2<!--tex4ht:ref: eq:grad2 --></a>) we have <span 
+class="cmmi-10">u</span><sub><span 
+class="cmr-7">3</span></sub> = 1, so from (<a 
+href="#x1-10r1">1<!--tex4ht:ref: eq:grad1 --></a>) we
+         have <span 
+class="cmmi-10">u</span><sub><span 
+class="cmr-7">1</span></sub> = 2. This is a KKT point, with value <span 
+class="cmmi-10">f</span>(<span 
+class="cmmi-10">x</span>) = 3.</div>
+     <!--l. 247--><p class="noindent" >Now assume <span 
+class="cmmi-10">u</span><sub><span 
+class="cmr-7">1</span></sub> = 0:
+         <div class="quote">
+                                                                                         
+                                                                                         
+         <!--l. 249--><p class="noindent" >From (<a 
+href="#x1-10r1">1<!--tex4ht:ref: eq:grad1 --></a>) and (<a 
+href="#x1-10r2">2<!--tex4ht:ref: eq:grad2 --></a>), we have <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> = <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> + 1. If follows from (<a 
+href="#x1-10r5">5<!--tex4ht:ref: eq:comp3 --></a>) that <span 
+class="cmmi-10">x </span>= (2<span 
+class="cmmi-10">,</span>3) and <span 
+class="cmmi-10">u</span><sub><span 
+class="cmr-7">3</span></sub> = 2. This
+         is also a KKT point with value <span 
+class="cmmi-10">f</span>(<span 
+class="cmmi-10">x</span>) = 4.</div>
+     <!--l. 254--><p class="noindent" >These are the only two KKT points.
+     <!--l. 256--><p class="noindent" >The constraints are linear, so constraint qualification holds everywhere, so any local minimizer is a KKT point.
+     However, neither of these points is a global minimizer, since the objective function is unbounded below. In
+     particular, the points <span 
+class="cmmi-10">x </span>= (<span 
+class="cmmi-10">t,</span>0) are feasible for any <span 
+class="cmmi-10">t </span><span 
+class="cmsy-10">&#x2265; </span>5, and have value&#x00A0;<span 
+class="cmsy-10">-</span><span 
+class="cmmi-10">t</span>.
+     </li>
+     <li 
+  class="enumerate" id="x1-12x4">Let <span 
+class="cmmi-10">f </span>: <span 
+class="msbm-10"><img 
+src="msbm10-52.png" alt="&#x211D;" class="10x-x-52" /></span><sup><span 
+class="cmmi-7">n</span></sup> <span 
+class="cmsy-10">&#x2192; </span><span 
+class="msbm-10"><img 
+src="msbm10-52.png" alt="&#x211D;" class="10x-x-52" /> </span>be a differentiable function. Show that any locally optimal solution <span class="bar-css"><span 
+class="cmmi-10">x</span></span> to the nonlinear
+     programming problem
+     <center class="math-display" >
+     <img 
+src="hw4sol8x.png" alt="min       f (x)
+subject to    x  &#x2265;  0
+     " class="math-display" ></center>
+     <!--l. 348--><p class="nopar" >
+     must satisfy
+     <center class="math-display" >
+     <img 
+src="hw4sol9x.png" alt="&#x2207;f (¯x)T ¯x = 0, &#x2207;f (¯x) &#x2265; 0, x¯&#x2265; 0.
+     " class="math-display" ></center>
+     <!--l. 352--><p class="nopar" >
+     <!--l. 354--><p class="noindent" ><span 
+class="cmbx-10">Solution: </span>Let <span 
+class="cmmi-10">u </span>denote the KKT multipliers to the nonnegativity constraints <span 
+class="cmsy-10">-</span><span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2264; </span>0. The KKT conditions
+     require: <div class="eqnarray">
+     <center class="math-display" >
+     <img 
+src="hw4sol10x.png" alt="&#x2207;f(x)- u  =   0                                  (10)
+     uTx  =   0                                  (11)
+       u  &#x2265;   0                                  (12)
+
+       x  &#x2265;   0.                                  (13)
+     " class="math-display" ><a 
+ id="x1-13r10"></a><a 
+ id="x1-13r11"></a><a 
+ id="x1-13r12"></a></center>
+     </div>Using (<a 
+href="#x1-13r10">10<!--tex4ht:ref: q4:grad --></a>) to substitute for <span 
+class="cmmi-10">u </span>in (<a 
+href="#x1-13r11">11<!--tex4ht:ref: q4:comp --></a>) and (<a 
+href="#x1-13r12">12<!--tex4ht:ref: q4:nonneg --></a>) immediately gives the desired relationships.
+     </li>
+     <li 
+  class="enumerate" id="x1-15x5"><a 
+ id="x1-145"></a> Use AMPL to solve the convex quadratically constrained nonlinear program
+     <center class="math-display" >
+     <img 
+src="hw4sol11x.png" alt="              T
+min       1 T c x
+subject to 2x1 TM x  &#x2264;  m          (QCQP  )
+           2x Qx   &#x2264;  q,
+     " class="math-display" ></center>
+     <!--l. 474--><p class="nopar" >
+     with
+     <center class="math-display" >
+     <img 
+src="hw4sol12x.png" alt="   [   ]        [      ]       [         ]
+c =  0  ,  M  =   13  4   , Q =     3  - 1 ,  m = 14,  q = 6.
+     1            4  7           - 1   3
+     " class="math-display" ></center>
+     <!--l. 489--><p class="nopar" >
+     (AMPL is discussed at <a 
+href="http://www.rpi.edu/~mitchj/ampldetails.html" class="url" ><span 
+class="cmtt-10">http://www.rpi.edu/</span><span 
+class="cmtt-10">~</span><span 
+class="cmtt-10">mitchj/ampldetails.html</span></a> <br 
+class="newline" />It is available via the course LMS site with several different solvers, with a license that runs through the end of
+     the semester. Perhaps the easiest way to solve an NLP in AMPL is to use the NEOS server at
+     <a 
+href="http://www.neos-server.org/neos/" class="url" ><span 
+class="cmtt-10">http://www.neos-server.org/neos/</span></a> which has a selection of solvers available. CPLEX can also solve
+     problems in this form, but it doesn&#8217;t give dual variables for this problem because of the way its interior point
+     method is implemented.)
+     </li>
+     <li 
+  class="enumerate" id="x1-17x6">Find the KKT multipliers for problem (QCQP) in Question&#x00A0;<a 
+href="#x1-145">5<!--tex4ht:ref: amplq --></a> using the AMPL command <span 
+class="cmtt-10">display</span>. Check the
+     first order necessary conditions. (Notes: AMPL may display multipliers with a negative sign;
+     you can just take the absolute value of the multiplier. You can <span 
+class="cmtt-10">display </span>expressions such as
+     <span 
+class="cmmi-10">c </span>+ <span 
+class="cmmi-10">Mx</span>.)
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                                                                          </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           x6915.                                                                                                                                     </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           <!--tex4ht:inline--><div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"><col 
+id="TBL-2-2"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-1"  
+class="td11">Office hours:</td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-2"  
+class="td11">no office hours on October 13 or 14.                                        </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-1"  
+class="td11"> </td> <td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-2"  
+class="td11">Tuesday 20 October: 2.0 &#8211; 5.0, Wednesday 21 October: 11.0 &#8211; 1.0.</td> </tr></table>                              </div></td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

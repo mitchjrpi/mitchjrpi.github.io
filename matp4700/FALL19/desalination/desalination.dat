@@ -1,0 +1,78 @@
+set PLANTS := P1 P2 P3 P4;
+set CITIES := A B C D E F;
+
+param: EDGES : edgecost :=
+  P1 A 35
+  P2 A 52
+  P3 C 23
+  P4 E 33
+  A B  35
+  B A  15
+  A C  38
+  C A  12
+  B C  11
+  C B  22
+  A D  42
+  D A  14
+  D E  2
+  E D  25
+  A F  35
+  F A  11
+  C F  27
+  F C  12
+  E F  29
+  F E  11;
+
+param brinegeneration := 0.2;
+
+param demand :=
+A   90
+B   50
+C   30
+D   40
+E   50
+F   150
+;
+
+param wellcost :=
+A   900
+B   700
+C   800
+D   600
+E   800
+F   1200
+;
+
+param capacity :=
+P1   150
+P2   120
+P3   170
+P4   130
+;
+
+param renewcapacity :=
+P1   100
+P2   70
+P3   120
+P4   120
+;
+
+param  opcost :=
+P1   525
+P2   475
+P3   555
+P4   415
+;
+
+param dischargemax :=
+P1   20
+P2   12
+P3   10
+P4   16
+;
+param disposalcost :=
+P1   120
+P2   110
+P3   130
+P4   120
+;

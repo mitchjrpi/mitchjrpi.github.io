@@ -1,0 +1,831 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw3sol.tex"> 
+<meta name="date" content="2017-03-07 14:42:00"> 
+<link rel="stylesheet" type="text/css" href="hw3sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 37--><p class="noindent" >
+<!--l. 39--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6620" ><span 
+class="cmr-12">MATP6620/ISYE6760 Combinatorial Optimization &amp; Integer Programming</span></a><br />
+<span 
+class="cmr-12">Homework 3.</span><br />
+<span 
+class="cmr-12">Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 45--><p class="noindent" >
+ Due: Friday March 3rd, 2017.<br />
+Penalty for late homeworks: 10% for each day or part of a day.</div>
+<!--l. 62--><p class="noindent" >The following graph <span 
+class="cmmi-10">G </span>= (<span 
+class="cmmi-10">V,E</span>) is used in question&#x00A0;<a 
+href="#x1-21">1<!--tex4ht:ref: q.nodepack --></a>.
+<div class="center" 
+>
+<!--l. 65--><p class="noindent" >
+<!--l. 66--><p class="center" ><img 
+src="hw3sol0x.png" alt="PICT" >
+</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1"><a 
+ id="x1-21"></a> Consider a node packing problem on the above graph, with each vertex having weight equal to 2 more than
+     its degree. The LP relaxation includes the clique constraints <span 
+class="cmex-10">&#x2211;</span>
+  <sub><span 
+class="cmmi-7">v</span><span 
+class="cmsy-7">&#x2208;</span><span 
+class="cmmi-7">C</span></sub><span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">v</span></sub> <span 
+class="cmsy-10">&#x2264; </span>1 for each maximal clique&#x00A0;<span 
+class="cmmi-10">C </span>in the
+     graph. The point <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">A</span></sub> = 0<span 
+class="cmmi-10">.</span>4, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">B</span></sub> = 0<span 
+class="cmmi-10">.</span>6, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">C</span></sub> = 0<span 
+class="cmmi-10">.</span>4, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">D</span></sub> = 0<span 
+class="cmmi-10">.</span>5, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">E</span></sub> = 0<span 
+class="cmmi-10">.</span>4, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">F</span></sub> = 0<span 
+class="cmmi-10">.</span>5, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">G</span></sub> = 0<span 
+class="cmmi-10">.</span>1, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">H</span></sub> = 0<span 
+class="cmmi-10">.</span>4, and
+     <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">J</span></sub> = 0<span 
+class="cmmi-10">.</span>1 is feasible in the LP relaxation.
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-5x1">Show that the given point is not in the convex hull of feasible solutions, by giving a valid constraint
+         that is violated by this point.
+         </li>
+         <li 
+  class="enumerate" id="x1-7x2">Find an optimal solution to the node packing problem for this graph. Prove your solution is
+         optimal.</li></ol>
+     <!--l. 121--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+                                                                                         
+                                                                                         
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-9x1">Vertices <span 
+class="cmmi-10">A,B,C,H,F </span>constitute an odd hole, giving the valid constraint
+         <center class="math-display" >
+         <img 
+src="hw3sol1x.png" alt="xA +xB + xC + xH + xF &#x2264; 2.
+         " class="math-display" ></center>
+         <!--l. 128--><p class="nopar" >
+         The left hand side of this constraint evaluates to 2.3 for the given point.
+         </li>
+         <li 
+  class="enumerate" id="x1-11x2">If <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">G</span></sub> = 1 then the largest possible value for the left hand side of the constraint in part (a) is 1, so the
+         constraint can be lifted to
+         <table 
+class="equation"><tr><td><a 
+ id="x1-12r1"></a>
+         <center class="math-display" >
+         <img 
+src="hw3sol2x.png" alt="xA + xB + xC + xH +xF + xG &#x2264; 2.
+         " class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+         <!--l. 135--><p class="nopar" >
+         The vertices <span 
+class="cmmi-10">D,E,J </span>form a clique, so we also have the valid constraint
+         <center class="math-display" >
+         <img 
+src="hw3sol3x.png" alt="xD + x + E +xJ &#x2264; 1.
+         " class="math-display" ></center>
+         <!--l. 139--><p class="nopar" >
+         Thus, any packing can use at most 3 vertices. The vertices and their degrees are:
+         <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><colgroup id="TBL-1-2g"><col 
+id="TBL-1-2"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td11">degree</td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-2"  
+class="td11">vertices</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-1"  
+class="td11">  5    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-2"  
+class="td11">   C    </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-3-1"  
+class="td11"> 4 </td> <td  style="white-space:nowrap; text-align:center;" id="TBL-1-3-2"  
+class="td11">F,G,H,J</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-4-1"  
+class="td11">  3    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-4-2"  
+class="td11"> A,D,E </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-5-1"  
+class="td11">  2    </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-5-2"  
+class="td11">   B    </td></tr></table>
+         </div>
+         <!--l. 148--><p class="noindent" >We claim the node packing A,C,E with value 17 is optimal.
+         <!--l. 150--><p class="noindent" >First note, any packing with just 2 vertices has value at most 13. So the optimal packing must contain 3
+         vertices.
+         <!--l. 153--><p class="noindent" >Vertices C and F constitute a maximal packing, so they cannot both be part of an optimal packing.
+         Vertex C is adjacent to all of G, H, and J, so any packing containing C with 3 nodes cannot have value
+         larger than 17.
+         <!--l. 157--><p class="noindent" >F, G, H form a clique, so no packing can contain more than 2 of the vertices of degree&#x00A0;4.
+         <!--l. 159--><p class="noindent" >So no packing has value larger than&#x00A0;17.
+         <!--l. 161--><p class="noindent" ><span 
+class="cmti-10">Alternatively:</span>
+         <!--l. 163--><p class="noindent" >Solving the LP relaxation of the node packing problem with the lifted odd hole constraint&#x00A0;(<a 
+href="#x1-12r1">1<!--tex4ht:ref: eq.liftedoddhole --></a>) and the
+         clique inequalities gives the integral solution. Here are the AMPL <a 
+href="hw3q1np.mod" >model</a> and <a 
+href="hw3q1np.dat" >data</a> files, and the <a 
+href="hw3q1np.sol" >AMPL
+         output</a>.
+         </li></ol>
+                                                                                         
+                                                                                         
+     </li>
+     <li 
+  class="enumerate" id="x1-14x2">Consider the constraints
+     <center class="math-display" >
+     <img 
+src="hw3sol4x.png" alt="   t1  &#x2265;  |x1 - x2|
+   t2  &#x2265;  |x1 + x2 - 1|
+ t1,t2     integer
+x1,x2     binary
+     " class="math-display" ></center>
+     <!--l. 196--><p class="nopar" >
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-16x1">By considering the different possibilities for <span 
+class="cmmi-10">x</span>, show that <span 
+class="cmmi-10">t</span><sub><span 
+class="cmr-7">1</span></sub> + <span 
+class="cmmi-10">t</span><sub><span 
+class="cmr-7">2</span></sub> <span 
+class="cmsy-10">&#x2265; </span>1.
+         </li>
+         <li 
+  class="enumerate" id="x1-18x2">The constraints can be modeled equivalently as
+         <center class="math-display" >
+         <img 
+src="hw3sol5x.png" alt="   t1  &#x2265;    x1 -   x2
+   t1  &#x2265;  - x1 +   x2
+   t2  &#x2265;    x1 +   x2  -  1
+   t2  &#x2265;  - x1 -   x2  +  1
+ t1,t2     integer
+x1,x2     binary
+         " class="math-display" ></center>
+         <!--l. 209--><p class="nopar" >
+         Show that the valid constraint <span 
+class="cmmi-10">t</span><sub><span 
+class="cmr-7">1</span></sub> + <span 
+class="cmmi-10">t</span><sub><span 
+class="cmr-7">2</span></sub> <span 
+class="cmsy-10">&#x2265; </span>1 has Chvatal rank equal to 2.</li></ol>
+     <!--l. 213--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-20x1">Four choices for <span 
+class="cmmi-10">x</span>, with the minimum possible corresponding choices for&#x00A0;<span 
+class="cmmi-10">t</span>:
+         <center class="math-display" >
+         <img 
+src="hw3sol6x.png" alt="       |      |
+x1--x2-|t1--t2-|t1 +-t2
+ 0   0 |0   1 |  1
+ 1   0 |1   0 |  1
+ 0   1 |1   0 |  1
+ 1   1  0   1    1
+         " class="math-display" ></center>
+         <!--l. 226--><p class="nopar" >
+         </li>
+         <li 
+  class="enumerate" id="x1-22x2"><span 
+class="cmti-10">Rank is no larger than 2:</span>
+         <!--l. 232--><p class="noindent" >Write constraints as: <div class="eqnarray">
+                                                                                         
+                                                                                         
+         <center class="math-display" >
+         <img 
+src="hw3sol7x.png" alt=" x1 - x2 - t1 &#x2264;  0                                   (2)
+
+- x1 + x2 - t1 &#x2264; 0                                   (3)
+ x1 + x2 - t2 &#x2264;  1                                   (4)
+- x1 - x2 - t2 &#x2264; - 1.                                (5)
+         " class="math-display" ><a 
+ id="x1-23r2"></a><a 
+ id="x1-23r3"></a><a 
+ id="x1-23r4"></a><a 
+ id="x1-23r5"></a></center>
+         </div>
+         <!--l. 240--><p class="noindent" >0.5(<a 
+href="#x1-23r2">2<!--tex4ht:ref: eq1 --></a>) + 0.5(<a 
+href="#x1-23r4">4<!--tex4ht:ref: eq3 --></a>) implies
+         <table 
+class="equation"><tr><td><a 
+ id="x1-24r6"></a>
+         <center class="math-display" >
+         <img 
+src="hw3sol8x.png" alt="x1 - 0.5t1 - t2 &#x2264; 0.5  =&#x21D2;   x1 - t1 - t2 &#x2264; 0.
+         " class="math-display" ></center></td><td class="equation-label">(6)</td></tr></table>
+         <!--l. 245--><p class="nopar" >
+         <!--l. 247--><p class="noindent" >0.5(<a 
+href="#x1-23r3">3<!--tex4ht:ref: eq2 --></a>) + 0.5(<a 
+href="#x1-23r5">5<!--tex4ht:ref: eq4 --></a>) implies
+         <table 
+class="equation"><tr><td><a 
+ id="x1-25r7"></a>
+         <center class="math-display" >
+         <img 
+src="hw3sol9x.png" alt="- x1 - 0.5t1 - t2 &#x2264; - 0.5 =&#x21D2;   - x1 - t1 - t2 &#x2264; - 1.
+         " class="math-display" ></center></td><td class="equation-label">(7)</td></tr></table>
+         <!--l. 252--><p class="nopar" >
+         <!--l. 254--><p class="noindent" >In the second round, 0.5(<a 
+href="#x1-24r6">6<!--tex4ht:ref: eq5 --></a>) + 0.5(<a 
+href="#x1-25r7">7<!--tex4ht:ref: eq6 --></a>) implies
+                                                                                         
+                                                                                         
+         <center class="math-display" >
+         <img 
+src="hw3sol10x.png" alt="- t1 - t2 &#x2264; - 0.5  =&#x21D2;   - t1 - t2 &#x2264; - 1
+         " class="math-display" ></center>
+         <!--l. 259--><p class="nopar" >
+         as required.
+         <!--l. 264--><p class="noindent" ><span 
+class="cmti-10">Rank is at least 2:</span>
+         <!--l. 267--><p class="noindent" >The point <span 
+class="cmmi-10">x </span>= (0<span 
+class="cmmi-10">.</span>5<span 
+class="cmmi-10">,</span>0<span 
+class="cmmi-10">.</span>5) and <span 
+class="cmmi-10">t </span>= (0<span 
+class="cmmi-10">,</span>0) satisfies (<a 
+href="#x1-23r2">2<!--tex4ht:ref: eq1 --></a>)&#8211;(<a 
+href="#x1-23r5">5<!--tex4ht:ref: eq4 --></a>). This point is a convex combination of the integer
+         points <span 
+class="cmmi-10">x </span>= (0<span 
+class="cmmi-10">,</span>0), <span 
+class="cmmi-10">t </span>= (0<span 
+class="cmmi-10">,</span>0) and <span 
+class="cmmi-10">x </span>= (1<span 
+class="cmmi-10">,</span>1), <span 
+class="cmmi-10">t </span>= (0<span 
+class="cmmi-10">,</span>0). So any valid linear combination of (<a 
+href="#x1-23r2">2<!--tex4ht:ref: eq1 --></a>)&#8211;(<a 
+href="#x1-23r5">5<!--tex4ht:ref: eq4 --></a>) must be
+         satisfied by at least one of these points, and so the rounded version must also be satisfied by at least one
+         of the points.
+         <!--l. 274--><p class="noindent" ><span 
+class="cmti-10">Alternatively</span>, since the point <span 
+class="cmmi-10">x </span>= (0<span 
+class="cmmi-10">.</span>5<span 
+class="cmmi-10">,</span>0<span 
+class="cmmi-10">.</span>5) and <span 
+class="cmmi-10">t </span>= (0<span 
+class="cmmi-10">,</span>0) is feasible in the LP relaxation, the maximum
+         value of <span 
+class="cmsy-10">-</span><span 
+class="cmmi-10">t</span><sub><span 
+class="cmr-7">1</span></sub> <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">t</span><sub><span 
+class="cmr-7">2</span></sub> in the LP relaxation is&#x00A0;0. Thus, by the proposition in the <a 
+href="http://www.rpi.edu/~mitchj/matp6620/CGrank2/CGrank2.html" >notes</a>, the best
+         rank one inequality is only <span 
+class="cmsy-10">-</span><span 
+class="cmmi-10">t</span><sub><span 
+class="cmr-7">1</span></sub> <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">t</span><sub><span 
+class="cmr-7">2</span></sub> <span 
+class="cmsy-10">&#x2264; </span>0, so the desired inequality has CG rank at least
+         two.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-27x3">The optimal tableau to the linear programming relaxation of the integer program
+     <center class="math-display" >
+     <img 
+src="hw3sol11x.png" alt="min   - x1 -  10x2                     min  - 36    +  32x3  +   1x4     17
+s.t.    x1  +   2x2  &#x2264;  14              s.t.  x1      +  4x3  -   4x4  =   2
+      - x1 +   6x2  &#x2264;  8          is            x2  +  18x3  +   18x4  =  114
+             x1,x2  &#x2265;  0,integer                          x,x ,x ,x   &#x2265;  0
+                                                          1 2  3  4
+     " class="math-display" ></center>
+     <!--l. 310--><p class="nopar" >
+     where <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub> and <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">4</span></sub> are the slack variables in the two constraints. Find the Gomory and strong Gomory cutting
+     planes implied by the two constraints. Express these constraints in terms of the original variables <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> and&#x00A0;<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub>
+     and draw them on a graph of the feasible region.
+     <!--l. 316--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 319--><p class="noindent" ><span 
+class="cmti-10">First constraint: </span>Fractional parts: <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">3</span></sub> = <img 
+src="hw3sol12x.png" alt="3
+4"  class="frac" align="middle">, <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">4</span></sub> = <img 
+src="hw3sol13x.png" alt="3
+4"  class="frac" align="middle">, <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">0</span></sub> = <img 
+src="hw3sol14x.png" alt="1
+2"  class="frac" align="middle">.
+     <!--l. 322--><p class="noindent" >Gomory cut:
+     <center class="math-display" >
+     <img 
+src="hw3sol15x.png" alt="3x3 + 3 x4 &#x2265; 1 .
+4    4     2
+     " class="math-display" ></center>
+     <!--l. 325--><p class="nopar" >
+     In terms of the original variables, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub> = 14 <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> <span 
+class="cmsy-10">- </span>2<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> and <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">4</span></sub> = 8 + <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> <span 
+class="cmsy-10">- </span>6<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub>, so we have
+     <center class="math-display" >
+     <img 
+src="hw3sol16x.png" alt="161- 6x2 &#x2265; 1,
+  2        2
+     " class="math-display" ></center>
+                                                                                         
+                                                                                         
+     <!--l. 330--><p class="nopar" >
+     or
+     <table 
+class="equation"><tr><td><a 
+ id="x1-28r8"></a>
+     <center class="math-display" >
+     <img 
+src="hw3sol17x.png" alt="      2
+x2 &#x2264; 2 3
+     " class="math-display" ></center></td><td class="equation-label">(8)</td></tr></table>
+     <!--l. 334--><p class="nopar" >
+     <!--l. 338--><p class="noindent" >Mixed integer Gomory cut:
+     <center class="math-display" >
+     <img 
+src="hw3sol18x.png" alt="1( 1- 34)      1( 1- 34 )     1
+2  1--1- x3 + 2  1--1- x4 &#x2265; 2
+      2             2
+     " class="math-display" ></center>
+     <!--l. 341--><p class="nopar" >
+     or equivalently
+     <center class="math-display" >
+     <img 
+src="hw3sol19x.png" alt="1x3 + 1x4 &#x2265; 1   or equivalently x3 + x4 &#x2265; 2.
+4    4     2
+     " class="math-display" ></center>
+     <!--l. 346--><p class="nopar" >
+     In terms of the original variables, we have
+     <center class="math-display" >
+     <img 
+src="hw3sol20x.png" alt="22 - 8x2 &#x2265; 2,
+     " class="math-display" ></center>
+     <!--l. 350--><p class="nopar" >
+     or
+     <table 
+class="equation"><tr><td><a 
+ id="x1-29r9"></a>
+     <center class="math-display" >
+                                                                                         
+                                                                                         
+     <img 
+src="hw3sol21x.png" alt="     1
+x2 &#x2264; 2-.
+     2
+     " class="math-display" ></center></td><td class="equation-label">(9)</td></tr></table>
+     <!--l. 354--><p class="nopar" >
+     <!--l. 357--><p class="noindent" ><span 
+class="cmti-10">Second constraint: </span>Fractional parts: <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">3</span></sub> = <img 
+src="hw3sol22x.png" alt="1
+8"  class="frac" align="middle">, <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">4</span></sub> = <img 
+src="hw3sol23x.png" alt="1
+8"  class="frac" align="middle">, <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">0</span></sub> = <img 
+src="hw3sol24x.png" alt="3
+4"  class="frac" align="middle">.
+     <!--l. 360--><p class="noindent" >Gomory cut:
+     <center class="math-display" >
+     <img 
+src="hw3sol25x.png" alt="1x3 + 1x4 &#x2265; 3
+8     8     4
+     " class="math-display" ></center>
+     <!--l. 363--><p class="nopar" >
+     In terms of the original variables, we have
+     <center class="math-display" >
+     <img 
+src="hw3sol26x.png" alt="11- x2 &#x2265; 3,
+4        4
+     " class="math-display" ></center>
+     <!--l. 367--><p class="nopar" >
+     or
+     <table 
+class="equation"><tr><td><a 
+ id="x1-30r10"></a>
+     <center class="math-display" >
+     <img 
+src="hw3sol27x.png" alt="x  &#x2264; 2.
+ 2
+     " class="math-display" ></center></td><td class="equation-label">(10)</td></tr></table>
+     <!--l. 371--><p class="nopar" >
+     <!--l. 375--><p class="noindent" >Mixed integer Gomory cut: Since <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">3</span></sub> <span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">0</span></sub> and <span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">4</span></sub> <span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">f</span><sub><span 
+class="cmr-7">0</span></sub>, the mixed integer Gomory cut is identical to the
+     original Gomory cut.
+     <!--l. 379--><p class="noindent" ><span 
+class="cmti-10">Graph:</span>
+     <div class="center" 
+>
+<!--l. 382--><p class="noindent" >
+<img src=hw3q3.png>
+                                                                                         
+                                                                                         
+</div>
+     </li>
+     <li 
+  class="enumerate" id="x1-32x4"><a 
+ id="x1-314"></a> The AMPL model of the LP relaxation of a random weighted node packing problem with 15 nodes is
+     contained in the file <br 
+class="newline" />   <a 
+href="http://www.rpi.edu/~mitchj/matp6620/hw3/nodepack.mod" class="url" ><span 
+class="cmtt-10">http://www.rpi.edu/</span><span 
+class="cmtt-10">~</span><span 
+class="cmtt-10">mitchj/matp6620/hw3/nodepack.mod</span></a>
+     <!--l. 520--><p class="noindent" >The initial model contains only the adjacency constraint that just one endpoint of an edge can appear in the
+     node packing. Pick a seed and then solve the problem using a cutting plane algorithm:
+         <div class="quote">
+    <ol  class="enumerate2" >
+    <li 
+  class="enumerate" id="x1-34x1">Solve the LP relaxation.
+    </li>
+    <li 
+  class="enumerate" id="x1-36x2">If the solution is integral, STOP.
+    </li>
+    <li 
+  class="enumerate" id="x1-38x3">If necessary, add one or more valid inequalities to the LP. These inequalities can be
+    clique inequalities or odd hole inequalities.
+    </li>
+    <li 
+  class="enumerate" id="x1-40x4">Return to Step (a).</li></ol>
+         </div>
+     <!--l. 532--><p class="noindent" >(It is highly likely that you will need to use both clique inequalities and odd hole inequalities, and that these
+     inequalities will be sufficient to solve the problem.)
+     <!--l. 535--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 538--><p class="noindent" >Here is the <a 
+href="nodepack3242.mod" >model file with the seed 3242</a>. Solving this problem required the addition of two clique constraints
+     and 4 odd hole constraints, with each clique containing 3 nodes and each odd hole containing 5 nodes. Here is
+     the <a 
+href="nodepack3242.sol" >output file with the seed 3242</a>.
+     </li>
+     <li 
+  class="enumerate" id="x1-42x5">A particular graph <span 
+class="cmmi-10">G </span>= (<span 
+class="cmmi-10">V,E</span>) consists of six vertices. Vertices 1&#8211;5 form a cycle and vertex 6 is
+     adjacent to three of the other vertices. Any node packing on this graph must satisfy the odd hole
+     inequality
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="hw3sol30x.png" alt=" 5
+&#x2211;  x &#x2264; 2.
+i=1 i
+     " class="math-display" ></center>
+     <!--l. 552--><p class="nopar" >
+     How does the structure of the edges connecting vertex 6 to the rest of the graph affect the lifted odd hole
+     inequality
+     <center class="math-display" >
+     <img 
+src="hw3sol31x.png" alt="&#x2211;5
+   xi + &#x03B1;x6 &#x2264; 2?
+i=1
+     " class="math-display" ></center>
+     <!--l. 557--><p class="nopar" >
+     <!--l. 559--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 562--><p class="noindent" >We have two different possible structures:
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-44x1">The three vertices adjacent to vertex&#x00A0;6 are consecutive. Then at most one of the other two vertices can
+         be used if vertex 6 is part of the packing, so the maximum possible value of the left hand side of the
+         original inequality is&#x00A0;1. The lifted inequality is then
+         <center class="math-display" >
+         <img 
+src="hw3sol32x.png" alt="&#x2211;6
+   xi &#x2264; 2.
+i=1
+         " class="math-display" ></center>
+         <!--l. 570--><p class="nopar" >
+         </li>
+         <li 
+  class="enumerate" id="x1-46x2">The three vertices adjacent to vertex&#x00A0;6 are <span 
+class="cmti-10">not </span>consecutive. (Eg, say vertices 1,2,4.) Then there consists
+         of a packing comprising vertex 6 and the other two vertices on the cycle, so <span 
+class="cmmi-10">&#x03B1; </span>= 0, and the lifted
+         inequality is identical to the original inequality.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-48x6">Let <span 
+class="cmmi-10">P </span>= <span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="msbm-10">&#x211D;</span><sub><span 
+class="cmr-7">+</span></sub><sup><span 
+class="cmr-7">2</span></sup> : <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> <span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> <span 
+class="cmsy-10">&#x2264; </span>1<span 
+class="cmmi-10">,</span>4<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> + <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> <span 
+class="cmsy-10">&#x2264; </span>28<span 
+class="cmmi-10">,x</span><sub><span 
+class="cmr-7">1</span></sub> + 4<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> <span 
+class="cmsy-10">&#x2264; </span>27<span 
+class="cmsy-10">} </span>and <span 
+class="cmmi-10">S </span>= <span 
+class="cmmi-10">P </span><span 
+class="cmsy-10">&#x2229; </span><span 
+class="cmmi-10">Z</span><sub><span 
+class="cmr-7">+</span></sub><sup><span 
+class="cmr-7">2</span></sup>.
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-50x1">Find an inequality description of conv(<span 
+class="cmmi-10">S</span>).
+         </li>
+         <li 
+  class="enumerate" id="x1-52x2">Find the extreme points of conv(<span 
+class="cmmi-10">S</span>).
+         </li>
+         <li 
+  class="enumerate" id="x1-54x3">Derive each of the facets of conv(<span 
+class="cmmi-10">S</span>) as a C-G inequality.
+         </li>
+         <li 
+  class="enumerate" id="x1-56x4">What is the Chvatal rank of the facets of conv(<span 
+class="cmmi-10">S</span>)? (Hint: To get a lower bound for the difficult
+         one, ask yourself <span 
+class="cmti-10">&#8220;What is the best inequality of the form </span><span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> + 2<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> <span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">&#x03C0;</span><sub><span 
+class="cmr-7">0</span></sub> <span 
+class="cmti-10">which is valid for </span><span 
+class="cmmi-10">P</span><span 
+class="cmti-10">?&#8221;</span>
+         To get an upper bound, consider <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> + <span 
+class="cmmi-10">&#x03B1;x</span><sub><span 
+class="cmr-7">2</span></sub> <span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">&#x03B1;</span><sub><span 
+class="cmr-7">0</span></sub> for various values of&#x00A0;<span 
+class="cmmi-10">&#x03B1;</span>.)</li></ol>
+                                                                                         
+                                                                                         
+     <!--l. 597--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 600--><p class="noindent" >We first graph the problem:
+     <div class="center" 
+>
+<img src=hw3q6.png>
+</div>
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-58x1">conv(<span 
+class="cmmi-10">S</span>) is:
+         <center class="math-display" >
+         <img 
+src="hw3sol35x.png" alt="{x &#x2208; &#x211D;2 : x1 - x2 &#x2264; 1,x1 &#x2264; 5,x2 &#x2264; 6,x1 + 2x2 &#x2264; 15}.
+      +
+                                                                                         
+                                                                                         
+         " class="math-display" ></center>
+         <!--l. 659--><p class="nopar" >
+         </li>
+         <li 
+  class="enumerate" id="x1-60x2">Extreme points:
+         <center class="math-display" >
+         <img 
+src="hw3sol36x.png" alt="(0,0),(1,0),(5,4),(5,5),(3,6),(0,6).
+         " class="math-display" ></center>
+         <!--l. 663--><p class="nopar" >
+         </li>
+         <li 
+  class="enumerate" id="x1-62x3">Number the initial inequalities: <a 
+ id="x1-613"></a><div class="eqnarray">
+         <center class="math-display" >
+         <img 
+src="hw3sol37x.png" alt=" x1 - x2 &#x2264;   1                                   (11)
+4x1 + x2 &#x2264;   28                                  (12)
+x1 + 4x2 &#x2264;   27                                  (13)
+         " class="math-display" ><a 
+ id="x1-63r11"></a><a 
+ id="x1-63r12"></a><a 
+ id="x1-63r13"></a></center>
+         </div>
+             <ol  class="enumerate3" >
+             <li 
+  class="enumerate" id="x1-65x1">Derive <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> <span 
+class="cmsy-10">&#x2264; </span>5: Taking <img 
+src="hw3sol38x.png" alt="15"  class="frac" align="middle">(<a 
+href="#x1-63r11">11<!--tex4ht:ref: eq:q6con1 --></a>)+<img 
+src="hw3sol39x.png" alt="15"  class="frac" align="middle">(<a 
+href="#x1-63r12">12<!--tex4ht:ref: eq:q6con2 --></a>) and rounding immediately gives the facet.
+             </li>
+             <li 
+  class="enumerate" id="x1-67x2">Derive <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> <span 
+class="cmsy-10">&#x2264; </span>6: Taking <img 
+src="hw3sol40x.png" alt="14"  class="frac" align="middle">(<a 
+href="#x1-63r13">13<!--tex4ht:ref: eq:q6con3 --></a>) and rounding immediately gives the facet.
+             </li>
+             <li 
+  class="enumerate" id="x1-69x3">Derive <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> + 2<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> <span 
+class="cmsy-10">&#x2264; </span>15: Taking <img 
+src="hw3sol41x.png" alt="115"  class="frac" align="middle">(<a 
+href="#x1-63r12">12<!--tex4ht:ref: eq:q6con2 --></a>)+<img 
+src="hw3sol42x.png" alt="1115"  class="frac" align="middle">(<a 
+href="#x1-63r13">13<!--tex4ht:ref: eq:q6con3 --></a>) and rounding gives
+             <table 
+class="equation"><tr><td><a 
+ id="x1-70r14"></a>
+             <center class="math-display" >
+             <img 
+src="hw3sol43x.png" alt="          &#x230A;   &#x230B;
+x + 3x &#x2264;   325  = 21.
+ 1    2    15
+             " class="math-display" ></center></td><td class="equation-label">(14)</td></tr></table>
+                                                                                         
+                                                                                         
+             <!--l. 683--><p class="nopar" >
+             Taking <img 
+src="hw3sol44x.png" alt="111"  class="frac" align="middle">(<a 
+href="#x1-63r12">12<!--tex4ht:ref: eq:q6con2 --></a>)+<img 
+src="hw3sol45x.png" alt="171"  class="frac" align="middle">(<a 
+href="#x1-70r14">14<!--tex4ht:ref: eq:q6con4 --></a>) and rounding gives
+             <center class="math-display" >
+             <img 
+src="hw3sol46x.png" alt="          &#x230A;    &#x230B;
+x1 + 2x2 &#x2264;  175  = 15,
+            11
+             " class="math-display" ></center>
+             <!--l. 688--><p class="nopar" >
+             as required.</li></ol>
+         </li>
+         <li 
+  class="enumerate" id="x1-72x4">It was shown in part&#x00A0;<a 
+href="#x1-613">6c<!--tex4ht:ref: q6.answer_c --></a> that <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> <span 
+class="cmsy-10">&#x2264; </span>5 and <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> <span 
+class="cmsy-10">&#x2264; </span>6 each have Chvatal rank 1, and that <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> + 2<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> <span 
+class="cmsy-10">&#x2264; </span>15 has
+         rank no greater than two. We show that this last inequality has rank at least&#x00A0;2:
+         <!--l. 696--><p class="noindent" >The point (5<img 
+src="hw3sol47x.png" alt="23"  class="frac" align="middle"><span 
+class="cmmi-10">,</span>5<img 
+src="hw3sol48x.png" alt="13"  class="frac" align="middle">) <span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">P </span>satisfies <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> + 2<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> = 16<img 
+src="hw3sol49x.png" alt="13"  class="frac" align="middle">. Thus the best we can get as a rank one
+         inequality is <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> + 2<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> <span 
+class="cmsy-10">&#x2264; </span>16, so the facet defining inequality must have CG rank at least
+         2.
+         <!--l. 700--><p class="noindent" >Note also that any valid inequality for <span 
+class="cmmi-10">P </span>is satisfied by either (6<span 
+class="cmmi-10">,</span>5) or (5<span 
+class="cmmi-10">,</span>6) since (5<img 
+src="hw3sol50x.png" alt="2
+3"  class="frac" align="middle"><span 
+class="cmmi-10">,</span>5<img 
+src="hw3sol51x.png" alt="1
+3"  class="frac" align="middle">) is a convex
+         combination of these integer points, so any CG inequality with rank 1 must be satisfied by at least one of
+         these points.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-74x7">The <span 
+class="cmbx-10">Project: </span><br 
+class="newline" />Along with your solutions to this homework, hand in a brief description of what you would like to do for the
+     project part of this course.
+     </li></ol>
+   <div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           x6915.                                                                           </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           Office hours: Tuesday February 28 2&#8211;3pm, Wednesdays, 2-4pm.</td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

@@ -1,0 +1,30 @@
+Last few lines of output with CPLEX4 simplex code on the full LP with all
+the triangle inequalities:
+Iteration: 382428    Objective     =       -349557.998238
+Iteration: 382528    Objective     =       -349552.999990
+Iteration: 382628    Objective     =       -349539.818910
+Iteration: 382728    Objective     =       -349528.601190
+Iteration: 382828    Objective     =       -349517.588279
+Iteration: 382928    Objective     =       -349512.112645
+Elapsed time = 3190.03 sec.
+Iteration: 383028    Objective     =       -349505.757226
+Iteration: 383128    Objective     =       -349498.999990
+Iteration: 383228    Objective     =       -349491.258012
+Iteration: 383328    Objective     =       -349485.300096
+Iteration: 383428    Objective     =       -349478.999990
+Iteration: 383528    Objective     =       -349475.214056
+Iteration: 383628    Objective     =       -349461.356627
+Iteration: 383728    Objective     =       -349455.862078
+Iteration: 383828    Objective     =       -349447.001435
+Iteration: 383928    Objective     =       -349435.777013
+Elapsed time = 3197.75 sec.
+Iteration: 384028    Objective     =       -349429.565420
+Iteration: 384128    Objective     =       -349425.906057
+Removing shift (1).
+CPLEX 4.0: optimal solution; objective -349425
+384166 iterations (6028 in phase I)
+
+(The cutting plane code took 65 iterations, 109 seconds, and 18 stages
+to find the optimal solution.)
+
+(Optimal value:   -349425)

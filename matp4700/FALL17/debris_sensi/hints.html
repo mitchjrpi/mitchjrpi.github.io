@@ -1,0 +1,48 @@
+<TITLE> MATP4700/ISYE4770 Math Models of OR, Hints.</TITLE>
+
+<H1> <a href=index.html>Math Models of OR, Fall 2017.</a></h1> 
+<h1>Sensitivity Analysis Hints</H1>
+<!--
+<H2> <a href=index.html>MATP4700/ISYE4770</a> </H2>
+-->
+
+
+
+<ul>
+<li><b>Question 2:</b>
+<br>
+There will be two contributions to the change in objective function value,
+one from the objective function itself
+and one from the shadow price of one of the constraints.
+<li><b>Questions 4 and 5:</b>
+<br>
+A small change in one of the parameters will result in a change on the left hand side of the constraint (thinking of the constraints as Ax=b). The size of this change depends on the current values of the variables. You can estimate the change in the objective function value by multiplying the (change in the left hand side) by (the shadow price), in much the same way you would multiply a change in the right hand side by the shadow price. To first order, you can assume the values of the variables stay fixed when making this calculation.
+<br>
+You will have to sum over all {i in ORIGINS} for the capacity question, and over some of the variables for the demand question.
+</ul>
+
+<hr>
+
+<script 
+  type="text/JavaScript" 
+  language="JavaScript">
+<!-- 
+//
+// get last modified date of the 
+// current document.
+//
+
+document.write( 
+  "Last updated: " + 
+   document.lastModified );
+
+// -->
+</script>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-924637-1";
+_udn ="rpi.edu";
+urchinTracker();
+</script>

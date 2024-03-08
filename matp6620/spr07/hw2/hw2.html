@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Homework 2</TITLE>
+<META NAME="description" CONTENT="hw2">
+<META NAME="keywords" CONTENT="hw2">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="hw2.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+
+<P>
+<DIV ALIGN="CENTER">
+</DIV>
+<a href=..>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">MATP6620 / DSES6760 
+<BR>
+Combinatorial Optimization and Integer Programming 
+</a>
+<BR>
+Homework 2.
+  </FONT>
+</DIV>
+
+<P>
+<DIV ALIGN="RIGHT">
+Due:  Friday, February 9, 2007.  
+<BR>
+Penalty for late homeworks: 10% for each day or part of a day.
+
+</DIV>
+
+<P>
+
+<OL>
+<LI>Let <IMG
+ WIDTH="16" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$f$"> and <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$g$"> be defined as follows.
+          <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+f(n)  =  \left\{ \begin{array}{ll}
+                                n^3 & \mbox{ if $n$\  is prime}  \\
+                                n^2 & \mbox{ otherwise}
+                            \end{array}  \right.    \;\;\;
+             g(n)  =  \left\{ \begin{array}{ll}
+                                n^3 & \mbox{ if $n$\  is even}  \\
+                                n^2 & \mbox{ otherwise.}
+                            \end{array}  \right.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="464" HEIGHT="54" BORDER="0"
+ SRC="img3.png"
+ ALT="\begin{displaymath}
+f(n) = \left\{ \begin{array}{ll}
+n^3 &amp; \mbox{ if $n$\ is p...
+...\ is even} \\
+n^2 &amp; \mbox{ otherwise.}
+\end{array} \right.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Is either of the following true?
+           
+<OL>
+<LI><!-- MATH
+ $f(n) = O(g(n))$
+ -->
+<IMG
+ WIDTH="131" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$f(n) = O(g(n))$">.
+</LI>
+<LI><!-- MATH
+ $g(n) = O(f(n))$
+ -->
+<IMG
+ WIDTH="131" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$g(n) = O(f(n))$">.
+           
+</LI>
+</OL>
+</LI>
+<LI>Assume you have an algorithm A for finding the minimum weight perfect matching
+   in a graph with nonnegative edge weights.
+   How could you use this algorithm to find the maximum weight matching in
+   a graph <IMG
+ WIDTH="94" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$G=(V,E)$"> with nonnegative edge weights? (Note: the matching isn't required to be perfect.)
+</LI>
+<LI>Assume we have a polynomial time algorithm for determining the optimal
+value of a binary knapsack problem <!-- MATH
+ $\max\{c^Tx: x \in I\!\! B^n, a^Tx \leq b\}$
+ -->
+<IMG
+ WIDTH="238" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$\max\{c^Tx: x \in I\!\! B^n, a^Tx \leq b\}$">.
+This algorithm will not tell us the values of the variables in the optimal solution.
+Show that we can use this algorithm as a subroutine in a polynomial time
+algorithm for finding the optimal solution to a binary knapsack problem.
+</LI>
+<LI>Using the <EM>undirected Hamiltonian circuit</EM> problem,
+  show that the <EM>directed Hamiltonian circuit</EM> problem is NP-Complete.
+</LI>
+<LI>Given sets <IMG
+ WIDTH="25" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$M$"> of customers and <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="$N$"> of locations,
+integers <IMG
+ WIDTH="24" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$c_{ij}$"> for <IMG
+ WIDTH="54" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$i \in M$"> and <IMG
+ WIDTH="54" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$j \in N$"> of shipping costs,
+integers <IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$f_j$"> of facility opening costs,
+and a scalar <IMG
+ WIDTH="22" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.png"
+ ALT="$K$">,
+the <EM>uncapacitated facility location</EM> problem is to find
+a set <IMG
+ WIDTH="60" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.png"
+ ALT="$S \subseteq N$"> such that
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\sum_{i \in M} \min_{j \in S} c_{ij} + \sum_{j \in S} f_j  \leq K.
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="197" HEIGHT="52" BORDER="0"
+ SRC="img16.png"
+ ALT="\begin{displaymath}
+\sum_{i \in M} \min_{j \in S} c_{ij} + \sum_{j \in S} f_j \leq K.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Show that this problem is <!-- MATH
+ \begin{math}
+{\cal N}{\cal P}
+\end{math}
+ -->
+<IMG
+ WIDTH="38" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.png"
+ ALT="${\cal N}{\cal P}$">-complete.
+(Hint: use node packing.)
+
+<P>
+</LI>
+</OL>
+
+<P>
+
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT"><a href=../..>John
+Mitchell</a></TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT">Amos Eaton 325</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT">x6915.</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="LEFT"><a href=mailto:mitchj@rpi.edu>mitchj at rpi dot edu</a></TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT">Office hours:
+   Tuesday 2-3pm, Wednesday 11am-12noon.</TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL>
+<LI><A NAME="tex2html3"
+  HREF="node1.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+2007-01-31
+</ADDRESS>
+</BODY>
+</HTML>

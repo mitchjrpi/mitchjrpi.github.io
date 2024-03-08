@@ -1,0 +1,11 @@
+model q1.mod;
+
+problem parta: x1,x2,x3,IPobj,con1,con2,l2q1,l2q2;
+problem partb: x1,x2,x3,IPobj,con1,con2,l1q1;
+problem partaLR: x1,x2,x3,LR1obj,con2;
+problem partbLR: x1,x2,x3,LR2obj,con1;
+
+solve parta; display x1,x2,x3;
+solve partb; display x1,x2,x3;
+solve partaLR; display x1,x2,x3;
+solve partbLR; display x1,x2,x3;

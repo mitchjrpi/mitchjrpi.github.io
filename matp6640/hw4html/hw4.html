@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw4.tex"> 
+<meta name="date" content="2024-02-27 15:00:00"> 
+<link rel="stylesheet" type="text/css" href="hw4.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 17--><p class="noindent" >
+<!--l. 19--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12">MATP6640/ISYE6770 Linear Programming</span></a><span 
+class="cmr-12">, Homework 4.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 24--><p class="noindent" >
+ Due: 11.59pm on Friday, March 1, 2022 on LMS.<br />
+10% penalty for each day late.</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1">Construct a primal-dual pair of linear programs of the form
+     <center class="math-display" >
+     <img 
+src="hw40x.png" alt="min  cTx                     max   bTy  +   hTu
+s.t.   Ax  =   b  (P )         s.t.  AT y  +  HT u  &#x2264;   c (D )
+     Hx   =   h
+       x  &#x2265;   0
+     " class="math-display" ></center>
+     <!--l. 73--><p class="nopar" >
+     satisfying all of the following conditions:
+         <ul class="itemize1">
+         <li class="itemize"><span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">I</span><span style="margin-left:0.3em" class="thinspace"></span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10">R</span><sup><span 
+class="cmmi-7">n</span></sup> : <span 
+class="cmmi-10">Hx </span>= <span 
+class="cmmi-10">h,x </span><span 
+class="cmsy-10">&#x2265; </span>0<span 
+class="cmsy-10">} </span>is bounded
+         </li>
+         <li class="itemize">(<span 
+class="cmmi-10">D</span>) has a unique optimal solution (<span 
+class="cmmi-10">y</span><sup><span 
+class="cmsy-7">*</span></sup><span 
+class="cmmi-10">,u</span><sup><span 
+class="cmsy-7">*</span></sup>)
+         </li>
+         <li class="itemize"><span 
+class="cmmi-10">A </span>and <span 
+class="cmmi-10">H </span>each have one row
+         </li>
+         <li class="itemize">every optimal basic feasible solution <span class="bar-css"><span 
+class="cmmi-10">x</span></span> to the Lagrangian subproblem
+         <center class="math-display" >
+         <img 
+src="hw41x.png" alt="     T     * T
+mixn{c x+ (y ) (b - Ax) : Hx = h,x &#x2265; 0}
+         " class="math-display" ></center>
+         <!--l. 85--><p class="nopar" >
+         violates <span 
+class="cmmi-10">Ax </span>= <span 
+class="cmmi-10">b</span>.</li></ul>
+     <!--l. 90--><p class="noindent" >Let
+     <center class="math-display" >
+     <img 
+src="hw42x.png" alt="            T    T
+&#x0398;(y) := mixn{c x +y (b - Ax) : Hx = h,x &#x2265; 0}.
+     " class="math-display" ></center>
+     <!--l. 94--><p class="nopar" >
+     Is 0 a subgradient of &#x0398;(<span 
+class="cmmi-10">y</span><sup><span 
+class="cmsy-7">*</span></sup>)?
+                                                                                         
+                                                                                         
+     </li>
+     <li 
+  class="enumerate" id="x1-5x2">The directed graph <span 
+class="cmmi-10">G </span>= (<span 
+class="cmmi-10">V,E</span>) is as follows:
+     <div class="center" 
+>
+<!--l. 136--><p class="noindent" >
+<!--l. 137--><p class="center" ><img 
+src="hw43x.png" alt="PICT" >
+</div>
+     <!--l. 172--><p class="noindent" >One unit of commodity A must be shipped from <span 
+class="cmmi-10">b </span>to <span 
+class="cmmi-10">c </span>and one unit of commodity B must be shipped
+     from <span 
+class="cmmi-10">f </span>to <span 
+class="cmmi-10">e</span>. The cost of shipping one unit of flow along an arc is indicated in the figure. The
+     cost is the same for each commodity. Each arc <span 
+class="cmmi-10">e </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">E </span>in the graph has capacity equal to one;
+     this is the maximum total flow along the arc for the combination of the two commodities. Used
+     the path-based formulation to find the minimum cost total flow. What is the optimal <span 
+class="cmti-10">integral</span>
+     flow?
+     </li>
+     <li 
+  class="enumerate" id="x1-7x3"><a 
+ id="x1-63"></a> In a vehicle routing problem, a set of cities <span 
+class="cmsy-10">{</span>1<span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x2026;</span><span 
+class="cmmi-10">,n</span><span 
+class="cmsy-10">} </span>must be visited, starting from a base city&#x00A0;0. More than
+     one vehicle can be used, with each vehicle traversing a subtour that starts and ends at the base but only visits
+     a subset of the cities. There may be constraints on the allowed subtours; for example, no tour can visit more
+     than <span 
+class="cmmi-10">k </span>cities, or no tour can take longer than&#x00A0;<span 
+class="cmmi-10">U</span>. This problem can be formulated as an integer program with
+     each variable corresponding to an allowable subtour. Let <span 
+class="cmmi-10">T </span>be the set of allowable subtours. Let <span 
+class="cmmi-10">c</span><sub><span 
+class="cmmi-7">t</span></sub> be the cost
+     of subtour&#x00A0;<span 
+class="cmmi-10">t </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">T</span>. Let <span 
+class="cmmi-10">a</span><sup><span 
+class="cmmi-7">t</span></sup> <span 
+class="cmsy-10">&#x2208;{</span>0<span 
+class="cmmi-10">,</span>1<span 
+class="cmsy-10">}</span><sup><span 
+class="cmmi-7">n</span></sup> be the incidence vector of subtour&#x00A0;<span 
+class="cmmi-10">t </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">T</span>, so <span 
+class="cmmi-10">a</span><sub><span 
+class="cmmi-7">i</span></sub><sup><span 
+class="cmmi-7">t</span></sup> = 1 if and only if tour <span 
+class="cmmi-10">t</span>
+     visits city&#x00A0;<span 
+class="cmmi-10">i </span>for <span 
+class="cmmi-10">i </span><span 
+class="cmsy-10">&#x2208;{</span>1<span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x2026;</span><span 
+class="cmmi-10">,n</span><span 
+class="cmsy-10">}</span>. The LP relaxation of the vehicle routing problem can then be expressed
+     as
+     <center class="math-display" >
+     <img 
+src="hw44x.png" alt="min       &#x2211;     cx
+subject to  &#x2211; t&#x2208;Tattxt  &#x2265;  e             (CP )
+            t&#x2208;T  xt  &#x2265;  0  &#x2200;t &#x2208; T
+                  t
+     " class="math-display" ></center>
+     <!--l. 427--><p class="nopar" >
+     where <span 
+class="cmmi-10">e </span>denotes the vector of ones. Since the number of possible tours is very large, a column generation
+                                                                                         
+                                                                                         
+     approach is used.
+     <!--l. 431--><p class="noindent" >Let <span 
+class="cmmi-10">n </span>= 4. No tour is allowed to visit more than three cities (plus the base city). Assume the cost
+     <span 
+class="cmmi-10">c</span><sub><span 
+class="cmmi-7">t</span></sub> of a tour is given by the sum of the edge lengths in the tour, and the edge lengths are as
+     follows:
+     <div class="center" 
+>
+<!--l. 435--><p class="noindent" >
+<div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><colgroup id="TBL-1-2g"><col 
+id="TBL-1-2"><col 
+id="TBL-1-3"><col 
+id="TBL-1-4"><col 
+id="TBL-1-5"><col 
+id="TBL-1-6"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-1-1"  
+class="td11">city</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-1-2"  
+class="td11">0</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-1-3"  
+class="td11">1</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-1-4"  
+class="td11">2</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-1-5"  
+class="td11">3</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-1-6"  
+class="td11">4</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-2-1"  
+class="td11">   0</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-2-2"  
+class="td11">&#8211;</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-2-3"  
+class="td11">4</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-2-4"  
+class="td11">7</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-2-5"  
+class="td11">9</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-2-6"  
+class="td11">4</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-3-1"  
+class="td11"> 1</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-3-2"  
+class="td11">4</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-3-3"  
+class="td11">&#8211;</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-3-4"  
+class="td11">4</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-3-5"  
+class="td11">6</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-3-6"  
+class="td11">8</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-4-1"  
+class="td11">   2</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-4-2"  
+class="td11">7</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-4-3"  
+class="td11">4</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-4-4"  
+class="td11">&#8211;</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-4-5"  
+class="td11">7</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-4-6"  
+class="td11">5</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-5-1"  
+class="td11">   3</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-5-2"  
+class="td11">9</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-5-3"  
+class="td11">6</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-5-4"  
+class="td11">7</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-5-5"  
+class="td11">&#8211;</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-5-6"  
+class="td11">7</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-6-1"  
+class="td11">   4</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-6-2"  
+class="td11">4</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-6-3"  
+class="td11">8</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-6-4"  
+class="td11">5</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-6-5"  
+class="td11">7</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-6-6"  
+class="td11">&#8211;</td>
+</tr></table></div></div>
+     <!--l. 445--><p class="noindent" >Assume we have 2 initial tours:
+     <center class="math-display" >
+     <img 
+src="hw45x.png" alt="0- 1- 2 - 0 and  0 - 3- 4- 0.
+     " class="math-display" ></center>
+     <!--l. 448--><p class="nopar" >
+     and an initial primal solution with <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">t</span></sub> = 1 for each of the two tours. One optimal dual solution for this set of
+     tours is <span class="bar-css"><span 
+class="cmmi-10">y</span></span> = (6<span 
+class="cmmi-10">,</span>9<span 
+class="cmmi-10">,</span>13<span 
+class="cmmi-10">,</span>7)<sup><span 
+class="cmmi-7">T</span></sup>. Find at least 4 additional valid tours for which the corresponding dual constraint
+     for&#x00A0;(<span 
+class="cmmi-10">CP</span>) is violated.
+     </li>
+     <li 
+  class="enumerate" id="x1-9x4">Algorithmically, the problem (<span 
+class="cmmi-10">CP</span>) in Question&#x00A0;<a 
+href="#x1-63">3<!--tex4ht:ref: q.vrp --></a> is sometimes relaxed to
+     <center class="math-display" >
+     <img 
+src="hw46x.png" alt="          &#x2211;
+minx,s     &#x2211; t&#x2208;T ctxt  +  gTs
+subject to    t&#x2208;T atxt +    s  &#x2265;  e              (CP P )
+                 xt          &#x2265;  0  &#x2200;t &#x2208; T
+                  0  &#x2264;    s  &#x2264;  h
+     " class="math-display" ></center>
+     <!--l. 471--><p class="nopar" >
+     where <span 
+class="cmmi-10">g,h </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">I</span><span style="margin-left:0.3em" class="thinspace"></span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10">R</span><sup><span 
+class="cmmi-7">n</span></sup> are nonnegative vectors of parameters. How does this change the dual problem? What
+     benefit do you think this might have?
+     </li></ol>
+   <div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"><col 
+id="TBL-2-2"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>   </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-2"  
+class="td11">518&#8211;276&#8211;6915                                                                          </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td> <td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-2"  
+class="td11"><a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           Office hours:     </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-2"  
+class="td11">Tues 2.30-4pm, AE 325 (masks required) or webex.                         </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;                                 </td><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-2"  
+class="td11">Thurs 1&#8211;2pm, webex: <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-10">https://rensselaer.webex.com/meet/mitchj</span></a></td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

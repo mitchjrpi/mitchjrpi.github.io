@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Homework 2</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="hw2">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="hw2.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+     <a href=..>MATP6640/DSES6770 Linear Programming</a>, Homework 2.
+  </FONT>
+</DIV>
+
+<P>
+
+<DIV ALIGN="RIGHT">
+   Due:  Monday, February 9, 2004.
+
+</DIV>
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>Show that a convex cone has at most one extreme point,
+namely the origin.
+  <DT>2.
+<DD>Consider the subspace alternative theorem:  
+<BR> <A NAME="altthm">&#160;</A>         For <!-- MATH: $A\in{I \!\! R}^{m{\times}n}$ -->
+<IMG
+ WIDTH="90" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$A\in{I \!\! R}^{m{\times}n}$">
+and <!-- MATH: $c\in{I \!\! R}^n$ -->
+<IMG
+ WIDTH="62" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$c\in{I \!\! R}^n$">,
+exactly one of the
+         following holds:
+         <DL COMPACT>
+<DT>(a)
+<DD><!-- MATH: $\exists y \in {I \!\! R}^m  \mbox{ s.t. }  A^Ty=c$ -->
+<IMG
+ WIDTH="185" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ \exists y \in {I \!\! R}^m \mbox{ s.t. } A^Ty=c $">
+<DT>(b)
+<DD><!-- MATH: $\exists x \in {I \!\! R}^n  \mbox{ s.t. }  Ax=0, c^Tx \neq 0.$ -->
+<IMG
+ WIDTH="251" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$ \exists x \in {I \!\! R}^n \mbox{ s.t. } Ax=0, c^Tx \neq 0.
+$"></DL>
+         Develop a proof for this along the following lines:
+         <BLOCKQUOTE>
+            First observe that both (a) and (b) can not hold simultaneously.
+            Thus, it suffices to show that when (a) fails, (b) must hold.
+            Next assume (a) fails and then construct an <I>x</I> which satisfies (b).
+         
+</BLOCKQUOTE>
+         (Hint: You may assume that,
+             given a matrix <!-- MATH: $M \in {I \!\! R}^{m \times n}$ -->
+<IMG
+ WIDTH="97" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$M \in {I \!\! R}^{m \times n}$">
+and a vector
+             <!-- MATH: $p \in {I \!\! R}^n$ -->
+<IMG
+ WIDTH="63" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$p \in {I \!\! R}^n$">,
+there exist unique <I>p</I>' and <I>p</I>'' such that
+             <I>p</I>=<I>p</I>'+<I>p</I>'', <I>Mp</I>'=0, <I>p</I>''=<I>M</I><SUP><I>T</I></SUP><I>q</I> for some <I>q</I>, and <I>p</I>'<SUP><I>T</I></SUP><I>p</I>''=0.)
+
+<P>
+
+<DT>3.
+<DD>Let <I>c</I>=[1,1,0]<SUP><I>T</I></SUP>.  Use the theorem of the alternative given in
+           question&nbsp;<A HREF="hw2.html#altthm">2</A> to show that
+           there does not exist a <I>y</I> with <I>A</I><SUP><I>T</I></SUP><I>y</I>=<I>c</I>, where
+           <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+A = \left[ \begin{array}{rrr} 2 & 1 & -1 \\
+                            3 & -3 & 1 \end{array} \right].
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="169" HEIGHT="55"
+ SRC="img7.gif"
+ ALT="\begin{displaymath}
+A = \left[ \begin{array}{rrr} 2 &amp; 1 &amp; -1 \\
+3 &amp; -3 &amp; 1 \end{array} \right].
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<DT>4.
+<DD>Let the polyhedron <!-- MATH: $Q=\{x \in {I \!\! R}^2: x_1+x_2 \geq 2, x_1 - 2x_2 \leq
+            2,  x_1 \geq 1, x_1 - x_2 \leq 3 \}$ -->
+<IMG
+ WIDTH="509" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$Q=\{x \in {I \!\! R}^2: x_1+x_2 \geq 2, x_1 - 2x_2 \leq
+2, x_1 \geq 1, x_1 - x_2 \leq 3 \}$">.
+            Graph this polyhedron, and hence find matrices <I>B</I> and <I>C</I> such that
+            <!-- MATH: $Q = \{x \in {I \!\! R}^2: x = By + Cz,
+                      y \geq 0, z \geq 0, \sum_i z_i = 1  \}$ -->
+<IMG
+ WIDTH="434" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$Q = \{x \in {I \!\! R}^2: x = By + Cz,
+y \geq 0, z \geq 0, \sum_i z_i = 1 \}$">.
+<DT>5.
+<DD>Construct a linear programming problem in the standard form
+            <!-- MATH: $\min\{c^Tx:Ax=b, x\geq 0\}$ -->
+<IMG
+ WIDTH="211" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$\min\{c^Tx:Ax=b, x\geq 0\}$">
+which has an optimal basis,
+            but, for this basis, not all the reduced costs are nonnegative.
+<DT>6.
+<DD>Consider the linear programming problem
+           <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcrcrcl}
+      \min          & 4x_1 & + & x_2 &   &    & + & x_4 & - & 5x_5 \\
+      \mbox{s.t. }  & 2x_1 & + & x_2 &   &    & + & x_4 & - & 2x_5 & = & 3 \\
+                    & -x_1 & + & x_2 & + & x_3&   &     &   &      & = & 3 \\
+                    &  x_1 &   &     &   &    & + & x_4 & - &  x_5 & = & 1 \\
+                    &      &   &     &   & x_i& \geq & 0, & & i & = & 1,...5.
+             \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="444" HEIGHT="122"
+ SRC="img11.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcrcrcl}
+\min &amp; 4x_1 &amp; + &amp; x_2 &amp; &amp; &amp; + ...
+...\\
+&amp; &amp; &amp; &amp; &amp; x_i&amp; \geq &amp; 0, &amp; &amp; i &amp; = &amp; 1,...5.
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Show that this problem has unbounded objective function value by
+         using the revised simplex algorithm starting from the basic feasible
+         solution <!-- MATH: $x = [0,2,1,1,0]^T$ -->
+<I>x</I> = [0,2,1,1,0]<SUP><I>T</I></SUP>. Use the eta factorization of the
+         inverse, so you should first factorize the initial basis <I>B</I> as
+         <I>LB</I>=<I>U</I>, where <I>L</I> is lower triangular and <I>U</I> is upper triangular.
+         On subsequent iterations, update the basis matrix by using eta
+         matrices.  What is the ray that you find?
+         (Hint: you should find the ray on the second iteration.)
+</DL>
+
+<P>
+
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD></TD><TD ALIGN="LEFT"><a href=../..>John Mitchell</a></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Amos Eaton 325</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">x6915.</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT"><a href=mailto:mitchj@rpi.edu>mitchj@rpi.edu</a>
+</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Office hours: Thursday: 2 - 4pm.</TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2004-01-28</I>
+</ADDRESS>
+</BODY>
+</HTML>

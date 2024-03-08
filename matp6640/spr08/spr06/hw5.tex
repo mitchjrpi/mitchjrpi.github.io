@@ -1,0 +1,103 @@
+\documentclass[12pt]{article}
+
+\pagestyle{empty}
+
+\oddsidemargin -.5in
+\textwidth 7.5in
+\textheight 10in
+\topmargin -30pt
+\headsep 0in
+\headheight 0in
+
+\newcommand{\re}{I \!\! R}
+
+\begin{document}
+
+\begin{center}
+  \begin{large}
+     MATP6640/DSES6770 Linear Programming, Homework 5.
+  \end{large}
+\end{center}
+
+\begin{flushright}
+   Due:  Friday, April 21, 2006.
+\end{flushright}
+
+
+%\vspace{\baselineskip}
+
+%Note: In the following, $P_M$ denotes projection onto the nullspace
+%of the matrix~$M$. If $M$ has full row rank, then $P_M$ is given by
+%\begin{displaymath}
+%P_M = I - M^T (MM^T)^{-1} M.
+%\end{displaymath}
+%Note that if $M$ is a $m \times n$ matrix then $P_M$ is an $n \times n$
+%matrix.
+
+\begin{enumerate}
+  \item  Let $x$ be a nondegenerate basic feasible solution for the standard
+    form linear programming problem $\min\{c^Tx:Ax=b, x\geq 0 \}$.
+    Let $\bar{A} = AX$, where $X$ is a diagonal matrix with $X_{ii}=x_i$ for
+    $i=1,...,n$. Simplify $P_{\bar{A}}$, the projection matrix onto the
+    nullspace of $\bar{A}$.
+    Hence show that $P_{\bar{A}} Xc = 0$.
+  \item  \label{MAd1}
+The Monteiro-Adler short step algorithm presented in class (Algorithm SPF
+on page 86 of {\em Wright}) could be used as an infeasible interior point
+method, starting with $x=s=e$, $y=0$, and $\mu=1$.
+Give an example to show that in this case we may not be able
+to take a step of length 1 and we may need to take a linesearch to
+preserve nonnegativity.
+(Note: We solve (1.20) to find the directions given in (1.25)
+at each iteration. Hint: you only need look at {\bf small} examples.)
+%  \item
+%Show that we may not get $\Delta x^T \Delta s=0$ in the setting of 
+%Question~\ref{MAd1}, even if~$r_c=0$.
+  \item
+Consider the primal-dual pair of linear programming problems:
+\begin{displaymath}
+\begin{array}{lrclllrcll}
+\min & c^Tx &&&& \max & b^Ty \\
+\mbox{subject to} & Ax & = & b & \quad (P) \qquad &
+   \mbox{subject to} & A^Ty & \leq & c  & \quad (D)  \\
+& x & \geq & 0
+\end{array}
+\end{displaymath}
+where $x$ and $c$ are $n$-vectors, $b$ and $y$ are $m$-vectors,
+and $A$ is an $m \times n$ matrix.
+Let $\hat{b}=b-Ae$ and $\hat{c}=c-e$,
+where $e$ denotes the vector where every component is equal to one.
+Let $\hat{d}=c^Te+1$.
+Now consider the linear programming problem
+\begin{displaymath}
+\begin{array}{lrcrcrcccl}
+\min &&&&&&& (n+1) w \\
+\mbox{subject to} &&& Ax & - & bt & + & \hat{b} w & = & 0  \\
+& -A^Ty &&& + & ct & - & \hat{c} w & \geq & 0 \qquad (HLP)  \\
+& b^Ty & - & c^T x &&& + & \hat{d} w & \geq & 0 \\
+& -\hat{b}^Ty & + & \hat{c}^Tx & - & \hat{d} t &&& = & -(n+1)  \\
+&&& x,t & \geq & 0, && y,w &&\mbox{free,}
+\end{array}
+\end{displaymath}
+where $t$ and $w$ are scalars.
+An interior point method can be used to find a {\em strictly complementary}
+optimal solution to $(HLP)$.
+In such a solution, if the primal variable is equal to zero then
+the corresponding dual slack is strictly positive.
+Use this result to show that if $t=0$ in a strictly complementary
+optimal solution then either there exists a vector $x\geq 0$ with $Ax=0$ and
+$c^Tx<0$ or there exists a vector $y$ with $A^Ty\leq 0$ and $b^Ty>0$.
+\end{enumerate}
+
+
+\vfill
+
+\begin{tabular}{@{\hspace{.5in}}l}
+   John Mitchell  \\
+   Amos Eaton 325  \\
+   x6915.  \\
+   mitchj@rpi.edu  \\
+   Office hours: Tuesday: 2 -- 3.30pm.
+\end{tabular}
+
+\end{document}

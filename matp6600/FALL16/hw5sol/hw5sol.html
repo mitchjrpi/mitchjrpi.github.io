@@ -1,0 +1,1003 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw5sol.tex"> 
+<meta name="date" content="2016-11-20 16:55:00"> 
+<link rel="stylesheet" type="text/css" href="hw5sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 43--><p class="noindent" >
+<!--l. 45--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6600" ><span 
+class="cmr-12x-x-120">MATP6600/ISYE6780 Nonlinear Programming</span></a><span 
+class="cmr-12x-x-120">, Homework 5.</span><br />
+<span 
+class="cmr-12x-x-120">Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 49--><p class="noindent" >
+ edited Nov 10 to correct typos, expand Q3.<br />
+Due: Thursday, November 17, 2016, in class.<br />
+10% penalty for each day late.</div>
+<!--l. 57--><p class="noindent" ><span 
+class="cmbx-12">Kelley&#8217;s cutting plane algorithm </span>is a method for solving optimization problems of the
+form
+   <center class="math-display" >
+<img 
+src="hw5sol0x.png" alt="max     bTy
+s.t.   &#x03D5; (y)  &#x2264;   0        i = 1,...,m       (N LP )
+       i T
+       A  y  &#x2264;   c
+" class="math-display" ></center>
+<!--l. 66--><p class="nopar" >
+where <span 
+class="cmmi-12">A </span>is a <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">p </span>matrix, <span 
+class="cmmi-12">c </span>is a <span 
+class="cmmi-12">p</span>-vector, <span 
+class="cmmi-12">y </span>is an <span 
+class="cmmi-12">n</span>-vector, and each <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-12">y</span>) is a convex function.
+The algorithm can be written as follows:
+      <div class="quote">
+     <dl class="description"><dt class="description">
+<span 
+class="cmbx-12">Initialization:</span> </dt><dd 
+class="description">Let <span 
+class="cmmi-12">Y</span> <sub><span 
+class="cmr-8">1</span></sub>  <span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup> be a polyhedral set such that <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">y </span>: <span 
+class="cmmi-12">&#x03D5;</span><sub>
+<span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-12">y</span>) <span 
+class="cmsy-10x-x-120">&#x2264; </span>0<span 
+class="cmmi-12">,i </span>=
+     1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,m</span><span 
+class="cmsy-10x-x-120">}&#x2286; </span><span 
+class="cmmi-12">Y</span> <sub><span 
+class="cmr-8">1</span></sub>, and let <span 
+class="cmmi-12">Z</span><sup><span 
+class="cmr-8">1</span></sup> := <span 
+class="cmmi-12">Y</span> <sub>
+<span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">&#x2229;{</span><span 
+class="cmmi-12">y </span>: <span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">c</span><span 
+class="cmsy-10x-x-120">}</span>. (You may assume <span 
+class="cmmi-12">Z</span><sup><span 
+class="cmr-8">1</span></sup>  is
+     bounded.) Set <span 
+class="cmmi-12">k </span>= 1 and go to the <span 
+class="cmbx-12">Main Step</span>.
+     </dd><dt class="description">
+<span 
+class="cmbx-12">Main Step:</span> </dt><dd 
+class="description">
+         <ol  class="enumerate1" >
+         <li 
+  class="enumerate" id="x1-3x1">Solve the linear program max<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span>: <span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">Z</span><sup><span 
+class="cmmi-8">k</span></sup><span 
+class="cmsy-10x-x-120">}</span>. Let <span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>  be the optimal
+         solution. If <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>) <span 
+class="cmsy-10x-x-120">&#x2264; </span>0 for <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,m </span>then <span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup> is an optimal solution to
+         (<span 
+class="cmmi-12">NLP</span>) so <span 
+class="cmbx-12">STOP</span>.
+                                                                                         
+                                                                                         
+         </li>
+         <li 
+  class="enumerate" id="x1-5x2">Let <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">j</span></sub>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>) = max <sub>
+<span 
+class="cmr-8">1</span><span 
+class="cmsy-8">&#x2264;</span><span 
+class="cmmi-8">i</span><span 
+class="cmsy-8">&#x2264;</span><span 
+class="cmmi-8">m</span></sub><span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>) and let
+         <center class="math-display" >
+         <img 
+src="hw5sol1x.png" alt="Zk+1 := Zk &#x2229; {y : &#x03D5;j(yk) + (&#x03BE;kj)T(y - yk) &#x2264; 0 },
+         " class="math-display" ></center>
+         <!--l. 88--><p class="nopar" >
+         where <span 
+class="cmmi-12">&#x03BE;</span><sub><span 
+class="cmmi-8">j</span></sub><sup><span 
+class="cmmi-8">k</span></sup> is a subgradient of <span 
+class="cmmi-12">&#x03D5;</span><sub>
+<span 
+class="cmmi-8">j</span></sub>(<span 
+class="cmmi-12">y</span>) at <span 
+class="cmmi-12">y </span>= <span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>. Replace <span 
+class="cmmi-12">k </span>by <span 
+class="cmmi-12">k </span>+ 1 and return
+         to Step&#x00A0;1.</li></ol>
+     </dd></dl>
+      </div>
+<!--l. 94--><p class="noindent" >This algorithm is the subject of Questions <a 
+href="#x1-123">3<!--tex4ht:ref: kelley1 --></a>&#8211;<a 
+href="#x1-186">6<!--tex4ht:ref: kelley4 --></a>.
+<!--l. 97--><p class="indent" >
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-7x1">Consider the quadratically constrained quadratic program
+      <center class="math-display" >
+      <img 
+src="hw5sol2x.png" alt="min         1xT Qx
+            2 1 T        1
+subject to    2x  x  &#x2264;   2 n           (QP )
+             x &#x2208; X   :=   &#x211D;
+      " class="math-display" ></center>
+      <!--l. 164--><p class="nopar" >
+      where <span 
+class="cmmi-12">Q </span>is an indefinite symmetric rational <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>matrix. Show that the primal and dual
+      optimal values are equal for this nonconvex program.
+      <!--l. 168--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>KKT conditions: <div class="eqnarray">
+      <center class="math-display" >
+      <img 
+src="hw5sol3x.png" alt="       Qx + ux   =   0                               (1)
+  (          )
+u   1xT x - 1-   =   0                               (2)
+    2       2
+          1 T        1
+          -x  x  &#x2264;   --                              (3)
+          2          2
+              u  &#x2265;   0.                              (4)
+      " class="math-display" ><a 
+ id="x1-8r1"></a></center>
+      </div>First, note that <span class="bar-css"><span 
+class="cmmi-12">x</span></span> = 0 is a KKT point with <span 
+class="cmmi-12">u </span>= 0, and with value&#x00A0;0. From (<a 
+href="#x1-8r1">1<!--tex4ht:ref: eqn.q1.grad --></a>), any nonzero
+      KKT point <span class="bar-css"><span 
+class="cmmi-12">x</span></span> must be an eigenvector of&#x00A0;<span 
+class="cmmi-12">Q </span>with eigenvalue&#x00A0;<span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">u</span>. If the eigenvalue is zero then
+      the point has value&#x00A0;0. If <span 
+class="cmmi-12">u &#x003E; </span>0, this point has value
+      <center class="math-display" >
+      <img 
+src="hw5sol4x.png" alt="1            u          u
+-x¯T Q ¯x =  - --¯xT¯x =  - --.
+2            2          2
+      " class="math-display" ></center>
+      <!--l. 184--><p class="nopar" >
+      We are told <span 
+class="cmmi-12">Q </span>is indefinite, so let <span 
+class="cmmi-12">&#x03BB;</span><sub><span 
+class="cmr-8">min</span></sub> <span 
+class="cmmi-12">&#x003C; </span>0 be the smallest eigenvalue of&#x00A0;<span 
+class="cmmi-12">Q </span>and let <span 
+class="cmmi-12">v</span><sub><span 
+class="cmr-8">min</span></sub> be a
+      corresponding eigenvector. Thus, the optimal primal value is&#x00A0;<img 
+src="hw5sol5x.png" alt="&#x03BB;min-
+ 2"  class="frac" align="middle">.
+      <!--l. 189--><p class="noindent" >The dual function is <div class="eqnarray">
+      <center class="math-display" >
+      <img 
+src="hw5sol6x.png" alt="               1-( T        T       )
+&#x03B8;(u)  =   mx&#x2208;i&#x211D;nn {2  x Qx  + (x x -  1) }
+
+      =   - u-+ min { 1xT(Q  + uI)x)}
+            2   x&#x2208;&#x211D;n  2
+          {   u
+      =     - 2   if u + &#x03BB;min &#x2265; 0 achieved by  x = 0
+            - &#x221E;   if u + &#x03BB;min &#x003C; 0 achieved by  x = &#x03B1;vmin,&#x03B1; &#x2192;  &#x221E;.
+      " class="math-display" ></center>
+      </div>So the dual problem can be written
+      <center class="math-display" >
+      <img 
+src="hw5sol7x.png" alt="maxu &#x2208;&#x211D;     - u2
+subject to    u  &#x2265;  - &#x03BB;min
+      " class="math-display" ></center>
+      <!--l. 203--><p class="nopar" >
+      which has optimal solution <span 
+class="cmmi-12">u </span>= <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">&#x03BB;</span><sub><span 
+class="cmr-8">min</span></sub> and optimal value <span 
+class="cmsy-10x-x-120">-</span><img 
+src="hw5sol8x.png" alt="&#x03BB;m2in"  class="frac" align="middle">, the same as the primal
+      value.
+      </li>
+      <li 
+  class="enumerate" id="x1-11x2">Consider the map <span 
+class="cmmi-12">A</span>, where <span 
+class="cmmi-12">A</span>(<span 
+class="cmmi-12">x</span>) is the nonnegative square root of <span 
+class="cmmi-12">x</span>. Starting from any
+      positive <span 
+class="cmmi-12">x</span>, show that the algorithm defined by map <span 
+class="cmmi-12">A </span>converges to <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> = 1. (Hint: Let the
+      descent function be <span 
+class="cmmi-12">&#x03B1;</span>(<span 
+class="cmmi-12">x</span>) := <span 
+class="cmsy-10x-x-120">|</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">- </span>1<span 
+class="cmsy-10x-x-120">|</span>.)
+      <!--l. 292--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 295--><p class="noindent" >We show the assumptions of the Zangwill convergence theorem hold.
+      <!--l. 297--><p class="noindent" >The map <span 
+class="cmmi-12">A</span>(<span 
+class="cmmi-12">x</span>) is a point-to-point map. It is closed: if <span 
+class="cmmi-12">x</span><sup><span 
+class="cmmi-8">k</span></sup> <span 
+class="cmsy-10x-x-120">&#x2192;</span><span class="bar-css"><span 
+class="cmmi-12">x</span></span> and <span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup> = <img 
+src="hw5sol9x.png" alt="&#x221A; -k-
+  x"  class="sqrt" > then
+      <span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup> <span 
+class="cmsy-10x-x-120">&#x2192;</span><img 
+src="hw5sol10x.png" alt="&#x221A;--
+ x¯"  class="sqrt" >.
+      <!--l. 300--><p class="noindent" >Take <span 
+class="cmmi-12">&#x03B1;</span>(<span 
+class="cmmi-12">x</span>) := <span 
+class="cmsy-10x-x-120">|</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">- </span>1<span 
+class="cmsy-10x-x-120">|</span>. If <span 
+class="cmmi-12">x</span><span 
+class="cmmi-12">&#x2260;</span>1 then <span 
+class="cmmi-12">&#x03B1;</span>(<span 
+class="cmmi-12">A</span>(<span 
+class="cmmi-12">x</span>)) = <span 
+class="cmsy-10x-x-120">|</span><img 
+src="hw5sol11x.png" alt="&#x221A; --
+  x"  class="sqrt" > <span 
+class="cmsy-10x-x-120">- </span>1<span 
+class="cmsy-10x-x-120">| </span><span 
+class="cmmi-12">&#x003C; </span><span 
+class="cmsy-10x-x-120">|</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">- </span>1<span 
+class="cmsy-10x-x-120">| </span>= <span 
+class="cmmi-12">&#x03B1;</span>(<span 
+class="cmmi-12">x</span>), so <span 
+class="cmmi-12">&#x03B1;</span>(<span 
+class="cmmi-12">x</span>) is a descent
+      function.
+      <!--l. 303--><p class="noindent" >Given <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">1</span></sup> <span 
+class="cmmi-12">&#x003E; </span>0, every subsequent iterate is contained in the interval <img 
+src="hw5sol12x.png" alt="[min {1,x1},max  {1,x1}]"  class="left" align="middle">,
+      so the iterates are contained in a compact set.
+      <!--l. 307--><p class="noindent" >The only point with <span 
+class="cmmi-12">A</span>(<span 
+class="cmmi-12">x</span>) = <span 
+class="cmmi-12">x </span>is <span 
+class="cmmi-12">x </span>= 1, which is the only point with <span 
+class="cmmi-12">&#x03B1;</span>(<span 
+class="cmmi-12">A</span>(<span 
+class="cmmi-12">x</span>)) <span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">&#x03B1;</span>(<span 
+class="cmmi-12">x</span>). Hence,
+      the solution set is &#x03A9; = <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmsy-10x-x-120">}</span>, so by Zangwill&#8217;s convergence theorem the algorithm converges to
+      <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> = 1.
+      </li>
+      <li 
+  class="enumerate" id="x1-13x3"><a 
+ id="x1-123"></a> We are going to use Kelley&#8217;s algorithm to attack the Lagrangian dual of the problem
+      <center class="math-display" >
+      <img 
+src="hw5sol13x.png" alt="                                  2           2
+minx&#x2208; &#x211D;2      f(x)  :=   - (x1 - 4) - (x2 - 4)
+subject to    g1(x)  :=   - x1 +    x2  -   2  &#x2264;   0
+             g2(x)  :=   - x1 -   2x2  +   6  &#x2264;   0
+            x &#x2208; X   :=   {x &#x2208; &#x211D;2 : x +  x -  4 &#x2264; 0} .
+                               +    1    2
+      " class="math-display" ></center>
+      <!--l. 334--><p class="nopar" >
+      We initialize with bounds on the dual variables <span 
+class="cmmi-12">u </span>and optimal value&#x00A0;<span 
+class="cmmi-12">z</span>, so <span 
+class="cmmi-12">y </span>= (<span 
+class="cmmi-12">z,u</span>) with
+      <span 
+class="cmmi-12">u </span>= (<span 
+class="cmmi-12">u</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,u</span><sub><span 
+class="cmr-8">2</span></sub>), and Kelley&#8217;s algorithm is applied to the problem
+      <center class="math-display" >
+      <img 
+src="hw5sol14x.png" alt="maxz &#x2208;&#x211D;,u&#x2208;&#x211D;2    z
+subject to      z  -      &#x03B8; (u ) &#x2264;   0
+              - 64 &#x2264;         z  &#x2264;   0
+                       &#x2211;2
+                          i=1 ui &#x2264;   11
+                             u  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 345--><p class="nopar" >
+      which has just the one convex nonlinear constraint <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmr-8">1</span></sub>(<span 
+class="cmmi-12">z,u</span>) := <span 
+class="cmmi-12">z </span><span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">&#x03B8;</span>(<span 
+class="cmmi-12">u</span>) <span 
+class="cmsy-10x-x-120">&#x2264; </span>0, where <span 
+class="cmmi-12">&#x03B8;</span>(<span 
+class="cmmi-12">u</span>) is the
+      dual function. In the first iteration, take the solution as <span 
+class="cmmi-12">z</span><sup><span 
+class="cmr-8">1</span></sup> = 0, <span 
+class="cmmi-12">u</span><sup><span 
+class="cmr-8">1</span></sup> = (0<span 
+class="cmmi-12">, </span>0)<sup><span 
+class="cmmi-8">T</span> </sup>. With <span 
+class="cmmi-12">u </span>= <span 
+class="cmmi-12">u</span><sup><span 
+class="cmr-8">1</span></sup>,
+      the optimal solution to the Lagrangian relaxation is <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">1</span></sup> = (0<span 
+class="cmmi-12">, </span>0) with <span 
+class="cmmi-12">&#x03B8;</span>(<span 
+class="cmmi-12">u</span><sup><span 
+class="cmr-8">1</span></sup>) = <span 
+class="cmsy-10x-x-120">-</span>32, and we
+      have <span 
+class="cmmi-12">g</span><sub><span 
+class="cmr-8">1</span></sub>(<span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">1</span></sup>) = <span 
+class="cmsy-10x-x-120">-</span>2 and <span 
+class="cmmi-12">g</span><sub>
+<span 
+class="cmr-8">2</span></sub>(<span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">1</span></sup>) = 6. Thus, <span 
+class="cmmi-12">&#x03D5;</span>(<span 
+class="cmmi-12">z</span><sup><span 
+class="cmr-8">1</span></sup><span 
+class="cmmi-12">,u</span><sup><span 
+class="cmr-8">1</span></sup>) = 0 <span 
+class="cmsy-10x-x-120">- </span>(<span 
+class="cmsy-10x-x-120">-</span>32) = 32 <span 
+class="cmmi-12">&#x003E; </span>0. We have seen in
+      class how subgradients of <span 
+class="cmmi-12">&#x03B8;</span>(<span 
+class="cmmi-12">u</span>) depend on optimal solutions to the Lagrangian relaxation. The
+      first Kelley cutting plane is
+      <center class="math-display" >
+      <img 
+src="hw5sol15x.png" alt="32 + 1(z - 0) + 2(u1 - 0) - 6(u2 - 0) &#x2264; 0.
+      " class="math-display" ></center>
+      <!--l. 357--><p class="nopar" >
+      Take four iterations of Kelley&#8217;s algorithm. Show that <span 
+class="cmmi-12">z</span><sup><span 
+class="cmr-8">4</span></sup> and&#x00A0;<span 
+class="cmmi-12">u</span><sup><span 
+class="cmr-8">4</span></sup> satisfy the termination
+      criterion listed in Step&#x00A0;1. (You may want to use AMPL to solve the linear programs in
+      Step&#x00A0;1.)
+      <!--l. 362--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>After adding the first cutting plane, the master problem is
+      <center class="math-display" >
+      <img 
+src="hw5sol16x.png" alt="maxz &#x2208;&#x211D;,u&#x2208;&#x211D;2  z
+subject to    z  +  2u1   -  6u2   &#x2264;  - 32
+                      u1  +   u2   &#x2264;    11
+              z                    &#x2265;  - 64
+                         z,u ,u    &#x2265;     0
+                             1  2
+      " class="math-display" ></center>
+      <!--l. 373--><p class="nopar" >
+      An optimal solution is <span 
+class="cmmi-12">u</span><sub><span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmr-8">2</span></sup> = 0, <span 
+class="cmmi-12">u</span><sub>
+<span 
+class="cmr-8">2</span></sub><sup><span 
+class="cmr-8">2</span></sup> = 11, <span 
+class="cmmi-12">z</span><sup><span 
+class="cmr-8">2</span></sup> = 0.
+      <!--l. 376--><p class="noindent" >(Note: There are multiple optimal solutions to this master problem, for example <span 
+class="cmmi-12">u </span>= (4<span 
+class="cmmi-12">, </span>7) or
+      <span 
+class="cmmi-12">u </span>= (0<span 
+class="cmmi-12">, </span>16<span 
+class="cmmi-12">&#x2215;</span>3). Other solutions may give other constraints. Nonetheless, in the overall scheme,
+      the approach should generate the same three cuts eventually, one corresponding to each
+      extreme point of&#x00A0;<span 
+class="cmmi-12">X</span>.)
+      <!--l. 383--><p class="noindent" >The subproblem is then
+      <center class="math-display" >
+                                                                                         
+                                                                                         
+      <img 
+src="hw5sol17x.png" alt="min L(x, u2) := - (x - 4)2 - (x  - 4 )2 + 11(- x  - 2x  + 6).
+x&#x2208;X                1           2              1     2
+      " class="math-display" ></center>
+      <!--l. 386--><p class="nopar" >
+      Since the objective is strictly convex, the solution is one of the extreme points of&#x00A0;<span 
+class="cmmi-12">X</span>. We
+      have
+      <center class="math-display" >
+      <img 
+src="hw5sol18x.png" alt="L((0,0),u2) = 34,L ((0, 4),u2) = - 38, L((4,0),u2) = 6.
+      " class="math-display" ></center>
+      <!--l. 391--><p class="nopar" >
+      Hence <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">2</span></sup> = (0<span 
+class="cmmi-12">, </span>4), <span 
+class="cmmi-12">&#x03B8;</span>(<span 
+class="cmmi-12">u</span><sup><span 
+class="cmr-8">2</span></sup>) = <span 
+class="cmsy-10x-x-120">-</span>38, and <span 
+class="cmmi-12">&#x03D5;</span>(<span 
+class="cmmi-12">z</span><sup><span 
+class="cmr-8">2</span></sup><span 
+class="cmmi-12">,u</span><sup><span 
+class="cmr-8">2</span></sup>) = 0 <span 
+class="cmsy-10x-x-120">- </span>(<span 
+class="cmsy-10x-x-120">-</span>38) = 38 <span 
+class="cmmi-12">&#x003E; </span>0. We have <span 
+class="cmmi-12">g</span><sub>
+<span 
+class="cmr-8">1</span></sub>(<span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">2</span></sup>) = 2,
+      <span 
+class="cmmi-12">g</span><sub><span 
+class="cmr-8">2</span></sub>(<span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">2</span></sup>) = <span 
+class="cmsy-10x-x-120">-</span>2. The second Kelley cutting plane is
+      <center class="math-display" >
+      <img 
+src="hw5sol19x.png" alt="38 + 1(z - 0) - 2(u1 - 0) + 2 (u2 - 11 ) &#x2264; 0.
+      " class="math-display" ></center>
+      <!--l. 397--><p class="nopar" >
+      After adding the second cutting plane, the master problem is
+      <center class="math-display" >
+      <img 
+src="hw5sol20x.png" alt="maxz &#x2208;&#x211D;,u&#x2208;&#x211D;2  z
+subject to    z  +  2u1   -  6u2   &#x2264;  - 32
+              z  -  2u    +  2u    &#x2264;  - 16
+                       1        2
+                      u1  +   u2   &#x2264;    11
+              z                    &#x2265;  - 64
+                         z,u1,u2   &#x2265;     0
+      " class="math-display" ></center>
+      <!--l. 408--><p class="nopar" >
+      The optimal solution is <span 
+class="cmmi-12">u</span><sub><span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmr-8">3</span></sup> = 6, <span 
+class="cmmi-12">u</span><sub>
+<span 
+class="cmr-8">2</span></sub><sup><span 
+class="cmr-8">3</span></sup> = 5, <span 
+class="cmmi-12">z</span><sup><span 
+class="cmr-8">3</span></sup> = <span 
+class="cmsy-10x-x-120">-</span>14. The subproblem is then
+      <center class="math-display" >
+      <img 
+src="hw5sol21x.png" alt="min L (x,u3) :=  - (x1 - 4)2 - (x2 - 4)2 + 6 (- x1 + x2 - 2) + 5(- x1 - 2x2 + 6).
+x&#x2208;X
+      " class="math-display" ></center>
+      <!--l. 413--><p class="nopar" >
+                                                                                         
+                                                                                         
+      Since the objective is strictly convex, the solution is one of the extreme points of&#x00A0;<span 
+class="cmmi-12">X</span>. We
+      have
+      <center class="math-display" >
+      <img 
+src="hw5sol22x.png" alt="L ((0, 0),u3) = - 14, L((0,4),u3) = - 14,L ((4, 0), u3) = - 42.
+      " class="math-display" ></center>
+      <!--l. 418--><p class="nopar" >
+      Hence <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">3</span></sup> = (4<span 
+class="cmmi-12">.</span>0), <span 
+class="cmmi-12">&#x03B8;</span>(<span 
+class="cmmi-12">u</span><sup><span 
+class="cmr-8">3</span></sup>) = <span 
+class="cmsy-10x-x-120">-</span>42, and <span 
+class="cmmi-12">&#x03D5;</span>(<span 
+class="cmmi-12">z</span><sup><span 
+class="cmr-8">3</span></sup><span 
+class="cmmi-12">,u</span><sup><span 
+class="cmr-8">3</span></sup>) = <span 
+class="cmsy-10x-x-120">-</span>14 <span 
+class="cmsy-10x-x-120">- </span>(<span 
+class="cmsy-10x-x-120">-</span>42) = 28 <span 
+class="cmmi-12">&#x003E; </span>0. We have <span 
+class="cmmi-12">g</span><sub>
+<span 
+class="cmr-8">1</span></sub>(<span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">3</span></sup>) = <span 
+class="cmsy-10x-x-120">-</span>6,
+      <span 
+class="cmmi-12">g</span><sub><span 
+class="cmr-8">2</span></sub>(<span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">3</span></sup>) = 2. The second Kelley cutting plane is
+      <center class="math-display" >
+      <img 
+src="hw5sol23x.png" alt="28 + 1(z + 14) + 6(u1 - 6) - 2(u2 - 5) &#x2264; 0.
+      " class="math-display" ></center>
+      <!--l. 424--><p class="nopar" >
+      After adding the third cutting plane, the master problem is
+      <center class="math-display" >
+      <img 
+src="hw5sol24x.png" alt="maxz &#x2208;&#x211D;,u&#x2208;&#x211D;2  z
+
+subject to    z  +  2u1   -  6u2   &#x2264;  - 32
+              z  -  2u1   +  2u2   &#x2264;  - 16
+              z  +  6u1   -  2u2   &#x2264;  - 16
+                      u1  +   u2   &#x2264;    11
+              z                    &#x2265;  - 64
+
+                         z,u1,u2   &#x2265;     0
+      " class="math-display" ></center>
+      <!--l. 436--><p class="nopar" >
+      The optimal solution is <span 
+class="cmmi-12">u</span><sub><span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmr-8">4</span></sup> = <img 
+src="hw5sol25x.png" alt="4
+3"  class="frac" align="middle">, <span 
+class="cmmi-12">u</span><sub><span 
+class="cmr-8">2</span></sub><sup><span 
+class="cmr-8">4</span></sup> = <img 
+src="hw5sol26x.png" alt="8
+3"  class="frac" align="middle">, <span 
+class="cmmi-12">z</span><sup><span 
+class="cmr-8">4</span></sup> = <span 
+class="cmsy-10x-x-120">-</span>18<img 
+src="hw5sol27x.png" alt="2
+3"  class="frac" align="middle">, with the first three constraints all
+      active. The subproblem is then
+      <center class="math-display" >
+      <img 
+src="hw5sol28x.png" alt="                                        4                  8
+min L(x,u4 ) := - (x1 - 4)2 - (x2 - 4)2 +-(- x1 + x2 - 2) + -(- x1 - 2x2 + 6).
+x&#x2208;X                                     3                  3
+      " class="math-display" ></center>
+      <!--l. 443--><p class="nopar" >
+      Since the objective is strictly convex, the solution is one of the extreme points of&#x00A0;<span 
+class="cmmi-12">X</span>. We
+      have
+      <center class="math-display" >
+                                                                                         
+                                                                                         
+      <img 
+src="hw5sol29x.png" alt="          4        2-          4        2-          4        2-
+L((0,0),u ) = - 18 3,L((0,4),u ) = - 18 3,L((4,0),u ) = - 18 3.
+      " class="math-display" ></center>
+      <!--l. 448--><p class="nopar" >
+      Hence <span 
+class="cmmi-12">&#x03B8;</span>(<span 
+class="cmmi-12">u</span><sup><span 
+class="cmr-8">4</span></sup>) = <span 
+class="cmsy-10x-x-120">-</span>18<img 
+src="hw5sol30x.png" alt="2
+3"  class="frac" align="middle">, and <span 
+class="cmmi-12">&#x03D5;</span>(<span 
+class="cmmi-12">z</span><sup><span 
+class="cmr-8">3</span></sup><span 
+class="cmmi-12">,u</span><sup><span 
+class="cmr-8">3</span></sup>) = <span 
+class="cmsy-10x-x-120">-</span>18<img 
+src="hw5sol31x.png" alt="2
+3"  class="frac" align="middle"> <span 
+class="cmsy-10x-x-120">- </span>(<span 
+class="cmsy-10x-x-120">-</span>18<img 
+src="hw5sol32x.png" alt="2
+3"  class="frac" align="middle">) = 0, so <span 
+class="cmmi-12">z</span><sup><span 
+class="cmr-8">4</span></sup> and&#x00A0;<span 
+class="cmmi-12">u</span><sup><span 
+class="cmr-8">4</span></sup> satisfy the
+      termination criterion listed in Step&#x00A0;1.
+      </li>
+      <li 
+  class="enumerate" id="x1-15x4">Show that if <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">j</span></sub>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>) <span 
+class="cmmi-12">&#x003E; </span>0 and <span 
+class="cmmi-12">&#x03BE;</span><sub>
+<span 
+class="cmmi-8">j</span></sub><sup><span 
+class="cmmi-8">k</span></sup> = 0 in Kelley&#8217;s algorithm then (<span 
+class="cmmi-12">NLP</span>) is infeasible.
+      <!--l. 458--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>Since <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">j</span></sub>(<span 
+class="cmmi-12">y</span>) is convex, the subgradient inequality is valid, so we have
+      <center class="math-display" >
+      <img 
+src="hw5sol33x.png" alt="&#x03D5;i(y) &#x2265; &#x03D5;j(yk) + (&#x03BE;kj)T (y - yk ) = &#x03D5;j (yk ) &#x003E; 0
+      " class="math-display" ></center>
+      <!--l. 463--><p class="nopar" >
+      for all <span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup>. So there is no <span 
+class="cmmi-12">y </span>with <span 
+class="cmmi-12">&#x03D5;</span><sub>
+<span 
+class="cmmi-8">j</span></sub>(<span 
+class="cmmi-12">y</span>) <span 
+class="cmsy-10x-x-120">&#x2264; </span>0, so (<span 
+class="cmmi-12">NLP</span>) is infeasible.
+      </li>
+      <li 
+  class="enumerate" id="x1-17x5"><a 
+ id="x1-165"></a> Show that the feasible region for (<span 
+class="cmmi-12">NLP</span>) is contained in <span 
+class="cmmi-12">Z</span><sup><span 
+class="cmmi-8">k</span></sup> at each iteration <span 
+class="cmmi-12">k </span>of Kelley&#8217;s
+      algorithm and that the stopping criterion in Step&#x00A0;1 is valid.
+      <!--l. 472--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>If <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">j</span></sub>(<span 
+class="cmmi-12">y</span>) <span 
+class="cmsy-10x-x-120">&#x2264; </span>0 for all constraints&#x00A0;<span 
+class="cmmi-12">j </span>then
+      <center class="math-display" >
+      <img 
+src="hw5sol34x.png" alt="&#x03D5;j(yk) + (&#x03BE;k)T (y - yk ) &#x2264; &#x03D5;j (y) &#x2264; 0,
+          j
+      " class="math-display" ></center>
+      <!--l. 477--><p class="nopar" >
+      so the cutting planes added to <span 
+class="cmmi-12">Z </span>are valid.
+      <!--l. 480--><p class="noindent" >If <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">j</span></sub>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>) <span 
+class="cmsy-10x-x-120">&#x2264; </span>0 for all constraints&#x00A0;<span 
+class="cmmi-12">j </span>then <span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup> is feasible in (<span 
+class="cmmi-12">NLP</span>), since the linear constraints
+      <span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">c </span>are part of the specification of&#x00A0;<span 
+class="cmmi-12">Z</span><sup><span 
+class="cmmi-8">k</span></sup>. Let <span 
+class="cmmi-12">y </span>be feasible in (<span 
+class="cmmi-12">NLP</span>). Then <span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">Z</span><sup><span 
+class="cmmi-8">k</span></sup>
+      and so <span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>, from the definition of&#x00A0;<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>. Thus, <span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup> is an optimal solution
+      to&#x00A0;(<span 
+class="cmmi-12">NLP</span>).
+      </li>
+      <li 
+  class="enumerate" id="x1-19x6"><a 
+ id="x1-186"></a> Show that Kelley&#8217;s algorithm converges to an optimal solution to (<span 
+class="cmmi-12">NLP</span>), under the
+      assumptions that (<span 
+class="cmmi-12">NLP</span>) is feasible and that each function <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">j</span></sub>(<span 
+class="cmmi-12">y</span>) is smooth over&#x00A0;<span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup>. (Hint:
+      (1) You may assume that the map from <span 
+class="cmmi-12">x</span><sup><span 
+class="cmmi-8">k</span></sup> to the new inequality is closed. (2)
+      Show that for any <span 
+class="cmmi-12">k</span>, we must have <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">j</span></sub>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>) + (<span 
+class="cmmi-12">&#x03BE;</span><sub>
+<span 
+class="cmmi-8">j</span></sub><sup><span 
+class="cmmi-8">k</span></sup>)<sup><span 
+class="cmmi-8">T</span> </sup>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">l</span></sup> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>) <span 
+class="cmsy-10x-x-120">&#x2264; </span>0 for all <span 
+class="cmmi-12">l </span><span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">k </span>+ 1.
+      Let <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup><span 
+class="cmsy-10x-x-120">}</span><sub>
+<span 
+class="cmsy-8"><img 
+src="cmsy8-4b.png" alt="K" class="8x-x-4b" /></span></sub> be a convergent subsequence with limit&#x00A0;<span class="bar-css"><span 
+class="cmmi-12">y</span></span>. Taking limits, show that
+                                                                                         
+                                                                                         
+      <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">j</span></sub>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>) + (<span 
+class="cmmi-12">&#x03BE;</span><sub>
+<span 
+class="cmmi-8">j</span></sub><sup><span 
+class="cmmi-8">k</span></sup>)<sup><span 
+class="cmmi-8">T</span> </sup>(<span class="bar-css"><span 
+class="cmmi-12">y</span></span> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>) <span 
+class="cmsy-10x-x-120">&#x2264; </span>0. Use this to obtain a contradiction if <span class="bar-css"><span 
+class="cmmi-12">y</span></span> is not a solution to
+      (<span 
+class="cmmi-12">NLP</span>).)
+      <!--l. 504--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>The functions are all differentiable, so all subgradients can be replaced by
+      gradients. At iteration <span 
+class="cmmi-12">l</span>, the iterate must satisfy all the earlier constraints, so we must
+      have
+      <table 
+class="equation"><tr><td><a 
+ id="x1-20r5"></a>
+      <center class="math-display" >
+      <img 
+src="hw5sol35x.png" alt="&#x03D5;j(yk) + (&#x2207; &#x03D5;j(yk))T(yl - yk) &#x2264; 0
+      " class="math-display" ></center></td><td class="equation-label">(5)</td></tr></table>
+      <!--l. 510--><p class="nopar" >
+      for all <span 
+class="cmmi-12">k &#x003C; l</span>.
+      <!--l. 513--><p class="noindent" >The sequence of iterates is in a compact set (the bounded feasible region of a linear
+      program). So there is a convergent subsequence&#x00A0;<span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4b.png" alt="K" class="10-120x-x-4b" /></span>. Further, there is one index&#x00A0;<span 
+class="cmmi-12">j </span>attaining
+      the max in Step 2 infinitely often in&#x00A0;<span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4b.png" alt="K" class="10-120x-x-4b" /></span>. Let <span class="bar-css"><span 
+class="cmmi-12">y</span></span> be a limit of a convergent subsequence
+      of&#x00A0;<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">l</span></sup><span 
+class="cmsy-10x-x-120">}</span><sub>
+<span 
+class="cmsy-8"><img 
+src="cmsy8-4b.png" alt="K" class="8x-x-4b" /></span></sub>. We restrict attention to the subsequence <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4b.png" alt="K" class="10-120x-x-4b" />&#x2032; </span>of <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4b.png" alt="K" class="10-120x-x-4b" /> </span>where the same index attains the
+      max.
+      <!--l. 520--><p class="noindent" >From (<a 
+href="#x1-20r5">5<!--tex4ht:ref: eq:q6_1 --></a>), the limit <span class="bar-css"><span 
+class="cmmi-12">y</span></span> of the convergent subsequence must also satisfy the inequality,
+      so
+      <table 
+class="equation"><tr><td><a 
+ id="x1-21r6"></a>
+      <center class="math-display" >
+      <img 
+src="hw5sol36x.png" alt="     k          k  T      k
+&#x03D5;j(y ) + (&#x2207; &#x03D5;j(y )) (¯y - y ) &#x2264; 0
+      " class="math-display" ></center></td><td class="equation-label">(6)</td></tr></table>
+                                                                                         
+                                                                                         
+      <!--l. 524--><p class="nopar" >
+      for all&#x00A0;<span 
+class="cmmi-12">k</span>. Since the functions are smooth and the feasible region is contained within the
+      compact set&#x00A0;<span 
+class="cmmi-12">Z</span><sup><span 
+class="cmr-8">1</span></sup>, we have <span 
+class="cmmi-12">&#x03D5;</span><sub>
+<span 
+class="cmmi-8">j</span></sub>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>) <span 
+class="cmsy-10x-x-120">&#x2192; </span><span 
+class="cmmi-12">&#x03D5;</span><sub>
+<span 
+class="cmmi-8">j</span></sub>(<span class="bar-css"><span 
+class="cmmi-12">y</span></span>) and <span 
+class="cmsy-10x-x-120">&#x2207;</span><span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">j</span></sub>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>) <span 
+class="cmsy-10x-x-120">&#x2192;&#x2207;</span><span 
+class="cmmi-12">&#x03D5;</span><sub>
+<span 
+class="cmmi-8">j</span></sub>(<span class="bar-css"><span 
+class="cmmi-12">y</span></span>). Thus, taking the limit
+      in&#x00A0;(<a 
+href="#x1-22r7">7<!--tex4ht:ref: eq:q6_2 --></a>), we have
+      <table 
+class="equation"><tr><td><a 
+ id="x1-22r7"></a>
+      <center class="math-display" >
+      <img 
+src="hw5sol37x.png" alt="                T
+&#x03D5;j(¯y) + (&#x2207; &#x03D5;j (y¯))  (y¯- y¯) &#x2264; 0
+      " class="math-display" ></center></td><td class="equation-label">(7)</td></tr></table>
+      <!--l. 533--><p class="nopar" >
+      so
+      <center class="math-display" >
+      <img 
+src="hw5sol38x.png" alt="&#x03D5;j(¯y) &#x2264; 0.
+      " class="math-display" ></center>
+      <!--l. 537--><p class="nopar" >
+      We also have <span 
+class="cmmi-12">&#x03D5;</span><sub><span 
+class="cmmi-8">p</span></sub>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>) <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">&#x03D5;</span><sub>
+<span 
+class="cmmi-8">j</span></sub>(<span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">k</span></sup>) for <span 
+class="cmmi-12">p </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,m </span>for the iterates in the sequence&#x00A0;<span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4b.png" alt="K" class="10-120x-x-4b" />&#x2032;</span>, so in the
+      limit
+      <center class="math-display" >
+      <img 
+src="hw5sol39x.png" alt="&#x03D5;p(¯y) &#x2264; 0 for p = 1,...,m.
+      " class="math-display" ></center>
+      <!--l. 543--><p class="nopar" >
+      Thus <span class="bar-css"><span 
+class="cmmi-12">y</span></span> is feasible, and it follows from Question&#x00A0;<a 
+href="#x1-165">5<!--tex4ht:ref: kelley3 --></a> that it is optimal for&#x00A0;(<span 
+class="cmmi-12">NLP</span>).
+      <!--l. 550--><p class="noindent" >Assume <span 
+class="cmmi-12">&#x03D5;</span>(<span class="bar-css"><span 
+class="cmmi-12">y</span></span>) <span 
+class="cmmi-12">&#x003E; </span>0.
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                                                                      </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                                                                                 </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: <!--tex4ht:inline--><div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-1"  
+class="td11">Monday November 7: 2&#8211;2.45pm       </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-1"  
+class="td11">Monday November 14: 2&#8211;3pm          </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-1"  
+class="td11">Tuesday November 15: 11am&#8211;1pm     </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-1"  
+class="td11">Wednesday November 16: 11am&#8211;1pm.</td> </tr></table>                                                                   </div></td> 
+</tr></table></div>
+                                                                                         
+                                                                                         
+    
+</body></html> 
+
+                                                                                         
+
+

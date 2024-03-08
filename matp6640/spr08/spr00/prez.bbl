@@ -1,0 +1,62 @@
+\begin{thebibliography}{10}
+
+\bibitem{benson1}
+S.~J. Benson, Y.~Ye, and X.~Zhang.
+\newblock Solving large-scale sparse semidefinite programs for combinatorial
+  optimization.
+\newblock {\em SIAM Journal on Optimization}, 10(2):443--461, 2000.
+
+\bibitem{byrd2}
+R.~Byrd, M.~B. Hribar, and J.~Nocedal.
+\newblock An interior point algorithm for large scale nonlinear programming.
+\newblock {\em SIAM Journal on Optimization}, 9(4):877--900, 1999.
+
+\bibitem{dumerle3}
+O.~du~Merle, P.~Hansen, B.~Jaumard, and N.~Mladenovi\'c.
+\newblock An interior point algorithm for minimum sum-of-squares clustering.
+\newblock {\em SIAM Journal on Scientific Computing}, 21(4):1485--1505, 2000.
+
+\bibitem{goemans1}
+Michel~X. Goemans and David~P. Williamson.
+\newblock {Improved Approximation Algorithms for Maximum Cut and Satisfiability
+  Problems Using Semidefinite Programming}.
+\newblock {\em {J. Assoc. Comput. Mach.}}, 42:1115--1145, 1995.
+
+\bibitem{gondzio1}
+J.~Gondzio.
+\newblock Warm start of the primal-dual method applied in the cutting plane
+  scheme.
+\newblock {\em Mathematical Programming}, 83:125--143, 1998.
+
+\bibitem{Gon3}
+C.~C. Gonzaga.
+\newblock Polynomial affine algorithms for linear programming.
+\newblock {\em Mathematical Programming}, 49(1):7--21, 1990.
+
+\bibitem{helmberg4}
+C.~Helmberg.
+\newblock Fixing variables in semidefinite relaxations.
+\newblock Technical Report SC-96-43, Konrad-Zuse-Zentrum fuer
+  Informationstechnik, Berlin, December 1996.
+
+\bibitem{ResTsuVei94}
+M.~G.~C. Resende, T.~Tsuchiya, and G.~Veiga.
+\newblock Identifying the optimal face of a network linear program with a
+  globally convergent interior point method.
+\newblock In W.W. Hager, D.W. Hearn, and P.M. Pardalos, editors, {\em Large
+  Scale Optimization: State of the Art}, pages 362--387. Kluwer Academic
+  Publishers, 1994.
+
+\bibitem{YeTd1}
+Y.~Ye and M.~J. Todd.
+\newblock Containing and shrinking ellipsoids in the path following algorithm.
+\newblock {\em Mathematical Programming}, 47(1):1--9, 1990.
+
+\bibitem{yildirim2}
+E.~A. Yildirim and S.~J. Wright.
+\newblock Warm-start strategies in interior-point methods for linear
+  programming.
+\newblock Technical Report 1258, School of Operations Research and Industrial
+  Engineering, Cornell University, Ithaca, NY 14853, March 2000.
+
+\end{thebibliography}

@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw3.tex"> 
+<meta name="date" content="2019-02-12 14:24:00"> 
+<link rel="stylesheet" type="text/css" href="hw3.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 34--><p class="noindent" >
+<!--l. 36--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6620" ><span 
+class="cmr-12">MATP6620/ISYE6760 Combinatorial Optimization &amp; Integer Programming</span></a><br />
+<span 
+class="cmr-12">Homework 3.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 41--><p class="noindent" >
+ Due: Friday February 22nd, 2019.<br />
+Penalty for late homeworks: 10% for each day or part of a day.</div>
+<!--l. 58--><p class="noindent" >The following graph <span 
+class="cmmi-10">G </span>= (<span 
+class="cmmi-10">V,E</span>) is used in question&#x00A0;<a 
+href="#x1-21">1<!--tex4ht:ref: q.matching --></a>.
+<div class="center" 
+>
+<!--l. 61--><p class="noindent" >
+<!--l. 62--><p class="center" ><img 
+src="hw30x.png" alt="PICT" >
+</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1"><a 
+ id="x1-21"></a> Consider a matching problem on the graph above. The LP relaxation consists of nonnegativity together with
+     the constraints <span 
+class="cmex-10">&#x2211;</span>
+  <sub><span 
+class="cmmi-7">e</span><span 
+class="cmsy-7">&#x2208;</span><span 
+class="cmmi-7">&#x03B4;</span><span 
+class="cmr-7">(</span><span 
+class="cmmi-7">v</span><span 
+class="cmr-7">)</span></sub><span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">e</span></sub> <span 
+class="cmsy-10">&#x2264; </span>1 for each vertex&#x00A0;<span 
+class="cmmi-10">v</span>. A feasible solution to the LP relaxation is to take <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">AB</span></sub> = 0<span 
+class="cmmi-10">.</span>5,
+     <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">AF</span></sub> = 0, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">AG</span></sub> = 0<span 
+class="cmmi-10">.</span>5, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">BC</span></sub> = 0<span 
+class="cmmi-10">.</span>5, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">CD</span></sub> = 0, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">CG</span></sub> = 0, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">CH</span></sub> = 0<span 
+class="cmmi-10">.</span>4, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">CJ</span></sub> = 0<span 
+class="cmmi-10">.</span>1, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">DE</span></sub> = 0<span 
+class="cmmi-10">.</span>2, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">DJ</span></sub> = 0<span 
+class="cmmi-10">.</span>8, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">EF</span></sub> = 0<span 
+class="cmmi-10">.</span>8,
+     <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">EJ</span></sub> = 0, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">FH</span></sub> = 0<span 
+class="cmmi-10">.</span>2, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">GH</span></sub> = 0<span 
+class="cmmi-10">.</span>4, and <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">HJ</span></sub> = 0.
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-5x1">Find a valid constraint for the matching problem that is violated by this solution.
+         </li>
+         <li 
+  class="enumerate" id="x1-7x2">Assume the six diagonal edges each have weight two and the remaining 10 edges each have weight
+         one. What is the maximum weight matching? Prove your solution is optimal.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-9x2"><a 
+ id="x1-82"></a> Let <span 
+class="cmmi-10">S </span>be the set of feasible solutions to the integer programming problem
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="hw31x.png" alt="min       - 2x1  -   x2
+subject to  - x1  +  2x2  &#x2264;  4
+            5x1  +   x2  &#x2264;  20
+          - 2x1  -  2x2  &#x2264;  - 7
+                  x1,x2  &#x2265;  0, integer
+     " class="math-display" ></center>
+     <!--l. 206--><p class="nopar" >
+     What is the Chvatal rank of the valid inequality 3<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> + <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> <span 
+class="cmsy-10">&#x2264; </span>12?
+     </li>
+     <li 
+  class="enumerate" id="x1-11x3">The optimal tableau to the linear programming relaxation of the integer program given in Question&#x00A0;<a 
+href="#x1-82">2<!--tex4ht:ref: notesEG --></a>
+     is
+     <center class="math-display" >
+     <img 
+src="hw32x.png" alt="         2-     -3        5-
+min  - 10 11  +  11x3  +   11x4
+s.t.  x1      -  111x3  +   211x4         =   3 311
+         x   +  -5x   +   1x          =   3 7
+          2     11 3      11 4              11
+                181x3  +   611x4  +  x5  =   6 911
+                       x1,x2,x3,x4,x5  &#x2265;   0
+     " class="math-display" ></center>
+     <!--l. 233--><p class="nopar" >
+     where <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub>, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">4</span></sub> and <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">5</span></sub> are the slack variables in the three constraints. Find the Gomory and strong Gomory
+     cutting planes implied by the three constraints. Express these constraints in terms of the original variables <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub>
+     and&#x00A0;<span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> and draw them on a graph of the feasible region.
+     </li>
+     <li 
+  class="enumerate" id="x1-13x4">The optimal solution of the LP relaxation of the mixed integer program
+     <center class="math-display" >
+     <img 
+src="hw33x.png" alt="min       2x1  +  5x2  +   y1  +  y2
+
+subject to  x1          +   y1         &#x2265;  2.5
+           x1  +  2x2  +  3y1  +  y2  &#x2265;  8.5
+
+                  3x2          +  y2  &#x2265;  1.2
+           xi  &#x2265;   0,  i = 1,2    yi  &#x2265;  0, integral, i = 1,2
+     " class="math-display" ></center>
+     <!--l. 462--><p class="nopar" >
+     is <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> = <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">2</span></sub> = 0, <span 
+class="cmmi-10">y</span><sub><span 
+class="cmr-7">1</span></sub> = 2<span 
+class="cmmi-10">.</span>5, <span 
+class="cmmi-10">y</span><sub><span 
+class="cmr-7">2</span></sub> = 1<span 
+class="cmmi-10">.</span>2.
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-15x1">Give  three  mixed  integer  rounding  inequalities  that  are  violated  by  the  solution  to  the  LP
+         relaxation.
+         </li>
+         <li 
+  class="enumerate" id="x1-17x2">Show that none of your inequalities is implied by the other two.</li></ol>
+                                                                                         
+                                                                                         
+     </li>
+     <li 
+  class="enumerate" id="x1-19x5">In the examples below, <span 
+class="cmmi-10">x </span>is required to be a nonnegative vector in&#x00A0;<span 
+class="msbm-10">&#x211D;</span><sup><span 
+class="cmr-7">3</span></sup> and <span 
+class="cmmi-10">y </span>is constrained to be a binary
+     vector with three components. A set of constraints that must be satisfied by <span 
+class="cmmi-10">x </span>and <span 
+class="cmmi-10">y </span>is given, and a point
+     that satisfies these constraints is also given. Find a valid flow cover inequality that cuts off this
+     point.
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-21x1">Constraints:
+         <center class="math-display" >
+         <img 
+src="hw34x.png" alt="x1 + x2 + x3 &#x2264; 7,x1 &#x2264; 3y1,x2 &#x2264; 5y2,x3 &#x2264; 6y3.
+         " class="math-display" ></center>
+         <!--l. 483--><p class="nopar" >
+         Point:
+         <center class="math-display" >
+         <img 
+src="hw35x.png" alt="              ( 2    )
+x = (2,5,0),y =  -,1,0 .
+                3
+         " class="math-display" ></center>
+         <!--l. 486--><p class="nopar" >
+         </li>
+         <li 
+  class="enumerate" id="x1-23x2">Constraints:
+         <center class="math-display" >
+         <img 
+src="hw36x.png" alt="7 &#x2264; x1 + x2 + x3,x1 &#x2264; 3y1,x2 &#x2264; 5y2,x3 &#x2264; 6y3.
+         " class="math-display" ></center>
+         <!--l. 491--><p class="nopar" >
+         Point:
+         <center class="math-display" >
+         <img 
+src="hw37x.png" alt="              (      )
+x = (2,5,0),y =  2,1,0 .
+                3
+         " class="math-display" ></center>
+         <!--l. 494--><p class="nopar" >
+         </li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-25x6">The <span 
+class="cmbx-10">Project: </span><br 
+class="newline" />Along with your solutions to this homework, hand in a brief description of what you would like to do for the
+     project part of this course.
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                               </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           x6915.                                          </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           Office hours: Wednesdays, 11am&#8211;1pm.</td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

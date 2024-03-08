@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw4q4eg.tex"> 
+<meta name="date" content="2017-03-21 20:33:00"> 
+<link rel="stylesheet" type="text/css" href="hw4q4eg.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 25--><p class="noindent" >
+<!--l. 28--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6620" ><span 
+class="cmr-12">MATP6620 / ISYE6760 Combinatorial Optimization and Integer Programming</span></a><br />
+<span 
+class="cmr-12">Homework 4.</span>
+</div>
+<!--l. 40--><p class="noindent" >Here is an example for Questions 3 and 4, to illustrate the notation in Question 4.
+<!--l. 44--><p class="noindent" >Recall the questions:
+     <ol  class="enumerate1" start=3>
+     <li 
+  class="enumerate" id="x1-3x3"><a 
+ id="x1-23"></a> The <span 
+class="cmti-10x-x-109">multiple choice </span>knapsack problem is a knapsack problem with the additional restriction that at
+     most one item can be picked from <span 
+class="cmmi-10x-x-109">k </span>disjoint subsets <span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmmi-8">i</span></sub> of the items&#x00A0;<span 
+class="cmmi-10x-x-109">N </span>= <span 
+class="cmsy-10x-x-109">{</span>1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,n</span><span 
+class="cmsy-10x-x-109">}</span>. This can be
+     written
+     <center class="math-display" >
+     <img 
+src="hw4q4eg0x.png" alt="max             cT x
+subject to       aT x  &#x2264;  b
+           &#x2211;      x   &#x2264;  1    for i = 1,...,k
+              j&#x2208;Ni  j       n
+                   x  &#x2208;  B
+     " class="math-display" ></center>
+     <!--l. 63--><p class="nopar" >
+     where <span 
+class="cmmi-10x-x-109">a,c </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x2124;</span><sub><span 
+class="cmr-8">+</span></sub><sup><span 
+class="cmmi-8">n</span></sup>. Assume <span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmmi-10x-x-109">b </span>for <span 
+class="cmmi-10x-x-109">j </span>= 1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,n</span>. Let <span 
+class="cmmi-10x-x-109">S </span>denote the set of feasible solutions.
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-5x1">Prove that the convex hull of&#x00A0;<span 
+class="cmmi-10x-x-109">S </span>has dimension&#x00A0;<span 
+class="cmmi-10x-x-109">n</span>.
+          </li>
+          <li 
+  class="enumerate" id="x1-7x2">Give a condition on the entries of <span 
+class="cmmi-10x-x-109">a </span>that guarantees that the inequality <span 
+class="cmex-10x-x-109">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">j</span><span 
+class="cmsy-8">&#x2208;</span><span 
+class="cmmi-8">N</span><sub><span 
+class="cmmi-6">i</span></sub></sub><span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-109">&#x2264; </span>1
+          defines a facet of the convex hull of&#x00A0;<span 
+class="cmmi-10x-x-109">S</span>. Prove it is a facet when your condition is satisfied.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-9x4">Let <span 
+class="cmmi-10x-x-109">C </span>be a minimal cover for the multiple choice knapsack problem of Question&#x00A0;<a 
+href="#x1-23">3<!--tex4ht:ref: q.mcknap --></a>, with <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">C </span><span 
+class="cmsy-10x-x-109">&#x2229;</span><span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmsy-10x-x-109">|&#x2264; </span>1
+     for <span 
+class="cmmi-10x-x-109">i </span>= 1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmmi-10x-x-109">&#x2026;</span><span 
+class="cmmi-10x-x-109">,k</span>. The inequality
+     <table 
+class="equation"><tr><td><a 
+ id="x1-10r1"></a>
+     <center class="math-display" >
+     <img 
+src="hw4q4eg1x.png" alt=" &#x2211;
+    xj &#x2264; |C |- 1
+j&#x2208;C
+     " class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+     <!--l. 79--><p class="nopar" >
+     is a valid inequality. Let <span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmmi-10x-x-109">j</span>(<span 
+class="cmmi-10x-x-109">i</span>)<span 
+class="cmsy-10x-x-109">} </span>= <span 
+class="cmmi-10x-x-109">C </span><span 
+class="cmsy-10x-x-109">&#x2229; </span><span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmmi-8">i</span></sub> when <span 
+class="cmmi-10x-x-109">C </span><span 
+class="cmsy-10x-x-109">&#x2229; </span><span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmmi-8">i</span></sub><span 
+class="cmmi-10x-x-109">&#x2260;</span><span 
+class="cmsy-10x-x-109">&#x2205;</span>. Prove the following inequality is also
+     valid:
+     <center class="math-display" >
+     <img 
+src="hw4q4eg2x.png" alt="        (              )
+  &#x2211;          &#x2211;
+        (           xj ) &#x2264; |C|- 1
+i:C&#x2229;Ni&#x2044;= &#x2205;  j&#x2208;Ni:aj&#x2265;aj(i)
+     " class="math-display" ></center>
+     <!--l. 86--><p class="nopar" >
+     </li></ol>
+<!--l. 91--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Example:</span>
+<!--l. 94--><p class="indent" >   Let <span 
+class="cmmi-10x-x-109">n </span>= 12, let <span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmsy-10x-x-109">{</span>1<span 
+class="cmmi-10x-x-109">,</span>2<span 
+class="cmmi-10x-x-109">,</span>3<span 
+class="cmsy-10x-x-109">}</span>, <span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmsy-10x-x-109">{</span>4<span 
+class="cmmi-10x-x-109">,</span>5<span 
+class="cmmi-10x-x-109">,</span>6<span 
+class="cmmi-10x-x-109">,</span>7<span 
+class="cmsy-10x-x-109">}</span>, <span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmr-8">3</span></sub> = <span 
+class="cmsy-10x-x-109">{</span>8<span 
+class="cmmi-10x-x-109">,</span>9<span 
+class="cmmi-10x-x-109">,</span>10<span 
+class="cmsy-10x-x-109">}</span>, <span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmr-8">4</span></sub> = <span 
+class="cmsy-10x-x-109">{</span>11<span 
+class="cmmi-10x-x-109">,</span>12<span 
+class="cmsy-10x-x-109">}</span>.
+<!--l. 96--><p class="indent" >   Let the weights be <span 
+class="cmmi-10x-x-109">a </span>= (7<span 
+class="cmmi-10x-x-109">,</span>5<span 
+class="cmmi-10x-x-109">,</span>6<span 
+class="cmmi-10x-x-109">,</span>6<span 
+class="cmmi-10x-x-109">,</span>4<span 
+class="cmmi-10x-x-109">,</span>5<span 
+class="cmmi-10x-x-109">,</span>9<span 
+class="cmmi-10x-x-109">,</span>8<span 
+class="cmmi-10x-x-109">,</span>3<span 
+class="cmmi-10x-x-109">,</span>5<span 
+class="cmmi-10x-x-109">,</span>8<span 
+class="cmmi-10x-x-109">,</span>4) and <span 
+class="cmmi-10x-x-109">b </span>= 15.
+<!--l. 98--><p class="indent" >   A minimal cover is <span 
+class="cmmi-10x-x-109">C </span>= <span 
+class="cmsy-10x-x-109">{</span>3<span 
+class="cmmi-10x-x-109">,</span>6<span 
+class="cmmi-10x-x-109">,</span>10<span 
+class="cmsy-10x-x-109">}</span>, with <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">C </span><span 
+class="cmsy-10x-x-109">&#x2229; </span><span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmsy-10x-x-109">| </span>= <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">C </span><span 
+class="cmsy-10x-x-109">&#x2229; </span><span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmsy-10x-x-109">| </span>= <span 
+class="cmsy-10x-x-109">|</span><span 
+class="cmmi-10x-x-109">C </span><span 
+class="cmsy-10x-x-109">&#x2229; </span><span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmr-8">3</span></sub><span 
+class="cmsy-10x-x-109">| </span>= 1 and <span 
+class="cmmi-10x-x-109">C </span><span 
+class="cmsy-10x-x-109">&#x2229; </span><span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmr-8">4</span></sub> = <span 
+class="cmsy-10x-x-109">&#x2205;</span>.
+Constraint (<a 
+href="#x1-10r1">1<!--tex4ht:ref: eq.coverineq --></a>) is <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">3</span></sub> + <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">6</span></sub> + <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">10</span></sub> <span 
+class="cmsy-10x-x-109">&#x2264; </span>2.
+<!--l. 101--><p class="indent" >   We have <span 
+class="cmmi-10x-x-109">C </span><span 
+class="cmsy-10x-x-109">&#x2229;</span><span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmsy-10x-x-109">{</span>3<span 
+class="cmsy-10x-x-109">}</span>, <span 
+class="cmmi-10x-x-109">C </span><span 
+class="cmsy-10x-x-109">&#x2229;</span><span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmsy-10x-x-109">{</span>6<span 
+class="cmsy-10x-x-109">}</span>, <span 
+class="cmmi-10x-x-109">C </span><span 
+class="cmsy-10x-x-109">&#x2229;</span><span 
+class="cmmi-10x-x-109">N</span><sub><span 
+class="cmr-8">3</span></sub> = <span 
+class="cmsy-10x-x-109">{</span>10<span 
+class="cmsy-10x-x-109">}</span>. So we have <span 
+class="cmmi-10x-x-109">j</span>(1) = 3, <span 
+class="cmmi-10x-x-109">j</span>(2) = 6, <span 
+class="cmmi-10x-x-109">j</span>(3) = 10, and
+<span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmmi-8">j</span><span 
+class="cmr-8">(1)</span></sub> = <span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmr-8">3</span></sub> = 6, <span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmmi-8">j</span><span 
+class="cmr-8">(2)</span></sub> = <span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmr-8">6</span></sub> = 5, <span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmmi-8">j</span><span 
+class="cmr-8">(3)</span></sub> = <span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmr-8">10</span></sub> = 5.
+<!--l. 105--><p class="indent" >   So for example for <span 
+class="cmmi-10x-x-109">i </span>= 2, we have
+   <center class="math-display" >
+<img 
+src="hw4q4eg3x.png" alt="    &#x2211;              &#x2211;             &#x2211;
+           xj =          xj =          xj = x4 + x6 + x7.
+j&#x2208;N2:aj&#x2265;aj(2)     j&#x2208;N2:aj&#x2265;a6     j&#x2208;N2:aj&#x2265;5
+" class="math-display" ></center>
+<!--l. 109--><p class="nopar" >
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                   </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                              </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours: Tuesday 2&#8211;3pm, Wednesday 11am&#8211;1pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

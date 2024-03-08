@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw3.tex"> 
+<meta name="date" content="2012-02-21 13:05:00"> 
+<link rel="stylesheet" type="text/css" href="hw3.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 23--><p class="noindent" >
+<!--l. 26--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12x-x-120">MATP6640/DSES6770 Linear Programming</span></a><span 
+class="cmr-12x-x-120">, Homework 3.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 30--><p class="noindent" >
+ Due: Friday, March 2, 2012.<br />
+10% penalty for each day late.</div>
+<!--l. 63--><p class="noindent" >The following is a primal-dual pair of linear programs:
+   <center class="par-math-display" >
+<img 
+src="hw30x.png" alt="min   cTx                        max   bT y  +   hT u
+s.t.  Ax   =   b  (P )           s.t.   AT y  +  HT  u  &#x2264;  c  (D )
+
+      Hx   =   h
+        x  &#x2265;   0
+" class="par-math-display" ></center>
+<!--l. 72--><p class="nopar" >
+Assume (<span 
+class="cmmi-12">P</span>) and (<span 
+class="cmmi-12">D</span>) are both feasible. Further, assume the polyhedron <span 
+class="cmmi-12">Q </span>:= <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0 : <span 
+class="cmmi-12">Ax </span>= <span 
+class="cmmi-12">b</span><span 
+class="cmsy-10x-x-120">} </span>is
+bounded. Let <span 
+class="cmmi-12">z </span>denote the optimal value of (<span 
+class="cmmi-12">P</span>) and (<span 
+class="cmmi-12">D</span>). For any appropriately dimensioned
+vector&#x00A0;<span 
+class="cmmi-12">&#x03C0;</span>, define
+   <center class="math-display" >
+<img 
+src="hw31x.png" alt="&#x0398;(&#x03C0; ) := min {cTx + &#x03C0;T (h - Hx ) : Ax = b,x &#x2265; 0}
+          x
+" class="math-display" ></center>
+<!--l. 80--><p class="nopar" >
+The function &#x0398;(<span 
+class="cmmi-12">&#x03C0;</span>) is concave and provides an underestimate of&#x00A0;<span 
+class="cmmi-12">z </span>for any&#x00A0;<span 
+class="cmmi-12">&#x03C0;</span>. The best lower
+bound is obtained by maximizing&#x00A0;&#x0398;(<span 
+class="cmmi-12">&#x03C0;</span>). This construction is used in Questions <a 
+href="#x1-21">1<!--tex4ht:ref: q1 --></a>, <a 
+href="#x1-42">2<!--tex4ht:ref: q2 --></a>
+and&#x00A0;<a 
+href="#x1-63">3<!--tex4ht:ref: q2followup --></a>.
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1"><a 
+ id="x1-21"></a> Show that the maximum value of &#x0398;(<span 
+class="cmmi-12">&#x03C0;</span>) is equal to&#x00A0;<span 
+class="cmmi-12">z</span>.
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2"><a 
+ id="x1-42"></a> Assume the maximum value of the concave function &#x0398;(<span 
+class="cmmi-12">&#x03C0;</span>) can be overestimated
+      using a piecewise linear function, resulting in a linear programming problem of the
+      form
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="hw32x.png" alt="max             &#x03B8;
+
+s.t.   G &#x03C0;  +   d&#x03B8;  &#x2264;   v               (LD )
+      " class="math-display" ></center>
+      <!--l. 158--><p class="nopar" >
+      where <span 
+class="cmmi-12">G </span>is a matrix, <span 
+class="cmmi-12">v </span>is a vector, and <span 
+class="cmmi-12">d </span>is a nonnegative vector. The optimal value of (<span 
+class="cmmi-12">LD</span>)
+      overestimates the maximum possible value of&#x00A0;&#x0398;(<span 
+class="cmmi-12">&#x03C0;</span>). Assume an optimal solution <img 
+src="hw33x.png" alt="¯&#x03C0;"  class="bar" >,
+      <img 
+src="hw34x.png" alt="¯&#x03B8;"  class="bar" > for (<span 
+class="cmmi-12">LD</span>) is known. Let <img 
+src="hw35x.png" alt="x¯"  class="bar" > solve &#x0398;(<img 
+src="hw36x.png" alt="¯&#x03C0;"  class="bar" >). Assume <img 
+src="hw37x.png" alt="¯&#x03B8;"  class="bar" > <span 
+class="cmmi-12">&#x003E; </span>&#x0398;(<img 
+src="hw38x.png" alt="¯&#x03C0;"  class="bar" >). Give a valid linear
+      constraint that must be satisfied by <span 
+class="cmmi-12">&#x03C0; </span>and&#x00A0;&#x0398;(<span 
+class="cmmi-12">&#x03C0;</span>) for all&#x00A0;<span 
+class="cmmi-12">&#x03C0;</span>, and is violated by <img 
+src="hw39x.png" alt="¯&#x03C0;"  class="bar" >,
+      <img 
+src="hw310x.png" alt="¯&#x03B8;"  class="bar" >.
+      </li>
+      <li 
+  class="enumerate" id="x1-7x3"><a 
+ id="x1-63"></a> Now assume all of the constraints in (<span 
+class="cmmi-12">LD</span>) have the same form as the constraint you just
+      found in question&#x00A0;<a 
+href="#x1-42">2<!--tex4ht:ref: q2 --></a>. What is the relationship between this approach to solving (<span 
+class="cmmi-12">P</span>) and
+      Dantzig-Wolfe Decomposition?
+      </li>
+      <li 
+  class="enumerate" id="x1-9x4">Let <span 
+class="cmmi-12">P </span>be a polyhedron with at least one extreme point. Let <img 
+src="hw311x.png" alt="¯x"  class="bar" > <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">P</span>. Can <img 
+src="hw312x.png" alt="¯x"  class="bar" > always be
+      expressed as a convex combination of extreme points of <span 
+class="cmmi-12">P </span>together with a nonnegative
+      multiple of a <span 
+class="cmti-12">single </span>extreme ray of&#x00A0;<span 
+class="cmmi-12">P</span>?
+      </li>
+      <li 
+  class="enumerate" id="x1-11x5">Let the ellipsoid <span 
+class="cmmi-12">E </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup> be defined using a symmetric positive definite <span 
+class="cmmi-12">n</span><span 
+class="cmsy-10x-x-120">&#x00D7;</span><span 
+class="cmmi-12">n </span>matrix <span 
+class="cmmi-12">M </span>and
+      an <span 
+class="cmmi-12">n</span>-vector&#x00A0;<span 
+class="cmmi-12">z </span>as
+      <center class="math-display" >
+      <img 
+src="hw313x.png" alt="E  :=  {x &#x2208; IRn  : (x -  z)TM -1(x - z) &#x2264;  1}.
+      " class="math-display" ></center>
+      <!--l. 201--><p class="nopar" >
+      Let <span 
+class="cmmi-12">a </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup>. Define updated values of <span 
+class="cmmi-12">M </span>and <span 
+class="cmmi-12">z </span>as
+      <center class="math-display" >
+      <img 
+src="hw314x.png" alt="          n2         2MaaTM
+M¯   :=   n2-1(M  -  (n+1)aTMa-)
+  ¯z  :=   z -  ----M&#x221A;aT---.
+              (n+1) a Ma
+      " class="math-display" ></center>
+      <!--l. 208--><p class="nopar" >
+      Assume <span 
+class="cmmi-12">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>= <span 
+class="cmmi-12">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">z </span>and (<span 
+class="cmmi-12">x</span><span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">z</span>)<sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">M</span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sup>(<span 
+class="cmmi-12">x</span><span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">z</span>) = 1. Show that (<span 
+class="cmmi-12">x</span><span 
+class="cmsy-10x-x-120">-</span><img 
+src="hw315x.png" alt="¯z"  class="bar" > )<sup><span 
+class="cmmi-8">T</span> </sup><img 
+src="hw316x.png" alt="M¯"  class="bar" ><sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sup>(<span 
+class="cmmi-12">x</span><span 
+class="cmsy-10x-x-120">-</span><img 
+src="hw317x.png" alt="z¯"  class="bar" > ) = 1. (Hint:
+      You may assume <img 
+src="hw318x.png" alt="M¯"  class="bar" ><sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sup>  = <img 
+src="hw319x.png" alt="n2--1
+ n2"  class="frac" align="middle">(<span 
+class="cmmi-12">M</span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sup> + <span 
+class="cmmi-12">&#x03B2;aa</span><sup><span 
+class="cmmi-8">T</span> </sup>) for some parameter&#x00A0;<span 
+class="cmmi-12">&#x03B2;</span>. You can find <span 
+class="cmmi-12">&#x03B2; </span>by
+      solving <img 
+src="hw320x.png" alt=" ¯
+M"  class="bar" ><img 
+src="hw321x.png" alt=" ¯
+M"  class="bar" ><sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sup> = <span 
+class="cmmi-12">I</span>.)
+                                                                                         
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-13x6">The <span 
+class="cmbx-12">Project: </span><br 
+class="newline" />Along with your solutions to this homework, hand in a brief description of what you would
+      like to do for the project part of this course.</li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                 </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                           </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Tuesday: 12 noon &#8211; 2pm, Wednesday: 2pm &#8211; 4pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

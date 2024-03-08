@@ -1,0 +1,409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw7sol2020.tex"> 
+<meta name="date" content="2020-11-26 13:22:00"> 
+<link rel="stylesheet" type="text/css" href="hw7sol2020.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 43--><p class="noindent" >
+<!--l. 45--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12x-x-120">Math Models of Operations Research</span></a><br />
+<a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12x-x-120">MATP 4700 </span></a><br /><br />
+<span 
+class="cmbx-12x-x-120">Homework 7</span><br /><br />
+<span 
+class="cmbx-12x-x-120">Solutions</span></div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 53--><p class="noindent" >
+ Due: Tuesday, November 24, 2020, 11.59pm on LMS.<br />
+Penalty for late homeworks: 25% for each day or part of a day.</div>
+<!--l. 60--><p class="noindent" >Questions from Kupferschmid, Chapter 7 (available on LMS). In addition, read Sections 7.1&#8211;7.7
+from the text.
+<!--l. 73--><p class="noindent" >You can consult with other students and you can use online resources, but you CANNOT submit
+the questions to any online answering service, including Chegg.
+<!--l. 83--><p class="noindent" >Solving the homework problems (and other problems from the text) will improve your
+understanding of the material.
+<!--l. 89--><p class="noindent" >It may be possible to find the solutions online or elsewhere: please do not use these solutions.
+Working out the problems yourself will greatly improve your understanding of the material and
+help you on the exams.
+<!--l. 98--><p class="noindent" >You can ask questions on piazza, in addition to using office hours or email.
+                                                                                         
+                                                                                         
+      <ul class="itemize1">
+      <li class="itemize"><span 
+class="cmbx-12">7.10.16(a)</span>. Note: The solution <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">LP</span> </sub><sup><span 
+class="cmsy-8">*</span></sup> to the LP relaxation is given in the picture on
+      page 261. When you branch, you can solve 2-dimensional subproblems, so you can solve
+      the subproblems graphically. For example, when solving the branch with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>2, the
+      solution to the relaxation will have <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> = 2, so you can solve a problem in just <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> and
+      <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub>; if you branch further (eg, on <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>1), then you have to unfix <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> and set <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> = 1 in
+      the LP relaxation.
+      <!--l. 109--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>Problem <span 
+class="cmtt-12">bb2 </span>is
+      <center class="math-display" >
+      <img 
+src="hw7sol20200x.png" alt="minx&#x2208;&#x211D;3    - 4x1 - 5x2 - x3  =   z
+subject to         3x1 + 2x2  &#x2264;   10
+                   x1 + 4x2  &#x2264;   11
+             3x  + 3x  + x   &#x2264;   13
+                1     2    3
+                         xj  &#x2265;   0, integer,  j = 1, 2,3
+      " class="math-display" ></center>
+      <!--l. 120--><p class="nopar" >
+      Solution to LP relaxation is <span class="bar-css"><span 
+class="cmmi-12">x</span></span> = (9<span 
+class="cmmi-12">&#x2215;</span>5<span 
+class="cmmi-12">, </span>23<span 
+class="cmmi-12">&#x2215;</span>10<span 
+class="cmmi-12">, </span>7<span 
+class="cmmi-12">&#x2215;</span>10), <span class="bar-css"><span 
+class="cmmi-12">z</span></span> = <span 
+class="cmsy-10x-x-120">-</span>19<span 
+class="cmmi-12">.</span>4. We let
+      <center class="math-display" >
+      <img 
+src="hw7sol20201x.png" alt="     {      3                                                                 }
+F =   x &#x2208; &#x211D;  : 3x1 + 2x2 &#x2264; 10,x1 + 4x2 &#x2264;  11,3x1 + 3x2 + x3 &#x2264; 13,x1, x2,x3 &#x2265; 0  .
+      " class="math-display" ></center>
+      <!--l. 129--><p class="nopar" >
+      <!--l. 131--><p class="noindent" >Branch on <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> first:
+      <div class="center">
+<img src=fig16.png>
+</div>
+      <!--l. 156--><p class="noindent" >Optimal solution is <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> = (2<span 
+class="cmmi-12">, </span>2<span 
+class="cmmi-12">, </span>1), <span 
+class="cmmi-12">z</span><sup><span 
+class="cmsy-8">*</span></sup> = <span 
+class="cmsy-10x-x-120">-</span>19.
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">7.10.37</span>. Make sure your constraint is linear!
+      <!--l. 184--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>0<span 
+class="cmmi-12">.</span>5(<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> + <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub>).
+      <!--l. 186--><p class="noindent" >Note: the LP relaxation is tighter if we use two constraints: <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> and <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub>. We can get
+      an appropriate single inequality by taking any positive linear combination of the two
+      inequalities.
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">7.10.39 (a)</span>
+      <!--l. 191--><p class="noindent" ><span 
+class="cmbx-12">Solution: </span>We give 2 formulations, each of which needs on the order of 100 variables.
+           <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+        i. </dt><dd 
+class="enumerate-enumitem">We introduce 10 integer variables <span 
+class="cmmi-12">x </span>to represent the 10 positions. Each variable can take
+           a value between 0 and&#x00A0;9. For each index pair 1 <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">i &#x003C; j </span><span 
+class="cmsy-10x-x-120">&#x2264; </span>10, we introduce binary
+           variables <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">ij</span></sub> and&#x00A0;<span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">ij</span></sub>, with the meaning
+           <center class="math-display" >
+           <img 
+src="hw7sol20202x.png" alt="yij =   1  if xi &#x003C; xj
+zij =   1  if xi &#x003E; xj
+           " class="math-display" ></center>
+                                                                                         
+                                                                                         
+           <!--l. 203--><p class="nopar" >
+           The formulation is
+           <center class="math-display" >
+           <img 
+src="hw7sol20203x.png" alt="minx,y,z    104x1 + 103x2 +  102x3 + 10x4 + x5 - 104x6 - 103x7 - 108x2 - 10x9 - 10x10
+subject to  xi - xj &#x2264;  - 1 + 10zij  for 1 &#x2264; i &#x003C; j &#x2264; 10
+           x  - x  &#x2265; 1 - 10y    for 1 &#x2264; i &#x003C; j &#x2264; 10
+             i   j           ij
+           yij + zij = 1  for 1 &#x2264; i &#x003C; j &#x2264; 10
+           x1 - x6 &#x2265;  1
+           yij,zijbinary   for 1 &#x2264; i &#x003C; j &#x2264; 10
+           0 &#x2264;  xi &#x2264; 9  for i = 1,...,10
+           x  integer   for i = 1,...,10
+             i
+           " class="math-display" ></center>
+           <!--l. 217--><p class="nopar" >
+           where the objective function calculates the value of the difference. We ensure the
+           difference is nonnegative through the symmetry-breaking constraint <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">6</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>1, and
+           then minimize the difference.
+           </dd><dt class="enumerate-enumitem">
+        ii. </dt><dd 
+class="enumerate-enumitem">We use just binary variables. They are
+           <center class="math-display" >
+           <img 
+src="hw7sol20204x.png" alt="      {
+wij =    1  if integer i is in position j,  0 &#x2264;  i &#x2264; 9, 1 &#x2264; j &#x2264; 10
+         0  otherwise
+           " class="math-display" ></center>
+           <!--l. 230--><p class="nopar" >
+           The formulation is
+           <center class="math-display" >
+           <img 
+src="hw7sol20205x.png" alt="           &#x2211;     &#x2211;                 &#x2211;    &#x2211;
+minw          5j=1   9i=010j- 1iwij -    1j0=6   9i=0 10j-6iwij
+           &#x2211;10
+subject to  &#x2211;9 j=1 wij = 1  0 &#x2264; i &#x2264; 9
+           &#x2211;  i=0 wij = 1&#x2211; 1 &#x2264; j &#x2264; 10
+              9i=0 iwi1 &#x2265;   9i=0 iwi6 + 1
+           wij binary,   0 &#x2264; i &#x2264; 9,1 &#x2264; j &#x2264; 10
+           " class="math-display" ></center>
+           <!--l. 242--><p class="nopar" >
+           This is an assignment problem with one additional constraint for symmetry breaking.
+           The extra constraint ensures the first digit in the upper number is larger than the first
+           digit in the lower number.</dd></dl>
+                                                                                         
+                                                                                         
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">7.10.40 (a) and (b)</span>
+      <!--l. 250--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+        a. </dt><dd 
+class="enumerate-enumitem">Problem is
+           <center class="math-display" >
+           <img 
+src="hw7sol20206x.png" alt="      2
+minx&#x2208;&#x211D;     x1 + x2         2
+subject to x &#x2208; S  :=  {x &#x2208; &#x211D;  : x1 + x2 &#x2264; 4 &#x2229; [(x1 &#x2265; 2,x2 &#x2265; 0 ) &#x222A; (x1 &#x2265; 0,x2 &#x2265; 2 )]}
+           " class="math-display" ></center>
+           <!--l. 260--><p class="nopar" >
+           or equivalently
+           <center class="math-display" >
+           <img 
+src="hw7sol20207x.png" alt="min    2    x +  x
+    x&#x2208;&#x211D;      1    2         2
+subject to  x &#x2208; S :=  {x &#x2208; &#x211D;  : (x1 + x2 &#x2264; 4, x1,x2 &#x2265; 0) &#x2229; [(x1 &#x2265; 2) &#x222A; (x2 &#x2265; 2)]}
+           " class="math-display" ></center>
+           <!--l. 270--><p class="nopar" >
+<img src=fig40.png>
+                                                                                         
+                                                                                         
+           </dd><dt class="enumerate-enumitem">
+        b. </dt><dd 
+class="enumerate-enumitem">
+           <img 
+src="hw7sol20208x.png" alt="minx &#x2208;&#x211D;2    x1 + x2
+subject to  x1 + x2 &#x2264; 4
+            x  &#x2265; 2 - 2y
+             1         1
+            x2 &#x2265; 2 - 2y2
+            y1 + y2 &#x2264; 1
+            x1,x2 &#x2265; 0
+            y1,y2 binary
+           " class="math-display" >
+           <!--l. 345--><p class="nopar" >
+           </dd></dl>
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">7.10.43</span>. Note: You don&#8217;t need to consult the cited reference&#x00A0;[73].
+      <!--l. 351--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <center class="math-display" >
+      <img 
+src="hw7sol20209x.png" alt="maxx &#x2208;&#x211D;4,y&#x2208; &#x211D;4 90x1   +  150x2   +  60x3   +  70x4   -  3y1 - 4y2 - 5y3 - 6y4
+subject to      7x1  +    10x2  +    8x3  +  12x4   &#x2264;  160
+
+                 x1  +     3x2  +     x3  +     x4  &#x2264;  50
+                2x1  +     4x2  +     x3  +    3x4  &#x2264;  160
+                 x1                                 &#x2264;   1670y1
+                            x2                      &#x2264;  16y2
+                                      x3            &#x2264;  20y3
+                                                        40-
+                                                x4  &#x2264;   3 y4
+                                                xj  &#x2265;  0,   j = 1,...,4
+                                                yj     binary,  j = 1, ...,4
+      " class="math-display" ></center>
+      <!--l. 367--><p class="nopar" >
+      The upper bounds on <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub> come from the first three constraints.
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">Gomory: </span>The LP relaxation of an integer program has optimal tableau
+      <center class="math-display" >
+      <img 
+src="hw7sol202010x.png" alt="|---x1--x2----x3---x4-|
+|15 |0   0     1    3 |
+|-23-|----------2----1-|
+| 7 |0   1     7  - 7 |
+| 2514-|1   0  - 134   154 |
+|---|-----------------
+|   |
+      " class="math-display" ></center>
+      <!--l. 379--><p class="nopar" >
+           <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+        a. </dt><dd 
+class="enumerate-enumitem">Derive a Gomory cutting plane from each constraint and verify that it is violated
+           by the solution to the current LP relaxation.
+           </dd><dt class="enumerate-enumitem">
+        b. </dt><dd 
+class="enumerate-enumitem">Add the Gomory cut corresponding to the second constraint and reoptimize. What
+           do you conclude?</dd></dl>
+      <!--l. 387--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+        a. </dt><dd 
+class="enumerate-enumitem">First constraint:
+           <center class="math-display" >
+           <img 
+src="hw7sol202011x.png" alt="x  - x  &#x2264; 3,      or 2x  + 6-x &#x2265;  2.
+  2   4              7 3   7  4   7
+           " class="math-display" ></center>
+           <!--l. 393--><p class="nopar" >
+           Violated by <span 
+class="cmmi-12">x </span>= (<img 
+src="hw7sol202012x.png" alt="23
+ 7"  class="frac" align="middle"><span 
+class="cmmi-12">,</span><img 
+src="hw7sol202013x.png" alt="25
+14"  class="frac" align="middle"><span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>0).
+           <!--l. 396--><p class="noindent" >Second constraint:
+           <center class="math-display" >
+           <img 
+src="hw7sol202014x.png" alt="                    11      5       11
+x1 - x3 &#x2264; 1,     or ---x3 + --x4 &#x2265;  --.
+                    14      14      14
+           " class="math-display" ></center>
+           <!--l. 399--><p class="nopar" >
+           Violated by <span 
+class="cmmi-12">x </span>= (<img 
+src="hw7sol202015x.png" alt="237"  class="frac" align="middle"><span 
+class="cmmi-12">,</span><img 
+src="hw7sol202016x.png" alt="2154"  class="frac" align="middle"><span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>0).
+           </dd><dt class="enumerate-enumitem">
+        b. </dt><dd 
+class="enumerate-enumitem">Add the fractional formulation of the second Gomory cut to the tableau and reoptimize
+           using dual simplex:
+           <center class="math-display" >
+           <img 
+src="hw7sol202017x.png" alt="|-----x1--x2---x3----x4--x5-|    |---x1---x2--x3---x4----x5-|
+|  15 |0   0     1    3   0 |    |14  |0   0   0    28   14 |
+|--23-|----------2----1-----|    |----|-------------131---114-|
+|  7  |0   1     7  - 7   0 |    | 3  |0   1   0  - 11   11 |
+|  2154 |1   0  - 314    514-  0 |-&#x2192;  | 2  |1   0   0    511 - 131 |
+|  11 |         11    5-    |    |    |             5-   14 |
+|--14-|0---0----14----14---1--    |-1--|0---0---1----11---11-|
+|     |                          |    |
+           " class="math-display" ></center>
+           <!--l. 423--><p class="nopar" >
+           Solution to the updated relaxation is <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> = (2<span 
+class="cmmi-12">, </span>3<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>0) with value <span 
+class="cmmi-12">z</span><sup><span 
+class="cmsy-8">*</span></sup> = 14. Since this is
+           integer, it solves the integer program.</dd></dl>
+      </li></ul>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                           </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Tuesday, Friday, 11am&#8211;12noon, webex:                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-12">https://rensselaer.webex.com/meet/mitchj</span></a>  </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-7-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;                                                                            </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-8-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <span class="underline"><span 
+class="cmbx-12">TA:</span></span> Jun Tan, tanj8 at rpi dot edu.</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-9-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-9-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours Wednesday 7.30pm&#8211;8.30pm on webex:</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-10-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-10-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="https://rensselaer.webex.com/meet/tanj8" class="url" ><span 
+class="cmtt-12">https://rensselaer.webex.com/meet/tanj8</span></a>   </td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

@@ -1,0 +1,695 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="final15sol.tex"> 
+<meta name="date" content="2015-12-12 18:06:00"> 
+<link rel="stylesheet" type="text/css" href="final15sol.css"> 
+</head><body 
+>
+<!--l. 48--><p class="noindent" >
+                                                                                         
+
+                                                                                         
+<!--l. 50--><p class="noindent" >C
+<!--l. 53--><p class="indent" >   &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                                                                                             Name:
+<div class="center" 
+>
+<!--l. 56--><p class="noindent" >
+<!--l. 58--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6600" >Nonlinear Programming, MATP6600/ISYE6780</a><br />
+Final Exam, Friday, December 11, 2015.<br />
+<span 
+class="cmbx-12">Solutions</span></div>
+<!--l. 63--><p class="indent" >   Please do all three problems. You must show all work to obtain full credit. Results from class or
+the text may be used if properly stated. No books or calculators allowed. The exam lasts one hour
+and 50 minutes.
+<div class="center" 
+>
+<!--l. 72--><p class="noindent" >
+<div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><colgroup id="TBL-1-2g"><col 
+id="TBL-1-2"></colgroup><colgroup id="TBL-1-3g"><col 
+id="TBL-1-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td10"> Q1 &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-1-3"  
+class="td11"> 40</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-1"  
+class="td10"> Q2  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-2-3"  
+class="td11"> 30</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-3-1"  
+class="td10"> Q3  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-3-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-3-3"  
+class="td11"> 30</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-4-1"  
+class="td10">Total&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-4-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-4-3"  
+class="td11">100</td></tr></table></div></div>
+                                                                                         
+
+                                                                                         
+      <dl class="enumerate"><dt class="enumerate">
+   1. </dt><dd 
+class="enumerate">(40 points; each part is worth 10 points) <br 
+class="newline" />Consider the optimization problem <div class="subequations"><a 
+ id="x1-30"></a> <div class="eqnarray">
+      <center class="math-display" >
+      <img 
+src="final15sol0x.png" alt="min           x1                                         (1a)
+ subject to   x2+  x2-  x2   &#x2264; 0                         (1b)
+               1    2    3
+                      - x3   &#x2264; 0                         (1c)
+                 - x2 + x3   = 0                         (1d)
+      " class="math-display" ><a 
+ id="x1-4r1b"></a><a 
+ id="x1-4r1c"></a><a 
+ id="x1-4r1d"></a></center>
+      </div>
+      </div>
+           <dl class="enumerate"><dt class="enumerate">
+       (a) </dt><dd 
+class="enumerate">Show that the feasible region consists of all points of the form (0<span 
+class="cmmi-12">,a,a</span>) with <span 
+class="cmmi-12">a </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0,
+           and hence show that every feasible solution is optimal.
+           </dd><dt class="enumerate">
+      (b) </dt><dd 
+class="enumerate">Show that no optimal point satisfies the first order KKT conditions.
+           </dd><dt class="enumerate">
+       (c) </dt><dd 
+class="enumerate">Show the Abadie constraint qualification <span 
+class="cmmi-12">G</span><span 
+class="cmsy-10x-x-120">&#x2032; </span>= <span 
+class="cmmi-12">T </span>is not satisfied at any feasible point&#x00A0;<span class="bar-css"><span 
+class="cmmi-12">x</span></span>,
+           where <span 
+class="cmmi-12">T </span>is the cone of tangents at <span class="bar-css"><span 
+class="cmmi-12">x</span></span> and
+           <center class="math-display" >
+           <img 
+src="final15sol1x.png" alt=" &#x2032;          3   T                   T
+G =  {d &#x2208; &#x211D;  : d &#x2207;gi(¯x ) &#x2264; 0&#x2200;i &#x2208; I, d &#x2207;hj (¯x) = 0&#x2200;j },
+           " class="math-display" ></center>
+           <!--l. 110--><p class="nopar" >
+           with <span 
+class="cmmi-12">g</span><sub><span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-12">x</span>) <span 
+class="cmsy-10x-x-120">&#x2264; </span>0 the inequality constraints, <span 
+class="cmmi-12">h</span><sub><span 
+class="cmmi-8">j</span></sub>(<span 
+class="cmmi-12">x</span>) = 0 the equality constraints, and <span 
+class="cmmi-12">I </span>the
+           set of active inequality constraints.
+           </dd><dt class="enumerate">
+      (d) </dt><dd 
+class="enumerate">The problem (<a 
+href="#x1-30">1<!--tex4ht:ref: eq:q1 --></a>) can be written equivalently as the second order cone program
+                                                                                         
+
+                                                                                         
+           <center class="math-display" >
+           <img 
+src="final15sol2x.png" alt="min        x
+             1
+subject to     -   x2  +   x3  =   0
+                            x  &#x2208;   K
+           " class="math-display" ></center>
+           <!--l. 122--><p class="nopar" >
+           where <span 
+class="cmmi-12">K </span>is the second order cone,
+           <center class="math-display" >
+           <img 
+src="final15sol3x.png" alt="K := {x &#x2208;  &#x211D;3 : x2 + x2 &#x2264; x2,x &#x2265;  0}.
+                1    2     3  3
+           " class="math-display" ></center>
+           <!--l. 126--><p class="nopar" >
+           What is the dual to this conic optimization problem? Show that the dual conic problem
+           is infeasible.</dd></dl>
+      <!--l. 133--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <dl class="enumerate"><dt class="enumerate">
+       (a) </dt><dd 
+class="enumerate">We have <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub>  = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub>  from (<a 
+href="#x1-4r1d">1d<!--tex4ht:ref: eq:q1con3 --></a>). We then get from (<a 
+href="#x1-4r1b">1b<!--tex4ht:ref: eq:q1con1 --></a>) that <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmr-8">2</span></sup>  <span 
+class="cmsy-10x-x-120">&#x2264; </span>0, so <span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmr-8">1</span></sub>  = 0.
+           Provided <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0 we are feasible, so we get the stated region.
+           <!--l. 140--><p class="noindent" >Every feasible solution has value zero, so every feasible point is optimal.
+           </dd><dt class="enumerate">
+      (b) </dt><dd 
+class="enumerate">The gradient condition at the point (0<span 
+class="cmmi-12">,a,a</span>) is
+           <center class="math-display" >
+           <img 
+src="final15sol4x.png" alt="1  +    0u1                  =  0
+0  +   2au           -   v   =  0
+          1               1
+0  -   2au1  -   u2  +   v1  =  0.
+           " class="math-display" ></center>
+           <!--l. 148--><p class="nopar" >
+           The first condition cannot be satisfied, so no optimal point satisfies the KKT
+           conditions.
+           </dd><dt class="enumerate">
+       (c) </dt><dd 
+class="enumerate">The feasible region is given in part (a), so we get the cone of tangents
+                                                                                         
+
+                                                                                         
+           <center class="math-display" >
+           <img 
+src="final15sol5x.png" alt="     {  {(0,d ,d ) : d &#x2208; &#x211D;} if a &#x003E; 0
+T =          2  2    2
+        {(0,d2,d2) : d2 &#x2208; &#x211D;+ } if a = 0
+           " class="math-display" ></center>
+           <!--l. 155--><p class="nopar" >
+           Let <span class="bar-css"><span 
+class="cmmi-12">x</span></span> = (0<span 
+class="cmmi-12">,a,a</span>) be an optimal point. First assume <span 
+class="cmmi-12">a &#x003E; </span>0, so the second constraint is not
+           active. The set <span 
+class="cmmi-12">G</span><span 
+class="cmsy-10x-x-120">&#x2032; </span>consists of directions <span 
+class="cmmi-12">d </span>satisfying <span 
+class="cmmi-12">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmsy-10x-x-120">&#x2207;</span><span 
+class="cmmi-12">g</span><sub>
+<span 
+class="cmr-8">1</span></sub>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span>) <span 
+class="cmsy-10x-x-120">&#x2264; </span>0 and <span 
+class="cmmi-12">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmsy-10x-x-120">&#x2207;</span><span 
+class="cmmi-12">h</span><sub>
+<span 
+class="cmr-8">1</span></sub>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span>) = 0.
+           This forces <span 
+class="cmmi-12">d</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmmi-12">d</span><sub><span 
+class="cmr-8">3</span></sub>, but places no restrictions on&#x00A0;<span 
+class="cmmi-12">d</span><sub><span 
+class="cmr-8">1</span></sub>.
+           <!--l. 161--><p class="noindent" >Similarly, if <span 
+class="cmmi-12">a </span>= 0, we get
+           <center class="math-display" >
+           <img 
+src="final15sol6x.png" alt="G &#x2032; = {d = (d1,d2, d3) &#x2208; &#x211D;3 : d2 = d3 &#x2265; 0,d1 unrestricted }.
+           " class="math-display" ></center>
+           <!--l. 164--><p class="nopar" >
+           <!--l. 166--><p class="noindent" >So in every case we get <span 
+class="cmmi-12">T </span><span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="cmmi-12">G</span><span 
+class="cmsy-10x-x-120">&#x2032;</span>, but <span 
+class="cmmi-12">T</span><span 
+class="cmmi-12">&#x2260;</span><span 
+class="cmmi-12">G</span><span 
+class="cmsy-10x-x-120">&#x2032;</span>.
+           </dd><dt class="enumerate">
+      (d) </dt><dd 
+class="enumerate">The dual problem is
+           <center class="math-display" >
+           <img 
+src="final15sol7x.png" alt="max         0
+subject to         s1 =   1
+            y  -   s2 =   0
+            y  +   s3 =   0
+            y          &#x2208;  &#x211D;
+
+                   s   &#x2208;  K
+           " class="math-display" ></center>
+           <!--l. 179--><p class="nopar" >
+           since <span 
+class="cmmi-12">K </span>is self-dual. The constraints imply <span 
+class="cmmi-12">y </span>= <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">3</span></sub>, so <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">2</span></sub><sup><span 
+class="cmr-8">2</span></sup> = <span 
+class="cmmi-12">s</span><sub>
+<span 
+class="cmr-8">3</span></sub><sup><span 
+class="cmr-8">2</span></sup>. Then <span 
+class="cmmi-12">s </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">K</span>
+           requires <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmr-8">2</span></sup> + <span 
+class="cmmi-12">s</span><sub>
+<span 
+class="cmr-8">2</span></sub><sup><span 
+class="cmr-8">2</span></sup> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">s</span><sub>
+<span 
+class="cmr-8">3</span></sub><sup><span 
+class="cmr-8">2</span></sup>, so we must have <span 
+class="cmmi-12">s</span><sub>
+<span 
+class="cmr-8">1</span></sub><sup><span 
+class="cmr-8">2</span></sup> <span 
+class="cmsy-10x-x-120">&#x2264; </span>0, so <span 
+class="cmmi-12">s</span><sub>
+<span 
+class="cmr-8">1</span></sub> = 0. But this violates the first
+           dual constraint, so the dual problem is infeasible.</dd></dl>
+                                                                                         
+
+                                                                                         
+      </dd><dt class="enumerate">
+   2. </dt><dd 
+class="enumerate">(30 points) <br 
+class="newline" />Consider the problem min <sub><span 
+class="cmmi-8">x</span></sub><span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>), where <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) is smooth and <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sup><span 
+class="cmmi-8">n</span></sup>. Given an iterate <span class="bar-css"><span 
+class="cmmi-12">x</span></span>, in a
+      trust region approach a direction <span 
+class="cmmi-12">d </span>is chosen by solving a quadratic programming
+      subproblem. Such a trust region subproblem can be stated as
+      <table 
+class="equation"><tr><td><a 
+ id="x1-14r2"></a>
+      <center class="math-display" >
+      <img 
+src="final15sol8x.png" alt="                T       T
+min        0.5d  Qd + g  d
+subject to        dTd        &#x2264;   r2,
+      " class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+      <!--l. 219--><p class="nopar" >
+      with the radius parameter <span 
+class="cmmi-12">r </span>adjusted as necessary. At each iteration, we perform the
+      following steps:
+           <ul class="itemize1">
+           <li class="itemize">Solve (<a 
+href="#x1-14r2">2<!--tex4ht:ref: eq:tr --></a>).
+           </li>
+           <li class="itemize">If <span 
+class="cmmi-12">f</span>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span> + <span 
+class="cmmi-12">d</span>) compares favorably with <span 
+class="cmmi-12">f</span>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span>), update <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2190;</span><span class="bar-css"><span 
+class="cmmi-12">x</span></span> + <span 
+class="cmmi-12">d</span>. Possibly update&#x00A0;<span 
+class="cmmi-12">r</span>.
+           <br 
+class="newline" />Else, update&#x00A0;<span 
+class="cmmi-12">r</span>.</li></ul>
+      <!--l. 228--><p class="noindent" >The objective function is designed to approximate the underlying objective&#x00A0;<span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>), with
+      <span 
+class="cmmi-12">g </span>= <span 
+class="cmsy-10x-x-120">&#x2207;</span><span 
+class="cmmi-12">f</span>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span>) and <span 
+class="cmmi-12">Q </span>= <span 
+class="cmsy-10x-x-120">&#x2207;</span><sup><span 
+class="cmr-8">2</span></sup><span 
+class="cmmi-12">f</span>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span>). Assume <span 
+class="cmmi-12">Q </span>is invertible and <span 
+class="cmmi-12">g</span><span 
+class="cmmi-12">&#x2260;</span>0.
+           <dl class="enumerate"><dt class="enumerate">
+       (a) </dt><dd 
+class="enumerate">(5 points) Show that for sufficiently large <span 
+class="cmmi-12">r</span>, there is a KKT point with <span 
+class="cmmi-12">d </span>= <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">Q</span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sup><span 
+class="cmmi-12">g</span>.
+           </dd><dt class="enumerate">
+      (b) </dt><dd 
+class="enumerate">(10 points) Show that in the limit as <span 
+class="cmmi-12">r </span><span 
+class="cmsy-10x-x-120">&#x2192; </span>0, the direction obtained is a positive
+           scaling of the steepest descent direction&#x00A0;<span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">g</span>.
+           </dd><dt class="enumerate">
+       (c) </dt><dd 
+class="enumerate">(5 points) How could you update&#x00A0;<span 
+class="cmmi-12">r </span>so as to ensure improvement?
+                                                                                         
+
+                                                                                         
+           </dd><dt class="enumerate">
+      (d) </dt><dd 
+class="enumerate">(10 points) Assume we are iterating towards a point <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> with a positive definite
+           Hessian  matrix.  How  would  you  update&#x00A0;<span 
+class="cmmi-12">r  </span>in  order  to  try  to  get  quadratic
+           convergence?</dd></dl>
+      <!--l. 248--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 251--><p class="noindent" >Let <span 
+class="cmmi-12">u </span>be the KKT multiplier. The KKT conditions require: <div class="subequations"><div class="eqnarray">
+      <center class="math-display" >
+      <img 
+src="final15sol9x.png" alt="Qd  + g + 2ud  =   0                               (3a)
+  u(dT d - r2) =   0                               (3b)
+      T      2
+     d d - r   &#x2264;   0                               (3c)
+            u  &#x2265;   0                               (3d)
+      " class="math-display" ><a 
+ id="x1-20r3a"></a><a 
+ id="x1-20r3b"></a><a 
+ id="x1-20r3c"></a><a 
+ id="x1-20r3d"></a></center>
+      </div>
+      </div>
+           <dl class="enumerate"><dt class="enumerate">
+       (a) </dt><dd 
+class="enumerate">If <span 
+class="cmmi-12">u </span>= 0 then (<a 
+href="#x1-20r3a">3a<!--tex4ht:ref: q2:kkt1 --></a>) implies <span 
+class="cmmi-12">d </span>= <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">Q</span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sup><span 
+class="cmmi-12">g</span>. This satisfies (<a 
+href="#x1-20r3b">3b<!--tex4ht:ref: q2:kkt2 --></a>) and (<a 
+href="#x1-20r3d">3d<!--tex4ht:ref: q2:kkt4 --></a>). It satisfies
+           (<a 
+href="#x1-20r3c">3c<!--tex4ht:ref: q2:kkt3 --></a>) provided <span 
+class="cmmi-12">r</span><sup><span 
+class="cmr-8">2</span></sup> <span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">g</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">Q</span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">2</span></sup><span 
+class="cmmi-12">g</span>.
+           </dd><dt class="enumerate">
+      (b) </dt><dd 
+class="enumerate">Assume 0 <span 
+class="cmmi-12">&#x003C; r &#x003C;&#x003C; </span><span 
+class="cmsy-10x-x-120">||</span><span 
+class="cmmi-12">g</span><span 
+class="cmsy-10x-x-120">||</span><span 
+class="cmmi-12">&#x2215;</span><span 
+class="cmsy-10x-x-120">||</span><span 
+class="cmmi-12">Q</span><span 
+class="cmsy-10x-x-120">||</span>. Then
+           <center class="math-display" >
+           <img 
+src="final15sol10x.png" alt="||Qd || &#x2264; ||Q ||||d|| &#x2264; ||Q ||r &#x003C;&#x003C;  ||g||.
+           " class="math-display" ></center>
+           <!--l. 267--><p class="nopar" >
+           Then (<a 
+href="#x1-20r3a">3a<!--tex4ht:ref: q2:kkt1 --></a>) requires
+                                                                                         
+
+                                                                                         
+           <center class="math-display" >
+           <img 
+src="final15sol11x.png" alt="g &#x2248;  - 2ud,
+           " class="math-display" ></center>
+           <!--l. 271--><p class="nopar" >
+           so <span 
+class="cmmi-12">u</span><span 
+class="cmmi-12">&#x2260;</span>0, and in particular <span 
+class="cmmi-12">u &#x003E; </span>0 from (<a 
+href="#x1-20r3d">3d<!--tex4ht:ref: q2:kkt4 --></a>). From (<a 
+href="#x1-20r3b">3b<!--tex4ht:ref: q2:kkt2 --></a>), we get <span 
+class="cmmi-12">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">d </span>= <span 
+class="cmmi-12">r</span><sup><span 
+class="cmr-8">2</span></sup>, so
+           <center class="math-display" >
+           <img 
+src="final15sol12x.png" alt="u &#x2248;  ||g||&#x2215;2r
+           " class="math-display" ></center>
+           <!--l. 276--><p class="nopar" >
+           and so
+           <center class="math-display" >
+           <img 
+src="final15sol13x.png" alt="        -r--
+d &#x2248;  -  ||g||g,
+           " class="math-display" ></center>
+           <!--l. 280--><p class="nopar" >
+           a positive scaling of the steepest descent direction.
+           </dd><dt class="enumerate">
+       (c) </dt><dd 
+class="enumerate">We can keep halving <span 
+class="cmmi-12">r</span>, since in the limit we get the steepest descent direction, which is
+           a direction of improvement.
+           </dd><dt class="enumerate">
+      (d) </dt><dd 
+class="enumerate">While we are still making good progress, we can keep doubling <span 
+class="cmmi-12">r</span>, since we get the
+           Newton direction for sufficiently large&#x00A0;<span 
+class="cmmi-12">r</span>, which gives quadratic convergence under
+           certain conditions.</dd></dl>
+                                                                                         
+
+                                                                                         
+      </dd><dt class="enumerate">
+   3. </dt><dd 
+class="enumerate">(30 points) <br 
+class="newline" />Let <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /> </span>be a scalar variable and set <span 
+class="cmmi-12">&#x03B8;</span>(<span 
+class="cmmi-12">x</span>) = <span 
+class="cmsy-10x-x-120">|</span><span 
+class="cmmi-12">x</span><span 
+class="cmsy-10x-x-120">|</span>, the absolute value of&#x00A0;<span 
+class="cmmi-12">x</span>. We investigate a
+      method for smoothing this function.
+           <dl class="enumerate"><dt class="enumerate">
+       (a) </dt><dd 
+class="enumerate">(5 points) Show
+           <center class="math-display" >
+           <img 
+src="final15sol14x.png" alt="&#x03B8;(x) = max  {xw  : - 1 &#x2264; w &#x2264;  1}.
+         w
+           " class="math-display" ></center>
+           <!--l. 302--><p class="nopar" >
+           (Note that <span 
+class="cmmi-12">x </span>is a parameter in this subproblem.)
+           </dd><dt class="enumerate">
+      (b) </dt><dd 
+class="enumerate">Define
+           <center class="math-display" >
+           <img 
+src="final15sol15x.png" alt="                            t  2
+&#x03D5; (x) := maxw         xw  - 2w
+         subject to  - 1 &#x2264; w &#x2264;  1
+           " class="math-display" ></center>
+           <!--l. 309--><p class="nopar" >
+           where <span 
+class="cmmi-12">t </span>is a positive parameter.
+               <dl class="enumerate"><dt class="enumerate">
+            <span class="roman-numeral">i</span>. </dt><dd 
+class="enumerate">(15 points) Show the optimal solution <span 
+class="cmmi-12">w</span><sup><span 
+class="cmsy-8">*</span></sup> is
+               <center class="math-display" >
+               <img 
+src="final15sol16x.png" alt="      (    1   if x &#x003E; t
+  *   {    x
+w   = (    t   if -  t &#x2264; x &#x2264; t
+         - 1   if x &#x003C; - t
+               " class="math-display" ></center>
+               <!--l. 319--><p class="nopar" >
+               and hence determine <span 
+class="cmmi-12">&#x03D5;</span>(<span 
+class="cmmi-12">x</span>).
+               </dd><dt class="enumerate">
+            <span class="roman-numeral">ii</span>. </dt><dd 
+class="enumerate">(10 points) Show <span 
+class="cmmi-12">&#x03D5;</span>(<span 
+class="cmmi-12">x</span>) is differentiable in <span 
+class="cmmi-12">x</span>, for any fixed <span 
+class="cmmi-12">t &#x003E; </span>0. (This
+               requires showing the left and right derivatives agree at the break points
+               <span 
+class="cmmi-12">x </span>= <span 
+class="cmsy-10x-x-120">±</span><span 
+class="cmmi-12">t</span>.)</dd></dl>
+                                                                                         
+
+                                                                                         
+           </dd></dl>
+      <!--l. 330--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <dl class="enumerate"><dt class="enumerate">
+       (a) </dt><dd 
+class="enumerate">The subproblem in <span 
+class="cmmi-12">w </span>is a linear program. The optimal solution is
+           <center class="math-display" >
+           <img 
+src="final15sol17x.png" alt="     ({          1   if x &#x003E; 0
+ *
+w  = (        - 1   if x &#x003C; 0
+        anything    if x = 0
+           " class="math-display" ></center>
+           <!--l. 340--><p class="nopar" >
+           with optimal value <span 
+class="cmsy-10x-x-120">|</span><span 
+class="cmmi-12">x</span><span 
+class="cmsy-10x-x-120">| </span>= <span 
+class="cmmi-12">&#x03B8;</span>(<span 
+class="cmmi-12">x</span>) in each case.
+           </dd><dt class="enumerate">
+      (b) </dt><dd 
+class="enumerate">Let <span 
+class="cmmi-12">&#x03B2;</span>(<span 
+class="cmmi-12">w</span>) := <span 
+class="cmmi-12">xw </span><span 
+class="cmsy-10x-x-120">-</span><img 
+src="final15sol18x.png" alt="t
+2"  class="frac" align="middle"><span 
+class="cmmi-12">w</span><sup><span 
+class="cmr-8">2</span></sup>. This is a strictly concave function of <span 
+class="cmmi-12">w</span>, so it has a unique
+           maximizer.
+               <dl class="enumerate"><dt class="enumerate">
+            <span class="roman-numeral">i</span>. </dt><dd 
+class="enumerate">We have
+               <center class="math-display" >
+               <img 
+src="final15sol19x.png" alt="d&#x03B2;- = x - tw
+dw
+               " class="math-display" ></center>
+               <!--l. 348--><p class="nopar" >
+               so the unconstrained minimizer of <span 
+class="cmmi-12">&#x03B2;</span>(<span 
+class="cmmi-12">w</span>) is <img 
+src="final15sol20x.png" alt="&#x02DC;w"  class="tilde" > = <span 
+class="cmmi-12">x&#x2215;t</span>. If <span 
+class="cmsy-10x-x-120">|</span><span 
+class="cmmi-12">x&#x2215;t</span><span 
+class="cmsy-10x-x-120">|&#x2264; </span>1 then the
+               optimal choice is <span 
+class="cmmi-12">w</span><sup><span 
+class="cmsy-8">*</span></sup> = <span 
+class="cmmi-12">x&#x2215;t</span>. If <img 
+src="final15sol21x.png" alt="&#x02DC;w"  class="tilde" > <span 
+class="cmmi-12">&#x003E; </span>1 then the optimal choice is <span 
+class="cmmi-12">w</span><sup><span 
+class="cmsy-8">*</span></sup> = 1,
+               and if <img 
+src="final15sol22x.png" alt="w&#x02DC;"  class="tilde" > <span 
+class="cmmi-12">&#x003C; </span><span 
+class="cmsy-10x-x-120">-</span>1 then the optimal choice is <span 
+class="cmmi-12">w</span><sup><span 
+class="cmsy-8">*</span></sup> = <span 
+class="cmsy-10x-x-120">-</span>1. This is the given
+               solution.
+               <!--l. 355--><p class="noindent" >In the three cases, we get:
+               <center class="math-display" >
+               <img 
+src="final15sol23x.png" alt="        (   x - t    if x &#x003E; t
+        |{       2
+&#x03D5; (x) =       x2     if -  t &#x2264; x &#x2264; t
+        |(     2t t
+           - x - 2   if x &#x003C; - t
+               " class="math-display" ></center>
+                                                                                         
+
+                                                                                         
+               <!--l. 362--><p class="nopar" >
+               </dd><dt class="enumerate">
+            <span class="roman-numeral">ii</span>. </dt><dd 
+class="enumerate">We have the following for the derivative of <span 
+class="cmmi-12">&#x03D5;</span>(<span 
+class="cmmi-12">x</span>):
+               <center class="math-display" >
+               <img 
+src="final15sol24x.png" alt="       (   1   if x &#x003E; t
+d &#x03D5;    |{
+--- =      xt   if - t &#x003C; x &#x003C; t
+dx     |(
+          - 1  if x &#x003C; - t
+               " class="math-display" ></center>
+               <!--l. 372--><p class="nopar" >
+               For the middle range <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">t &#x003C; x &#x003C; t</span>, the limit as <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2192; </span><span 
+class="cmmi-12">t </span>is&#x00A0;1 and the limit as <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2192;-</span><span 
+class="cmmi-12">t</span>
+               is&#x00A0;<span 
+class="cmsy-10x-x-120">-</span>1, agreeing with the derivatives on the outer ranges. Hence, <span 
+class="cmmi-12">&#x03D5;</span>(<span 
+class="cmmi-12">x</span>) is
+               differentiable for all <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span>.</dd></dl>
+           </dd></dl>
+      </dd></dl>
+    
+</body></html> 
+
+                                                                                         
+
+

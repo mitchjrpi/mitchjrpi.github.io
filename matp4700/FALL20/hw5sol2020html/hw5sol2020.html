@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw5sol2020.tex"> 
+<meta name="date" content="2020-10-26 18:38:00"> 
+<link rel="stylesheet" type="text/css" href="hw5sol2020.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 41--><p class="noindent" >
+<!--l. 43--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12x-x-120">Math Models of Operations Research</span></a><br />
+<a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12x-x-120">MATP 4700 </span></a><br /><br />
+<span 
+class="cmbx-12x-x-120">Homework 5</span><br /><br />
+<span 
+class="cmbx-12x-x-120">Solutions</span></div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 51--><p class="noindent" >
+ Due: Friday, October 23, 2020, 11.59pm on LMS.<br />
+Penalty for late homeworks: 25% for each day or part of a day.</div>
+<!--l. 58--><p class="noindent" >Questions from Kupferschmid, Chapter 5 (available on LMS):
+      <ul class="itemize1">
+      <li class="itemize">5.5.20 (lecture 13),
+      </li>
+      <li class="itemize">5.5.22 (lecture 13),
+      </li>
+      <li class="itemize">5.5.27 (lecture 13): assume the optimal solution is degenerate,
+      </li>
+      <li class="itemize">5.5.46 (lecture 14),
+      </li>
+      <li class="itemize">5.5.47 (d) (lecture 14).</li></ul>
+<!--l. 68--><p class="noindent" >In addition, read Section 5.3 from the text.
+<!--l. 78--><p class="noindent" >You can consult with other students and you can use online resources, but you CANNOT submit
+the questions to any online answering service, including Chegg. Solving the homework problems
+(and other problems from the text) will improve your understanding of the material. It may be
+possible to find the solutions online or elsewhere: please do not use these solutions. Working out
+the problems yourself will greatly improve your understanding of the material and help you
+on the exams. You can ask questions on piazza, in addition to using office hours or
+email.
+                                                                                         
+                                                                                         
+      <ul class="itemize1">
+      <li class="itemize"><span 
+class="cmbx-12">5.5.20 </span>The given <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> implies the primal slacks are <span 
+class="cmmi-12">s</span><sup><span 
+class="cmsy-8">*</span></sup> = <span 
+class="cmmi-12">Ax</span><sup><span 
+class="cmsy-8">*</span></sup><span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">b </span>= (0<span 
+class="cmmi-12">, </span>7<span 
+class="cmmi-12">.</span>5<span 
+class="cmmi-12">, </span>0). The given
+      <span 
+class="cmmi-12">y</span><sup><span 
+class="cmsy-8">*</span></sup> implies the dual slacks are <span 
+class="cmmi-12">w</span><sup><span 
+class="cmsy-8">*</span></sup> = <span 
+class="cmmi-12">c </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y</span><sup><span 
+class="cmsy-8">*</span></sup> = (0<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>18<span 
+class="cmmi-12">.</span>75<span 
+class="cmmi-12">, </span>76<span 
+class="cmmi-12">.</span>25). We do indeed have
+      (<span 
+class="cmmi-12">s</span><sup><span 
+class="cmsy-8">*</span></sup>)<sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> = 0 and (<span 
+class="cmmi-12">w</span><sup><span 
+class="cmsy-8">*</span></sup>)<sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>= 0.
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">5.5.22 </span>It is possible that a constraint is satisfied with equality and the corresponding dual
+      variable is also equal to zero. We saw an example in class. We also have the following
+      1-dimensional problem:
+      <center class="math-display" >
+      <img 
+src="hw5sol20200x.png" alt="minx&#x2208; &#x211D;1    0x1                  maxy  &#x2208;&#x211D;1   0y1
+subject to   0x   &#x2265;  0     (P)    subje1ct to  0y   &#x2264;   0    (D )
+              1                                1
+             x1  &#x2265;  0                         y1  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 131--><p class="nopar" >
+      One optimal solution is to take <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> = 0, <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> = 0. Then the primal slack <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">1</span></sub> = 0
+      and the dual slack <span 
+class="cmmi-12">w</span><sub><span 
+class="cmr-8">1</span></sub> = 0. Note that the primal and dual both have multiple
+      optimal solutions: any <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0, any <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0. All optimal solutions have <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">1</span></sub> = 0 and
+      <span 
+class="cmmi-12">w</span><sub><span 
+class="cmr-8">1</span></sub> = 0.
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">5.5.27</span>
+      <!--l. 140--><p class="noindent" ><span 
+class="cmbx-12">(a) </span>Can use the strict complementarity argument from part (b) below to argue
+      this.
+      <!--l. 143--><p class="noindent" >Alternatively, we show from first principles using the dual pair
+      <center class="math-display" >
+      <img 
+src="hw5sol20201x.png" alt="      T                                   T
+min  c x                          max    b y
+st     Ax   =  b     (P)           st    AT y  &#x2264;   c    (D )
+       x   &#x2265;  0                            y  free
+      " class="math-display" ></center>
+      <!--l. 158--><p class="nopar" >
+      where we assume (<span 
+class="cmmi-12">P</span>) has a degenerate optimal solution and (<span 
+class="cmmi-12">D</span>) has a nondegenerate
+      optimal solution. The matrix <span 
+class="cmmi-12">A </span>is <span 
+class="cmmi-12">m </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>of rank <span 
+class="cmmi-12">m</span>, and all vectors are dimensioned
+      appropriately.
+      <!--l. 164--><p class="noindent" >The primal problem has a degenerate basic feasible optimal solution <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> with basis&#x00A0;<span 
+class="cmmi-12">B</span>, so the
+      dual problem has an optimal solution <span 
+class="cmmi-12">y</span><sup><span 
+class="cmsy-8">*</span></sup> = <span 
+class="cmmi-12">B</span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">c</span><sub>
+<span 
+class="cmmi-8">B</span></sub>. Since <span 
+class="cmmi-12">y</span><sup><span 
+class="cmsy-8">*</span></sup> is nondegenerate, exactly
+      <span 
+class="cmmi-12">m </span>of the dual constraints hold at equality. Since <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> is degenerate, at least one
+      component of <span 
+class="cmmi-12">B</span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">b </span>is equal to zero, say component&#x00A0;<span 
+class="cmmi-12">k</span>. Let <span 
+class="cmmi-12">p </span>be the <span 
+class="cmmi-12">k</span>th unit
+                                                                                         
+                                                                                         
+      vector in&#x00A0;<span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">m</span></sup>, denoted <span 
+class="cmmi-12">e</span><sup><span 
+class="cmmi-8">k</span></sup>. We set <span class="bar-css"><span 
+class="cmmi-12">y</span></span> = <span 
+class="cmmi-12">B</span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmmi-8">T</span> </sup>(<span 
+class="cmmi-12">c</span><sub>
+<span 
+class="cmmi-8">b</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03B1;p</span>) for some small positive&#x00A0;<span 
+class="cmmi-12">&#x03B1;</span>.
+      Then
+      <center class="math-display" >
+      <img 
+src="hw5sol20202x.png" alt=" bT¯y  =   bTy* - &#x03B1;bT B -Tp = bTy * - &#x03B1; (B- 1b)T ek = bTy* since (B- 1b)k = 0
+BT ¯y  =   BT y* - &#x03B1;BT B - Tp = c  - &#x03B1;ek &#x2264;  c
+  T         T *       T  -T     B           B                  T  *
+N  ¯y  =   N  y  - &#x03B1;N   B   p &#x2264; cN   for small positive &#x03B1; since N   y &#x003C;  cN.
+      " class="math-display" ></center>
+      <!--l. 184--><p class="nopar" >
+      Hence we can go in the direction <span 
+class="cmmi-12">d </span>= <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">B</span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">e</span><sup><span 
+class="cmmi-8">k</span></sup> and still remain dual optimal, so the dual
+      problem has multiple optimal solutions.
+      <!--l. 189--><p class="noindent" >(This proof may be easier to follow if you write out the optimal canonical form tableau for
+      the primal problem, and the corresponding dual problem.)
+      <!--l. 192--><p class="noindent" ><span 
+class="cmbx-12">(b) </span>Note that the text contains an example on page 186 where the problems are both
+      degenerate and each has a unique <span 
+class="cmbx-12">extreme </span>solution.
+      <!--l. 196--><p class="noindent" >In general, it is true that if one problem is degenerate then the other has multiple optimal
+      solutions, even if it may only have one <span 
+class="cmbx-12">extreme </span>optimal solution.
+      <!--l. 200--><p class="noindent" >Can appeal to the result stated on slide 12 of lecture 12C that every LP with an optimal
+      solution has a strictly complementary solution. If both the primal and dual solutions are
+      degenerate then they are not strictly complementary, so an alternative optimal solution must
+      exist for at least one of the problems.
+      <!--l. 207--><p class="noindent" >Alternatively, to prove this without appealing to strict complementarity, probably need to
+      use something like Farkas.
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">5.5.46</span>
+      <center class="math-display" >
+      <img 
+src="hw5sol20203x.png" alt="          x   x    x   x    x   x
+     |----|-1---2----3---4----5---6|
+     |- 10|0----0---3---1----2---0-|
+     | - 5|1    0  - 1  0   - 1  0 |
+     |  2 |0    0   2   3    0   1 |
+-&#x2192;   | - 7|0    1   2  &#x25CB;-1   - 1  0 |
+     |------------------------------
+     |
+      " class="math-display" ></center>
+      <!--l. 221--><p class="nopar" >
+      <center class="math-display" >
+                                                                                         
+                                                                                         
+      <img 
+src="hw5sol20204x.png" alt="                                   |-----x1---x2---x3--x4--x5---x6-|
+                                   |- 17 |0    1    5   0    1   0 |
+- R  thenR   - R  ,R  - 3R          |-----|-------------------------|
+----3------0----1---2-----3        | - 5 |1    0  - 1   0  - 1   0 |
+            -&#x2192;                 -&#x2192;  |- 19 |0    3    8   0  &#x25CB;-3    1 |
+                                   |---7--0----1----2---1----1---0-|
+                                   |
+      " class="math-display" ></center>
+      <!--l. 232--><p class="nopar" >
+      <center class="math-display" >
+      <img 
+src="hw5sol20205x.png" alt="                                        |-----x1---x2----x3--x4--x5---x6-|
+                                        |- 70 |0    2    23   0   0    1 |
+  1                                     |---34-|----------311------------31-|
+--3R2thenR0----R2,-R1-+-R2,-R3---R2--   |   3 |1  - 1  - 3-   0   0  - 3 |
+                - &#x2192;                     |  19 |0  - 1   - 8   0   1  - 1 |
+                                        |   3 |           3            3 |
+                                        |---23--0----0-----23---1---0----13-|
+                                        |
+      " class="math-display" ></center>
+      <!--l. 243--><p class="nopar" >
+      Optimal solution is <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> = (<img 
+src="hw5sol20206x.png" alt="43"  class="frac" align="middle"><span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">,</span><img 
+src="hw5sol20207x.png" alt="23"  class="frac" align="middle"><span 
+class="cmmi-12">,</span><img 
+src="hw5sol20208x.png" alt="193"  class="frac" align="middle"><span 
+class="cmmi-12">, </span>0), with value&#x00A0;<img 
+src="hw5sol20209x.png" alt="703"  class="frac" align="middle">.
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">5.5.47(d)</span>
+      <center class="math-display" >
+      <img 
+src="hw5sol202010x.png" alt="         x1   x2  x3   x4  x5
+    |----|--------------------|
+    |--0-|0----5----3---2---0-|
+    |- 2 |1  - 1  - 1   0   0 |
+-&#x2192;  |--3--0----1----1---1&#x25CB;----1-|
+    |
+      " class="math-display" ></center>
+      <!--l. 256--><p class="nopar" >
+      <center class="math-display" >
+      <img 
+src="hw5sol202011x.png" alt="                          |---x1---x2--x3--x4---x5-|
+                          |- 6|0----7---1---0----2-|
+- R2thenR0----2R2-   -&#x2192;   |- 2|1  - 1  -&#x25CB;1   0    0 |
+       -&#x2192;                 |   |                    |
+                          |-3--0----1---1---1----1--
+                          |
+      " class="math-display" ></center>
+      <!--l. 266--><p class="nopar" >
+      <center class="math-display" >
+      <img 
+src="hw5sol202012x.png" alt="                              |----|x1---x2--x3--x4---x5-|
+- R1thenR0  - R1,R2  - R2     |--8-|-1----8---0---0----2-|
+--------------------------    |  2 |- 1   1   1   0    0 |
+           -&#x2192;                 |  1 | 1  - 2   0   1  - 1 |
+                              |---------------------------
+                              |
+      " class="math-display" ></center>
+      <!--l. 276--><p class="nopar" >
+      Optimal solution is <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> = (0<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>2<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">, </span>0), with value&#x00A0;8.
+      </li></ul>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                           </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Tuesday, Friday, 11am&#8211;12noon, webex:                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-12">https://rensselaer.webex.com/meet/mitchj</span></a>  </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-7-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;                                                                            </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-8-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <span class="underline"><span 
+class="cmbx-12">TA:</span></span> Jun Tan, tanj8 at rpi dot edu.</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-9-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-9-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours Wednesday 7.30pm&#8211;8.30pm on webex:</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-10-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-10-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="https://rensselaer.webex.com/meet/tanj8" class="url" ><span 
+class="cmtt-12">https://rensselaer.webex.com/meet/tanj8</span></a>   </td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

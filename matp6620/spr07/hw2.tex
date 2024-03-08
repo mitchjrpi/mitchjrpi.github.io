@@ -1,0 +1,193 @@
+\documentclass[12pt]{article}
+
+
+%\oddsidemargin -.5in
+%\textwidth 7.5in
+%\textheight 10in
+%\topmargin -30pt
+%\headsep 0in
+%\headheight 0in
+
+\usepackage{fullpage}
+
+\pagestyle{empty}
+
+\newcommand{\NP}{\begin{math}{\cal N}{\cal P}\end{math}}
+
+%\usepackage{fullpage}
+
+\newcommand{\real}{I\!\! R}
+\newcommand{\binary}{I\!\! B}
+\newcommand{\integer}{Z\!\!\! Z}
+
+\begin{document}
+
+\begin{center}
+  \begin{large}
+     MATP6620 / DSES6760 \\ Combinatorial Optimization and Integer Programming \\
+       Homework 2.
+  \end{large}
+\end{center}
+
+\begin{flushright}
+   Due:  Friday, February 9, 2007.  \\
+Penalty for late homeworks: 10\% for each day or part of a day.
+\end{flushright}
+
+
+\begin{enumerate}
+   \item  Let $f$ and $g$ be defined as follows.
+          \begin{displaymath}
+             f(n)  =  \left\{ \begin{array}{ll}
+                                n^3 & \mbox{ if $n$ is prime}  \\
+                                n^2 & \mbox{ otherwise}
+                            \end{array}  \right.    \;\;\;
+             g(n)  =  \left\{ \begin{array}{ll}
+                                n^3 & \mbox{ if $n$ is even}  \\
+                                n^2 & \mbox{ otherwise.}
+                            \end{array}  \right.
+           \end{displaymath}
+           Is either of the following true?
+           \begin{enumerate}
+              \item  $f(n) = O(g(n))$.
+              \item  $g(n) = O(f(n))$.
+           \end{enumerate}
+   \item
+   Assume you have an algorithm A for finding the minimum weight perfect matching
+   in a graph with nonnegative edge weights.
+   How could you use this algorithm to find the maximum weight matching in
+   a graph $G=(V,E)$ with nonnegative edge weights? (Note: the matching isn't required to be perfect.)
+%   \item   Consider the graph problem
+%           \begin{quote}
+%              Does $G$ contain a cycle?
+%           \end{quote}
+%           Give an algorithm to show that this problem is in $\cal P$.
+%           When the answer is {\em Yes}, the circuit itself provides a
+%           certificate of feasibility.
+%           Is there a similar short proof when the answer is {\em No}?
+%   \item   Assume that we have a polynomial time algorithm for {\em computing
+%           the length} of the shortest TSP tour, so given any graph $G=(V,E)$
+%           with edge lengths $c_e$, this algorithm will tell us the length
+%           of the optimal tour, but it will {\em not} tell us the edges
+%           that are used in the optimal tour.
+%           Prove that we can use this algorithm as a subroutine in a
+%           polynomial time algorithm for {\em finding the edges}
+%           in the shortest TSP tour.
+\item Assume we have a polynomial time algorithm for determining the optimal
+value of a binary knapsack problem $\max\{c^Tx: x \in \binary^n, a^Tx \leq b\}$.
+This algorithm will not tell us the values of the variables in the optimal solution.
+Show that we can use this algorithm as a subroutine in a polynomial time
+algorithm for finding the optimal solution to a binary knapsack problem.
+%   \item   Assume that we have a polynomial time algorithm for {\em computing
+%           the number of nodes} of the largest node packing for any graph $G=(V,E)$.
+%           This algorithm will tell us the number of nodes in the optimal packing
+%           but it will {\em not} tell us the nodes that are used in the optimal packing.
+%           Prove that we can use this algorithm as a subroutine in a
+%           polynomial time algorithm for {\em finding the nodes}
+%           in the largest node packing.
+%   \item   Show that the following problem is ${\cal N}{\cal P}$-complete.
+%           \begin{quote}
+%             {\em Matching with bonds:}
+%             Given a graph $G=(V,E)$, pairwise disjoint subsets $B_i$ for
+%             $i=1,\ldots,p$ of $E$, and an integer $K$, does there exist
+%             a matching $M$ in $G$ with $|M| \geq K$ and,
+%             for $i=1,\ldots,p$, either $B_i\cap M=B_i$ or
+%             $B_i\cap M=\emptyset$ (i.e., either all edges in $B_i$ are in the
+%             matching or none are)?
+%             The subsets $B_i$ are called {\em bonds}.
+%           \end{quote}
+%   \item   Using the {\em Hamiltonian path} problem, or otherwise,
+%           show that the following
+%           problem is ${\cal N}{\cal P}$-complete.
+%           \begin{quote}
+%              Given a graph $G=(V,E)$ and a set $L\subseteq V$, is there a
+%              spanning tree $T$ of $G$ such that the set of leaves is $L$?
+%           \end{quote}
+%           (A {\em leaf} of a tree is a vertex of degree 1.
+%           The Hamiltonian path problem is: Given a graph $G=(V,E)$,
+%           does there
+%           exist a path which visits all the vertices of $G$ exactly once?
+%           You may assume that this problem is
+%           \begin{math}{\cal N}{\cal P}\end{math}-complete.)
+  \item Using the {\em undirected Hamiltonian circuit} problem,
+  show that the {\em directed Hamiltonian circuit} problem is NP-Complete.
+%   \item   Using the {\em Hamiltonian path} problem, or otherwise,
+%           show that the following
+%           problem is \NP-complete.
+%           \begin{quote}
+%              Given a graph $G=(V,E)$ %and a positive integer $d \leq |V|$ with $d \geq 2$,
+%              is there a subset $E' \subseteq E$ where $G'=(V,E')$ is connected
+%              and every vertex in $G'$ has degree no larger than~3? %$d$?
+%           \end{quote}
+%           (The Hamiltonian path problem is: Given a graph $G=(V,E)$,
+%           does there
+%           exist a path which visits all the vertices of $G$ exactly once?
+%           You may assume that this problem is
+%           \NP-complete.)
+%  \item   Given a graph $G=(V,E)$ and a scalar $k$,
+%           the {\sc Vertex Cover} problem is to determine whether there exists a
+%           subset $U \subseteq V$
+%           of no more than $k$ of the vertices so that every edge in $E$ is
+%           incident to at least one vertex in~$U$.
+%           Show that {\sc Vertex Cover} is \NP-complete.
+%           (Hint: use node packing.)
+\item Given sets $M$ of customers and $N$ of locations,
+integers $c_{ij}$ for $i \in M$ and $j \in N$ of shipping costs,
+integers $f_j$ of facility opening costs,
+and a scalar $K$,
+the {\em uncapacitated facility location} problem is to find
+a set $S \subseteq N$ such that
+\begin{displaymath}
+\sum_{i \in M} \min_{j \in S} c_{ij} + \sum_{j \in S} f_j  \leq K.
+\end{displaymath}
+Show that this problem is \NP-complete.
+(Hint: use node packing.)
+%   \item   Polynomially reduce 3-SAT (a
+%           strongly ${\cal N}{\cal P}$-complete problem) to {\sc 0-1~Knapsack
+%           With Lower Bound}, that is,
+%           \begin{quote}
+%           Given vectors $c$ and $a$ in $\Re^n$ and scalars
+%           $b$ and $\delta$, does there exist binary $x$ with
+%           $c^Tx \geq \delta$ and $a^Tx \leq b$?
+%           \end{quote}
+%           (Notice that this is a problem solvable in pseudopolynomial time.)
+
+%           (Hint: We know how to transform a clause into an inequality in
+%           binary variables. This can be refined slightly by introducing
+%           additional binary variables to give an
+%           equivalent {\em equality} in binary variables.
+%           Construct a sum $a^Tx=b$ of these equalities, such that
+%           the single equality $a^Tx=b$ is satisfied by binary variables if and
+%           only if all of the original equalities can be satisfied
+%           simultaneously by binary variables.
+%           We can then get the equivalent {\sc 0-1 Knapsack} problem
+%           by taking $c=a$ and $\delta=b$:
+%           Does there exist a binary $x$ satisfying $a^Tx \leq b$ and
+%           $a^Tx \geq b$?)
+%  \item
+%    Consider the optimization problem
+%    \begin{displaymath}
+%    \begin{array}{lccl}
+%    \max & x_{12} \\
+%    \mbox{subject to} & x_{11} & = & 2  \\
+%    & x_{22} & = & 1  \\
+%    & \left[ \begin{array}{ll}x_{11}&x_{12}\\x_{12}&x_{22} \end{array} \right]
+%       & \mbox{is} & \mbox{positive semidefinite} \\
+%    \end{array}
+%    \end{displaymath}
+%    Show that the optimal value is irrational.
+\end{enumerate}
+
+\vfill
+
+\begin{tabular}{@{\hspace{.5in}}l}
+   John Mitchell  \\
+   Amos Eaton 325  \\
+   x6915.  \\
+   mitchj@rpi.edu  \\
+   Office hours:
+   Tuesday 2--3pm, Wednesday 11am--12noon.
+\end{tabular}
+
+
+\end{document}

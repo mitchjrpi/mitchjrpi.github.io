@@ -1,0 +1,357 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Exam 2 MATH4700 Fall 03</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="exam2af03short">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="exam2af03short.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  <a href=..>Math Models of Operations Research, MATP 4700/ DSES 4770.</a>
+
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER">
+  Second Exam, Tuesday, October 20, 2003.
+
+</DIV>
+
+<P>
+You may use any result from your notes or a homework that is clearly stated.
+You may use one sheet of handwritten notes, but no other sources.
+The exam consists of six questions, and lasts one hundred minutes.
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>(20 points; 10 points for each part)
+Each of the following is a linear program with no optimal solution.
+State the corresponding dual problem, solve both primal and dual
+graphically, and verify that whenever primal or dual is unbounded,
+the other is infeasible.
+<DL COMPACT>
+<DT>(a)
+<DD>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcl}
+\max & 4x_1 & + & x_2 \\
+\mbox{subject to} & 2x_1 & + & x_2 & \geq & 4 \\
+&&& 3x_2 & \leq & 12 \\
+&&& x_1, x_2 & \geq & 0
+\end{array}
+\end{displaymath} -->
+
+<IMG
+ WIDTH="281" HEIGHT="99"
+ SRC="img1.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcl}
+\max &amp; 4x_1 &amp; + &amp; x_2 \\
+\mbox{subjec...
+...\
+&amp;&amp;&amp; 3x_2 &amp; \leq &amp; 12 \\
+&amp;&amp;&amp; x_1, x_2 &amp; \geq &amp; 0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<P>
+
+<DT>(b)
+<DD>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcl}
+\min & 10x_1 & + & 3x_2 \\
+\mbox{subject to} & x_1 & + & x_2 & \geq & 2 \\
+&&& -x_2 & \geq & 5 \\
+&&& x_1, x_2 & \geq & 0
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="281" HEIGHT="99"
+ SRC="img2.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcl}
+\min &amp; 10x_1 &amp; + &amp; 3x_2 \\
+\mbox{subj...
+...\\
+&amp;&amp;&amp; -x_2 &amp; \geq &amp; 5 \\
+&amp;&amp;&amp; x_1, x_2 &amp; \geq &amp; 0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P></DL>
+
+<P>
+
+<DT>2.
+<DD>(15 points)
+The optimal solution to the linear programming problem
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcl}
+\max & -4x_1 & + & 3x_2 & + & x_3 \\
+\mbox{subject to} & -x_1 & + & x_2 & + & 2x_3 & \leq & 5 \\
+&x_1 & + & x_2 & + & x_3 & \leq & 9  \\
+&\multicolumn{5}{r}{x_1, x_2, x_3} & \geq & 0
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="344" HEIGHT="99"
+ SRC="img3.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcl}
+\max &amp; -4x_1 &amp; + &amp; 3x_2 &amp; + &amp; x_3 \\...
+...9 \\
+&amp;\multicolumn{5}{r}{x_1, x_2, x_3} &amp; \geq &amp; 0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+is <I>x</I><SUB>1</SUB>=0, <I>x</I><SUB>2</SUB>=5, <I>x</I><SUB>3</SUB>=0.
+<DL COMPACT>
+<DT>(a)
+<DD>(5 points)
+Give a dual problem to this linear program.
+<DT>(b)
+<DD>(10 points)
+Use complementary slackness to find an optimal solution to your dual problem.
+</DL>
+
+<P>
+
+<DT>3.
+<DD>(15 points)
+     Consider the linear programming minimization problem represented by the
+     following tableau <I>M</I><SUB>0</SUB>:
+     <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+M_0 =
+     \begin{tabular}{|r|rrrrrrr|}
+       \hline
+         0 & 0 & 1 & 0 & 0 & 5 & 1 & -1  \\
+       \hline
+         7 & 1 & -1 & 0 & 0 & -3 & 7 & 2  \\
+         2 & 0 & 3 & 1 & 0 & 6 & -2 & -1  \\
+         3 & 0 & -1 & 0 & 1 & -2 & 3 & 1  \\
+       \hline
+     \end{tabular}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="302" HEIGHT="101"
+ SRC="img4.gif"
+ ALT="\begin{displaymath}M_0 =
+\begin{tabular}{\vert r\vert rrrrrrr\vert}
+\hline
+0 ...
+...\
+3 &amp; 0 &amp; -1 &amp; 0 &amp; 1 &amp; -2 &amp; 3 &amp; 1 \\
+\hline
+\end{tabular} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+     <DL COMPACT>
+<DT>(a)
+<DD>(5 points)
+Write down a pivot matrix to represent the simplex pivot.
+       <DT>(b)
+<DD>(10 points)
+         <B>Use the pivot matrix</B> to find the reduced costs and hence
+         show that the resulting tableau is in optimal form.
+         What is the optimal solution?
+      </DL>
+
+<P>
+
+<DT>4.
+<DD>(15 points)
+    Consider the linear programming problem
+     <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcrcl}
+         \min       &  x_1 &   &      & - & 3x_3 & + & 2x_4  \\
+         \mbox{s.t.}&  x_1 & + &  x_2 & - & 4x_3 &   &      & = & 3 \\
+                    &  x_1 & - &  x_2 & + & 2x_3 & + & 2x_4 & = & 1 \\
+                    &&& x_i & \geq & 0, && i & = & 1,...,4.
+       \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="380" HEIGHT="99"
+ SRC="img5.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcrcl}
+\min &amp; x_1 &amp; &amp; &amp; - &amp; 3x_3 &amp; + &amp; ...
+... &amp; 1 \\
+&amp;&amp;&amp; x_i &amp; \geq &amp; 0, &amp;&amp; i &amp; = &amp; 1,...,4.
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Use the method of artificial
+      variables to find an initial canonical form for this linear program.
+      You should obtain the basic feasible solution <I>x</I><SUB>1</SUB>=2, <I>x</I><SUB>2</SUB>=1,
+      <I>x</I><SUB>3</SUB>=<I>x</I><SUB>4</SUB>=0.
+      (If you have a choice for the entering column, choose the first possible
+      column. You should only need two pivots to solve the artificial problem,
+      once you have a canonical form for the artificial problem.)
+
+<P>
+
+<DT>5.
+<DD>(15 points)
+An LP of the form
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcl}
+\min & c^Tx \\
+\mbox{subject to } & Ax & \leq & b  \\
+& x & \geq & 0
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="188" HEIGHT="76"
+ SRC="img6.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcl}
+\min &amp; c^Tx \\
+\mbox{subject to } &amp; Ax &amp; \leq &amp; b \\
+&amp; x &amp; \geq &amp; 0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+has optimal tableau
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{|r|rrrrrrr|}
+\multicolumn{2}{r}{x_1}&x_2&x_3&x_4&s_1&s_2&
+\multicolumn{1}{r}{s_3} \\\hline
+25 & 0 & 12 & 3 & 0 & 0 & 4 & 7 \\\hline
+14 & 0 & 5 & 2 & 1 & 0 & 7 & -4 \\
+6  & 1 & 3 & -2 & 0 & 0 & 2 & -1 \\
+8  & 0 & -2 & 1 & 0 & 1 & -2 & 3 \\\hline
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="287" HEIGHT="124"
+ SRC="img7.gif"
+ ALT="\begin{displaymath}
+\begin{array}{\vert r\vert rrrrrrr\vert}
+\multicolumn{2}{r}{...
+... &amp; -1 \\
+8 &amp; 0 &amp; -2 &amp; 1 &amp; 0 &amp; 1 &amp; -2 &amp; 3 \\ \hline
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+How much would you be willing to pay for an additional unit of Resource 2?
+What is the maximum amount of this resource that you are prepared
+to buy at these prices?
+If instead someone wished to purchase the resource from you,
+what is the maximum you would be prepared to sell at this price?
+   <DT>6.
+<DD>(20 points)
+Consider the primal-dual pair of linear programming problems
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrclclrcrcl}
+\max & 2x_1 &+& 5x_2 &+& 10x_3 &&&& \min & b_1y_1 & + & b_2y_2 \\
+\mbox{subject to}
+&2x_1&+&5x_2&+&12x_3 & \leq & b_1 & \quad (P) \qquad &
+\mbox{subject to}
+&2y_1&+&y_2 & \geq & 2 \quad (D) \\
+&x_1&+&2x_2&+&5x_3& \leq & b_2 &&& 5y_1 & + & 2y_2 & \geq & 5\\
+&\multicolumn{5}{r}{x_1, x_2, x_3} & \geq & 0 &&&
+12y_1 & + & 5y_2 & \geq & 10  \\
+&&&&&&&&&& \multicolumn{3}{r}{y_1, y_2 } & \geq & 0
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="775" HEIGHT="122"
+ SRC="img8.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrclclrcrcl}
+\max &amp; 2x_1 &amp;+&amp; 5x_2 &amp;+&amp; 10x_...
+...&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp; \multicolumn{3}{r}{y_1, y_2 } &amp; \geq &amp; 0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<DL COMPACT>
+<DT>(a)
+<DD>(10 points)
+Graph the feasible region for (<I>D</I>).
+Use this picture and
+complementary slackness to show that in any optimal solution
+to (<I>P</I>) we must have <I>x</I><SUB>3</SUB>=0.
+<P>
+
+<DT>(b)
+<DD>(10 points)
+Now set <I>b</I><SUB>1</SUB>=19 and <I>b</I><SUB>2</SUB>=9.
+The primal-dual pair
+has an optimal solution with <I>x</I><SUB>1</SUB>=7, <I>x</I><SUB>2</SUB>=1, <I>x</I><SUB>3</SUB>=0,
+<I>y</I><SUB>1</SUB>=1, and <I>y</I><SUB>2</SUB>=0.
+It has become possible to produce an additional product <I>x</I><SUB>4</SUB>
+that uses 3 units of resource 1 and 4 units of resource&nbsp;2.
+What price <I>c</I><SUB>4</SUB> must be charged for this product for it to be worthwhile
+to produce it?
+</DL></DL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2004-11-05</I>
+</ADDRESS>
+</BODY>
+</HTML>

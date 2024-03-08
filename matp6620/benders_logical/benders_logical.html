@@ -1,0 +1,533 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="benders_logical.tex"> 
+<meta name="date" content="2017-04-18 14:07:00"> 
+<link rel="stylesheet" type="text/css" href="benders_logical.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 128--><p class="noindent" >
+<!--l. 129--><p class="noindent" ><span 
+class="cmbx-12x-x-172">Logical Benders Decomposition</span><br />
+<a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a></div>
+<!--l. 136--><p class="noindent" >Linear programs with complementarity constraints (LPCCs) arise, for example, in the modeling of
+bilevel problems. In such a problem, the constraints include the requirement that some of the
+variables should be optimal solutions to another problem. For example, when designing a traffic
+network, the designer needs to account for the fact that individual travelers will usually try to find
+an optimal solution to their own shortest path problems. The lower level optimization problem can
+be modeled using its KKT optimality conditions under certain assumptions, which leads to
+complementarity constraints between slack variables and dual multipliers. For more examples of
+LPCCs, see&#x00A0;<span class="cite">[<a 
+href="#Xjinghu3">3</a>]</span>.
+<!--l. 151--><p class="indent" >   LPCCs can be solved using a variant of Benders decomposition. We consider the
+LPCC
+   <table 
+class="equation"><tr><td><a 
+ id="x1-2r1"></a>
+   <center class="math-display" >
+<img 
+src="benders_logical0x.png" alt="             T        T        T
+minx,y,w    c x  +   d y   +  g  w
+subject to  Ax   +    By   +   Cw   =   b
+              0  &#x2264;     y   &#x22A5;     w  &#x2265;   0
+              x                     &#x2265;   0
+" class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+<!--l. 160--><p class="nopar" >
+where <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup>, <span 
+class="cmmi-12">y,w </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">m</span></sup>, <span 
+class="cmmi-12">b </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">k</span></sup>, and all other vectors and matrices are dimensioned
+appropriately. The orthogonality constraint between <span 
+class="cmmi-12">y </span>and <span 
+class="cmmi-12">w </span>gives the problem a combinatorial
+flavor: for each component <span 
+class="cmmi-12">i </span><span 
+class="cmsy-10x-x-120">&#x2208;{</span>1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,m</span><span 
+class="cmsy-10x-x-120">}</span>, either set <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">i</span></sub> = 0 or set <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">i</span></sub> = 0.
+<!--l. 168--><p class="indent" >   To simplify the presentation, we assume the LP relaxation of (<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq:lpcc --></a>) is feasible.
+<!--l. 170--><p class="indent" >   If we know upper bounds on each component of <span 
+class="cmmi-12">y </span>and <span 
+class="cmmi-12">w</span>, we can construct an equivalent mixed
+integer program to (<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq:lpcc --></a>):
+   <table 
+class="equation"><tr><td><a 
+ id="x1-3r2"></a>
+                                                                                         
+                                                                                         
+   <center class="math-display" >
+<img 
+src="benders_logical1x.png" alt="minx,y,w,z   cTx  +   dTy  +   gTw
+subject to  Ax   +   By   +    Cw   =   b
+              0  &#x2264;     y            &#x2264;   D z
+                                          1
+                       0  &#x2264;     w   &#x2264;   D2(e - z)
+              x                     &#x2265;   0
+                                 z  &#x2208;   Bm
+" class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+<!--l. 181--><p class="nopar" >
+where <span 
+class="cmmi-12">D</span><sub><span 
+class="cmr-8">1</span></sub> and <span 
+class="cmmi-12">D</span><sub><span 
+class="cmr-8">2</span></sub> are diagonal matrices whose diagonal entries contain the upper bounds on <span 
+class="cmmi-12">y </span>and
+<span 
+class="cmmi-12">w </span>respectively, and <span 
+class="cmmi-12">e </span>is a vector of ones. If bounds are not known, we can use a <span 
+class="cmbx-12">logical Benders</span>
+<span 
+class="cmbx-12">decomposition </span>approach to solve the problem. We again use binary variables <span 
+class="cmmi-12">z </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">B</span><sup><span 
+class="cmmi-8">m</span></sup>, and we use
+them to enforce the complementarity restriction. The LPCC (<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq:lpcc --></a>) can be represented equivalently
+as
+   <table 
+class="equation"><tr><td><a 
+ id="x1-4r3"></a>
+   <center class="math-display" >
+<img 
+src="benders_logical2x.png" alt="minm &#x03C6;(z) :=   minx,y,w    cT x  +  dT y  +   gTw
+z&#x2208;B           subject to  Ax   +   By   +   Cw    =  b
+                                    yi            &#x2264;  0  if zi = 0
+                                             w    &#x2264;  0  if z = 1
+                                               i           i
+                                          x,y,w   &#x2265;  0
+" class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+<!--l. 199--><p class="nopar" >
+By LP duality, <span 
+class="cmmi-12">&#x03C6;</span>(<span 
+class="cmmi-12">z</span>) can be expressed equivalently as:
+   <table 
+class="equation"><tr><td><a 
+ id="x1-5r4"></a>
+                                                                                         
+                                                                                         
+   <center class="math-display" >
+<img 
+src="benders_logical3x.png" alt="                          T
+mzi&#x2208;nBm &#x03C6;(z) =  max &#x03BB;,&#x03BC;,&#x03BD;    bT &#x03BB;
+             subject to  A  &#x03BB;                 &#x2264;  c
+                         BT &#x03BB;  -   &#x03BC;          &#x2264;  d
+                         CT &#x03BB;         -    &#x03BD;  &#x2264;  g
+                                   &#x03BC;          =  0  if z = 1
+                                    i                   i
+                                          &#x03BD;i  =  0  if zi = 0
+                                        &#x03BC;, &#x03BD;  &#x2265;  0
+" class="math-display" ></center></td><td class="equation-label">(4)</td></tr></table>
+<!--l. 212--><p class="nopar" >
+since the primal constraint <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>0 only exists if <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">i</span></sub> = 0, so the corresponding dual variable <span 
+class="cmmi-12">&#x03BC;</span><sub><span 
+class="cmmi-8">i</span></sub> can
+only be nonzero if <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">i</span></sub> = 0, or equivalently <span 
+class="cmmi-12">&#x03BC;</span><sub><span 
+class="cmmi-8">i</span></sub> = 0 if <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">i</span></sub> = 1.
+<!--l. 217--><p class="indent" >   In the algorithmic framework, we have a Master Problem to pick&#x00A0;<span 
+class="cmmi-12">z</span>. We then solve the
+subproblem (<a 
+href="#x1-5r4">4<!--tex4ht:ref: eq:lbdual --></a>) to find <span 
+class="cmmi-12">&#x03C6;</span>(<span 
+class="cmmi-12">z</span>) and find constraints to add to the Master Problem and restrict the
+choice of&#x00A0;<span 
+class="cmmi-12">z</span>.
+<!--l. 221--><p class="indent" >   Let (<img 
+src="benders_logical4x.png" alt="&#x02C6;
+&#x03BB;"  class="circ" ><span 
+class="cmmi-12">,</span><img 
+src="benders_logical5x.png" alt="&#x02C6;&#x03BC;"  class="circ" ><span 
+class="cmmi-12">,</span><img 
+src="benders_logical6x.png" alt="&#x02C6;&#x03BD;"  class="circ" >) be an optimal dual solution to the subproblem for a particular&#x00A0;<span 
+class="cmmi-12">&#x1E91;</span>, so
+<span 
+class="cmmi-12">&#x03C6;</span>(<span 
+class="cmmi-12">&#x1E91;</span>) = <span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><img 
+src="benders_logical7x.png" alt="&#x02C6;&#x03BB;"  class="circ" >. If this is the best <span 
+class="cmmi-12">z </span>seen so far, then we store <span 
+class="cmmi-12">&#x1E91;</span> as the incumbent solution.
+Initially, there may be no incumbent solution, so the first feasible <span 
+class="cmmi-12">z </span>becomes the first
+incumbent.
+<!--l. 228--><p class="indent" >   We want to minimize <span 
+class="cmmi-12">&#x03C6;</span>(<span 
+class="cmmi-12">z</span>), so we want to restrict attention to choices of <span 
+class="cmmi-12">z </span>that are better
+than&#x00A0;<span 
+class="cmmi-12">&#x1E91;</span>. Any <span 
+class="cmmi-12">z </span>that allows the dual feasible solution (<img 
+src="benders_logical8x.png" alt="&#x02C6;
+&#x03BB;"  class="circ" ><span 
+class="cmmi-12">,</span><img 
+src="benders_logical9x.png" alt="&#x02C6;&#x03BC;"  class="circ" ><span 
+class="cmmi-12">,</span><img 
+src="benders_logical10x.png" alt="&#x02C6;&#x03BD;"  class="circ" >) will have value at least <span 
+class="cmmi-12">&#x03C6;</span>(<span 
+class="cmmi-12">&#x1E91;</span>), so we
+add a constraint on <span 
+class="cmmi-12">z </span>to rule this out:
+   <table 
+class="equation"><tr><td><a 
+ id="x1-6r5"></a>
+   <center class="math-display" >
+<img 
+src="benders_logical11x.png" alt=" &#x2211;         &#x2211;
+     zi +      (1 - zi) &#x2265; 1.
+i:&#x03BC;&#x02C6;i&#x003E;0     i:&#x02C6;&#x03BD;i&#x003E;0
+" class="math-display" ></center></td><td class="equation-label">(5)</td></tr></table>
+<!--l. 235--><p class="nopar" >
+This constraint forces either <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">i</span></sub> = 0 for some <span 
+class="cmmi-12">i </span>with <img 
+src="benders_logical12x.png" alt="&#x02C6;&#x03BD;"  class="circ" ><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0 or <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">i</span></sub> = 1 for some <span 
+class="cmmi-12">i </span>with <img 
+src="benders_logical13x.png" alt="&#x02C6;&#x03BC;"  class="circ" ><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0. For
+such a <span 
+class="cmmi-12">z</span>, the constraints in the subproblem would either force <span 
+class="cmmi-12">&#x03BD;</span><sub><span 
+class="cmmi-8">i</span></sub> = 0 for some <span 
+class="cmmi-12">i </span>with <img 
+src="benders_logical14x.png" alt="&#x02C6;&#x03BD;"  class="circ" ><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0 or
+force <span 
+class="cmmi-12">&#x03BC;</span><sub><span 
+class="cmmi-8">i</span></sub> = 0 for some <span 
+class="cmmi-12">i </span>with <img 
+src="benders_logical15x.png" alt="&#x02C6;&#x03BC;"  class="circ" ><sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0.
+<!--l. 242--><p class="indent" >   Similar cuts can be defined when (<a 
+href="#x1-5r4">4<!--tex4ht:ref: eq:lbdual --></a>) has an unbounded optimal value, using a ray. The
+positive components of the ray lead to exactly the same constraint as (<a 
+href="#x1-6r5">5<!--tex4ht:ref: eq:satcut --></a>) for the Master
+                                                                                         
+                                                                                         
+Problem.
+<!--l. 246--><p class="indent" >   In practice, it is important to try to <span 
+class="cmti-12">sparsity </span>the constraint, in order to make it more powerful.
+This can be done by looking at requiring additional components of <span 
+class="cmmi-12">&#x03BC; </span>and/or <span 
+class="cmmi-12">&#x03BD; </span>be zero in (<a 
+href="#x1-5r4">4<!--tex4ht:ref: eq:lbdual --></a>), or by
+branching on the <span 
+class="cmmi-12">z </span>variables. The sparsest constraint (<a 
+href="#x1-6r5">5<!--tex4ht:ref: eq:satcut --></a>) would involve only one variable, which
+implies that we can fix that variable.
+<!--l. 254--><p class="indent" >   The Master Problem is a Satisfiability problem, since the constraints (<a 
+href="#x1-6r5">5<!--tex4ht:ref: eq:satcut --></a>) are satisfiability
+constraints.
+<!--l. 257--><p class="indent" >   For more details on logical Benders decomposition for LPCCs, see&#x00A0;<span class="cite">[<a 
+href="#Xjinghu1">2</a>]</span>. For extension to
+quadratic programs with complementarity constraints, see&#x00A0;<span class="cite">[<a 
+href="#Xlijie1">1</a>]</span>.
+                                                                                         
+                                                                                         
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>A numerical example</h3>
+<!--l. 265--><p class="noindent" >We use the following example to illustrate the algorithm.
+   <table 
+class="equation"><tr><td><a 
+ id="x1-1001r6"></a>
+   <center class="math-display" >
+<img 
+src="benders_logical16x.png" alt="minimize    2x  + x  + 2y  - y
+  (x,y,w )      1    2     1    3
+subject to  x  + x  - x  = 5
+             1    2    3
+            - x1 + y3 + w1 = 1
+
+            - x2 - y1 - y2 + w2 = 0
+            - x1 - x2 + y2 + w3 = 2
+
+            x &#x2265; 0
+
+            0 &#x2264; y &#x22A5; w  &#x2265; 0
+" class="math-display" ></center></td><td class="equation-label">(6)</td></tr></table>
+<!--l. 281--><p class="nopar" >
+<!--l. 296--><p class="indent" >   If we choose <span 
+class="cmmi-12">z </span>= (1<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">, </span>1) we get the dual LP of the form (<a 
+href="#x1-5r4">4<!--tex4ht:ref: eq:lbdual --></a>) as follows:
+   <table 
+class="equation"><tr><td><a 
+ id="x1-1002r7"></a>
+   <center class="math-display" >
+<img 
+src="benders_logical17x.png" alt="max  &#x03BB;,&#x03BC;,&#x03BD;     5&#x03BB;1  +   &#x03BB;2           +   2&#x03BB;4
+subject to    &#x03BB;1  -   &#x03BB;2           -    &#x03BB;4          &#x2264;   2
+              &#x03BB;1          -    &#x03BB;3  -    &#x03BB;4          &#x2264;   1
+
+            - &#x03BB;1                                    &#x2264;   0
+                              - &#x03BB;3          -   &#x03BC;1  &#x2264;   2
+                              - &#x03BB;3 +    &#x03BB;4  -   &#x03BC;2  &#x2264;   0
+                      &#x03BB;2                    -   &#x03BC;3  &#x2264;   - 1
+                      &#x03BB;                     -   &#x03BD;   &#x2264;   0
+                       2                         1
+                               &#x03BB;3           -   &#x03BD;2  &#x2264;   0
+                                        &#x03BB;4  -   &#x03BD;3  &#x2264;   0
+                                                &#x03BC;1  =   0
+                                                &#x03BC;2  =   0
+                                                &#x03BC;   =   0
+                                                 3
+                                               &#x03BC;,&#x03BD;  &#x2265;   0
+" class="math-display" ></center></td><td class="equation-label">(7)</td></tr></table>
+<!--l. 314--><p class="nopar" >
+This problem is unbounded and has a ray:
+   <table 
+class="equation"><tr><td><a 
+ id="x1-1003r8"></a>
+   <center class="math-display" >
+<img 
+src="benders_logical18x.png" alt="d&#x03BB; = (0,0,1,1),  d&#x03BC; = (0,0, 0),  d&#x03BD; = (0,1,1).
+" class="math-display" ></center></td><td class="equation-label">(8)</td></tr></table>
+<!--l. 318--><p class="nopar" >
+Hence from (<a 
+href="#x1-6r5">5<!--tex4ht:ref: eq:satcut --></a>), we obtain the valid constraint:
+   <table 
+class="equation"><tr><td><a 
+ id="x1-1004r9"></a>
+   <center class="math-display" >
+<img 
+src="benders_logical19x.png" alt="(1 - z2) + (1 - z3) &#x2265; 1.
+                                                                                         
+                                                                                         
+" class="math-display" ></center></td><td class="equation-label">(9)</td></tr></table>
+<!--l. 322--><p class="nopar" >
+<!--l. 324--><p class="indent" >   One choice of <span 
+class="cmmi-12">z </span>that satisfies this constraint is <span 
+class="cmmi-12">z </span>= (1<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>1). The dual problem is
+then
+   <table 
+class="equation"><tr><td><a 
+ id="x1-1005r10"></a>
+   <center class="math-display" >
+<img 
+src="benders_logical20x.png" alt="max  &#x03BB;,&#x03BC;,&#x03BD;     5&#x03BB;1  +   &#x03BB;2           +   2&#x03BB;4
+subject to    &#x03BB;1  -   &#x03BB;2           -    &#x03BB;4          &#x2264;   2
+              &#x03BB;1          -    &#x03BB;3  -    &#x03BB;4          &#x2264;   1
+            - &#x03BB;                                     &#x2264;   0
+               1
+                              - &#x03BB;3          -   &#x03BC;1  &#x2264;   2
+                              - &#x03BB;3 +    &#x03BB;4  -   &#x03BC;2  &#x2264;   0
+                      &#x03BB;2                    -   &#x03BC;3  &#x2264;   - 1
+                      &#x03BB;2                    -   &#x03BD;1  &#x2264;   0
+                               &#x03BB;            -   &#x03BD;   &#x2264;   0
+                                 3               2
+                                        &#x03BB;4  -   &#x03BD;3  &#x2264;   0
+                                                &#x03BC;1  =   0
+                                                &#x03BD;2  =   0
+                                                &#x03BC;3  =   0
+
+                                               &#x03BC;,&#x03BD;  &#x2265;   0
+" class="math-display" ></center></td><td class="equation-label">(10)</td></tr></table>
+<!--l. 342--><p class="nopar" >
+This problem is unbounded and has a ray:
+   <table 
+class="equation"><tr><td><a 
+ id="x1-1006r11"></a>
+   <center class="math-display" >
+<img 
+src="benders_logical21x.png" alt="d =  (0,0,0,1),  d  = (0,1, 0),  d  = (0,0,1).
+ &#x03BB;                &#x03BC;               &#x03BD;
+" class="math-display" ></center></td><td class="equation-label">(11)</td></tr></table>
+                                                                                         
+                                                                                         
+<!--l. 346--><p class="nopar" >
+Hence from (<a 
+href="#x1-6r5">5<!--tex4ht:ref: eq:satcut --></a>), we obtain the valid constraint:
+   <table 
+class="equation"><tr><td><a 
+ id="x1-1007r12"></a>
+   <center class="math-display" >
+<img 
+src="benders_logical22x.png" alt="z  + (1 - z) &#x2265; 1.
+ 2         3
+" class="math-display" ></center></td><td class="equation-label">(12)</td></tr></table>
+<!--l. 350--><p class="nopar" >
+<!--l. 352--><p class="indent" >   One choice of <span 
+class="cmmi-12">z </span>satisfying both (<a 
+href="#x1-1004r9">9<!--tex4ht:ref: eq:egsatcut1 --></a>) and (<a 
+href="#x1-1007r12">12<!--tex4ht:ref: eq:egsatcut2 --></a>) is <span 
+class="cmmi-12">z </span>= (0<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>0). This gives the dual LP
+   <table 
+class="equation"><tr><td><a 
+ id="x1-1008r13"></a>
+   <center class="math-display" >
+<img 
+src="benders_logical23x.png" alt="max  &#x03BB;,&#x03BC;,&#x03BD;     5&#x03BB;1  +   &#x03BB;2           +   2&#x03BB;4
+subject to    &#x03BB;1  -   &#x03BB;2           -    &#x03BB;4          &#x2264;   2
+
+              &#x03BB;1          -    &#x03BB;3  -    &#x03BB;4          &#x2264;   1
+            - &#x03BB;1                                    &#x2264;   0
+                              - &#x03BB;3          -   &#x03BC;1  &#x2264;   2
+                              - &#x03BB;3 +    &#x03BB;4  -   &#x03BC;2  &#x2264;   0
+                      &#x03BB;2                    -   &#x03BC;3  &#x2264;   - 1
+
+                      &#x03BB;2                    -   &#x03BD;1  &#x2264;   0
+                               &#x03BB;3           -   &#x03BD;2  &#x2264;   0
+                                        &#x03BB;4  -   &#x03BD;3  &#x2264;   0
+                                                &#x03BD;1  =   0
+                                                &#x03BD;   =   0
+                                                 2
+                                                &#x03BD;3  =   0
+                                               &#x03BC;,&#x03BD;  &#x2265;   0
+" class="math-display" ></center></td><td class="equation-label">(13)</td></tr></table>
+<!--l. 371--><p class="nopar" >
+This problem has an optimal solution with value 5:
+                                                                                         
+                                                                                         
+   <table 
+class="equation"><tr><td><a 
+ id="x1-1009r14"></a>
+   <center class="math-display" >
+<img 
+src="benders_logical24x.png" alt="&#x03BB; =  (1,0, 0,0),  &#x03BC; = (0,0,1 ),   &#x03BD; = (0,0,0)
+" class="math-display" ></center></td><td class="equation-label">(14)</td></tr></table>
+<!--l. 375--><p class="nopar" >
+so from (<a 
+href="#x1-6r5">5<!--tex4ht:ref: eq:satcut --></a>), we obtain the valid constraint:
+   <table 
+class="equation"><tr><td><a 
+ id="x1-1010r15"></a>
+   <center class="math-display" >
+<img 
+src="benders_logical25x.png" alt="z3 &#x2265; 1.
+" class="math-display" ></center></td><td class="equation-label">(15)</td></tr></table>
+<!--l. 379--><p class="nopar" >
+The choice <span 
+class="cmmi-12">z </span>= (0<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>0) becomes the incumbent best solution found.
+<!--l. 382--><p class="indent" >   The satisfiability Master Problem has three constraints: <div class="eqnarray">
+   <center class="math-display" >
+<img 
+src="benders_logical26x.png" alt="(1 - z ) + (1 - z ) &#x2265;   1                            (16)
+      2         3
+      z2 + (1 - z3) &#x2265;   1                            (17)
+                z   &#x2265;   1                            (18)
+                 3
+" class="math-display" ></center>
+                                                                                         
+                                                                                         
+</div>These constraints are inconsistent, so we can stop, and conclude that the best solution found is
+optimal. Thus, the optimal solution is <span 
+class="cmmi-12">z </span>= (0<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>0). With this choice of <span 
+class="cmmi-12">z</span>, the primal problem (<a 
+href="#x1-4r3">3<!--tex4ht:ref: eq:lbprimal --></a>)
+has the form
+   <table 
+class="equation"><tr><td><a 
+ id="x1-1012r19"></a>
+   <center class="math-display" >
+<img 
+src="benders_logical27x.png" alt="minimize    2x  + x  + 2y  - y
+  (x,y,w )      1    2     1    3
+subject to  x  + x  - x  = 5
+             1    2    3
+            - x1 + y3 + w1 = 1
+
+            - x2 - y1 - y2 + w2 = 0
+            - x1 - x2 + y2 + w3 = 2
+
+            x,y,w  &#x2265; 0
+
+            y1 = y2 = y3 = 0
+" class="math-display" ></center></td><td class="equation-label">(19)</td></tr></table>
+<!--l. 406--><p class="nopar" >
+The optimal solution is
+   <table 
+class="equation"><tr><td><a 
+ id="x1-1013r20"></a>
+   <center class="math-display" >
+<img 
+src="benders_logical28x.png" alt="x = (0,5,0),  y = (0,0, 0),  w = (1,5, 7),
+" class="math-display" ></center></td><td class="equation-label">(20)</td></tr></table>
+<!--l. 410--><p class="nopar" >
+achieving the value&#x00A0;5.
+                                                                                         
+                                                                                         
+<!--l. 1--><p class="noindent" >
+   <h3 class="likesectionHead"><a 
+ id="x1-20001"></a>References</h3>
+<!--l. 1--><p class="noindent" >
+   <div class="thebibliography">
+   <p class="bibitem" ><span class="biblabel">
+ [1]<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
+ id="Xlijie1"></a>L.&#x00A0;Bai,  J.&#x00A0;E.  Mitchell,  and  J.&#x00A0;S.  Pang.    On  convex  quadratic  programs  with
+   linear  complementarity  constraints.    <span 
+class="cmti-12">Computational  Optimization  and  Applications</span>,
+   54(3):517&#8211;554, 2013.
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+ [2]<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
+ id="Xjinghu1"></a>J.&#x00A0;Hu, J.&#x00A0;E. Mitchell, J.S. Pang, K.&#x00A0;P. Bennett, and G.&#x00A0;Kunapuli.  On the global
+   solution of linear programs with linear complementarity constraints.  <span 
+class="cmti-12">SIAM Journal on</span>
+   <span 
+class="cmti-12">Optimization</span>, 19(1):445&#8211;471, 2008.
+   </p>
+   <p class="bibitem" ><span class="biblabel">
+ [3]<span class="bibsp">&#x00A0;&#x00A0;&#x00A0;</span></span><a 
+ id="Xjinghu3"></a>J.&#x00A0;Hu,  J.&#x00A0;E.  Mitchell,  J.S.  Pang,  and  B.&#x00A0;Yu.   On  linear  programs  with  linear
+   complementarity constraints. <span 
+class="cmti-12">Journal of Global Optimization</span>, 53(1):29&#8211;51, 2012.
+</p>
+   </div>
+    
+</body></html> 
+
+                                                                                         
+
+

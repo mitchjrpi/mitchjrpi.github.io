@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="wfpIP.tex"> 
+<meta name="date" content="2021-11-22 15:51:00"> 
+<link rel="stylesheet" type="text/css" href="wfpIP.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 36--><p class="noindent" >
+<!--l. 38--><p class="noindent" ><span class="underline"><span 
+class="cmbx-12x-x-120">Mixed Integer Optimization for Case Study:</span></span>
+<!--l. 42--><p class="noindent" ><span class="underline"><span 
+class="cmcsc-10x-x-144">W<span 
+class="small-caps">o</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span><span 
+class="small-caps">d</span> F<span 
+class="small-caps">o</span><span 
+class="small-caps">o</span><span 
+class="small-caps">d</span> P<span 
+class="small-caps">r</span><span 
+class="small-caps">o</span><span 
+class="small-caps">g</span><span 
+class="small-caps">r</span><span 
+class="small-caps">a</span><span 
+class="small-caps">m</span></span></span> </div>
+<div class="center" 
+>
+<!--l. 46--><p class="noindent" >
+<!--l. 48--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmr-12">MATP4700 Math Models of Operations Research</span></a>
+<!--l. 50--><p class="noindent" ><span 
+class="cmr-12">Fall 2021</span>
+</div>
+<!--l. 55--><p class="noindent" ><span 
+class="cmti-10x-x-109">Students may work in groups of up to three people. You can change groups from Part 2 if you want. You</span>
+<span 
+class="cmti-10x-x-109">may consult your textbooks, your notes, online information, the TA, and me. You may not solicit help</span>
+<span 
+class="cmti-10x-x-109">from other sources.</span>
+<!--l. 64--><p class="indent" >   Due: <span 
+class="cmbx-10x-x-109">Tuesday, December 7, 2020. </span>(30 points) <br 
+class="newline" />
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Purchases at Sources</h3>
+<!--l. 68--><p class="noindent" >Purchases at the external sources Amman, Beirut, and Gazientep are restricted to be in multiples of
+0.1 metric tons, for each type of food. The <span 
+class="cmcsc-10x-x-109">W<span 
+class="small-caps">o</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span><span 
+class="small-caps">d</span> F<span 
+class="small-caps">o</span><span 
+class="small-caps">o</span><span 
+class="small-caps">d</span> P<span 
+class="small-caps">r</span><span 
+class="small-caps">o</span><span 
+class="small-caps">g</span><span 
+class="small-caps">r</span><span 
+class="small-caps">a</span><span 
+class="small-caps">m</span> </span>is able to subdivide
+these purchases before shipping if desired, so the amount shipped can still be any nonnegative
+number.
+<!--l. 77--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-20002"></a>Security</h3>
+<!--l. 79--><p class="noindent" >The <span 
+class="cmcsc-10x-x-109">W<span 
+class="small-caps">o</span><span 
+class="small-caps">r</span><span 
+class="small-caps">l</span><span 
+class="small-caps">d</span> F<span 
+class="small-caps">o</span><span 
+class="small-caps">o</span><span 
+class="small-caps">d</span> P<span 
+class="small-caps">r</span><span 
+class="small-caps">o</span><span 
+class="small-caps">g</span><span 
+class="small-caps">r</span><span 
+class="small-caps">a</span><span 
+class="small-caps">m</span> </span>has been losing some of their shipments. They have decided to pay for
+security on some edges to guarantee shipments arrive. The security cost for each edge is $500 per day. For
+this price, any shipment along that edge <span 
+class="cmti-10x-x-109">in either direction </span>is guaranteed to arrive. If a security payment
+is not made for an edge then that edge cannot be used.
+<!--l. 88--><p class="indent" >   You will need binary variables and a &#8220;big-<span 
+class="cmmi-10x-x-109">M</span>&#8221; constraint to model this additional cost. You can
+assume the total flow along any edge (in both directions combined) is no larger than 5 metric tons per
+day. This is denoted <span 
+class="cmtt-10x-x-109">edgecapacity </span>in the provided file.
+<!--l. 93--><p class="indent" >   Because of the added security costs, the overall budget has been increased to $33,000 per day. The
+security costs are not regarded as part of the cost of food purchases when considering the restrictions on
+local purchases and voucher purchases.
+                                                                                         
+                                                                                         
+<!--l. 100--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-30003"></a>Questions</h3>
+<!--l. 102--><p class="noindent" >Modify your model in order to model the new features. Solve the modified integer program.
+<!--l. 105--><p class="indent" >   All the data are contained in a modified data file, <a 
+href="http://www.rpi.edu/~mitchj/matp4700/wfp/wfpIP.dat" >wfpIP.dat</a>. Also available is my <a 
+href="http://www.rpi.edu/~mitchj/matp4700/wfp/wfpIP0.mod" >LP
+model file</a> with the parameters <span 
+class="cmtt-10x-x-109">edgecapacity </span>and <span 
+class="cmtt-10x-x-109">securitycost </span>defined. You can use your
+own model file if you prefer, provided it accurately solves the original linear optimization
+problem.
+<!--l. 125--><p class="indent" >   The default tolerance for integer programming solvers is typically 10<sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">4</span></sup>, which isn&#8217;t really small enough
+for this problem. Use the following command in your console window to tighten the tolerance, choosing
+the command that applies to your chosen solver:
+                                                                                         
+                                                                                         
+   <div class="verbatim" id="verbatim-1">
+option&#x00A0;cplex_options&#x00A0;&#8217;mipgap=1e-8&#8217;;
+&#x00A0;<br />option&#x00A0;gurobi_options&#x00A0;&#8217;mipgap=1e-8&#8217;;
+</div>
+<!--l. 133--><p class="nopar" >
+<!--l. 137--><p class="indent" >   What is the optimal value? (Hint: It should be a little larger than the original LP optimal value of
+0.9547767264.) What edges are used (make sure to display the values of any binary variables you
+defined)? What <span 
+class="cmtt-10x-x-109">FOODS </span>are puchased at which <span 
+class="cmtt-10x-x-109">SOURCES</span>, and how much? What is purchased locally,
+for cash or vouchers, and where? Display the total amount shipped on each edge using the
+command
+                                                                                         
+                                                                                         
+   <div class="verbatim" id="verbatim-2">
+display&#x00A0;{(i,j)&#x00A0;in&#x00A0;EDGES}&#x00A0;sum&#x00A0;{f&#x00A0;in&#x00A0;FOODS}&#x00A0;flow[f,i,j];
+</div>
+<!--l. 147--><p class="nopar" > What happens if the budget is only increased to $32,000 per day?
+<!--l. 154--><p class="indent" >   Answers should be submitted to LMS. You need to upload your model file as well as a pdf
+writeup.
+<!--l. 159--><p class="noindent" ><span 
+class="cmbx-12">AMPL notes</span>
+     <ul class="itemize1">
+     <li class="itemize">You need to make sure you use a solver designed for integer programs, such as CPLEX or Gurobi.
+     Note that the default solver MINOS will <span 
+class="cmti-10x-x-109">ignore integrality restrictions</span>. To switch solver, you can use
+     the command:
+                                                                                         
+                                                                                         
+     <div class="verbatim" id="verbatim-3">
+     option&#x00A0;solver&#x00A0;cplex;
+</div>
+     <!--l. 169--><p class="nopar" >
+     </li>
+     <li class="itemize">You can use the keywords binary and integer, for example as:
+                                                                                         
+                                                                                         
+     <div class="verbatim" id="verbatim-4">
+     var&#x00A0;useedge{EDGES}&#x00A0;binary;
+     &#x00A0;<br />var&#x00A0;bulkpurchase{FOODS,SOURCES}&#x00A0;&#x003E;=0,&#x00A0;integer;
+</div>
+     <!--l. 175--><p class="nopar" >
+     </li>
+     <li class="itemize">The requirement that you only need to pay for an edge in one direction to be able to use it in both
+     directions may require the use of <span 
+class="cmti-10x-x-109">slices </span>of the <span 
+class="cmtt-10x-x-109">EDGES </span>set. For example, if you want a
+     constraint to apply to edges where both (<span 
+class="cmmi-10x-x-109">i,j</span>) and (<span 
+class="cmmi-10x-x-109">j,i</span>) are in <span 
+class="cmtt-10x-x-109">EDGES </span>then you could
+     use:
+                                                                                         
+                                                                                         
+     <div class="verbatim" id="verbatim-5">
+     subject&#x00A0;to&#x00A0;sym{(i,j)&#x00A0;in&#x00A0;EDGES&#x00A0;:&#x00A0;(j,i)&#x00A0;in&#x00A0;EDGES}:
+</div>
+     <!--l. 184--><p class="nopar" > and if you want a constraint to apply only to edges (<span 
+class="cmmi-10x-x-109">i,j</span>) where there is no edge (<span 
+class="cmmi-10x-x-109">j,i</span>), you could
+     use
+                                                                                         
+                                                                                         
+     <div class="verbatim" id="verbatim-6">
+     subject&#x00A0;to&#x00A0;asym{(i,j)&#x00A0;in&#x00A0;EDGES&#x00A0;:&#x00A0;(j,i)&#x00A0;not&#x00A0;in&#x00A0;EDGES}:
+</div>
+     <!--l. 189--><p class="nopar" >
+     </li>
+     <li class="itemize">To see more details of the progress of the solver when using CPLEX, you can use the
+     command
+                                                                                         
+                                                                                         
+     <div class="verbatim" id="verbatim-7">
+     option&#x00A0;cplex_options&#x00A0;&#8217;mipdisplay=1&#8217;;
+</div>
+     <!--l. 195--><p class="nopar" ></li></ul>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                             </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                        </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Monday 1&#8211;2pm, Thursday, 2pm&#8211;3pm, webex:     </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-10x-x-109">https://rensselaer.webex.com/meet/mitchj</span></a> </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-7-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;                                                                          </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-8-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <span class="underline"><span 
+class="cmbx-10x-x-109">TA:</span></span> She&#8217;ifa Punla-Green, punlas at rpi dot edu.</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-9-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-9-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours Tuesday 10&#8211;11.30am on webex:       </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-10-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-10-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="https://rensselaer.webex.com/meet/punlas" class="url" ><span 
+class="cmtt-10x-x-109">https://rensselaer.webex.com/meet/punlas</span></a> </td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

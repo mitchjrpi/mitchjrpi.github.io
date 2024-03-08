@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="final11.tex"> 
+<meta name="date" content="2012-11-25 10:39:00"> 
+<link rel="stylesheet" type="text/css" href="final11.css"> 
+</head><body 
+>
+<!--l. 23--><p class="noindent" >
+
+<!--l. 25--><p class="noindent" >C
+<!--l. 28--><p class="indent" >   &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                                                                                             Name:
+<div class="center" 
+>
+<!--l. 31--><p class="noindent" >
+<!--l. 32--><p class="noindent" >Nonlinear Programming, MATP6600/DSES6780<br />
+Final Exam, Friday, December 9, 2011.</div>
+<!--l. 36--><p class="indent" >   Please do all five problems. You must show all work to obtain full credit. Results from class or
+the text may be used if properly stated. No books or calculators allowed. The exam lasts one hour
+and 50 minutes.
+<div class="center" 
+>
+<!--l. 45--><p class="noindent" >
+<div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><colgroup id="TBL-1-2g"><col 
+id="TBL-1-2"></colgroup><colgroup id="TBL-1-3g"><col 
+id="TBL-1-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td10"> Q1 &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-1-3"  
+class="td11"> 20</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-1"  
+class="td10"> Q2  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-2-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-2-3"  
+class="td11"> 30</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-3-1"  
+class="td10"> Q3  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-3-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-3-3"  
+class="td11"> 10</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-4-1"  
+class="td10"> Q4  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-4-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-4-3"  
+class="td11"> 15</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-5-1"  
+class="td10"> Q5  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-5-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-5-3"  
+class="td11"> 25</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-6-1"  
+class="td10">Total&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-1-6-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-6-3"  
+class="td11">100</td></tr></table></div></div>
+
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">(20 points.) Let <span 
+class="cmmi-12">a </span>be a positive scalar and let <span 
+class="cmmi-12">f </span>: <span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup> <span 
+class="cmsy-10x-x-120">&#x2192; </span><span 
+class="cmmi-12">IR </span>be defined as
+      <center class="math-display" >
+      <img 
+src="final110x.png" alt="                   2
+f (x ) = (||x ||2 - a) .
+      " class="math-display" ></center>
+      <!--l. 63--><p class="nopar" >
+      Is <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) convex?
+
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2">(10 points.) Let <span 
+class="cmmi-12">f </span>: <span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup> <span 
+class="cmsy-10x-x-120">&#x2192; </span><span 
+class="cmmi-12">IR </span>be a differentiable function. Show that any locally optimal
+      solution <img 
+src="final111x.png" alt="¯x"  class="bar" > to the nonlinear programming problem
+      <center class="math-display" >
+      <img 
+src="final112x.png" alt="min         f(x)
+
+subject to      x  &#x2265;  0
+      " class="math-display" ></center>
+      <!--l. 76--><p class="nopar" >
+      must satisfy
+      <center class="math-display" >
+      <img 
+src="final113x.png" alt="       T
+&#x2207;f  (x¯) ¯x = 0,  &#x2207;f  (¯x) &#x2265; 0,  ¯x &#x2265; 0.
+      " class="math-display" ></center>
+      <!--l. 80--><p class="nopar" >
+
+      </li>
+      <li 
+  class="enumerate" id="x1-7x3">(15 points) Let <img 
+src="final114x.png" alt="¯x"  class="bar" > <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">IR</span><sup><span 
+class="cmr-8">2</span></sup>. Construct the linearized version of the equality constraint
+      <center class="math-display" >
+      <img 
+src="final115x.png" alt="           2    2
+h(x) := 4x 1 + x2 - 25 =  0
+      " class="math-display" ></center>
+      <!--l. 89--><p class="nopar" >
+      about&#x00A0;<span 
+class="cmmi-12">x </span>= <img 
+src="final116x.png" alt="¯x"  class="bar" >. What is your linearized constraint at the point (2<span 
+class="cmmi-12">,</span><span 
+class="cmsy-10x-x-120">-</span>3)? At the point (3<span 
+class="cmmi-12">, </span>2)? At
+      the point (0<span 
+class="cmmi-12">, </span>5)? (Note: not all of these points are feasible.)
+
+      </li>
+      <li 
+  class="enumerate" id="x1-9x4">(30 points.) Let <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-43.png" alt="C" class="10-120x-x-43" /></span><span 
+class="cmmi-8">n</span> be the set of symmetric <span 
+class="cmmi-12">n</span><span 
+class="cmsy-10x-x-120">&#x00D7;</span><span 
+class="cmmi-12">n </span>completely positive matrices, so <span 
+class="cmmi-12">M </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /><img 
+src="cmsy10-c-43.png" alt="C" class="10-120x-x-43" /></span><span 
+class="cmmi-8">n</span> if
+      and only if there exists an integer <span 
+class="cmmi-12">k </span>and nonnegative vectors <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">1</span></sup>, &#x2026;, <span 
+class="cmmi-12">x</span><sup><span 
+class="cmmi-8">k</span></sup> in <span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup> such
+      that
+      <center class="math-display" >
+      <img 
+src="final117x.png" alt="       k
+M  =  &#x2211;  xi(xi)T.
+      i=1
+      " class="math-display" ></center>
+      <!--l. 104--><p class="nopar" >
+      <!--l. 106--><p class="noindent" >Let <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /></span><span 
+class="cmmi-8">n</span> be the set of symmetric <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>copositive matrices, so <span 
+class="cmmi-12">N </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /></span><span 
+class="cmmi-8">n</span> if and only
+      if
+      <center class="math-display" >
+      <img 
+src="final118x.png" alt="dT N d &#x2265;  0  &#x2200;d &#x2265;  0, d &#x2208; IRn.
+      " class="math-display" ></center>
+      <!--l. 110--><p class="nopar" >
+      <!--l. 112--><p class="noindent" >The inner product between two symmetric <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>matrices <span 
+class="cmmi-12">R </span>and <span 
+class="cmmi-12">S </span>is defined in the usual
+      way as
+      <center class="math-display" >
+      <img 
+src="final119x.png" alt="                          &#x2211;n &#x2211;n
+&#x003C; R, S &#x003E;  = trace(RS ) =        RijSij.
+                          i=1 j=1
+      " class="math-display" ></center>
+      <!--l. 116--><p class="nopar" >
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-11x1">(20 points) <a 
+ id="x1-101"></a>Prove that <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /></span><span 
+class="cmmi-8">n</span> is the dual cone to <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-43.png" alt="C" class="10-120x-x-43" /></span><span 
+class="cmmi-8">n</span>.
+           </li>
+           <li 
+  class="enumerate" id="x1-13x2">(10 points) Use the result of question <a 
+href="#x1-101">4a<!--tex4ht:ref: q.cop dual cp --></a> to show that the following matrix <span 
+class="cmmi-12">M </span>is not
+           completely positive:
+
+           <center class="math-display" >
+           <img 
+src="final1110x.png" alt="      &#x230A; 1  1  2 &#x230B;
+      |         |
+M  =  &#x2308; 1  1  2 &#x2309; .
+        2  2  1
+           " class="math-display" ></center>
+           <!--l. 126--><p class="nopar" >
+           (Hint: the matrix
+           <center class="math-display" >
+           <img 
+src="final1111x.png" alt="      &#x230A;               &#x230B;
+          1    2  - 1
+N  =  |&#x2308;   2    1  - 1 |&#x2309;.
+
+        - 1  - 1    1
+           " class="math-display" ></center>
+           <!--l. 130--><p class="nopar" >
+           is copositive.)</li></ol>
+
+      <!--l. 136--><p class="noindent" >(this page deliberately left blank)
+
+      </li>
+      <li 
+  class="enumerate" id="x1-15x5">(25 points) Let <span 
+class="cmmi-12">x </span>and <span 
+class="cmmi-12">z </span>be 1-dimensional variables. Define the function
+      <center class="math-display" >
+      <img 
+src="final1112x.png" alt="           1-      2                              2
+L (x,z) =  2(x - 1)  +  3|z| + 2(x - z) + 4 (x - z ).
+      " class="math-display" ></center>
+      <!--l. 146--><p class="nopar" >
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-17x1">(10  points)  Assume  <span 
+class="cmmi-12">z  </span>is  fixed  and  equal  to&#x00A0;<img 
+src="final1113x.png" alt="¯z"  class="bar" > .  Find  the  value  of  <span 
+class="cmmi-12">x  </span>that
+           minimizes&#x00A0;<span 
+class="cmmi-12">L</span>(<span 
+class="cmmi-12">x,</span><img 
+src="final1114x.png" alt="¯z"  class="bar" > ).
+           </li>
+           <li 
+  class="enumerate" id="x1-19x2">(15  points)  Assume  <span 
+class="cmmi-12">x  </span>is  fixed  and  equal  to&#x00A0;<img 
+src="final1115x.png" alt="¯x"  class="bar" >.  Find  the  value  of  <span 
+class="cmmi-12">z  </span>that
+           minimizes&#x00A0;<span 
+class="cmmi-12">L</span>(<img 
+src="final1116x.png" alt="¯x"  class="bar" ><span 
+class="cmmi-12">,z</span>).</li></ol>
+
+      <!--l. 157--><p class="noindent" >(this page deliberately left blank)
+      </li></ol>
+    
+</body></html> 
+
+
+

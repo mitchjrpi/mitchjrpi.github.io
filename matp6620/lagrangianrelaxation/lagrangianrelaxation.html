@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="lagrangianrelaxation.tex"> 
+<meta name="date" content="2015-04-17 14:25:00"> 
+<link rel="stylesheet" type="text/css" href="lagrangianrelaxation.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 113--><p class="noindent" >
+<!--l. 114--><p class="noindent" ><span 
+class="cmbx-12x-x-172">Lagrangian Relaxation of Integer Programs</span><br />
+<a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a></div>
+<!--l. 118--><p class="noindent" >See Nemhauser and Wolsey, section II.3.6, for more information.
+<!--l. 122--><p class="indent" >   We let <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">IP</span> </sub> denote the optimal value of the integer program
+   <table 
+class="equation"><tr><td><a 
+ id="x1-2r1"></a>
+   <center class="math-display" >
+<img 
+src="lagrangianrelaxation0x.png" alt="z    :=   max         cTx
+ IP                   1        1
+         subject to  A2x  &#x2264;   b2      (complicating constraints)
+                     A x  &#x2264;   b       (nice constraints)
+                       x   &#x2208;  &#x2124;n+
+" class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+<!--l. 131--><p class="nopar" >
+The matrices <span 
+class="cmmi-12">A</span><sup><span 
+class="cmr-8">1</span></sup> <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sup><span 
+class="cmmi-8">m</span><sub><span 
+class="cmr-6">1</span></sub><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup> and <span 
+class="cmmi-12">A</span><sup><span 
+class="cmr-8">2</span></sup> <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sup><span 
+class="cmmi-8">m</span><sub><span 
+class="cmr-6">2</span></sub><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup>, and all vectors are dimensioned appropriately. For any
+<span 
+class="cmmi-12">&#x03BB; </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sub><span 
+class="cmr-8">+</span></sub><sup><span 
+class="cmmi-8">m</span><sub><span 
+class="cmr-6">1</span></sub></sup>, we obtain the <span 
+class="cmbx-12">Lagrangian relaxation</span>
+   <table 
+class="equation"><tr><td><a 
+ id="x1-3r2"></a>
+   <center class="math-display" >
+<img 
+src="lagrangianrelaxation1x.png" alt="zLR (&#x03BB;) :=  max         cTx +  &#x03BB;T (b1 - A1x )
+            subject to  A2x   &#x2264;  b2
+                                   n
+                           x  &#x2208;  &#x2124; +
+" class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+<!--l. 143--><p class="nopar" >
+                                                                                         
+                                                                                         
+   <div class="newtheorem">
+<!--l. 145--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Proposition</span><span 
+class="cmbx-12">&#x00A0;1</span> </span><span 
+class="cmti-12">Problem (</span><a 
+href="#x1-3r2"><span 
+class="cmti-12">2</span><!--tex4ht:ref: eq:LR --></a><span 
+class="cmti-12">) is a relaxation of problem (</span><a 
+href="#x1-2r1"><span 
+class="cmti-12">1</span><!--tex4ht:ref: eq:IP --></a><span 
+class="cmti-12">) for any </span><span 
+class="cmmi-12">&#x03BB; </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmti-12">, in that any </span><span 
+class="cmmi-12">x</span>
+<span 
+class="cmti-12">feasible in (</span><a 
+href="#x1-2r1"><span 
+class="cmti-12">1</span><!--tex4ht:ref: eq:IP --></a><span 
+class="cmti-12">) is also feasible in (</span><a 
+href="#x1-3r2"><span 
+class="cmti-12">2</span><!--tex4ht:ref: eq:LR --></a><span 
+class="cmti-12">) with no smaller objective function value.</span>
+   </div>
+<!--l. 153--><p class="indent" >   <span 
+class="cmbx-12">Proof. </span>If <span 
+class="cmmi-12">x </span>is feasible in (<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq:IP --></a>) then it is feasible in (<a 
+href="#x1-3r2">2<!--tex4ht:ref: eq:LR --></a>) with objective function value
+   <center class="math-display" >
+<img 
+src="lagrangianrelaxation2x.png" alt=" T       T  1    1      T
+c x  + &#x03BB;  (b - A  x) &#x2265; c  x
+" class="math-display" ></center>
+<!--l. 157--><p class="nopar" >
+since <span 
+class="cmmi-12">&#x03BB; </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0 and <span 
+class="cmmi-12">A</span><sup><span 
+class="cmr-8">1</span></sup><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">b</span><sup><span 
+class="cmr-8">1</span></sup>.                                                                                   <span 
+class="msam-10x-x-120">&#x25A1;</span>
+<!--l. 162--><p class="indent" >   Thus, the optimal value of problem (<a 
+href="#x1-3r2">2<!--tex4ht:ref: eq:LR --></a>) gives an upper bound on the optimal value of (<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq:IP --></a>) for
+any <span 
+class="cmmi-12">&#x03BB; </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0. In the Lagrangian dual problem, this upper bound is minimized:
+   <table 
+class="equation"><tr><td><a 
+ id="x1-5r3"></a>
+   <center class="math-display" >
+<img 
+src="lagrangianrelaxation3x.png" alt="zLD :=  min         zLR (&#x03BB; )
+        subject to  &#x03BB;  &#x2265;   0.
+" class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+<!--l. 169--><p class="nopar" >
+<!--l. 171--><p class="indent" >   We immediately obtain the following proposition:
+   <div class="newtheorem">
+<!--l. 173--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Proposition</span><span 
+class="cmbx-12">&#x00A0;1</span> </span><span 
+class="cmti-12">The optimum value of (</span><a 
+href="#x1-5r3"><span 
+class="cmti-12">3</span><!--tex4ht:ref: eq:LD --></a><span 
+class="cmti-12">) is no smaller than the optimum value of</span><span 
+class="cmti-12">&#x00A0;(</span><a 
+href="#x1-2r1"><span 
+class="cmti-12">1</span><!--tex4ht:ref: eq:IP --></a><span 
+class="cmti-12">).</span>
+   </div>
+                                                                                         
+                                                                                         
+<!--l. 180--><p class="indent" >   We can use <span 
+class="cmti-12">polyhedral theory </span>to characterize the optimal value of the Lagrangian dual (<a 
+href="#x1-5r3">3<!--tex4ht:ref: eq:LD --></a>) more
+precisely. First, let
+   <table 
+class="equation"><tr><td><a 
+ id="x1-7r4"></a>
+   <center class="math-display" >
+<img 
+src="lagrangianrelaxation4x.png" alt="Q  :=  {x &#x2208; &#x2124;n  : A2x &#x2264;  b2},
+             +
+" class="math-display" ></center></td><td class="equation-label">(4)</td></tr></table>
+<!--l. 184--><p class="nopar" >
+so <span 
+class="cmmi-12">Q </span>is the feasible region for&#x00A0;(<a 
+href="#x1-3r2">2<!--tex4ht:ref: eq:LR --></a>) for any <span 
+class="cmmi-12">&#x03BB; </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0.
+   <div class="newtheorem">
+<!--l. 188--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Theorem</span><span 
+class="cmbx-12">&#x00A0;1</span> </span><a 
+ id="x1-81"></a> <span 
+class="cmti-12">The optimum value </span><span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">LD</span></sub> <span 
+class="cmti-12">of the Lagrangian dual (</span><a 
+href="#x1-5r3"><span 
+class="cmti-12">3</span><!--tex4ht:ref: eq:LD --></a><span 
+class="cmti-12">) is given by</span>
+   <center class="math-display" >
+<img 
+src="lagrangianrelaxation5x.png" alt="z    =  max {cTx  : A1x &#x2264; b1, x &#x2208; conv (Q )},
+ LD
+" class="math-display" ></center>
+<!--l. 192--><p class="nopar" >
+<span 
+class="cmti-12">a linear program.</span>
+   </div>
+<!--l. 196--><p class="indent" >   This is Theorem 6.2 on page 327, and the proof can be found in the textbook. In the proof,
+conv(<span 
+class="cmmi-12">Q</span>) is represented in terms of its extreme points and rays and then linear programming
+duality is exploited to derive the result.
+<!--l. 204--><p class="indent" >   The LP relaxation of (<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq:IP --></a>) has value
+   <table 
+class="equation"><tr><td><a 
+ id="x1-9r5"></a>
+   <center class="math-display" >
+<img 
+src="lagrangianrelaxation6x.png" alt="zLP :=  max          cT x
+        subject to  A1x   &#x2264;   b1
+                      2        2
+                    A  x  &#x2264;   bn
+                       x  &#x2208;   &#x211D;+
+" class="math-display" ></center></td><td class="equation-label">(5)</td></tr></table>
+<!--l. 213--><p class="nopar" >
+<!--l. 215--><p class="indent" >   The three values are compared in the following theorem:
+   <div class="newtheorem">
+<!--l. 217--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Theorem</span><span 
+class="cmbx-12">&#x00A0;2</span> </span><span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">IP</span> </sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">LD</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">LP</span> </sub><span 
+class="cmti-12">, and all of the inequalities can be strict.</span>
+   </div>
+<!--l. 221--><p class="indent" >   The proof of the inequalities follows directly from Theorem&#x00A0;<a 
+href="#x1-81">1<!--tex4ht:ref: thm:zLD --></a>. Examples can be constructed to
+show the inequalities can all be strict.
+   <div class="newtheorem">
+<!--l. 225--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Theorem</span><span 
+class="cmbx-12">&#x00A0;3</span> </span><span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">LD</span></sub> = <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">LP</span> </sub> <span 
+class="cmti-12">if all the extreme points of </span><span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="msbm-10x-x-120"><img 
+src="msbm10-c-52.png" alt="&#x211D;" class="10-120x-x-52" /></span><sub><span 
+class="cmr-8">+</span></sub><sup><span 
+class="cmmi-8">n</span></sup> : <span 
+class="cmmi-12">A</span><sup><span 
+class="cmr-8">2</span></sup><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">b</span><sup><span 
+class="cmr-8">2</span></sup><span 
+class="cmsy-10x-x-120">} </span><span 
+class="cmti-12">are integral.</span>
+   </div>
+<!--l. 231--><p class="indent" >   <span 
+class="cmbx-12">Proof. </span>In this case, we have
+   <center class="math-display" >
+<img 
+src="lagrangianrelaxation7x.png" alt="                   n    2     2
+conv (Q ) = {x &#x2208; &#x211D; + : A x &#x2264; b },
+" class="math-display" ></center>
+<!--l. 234--><p class="nopar" >
+so the result follows from Theorem&#x00A0;<a 
+href="#x1-81">1<!--tex4ht:ref: thm:zLD --></a>.                                                                    <span 
+class="msam-10x-x-120">&#x25A1;</span>
+<!--l. 241--><p class="noindent" >So: don&#8217;t want to choose the nice constraints so that the Lagrangian relaxation is too easy to solve,
+because then may get no improvement over the LP relaxation. For example, don&#8217;t choose the nice
+constraints so that the constraint matrix <span 
+class="cmmi-12">A</span><sup><span 
+class="cmr-8">2</span></sup> is totally unimodular.
+    
+</body></html> 
+
+                                                                                         
+
+

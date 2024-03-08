@@ -1,0 +1,12 @@
+reset;
+
+model hw4q.mod;
+data hw4q.dat;
+
+solve;
+
+display x1,x2,conQ,conM,conQ.slack,conM.slack;
+
+display c1 - conM*(M11*x1 + M12*x2) - conQ * (Q11*x1 + Q12*x2);
+display c2 - conM*(M21*x1 + M22*x2) - conQ * (Q21*x1 + Q22*x2);
+

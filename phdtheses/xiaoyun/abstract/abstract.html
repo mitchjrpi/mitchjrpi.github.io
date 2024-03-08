@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>No Title</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="abstract">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="abstract.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1"
+ HREF="node1.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="http://www.rpi.edu/Icons//next_motif.gif"></A> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="http://www.rpi.edu/Icons//up_motif_gr.gif"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="http://www.rpi.edu/Icons//previous_motif_gr.gif">   
+<BR>
+<B> Next:</B> <A NAME="tex2html2"
+ HREF="node1.html">About this document ...</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<P>
+In this thesis, we use Integer Programming (IP) to develop exact algorithms for the following graph partition problem with minimum size constraints: given a complete graph <I>K</I><SUB><I>n</I></SUB> = (<I>V</I>, <I>E</I>), with edge weight <I>c</I><SUB><I>e</I></SUB> on each edge, the graph partition problem with minimum size constraints requires partitioning the vertices of <I>K</I><SUB><I>n</I></SUB> into sets that each have at least <I>S</I> vertices, so as to minimize the sum of weights of the partitions. It is similar to the classic graph partition problem, but the additional size constraint makes it much harder to solve.
+
+<P>
+We consider two different measures to represent the weight of each partition. The Clique Partition Problem with Minimum Size Constraint (CPPMIN) uses the sum of weights of all the edges in each partition. The Minimum Weight Constrained Forest (MWCF) problem uses the weight of the edges in the minimum spanning tree of each partition. Both are NP-hard problems and can be used to model a large variety of practical optimization problems, including micro-aggregation of statistical data, sports team alignment, political districting and telecommunication network design.
+
+<P>
+We first try to formulate and solve the IP problems using branch-and-cut. For both problems, we discuss the polyhedral structure, derive strong valid inequalities for their corresponding polytopes, and design routines to generate the violated inequalities as cutting planes. Our computational results show that with these strong cutting planes, a branch-and-cut algorithm leads to high quality solutions in a reasonable amount of time.
+
+<P>
+We then formulate and solve the CPPMIN using branch-and-price-and-cut to compare with the branch-and-cut method. We successfully combine row generation and column generation to yield strong LP relaxations. We discuss the properties of the column generation problem, minimum node-edge-weighted cluster problem, and solve it as an IP. Our computation shows similar performance to the branch-and-cut algorithm.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1"
+ HREF="node1.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="http://www.rpi.edu/Icons//next_motif.gif"></A> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="http://www.rpi.edu/Icons//up_motif_gr.gif"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="http://www.rpi.edu/Icons//previous_motif_gr.gif">   
+<BR>
+<B> Next:</B> <A NAME="tex2html2"
+ HREF="node1.html">About this document ...</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>John E. Mitchell</I>
+<BR><I>2005-02-17</I>
+</ADDRESS>
+</BODY>
+</HTML>

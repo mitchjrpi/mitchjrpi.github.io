@@ -1,0 +1,914 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="midterm20sol.tex"> 
+<meta name="date" content="2020-04-04 14:04:00"> 
+<link rel="stylesheet" type="text/css" href="midterm20sol.css"> 
+</head><body 
+>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"><col 
+id="TBL-1-2"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-1-1-1"  
+class="td11">&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                                                                          </td><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-2"  
+class="td11">Name:</td> </tr></table>
+</div>
+<div class="center" 
+>
+<!--l. 43--><p class="noindent" >
+<!--l. 46--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12x-x-120">MATP6640/ISYE6770</span><br />
+<span 
+class="cmbx-12x-x-120">Linear Programming </span><br />
+Spring 2020</a></div>
+<div class="center" 
+>
+<!--l. 49--><p class="noindent" >
+<!--l. 50--><p class="noindent" >TakeHome Midterm Exam, Thursday, March 26, 2020.<br />
+Due: Noon, Monday, March 30, 2020.<br />
+Scan in a pdf version of your solutions and upload to LMS.<br />
+<span 
+class="cmbx-12x-x-120">Solutions</span></div>
+<!--l. 56--><p class="noindent" >Please do all four problems. Show all work. You may use any result from class, the homeworks, or
+the texts, except where stated.
+<!--l. 60--><p class="indent" >   Scan in a pdf version of your solutions and upload to LMS. You can alternatively write your
+solutions in LaTeX. Include your name in the name of any file you submit.
+<!--l. 64--><p class="indent" >   I will have WebEx office hours on Thursday from 1-2pm and on Friday from 11am-1pm.
+<div class="center" 
+>
+<!--l. 78--><p class="noindent" >
+<div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><colgroup id="TBL-2-2g"><col 
+id="TBL-2-2"><col 
+id="TBL-2-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-1"  
+class="td10"> Q1 &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-1-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-1-3"  
+class="td11"> /20</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-1"  
+class="td10"> Q2  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-2-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-2-3"  
+class="td11"> /20</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-1"  
+class="td10"> Q3  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-3-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-3-3"  
+class="td11"> /20</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-1"  
+class="td10"> Q4  &#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-4-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-4-3"  
+class="td11"> /40</td>
+</tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-1"  
+class="td10">Total&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                  </td><td  style="white-space:nowrap; text-align:center;" id="TBL-2-5-2"  
+class="td01"></td><td  style="white-space:nowrap; text-align:right;" id="TBL-2-5-3"  
+class="td11">/100</td></tr></table>
+</div></div>
+                                                                                         
+
+                                                                                         
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">(20 points; each point is worth 5 points) Let <span 
+class="cmmi-12">g </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup>, <span 
+class="cmmi-12">h </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">m</span></sup>, and <span 
+class="cmmi-12">H </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">m</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup>. Assume
+      rank(<span 
+class="cmmi-12">H</span>) = <span 
+class="cmmi-12">m</span>. We look at the LP
+      <table 
+class="equation"><tr><td><a 
+ id="x1-4r1"></a>
+      <center class="math-display" >
+      <img 
+src="midterm20sol0x.png" alt="minz &#x2208;&#x211D;n    gTz
+
+subject to  Hz   =   h
+              z      free
+      " class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+      <!--l. 118--><p class="nopar" >
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-6x1">Is the LP feasible?
+           </li>
+           <li 
+  class="enumerate" id="x1-8x2">Express the LP in an equivalent form min<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>: <span 
+class="cmmi-12">Ax </span>= <span 
+class="cmmi-12">b,x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmsy-10x-x-120">}</span>. Show that if
+           this problem has a finite optimal value then it has an unbounded set of optimal
+           solutions.
+           </li>
+           <li 
+  class="enumerate" id="x1-10x3">The dual problem is then max<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span>: <span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">c</span><span 
+class="cmsy-10x-x-120">}</span>. Does there exist a feasible dual
+           solution <span class="bar-css"><span 
+class="cmmi-12">y</span></span> with (<span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y</span>)<sub>
+<span 
+class="cmmi-8">i</span></sub> <span 
+class="cmmi-12">&#x003C; c</span><sub><span 
+class="cmmi-8">i</span></sub> for some component&#x00A0;<span 
+class="cmmi-12">i</span>?
+           </li>
+           <li 
+  class="enumerate" id="x1-12x4">What must <span 
+class="cmmi-12">g</span>, <span 
+class="cmmi-12">h</span>, and <span 
+class="cmmi-12">H </span>satisfy for (<a 
+href="#x1-4r1">1<!--tex4ht:ref: q1.lp --></a>) to have a finite optimal value? What can
+           you say about the set of optimal solutions to&#x00A0;(<a 
+href="#x1-4r1">1<!--tex4ht:ref: q1.lp --></a>) in this case?</li></ol>
+      <!--l. 133--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-14x1"><span 
+class="cmbx-12">Yes</span>, since <span 
+class="cmmi-12">H </span>has full row rank, so the system of equations <span 
+class="cmmi-12">Hx </span>= <span 
+class="cmmi-12">h </span>is consistent.
+           </li>
+           <li 
+  class="enumerate" id="x1-16x2">
+                                                                                         
+
+                                                                                         
+           <center class="math-display" >
+           <img 
+src="midterm20sol1x.png" alt="               [     ]T
+minx &#x2208;&#x211D;2n          g    x
+                 - g
+            [          ]
+subject to    H   - H   x  =   h
+                        x  &#x2265;   0
+           " class="math-display" ></center>
+           <!--l. 145--><p class="nopar" >
+           Assume <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> is optimal. Let
+           <center class="math-display" >
+           <img 
+src="midterm20sol2x.png" alt="               [   ]
+         *       e
+x(&#x03BB;) := x  + &#x03BB;   e
+           " class="math-display" ></center>
+           <!--l. 149--><p class="nopar" >
+           where <span 
+class="cmmi-12">e </span>is the vector of ones in&#x00A0;<span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup>. Then <span 
+class="cmmi-12">x</span>(<span 
+class="cmmi-12">&#x03BB;</span>) is feasible in the modified LP for any
+           <span 
+class="cmmi-12">&#x03BB; </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0, and <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x</span>(<span 
+class="cmmi-12">&#x03BB;</span>) = <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup>. So the modified problem has an unbounded set of optimal
+           solutions.
+           </li>
+           <li 
+  class="enumerate" id="x1-18x3">Dual problem:
+           <center class="math-display" >
+           <img 
+src="midterm20sol3x.png" alt="               T
+maxy &#x2208;&#x211D;m      b  y
+subject to   HT  y  &#x2264;  g
+            - HT y  &#x2264;  - g
+           " class="math-display" ></center>
+           <!--l. 161--><p class="nopar" >
+           The dual constraints imply <span 
+class="cmmi-12">H</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span>= <span 
+class="cmmi-12">g</span>, so <span 
+class="cmbx-12">NO</span>, no dual feasible solution satisfying the
+           given condition exists.
+           </li>
+           <li 
+  class="enumerate" id="x1-20x4">The primal problem is always feasible. So either it is unbounded or has a finite optimal
+           value. It has a finite optimal value if and only if the dual is feasible, that is, if
+           and only if there exists <span 
+class="cmmi-12">y </span>with <span 
+class="cmmi-12">H</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span>= <span 
+class="cmmi-12">g</span>, that is, if and only if <span 
+class="cmmi-12">g </span>is in the
+           row space of&#x00A0;<span 
+class="cmmi-12">H</span>. In this case, every feasible solution has exactly the same
+           value.</li></ol>
+      </li>
+                                                                                         
+
+                                                                                         
+      <li 
+  class="enumerate" id="x1-22x2">(20 points) The stochastic program
+      <table 
+class="equation"><tr><td><a 
+ id="x1-23r2"></a>
+      <center class="math-display" >
+      <img 
+src="midterm20sol4x.png" alt="minx        cTx  +   E &#x03BE; [Q(x, &#x03BE;)]
+subject to   Ax  =   b
+              x  &#x2265;   0
+      " class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+      <!--l. 181--><p class="nopar" >
+      has second stage cost
+      <table 
+class="equation"><tr><td><a 
+ id="x1-24r3"></a>
+      <center class="math-display" >
+      <img 
+src="midterm20sol5x.png" alt="Q(x,&#x03BE; ) = min         qT y
+              y
+          subject to  W  y  =  h (&#x03BE; ) - T (&#x03BE;)x
+                         y  &#x2265;  0
+      " class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+      <!--l. 189--><p class="nopar" >
+      Assume all matrices and vectors are dimensioned appropriately. In class, we discussed solving
+      (<a 
+href="#x1-23r2">2<!--tex4ht:ref: eq.stochprog --></a>) using the L-shaped decomposition method. In class, we only considered the case where
+      the problem has complete recourse, so the second stage problem&#x00A0;(<a 
+href="#x1-24r3">3<!--tex4ht:ref: eq.subproblem --></a>) is feasible for any <span 
+class="cmmi-12">x</span>
+      feasible in&#x00A0;(<a 
+href="#x1-23r2">2<!--tex4ht:ref: eq.stochprog --></a>).
+      <!--l. 197--><p class="noindent" >How can the method be modified if the assumption of complete recourse does not hold?
+      (Assume the dual LP to the subproblem (<a 
+href="#x1-24r3">3<!--tex4ht:ref: eq.subproblem --></a>) is feasible.)
+      <!--l. 201--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+                                                                                         
+
+                                                                                         
+      <!--l. 203--><p class="noindent" >In the <span 
+class="cmmi-12">L</span>-shaped method, we choose a first stage decision&#x00A0;<span class="bar-css"><span 
+class="cmmi-12">x</span></span> then solve the dual of the second
+      stage problem in each scenario to find&#x00A0;<span class="bar-css"><span 
+class="cmmi-12">&#x03C0;</span></span><sup><span 
+class="cmmi-8">s</span></sup>, and then add the constraint
+      <center class="math-display" >
+      <img 
+src="midterm20sol6x.png" alt="        &#x2211;S                                  ( &#x2211;S              )T
+Q (x ) &#x2265;     p (h(&#x03BE;s) - T (&#x03BE;s)x)T¯&#x03C0;s = Q (¯x) -     p (T (&#x03BE;s)T ¯&#x03C0;s)   (x - ¯x).
+             s                                    s
+        s=1                                   s=1
+      " class="math-display" ></center>
+      <!--l. 210--><p class="nopar" >
+      If the first stage decision is infeasible then there exists a scenario&#x00A0;<span 
+class="cmmi-12">&#x03BE;</span><sup><span 
+class="cmmi-8">s</span></sup> where the dual is
+      unbounded. The dual is
+      <center class="math-display" >
+      <img 
+src="midterm20sol7x.png" alt="max         (h(&#x03BE;s) - T(&#x03BE;s)¯x)T &#x03C0;
+    &#x03C0;                       T
+subject to                W   &#x03C0;  &#x2264;   q
+                              &#x03C0;      free
+      " class="math-display" ></center>
+      <!--l. 220--><p class="nopar" >
+      Hence there exists a dual ray <span class="bar-css"><span 
+class="cmmi-12">&#x03C0;</span></span> with <span 
+class="cmmi-12">W</span><sup><span 
+class="cmmi-8">T</span> </sup><span class="bar-css"><span 
+class="cmmi-12">&#x03C0;</span></span> <span 
+class="cmsy-10x-x-120">&#x2264; </span>0 and <img 
+src="midterm20sol8x.png" alt="    s       s
+(h(&#x03BE; ) - T(&#x03BE; )¯x)"  class="left" align="middle"> <sup><span 
+class="cmmi-8">T</span> </sup><span class="bar-css"><span 
+class="cmmi-12">&#x03C0;</span></span> <span 
+class="cmmi-12">&#x003E; </span>0. This <span class="bar-css"><span 
+class="cmmi-12">&#x03C0;</span></span> is
+      always a ray, and the dual subproblem will be unbounded for any <span 
+class="cmmi-12">x </span>satisfying
+      <img 
+src="midterm20sol9x.png" alt="(h(&#x03BE;s) - T(&#x03BE;s)x)"  class="left" align="middle"> <sup><span 
+class="cmmi-8">T</span> </sup><span class="bar-css"><span 
+class="cmmi-12">&#x03C0;</span></span> <span 
+class="cmmi-12">&#x003E; </span>0. In other words, any <span 
+class="cmmi-12">x </span>satisfying <img 
+src="midterm20sol10x.png" alt="(h(&#x03BE;s) - T(&#x03BE;s)x)"  class="left" align="middle"> <sup><span 
+class="cmmi-8">T</span> </sup><span class="bar-css"><span 
+class="cmmi-12">&#x03C0;</span></span> <span 
+class="cmmi-12">&#x003E; </span>0 will be
+      infeasible in scenario&#x00A0;<span 
+class="cmmi-12">&#x03BE;</span><sup><span 
+class="cmmi-8">s</span></sup>. Thus, if we determine that <span class="bar-css"><span 
+class="cmmi-12">x</span></span> is infeasible in some scenario&#x00A0;<span 
+class="cmmi-12">&#x03BE;</span><sup><span 
+class="cmmi-8">s</span></sup> with
+      dual ray <span class="bar-css"><span 
+class="cmmi-12">&#x03C0;</span></span>, we add the constraint
+      <center class="math-display" >
+      <img 
+src="midterm20sol11x.png" alt="    s       s   T
+(h (&#x03BE; ) - T (&#x03BE; )x) ¯&#x03C0; &#x2264; 0
+      " class="math-display" ></center>
+      <!--l. 232--><p class="nopar" >
+      to the Master Problem. Equivalently,
+      <center class="math-display" >
+      <img 
+src="midterm20sol12x.png" alt="  T   s         s
+¯&#x03C0;  T (&#x03BE; )x &#x2265;  h(&#x03BE; ).
+      " class="math-display" ></center>
+      <!--l. 236--><p class="nopar" >
+                                                                                         
+
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-26x3">(20 points) The ampl model file <span 
+class="cmtt-12">midterm20q3.mod </span>and run file <span 
+class="cmtt-12">midterm20q3.run </span>generate a
+      random feasible linear program of the form
+      <table 
+class="equation"><tr><td><a 
+ id="x1-27r4"></a>
+      <center class="math-display" >
+      <img 
+src="midterm20sol13x.png" alt="minx &#x2208;&#x211D;n    cTx
+
+subject to  Ax   &#x2265;   b
+              x  &#x2265;   0
+      " class="math-display" ></center></td><td class="equation-label">(4)</td></tr></table>
+      <!--l. 249--><p class="nopar" >
+      with <span 
+class="cmmi-12">m </span>= 10 and <span 
+class="cmmi-12">n </span>= 30. The seed is contained in the data file, so choose a random seed and
+      generate an LP. Note that <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">j</span></sub> = 1 for all&#x00A0;<span 
+class="cmmi-12">j</span>, and <span 
+class="cmmi-12">b</span><sub><span 
+class="cmmi-8">i</span></sub> = <span 
+class="cmex-10x-x-120">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">j</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmmi-8">n</span></sup>(<span 
+class="cmmi-12">A</span><sub>
+<span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">- </span>1) for all&#x00A0;<span 
+class="cmmi-12">i</span>. We consider
+      the robust LP model
+      <table 
+class="equation"><tr><td><a 
+ id="x1-28r5"></a>
+      <center class="math-display" >
+      <img 
+src="midterm20sol14x.png" alt="minx        cTx
+subject to  &#x2211;n    aijxj -  &#x2211;     &#x02C6;aijxj &#x2265;  bi &#x2200; |Si| &#x2264; &#x0393; i,&#x2200;i
+              j=1           j&#x2208;Si
+            x &#x2265; 0
+      " class="math-display" ></center></td><td class="equation-label">(5)</td></tr></table>
+      <!--l. 263--><p class="nopar" >
+      where <span 
+class="cmmi-12">â</span><sub><span 
+class="cmmi-8">ij</span></sub> = 1 for all <span 
+class="cmmi-12">i</span>, <span 
+class="cmmi-12">j</span>, and &#x0393;<sub><span 
+class="cmmi-8">i</span></sub> = 15 for all <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">, </span>10. Solve&#x00A0;(<a 
+href="#x1-28r5">5<!--tex4ht:ref: robust --></a>). In addition to
+      your optimal <span 
+class="cmmi-12">x </span>and optimal value, submit your seed, and also submit a data file
+      containing&#x00A0;<span 
+class="cmmi-12">A</span>.
+                                                                                         
+
+                                                                                         
+      <!--l. 269--><p class="noindent" >Note: You don&#8217;t need to use AMPL to solve the robust problem, you&#8217;re welcome to use a
+      different LP solver. You will need to run AMPL to generate the data file using the
+      command
+                                                                                         
+
+                                                                                         
+      <div class="verbatim" id="verbatim-1">
+      ampl:&#x00A0;model&#x00A0;midterm20q3.run;
+</div>
+      <!--l. 276--><p class="nopar" > This command will display the <span 
+class="cmmi-12">A </span>matrix, which you could copy and paste into another
+      solver. The run command also generates a data file containing&#x00A0;<span 
+class="cmmi-12">A</span>, which you can email to me:
+      please put your name in the title of the file.
+      <!--l. 281--><p class="noindent" >(If you don&#8217;t even want to use AMPL to generate the data, ensure you generate an instance
+      in the same way, and submit your <span 
+class="cmmi-12">A </span>matrix using exactly the formatting indicated in the run
+      file.)
+      <!--l. 285--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 287--><p class="noindent" >Solve the LP
+      <center class="math-display" >
+      <img 
+src="midterm20sol15x.png" alt="                                      T
+minx,y,w    &#x2211;n                  &#x2211;n    c x
+subject to     j=1 aijxj - &#x0393; iyi -   j=1wij  &#x2265;   bi for i = 1,...,m
+                         &#x02C6;aijxj - yi - wij &#x2264;   0  for i = 1,...,m, j = 1,...,n
+
+                                  x,y,w   &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 297--><p class="nopar" >
+      where each <span 
+class="cmmi-12">â</span><sub><span 
+class="cmmi-8">ij</span></sub> = 1. The optimal value is probably in the mid-20s. The non-robust version
+      probably has an optimal value in the high teens. The ampl model and run files can be found
+      on LMS and the course webpage.
+      </li>
+      <li 
+  class="enumerate" id="x1-30x4">(40 points. Parts (a)&#8211;(f) are worth 5 points each, part (g) is worth 10 points.) Consider the
+      standard form linear program
+      <table 
+class="equation"><tr><td><a 
+ id="x1-31r6"></a>
+      <center class="math-display" >
+                                                                                         
+
+                                                                                         
+      <img 
+src="midterm20sol16x.png" alt="            n     T
+z :=   minx&#x2208;&#x211D;     c  x
+      subject to  Ax   =  b
+                    x  &#x2265;  0
+      " class="math-display" ></center></td><td class="equation-label">(6)</td></tr></table>
+      <!--l. 311--><p class="nopar" >
+      where <span 
+class="cmmi-12">A </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">m</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup> and rank(<span 
+class="cmmi-12">A</span>) = <span 
+class="cmmi-12">m</span>, and <span 
+class="cmmi-12">b </span>and <span 
+class="cmmi-12">c </span>are dimensioned appropriately and <span 
+class="cmmi-12">c </span>has at
+      least one nonzero component. For any nonnegative scalar parameters <span 
+class="cmmi-12">&#x03BC; </span>and&#x00A0;<span 
+class="cmmi-12">&#x03BD;</span>, we can set up
+      a relaxation of&#x00A0;(<a 
+href="#x1-31r6">6<!--tex4ht:ref: q4lp --></a>):
+      <table 
+class="equation"><tr><td><a 
+ id="x1-32r7"></a>
+      <center class="math-display" >
+      <img 
+src="midterm20sol17x.png" alt="                             &#x03BC;                      &#x03BD;&#x2211; n
+z(&#x03BC;, &#x03BD;) = minnf (x) := cT x +--(Ax  - b)T(Ax  - b) + --   (min {xi,0})2
+          x&#x2208;&#x211D;                2                      2 i=1
+      " class="math-display" ></center></td><td class="equation-label">(7)</td></tr></table>
+      <!--l. 320--><p class="nopar" >
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-34x1">Show that the optimal value of (<a 
+href="#x1-32r7">7<!--tex4ht:ref: q4relax --></a>) provides a lower bound for the optimal value
+           of&#x00A0;(<a 
+href="#x1-31r6">6<!--tex4ht:ref: q4lp --></a>).
+           </li>
+           <li 
+  class="enumerate" id="x1-36x2">Let <img 
+src="midterm20sol18x.png" alt="&#x02C6;x"  class="circ" > be an optimal solution to&#x00A0;(<a 
+href="#x1-32r7">7<!--tex4ht:ref: q4relax --></a>). Show that <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><img 
+src="midterm20sol19x.png" alt="x&#x02C6;"  class="circ" > <span 
+class="cmmi-12">&#x003C; z</span>, the optimal value for&#x00A0;(<a 
+href="#x1-31r6">6<!--tex4ht:ref: q4lp --></a>).
+           </li>
+           <li 
+  class="enumerate" id="x1-38x3">The function <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) is convex and differentiable with gradient
+           <table 
+class="equation"><tr><td><a 
+ id="x1-39r8"></a>
+                                                                                         
+
+                                                                                         
+           <center class="math-display" >
+           <img 
+src="midterm20sol20x.png" alt="                T
+&#x2207;f (x) = c + &#x03BC;A  (Ax -  b) + &#x03BD;t
+           " class="math-display" ></center></td><td class="equation-label">(8)</td></tr></table>
+           <!--l. 330--><p class="nopar" >
+           where
+           <center class="math-display" >
+           <img 
+src="midterm20sol21x.png" alt="     {
+        0  if xi &#x2265; 0
+ti =   xi  if xi &#x2264; 0   for i = 1,...,n.
+           " class="math-display" ></center>
+           <!--l. 338--><p class="nopar" >
+           Any minimizer of <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) must satisfy <span 
+class="cmsy-10x-x-120">&#x2207;</span><span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) = 0. Show that if <span class="bar-css"><span 
+class="cmmi-12">x</span></span> is a minimizer of <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>)
+           then <span class="bar-css"><span 
+class="cmmi-12">x</span></span> is infeasible in&#x00A0;(<a 
+href="#x1-31r6">6<!--tex4ht:ref: q4lp --></a>).
+           </li>
+           <li 
+  class="enumerate" id="x1-41x4"><a 
+ id="x1-404"></a> Let <span class="bar-css"><span 
+class="cmmi-12">x</span></span> satisfy <span 
+class="cmsy-10x-x-120">&#x2207;</span><span 
+class="cmmi-12">f</span>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span>) = 0. Construct a dual feasible solution <span 
+class="cmmi-12">y </span>to&#x00A0;(<a 
+href="#x1-31r6">6<!--tex4ht:ref: q4lp --></a>), and hence find a
+           lower bound <span 
+class="cmmi-12">z</span>(<span 
+class="cmmi-12">y</span>) on the optimal value of&#x00A0;(<a 
+href="#x1-31r6">6<!--tex4ht:ref: q4lp --></a>).
+           </li>
+           <li 
+  class="enumerate" id="x1-43x5">Let <span class="bar-css"><span 
+class="cmmi-12">x</span></span> be a solution to&#x00A0;(<a 
+href="#x1-31r6">6<!--tex4ht:ref: q4lp --></a>). Express <span 
+class="cmmi-12">z</span>(<span 
+class="cmmi-12">&#x03BC;,&#x03BD;</span>) in terms of <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span class="bar-css"><span 
+class="cmmi-12">x</span></span> and <span 
+class="cmmi-12">z</span>(<span 
+class="cmmi-12">y</span>) from
+           part&#x00A0;<a 
+href="#x1-404">4d<!--tex4ht:ref: q4partdual --></a>.
+           </li>
+           <li 
+  class="enumerate" id="x1-45x6">Let <span class="bar-css"><span 
+class="cmmi-12">x</span></span> minimize <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>). We have constructed three lower bounds on the optimal value
+           of&#x00A0;<a 
+href="#x1-31r6">6<!--tex4ht:ref: q4lp --></a>, namely <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span class="bar-css"><span 
+class="cmmi-12">x</span></span>, <span 
+class="cmmi-12">f</span>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span>), and&#x00A0;<span 
+class="cmmi-12">z</span>(<span 
+class="cmmi-12">y</span>). Which one of these is largest?
+           </li>
+           <li 
+  class="enumerate" id="x1-47x7">Solve <a 
+href="#x1-32r7">7<!--tex4ht:ref: q4relax --></a> for the LP
+           <center class="math-display" >
+           <img 
+src="midterm20sol22x.png" alt="minx &#x2208;&#x211D;2    2x1  +    x2
+subject to   x1  +  2x2   =  4
+                  x1, x2  &#x2265;  0
+           " class="math-display" ></center>
+                                                                                         
+
+                                                                                         
+           <!--l. 360--><p class="nopar" >
+           for a generic <span 
+class="cmmi-12">&#x03BC; &#x003E; </span>0, <span 
+class="cmmi-12">&#x03BD; &#x003E; </span>0. What is the dual solution you obtain using the construction
+           of part&#x00A0;<a 
+href="#x1-404">4d<!--tex4ht:ref: q4partdual --></a>? (Hint: the optimal solution has <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmmi-12">&#x003C; </span>0, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0.)</li></ol>
+      <!--l. 366--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-49x1">We have three cases:
+               <ul class="itemize1">
+               <li class="itemize">(<a 
+href="#x1-31r6">6<!--tex4ht:ref: q4lp --></a>) is infeasible: Then <span 
+class="cmmi-12">z </span>= +<span 
+class="cmsy-10x-x-120">&#x221E;</span>, so <span 
+class="cmmi-12">z</span>(<span 
+class="cmmi-12">&#x03BC;,</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">nu</span>) must be a lower bound.
+               </li>
+               <li class="itemize">(<a 
+href="#x1-31r6">6<!--tex4ht:ref: q4lp --></a>) is unbounded: Then there exists a ray <span 
+class="cmmi-12">d </span>with <span 
+class="cmmi-12">Ad </span>= 0, <span 
+class="cmmi-12">d </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0, and <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">d &#x003C; </span>0, and a
+               feasible point&#x00A0;<span class="bar-css"><span 
+class="cmmi-12">x</span></span>. Then for any <span 
+class="cmmi-12">&#x03B1; </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0, we have
+               <center class="math-display" >
+               <img 
+src="midterm20sol23x.png" alt="              T
+f (x + &#x03B1;d) = c (x + &#x03B1;d ) &#x2192;  - &#x221E;
+               " class="math-display" ></center>
+               <!--l. 378--><p class="nopar" >
+               as <span 
+class="cmmi-12">&#x03B1; </span><span 
+class="cmsy-10x-x-120">&#x2192;&#x221E;</span>. Hence, we get <span 
+class="cmmi-12">z</span>(<span 
+class="cmmi-12">&#x03BC;,&#x03BD;</span>) = <span 
+class="cmsy-10x-x-120">-&#x221E; </span>for any <span 
+class="cmmi-12">&#x03BC;&#x03BD; </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0.
+               </li>
+               <li class="itemize">(<a 
+href="#x1-31r6">6<!--tex4ht:ref: q4lp --></a>) has an optimal solution <span class="bar-css"><span 
+class="cmmi-12">x</span></span>: Then
+               <center class="math-display" >
+               <img 
+src="midterm20sol24x.png" alt="z(&#x03BC;,&#x03BD;) &#x2264; f(¯x ) = cT ¯x = z,
+               " class="math-display" ></center>
+               <!--l. 385--><p class="nopar" >
+               as required.</li></ul>
+           </li>
+           <li 
+  class="enumerate" id="x1-51x2">We have
+           <center class="math-display" >
+           <img 
+src="midterm20sol25x.png" alt="                                        &#x2211;
+cT &#x02C6;x  &#x2264;  cT &#x02C6;x + &#x03BC;(A &#x02C6;x - b)T(A&#x02C6;x - b) + &#x03BD;   n  (min {&#x02C6;xi,0})2
+                2                     2   i=1
+                    since &#x03BC;,&#x03BD; &#x2265; 0
+      =  f (&#x02C6;x)      from the de finition of f(x)
+
+      =  z (&#x03BC;, &#x03BD;)    since &#x02C6;x solves (7)
+      &#x2264;  z          from part (a).
+           " class="math-display" ></center>
+                                                                                         
+
+                                                                                         
+           <!--l. 398--><p class="nopar" >
+           We need to show this is a strict inequality. We assume it is an equality and derive a
+           contradiction.
+           <!--l. 402--><p class="noindent" >Note that we have equality in the first inequality only if <span 
+class="cmmi-12">A</span><img 
+src="midterm20sol26x.png" alt="&#x02C6;x"  class="circ" > = <span 
+class="cmmi-12">b </span>and <img 
+src="midterm20sol27x.png" alt="&#x02C6;x"  class="circ" > <span 
+class="cmsy-10x-x-120">&#x2265; </span>0. Pick a
+           component&#x00A0;<span 
+class="cmmi-12">j </span>with <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">j</span></sub><span 
+class="cmmi-12">&#x2260;</span>0. Let <span 
+class="cmmi-12">e</span><sub><span 
+class="cmmi-8">j</span></sub> denote the <span 
+class="cmmi-12">j</span>th unit vector and let <span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">j</span></sub> denote the <span 
+class="cmmi-12">j</span>th
+           column of&#x00A0;<span 
+class="cmmi-12">A</span>. Define
+           <center class="math-display" >
+           <img 
+src="midterm20sol28x.png" alt="x (&#x03F5;) = &#x02C6;x - &#x03F5;c e
+             j j
+           " class="math-display" ></center>
+           <!--l. 410--><p class="nopar" >
+           for <span 
+class="cmmi-12">&#x03F5; </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0. Note that
+           <center class="math-display" >
+           <img 
+src="midterm20sol29x.png" alt="                      2   &#x03BC;&#x03F5;22     2   &#x03BD;               2
+f (x(&#x03F5;)) =   f(&#x02C6;x) - &#x03F5;cj + -2-cj||aj||2 + 2 (min {xj(&#x03F5;),0})
+                      2   &#x03BC;&#x03F5;22     2   &#x03BD;&#x03F5;2-2
+         &#x2264;   f(&#x02C6;x) - &#x03F5;cj +  2(cj||aj||2 +  2 cj )
+         =   f(&#x02C6;x) - &#x03F5;c2j + &#x03F5;2 &#x03BC;c2j||aj||22 + &#x03BD;c2j
+                             2           2
+         &#x003C;   f(&#x02C6;x)   for small positive &#x03F5;.
+           " class="math-display" ></center>
+           <!--l. 423--><p class="nopar" >
+           Hence <img 
+src="midterm20sol30x.png" alt="x&#x02C6;"  class="circ" > does not minimize (<a 
+href="#x1-32r7">7<!--tex4ht:ref: q4relax --></a>), a contradiction.
+           </li>
+           <li 
+  class="enumerate" id="x1-53x3">Let <span class="bar-css"><span 
+class="cmmi-12">x</span></span> be a minimizer of (<a 
+href="#x1-32r7">7<!--tex4ht:ref: q4relax --></a>). Assume <span class="bar-css"><span 
+class="cmmi-12">x</span></span> is feasible in (<a 
+href="#x1-31r6">6<!--tex4ht:ref: q4lp --></a>), so <span 
+class="cmmi-12">Ax </span>= <span 
+class="cmmi-12">b </span>and <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0. Then
+           <span 
+class="cmsy-10x-x-120">&#x2207;</span><span 
+class="cmmi-12">f</span>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span>) = <span 
+class="cmmi-12">c</span><span 
+class="cmmi-12">&#x2260;</span>0, so <span class="bar-css"><span 
+class="cmmi-12">x</span></span> is not a minimizer.
+           </li>
+           <li 
+  class="enumerate" id="x1-55x4">Let <span 
+class="cmmi-12">y </span>= <span 
+class="cmmi-12">&#x03BC;</span>(<span 
+class="cmmi-12">b </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span class="bar-css"><span 
+class="cmmi-12">x</span></span>). Since <span 
+class="cmsy-10x-x-120">&#x2207;</span><span 
+class="cmmi-12">f</span>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span>) = 0, we have dual slacks
+           <center class="math-display" >
+           <img 
+src="midterm20sol31x.png" alt="c - AT y = c + &#x03BC;AT (A ¯x - b) = &#x2207;f (¯x) - &#x03BD;t = -  &#x03BD;t &#x2265; 0
+           " class="math-display" ></center>
+           <!--l. 440--><p class="nopar" >
+           from the definition of&#x00A0;<span 
+class="cmmi-12">t</span>. Hence, the constructed <span 
+class="cmmi-12">y </span>is dual feasible. We get a lower bound
+           of
+           <center class="math-display" >
+           <img 
+src="midterm20sol32x.png" alt="z(y) = bTy =  &#x03BC;bT(b - Ax¯).
+           " class="math-display" ></center>
+           <!--l. 445--><p class="nopar" >
+           </li>
+           <li 
+  class="enumerate" id="x1-57x5">We have
+           <center class="math-display" >
+           <img 
+src="midterm20sol33x.png" alt="                                          &#x2211;
+z(&#x03BC;,&#x03BD; ) =   cT¯x + &#x03BC; (A¯x - b)T(A ¯x - b) + &#x03BD;   ni=1 (min{ ¯xi,0 })2
+            1      21   (    &#x03BC;           2)    &#x03BC;              &#x03BD;&#x2211;n               2
+        =   2cTx¯+  2¯xT  c + 2AT (Ax¯- b)  -  2bT(A ¯x - b) + 2  i=1 (min {¯xi,0} )
+            1 T     1 T                 &#x03BC; T            &#x03BD;&#x2211;       2
+        =   2c x¯+  2¯x&#x2211; (&#x2207;f (¯x) - &#x03BD;t) + 2b (b&#x2211; - A ¯x) + 2   ¯xi&#x003C;0 xi
+        =   12cTx¯-  12&#x03BD;   ¯x&#x003C;0 x2i + 12bTy +  12&#x03BD;   ¯x&#x003C;0 x2i
+            1 T     1     i                    i
+        =   2c x¯+  2z(y).
+           " class="math-display" ></center>
+           <!--l. 466--><p class="nopar" >
+           </li>
+           <li 
+  class="enumerate" id="x1-59x6">From the proof of part (b), we have <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span class="bar-css"><span 
+class="cmmi-12">x</span></span> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">z</span>(<span 
+class="cmmi-12">&#x03BC;,&#x03BD;</span>). Thus we have
+           <center class="math-display" >
+           <img 
+src="midterm20sol34x.png" alt="cT¯x &#x2264; z(&#x03BC;, &#x03BD;) &#x2264; z(y).
+           " class="math-display" ></center>
+           <!--l. 471--><p class="nopar" >
+           </li>
+           <li 
+  class="enumerate" id="x1-61x7">The point <span class="bar-css"><span 
+class="cmmi-12">x</span></span> solves (<a 
+href="#x1-32r7">7<!--tex4ht:ref: q4relax --></a>) if and only if <span 
+class="cmsy-10x-x-120">&#x2207;</span><span 
+class="cmmi-12">f</span>(<span class="bar-css"><span 
+class="cmmi-12">x</span></span>) = 0. From the hint and from&#x00A0;(<a 
+href="#x1-39r8">8<!--tex4ht:ref: q4grad --></a>), we must
+           have
+           <table 
+class="equation"><tr><td><a 
+ id="x1-62r9"></a>
+           <center class="math-display" >
+                                                                                         
+
+                                                                                         
+           <img 
+src="midterm20sol35x.png" alt="[   ]             [                                  ]
+  0                 2  +   &#x03BC; (x1 + 2x2 - 4)  +   &#x03BD;x1
+  0   = &#x2207;f  (x¯) =   1  +   2&#x03BC;(x  + 2x  - 4)
+                               1      2
+           " class="math-display" ></center></td><td class="equation-label">(9)</td></tr></table>
+           <!--l. 484--><p class="nopar" >
+           From the second line, we have
+           <table 
+class="equation"><tr><td><a 
+ id="x1-63r10"></a>
+           <center class="math-display" >
+           <img 
+src="midterm20sol36x.png" alt="x +  2x -  4 = -  -1-
+ 1     2          2&#x03BC;
+           " class="math-display" ></center></td><td class="equation-label">(10)</td></tr></table>
+           <!--l. 488--><p class="nopar" >
+           and so from the first line we have
+           <table 
+class="equation"><tr><td><a 
+ id="x1-64r11"></a>
+           <center class="math-display" >
+           <img 
+src="midterm20sol37x.png" alt="         3
+x¯1 =  -  --.
+         2&#x03BD;
+           " class="math-display" ></center></td><td class="equation-label">(11)</td></tr></table>
+           <!--l. 492--><p class="nopar" >
+           It follows from (<a 
+href="#x1-63r10">10<!--tex4ht:ref: q4Axb --></a>) that
+           <table 
+class="equation"><tr><td><a 
+ id="x1-65r12"></a>
+                                                                                         
+
+                                                                                         
+           <center class="math-display" >
+           <img 
+src="midterm20sol38x.png" alt="          1     3
+¯x2 = 2 - --- + ---.
+         4&#x03BC;    4&#x03BD;
+           " class="math-display" ></center></td><td class="equation-label">(12)</td></tr></table>
+           <!--l. 496--><p class="nopar" >
+           It follows from (<a 
+href="#x1-63r10">10<!--tex4ht:ref: q4Axb --></a>) that
+           <table 
+class="equation"><tr><td><a 
+ id="x1-66r13"></a>
+           <center class="math-display" >
+           <img 
+src="midterm20sol39x.png" alt="y = &#x03BC;(b - Ax¯) = 1.
+                 2
+           " class="math-display" ></center></td><td class="equation-label">(13)</td></tr></table>
+           <!--l. 500--><p class="nopar" >
+           Note that the dual problem is
+           <center class="math-display" >
+           <img 
+src="midterm20sol40x.png" alt="maxy &#x2208;&#x211D;    4y
+subject to    y  &#x2264;  2
+           2y   &#x2264;  1
+           " class="math-display" ></center>
+           <!--l. 508--><p class="nopar" >
+           which has optimal solution <span 
+class="cmmi-12">y </span>= <img 
+src="midterm20sol41x.png" alt="1
+2"  class="frac" align="middle">.</li></ol>
+      </li></ol>
+    
+</body></html> 
+
+                                                                                         
+
+

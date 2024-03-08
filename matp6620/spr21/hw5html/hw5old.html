@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw5.tex"> 
+<meta name="date" content="2021-04-05 14:04:00"> 
+<link rel="stylesheet" type="text/css" href="hw5.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 29--><p class="noindent" >
+<!--l. 32--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6620" ><span 
+class="cmr-12x-x-120">MATP6620 / ISYE6760</span><br />
+<span 
+class="cmr-12x-x-120">Integer and Combinatorial Optimization</span></a><br />
+<span 
+class="cmr-12x-x-120">Homework 5.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 37--><p class="noindent" >
+ Due: Thursday, April 15, 2021.<br />
+Penalty for late homeworks: 10% for each day or part of a day.</div>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">Given a complete graph <span 
+class="cmmi-12">G </span>= (<span 
+class="cmmi-12">V,E</span>) with edge weights <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">e</span></sub> and <span 
+class="cmmi-12">n </span>= <span 
+class="cmmi-12">kp </span>nodes, we wish to
+      partition the vertices into <span 
+class="cmmi-12">k </span>sets each containing exactly <span 
+class="cmmi-12">p </span>vertices so as to minimize the sum
+      of the edge weights of the edges with endpoints in the same set. Let <span 
+class="cmmi-12">e </span>denote the <span 
+class="cmmi-12">n</span>-vector of
+      ones and let <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">ii</span></sub> = 0 for <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span>. Show that the following semidefinite program
+      gives a lower bound on the optimal value of this problem, where <span 
+class="cmmi-12">X </span>is an <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n</span>
+      matrix:
+      <center class="math-display" >
+      <img 
+src="hw50x.png" alt="min        0.5 &#x2211;n   &#x2211;n    w  X
+                 i=1   j=1  ij  ij
+subject to                   Xii  =   1   i = 1, ...,n
+                             Xe   =   pe
+                              X       symmetric   and positive semide finite
+      " class="math-display" ></center>
+      <!--l. 89--><p class="nopar" >
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2"><a 
+ id="x1-42"></a> The coloring number <span 
+class="cmmi-12">&#x03C7; </span>of an undirected graph <span 
+class="cmmi-12">G </span>= (<span 
+class="cmmi-12">V,E</span>) is the smallest number of colors
+      needed to color the vertices&#x00A0;<span 
+class="cmmi-12">V </span>so that no two adjacent vertices share a color. Let
+      <span 
+class="cmmi-12">n </span>= <span 
+class="cmsy-10x-x-120">|</span><span 
+class="cmmi-12">V </span><span 
+class="cmsy-10x-x-120">| </span>and let <span 
+class="cmmi-12">A </span>denote the <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>adjacency matrix. The Hoffman bound on <span 
+class="cmmi-12">&#x03C7;</span>
+      is
+      <center class="math-display" >
+      <img 
+src="hw51x.png" alt="        &#x03BB;    (A)
+&#x03C7; &#x2265; 1 - --max---
+         &#x03BB;min(A)
+      " class="math-display" ></center>
+                                                                                         
+                                                                                         
+      <!--l. 101--><p class="nopar" >
+      where <span 
+class="cmmi-12">&#x03BB;</span><sub><span 
+class="cmr-8">max</span></sub>(<span 
+class="cmmi-12">A</span>) and <span 
+class="cmmi-12">&#x03BB;</span><sub><span 
+class="cmr-8">min</span></sub>(<span 
+class="cmmi-12">A</span>) denote the largest and smallest eigenvalues of <span 
+class="cmmi-12">A </span>respectively.
+      Assume <span 
+class="cmmi-12">E</span><span 
+class="cmmi-12">&#x2260;</span><span 
+class="cmsy-10x-x-120">&#x2205;</span>. Prove
+      <center class="math-display" >
+      <img 
+src="hw52x.png" alt="&#x03BB;max(A ) &#x003E; 0 &#x003E; &#x03BB;min(A).
+      " class="math-display" ></center>
+      <!--l. 108--><p class="nopar" >
+      </li>
+      <li 
+  class="enumerate" id="x1-7x3">Recall the Hoffman bound from Question&#x00A0;<a 
+href="#x1-42">2<!--tex4ht:ref: q.hoffman --></a>. Show the bound is tight if <span 
+class="cmmi-12">G </span>is a complete
+      bipartite graph with <span 
+class="cmmi-12">E</span><span 
+class="cmmi-12">&#x2260;</span><span 
+class="cmsy-10x-x-120">&#x2205;</span>. (In a complete bipartite graph, <span 
+class="cmmi-12">V </span>can be partitioned into two sets
+      <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub> and <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">2</span></sub>, every vertex in <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub> is adjacent to every vertex in&#x00A0;<span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">2</span></sub>, no vertex in <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub> is adjacent
+      to any other vertex in&#x00A0;<span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub>, and no vertex in <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">2</span></sub> is adjacent to any other vertex
+      in&#x00A0;<span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">2</span></sub>.)
+      </li>
+      <li 
+  class="enumerate" id="x1-9x4">Let
+      <center class="math-display" >
+      <img 
+src="hw53x.png" alt="      &#x230A;               &#x230B;
+        x11  x12  x13
+X  =  &#x2308; x21  x22  x23 &#x2309; .
+        x31  x32  x33
+      " class="math-display" ></center>
+      <!--l. 158--><p class="nopar" >
+      Assume <span 
+class="cmmi-12">X </span>is symmetric. Assume the 2 <span 
+class="cmsy-10x-x-120">&#x00D7; </span>2 submatrices
+      <center class="math-display" >
+      <img 
+src="hw54x.png" alt="[          ]          [          ]
+  x11  x12     and      x22  x23
+  x21  x22              x32  x33
+      " class="math-display" ></center>
+      <!--l. 165--><p class="nopar" >
+      are positive semidefinite. Show that <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">13</span></sub> can be chosen so that <span 
+class="cmmi-12">X </span>is positive semidefinite.
+      (This result can be generalized to allow an approach to solving semidefinite programs that
+      exploits sparsity. The approach involves looking at cliques in chordal graphs.)
+      </li>
+      <li 
+  class="enumerate" id="x1-11x5">The package <span 
+class="cmtt-12">cvx </span>is a modeling framework for convex optimization problems that works
+      within <span 
+class="cmtt-12">matlab</span>. Install <span 
+class="cmtt-12">cvx</span>, available from <a 
+href="http://cvxr.com/cvx/download/" class="url" ><span 
+class="cmtt-12">http://cvxr.com/cvx/download/</span></a>
+                                                                                         
+                                                                                         
+      <!--l. 179--><p class="noindent" >Use it to solve the Lovász theta relaxation of some randomly generated node packing
+      problems using the routine <span 
+class="cmtt-12"><a href=lovasztheta/lovaszthetarand.m>lovaszthetarand.m</a></span>
+      <!--l. 184--><p class="noindent" >You need to select 2 parameters in <span 
+class="cmtt-12">matlab</span>: the matrix size <span 
+class="cmtt-12">msize </span>and the density of the
+      graph <span 
+class="cmtt-12">density</span>
+      <!--l. 187--><p class="noindent" >For a version of the code for solving non-random instances, see <span 
+class="cmtt-12"><a href=lovasztheta/lovasztheta.m>lovasztheta.m</a></span>
+and an
+      example file <span 
+class="cmtt-12"><a href=lovasztheta/edges8.mat>edges8.mat</a></span>
+      </li>
+      <li 
+  class="enumerate" id="x1-13x6">Give a progress report on your project. Your report should be at least a couple of
+      paragraphs long. It doesn&#8217;t need to repeat anything from your initial report from
+      Homework&#x00A0;3.
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                      </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                 </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Monday and Thursday 1pm&#8211;2pm.           </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         webex: <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-12">https://rensselaer.webex.com/meet/mitchj</span></a></td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="midterm10s.tex"> 
+<meta name="date" content="2012-03-26 22:20:00"> 
+<link rel="stylesheet" type="text/css" href="midterm10s.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 21--><p class="noindent" >
+<!--l. 23--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12x-x-120">MATP6640/DSES6770</span><br />
+<span 
+class="cmbx-12x-x-120">Linear Programming </span></a><br />
+<span 
+class="cmr-12x-x-120">Spring 2010</span></div>
+<div class="center" 
+>
+<!--l. 27--><p class="noindent" >
+<!--l. 28--><p class="noindent" >Midterm Exam, Tuesday, April 6, 2010.</div>
+<!--l. 31--><p class="noindent" >Please do all three problems. Show all work. No books or calculators allowed. You may use any
+result from class, the homeworks, or the texts, except where stated. You may use one sheet of
+handwritten notes. The exam lasts 110 minutes.
+<!--l. 38--><p class="indent" >   Throughout, the standard primal-dual LP pair is
+   <center class="math-display" >
+<img 
+src="midterm10s0x.png" alt="min   cTx                       max    bTy
+s.t.   Ax   =   b    (P )        s.t.   AT y  +   s  =  c    (D )
+        x  &#x2265;   0                                s  &#x2265;  0
+" class="math-display" ></center>
+<!--l. 46--><p class="nopar" >
+where <span 
+class="cmmi-12">A </span>is <span 
+class="cmmi-12">m </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>and the vectors are dimensioned appropriately.
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">(30 points) <br 
+class="newline" />The linear program
+      <center class="math-display" >
+      <img 
+src="midterm10s1x.png" alt="min         cTxB   +  cT xN
+subject to  BBx     +   NN x    =  b
+               B          N
+                     xB, xN   &#x2265;  0
+      " class="math-display" ></center>
+      <!--l. 59--><p class="nopar" >
+      has <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">B</span></sub> <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">IR</span><sup><span 
+class="cmr-8">3</span></sup>, <span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmmi-8">N</span></sub> <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">IR</span><sup><span 
+class="cmr-8">1</span></sup>, <span 
+class="cmmi-12">b </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">IR</span><sup><span 
+class="cmr-8">3</span></sup>, and <span 
+class="cmmi-12">c</span>, <span 
+class="cmmi-12">B</span>, and <span 
+class="cmmi-12">N </span>dimensioned appropriately. The matrix <span 
+class="cmmi-12">B </span>is
+      invertible, and matrices <span 
+class="cmmi-12">L </span>and <span 
+class="cmmi-12">U </span>are known with <span 
+class="cmmi-12">LB </span>= <span 
+class="cmmi-12">U</span>, and
+                                                                                         
+
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="midterm10s2x.png" alt="     &#x230A;   1  0  0  &#x230B;         &#x230A; 1  3  - 2 &#x230B;
+     |            |         |           |
+L  = &#x2308;  - 2 1  0  &#x2309;,  U  =  &#x2308; 0  1  - 1 &#x2309; .
+         3  2  1              0  0    1
+      " class="math-display" ></center>
+      <!--l. 71--><p class="nopar" >
+      Let
+      <center class="math-display" >
+      <img 
+src="midterm10s3x.png" alt="      &#x230A;     &#x230B;        &#x230A;    &#x230B;         &#x230A;    &#x230B;
+      |   1 |        |  1 |         |  1 |
+cB  =  &#x2308; - 3 &#x2309;,   b = &#x2308;  0 &#x2309;,   N  = &#x2308;  0 &#x2309;.
+          2             1              2
+      " class="math-display" ></center>
+      <!--l. 77--><p class="nopar" >
+      Solve the following questions without finding <span 
+class="cmmi-12">B </span>explicitly.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-5x1">(10 points) Show that the basic feasible solution for basis <span 
+class="cmmi-12">B </span>has <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">B</span></sub> = (3<span 
+class="cmmi-12">, </span>2<span 
+class="cmmi-12">, </span>4)<sup><span 
+class="cmmi-8">T</span> </sup>.
+           </li>
+           <li 
+  class="enumerate" id="x1-7x2">(10 points) Use complementary slackness to show that the corresponding dual
+           solution is <span 
+class="cmmi-12">y </span>= (7<span 
+class="cmmi-12">,</span><span 
+class="cmsy-10x-x-120">-</span>10<span 
+class="cmmi-12">,</span><span 
+class="cmsy-10x-x-120">-</span>2)<sup><span 
+class="cmmi-8">T</span> </sup>.
+           </li>
+           <li 
+  class="enumerate" id="x1-9x3">(10 points) For what values of <span 
+class="cmmi-12">c</span><sub><span 
+class="cmmi-8">N</span></sub> is this solution optimal?</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-11x2">(30 points) <br 
+class="newline" />A set of exams <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span><span 
+class="cmsy-10x-x-120">} </span>is to be given, with only one exam given at a time. Exam <span 
+class="cmmi-12">i </span>has
+      duration <span 
+class="cmmi-12">l</span><sub><span 
+class="cmmi-8">i</span></sub> and a day has length&#x00A0;<span 
+class="cmmi-12">L</span>. An exam must start and finish on the same day. It is
+      desired to schedule the exams in as few days as possible. Let <span 
+class="cmmi-12">S</span><sup><span 
+class="cmmi-8">j</span></sup> <span 
+class="cmsy-10x-x-120">&#x2286;{</span>1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span><span 
+class="cmsy-10x-x-120">} </span>be a set of exams
+      that can be scheduled in a single day and let <span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup> be the incidence vector of this
+      set. Each set <span 
+class="cmmi-12">S</span><sup><span 
+class="cmmi-8">j</span></sup> must observe the restriction that no student sits more than one
+      exam in a single day. This restriction can be modeled using a set of pairs <span 
+class="cmmi-12">P </span>of
+      exams, with (<span 
+class="cmmi-12">p,q</span>) <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">P </span>corresponding to at least one student taking both exams <span 
+class="cmmi-12">p</span>
+      and&#x00A0;<span 
+class="cmmi-12">q</span>.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-13x1">(10 points) <br 
+class="newline" />Show that the problem can be modeled as the following integer program:
+                                                                                         
+
+                                                                                         
+           <center class="math-display" >
+           <img 
+src="midterm10s4x.png" alt="min            &#x2211;  j x
+             &#x2211;   S  j
+subject to     Sj ajxj =   e               (IP )
+                   xj  =   0 or 1 &#x2200;j
+           " class="math-display" ></center>
+           <!--l. 112--><p class="nopar" >
+           where the sum is taken over all valid subsets <span 
+class="cmmi-12">S</span><sup><span 
+class="cmmi-8">j</span></sup> <span 
+class="cmsy-10x-x-120">&#x2286;{</span>1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span><span 
+class="cmsy-10x-x-120">}</span>, and <span 
+class="cmmi-12">e </span>denotes the vector of
+           ones.
+           </li>
+           <li 
+  class="enumerate" id="x1-15x2">(20 points) <br 
+class="newline" />In a column generation approach to solve the LP relaxation of (<span 
+class="cmmi-12">IP</span>), a primal solution
+           <span class="bar-css"><span 
+class="cmmi-12">x</span></span> and a dual solution <span class="bar-css"><span 
+class="cmmi-12">y</span></span> are generated as optimal solutions for the current
+           set of columns. How do you determine whether <span class="bar-css"><span 
+class="cmmi-12">x</span></span> and <span class="bar-css"><span 
+class="cmmi-12">y</span></span> solve the full LP
+           relaxation?</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-17x3">(10 points) <br 
+class="newline" />Consider the LP:
+      <center class="math-display" >
+      <img 
+src="midterm10s5x.png" alt="min   6x1  +   17x2  +   4x3
+s.t.   x1  +     x2  +    x3  =   6
+      2x1  -    3x2  +   2x3  =   7
+                          x   &#x2265;   0  i = 1,...,3
+                            i
+      " class="math-display" ></center>
+      <!--l. 134--><p class="nopar" >
+      <!--l. 136--><p class="noindent" >Show that <span class="bar-css"><span 
+class="cmmi-12">x</span></span> = (2<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">, </span>3) is on the central trajectory for this problem, with <span class="bar-css"><span 
+class="cmmi-12">x</span></span><sup><span 
+class="cmmi-8">T</span> </sup><span class="bar-css"><span 
+class="cmmi-12">s</span></span> = 36 for some
+      dual feasible&#x00A0;<span class="bar-css"><span 
+class="cmmi-12">s</span></span>.
+      </li>
+      <li 
+  class="enumerate" id="x1-19x4">(30 points; each part is worth 10 points.) <br 
+class="newline" />Recall the standard primal-dual pair of linear programming problems (<span 
+class="cmmi-12">P</span>) and (<span 
+class="cmmi-12">D</span>) from the
+      cover page. Now consider the linear programming problem
+      <center class="math-display" >
+      <img 
+src="midterm10s6x.png" alt="minx,y,t         0
+subject to              Ax   -   bt   =  0
+            - AT y           +   ct   &#x2265;  0     (HLP  )
+                T        T
+               b y  -   c x           &#x2265;  0
+                y free,           x,t  &#x2265;  0
+      " class="math-display" ></center>
+      <!--l. 166--><p class="nopar" >
+      where <span 
+class="cmmi-12">t </span>is a scalar.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-21x1">Suppose the optimal solution to (<span 
+class="cmmi-12">HLP</span>) is (<img 
+src="midterm10s7x.png" alt="&#x02DC;x"  class="tilde" ><span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x1EF9;</span><span 
+class="cmmi-12">,</span><img 
+src="midterm10s8x.png" alt="&#x02DC;t"  class="tilde" > ), with <img 
+src="midterm10s9x.png" alt="&#x02DC;t"  class="tilde" > <span 
+class="cmmi-12">&#x003E; </span>0. How would you
+           use this solution to find optimal solutions to (<span 
+class="cmmi-12">P</span>) and (<span 
+class="cmmi-12">D</span>)?
+           </li>
+           <li 
+  class="enumerate" id="x1-23x2">Show that (<span 
+class="cmmi-12">HLP</span>) is self-dual, that is, the dual to (<span 
+class="cmmi-12">HLP</span>) is again the problem
+           (<span 
+class="cmmi-12">HLP</span>).
+           </li>
+           <li 
+  class="enumerate" id="x1-25x3">Let  (<span class="bar-css"><span 
+class="cmmi-12">x</span></span><span 
+class="cmmi-12">,</span><span class="bar-css"><span 
+class="cmmi-12">y</span></span><span 
+class="cmmi-12">,</span><span class="bar-css"><span 
+class="cmmi-12">t</span></span>)  be  a  solution  to  both  (<span 
+class="cmmi-12">HLP</span>)  and  its  dual  that  is  strictly
+           complementary and has <span class="bar-css"><span 
+class="cmmi-12">t</span></span> = 0. Show that either there exists a vector <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0 with
+           <span 
+class="cmmi-12">Ax </span>= 0 and <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x &#x003C; </span>0 or there exists a vector <span 
+class="cmmi-12">y </span>with <span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2264; </span>0 and <span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y &#x003E; </span>0. What
+           can you conclude about (<span 
+class="cmmi-12">P</span>) and (<span 
+class="cmmi-12">D</span>)?</li></ol>
+      </li></ol>
+    
+</body></html> 
+
+                                                                                         
+
+

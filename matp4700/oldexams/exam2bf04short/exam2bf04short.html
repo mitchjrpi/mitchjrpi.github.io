@@ -1,0 +1,370 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>exam2bf04short</TITLE>
+<META NAME="description" CONTENT="exam2bf04short">
+<META NAME="keywords" CONTENT="exam2bf04short">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="exam2bf04short.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+
+<P>
+<DIV ALIGN="CENTER">
+<a href=..>Math Models of Operations Research, MATP 4700/ DSES 4770.</a>
+
+</DIV>
+
+<P>
+<DIV ALIGN="CENTER">
+Second Exam, Friday, November 12, 2004.
+
+</DIV>
+
+<P>
+You may use any result from your notes or a homework that is clearly stated.
+You may use one sheet of handwritten notes, but no other sources.
+The exam consists of six questions, and lasts one hundred and ten minutes.
+
+<P>
+
+<OL>
+<LI>(20 points)
+
+<P>
+The following digraph represents a partially solved minimum cost flow
+problem with labels on nodes indicating net demand and those on arcs showing unit cost,
+capacity, and current flow.
+
+<P>
+<DIV ALIGN="CENTER">
+<BR>
+<IMG
+ WIDTH="407" HEIGHT="235" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="\begin{picture}(300,200)%(-25,-25)
+\par
+\put(50,100){\circle{20}}
+\put(150,150){...
+...){(1,15,0)}
+\put(190,135){(12,$\infty$,10)}
+\put(190,60){(3,40,0)}
+\end{picture}">
+<BR>
+</DIV>
+
+<P>
+The given solution is a basic feasible solution for basis
+<!-- MATH
+ $\{(1,2),(1,3),2,4)\}$
+ -->
+<IMG
+ WIDTH="158" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$\{(1,2),(1,3),2,4)\}$">.
+
+<P>
+
+<OL>
+<LI>(7 points)
+Compute all simplex directions available at this basis.
+</LI>
+<LI>(7 points)
+Determine whether each of the simplex directions is improving.
+</LI>
+<LI>(6 points)
+Regardless of whether they are improving, determine the maximum feasible step
+<IMG
+ WIDTH="15" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$\lambda$"> that could be applied to each of the simplex directions,
+<B>and state the resulting values of the variables
+and which variables would then be basic</B>.
+</LI>
+</OL>
+
+<P>
+</LI>
+<LI>(20 points)
+  The linear program
+  <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lrcrcrcrclr}
+  \min & c_1x_1 & + & c_2x_2  \\
+  \mbox{subject to} & 5x_1 & + & 2x_2 & + & x_3 & && = & 45 & \qquad (P) \\
+  & 2x_1 & + & x_2 &&& + & x_4 & = & 20 \\
+  & \multicolumn{7}{r}{x_1,x_2,x_3,x_4} & \geq & 0
+  \end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="486" HEIGHT="99" BORDER="0"
+ SRC="img4.png"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcrclr}
+\min &amp; c_1x_1 &amp; + &amp; c_2x_2 \\
+...
+... &amp; \multicolumn{7}{r}{x_1,x_2,x_3,x_4} &amp; \geq &amp; 0
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+has optimal tableau
+  <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{|r|rrrr|}
+  \hline
+  -z & 0 & 0 & 3 & 2 \\\hline
+  5 & 1 & 0 & 1 & -2 \\
+  10 & 0 & 1 & -2 & 5 \\\hline
+  \end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="172" HEIGHT="78" BORDER="0"
+ SRC="img5.png"
+ ALT="\begin{displaymath}
+\begin{array}{\vert r\vert rrrr\vert}
+\hline
+-z &amp; 0 &amp; 0 &amp;...
+...1 &amp; 0 &amp; 1 &amp; -2 \\
+10 &amp; 0 &amp; 1 &amp; -2 &amp; 5 \\ \hline
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+
+<OL>
+<LI>(10 points)
+If the right hand side of the second constraint was increased by one unit,
+how would the optimal value change?
+For what range (up and down) of values of this right hand side coefficient would the
+change per unit be the same?
+</LI>
+<LI>(10 points)
+Find the values of the cost coefficients <IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$c_1$"> and&nbsp;<IMG
+ WIDTH="20" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$c_2$">.
+  
+</LI>
+</OL>
+
+<P>
+</LI>
+<LI>(10 points)
+
+<P>
+Find the dual of the linear program
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lrcrcrcl}
+\min & 2x_1 & - &3x_2 & + & x_3 \\
+\mbox{subject to} & 2x_1 &  + & 3x_2 & - & 5x_3 & \geq & 2 \\
+& -x_1 & + & 4x_2 & + & x_3 & \leq & 10 \\
+& x_1 & \multicolumn{1}{l}{ \leq 0,} &  x_2 & \mbox{ free, } & x_3 & \geq & 0
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="396" HEIGHT="99" BORDER="0"
+ SRC="img8.png"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcl}
+\min &amp; 2x_1 &amp; - &amp;3x_2 &amp; + &amp; x_3 \\
+...
+...}{ \leq 0,} &amp; x_2 &amp; \mbox{ free, } &amp; x_3 &amp; \geq &amp; 0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+</LI>
+<LI>(10 points)
+
+<P>
+Perform one dual simplex iteration on the tableau
+
+<P>
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{|r|rrrrrr|}
+\hline
+3 & 0 & 0 & 8 & 7 & 6 & 5 \\\hline
+-2 & 1 & 0 &  1 & -1 & 1 & -1 \\
+11 & 0 & 1 & 3 & 2 & 2 & 3 \\\hline
+\end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="222" HEIGHT="78" BORDER="0"
+ SRC="img9.png"
+ ALT="\begin{displaymath}
+\begin{array}{\vert r\vert rrrrrr\vert}
+\hline
+3 &amp; 0 &amp; 0 &amp; 8...
+...1 &amp; 1 &amp; -1 \\
+11 &amp; 0 &amp; 1 &amp; 3 &amp; 2 &amp; 2 &amp; 3 \\ \hline
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+</LI>
+<LI>(20 points)
+
+<P>
+Let <IMG
+ WIDTH="93" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$G=(V,A)$"> be the following directed graph, where the label on each edge
+gives the cost of traversing that edge, the capacity of the edge, and the flow on the edge.
+This solution is a basic feasible solution.
+
+<P>
+<DIV ALIGN="CENTER">
+<BR>
+<IMG
+ WIDTH="473" HEIGHT="197" ALIGN="BOTTOM" BORDER="0"
+ SRC="img11.png"
+ ALT="\begin{picture}(300,200)%(-25,-25)
+\par
+\put(50,150){\circle{20}}
+\put(50,50){\c...
+...90,110){(1,50,30)}
+\put(190,85){(8,20,0)}
+\put(255,100){(4,40,30)}
+\end{picture}">
+<BR>
+</DIV>
+
+<P>
+
+<OL>
+<LI>(10 points)
+What must <IMG
+ WIDTH="27" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$c_{14}$"> satisfy for the indicated solution to be optimal?
+</LI>
+<LI>(10 points)
+Assume the given basic feasible solution is optimal.
+Suppose the supply at node 1 and the demand at node 5 are each
+increased by 5 units.
+<B>Use sensitivity analysis</B> to calculate the increase in the optimal value.
+</LI>
+</OL>
+
+<P>
+</LI>
+<LI>(20 points)
+    Consider the transportation problem represented in the following table:
+    <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{tabular}{r|llll|}
+      \multicolumn{1}{l}{\quad} & 20 & 30 & 30 & \multicolumn{1}{l}{40} \\
+      \cline{2-5}
+      40 & $2^{20}$\  & 4 & 8 & $2^{20}$\  \\
+      30 & 9 & $4^{30}$\  & 4 & 4 \\
+      30 & 7 & 9 & $5^{30}$\  & 4 \\
+      20 & 9 & 5 & 6 & $2^{20}$\  \\\cline{2-5}
+     \end{tabular}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="200" HEIGHT="122" BORDER="0"
+ SRC="img13.png"
+ ALT="\begin{displaymath}
+\begin{tabular}{r\vert llll\vert}
+\multicolumn{1}{l}{\quad...
+...\
+20 &amp; 9 &amp; 5 &amp; 6 &amp; $2^{20}$\ \\ \cline{2-5}
+\end{tabular}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+There are four sources and four destinations. The supplies and demands   
+    are indicated. The cost of each arc is given in the table, and a feasible
+    solution <IMG
+ WIDTH="15" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.png"
+ ALT="$x$"> is indicated by the superscripts.
+
+<P>
+
+<OL>
+<LI>(10 points)
+The feasible solution <IMG
+ WIDTH="15" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.png"
+ ALT="$x$"> only uses five arcs. Extend <IMG
+ WIDTH="15" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.png"
+ ALT="$x$"> to give a basic feasible solution.
+</LI>
+<LI>(10 points)
+Calculate the reduced costs for your basic feasible solution.
+Can you conclude that your solution is optimal?
+   
+</LI>
+</OL>
+
+<P>
+</LI>
+</OL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL>
+<LI><A NAME="tex2html3"
+  HREF="node1.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<br>
+2005-10-24
+</ADDRESS>
+</BODY>
+</HTML>

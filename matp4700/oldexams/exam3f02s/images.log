@@ -1,0 +1,1122 @@
+This is TeX, Version 3.14159 (Web2c 7.1) (format=latex 98.1.13)  19 NOV 2003 13:50
+**./images.tex
+(./images.tex
+LaTeX2e <1997/06/01>
+
+(/campus/text/tex/3.14159/common/texmf/tex/latex/base/article.cls
+Document Class: article 1997/06/16 v1.3v Standard LaTeX document class
+(/campus/text/tex/3.14159/common/texmf/tex/latex/base/size12.clo
+File: size12.clo 1997/06/16 v1.3v Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (/campus/text/tex/3.14159/common/texmf/tex/latex/graphics/color.sty
+Package: color 1997/06/07 v1.0e Standard LaTeX Color (DPC)
+(/campus/text/tex/3.14159/common/texmf/tex/latex/graphics/color.cfg)
+Package color Info: Driver file: dvips.def on input line 129.
+(/campus/text/tex/3.14159/common/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1996/12/12 v3.0d Driver-dependant file (DPC,SPQR)
+) (/campus/text/tex/3.14159/common/texmf/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1996/12/12 v3.0d Driver-dependant file (DPC,SPQR)
+))
+\sizebox=\box26
+\lthtmlwrite=\write3
+(images.aux)
+\openout1 = `images.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+latex2htmlLength hsize=349.0pt
+latex2htmlLength vsize=687.43pt
+latex2htmlLength hoffset=0.0pt
+latex2htmlLength voffset=0.0pt
+latex2htmlLength topmargin=0.0pt
+latex2htmlLength topskip=0.00003pt
+latex2htmlLength headheight=0.0pt
+latex2htmlLength headsep=0.0pt
+latex2htmlLength parskip=0.0pt plus 1.0pt
+latex2htmlLength oddsidemargin=-36.135pt
+latex2htmlLength evensidemargin=-36.135pt
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 113.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 113.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 113.
+l2hSize :tex2html_wrap_inline245:7.96431pt::0.0pt::6.67703pt.
+[1
+
+
+]
+l2hSize :tex2html_wrap_inline247:8.46431pt::8.46431pt::105.96114pt.
+[2
+
+
+]
+l2hSize :tex2html_wrap_inline249:10.38034pt::10.38034pt::60.54877pt.
+[3
+
+
+]
+l2hSize :tex2html_wrap_inline251:8.46431pt::8.46431pt::123.58595pt.
+[4
+
+
+]
+l2hSize :tex2html_wrap_inline253:10.38034pt::10.38034pt::61.32388pt.
+[5
+
+
+]
+l2hSize :tex2html_wrap_inline255:8.25pt::8.25pt::125.67609pt.
+[6
+
+
+]
+l2hSize :tex2html_wrap_inline257:10.38034pt::10.38034pt::60.54877pt.
+[7
+
+
+]
+l2hSize :displaymath32:58.99994pt::0.0pt::349.0pt.
+[8
+
+
+]
+l2hSize :tex2html_wrap_inline269:8.25pt::8.25pt::28.74968pt.
+[9
+
+
+]
+l2hSize :tex2html_wrap_inline275:8.25pt::8.25pt::41.87436pt.
+[10
+
+
+]
+l2hSize :tex2html_wrap_inline279:10.32137pt::10.32137pt::129.97885pt.
+[11
+
+
+]
+l2hSize :tex2html_wrap_inline281:10.32137pt::10.32137pt::104.2369pt.
+[12
+
+
+]
+l2hSize :displaymath38:58.99994pt::0.0pt::349.0pt.
+[13
+
+
+]
+l2hSize :tex2html_wrap_inline287:10.32202pt::0.0pt::15.62717pt.
+[14
+
+
+]
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.214 ...5,3.5,1,2)\\z^0=29\end{array}\right.\) }}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra }, or forgotten $.
+\@imakepicbox ...t@ #1\unitlength {\mb@l #4\mb@r }
+                                                  \mb@b \kern \z@ }
+l.214 ...5,3.5,1,2)\\z^0=29\end{array}\right.\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.214 ...5,3.5,1,2)\\z^0=29\end{array}\right.\) }}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.214 ...5,3.5,1,2)\\z^0=29\end{array}\right.\) }}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.216 ...,165){\makebox(0,0)[br]{\(x_1 \geq 3\) }}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra }, or forgotten $.
+\@imakepicbox ...t@ #1\unitlength {\mb@l #4\mb@r }
+                                                  \mb@b \kern \z@ }
+l.216 ...,165){\makebox(0,0)[br]{\(x_1 \geq 3\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\@imakepicbox ...{\mb@l #4\mb@r }\mb@b \kern \z@ }
+                                                  
+l.216 ...,165){\makebox(0,0)[br]{\(x_1 \geq 3\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\put ... \hb@xt@ \z@ {\kern #1\unitlength #3\hss }
+                                                  \ignorespaces 
+l.216 ...,165){\makebox(0,0)[br]{\(x_1 \geq 3\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.218 ...,165){\makebox(0,0)[bl]{\(x_1 \leq 2\) }}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra }, or forgotten $.
+\@imakepicbox ...t@ #1\unitlength {\mb@l #4\mb@r }
+                                                  \mb@b \kern \z@ }
+l.218 ...,165){\makebox(0,0)[bl]{\(x_1 \leq 2\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\@imakepicbox ...{\mb@l #4\mb@r }\mb@b \kern \z@ }
+                                                  
+l.218 ...,165){\makebox(0,0)[bl]{\(x_1 \leq 2\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\put ... \hb@xt@ \z@ {\kern #1\unitlength #3\hss }
+                                                  \ignorespaces 
+l.218 ...,165){\makebox(0,0)[bl]{\(x_1 \leq 2\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.220 ...1.5,2.5)\\z^1=30.5\end{array}\right.\) }}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra }, or forgotten $.
+\@imakepicbox ...t@ #1\unitlength {\mb@l #4\mb@r }
+                                                  \mb@b \kern \z@ }
+l.220 ...1.5,2.5)\\z^1=30.5\end{array}\right.\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.220 ...1.5,2.5)\\z^1=30.5\end{array}\right.\) }}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.220 ...1.5,2.5)\\z^1=30.5\end{array}\right.\) }}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.222 ...0,70){\makebox(0,0)[br]{\(x_2 \geq 3\) }}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra }, or forgotten $.
+\@imakepicbox ...t@ #1\unitlength {\mb@l #4\mb@r }
+                                                  \mb@b \kern \z@ }
+l.222 ...0,70){\makebox(0,0)[br]{\(x_2 \geq 3\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\@imakepicbox ...{\mb@l #4\mb@r }\mb@b \kern \z@ }
+                                                  
+l.222 ...0,70){\makebox(0,0)[br]{\(x_2 \geq 3\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\put ... \hb@xt@ \z@ {\kern #1\unitlength #3\hss }
+                                                  \ignorespaces 
+l.222 ...0,70){\makebox(0,0)[br]{\(x_2 \geq 3\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.224 ...5,70){\makebox(0,0)[bl]{\(x_2 \leq 2\) }}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra }, or forgotten $.
+\@imakepicbox ...t@ #1\unitlength {\mb@l #4\mb@r }
+                                                  \mb@b \kern \z@ }
+l.224 ...5,70){\makebox(0,0)[bl]{\(x_2 \leq 2\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\@imakepicbox ...{\mb@l #4\mb@r }\mb@b \kern \z@ }
+                                                  
+l.224 ...5,70){\makebox(0,0)[bl]{\(x_2 \leq 2\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\put ... \hb@xt@ \z@ {\kern #1\unitlength #3\hss }
+                                                  \ignorespaces 
+l.224 ...5,70){\makebox(0,0)[bl]{\(x_2 \leq 2\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.226 ...2.5,1,3)\\z^2=32.5\end{array}\right.\) }}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra }, or forgotten $.
+\@imakepicbox ...t@ #1\unitlength {\mb@l #4\mb@r }
+                                                  \mb@b \kern \z@ }
+l.226 ...2.5,1,3)\\z^2=32.5\end{array}\right.\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.226 ...2.5,1,3)\\z^2=32.5\end{array}\right.\) }}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.226 ...2.5,1,3)\\z^2=32.5\end{array}\right.\) }}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.228 ...0,70){\makebox(0,0)[bl]{\(x_2 \leq 2\) }}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra }, or forgotten $.
+\@imakepicbox ...t@ #1\unitlength {\mb@l #4\mb@r }
+                                                  \mb@b \kern \z@ }
+l.228 ...0,70){\makebox(0,0)[bl]{\(x_2 \leq 2\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\@imakepicbox ...{\mb@l #4\mb@r }\mb@b \kern \z@ }
+                                                  
+l.228 ...0,70){\makebox(0,0)[bl]{\(x_2 \leq 2\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\put ... \hb@xt@ \z@ {\kern #1\unitlength #3\hss }
+                                                  \ignorespaces 
+l.228 ...0,70){\makebox(0,0)[bl]{\(x_2 \leq 2\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.230 ...5,70){\makebox(0,0)[br]{\(x_2 \geq 3\) }}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra }, or forgotten $.
+\@imakepicbox ...t@ #1\unitlength {\mb@l #4\mb@r }
+                                                  \mb@b \kern \z@ }
+l.230 ...5,70){\makebox(0,0)[br]{\(x_2 \geq 3\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\@imakepicbox ...{\mb@l #4\mb@r }\mb@b \kern \z@ }
+                                                  
+l.230 ...5,70){\makebox(0,0)[br]{\(x_2 \geq 3\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\put ... \hb@xt@ \z@ {\kern #1\unitlength #3\hss }
+                                                  \ignorespaces 
+l.230 ...5,70){\makebox(0,0)[br]{\(x_2 \geq 3\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.232 ...3,3,1.5,3)\\z^3=36\end{array}\right.\) }}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra }, or forgotten $.
+\@imakepicbox ...t@ #1\unitlength {\mb@l #4\mb@r }
+                                                  \mb@b \kern \z@ }
+l.232 ...3,3,1.5,3)\\z^3=36\end{array}\right.\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.232 ...3,3,1.5,3)\\z^3=36\end{array}\right.\) }}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.232 ...3,3,1.5,3)\\z^3=36\end{array}\right.\) }}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.234 ...2,2.5,3.5)\\z^4=39\end{array}\right.\) }}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra }, or forgotten $.
+\@imakepicbox ...t@ #1\unitlength {\mb@l #4\mb@r }
+                                                  \mb@b \kern \z@ }
+l.234 ...2,2.5,3.5)\\z^4=39\end{array}\right.\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.234 ...2,2.5,3.5)\\z^4=39\end{array}\right.\) }}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.234 ...2,2.5,3.5)\\z^4=39\end{array}\right.\) }}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.236 ...=(2,3,3,3)\\z^5=38\end{array}\right.\) }}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra }, or forgotten $.
+\@imakepicbox ...t@ #1\unitlength {\mb@l #4\mb@r }
+                                                  \mb@b \kern \z@ }
+l.236 ...=(2,3,3,3)\\z^5=38\end{array}\right.\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.236 ...=(2,3,3,3)\\z^5=38\end{array}\right.\) }}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.236 ...=(2,3,3,3)\\z^5=38\end{array}\right.\) }}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.238 ...2,2,0.5,4)\\z^6=37\end{array}\right.\) }}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Extra }, or forgotten $.
+\@imakepicbox ...t@ #1\unitlength {\mb@l #4\mb@r }
+                                                  \mb@b \kern \z@ }
+l.238 ...2,2,0.5,4)\\z^6=37\end{array}\right.\) }}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.238 ...2,2,0.5,4)\\z^6=37\end{array}\right.\) }}
+                                                  
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.238 ...2,2,0.5,4)\\z^6=37\end{array}\right.\) }}
+                                                  
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra }, or forgotten $.
+\endpicture ->\egroup 
+                      \hss \egroup \ht \@picbox \@picht \dp \@picbox \z@ \mb...
+l.239 \end{picture}
+                   %
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Extra }, or forgotten $.
+\endpicture ->\egroup \hss \egroup 
+                                   \ht \@picbox \@picht \dp \@picbox \z@ \mb...
+l.239 \end{picture}
+                   %
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (315.0pt too wide) detected at line 239
+[]
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (400.0pt too wide) detected at line 239
+[]
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (165.0pt too wide) detected at line 239
+[]
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (100.0pt too wide) detected at line 239
+[]
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (285.0pt too wide) detected at line 239
+[]
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (205.0pt too wide) detected at line 239
+[]
+ []
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.239 \end{picture}
+                   %
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Underfull \hbox (badness 10000) detected at line 239
+ []
+ []
+
+l2hSize :picture46:0.0pt::0.0pt::0.0pt.
+[15
+
+
+]
+Overfull \hbox (1.0pt too wide) in paragraph at lines 298--299
+[][] 
+ []
+
+l2hSize :picture91:250.0pt::0.0pt::349.0pt.
+[16
+
+
+]
+Overfull \hbox (52.56534pt too wide) detected at line 311
+[]
+ []
+
+l2hSize :displaymath141:44.49995pt::0.0pt::349.0pt.
+[17
+
+
+]
+l2hSize :tex2html_wrap_inline317:11.8032pt::11.8032pt::52.20741pt.
+[18
+
+
+]
+l2hSize :tex2html_wrap_inline325:10.38034pt::10.38034pt::38.8238pt.
+[19
+
+
+]
+l2hSize :tex2html_wrap_inline327:12.44339pt::12.44339pt::111.79106pt.
+[20
+
+
+]
+l2hSize :tex2html_wrap_inline333:8.25pt::8.25pt::28.74968pt.
+[21
+
+
+]
+l2hSize :tex2html_wrap_inline335:8.25pt::8.25pt::28.35733pt.
+[22
+
+
+]
+l2hSize :tex2html_wrap_inline337:14.48897pt::14.48897pt::63.49736pt.
+[23
+
+
+]
+l2hSize :tex2html_wrap_inline339:8.25pt::8.25pt::31.94585pt.
+[24
+
+
+] (images.aux) ) 
+Here is how much of TeX's memory you used:
+ 514 strings out of 10991
+ 6435 string characters out of 74034
+ 49273 words of memory out of 263001
+ 3430 multiletter control sequences out of 10000+0
+ 6376 words of font info for 23 fonts, out of 100000 for 500
+ 14 hyphenation exceptions out of 1000
+ 22i,40n,21p,182b,461s stack positions out of 300i,100n,500p,10000b,4000s
+
+Output written on images.dvi (24 pages, 8996 bytes).

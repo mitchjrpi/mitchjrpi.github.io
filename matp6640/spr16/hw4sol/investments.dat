@@ -1,0 +1,16 @@
+set ASSETS = domestic international bonds mmf;
+set SCENARIOS = 1 2 3;
+
+param prob := 1  0.33333333333  2 0.3333333333  3  0.3333333333;
+
+param lb :=
+domestic 0.1 international 0.1 bonds 0.1 mmf 0.1;
+
+param ub :=
+domestic 0.35 international 0.35 bonds 0.35 mmf 0.35;
+
+param returns:   1     2     3  :=
+domestic       1.10  1.30  0.75
+international  1.22  1.20  0.80
+bonds          1.07  1.02  1.11
+mmf            1.03  1.03  1.05;

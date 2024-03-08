@@ -1,0 +1,149 @@
+\documentclass[12pt]{article}
+
+\pagestyle{empty}
+
+\oddsidemargin -.5in
+\textwidth 7.5in
+\textheight 10in
+\topmargin -30pt
+\headsep 0in
+\headheight 0in
+
+\newcommand{\re}{I \!\! R}
+
+\begin{document}
+
+\begin{center}
+  \begin{large}
+     MATP6640/DSES6770 Linear Programming, Homework 3.
+  \end{large}
+\end{center}
+
+\begin{flushright}
+   Due:  Friday, March 3, 2006.
+\end{flushright}
+
+Dantzig-Wolfe decomposition solves the linear programming problem
+    \begin{displaymath}
+      \begin{array}{lrcl}
+        \min          & c^Tx \\
+        \mbox{s.t.}   &  Ax  & = & b  \qquad \qquad (P)  \\
+                      &  Hx  & = & h  \\
+                      &   x & \geq & 0.
+      \end{array}
+    \end{displaymath}
+The procedure
+takes $X = \{ x \in \re^n: Hx=h, x \geq 0 \}$,
+and solves subproblems of the form
+    \begin{displaymath} 
+      \begin{array}{lccl} 
+        \min          & (c^T - \pi^T A)x \\ 
+        \mbox{s.t.}   &  Hx  & = & h  \qquad \qquad (SP(\pi))  \\ 
+                      &   x & \geq & 0, 
+      \end{array} 
+    \end{displaymath}
+    where $(\pi,\sigma)$ is the current dual solution to the Master Problem.
+
+\vspace{\baselineskip}
+
+\begin{enumerate}
+%  \item  Show that the system $Ax \leq b$, $x \geq 0$ is infeasible by
+%         applying Fourier-Motzkin elimination, where
+%         \begin{displaymath}
+%       A = \left[ \begin{array}{rr} 4 & 3 \\ 3 & -2 \end{array} \right],
+%       \;\;\;  b = \left[ \begin{array}{r} 1 \\ -3 \end{array} \right].
+%         \end{displaymath}
+  \item
+    When using Dantzig-Wolfe decomposition,
+    assume the current subproblem has an optimal solution $\bar{x}$ with value
+    $v$.  Can you give a lower bound on the optimal value of $(P)$?
+    What does your lower bound become if $(\pi,\sigma)$ is dual feasible?
+\item
+%    In the setting of problem~\ref{DW1},
+    Suppose $(P)$ has been solved using Dantzig-Wolfe decomposition.
+    How would you find
+    the optimal dual solution to the original problem~$(P)$?
+\item
+    Given an optimal basic feasible solution to the Master Problem, give an example to
+    show that the corresponding
+    feasible point~$x$ might not be a basic feasible solution for~(P).
+    How would you find an optimal basic feasible solution to~(P), in the general case?
+%\item
+%    Assume there are no constraints of the form $Hx=h$.
+%    What are the extreme point(s) and extreme ray(s) of~$X$?
+%    What is the Master Problem?
+%    How does Dantzig-Wolfe decomposition compare with the simplex algorithm?
+%\item
+%Use the network simplex algorithm to find the minimum cost flow for the problem
+%with
+%the following linear programming representation:
+%\begin{displaymath}
+%\begin{array}{lrcrcrcrcrcrcl}
+%\min & & - & 2x_{13}& - & x_{23} & - & 2x_{24} &&& - & 10 x_{41} \\
+%\mbox{subject to} & -x_{12} & - & x_{13} &&&&&&& + & x_{41} & = & 0 \\
+%& x_{12} &&& - & x_{23} & - & x_{24} &&&&& = & 0 \\
+%&&& x_{13} & + & x_{23} &&& - & x_{34} &&& = & 0 \\
+%&&&&&&& x_{24} & + & x_{34} & - & x_{41} & = & 0 \\
+%& \multicolumn{11}{r}{0 \, \leq \, x_{12}, x_{13}, x_{23}, x_{24}, x_{34}}
+%& \leq & 1 \\
+%&&&&&&&&& 0 & \leq & x_{41} & \leq & 10
+%\end{array}
+%\end{displaymath}
+%Use the initial basic feasible solution with basic variables:
+%\begin{displaymath}
+%x_{12} = 1, \quad x_{34}=1, \quad x_{41}=1
+%\end{displaymath}
+%and nonbasic variables
+%\begin{displaymath}
+%x_{13}=0, \quad x_{23}=1, \quad x_{24}=0.
+%\end{displaymath}
+%You should need three iterations.
+\item
+    The {\bf Project and Presentation:}  \\
+    Along with your solutions to this homework, hand in a brief description of
+    what you would like to do for the project and presentation part of this course.
+    As stated in the course outline:
+    \begin{quote}
+    The presentation will be of either one or two recent papers in interior point methods or a research project. You will also have to write a summary/analysis of the paper(s) or project. You can work in pairs for the presentation part of the course. You may discuss your paper(s) with other people and with me, but your writeup must be your own work. The presentations will take place in exam week during the time-slot for the final exam.
+    \end{quote}
+    The project can arise from your own research, or I can suggest a computational
+    project.
+\end{enumerate}
+
+%\vspace{\baselineskip}
+
+%The attached sheet is part of a paper which was submitted to
+%    {\em Mathematical Programming}. The authors propose an algorithm for linear
+%    programming and then make some claims about the performance of this
+%    algorithm. Do these claims seem reasonable? Justify your answer.
+
+%Notes:
+%\begin{itemize}
+%\item
+%The vector $x$ is in $\re^n$.
+%\item
+%``Step 1'' of the algorithm should also include the determination
+%of $\lambda$ described in ``Step 0''.
+%\item
+%The expression for $c$ in ``Step 2'' is designed to find $\omega$,
+%it does not change $c$.
+%The coefficient $\mu_{j\sigma_j}$ in the same line should read $\mu_{ji}$.
+%\item
+%The claims for the amount of work per iteration are reasonable, since
+%Gaussian elimination requires $O(n^3L)$ work. (Here, $L$ denotes the
+%storage requirement for any entry in the data.)
+%It is the claims regarding the {\em number of iterations}
+%that I want you to examine carefully.
+%\end{itemize}
+
+\vfill
+
+\begin{tabular}{@{\hspace{.5in}}l}
+   John Mitchell  \\
+   Amos Eaton 325  \\
+   x6915.  \\
+   mitchj@rpi.edu  \\
+   Office hours: Tuesday: 2 -- 3.30pm.
+\end{tabular}
+
+\end{document}

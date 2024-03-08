@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="gomory_example.tex"> 
+<meta name="date" content="2017-02-15 15:02:00"> 
+<link rel="stylesheet" type="text/css" href="gomory_example.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 128--><p class="noindent" >
+<!--l. 129--><p class="noindent" ><span 
+class="cmbx-12x-x-172">Gomory Cutting Plane Method Example</span><br />
+<a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a></div>
+<!--l. 135--><p class="noindent" >Consider the integer program
+   <table 
+class="equation"><tr><td><a 
+ id="x1-2r1"></a>
+   <center class="math-display" >
+<img 
+src="gomory_example0x.png" alt="maxx        7x1  +  5x2   +   x3
+subject to  2x1  +  5x2   +  2x3  &#x2264;   9
+            x &#x2265; 0, integer
+" class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+<!--l. 142--><p class="nopar" >
+<!--l. 144--><p class="indent" >   The LP relaxation in the Gomory form is
+   <table 
+class="equation"><tr><td><a 
+ id="x1-3r2"></a>
+   <center class="math-display" >
+<img 
+src="gomory_example1x.png" alt="maxx        x0
+subject to  x0  -   7x1  -  5x2   -   x3          =   0
+                    2x   +  5x    +  2x    +  x   =   9
+                      1        2        3      4
+                    x1,...,x4 &#x2265; 0
+" class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+<!--l. 152--><p class="nopar" >
+<!--l. 154--><p class="indent" >   Pivot on the <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">0</span></sub> entry in the first constraint to give the standard form
+   <table 
+class="equation"><tr><td><a 
+ id="x1-4r3"></a>
+                                                                                         
+                                                                                         
+   <center class="math-display" >
+<img 
+src="gomory_example2x.png" alt="maxx                7x1  +  5x2   +   x3
+subject to  x0  -   7x1  -  5x2   -   x3          =   0
+                    2x   +  5x    +  2x    +  x   =   9
+                      1        2        3      4
+                    x1,...,x4 &#x2265; 0
+" class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+<!--l. 162--><p class="nopar" >
+<!--l. 164--><p class="indent" >   Solve using (primal) simplex. The initial basic feasible solution has basic variables <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">0</span></sub> = 0
+and <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">4</span></sub> = 9, with nonbasic variables <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> = 0. Since we are maximizing, we
+need all reduced costs nonpositive at optimality. So choose <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> to enter the basis. The
+minimum ratio test shows that we pivot in the second constraint and <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">4</span></sub> leaves the
+basis:
+   <table 
+class="equation"><tr><td><a 
+ id="x1-5r4"></a>
+   <center class="math-display" >
+<img 
+src="gomory_example3x.png" alt="max         63        -   25-x   -  6x   -   7x
+    x       2             2  2        3     2  4
+subject to  x0        +   252-x2  +  6x3  +   72x4  =   632
+                  x   +   5 x   +   x   +   1x   =    9
+                   1      2  2        3     2  4      2
+                  x1,...,x4 &#x2265; 0
+" class="math-display" ></center></td><td class="equation-label">(4)</td></tr></table>
+<!--l. 176--><p class="nopar" >
+The new basic feasible solution has basic variables <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">0</span></sub> = <img 
+src="gomory_example4x.png" alt="63-
+2"  class="frac" align="middle"> and <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> = <img 
+src="gomory_example5x.png" alt="9
+2"  class="frac" align="middle">, with nonbasic variables
+<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">4</span></sub> = 0. This solution is optimal to the LP relaxation since all the reduced costs are
+nonpositive, with value&#x00A0;<img 
+src="gomory_example6x.png" alt="632"  class="frac" align="middle">.
+<!--l. 181--><p class="indent" >   Generate a Gomory cutting plane using the first constraint, since <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">0</span></sub> is fractional. The
+fractional parts of the coefficients of the nonbasic variables are <span 
+class="cmmi-12">f</span><sub><span 
+class="cmr-8">2</span></sub> = <img 
+src="gomory_example7x.png" alt="1
+2"  class="frac" align="middle">, <span 
+class="cmmi-12">f</span><sub><span 
+class="cmr-8">3</span></sub> = 0, and <span 
+class="cmmi-12">f</span><sub><span 
+class="cmr-8">4</span></sub> = <img 
+src="gomory_example8x.png" alt="1
+2"  class="frac" align="middle">.
+The fractional part of the right hand side is <span 
+class="cmmi-12">f</span><sub><span 
+class="cmr-8">0</span></sub> = <img 
+src="gomory_example9x.png" alt="1
+2"  class="frac" align="middle">. Thus, we get the valid cutting
+plane
+   <table 
+class="equation"><tr><td><a 
+ id="x1-6r5"></a>
+                                                                                         
+                                                                                         
+   <center class="math-display" >
+<img 
+src="gomory_example10x.png" alt="1-     1-    1-
+2x2 +  2x4 &#x2265; 2 .
+" class="math-display" ></center></td><td class="equation-label">(5)</td></tr></table>
+<!--l. 187--><p class="nopar" >
+Introducing a nonnegative integer slack variable <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">5</span></sub>, this cutting plane can be written equivalently
+as
+   <table 
+class="equation"><tr><td><a 
+ id="x1-7r6"></a>
+   <center class="math-display" >
+<img 
+src="gomory_example11x.png" alt="  1-     1-            1-
+- 2x2 -  2x4 + x5 =  - 2.
+" class="math-display" ></center></td><td class="equation-label">(6)</td></tr></table>
+<!--l. 191--><p class="nopar" >
+<!--l. 193--><p class="indent" >   Adding this constraint to the LP relaxation gives the tightened LP relaxation
+   <table 
+class="equation"><tr><td><a 
+ id="x1-8r7"></a>
+   <center class="math-display" >
+<img 
+src="gomory_example12x.png" alt="maxx        63-       -   25x2  -   6x3  -   7x4
+            2            225                 27                 63
+subject to x0        +   -2 x2 +   6x3  +   2x4          =    2-
+                 x   +    5x   +    x   +   1x           =     9
+                   1      2 2        3      2 4                2
+                     -    12x2           -   12x4  +   x5  =   - 12
+                 x ,..., x &#x2265;  0
+                   1      5
+                                                                                         
+                                                                                         
+" class="math-display" ></center></td><td class="equation-label">(7)</td></tr></table>
+<!--l. 202--><p class="nopar" >
+This gives the basic (infeasible) solution with basic variables <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">0</span></sub> = <img 
+src="gomory_example13x.png" alt="63
+ 2"  class="frac" align="middle">, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> = <img 
+src="gomory_example14x.png" alt="9
+2"  class="frac" align="middle">, and <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">5</span></sub> = <span 
+class="cmsy-10x-x-120">-</span><img 
+src="gomory_example15x.png" alt="1
+2"  class="frac" align="middle">. Since
+the reduced costs are of the correct sign for optimality, but some of the basic variables are
+negative, this can be optimized using the <span 
+class="cmbx-12">dual </span>simplex algorithm.
+<!--l. 210--><p class="noindent" ><span 
+class="cmbx-12">Exercise: </span>For this problem, we could add a redundant constraint <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">0</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0, and then the
+primal problem has the structure max<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>: <span 
+class="cmmi-12">Ax </span>= <span 
+class="cmmi-12">b,x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmsy-10x-x-120">}</span>. The dual problem is then
+min<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span>: <span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">c</span><span 
+class="cmsy-10x-x-120">}</span>. Show that the solution obtained by complementary slackness is dual
+feasible.
+<!--l. 218--><p class="indent" >   In the dual simplex method, we pick a basic variable that is negative to leave the basis. In this
+case, the only choice is <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">5</span></sub>, so we pivot on the third constraint. The entering variable is one
+of the nonbasic variables in this constraint with a negative coefficient, chosen using a
+minimum ratio test to ensure the reduced costs remain of the correct sign. The ratios
+are:
+      <div class="quote">
+      <!--l. 225--><p class="noindent" >For <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub>: ratio is <img 
+src="gomory_example16x.png" alt="252"  class="frac" align="middle"><span 
+class="cmmi-12">&#x2215;</span><img 
+src="gomory_example17x.png" alt="12"  class="frac" align="middle"> = 25.       For <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">4</span></sub>: ratio is <img 
+src="gomory_example18x.png" alt="72"  class="frac" align="middle"><span 
+class="cmmi-12">&#x2215;</span><img 
+src="gomory_example19x.png" alt="12"  class="frac" align="middle"> = 7.</div>
+<!--l. 228--><p class="noindent" >Thus, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">4</span></sub> enters the basis, so we pivot on the <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">4</span></sub> entry in the third constraint. The resulting tableau
+is
+   <table 
+class="equation"><tr><td><a 
+ id="x1-9r8"></a>
+   <center class="math-display" >
+<img 
+src="gomory_example20x.png" alt="maxx       28        -   9x2  -   6x3          -   7x5
+
+subject to  x0        +   9x2  +   6x3          +   7x5  =  28
+                 x1  +   2x2  +    x3          +    x5  =    4
+
+                          x2           +   x4  -   2x5  =    1
+                 x1,...,x5 &#x2265;  0
+" class="math-display" ></center></td><td class="equation-label">(8)</td></tr></table>
+<!--l. 238--><p class="nopar" >
+This is in optimal form: feasible with reduced costs all nonpositive (<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">0</span></sub> = 28, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> = 4,
+<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">4</span></sub> = 1, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">5</span></sub> = 0). Since this solution is integral, it gives an optimal solution to
+the original integer program&#x00A0;(<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq:IP --></a>), namely <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> = 4, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> = 0, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> = 0, with optimal value
+<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">0</span></sub> = 28.
+    
+</body></html> 
+
+                                                                                         
+
+

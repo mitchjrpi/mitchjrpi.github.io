@@ -1,0 +1,12 @@
+model q2.mod;
+
+problem LPrelax: x1,x2,IPobj,con1,con2,con3;
+problem LD: x1,x2,IPobj,con1,con2,con3,con2q;
+
+problem LPrelax2: x1,x2,obj2,con1,con2,con3;
+problem LD2: x1,x2,obj2,con1,con2,con3,con2q;
+
+solve LPrelax; display x1,x2;
+solve LD; display x1,x2;
+solve LPrelax2; display x1,x2;
+solve LD2; display x1,x2;

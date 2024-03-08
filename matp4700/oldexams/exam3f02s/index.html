@@ -1,0 +1,372 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Exam 3 Fall 2002</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="exam3f02s">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="exam3f02s.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+<a href=..>Math Models of Operations Research, MATP 4700/ DSES 4770</a>.
+
+</DIV>
+
+<P>
+
+<DIV ALIGN="CENTER">
+  Third Exam, Friday, December 6, 2002.
+
+</DIV>
+
+<P>
+You may use any result from your notes or a homework that is clearly stated.
+You may use one sheet of handwritten notes, but no other sources.
+The exam consists of six questions, and lasts one hundred
+minutes.
+You can collect the graded exam from me next week. Grades should be
+available early next week.
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>(15 points)
+Determine the best bound on the optimal solution value of an ILP
+with each of the following objective functions that is available from the specified
+LP relaxation optima&nbsp;<IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\tilde{x}$">.
+<DL COMPACT>
+<DT>(a)
+<DD><!-- MATH: $\min \; x_1 -4x_2 + 70x_3$ -->
+<IMG
+ WIDTH="173" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\min \; x_1 -4x_2 + 70x_3$">,
+<!-- MATH: $\tilde{x}=(1,0,\frac{2}{7})$ -->
+<IMG
+ WIDTH="100" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\tilde{x}=(1,0,\frac{2}{7})$">.
+<DT>(b)
+<DD><!-- MATH: $\min \; 60x_1 - 16x_2 + 10x_3$ -->
+<IMG
+ WIDTH="200" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\min \; 60x_1 - 16x_2 + 10x_3$">,
+<!-- MATH: $\tilde{x}=(\frac{1}{2},1,\frac{1}{2})$ -->
+<IMG
+ WIDTH="102" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$\tilde{x}=(\frac{1}{2},1,\frac{1}{2})$">.
+<DT>(c)
+<DD><!-- MATH: $\max \; 90x_1 + 11x_2 + 30x_3$ -->
+<IMG
+ WIDTH="204" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\max \; 90x_1 + 11x_2 + 30x_3$">,
+<!-- MATH: $\tilde{x}=(0,\frac{1}{2},5)$ -->
+<IMG
+ WIDTH="100" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\tilde{x}=(0,\frac{1}{2},5)$">.
+</DL>
+<DT>2.
+<DD>(20 points)
+     Jane is applying to graduate school. There are five schools she is
+     interested in attending, but she can only afford to send application
+     fees to three of them.
+     She has put a value on the education at each of the schools,
+     and she has also decided what her chances of being accepted are.
+     She wants to maximize the sum of the values of the three chosen schools,
+     but she wants to choose the three in such a way that the sum of the
+     probabilities of rejection is no greater than&nbsp;1.5.
+     The values are as follows:
+     <DIV ALIGN="CENTER">
+     <TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="LEFT">School <I>n</I></TD>
+<TD ALIGN="RIGHT">1</TD>
+<TD ALIGN="RIGHT">2</TD>
+<TD ALIGN="RIGHT">3</TD>
+<TD ALIGN="RIGHT">4</TD>
+<TD ALIGN="RIGHT">5</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Value <I>v</I><SUB><I>n</I></SUB></TD>
+<TD ALIGN="RIGHT">90</TD>
+<TD ALIGN="RIGHT">150</TD>
+<TD ALIGN="RIGHT">80</TD>
+<TD ALIGN="RIGHT">100</TD>
+<TD ALIGN="RIGHT">120</TD>
+</TR>
+<TR><TD ALIGN="LEFT">Probability of rejection <I>p</I><SUB><I>n</I></SUB></TD>
+<TD ALIGN="RIGHT">0.4</TD>
+<TD ALIGN="RIGHT">0.7</TD>
+<TD ALIGN="RIGHT">0.4</TD>
+<TD ALIGN="RIGHT">0.5</TD>
+<TD ALIGN="RIGHT">0.6</TD>
+</TR>
+</TABLE>
+</DIV>
+     <DL COMPACT>
+<DT>(a)
+<DD>(4 point)  Formulate Jane's problem as an integer programming
+problem, with one constraint for the number of applications and
+         one constraint for the probabilities.
+       <DT>(b)
+<DD>(8 points) How would you solve this integer program using
+         dynamic programming and backward recursion equations?
+         Describe the states, stages and recursion
+         equations. State <I>f</I><SUB>5</SUB>(<I>s</I>) explicitly.
+         (Hint: You will probably need two state variables.)
+       <DT>(c)
+<DD>(8 points)   
+         Illustrate your solution method by solving the following subproblem:
+         There are two schools 4 and 5 left, Jane has one application left,
+         and she only has 0.5 of slack remaining in her probability constraint.
+     </DL>
+
+<P>
+
+<DT>3.
+<DD>(10 points)
+The point <I>x</I>=(1,3,2) is an interior point for the linear program
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcll}
+\min & 10x_1 & + & 7x_2 & + & 6x_2 \\
+\mbox{s.t} & 2x_1 & + & 3x_2 & + & x_3 & = & 13 \\
+& x_1 & + & x_2 & + & x_3 & = & 6  \\
+&&&&& x_i & \geq & 0 & i=1,2,3
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="389" HEIGHT="99"
+ SRC="img8.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcll}
+\min &amp; 10x_1 &amp; + &amp; 7x_2 &amp; + &amp; 6x_2 ...
+... + &amp; x_3 &amp; = &amp; 6 \\
+&amp;&amp;&amp;&amp;&amp; x_i &amp; \geq &amp; 0 &amp; i=1,2,3
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Let <IMG
+ WIDTH="49" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$\mu=6$">.
+Show there exists a dual feasible solution <I>y</I> with dual slacks <I>s</I> satisfying
+<IMG
+ WIDTH="71" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$x_is_i=\mu$">
+for <I>i</I>=1,2,3.
+(Hint: The dual of <!-- MATH: $\min\{c^Tx:Ax=b,x \geq 0\}$ -->
+<IMG
+ WIDTH="211" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.gif"
+ ALT="$\min\{c^Tx:Ax=b,x \geq 0\}$">
+is <!-- MATH: $\max\{b^Ty:A^Ty \leq c\}$ -->
+<IMG
+ WIDTH="170" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.gif"
+ ALT="$\max\{b^Ty:A^Ty \leq c\}$">.)
+
+<P>
+
+<DT>4.
+<DD>(20 points)
+    The following integer programming problem is being solved
+    using branch and bound:
+    <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{ll}
+        \min & x_1 + 3x_2 + 2x_3 + 7x_4 \\
+        \mbox{subject to } & Ax = b\\
+                           & x_i \geq 0, \, i=1,...,4 \\
+                           & x_i \mbox{ integer, } i=1,...,4,
+      \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="280" HEIGHT="99"
+ SRC="img13.gif"
+ ALT="\begin{displaymath}
+\begin{array}{ll}
+\min &amp; x_1 + 3x_2 + 2x_3 + 7x_4 \\
+\mb...
+...i=1,...,4 \\
+&amp; x_i \mbox{ integer, } i=1,...,4,
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <I>Ax</I>=<I>b</I> is a given set of linear constraints.
+    The progress so far is shown
+<a href=e3fig.pdf>here</a>.
+    Here, <I>x</I><SUP><I>i</I></SUP> is the solution to the LP relaxation at node <IMG
+ WIDTH="29" HEIGHT="21" ALIGN="BOTTOM" BORDER="0"
+ SRC="img14.gif"
+ ALT="$\mbox{IP}^i$">
+    and <I>z</I><SUP><I>i</I></SUP> is the value of&nbsp;<I>x</I><SUP><I>i</I></SUP>.
+
+<P>
+
+<BR>
+
+<BR>
+    <DL COMPACT>
+<DT>(a)
+<DD>(5 points) What is the best solution found so far to the
+integer program?
+      <DT>(b)
+<DD>(8 points) Which node(s) of the branch and bound tree can be
+       fathomed?
+      <DT>(c)
+<DD>(7 points) What subproblems would you create next?
+    </DL>
+
+<P>
+
+<P>
+
+<DT>5.
+<DD>(15 points)
+In the graph below, we want to find the shortest path from vertex <I>s</I> to vertex&nbsp;<I>t</I>.
+Using Dijkstra's algorithm, so far we have labeled vertices <I>s</I>,
+1, 2, 3, and&nbsp;4.
+For each labeled vertex, the first label gives the length of the shortest path to that
+vertex from <I>s</I> going via labeled vertices only,
+and the second label gives the index of the previous vertex on this shortest path.
+The edge length is indicated next to each edge.
+Note that the edges between labeled vertices have not been drawn in the picture.
+What is the shortest path from <I>s</I> to <I>t</I> and what is its length?
+<DIV ALIGN="CENTER">
+<BR>
+<IMG
+ WIDTH="523" HEIGHT="294" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.gif"
+ ALT="\begin{picture}
+(350,250)
+%labelled vertices
+\put(20,190){\circle{20}}
+\put(18,1...
+...260,65){9}
+\put(260,100){\vector(1,0){50}} %(7,t)
+\put(280,105){3}
+\end{picture}">
+<BR>
+</DIV>
+
+<P>
+
+<DT>6.
+<DD>(20 points)
+In this problem, we are considering a standard form primal-dual pair,
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrclrlrcrclr}
+\min & c^Tx &&&& \max & b^Ty \\
+\mbox{s.t} & Ax & = & b & \qquad (P) \qquad \qquad \qquad
+& \mbox{s.t.} & A^Ty & + & s & = & c & \qquad (D) \\
+& x & \geq & 0 &&&&& s & \geq & 0
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="620" HEIGHT="76"
+ SRC="img17.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrclrlrcrclr}
+\min &amp; c^Tx &amp;&amp;&amp;&amp; \max &amp; b^Ty \\ ...
+... &amp; \qquad (D) \\
+&amp; x &amp; \geq &amp; 0 &amp;&amp;&amp;&amp;&amp; s &amp; \geq &amp; 0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<DL COMPACT>
+<DT>(a)
+<DD>(10 points)
+The diagonal scaling matrix that we use for primal-dual interior methods is <I>D</I>,
+where the <I>i</I>th diagonal entry is <!-- MATH: $D_{ii}=\sqrt{\frac{x_i}{s_i}}$ -->
+<IMG
+ WIDTH="87" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.gif"
+ ALT="$D_{ii}=\sqrt{\frac{x_i}{s_i}}$">.
+Some interior point methods use a diagonal matrix <I>X</I> with <I>X</I><SUB><I>ii</I></SUB>=<I>x</I><SUB><I>i</I></SUB>.
+Other methods use a diagonal matrix <I>S</I> with <!-- MATH: $S_{ii}=\frac{1}{s_i}$ -->
+<IMG
+ WIDTH="66" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.gif"
+ ALT="$S_{ii}=\frac{1}{s_i}$">.
+Show that <!-- MATH: $D_{ii}=\sqrt{\frac{1}{\mu}} X_{ii}=\sqrt{\mu} S_{ii}$ -->
+<IMG
+ WIDTH="182" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.gif"
+ ALT="$D_{ii}=\sqrt{\frac{1}{\mu}} X_{ii}=\sqrt{\mu} S_{ii}$">
+if <IMG
+ WIDTH="71" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$x_is_i=\mu$">
+for all <I>i</I> for some <IMG
+ WIDTH="49" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.gif"
+ ALT="$\mu&gt;0$">.
+<DT>(b)
+<DD>(10 points)
+Show that if <IMG
+ WIDTH="49" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.gif"
+ ALT="$\bar{x}&gt;0$">
+and <!-- MATH: $\left( \frac{x_i-\bar{x}_i}{\bar{x}_i} \right)^2 \leq 1$ -->
+<IMG
+ WIDTH="105" HEIGHT="52" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$\left( \frac{x_i-\bar{x}_i}{\bar{x}_i} \right)^2 \leq 1$">
+then <IMG
+ WIDTH="55" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.gif"
+ ALT="$x_i \geq 0$">.
+</DL>
+
+<P>
+</DL>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2003-11-19</I>
+</ADDRESS>
+</BODY>
+</HTML>

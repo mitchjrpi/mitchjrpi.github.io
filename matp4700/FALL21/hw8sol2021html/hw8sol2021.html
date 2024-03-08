@@ -1,0 +1,496 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw8sol2021.tex"> 
+<meta name="date" content="2021-12-05 19:33:00"> 
+<link rel="stylesheet" type="text/css" href="hw8sol2021.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 24--><p class="noindent" >
+<!--l. 26--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12">Math Models of Operations Research</span></a><br />
+<a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12">MATP 4700 </span></a><br /><br />
+<span 
+class="cmbx-12">Homework 8</span></div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 33--><p class="noindent" >
+ Due: Friday, December 3, 2021, 11.59pm on LMS.<br />
+Penalty for late homeworks: 25% for each day or part of a day.</div>
+<!--l. 44--><p class="noindent" >The first three questions concern the following linear program
+   <table 
+class="equation"><tr><td><a 
+ id="x1-2r1"></a>
+   <center class="math-display" >
+<img 
+src="hw8sol20210x.png" alt="minx&#x2208;&#x211D;3             2x2  +   x3
+subject to - x1 +   2x2  +   x3  =  4
+                             xi  &#x2265;  0  i = 1,...,3
+" class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+<!--l. 52--><p class="nopar" >
+has dual problem
+   <table 
+class="equation"><tr><td><a 
+ id="x1-3r2"></a>
+   <center class="math-display" >
+<img 
+src="hw8sol20211x.png" alt="maxy&#x2208; &#x211D;,s&#x2208;&#x211D;3  4y
+subject to    - y +   s1  =  0
+             2y  +   s   =  2
+                      2
+              y  +   s3  =  1
+                     si  &#x2265;  0  i = 1,...,3
+                                                                                         
+                                                                                         
+" class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+<!--l. 62--><p class="nopar" >
+     <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+   1. </dt><dd 
+class="enumerate-enumitem">Let <span 
+class="cmmi-10x-x-109">r &#x003E; </span>0 and <span 
+class="cmmi-10x-x-109">&#x03BC; </span>= <img 
+src="hw8sol20212x.png" alt="4r(1+r)
+ 1+3r"  class="frac" align="middle">. Show that <span 
+class="cmmi-10x-x-109">x</span>(<span 
+class="cmmi-10x-x-109">r</span>) := (4<span 
+class="cmmi-10x-x-109">r,</span>1 + <span 
+class="cmmi-10x-x-109">r,</span>2 + 2<span 
+class="cmmi-10x-x-109">r</span>) solves the barrier problem
+     <table 
+class="equation"><tr><td><a 
+ id="x1-5r3"></a>
+     <center class="math-display" >
+     <img 
+src="hw8sol20213x.png" alt="                                      &#x2211;3
+minx&#x2208;&#x211D;3             2x1  +   x3  -  &#x03BC;   i=1ln(xi)
+subject to - x1  +  2x2  +   x3  =  4
+                             xi  &#x2265;  0  i = 1,...,3
+     " class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+     <!--l. 74--><p class="nopar" >
+     for any <span 
+class="cmmi-10x-x-109">r &#x003E; </span>0. (Hint: this is equivalent to showing that <span 
+class="cmmi-10x-x-109">x</span>(<span 
+class="cmmi-10x-x-109">r</span>) is on the central path. You need to find
+     dual feasible (<span 
+class="cmmi-10x-x-109">y</span>(<span 
+class="cmmi-10x-x-109">r</span>)<span 
+class="cmmi-10x-x-109">,s</span>(<span 
+class="cmmi-10x-x-109">r</span>)) so that (<span 
+class="cmmi-10x-x-109">x</span>(<span 
+class="cmmi-10x-x-109">r</span>)<span 
+class="cmmi-10x-x-109">,y</span>(<span 
+class="cmmi-10x-x-109">r</span>)<span 
+class="cmmi-10x-x-109">,s</span>(<span 
+class="cmmi-10x-x-109">r</span>)) satisfy the central path conditions.) (Lecture
+     25)
+     </dd><dt class="enumerate-enumitem">
+   2. </dt><dd 
+class="enumerate-enumitem">Find <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> := lim<sub><span 
+class="cmmi-8">r</span><span 
+class="cmsy-8">&#x2192;</span><span 
+class="cmr-8">0</span></sub><span 
+class="cmmi-10x-x-109">x</span>(<span 
+class="cmmi-10x-x-109">r</span>). Use duality to prove that this limit point <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> is optimal for&#x00A0;(<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.primal --></a>). (Lecture
+     25)
+     </dd><dt class="enumerate-enumitem">
+   3. </dt><dd 
+class="enumerate-enumitem">Show that <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> is not a basic feasible solution for&#x00A0;(<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.primal --></a>). How can we have an optimal solution to the
+     standard form problem&#x00A0;(<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.primal --></a>) that is not a basic feasible solution? (Lecture 25)
+     </dd><dt class="enumerate-enumitem">
+   4. </dt><dd 
+class="enumerate-enumitem"><span 
+class="cmbx-10x-x-109">Knapsack Gomory: </span>Consider the knapsack problem
+     <center class="math-display" >
+     <img 
+src="hw8sol20214x.png" alt="maxx &#x2208;&#x211D;4   3x1 + 4x2 + 5x3 + 6x4
+subject to  2x1 + 3x2 + 5x3 + 8x4 &#x2264; 9
+           xj binary, j = 1,...,4
+     " class="math-display" ></center>
+     <!--l. 100--><p class="nopar" >
+     Valid constraints for the LP relaxation include <div class="eqnarray">
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="hw8sol20215x.png" alt="x1 + x2 + x3 &#x2264;   2                                 (4)
+
+    x1 + x4  &#x2264;   1                                 (5)
+    x2 + x4  &#x2264;   1                                 (6)
+    x  + x   &#x2264;   1                                 (7)
+      3   4
+     " class="math-display" ><a 
+ id="x1-9r4"></a><a 
+ id="x1-9r5"></a><a 
+ id="x1-9r7"></a></center>
+     </div>The point <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> = (<img 
+src="hw8sol20216x.png" alt="2
+3"  class="frac" align="middle"><span 
+class="cmmi-10x-x-109">,</span><img 
+src="hw8sol20217x.png" alt="2
+3"  class="frac" align="middle"><span 
+class="cmmi-10x-x-109">,</span><img 
+src="hw8sol20218x.png" alt="3
+5"  class="frac" align="middle"><span 
+class="cmmi-10x-x-109">,</span><img 
+src="hw8sol20219x.png" alt="1
+3"  class="frac" align="middle">)<sup><span 
+class="cmmi-8">T</span> </sup> is feasible in the LP relaxation of the knapsack problem, and it also
+     satisfies constraints (<a 
+href="#x1-9r4">4<!--tex4ht:ref: knap1 --></a>)&#8211;(<a 
+href="#x1-9r7">7<!--tex4ht:ref: knap4 --></a>). Find nonnegative multipliers <span 
+class="cmmi-10x-x-109">t</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,t</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-10x-x-109">,t</span><sub><span 
+class="cmr-8">3</span></sub><span 
+class="cmmi-10x-x-109">,t</span><sub><span 
+class="cmr-8">4</span></sub> for the constraints (<a 
+href="#x1-9r4">4<!--tex4ht:ref: knap1 --></a>)&#8211;(<a 
+href="#x1-9r7">7<!--tex4ht:ref: knap4 --></a>) and
+     add them together to give a constraint <span 
+class="cmex-10x-x-109">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">j</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmr-8">4</span></sup><span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmmi-8">j</span></sub><span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmmi-10x-x-109">b</span>, and then round down each <span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmmi-8">j</span></sub> and <span 
+class="cmmi-10x-x-109">b </span>to give a
+     valid constraint <span 
+class="cmex-10x-x-109">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">j</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmr-8">4</span></sup><span 
+class="cmsy-10x-x-109">&#x230A;</span><span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmmi-8">j</span></sub><span 
+class="cmsy-10x-x-109">&#x230B;</span><span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">j</span></sub> <span 
+class="cmsy-10x-x-109">&#x2264;&#x230A;</span><span 
+class="cmmi-10x-x-109">b</span><span 
+class="cmsy-10x-x-109">&#x230B; </span>for the knapsack problem which is violated by&#x00A0;<span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span>. (Hint: try to
+     choose <span 
+class="cmmi-10x-x-109">t</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-10x-x-109">,t</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-10x-x-109">,t</span><sub><span 
+class="cmr-8">3</span></sub><span 
+class="cmmi-10x-x-109">,t</span><sub><span 
+class="cmr-8">4</span></sub> so that each component&#x00A0;<span 
+class="cmmi-10x-x-109">a</span><sub><span 
+class="cmmi-8">j</span></sub> is integral, while <span 
+class="cmmi-10x-x-109">b </span>is not integral.) (Lecture
+     23)</dd></dl>
+<!--l. 124--><p class="noindent" >In addition, read Sections 1.8, 21.1 and 7.8 from the text.
+<!--l. 186--><p class="noindent" >You can consult with other students and you can use online resources, but you CANNOT
+submit the questions to any online answering service, including Chegg. Solving the homework
+problems (and other problems from the text) will improve your understanding of the material. It
+may be possible to find the solutions online or elsewhere: please do not use these solutions.
+Working out the problems yourself will greatly improve your understanding of the material and
+help you on the exams. You can ask questions on slack, in addition to using office hours or
+email.
+<!--l. 216--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solutions</span>
+     <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+   1. </dt><dd 
+class="enumerate-enumitem">We must have <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-10x-x-109">r</span>)<span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-10x-x-109">r</span>) = <span 
+class="cmmi-10x-x-109">&#x03BC;</span>(<span 
+class="cmmi-10x-x-109">r</span>) for <span 
+class="cmmi-10x-x-109">i </span>= 1<span 
+class="cmmi-10x-x-109">,</span>2<span 
+class="cmmi-10x-x-109">,</span>3. This implies <span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-10x-x-109">r</span>) = <span 
+class="cmmi-10x-x-109">&#x03BC;</span>(<span 
+class="cmmi-10x-x-109">r</span>)<span 
+class="cmmi-10x-x-109">&#x2215;x</span><sub><span 
+class="cmmi-8">i</span></sub>(<span 
+class="cmmi-10x-x-109">r</span>) for <span 
+class="cmmi-10x-x-109">i </span>= 1<span 
+class="cmmi-10x-x-109">,</span>2<span 
+class="cmmi-10x-x-109">,</span>3. We
+     get:
+          <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+      (a) </dt><dd 
+class="enumerate-enumitem"><span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmr-8">1</span></sub> = <img 
+src="hw8sol202110x.png" alt="4r(1+r)-
+4r(1+3r)"  class="frac" align="middle"> = <img 
+src="hw8sol202111x.png" alt="-1+r-
+(1+3r)"  class="frac" align="middle">, which implies <span 
+class="cmmi-10x-x-109">y </span>= <span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmr-8">1</span></sub> = <img 
+src="hw8sol202112x.png" alt="1+r-
+1+3r"  class="frac" align="middle">.
+          </dd><dt class="enumerate-enumitem">
+      (b) </dt><dd 
+class="enumerate-enumitem"><span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmr-8">2</span></sub> = <img 
+src="hw8sol202113x.png" alt="  4r(1+r)
+(1+r)(1+3r)-"  class="frac" align="middle"> = <img 
+src="hw8sol202114x.png" alt="  4r
+(1+3r)"  class="frac" align="middle">, which implies <span 
+class="cmmi-10x-x-109">y </span>= 1 <span 
+class="cmsy-10x-x-109">-</span><img 
+src="hw8sol202115x.png" alt="1
+2"  class="frac" align="middle"><span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmr-8">2</span></sub> = 1 <span 
+class="cmsy-10x-x-109">-</span><img 
+src="hw8sol202116x.png" alt="  2r
+(1+3r)"  class="frac" align="middle"> = <img 
+src="hw8sol202117x.png" alt="1+r
+1+3r"  class="frac" align="middle">.
+          </dd><dt class="enumerate-enumitem">
+      (c) </dt><dd 
+class="enumerate-enumitem"><span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmr-8">3</span></sub> = <img 
+src="hw8sol202118x.png" alt="--4r(1+r)--
+(2+2r)(1+3r)"  class="frac" align="middle"> = <img 
+src="hw8sol202119x.png" alt="--2r--
+(1+3r)"  class="frac" align="middle">, which implies <span 
+class="cmmi-10x-x-109">y </span>= 1 <span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmr-8">3</span></sub> = 1 <span 
+class="cmsy-10x-x-109">-</span><img 
+src="hw8sol202120x.png" alt="--2r-
+(1+3r)"  class="frac" align="middle"> = <img 
+src="hw8sol202121x.png" alt="1+r-
+1+3r"  class="frac" align="middle">.</dd></dl>
+     <!--l. 230--><p class="noindent" >Since all three components lead to the same value <span 
+class="cmmi-10x-x-109">y </span>= <img 
+src="hw8sol202122x.png" alt="1+r-
+1+3r"  class="frac" align="middle">, we have a point that satisfies the
+     central path conditions, so <span 
+class="cmmi-10x-x-109">x</span>(<span 
+class="cmmi-10x-x-109">r</span>) solves the barrier problem.
+                                                                                         
+                                                                                         
+     </dd><dt class="enumerate-enumitem">
+   2. </dt><dd 
+class="enumerate-enumitem"><span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> = (0<span 
+class="cmmi-10x-x-109">,</span>1<span 
+class="cmmi-10x-x-109">,</span>2), which has value&#x00A0;4.
+     <!--l. 236--><p class="noindent" >We also have a dual feasible solution <span 
+class="cmmi-10x-x-109">y </span>= 1 with dual value&#x00A0;4. Since the primal and dual values
+     agree, we are optimal.
+     </dd><dt class="enumerate-enumitem">
+   3. </dt><dd 
+class="enumerate-enumitem">Since problem&#x00A0;(<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.primal --></a>) only has one equality constraint, any basic feasible solution will have at
+     most one positive component. The point <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> has 2 positive components, so it cannot be a
+     BFS.
+     <!--l. 244--><p class="noindent" >Problem&#x00A0;(<a 
+href="#x1-2r1">1<!--tex4ht:ref: eq.primal --></a>) has multiple optimal solutions. The limit point <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> is in the interior of the optimal
+     face.
+     </dd><dt class="enumerate-enumitem">
+   4. </dt><dd 
+class="enumerate-enumitem">There are many possible choices, any of which is an acceptable solution:
+          <ul class="itemize1">
+          <li class="itemize"><span 
+class="cmmi-10x-x-109">t </span>= <img 
+src="hw8sol202123x.png" alt="1
+3"  class="frac" align="middle">(2<span 
+class="cmmi-10x-x-109">,</span>1<span 
+class="cmmi-10x-x-109">,</span>1<span 
+class="cmmi-10x-x-109">,</span>1)<sup><span 
+class="cmmi-8">T</span> </sup>:
+          <!--l. 252--><p class="noindent" >Adding together (<a 
+href="#x1-9r4">4<!--tex4ht:ref: knap1 --></a>)&#8211;(<a 
+href="#x1-9r7">7<!--tex4ht:ref: knap4 --></a>) with these multipliers gives
+          <center class="math-display" >
+          <img 
+src="hw8sol202124x.png" alt="                    1
+x1 + x2 + x3 + x4 &#x2264; 23-,
+          " class="math-display" ></center>
+          <!--l. 255--><p class="nopar" >
+          and rounding down gives the valid constraint for the knapsack problem that cuts off&#x00A0;<span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span>
+          of:
+          <table 
+class="equation"><tr><td><a 
+ id="x1-17r8"></a>
+          <center class="math-display" >
+          <img 
+src="hw8sol202125x.png" alt="x1 + x2 + x3 + x4 &#x2264; 2.
+          " class="math-display" ></center></td><td class="equation-label">(8)</td></tr></table>
+          <!--l. 260--><p class="nopar" >
+          </li>
+          <li class="itemize"><span 
+class="cmmi-10x-x-109">t </span>= <img 
+src="hw8sol202126x.png" alt="1
+3"  class="frac" align="middle">(2<span 
+class="cmmi-10x-x-109">,</span>1<span 
+class="cmmi-10x-x-109">,</span>1<span 
+class="cmmi-10x-x-109">,</span>4)<sup><span 
+class="cmmi-8">T</span> </sup>:
+          <!--l. 264--><p class="noindent" >Adding together (<a 
+href="#x1-9r4">4<!--tex4ht:ref: knap1 --></a>)&#8211;(<a 
+href="#x1-9r7">7<!--tex4ht:ref: knap4 --></a>) with these multipliers gives
+                                                                                         
+                                                                                         
+          <center class="math-display" >
+          <img 
+src="hw8sol202127x.png" alt="x  + x + 2x  + 2x  &#x2264; 31-,
+ 1    2     3    4    3
+          " class="math-display" ></center>
+          <!--l. 267--><p class="nopar" >
+          and rounding down gives the valid constraint for the knapsack problem that cuts off&#x00A0;<span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span>
+          of:
+          <center class="math-display" >
+          <img 
+src="hw8sol202128x.png" alt="x1 + x2 + 2x3 + 2x4 &#x2264; 3.
+          " class="math-display" ></center>
+          <!--l. 272--><p class="nopar" >
+          Using <span 
+class="cmmi-10x-x-109">t </span>= <img 
+src="hw8sol202129x.png" alt="13"  class="frac" align="middle">(2<span 
+class="cmmi-10x-x-109">,</span>1<span 
+class="cmmi-10x-x-109">,</span>4<span 
+class="cmmi-10x-x-109">,</span>1)<sup><span 
+class="cmmi-8">T</span> </sup> and <span 
+class="cmmi-10x-x-109">t </span>= <img 
+src="hw8sol202130x.png" alt="13"  class="frac" align="middle">(2<span 
+class="cmmi-10x-x-109">,</span>4<span 
+class="cmmi-10x-x-109">,</span>1<span 
+class="cmmi-10x-x-109">,</span>1)<sup><span 
+class="cmmi-8">T</span> </sup> lead to
+          <center class="math-display" >
+          <img 
+src="hw8sol202131x.png" alt="x1 + 2x2 + x3 + 2x4 &#x2264; 3
+          " class="math-display" ></center>
+          <!--l. 277--><p class="nopar" >
+          and
+          <center class="math-display" >
+          <img 
+src="hw8sol202132x.png" alt="2x1 + x2 + x3 + 2x4 &#x2264; 3,
+          " class="math-display" ></center>
+          <!--l. 281--><p class="nopar" >
+          respectively. Note that these inequalities are implied by (<a 
+href="#x1-17r8">8<!--tex4ht:ref: knap1111 --></a>) with one of (<a 
+href="#x1-9r5">5<!--tex4ht:ref: knap2 --></a>)&#8211;(<a 
+href="#x1-9r7">7<!--tex4ht:ref: knap4 --></a>).
+          </li>
+          <li class="itemize"><span 
+class="cmmi-10x-x-109">t </span>= <img 
+src="hw8sol202133x.png" alt="1
+3"  class="frac" align="middle">(1<span 
+class="cmmi-10x-x-109">,</span>2<span 
+class="cmmi-10x-x-109">,</span>2<span 
+class="cmmi-10x-x-109">,</span>2)<sup><span 
+class="cmmi-8">T</span> </sup>:
+          <!--l. 287--><p class="noindent" >Adding together (<a 
+href="#x1-9r4">4<!--tex4ht:ref: knap1 --></a>)&#8211;(<a 
+href="#x1-9r7">7<!--tex4ht:ref: knap4 --></a>) with these multipliers gives
+          <center class="math-display" >
+          <img 
+src="hw8sol202134x.png" alt="                     2
+x1 + x2 + x3 + 2x4 &#x2264; 23,
+          " class="math-display" ></center>
+          <!--l. 290--><p class="nopar" >
+          and rounding down gives the valid constraint for the knapsack problem that cuts off&#x00A0;<span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span>
+          of:
+          <table 
+class="equation"><tr><td><a 
+ id="x1-18r9"></a>
+                                                                                         
+                                                                                         
+          <center class="math-display" >
+          <img 
+src="hw8sol202135x.png" alt="x1 + x2 + x3 + 2x4 &#x2264; 2.
+          " class="math-display" ></center></td><td class="equation-label">(9)</td></tr></table>
+          <!--l. 295--><p class="nopar" >
+          Note that (<a 
+href="#x1-17r8">8<!--tex4ht:ref: knap1111 --></a>) is implied by (<a 
+href="#x1-18r9">9<!--tex4ht:ref: knap1112 --></a>), so (<a 
+href="#x1-18r9">9<!--tex4ht:ref: knap1112 --></a>) is the strongest inequality presented here.</li></ul>
+     </dd></dl>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                             </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                        </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Monday 1&#8211;2pm, Thursday, 2pm&#8211;3pm, webex:     </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-10x-x-109">https://rensselaer.webex.com/meet/mitchj</span></a> </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-7-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;                                                                          </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-8-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <span class="underline"><span 
+class="cmbx-10x-x-109">TA:</span></span> She&#8217;ifa Punla-Green, punlas at rpi dot edu.</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-9-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-9-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours Tuesday 10&#8211;11.30am on webex:       </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-10-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-10-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="https://rensselaer.webex.com/meet/punlas" class="url" ><span 
+class="cmtt-10x-x-109">https://rensselaer.webex.com/meet/punlas</span></a> </td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

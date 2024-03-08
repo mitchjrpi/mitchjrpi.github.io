@@ -1,0 +1,744 @@
+ampl: model cap_expLshapedCVaR.run;
+UB = 397.867
+
+Solve Master Problem
+CPLEX 20.1.0.0: optimal solution; objective 0
+0 dual simplex iterations (0 in phase I)
+xMP :=
+;
+
+muMP = 0
+
+:  vCVaR theta    :=
+;
+
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 160
+0 dual simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 416
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 168
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 160
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 152
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 264
+0 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 280
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 152
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 120
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 360
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 160
+0 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 152
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 16
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 240
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 304
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 96
+0 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 240
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 192
+0 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 288
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 288
+0 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 56
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 80
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 280
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 216
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 192
+0 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 216
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 192
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 352
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 192
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 432
+0 simplex iterations (0 in phase I)
+muMP = 0
+
+:  Thetaval[s,ncuts[s]] vCVaRsp[s]    :=
+1           160             160
+2           416             416
+3           168             168
+4           160             160
+5           152             152
+6           264             264
+7           280             280
+8           152             152
+9           120             120
+10          360             360
+11          160             160
+12          152             152
+13           16              16
+14          240             240
+15          304             304
+16           96              96
+17          240             240
+18          192             192
+19          288             288
+20          288             288
+21           56              56
+22           80              80
+23          280             280
+24          216             216
+25          192             192
+26          216             216
+27          192             192
+28          352             352
+29          192             192
+30          432             432
+;
+
+rhs [*,*]
+:     1     :=
+1    160
+2    416
+3    168
+4    160
+5    152
+6    264
+7    280
+8    152
+9    120
+10   360
+11   160
+12   152
+13    16
+14   240
+15   304
+16    96
+17   240
+18   192
+19   288
+20   288
+21    56
+22    80
+23   280
+24   216
+25   192
+26   216
+27   192
+28   352
+29   192
+30   432
+;
+
+itercount = 1
+LB = 0
+UB = 397.867
+
+_total_solve_elapsed_time = 0.194497
+
+Solve Master Problem
+CPLEX 20.1.0.0: optimal solution; objective 154.6666667
+42 dual simplex iterations (0 in phase I)
+xMP :=
+r u   12
+r v   12
+;
+
+muMP = 160
+
+:  vCVaR theta    :=
+2    64    224
+6     0     72
+7     0     88
+10    8    168
+14    0     48
+15    0    112
+17    0     48
+19    0     96
+20    0     96
+23    0     88
+24    0     24
+26    0     24
+28    0    160
+30   80    240
+;
+
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 224
+3 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 8
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+1 dual simplex iterations (1 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 72
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 88
+0 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 16
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+1 dual simplex iterations (1 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 168
+3 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 48
+3 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 112
+0 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 48
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+0 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 96
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 96
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+0 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 88
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 24
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 16
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 24
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 40
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 160
+1 dual simplex iterations (1 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+0 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 240
+1 simplex iterations (0 in phase I)
+muMP = 160
+
+:  Thetaval[s,ncuts[s]] vCVaRsp[s]    :=
+2           224              64
+3             8               0
+6            72               0
+7            88               0
+8            16               0
+10          168               8
+14           48               0
+15          112               0
+17           48               0
+19           96               0
+20           96               0
+23           88               0
+24           24               0
+25           16               0
+26           24               0
+27           40               0
+28          160               0
+30          240              80
+;
+
+rhs [*,*]
+:     1     2     :=
+1    160     0
+2    416   416
+3    168   104
+4    160     0
+5    152     0
+6    264   264
+7    280   280
+8    152   112
+9    120     0
+10   360   360
+11   160     0
+12   152     0
+13    16     0
+14   240   240
+15   304   304
+16    96     0
+17   240   240
+18   192   192
+19   288   288
+20   288   288
+21    56     0
+22    80     0
+23   280   280
+24   216   216
+25   192   112
+26   216   216
+27   192   136
+28   352   352
+29   192   192
+30   432   432
+;
+
+itercount = 2
+LB = 154.667
+UB = 157.333
+
+_total_solve_elapsed_time = 0.382613
+
+Solve Master Problem
+CPLEX 20.1.0.0: optimal solution; objective 156.4
+43 dual simplex iterations (33 in phase I)
+xMP :=
+r t    2
+r u   12
+r v   12
+;
+
+muMP = 152
+
+:  vCVaR theta    :=
+2    56    208
+6     0     56
+7     0     72
+10    0    152
+14    0     32
+15    0     96
+17    0     32
+19    0     80
+20    0     80
+23    0     72
+24    0      8
+26    0      8
+27    0     24
+28    0    144
+30   72    224
+;
+
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+3 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 208
+4 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 56
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 72
+0 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 152
+4 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+3 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 32
+3 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 96
+0 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+3 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 32
+3 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 80
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 80
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+0 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 72
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 8
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 8
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 8
+3 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 24
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 144
+3 dual simplex iterations (2 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 224
+2 simplex iterations (0 in phase I)
+muMP = 152
+
+:  Thetaval[s,ncuts[s]] vCVaRsp[s]    :=
+2           208              56
+6            56               0
+7            72               0
+10          152               0
+14           32               0
+15           96               0
+17           32               0
+19           80               0
+20           80               0
+23           72               0
+24            8               0
+25            8               0
+26            8               0
+27           24               0
+28          144               0
+30          224              72
+;
+
+rhs [*,*]
+:     1     2     3     :=
+1    160     0     0
+2    416   416   416
+3    168   104     0
+4    160     0     0
+5    152     0     0
+6    264   264   264
+7    280   280   280
+8    152   112     0
+9    120     0     0
+10   360   360   360
+11   160     0     0
+12   152     0     0
+13    16     0     0
+14   240   240   240
+15   304   304   304
+16    96     0     0
+17   240   240   240
+18   192   192     0
+19   288   288   288
+20   288   288   288
+21    56     0     0
+22    80     0     0
+23   280   280   280
+24   216   216   216
+25   192   112   104
+26   216   216   216
+27   192   136   136
+28   352   352   352
+29   192   192     0
+30   432   432   432
+;
+
+itercount = 3
+LB = 156.4
+UB = 156.667
+
+_total_solve_elapsed_time = 0.572173
+
+Solve Master Problem
+CPLEX 20.1.0.0: optimal solution; objective 156.6666667
+50 dual simplex iterations (34 in phase I)
+xMP :=
+r t    2
+r u   12
+r v   12
+;
+
+muMP = 152
+
+:  vCVaR theta    :=
+2    56    208
+6     0     56
+7     0     72
+10    0    152
+14    0     32
+15    0     96
+17    0     32
+19    0     80
+20    0     80
+23    0     72
+24    0      8
+25    0      8
+26    0      8
+27    0     24
+28    0    144
+30   72    224
+;
+
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+3 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 208
+4 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 56
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 72
+0 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 152
+4 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+3 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 32
+3 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 96
+0 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+3 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 32
+3 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 80
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 80
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+0 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 72
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 8
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 8
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 8
+3 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 24
+1 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 144
+3 dual simplex iterations (2 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 0
+2 simplex iterations (0 in phase I)
+Solve dual subproblem
+CPLEX 20.1.0.0: optimal solution; objective 224
+2 simplex iterations (0 in phase I)
+muMP = 152
+
+:  Thetaval[s,ncuts[s]] vCVaRsp[s]    :=
+2           208              56
+6            56               0
+7            72               0
+10          152               0
+14           32               0
+15           96               0
+17           32               0
+19           80               0
+20           80               0
+23           72               0
+24            8               0
+25            8               0
+26            8               0
+27           24               0
+28          144               0
+30          224              72
+;
+
+rhs [*,*]
+:     1     2     3     4     :=
+1    160     0     0     0
+2    416   416   416   416
+3    168   104     0     0
+4    160     0     0     0
+5    152     0     0     0
+6    264   264   264   264
+7    280   280   280   280
+8    152   112     0     0
+9    120     0     0     0
+10   360   360   360   360
+11   160     0     0     0
+12   152     0     0     0
+13    16     0     0     0
+14   240   240   240   240
+15   304   304   304   304
+16    96     0     0     0
+17   240   240   240   240
+18   192   192     0     0
+19   288   288   288   288
+20   288   288   288   288
+21    56     0     0     0
+22    80     0     0     0
+23   280   280   280   280
+24   216   216   216   216
+25   192   112   104   104
+26   216   216   216   216
+27   192   136   136   136
+28   352   352   352   352
+29   192   192     0     0
+30   432   432   432   432
+;
+
+itercount = 4
+LB = 156.667
+UB = 156.667
+
+_total_solve_elapsed_time = 0.765641
+
+x :=
+r t    2
+r u   12
+r v   12
+;
+
+_total_solve_elapsed_time = 0.765641
+
+_total_solve_system_time = 0.327215
+
+_total_shell_time = 0
+
+_ampl_time = 0.158116
+
+_total_solve_time = 0.572102
+
+ampl: display mu;
+mu = 152
+
+ampl: display vCVaR;
+vCVaR [*] :=
+ 2  56
+30  72
+;

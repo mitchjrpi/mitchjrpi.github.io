@@ -1,0 +1,16 @@
+set VARS := x1 x2;
+set CONS := q1;
+
+param RHS := q1  400;
+
+param OBJCOEFF := x1 -1 x2 -1;
+param OBJSHIFT := x1 0 x2 9;
+
+param CONSCOEFF: x1  x2  :=
+         q1      4   1;
+
+param CONSSHIFT:
+     x1   x2  :=
+ q1  0    0   ;
+
+param mu := 4;

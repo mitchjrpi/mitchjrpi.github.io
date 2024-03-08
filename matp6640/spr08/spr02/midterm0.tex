@@ -1,0 +1,170 @@
+\documentclass[12pt]{article}
+
+%\pagestyle{empty}
+
+\oddsidemargin -.5in
+\textwidth 7in
+\textheight 8.5in
+%\topmargin -30pt
+\headsep 0in
+\headheight 0in
+
+\renewcommand{\baselinestretch}{1.2}
+
+\begin{document}
+
+\begin{center}
+  \begin{large}
+     MATP6640/DSES6770 Linear Programming
+  \end{large}
+\end{center}
+\begin{center}
+  \begin{large}
+                Midterm Exam, Spring 2002
+  \end{large}
+\end{center}
+
+Take Home   \hfill    Due:  Thursday, March 28, 2002, in class.
+
+\vspace{\baselineskip}
+
+This is to be all your own work.  You may use any result from class,
+homeworks, the textbook, or the books on reserve in the library.
+Do not consult anybody or anything else. 
+My email address is {\em mitchj@rpi.edu} and
+my phone number is 276--6915.
+I'll have my regular office hours on Wednesday from 10am to 12 noon.
+
+In order that I can display grades, please write a 4 digit number
+on the front of your solution set.
+
+\begin{enumerate}
+  \item (30 points)
+\begin{enumerate}
+\item (10 points)
+Consider the linear programming problem
+\begin{displaymath}
+\begin{array}{lrclr}
+\min & c^Tx \\
+\mbox{subject to } & Ax & = & b & (Pb) \\
+& 0 \; \leq \;  x & \leq & u
+\end{array}
+\end{displaymath}
+where $A$ is an $m \times n$ matrix,
+$b$ is an $m$-vector,
+and $c$, $u$, and $x$ are $n$-vectors.
+Notice that each variable $x_i$ has a finite bound $u_i$.
+Show that the dual linear program to $(Pb)$ is feasible.
+\item (20 points)
+Consider the standard form primal-dual pair
+\begin{displaymath}
+\begin{array}{lrclrlrcrclr}
+\min & c^Tx &&&& \max & b^Ty \\
+\mbox{subject to } & Ax & = & b & (P) \qquad & \mbox{subject to } & A^Ty & + & s & = & c & (D) \\
+& x & \geq & 0 &&&&& s & \geq & 0
+\end{array}
+\end{displaymath}
+where $A$ is an $m \times n$ matrix,
+$b$ and $y$ are $m$-vectors,
+and $c$, $s$, and $x$ are $n$-vectors.
+Assume $(P)$ and $(D)$ are both feasible.
+Let $Q_P$ and $Q_D$ be the feasible regions for $(P)$ and $(D)$ respectively.
+Show that if $x_i$ is bounded in $Q_P$ then $s_i$ is unbounded in $Q_D$.
+\end{enumerate}
+  \item  (20 points)
+    Let $B$ be an $m \times m$ nonsingular matrix, and suppose $B=LQ$,
+    where $L$ is a lower-triangular $m \times m$ matrix and $Q$ is an
+    orthogonal $m \times m$ matrix (that is, $QQ^T=I$).
+    \begin{enumerate}
+      \item (5 points) Show that $BB^T=LL^T$.
+      \item (5 points)
+        How would you solve the linear systems $B^Ty=c$ and $Bd=a$ given
+        $L$ and~$Q$. (The $m$-vectors $c$ and $a$ are known; the $m$-vectors
+        $y$ and $d$ have to be found.)
+      \item (5 points)
+        Suppose the matrix $Q$ is not stored and you are given only~$L$.
+        How can you solve $B^Ty=c$ and $Bd=a$?
+      \item (5 points)
+        Suppose we now want to update the matrix $B$ to the matrix $\bar{B}$
+        by replacing column $p$ of $B$ by the vector~$a$.
+        Denote column~$p$ of $B$ by~$b$ and let $e_p$ denote the $p$th unit
+        vector.
+        Then we can write
+        \begin{displaymath}
+          \bar{B}=B+(a-b)e_p^T.
+        \end{displaymath}
+        Show that
+        \begin{displaymath}
+          \bar{L}\bar{L}^T = LL^T - bb^T +aa^T,
+        \end{displaymath}
+        where $\bar{L}$ satisfies $\bar{B}=\bar{L}\bar{Q}$ for some orthogonal
+        matrix~$\bar{Q}$.
+        (Note: You may assume that every $m \times m$ matrix $M$ has a
+       ${\mathit QR}$-{\em factorization},
+       where $Q$ is orthogonal and $R$ is uppertriangular, and $M=QR$.
+      For this part, you do not need to derive $\bar{L}$ or $\bar{Q}$ explicitly.)
+   \item (Extra credit: 5 points)
+      How would you update $L$ to find the lower triangular matrix~$\bar{L}$?
+    \end{enumerate}
+\item (20 points)
+Let $z^*$ be the finite optimal value of the feasible linear programming problem
+\begin{displaymath}
+\begin{array}{lrclr}
+\min & c^Tx \\
+\mbox{subject to } & Ax & = & b & (P) \\
+& x & \geq & 0
+\end{array}
+\end{displaymath}
+where $A$ is an $m \times n$ matrix,
+$b$ is an $m$-vector,
+and $c$ and $x$ are $n$-vectors.
+Let $R_{\epsilon}$ be the optimal value of the linear programming problem
+\begin{displaymath}
+\begin{array}{lrclr}
+\max & e^Tx \\
+\mbox{subject to } & Ax & = & b & (P_{\epsilon}) \\
+& c^Tx & \leq & z^* + \epsilon \\
+& x & \geq & 0
+\end{array}
+\end{displaymath}
+where $\epsilon$ is a positive scalar and $e$ is the $n$-vector of all ones.
+The quantity $R_{\epsilon}$ can be interpreted as the 1-norm of
+the largest vector in the $\epsilon$ level set
+$Q_{\epsilon}:=\{x \geq 0: Ax=b, c^Tx \leq z^* + \epsilon \}$.
+Let $\epsilon' > \epsilon$. Show that
+\begin{displaymath}
+R_{\epsilon'} \leq \frac{\epsilon'}{\epsilon} R_{\epsilon}.
+\end{displaymath}
+  \item  (10 points)
+Construct a four-vertex transshipment network with the following counterintuitive property:
+If the supply is decreased by one unit at an appropriately chosen vertex and demand is decreased by one unit at
+another appropriately  chosen vertex then the optimal transshipment cost increases.
+(Both the original network flow problem and the modified problem should
+be feasible.)
+\item (20 points)
+Use the network simplex algorithm to find the minimum cost flow for the problem with 
+the following linear programming representation:
+\begin{displaymath}
+\begin{array}{lrcrcrcrcrcrcl}
+\min & & - & 2x_{13}& - & x_{23} & - & 2x_{24} &&& - & 10 x_{41} \\
+\mbox{subject to} & -x_{12} & - & x_{13} &&&&&&& + & x_{41} & = & 0 \\
+& x_{12} &&& - & x_{23} & - & x_{24} &&&&& = & 0 \\
+&&& x_{13} & + & x_{23} &&& - & x_{34} &&& = & 0 \\
+&&&&&&& x_{24} & + & x_{34} & - & x_{41} & = & 0 \\
+& \multicolumn{11}{r}{0 \, \leq \, x_{12}, x_{13}, x_{23}, x_{24}, x_{34}} & \leq & 1 \\
+&&&&&&&&& 0 & \leq & x_{41} & \leq & 10
+\end{array}
+\end{displaymath}
+Use the initial basic feasible solution with basic variables:
+\begin{displaymath}
+x_{12} = 1, \quad x_{34}=1, \quad x_{41}=1
+\end{displaymath}
+and nonbasic variables
+\begin{displaymath}
+x_{13}=0, \quad x_{23}=1, \quad x_{24}=0.
+\end{displaymath}
+You should need three iterations.
+\end{enumerate}
+
+
+\end{document}

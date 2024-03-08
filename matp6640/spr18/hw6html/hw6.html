@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw6.tex"> 
+<meta name="date" content="2018-04-10 13:00:00"> 
+<link rel="stylesheet" type="text/css" href="hw6.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 15--><p class="noindent" >
+<!--l. 17--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12x-x-120">MATP6640/ISYE6770 Linear Programming</span></a><span 
+class="cmr-12x-x-120">, Homework 6.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 21--><p class="noindent" >
+ Due: Friday, April 20, 2018.<br />
+10% penalty for each day late.</div>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">Let  <span 
+class="cmmi-12">x  </span>be  a  nondegenerate  basic  feasible  solution  for  the  standard  form  linear
+      programming problem min<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>: <span 
+class="cmmi-12">Ax </span>= <span 
+class="cmmi-12">b,</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmsy-10x-x-120">}</span>, where <span 
+class="cmmi-12">A </span>is <span 
+class="cmmi-12">m </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>and the vectors
+      are dimensioned appropriately. Assume the rank of <span 
+class="cmmi-12">A </span>is&#x00A0;<span 
+class="cmmi-12">m</span>. Let <span class="bar-css"><span 
+class="cmmi-12">A</span></span> = <span 
+class="cmmi-12">AX</span>, where <span 
+class="cmmi-12">X </span>is
+      a diagonal matrix with <span 
+class="cmmi-12">X</span><sub><span 
+class="cmmi-8">ii</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub> for <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,...,n</span>. Simplify <span 
+class="cmmi-12">P</span><sub><span class="bar-css"><span 
+class="cmmi-8">A</span></span></sub>, the projection matrix
+      onto the nullspace of <span class="bar-css"><span 
+class="cmmi-12">A</span></span>. Hence show that <span 
+class="cmmi-12">P</span><sub><span class="bar-css"><span 
+class="cmmi-8">A</span></span></sub><span 
+class="cmmi-12">Xc </span>= 0.
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2"><a 
+ id="x1-42"></a> The Monteiro-Adler short step algorithm presented in class (Algorithm SPF on page 86
+      of <span 
+class="cmti-12">Wright</span>) could be used as an infeasible interior point method, starting with <span 
+class="cmmi-12">x </span>= <span 
+class="cmmi-12">s </span>= <span 
+class="cmmi-12">e</span>,
+      <span 
+class="cmmi-12">y </span>= 0, and <span 
+class="cmmi-12">&#x03BC; </span>= 1. Give an example to show that in this case we may not be able to
+      take a step of length 1 and we may need to take a linesearch to preserve nonnegativity.
+      (Note: We solve (1.20) to find the directions given in (1.25) at each iteration. Hint: you
+      only need look at <span 
+class="cmbx-12">small </span>examples.)
+      </li>
+      <li 
+  class="enumerate" id="x1-7x3">Let (&#x0394;<span 
+class="cmmi-12">x, </span>&#x0394;<span 
+class="cmmi-12">y, </span>&#x0394;<span 
+class="cmmi-12">s</span>) solve
+      <center class="math-display" >
+      <img 
+src="hw60x.png" alt="&#x230A;             &#x230B; &#x230A;     &#x230B;    &#x230A;      &#x230B;
+  0   AT   I      &#x0394;x           0
+&#x2308; A   0    0  &#x2309; &#x2308; &#x0394;y  &#x2309;  = &#x2308; - rb &#x2309; .
+  S   0    X      &#x0394;s           0
+      " class="math-display" ></center>
+      <!--l. 89--><p class="nopar" >
+      Assume <span 
+class="cmmi-12">r</span><sub><span 
+class="cmmi-8">b</span></sub><span 
+class="cmmi-12">&#x2260;</span>0, <span 
+class="cmmi-12">S </span>and <span 
+class="cmmi-12">X </span>are positive definite diagonal matrices, and <span 
+class="cmmi-12">A </span>is <span 
+class="cmmi-12">m</span><span 
+class="cmsy-10x-x-120">&#x00D7;</span><span 
+class="cmmi-12">n </span>with rank&#x00A0;<span 
+class="cmmi-12">m</span>.
+      Show that &#x0394;<span 
+class="cmmi-12">x</span><sup><span 
+class="cmmi-8">T</span> </sup>&#x0394;<span 
+class="cmmi-12">s</span><span 
+class="cmmi-12">&#x2260;</span>0.
+      </li>
+      <li 
+  class="enumerate" id="x1-9x4">Wright, Chapter 2, Question 11, page 47.
+                                                                                         
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-11x5">Let <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) = <span 
+class="cmmi-12">n</span> log(<span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x</span>) <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmex-10x-x-120">&#x2211;</span><sub>
+<span 
+class="cmmi-8">i</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmmi-8">n</span></sup> log(<span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmmi-8">i</span></sub>). Show that <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x </span>+ <span 
+class="cmmi-12">&#x03B8;d</span>) = <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) if <span 
+class="cmmi-12">d </span>= <span 
+class="cmmi-12">kx </span>for some scalar
+      <span 
+class="cmmi-12">k</span>, provided <span 
+class="cmmi-12">x &#x003E; </span>0, <span 
+class="cmmi-12">x </span>+ <span 
+class="cmmi-12">&#x03B8;d &#x003E; </span>0, <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x &#x003E; </span>0, and <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup>(<span 
+class="cmmi-12">x </span>+ <span 
+class="cmmi-12">&#x03B8;d</span>) <span 
+class="cmmi-12">&#x003E; </span>0.
+      </li>
+      <li 
+  class="enumerate" id="x1-13x6">Prove that when <span 
+class="cmmi-12">n </span>= 2, the neighborhoods <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><sub><span 
+class="cmr-8">2</span></sub>(<span 
+class="cmmi-12">&#x03B8;</span>) and <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /></span><sub><span 
+class="cmsy-8">-&#x221E;</span></sub>(1 <span 
+class="cmsy-10x-x-120">-</span><img 
+src="hw61x.png" alt="-&#x03B8;-
+&#x221A;2"  class="frac" align="middle">) are identical, for any
+      <span 
+class="cmmi-12">&#x03B8; </span><span 
+class="cmsy-10x-x-120">&#x2208; </span>(0<span 
+class="cmmi-12">, </span>1). (See page 84 in Wright for a definition of these neighborhoods.)
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                       </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                 </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Tuesday: 12&#8211;2pm, Wednesday: 11am&#8211;1pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

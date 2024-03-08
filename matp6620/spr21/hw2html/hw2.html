@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw2.tex"> 
+<meta name="date" content="2021-02-08 12:20:00"> 
+<link rel="stylesheet" type="text/css" href="hw2.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 40--><p class="noindent" >
+<!--l. 42--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6620" ><span 
+class="cmr-12">MATP6620/ISYE6760 Combinatorial Optimization &amp; Integer Programming</span></a><br />
+<span 
+class="cmr-12">Homework 2.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 47--><p class="noindent" >
+ Due: Thursday, February 18, 2021, by end of day.<br />
+Penalty for late homeworks: 10% for each day or part of a day.</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1">A method for representing a spanning tree on the complete graph on vertices <span 
+class="cmsy-10">{</span>1<span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x2026;</span><span 
+class="cmmi-10">,n</span><span 
+class="cmsy-10">} </span>as a string of <span 
+class="cmmi-10">n </span><span 
+class="cmsy-10">- </span>2
+     numbers was presented in class. Find the trees with 8 vertices corresponding to the following
+     strings:
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-5x1">543156.
+         </li>
+         <li 
+  class="enumerate" id="x1-7x2">768773.
+         </li>
+         <li 
+  class="enumerate" id="x1-9x3">543854.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-11x2">Show that <div class="eqnarray">
+     <center class="math-display" >
+     <img 
+src="hw20x.png" alt="             4
+S  :=  {x &#x2208; B4: 97x1 +32x2 + 25x3 + 20x4 &#x2264; 139}
+    =  {x &#x2208; B : 2x1 + x2 + x3 + x4 &#x2264; 3}
+    =  {x &#x2208; B4 : x1 + x2 + x3 &#x2264; 2,x1 +x3 + x4 &#x2264; 2,x1 + x2 + x4 &#x2264; 2}.
+     " class="math-display" ></center>
+     </div>Which formulation do you think is most effective for solving max<span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">c</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x </span>: <span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="cmmi-10">S</span><span 
+class="cmsy-10">}</span>? Why? How do the feasible
+     regions of the LP relaxations compare?
+     </li>
+     <li 
+  class="enumerate" id="x1-14x3">Model the following feasibility problem as an integer programming feasibility problem:
+         <div class="quote">
+         <!--l. 238--><p class="noindent" >Given a graph <span 
+class="cmmi-10">G </span>= (<span 
+class="cmmi-10">V,E</span>), does there exist a partition of the edges <span 
+class="cmmi-10">E </span>into two sets <span 
+class="cmmi-10">E</span><sub><span 
+class="cmr-7">1</span></sub> and
+         <span 
+class="cmmi-10">E</span><sub><span 
+class="cmr-7">2</span></sub> such that neither <span 
+class="cmmi-10">E</span><sub><span 
+class="cmr-7">1</span></sub> nor <span 
+class="cmmi-10">E</span><sub><span 
+class="cmr-7">2</span></sub> contains a triangle?</div>
+                                                                                         
+                                                                                         
+     <!--l. 242--><p class="noindent" >Is the LP relaxation to your formulation feasible?
+     </li>
+     <li 
+  class="enumerate" id="x1-16x4">Assume you have an algorithm A for finding the minimum weight perfect matching in a graph with
+     nonnegative edge weights. How could you use this algorithm to find the maximum weight matching in
+     a graph <span 
+class="cmmi-10">G </span>= (<span 
+class="cmmi-10">V,E</span>) with nonnegative edge weights? (Note: the matching isn&#8217;t required to be
+     perfect.)
+     </li>
+     <li 
+  class="enumerate" id="x1-18x5">Assume we have a polynomial time algorithm for determining the optimal value of binary knapsack problems
+     of the form max<span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">c</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x </span>: <span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="msbm-10">B</span><sup><span 
+class="cmmi-7">n</span></sup><span 
+class="cmmi-10">,a</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">b</span><span 
+class="cmsy-10">}</span>. This algorithm does not tell us the values of the variables in the
+     optimal solution. Show that we can use this algorithm as a subroutine in a polynomial time algorithm for
+     finding the optimal solution to a binary knapsack problem.
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                      </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           x6915.                                                                </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           Office hours: Monday and Thursday 1pm&#8211;2pm.           </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           webex: <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-10">https://rensselaer.webex.com/meet/mitchj</span></a></td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

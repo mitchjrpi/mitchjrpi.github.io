@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="final07s.tex"> 
+<meta name="date" content="2009-11-20 15:13:00"> 
+<link rel="stylesheet" type="text/css" href="final07s.css"> 
+</head><body 
+>
+<!--l. 23--><p class="noindent" >&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                                                                                             Name:
+<div class="center" 
+>
+<!--l. 26--><p class="noindent" >
+<!--l. 28--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6600" >Nonlinear Programming, MATP6600/DSES6780</a><br />
+Final Exam, Friday, December 7, 2007.</div>
+<!--l. 32--><p class="indent" >   Please do all four problems. You must show all work to obtain full credit. Results from class or
+the text may be used if properly stated. No books or calculators allowed. The exam lasts one hour
+and 50 minutes.
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">(20 points; each part is worth 5 points.) Consider the unconstrained problem
+      <center class="math-display" >
+      <img 
+src="final07s0x.png" alt="min &#x03D5; (x),             (P )
+      " class="math-display" ></center>
+      <!--l. 44--><p class="nopar" >
+      where
+      <center class="math-display" >
+      <img 
+src="final07s1x.png" alt="&#x03D5; (x) := max       f(x),
+             1&#x2264;i&#x2264;m   i
+      " class="math-display" ></center>
+      <!--l. 48--><p class="nopar" >
+      and each <span 
+class="cmmi-12">f</span><sub><span 
+class="cmmi-8">i</span></sub> is <span 
+class="cmmi-12">C</span><sup><span 
+class="cmr-8">2</span></sup> from <span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup> to <span 
+class="cmmi-12">IR</span>. Note that in general <span 
+class="cmmi-12">&#x03D5;</span>(<span 
+class="cmmi-12">x</span>) is not differentiable at points&#x00A0;<span 
+class="cmmi-12">x</span>
+      where the maximum is achieved by two different functions&#x00A0;<span 
+class="cmmi-12">f</span><sub><span 
+class="cmmi-8">i</span></sub>.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-5x1">Assume <span 
+class="cmmi-12">f</span><sub><span 
+class="cmr-8">1</span></sub> is convex and that <span 
+class="cmmi-12">&#x03D5;</span>(<img 
+src="final07s2x.png" alt="¯x"  class="bar" >) = <span 
+class="cmmi-12">f</span><sub><span 
+class="cmr-8">1</span></sub>(<img 
+src="final07s3x.png" alt="¯x"  class="bar" >). Give a valid <span 
+class="cmti-12">linear </span>inequality for the
+           objective function in terms of&#x00A0;<span 
+class="cmmi-12">x</span>.
+           </li>
+           <li 
+  class="enumerate" id="x1-7x2">Express (<span 
+class="cmmi-12">P</span>) as an equivalent constrained problem (<span 
+class="cmmi-12">P</span><span 
+class="cmsy-10x-x-120">&#x2032;</span>) involving only smooth
+           functions.
+           </li>
+           <li 
+  class="enumerate" id="x1-9x3">If each <span 
+class="cmmi-12">f</span><sub><span 
+class="cmmi-8">i</span></sub> is convex, what can you say about any local solution to (<span 
+class="cmmi-12">P</span><span 
+class="cmsy-10x-x-120">&#x2032;</span>) (and hence
+           about any local solution to&#x00A0;(<span 
+class="cmmi-12">P</span>))?
+                                                                                         
+
+                                                                                         
+           </li>
+           <li 
+  class="enumerate" id="x1-11x4">Assume   constraint   qualification   holds   for   the   problem   (<span 
+class="cmmi-12">P</span><span 
+class="cmsy-10x-x-120">&#x2032;</span>).   Use   the
+           Karush-Kuhn-Tucker conditions to obtain first order necessary conditions for <img 
+src="final07s4x.png" alt="x¯"  class="bar" >
+           to be a local minimizer of&#x00A0;(<span 
+class="cmmi-12">P</span>).</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-13x2">(25 points; each part is worth 5 points.) Consider the nonlinear programming
+      problem
+      <center class="math-display" >
+      <img 
+src="final07s5x.png" alt="min   f(x)  :=   (2x1 + 1)ex2-x1
+s.t.     x1  &#x2265;   0
+
+        x2  &#x2265;   0 2
+         x  &#x2208;   IR  .
+      " class="math-display" ></center>
+      <!--l. 81--><p class="nopar" >
+      Note that the constraints are linear, so constraint qualification holds throughout the feasible
+      region. The gradient and Hessian of <span 
+class="cmmi-12">f </span>are given by
+      <center class="math-display" >
+      <img 
+src="final07s6x.png" alt="             [         ]                  [                   ]
+&#x2207;f  =  ex2- x1  1 - 2x1       &#x2207;2f  = ex2-x1   2x1 - 3  1 - 2x1  .
+               2x1 + 1                       1 - 2x1  2x1 + 1
+      " class="math-display" ></center>
+      <!--l. 90--><p class="nopar" >
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-15x1">What  are  the  first  order  necessary  Karush-Kuhn-Tucker  conditions  for  this
+           problem?
+           </li>
+           <li 
+  class="enumerate" id="x1-17x2">Show that there are exactly two points which satisfy the first order necessary
+           KKT conditions.
+           </li>
+           <li 
+  class="enumerate" id="x1-19x3">Use the second order KKT conditions to determine whether either, neither, or
+           both of these points are local minimizers.
+           </li>
+           <li 
+  class="enumerate" id="x1-21x4">Is either of the KKT points a global minimizer? (Hint: <span 
+class="cmmi-12">xe</span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmmi-8">x</span></sup> <span 
+class="cmsy-10x-x-120">&#x2192; </span>0 as <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2192; </span>+<span 
+class="cmsy-10x-x-120">&#x221E;</span>.)
+                                                                                         
+
+                                                                                         
+           </li>
+           <li 
+  class="enumerate" id="x1-23x5">Is <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) convex in the region <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>2<span 
+class="cmmi-12">,x</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0?</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-25x3">(25 points; each part is worth 5 points.) Give counterexamples to the following
+      assertions. (Hint: Counterexamples exist in either one or two dimensions for each of the
+      assertions.)
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-27x1">If  <span 
+class="cmmi-12">x </span>satisfies  the  first  order  necessary  Karush-Kuhn-Tucker  conditions  for  a
+           nonlinear  programming  problem,  then  it  must  be  a  local  minimizer  for  that
+           problem.
+           </li>
+           <li 
+  class="enumerate" id="x1-29x2">If <span 
+class="cmmi-12">x </span>is a local minimizer for a nonlinear programming problem then it must satisfy
+           the first order necessary Karush-Kuhn-Tucker conditions for that problem.
+           </li>
+           <li 
+  class="enumerate" id="x1-31x3">Two disjoint sets can be separated by a hyperplane.
+           </li>
+           <li 
+  class="enumerate" id="x1-33x4">The Hessian of a strictly convex function is positive definite everywhere.
+           </li>
+           <li 
+  class="enumerate" id="x1-35x5">Newton&#8217;s direction is always a descent direction for the unconstrained problem
+           min<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) : <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup><span 
+class="cmsy-10x-x-120">}</span>.</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-37x4">(30 points.) <br 
+class="newline" />Consider the problem
+      <center class="math-display" >
+      <img 
+src="final07s7x.png" alt="        T
+minx   c x
+s.t.   Ax   =   b        (CP )
+        x   &#x2208;   K,
+      " class="math-display" ></center>
+      <!--l. 128--><p class="nopar" >
+      where <span 
+class="cmmi-12">x </span>and <span 
+class="cmmi-12">c </span>are <span 
+class="cmmi-12">n</span>-vectors, <span 
+class="cmmi-12">b </span>is an <span 
+class="cmmi-12">m</span>-vector, <span 
+class="cmmi-12">A </span>is an <span 
+class="cmmi-12">m</span><span 
+class="cmsy-10x-x-120">&#x00D7;</span><span 
+class="cmmi-12">n </span>matrix, and <span 
+class="cmmi-12">K </span><span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup> is a convex
+      self-dual cone. Thus, <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup> : <span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0  <span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">K</span><span 
+class="cmsy-10x-x-120">} </span>= <span 
+class="cmmi-12">K</span>.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-39x1">(10 points) A Lagrangian relaxation of .(<span 
+class="cmmi-12">CP</span>) is:
+                                                                                         
+
+                                                                                         
+           <center class="math-display" >
+           <img 
+src="final07s8x.png" alt="min   cT x  +  vT (b - Ax )
+   x
+s.t.    x    &#x2208;  K                 (LR (v))
+           " class="math-display" ></center>
+           <!--l. 139--><p class="nopar" >
+           where <span 
+class="cmmi-12">v </span>is an <span 
+class="cmmi-12">m</span>-vector. Show that the Lagrangian dual problem can be written:
+           <center class="math-display" >
+           <img 
+src="final07s9x.png" alt="maxv   bT v
+s.t.    AT v  +  s  =   c       (LD  )
+                s  &#x2208;   K
+           " class="math-display" ></center>
+           <!--l. 148--><p class="nopar" >
+           </li>
+           <li 
+  class="enumerate" id="x1-41x2">(10 points) A barrier formulation for the problem (<span 
+class="cmmi-12">CP</span>) is
+           <center class="math-display" >
+           <img 
+src="final07s10x.png" alt="        T
+minx   c x  +   &#x03BC;f (x )
+s.t.   Ax   =   b           (BCP  (&#x03BC;))
+        x   &#x2208;   K
+           " class="math-display" ></center>
+           <!--l. 158--><p class="nopar" >
+           where <span 
+class="cmmi-12">&#x03BC; </span>is a positive scalar and <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) <span 
+class="cmsy-10x-x-120">&#x2192; </span>+<span 
+class="cmsy-10x-x-120">&#x221E; </span>as <span 
+class="cmmi-12">x </span>approaches the boundary of&#x00A0;<span 
+class="cmmi-12">K</span>.
+           Assume <span 
+class="cmsy-10x-x-120">-&#x2207;</span><span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /></span> int(<span 
+class="cmmi-12">K</span>) for all <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /></span> int(<span 
+class="cmmi-12">K</span>), the interior of&#x00A0;<span 
+class="cmmi-12">K</span>. Show that
+           the first order KKT optimality conditions of (<span 
+class="cmmi-12">BCP</span>(<span 
+class="cmmi-12">&#x03BC;</span>)) can be expressed as
+           primal and dual feasibility, plus a complementary slackness condition of the
+           form
+           <center class="math-display" >
+           <img 
+src="final07s11x.png" alt="s + &#x03BC;&#x2207;f (x ) = 0.
+           " class="math-display" ></center>
+           <!--l. 168--><p class="nopar" >
+           </li>
+                                                                                         
+
+                                                                                         
+           <li 
+  class="enumerate" id="x1-43x3">(10 points) Let <span 
+class="cmmi-12">K </span>be a second order cone defined on variables (<span 
+class="cmmi-12">&#x03BE;</span>; <span 
+class="cmmi-12">t</span>), with <span 
+class="cmmi-12">&#x03BE; </span>a
+           nonnegative scalar and <span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup>. Thus, <span 
+class="cmmi-12">K </span>= <span 
+class="cmsy-10x-x-120">{</span>(<span 
+class="cmmi-12">&#x03BE;</span>; <span 
+class="cmmi-12">t</span>) : <span 
+class="cmmi-12">&#x03BE;</span><sup><span 
+class="cmr-8">2</span></sup> <span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">t</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">t, &#x03BE; </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmsy-10x-x-120">}</span>. Let <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">&#x03BE;</span>; <span 
+class="cmmi-12">t</span>) be the
+           standard barrier function for this cone. Show that <span 
+class="cmsy-10x-x-120">-&#x2207;</span><span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">&#x03BE;</span>; <span 
+class="cmmi-12">t</span>) <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /></span> int(<span 
+class="cmmi-12">K</span>) for all
+           (<span 
+class="cmmi-12">&#x03BE;</span>; <span 
+class="cmmi-12">t</span>) <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /></span> int(<span 
+class="cmmi-12">K</span>).</li></ol>
+      </li></ol>
+    
+</body></html> 
+
+                                                                                         
+
+

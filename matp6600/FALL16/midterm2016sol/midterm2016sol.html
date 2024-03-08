@@ -1,0 +1,866 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="midterm2016sol.tex"> 
+<meta name="date" content="2016-11-06 11:55:00"> 
+<link rel="stylesheet" type="text/css" href="midterm2016sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 27--><p class="noindent" >
+<!--l. 29--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6600" ><span 
+class="cmr-12">MATP6600 / ISYE6780 Nonlinear Programming</span></a>
+</div>
+<div class="center" 
+>
+<!--l. 32--><p class="noindent" >
+<!--l. 34--><p class="noindent" ><span 
+class="cmr-12">Midterm Exam, Fall 2016</span>
+</div>
+<!--l. 38--><p class="noindent" >Take Home                                                    Due: Beginning of class, Thursday, 3 November
+2016.
+<!--l. 43--><p class="indent" >   This is to be all your own work. You may use any result from class, homeworks, or the books on
+reserve in the library. You may also use anything that is linked directly from the course webpage. I will
+have office hours on Mondays from 2-3pm, Tuesdays from 11am-1pm and Wednesdays from 11am-1pm.
+Do not consult anybody or anything else. The exam consists of five questions and is worth a total of 100
+points.
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1"><a 
+ id="x1-21"></a> (25 points) Consider the problem
+     <center class="math-display" >
+     <img 
+src="midterm2016sol0x.png" alt="                     T    T
+minx &#x2208;&#x211D;n    f(x) := (a x)(b x)
+subject to            xTx &#x2264; 1
+     " class="math-display" ></center>
+     <!--l. 60--><p class="nopar" >
+     where <span 
+class="cmmi-10x-x-109">a,b </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup>, <span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">a </span>= <span 
+class="cmmi-10x-x-109">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">b </span>= 1, <span 
+class="cmmi-10x-x-109">a</span><span 
+class="cmmi-10x-x-109">&#x2260;</span> <span 
+class="cmsy-10x-x-109">± </span><span 
+class="cmmi-10x-x-109">b</span>.
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-5x1">(5 points) Show that <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> = (<span 
+class="cmmi-10x-x-109">a</span><span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">b</span>)<span 
+class="cmmi-10x-x-109">&#x2215;</span><span 
+class="cmsy-10x-x-109">||</span><span 
+class="cmmi-10x-x-109">a</span><span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">b</span><span 
+class="cmsy-10x-x-109">||</span><sub><span 
+class="cmr-8">2</span></sub> is a KKT point for this problem, with negative
+          objective function value.
+          </li>
+          <li 
+  class="enumerate" id="x1-7x2">(10 points) Are there any other points that satisfy the first order KKT conditions?
+          </li>
+          <li 
+  class="enumerate" id="x1-9x3">(5 points) What is the Hessian matrix of the objective function? Is the objective function
+          convex?
+          </li>
+          <li 
+  class="enumerate" id="x1-11x4">(5 points) What are the optimal value and the optimal solution(s)?</li></ol>
+     <!--l. 78--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution:</span>
+                                                                                         
+                                                                                         
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-13x1">We have
+          <center class="math-display" >
+          <img 
+src="midterm2016sol1x.png" alt="          T        T
+&#x2207;f (x) = (a x )b + (b x)a
+          " class="math-display" ></center>
+          <!--l. 85--><p class="nopar" >
+          so the KKT conditions are <div class="eqnarray">
+          <center class="math-display" >
+          <img 
+src="midterm2016sol2x.png" alt=" T        T
+(a  x)b+ (b x)a + 2ux  =   0                            (1)
+          u(xT x- 1)  =   0                            (2)
+              T
+             x x - 1  &#x2264;   0                            (3)
+                   u  &#x2265;   0.                           (4)
+          " class="math-display" ><a 
+ id="x1-14r1"></a></center>
+          </div>We have <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span><sup><span 
+class="cmmi-8">T</span> </sup><span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> = 1 so feasibility is satisfied and the complementarity condition is satisfied for
+          any <span 
+class="cmmi-10x-x-109">u </span><span 
+class="cmsy-10x-x-109">&#x2265; </span>0. Note that <span 
+class="cmsy-10x-x-109">-</span>1 <span 
+class="cmmi-10x-x-109">&#x003C; a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">b &#x003C; </span>1. We have
+          <center class="math-display" >
+          <img 
+src="midterm2016sol3x.png" alt="aTx¯= (1 - aTb)&#x2215;||a - b||2 and bT x = (aT b- 1)&#x2215;||a - b||2,
+          " class="math-display" ></center>
+          <!--l. 99--><p class="nopar" >
+          so we satisfy the gradient condition if we take <span 
+class="cmbx-10x-x-109">u </span>= <img 
+src="midterm2016sol4x.png" alt="1
+2"  class="frac" align="middle">(<span 
+class="cmbx-10x-x-109">1 </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmbx-10x-x-109">a</span><sup><span 
+class="cmbx-8">T</span></sup><span 
+class="cmbx-10x-x-109">b</span>).
+          <!--l. 102--><p class="noindent" >We have
+          <center class="math-display" >
+          <img 
+src="midterm2016sol5x.png" alt="       (1 - aTb)(aTb - 1)     (1 - aTb)2      (1 - aTb)2      1- aT b
+f(¯x) = ----||a---b||2-----=  - -||a---b||2- = -  2---2aTb--= -  ---2---&#x003C;  0.
+                  2                  2
+          " class="math-display" ></center>
+          <!--l. 106--><p class="nopar" >
+          </li>
+          <li 
+  class="enumerate" id="x1-16x2">Any <span 
+class="cmmi-10x-x-109">x </span>satisfying <span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">x </span>= <span 
+class="cmmi-10x-x-109">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">x </span>= 0 satisfies the KKT conditions if we take <span 
+class="cmmi-10x-x-109">u </span>= 0. Since <span 
+class="cmmi-10x-x-109">a </span>and <span 
+class="cmmi-10x-x-109">b</span>
+          are not parallel, this is the only way to satisfy the KKT conditions with <span 
+class="cmmi-10x-x-109">u </span>= 0. All these points
+                                                                                         
+                                                                                         
+          have <span 
+class="cmmi-10x-x-109">f</span>(<span 
+class="cmmi-10x-x-109">x</span>) = 0.
+          <!--l. 114--><p class="noindent" >From (<a 
+href="#x1-14r1">1<!--tex4ht:ref: eq.kktgrad --></a>), if <span 
+class="cmmi-10x-x-109">u &#x003E; </span>0 then we must have <span 
+class="cmmi-10x-x-109">x </span>= <span 
+class="cmmi-10x-x-109">&#x03B1;a </span>+ <span 
+class="cmmi-10x-x-109">&#x03B2;b </span>for some scalars <span 
+class="cmmi-10x-x-109">&#x03B1; </span>and&#x00A0;<span 
+class="cmmi-10x-x-109">&#x03B2;</span>. We can express
+          the gradient condition in terms of <span 
+class="cmmi-10x-x-109">&#x03B1; </span>and <span 
+class="cmmi-10x-x-109">&#x03B2;</span>: <div class="eqnarray">
+          <center class="math-display" >
+          <img 
+src="midterm2016sol6x.png" alt="0  =   (aT(&#x03B1;a + &#x03B2;b))b+ (bT(&#x03B1;a + &#x03B2;b))a+ 2u (&#x03B1;a + &#x03B2;b )
+   =   (&#x03B2; + &#x03B1;aTb + 2u&#x03B1;)a + (&#x03B1;+ &#x03B2;aT b+  2u&#x03B2;)b.
+          " class="math-display" ></center>
+          </div>Since <span 
+class="cmmi-10x-x-109">a </span>and <span 
+class="cmmi-10x-x-109">b </span>are not linearly dependent, we must have
+          <center class="math-display" >
+          <img 
+src="midterm2016sol7x.png" alt="      1-  T    &#x03B2;-           1-  T    &#x03B1;-
+u = - 2 (a b+  &#x03B1;) and u = - 2 (a b+  &#x03B2;)
+          " class="math-display" ></center>
+          <!--l. 125--><p class="nopar" >
+          so <span 
+class="cmmi-10x-x-109">&#x03B1;</span><sup><span 
+class="cmr-8">2</span></sup> = <span 
+class="cmmi-10x-x-109">&#x03B2;</span><sup><span 
+class="cmr-8">2</span></sup>. Since <span 
+class="cmmi-10x-x-109">u &#x003E; </span>0, we must have <span 
+class="cmmi-10x-x-109">&#x03B1; </span>= <span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">&#x03B2; </span>so <span 
+class="cmmi-10x-x-109">u </span>= <img 
+src="midterm2016sol8x.png" alt="1
+2"  class="frac" align="middle">(1 <span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">b</span>) and <span 
+class="cmmi-10x-x-109">x </span>= <span 
+class="cmsy-10x-x-109">±</span>(<span 
+class="cmmi-10x-x-109">a</span><span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">b</span>)<span 
+class="cmmi-10x-x-109">&#x2215;</span><span 
+class="cmsy-10x-x-109">||</span><span 
+class="cmmi-10x-x-109">a</span><span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">b</span><span 
+class="cmsy-10x-x-109">||</span><sub><span 
+class="cmr-8">2</span></sub>.
+          Thus, we have one more KKT point with <span 
+class="cmmi-10x-x-109">u &#x003E; </span>0, namely <img 
+src="midterm2016sol9x.png" alt="&#x02C6;x"  class="circ" > = (<span 
+class="cmmi-10x-x-109">b </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">a</span>)<span 
+class="cmmi-10x-x-109">&#x2215;</span><span 
+class="cmsy-10x-x-109">||</span><span 
+class="cmmi-10x-x-109">a </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">b</span><span 
+class="cmsy-10x-x-109">||</span><sub><span 
+class="cmr-8">2</span></sub>.
+          </li>
+          <li 
+  class="enumerate" id="x1-19x3">The Hessian matrix is
+          <center class="math-display" >
+          <img 
+src="midterm2016sol10x.png" alt="&#x2207;2f  = abT + baT.
+          " class="math-display" ></center>
+          <!--l. 134--><p class="nopar" >
+          This is not psd: taking <span 
+class="cmmi-10x-x-109">d </span>= <span 
+class="cmmi-10x-x-109">a </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">b </span>gives <span 
+class="cmmi-10x-x-109">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmsy-10x-x-109">&#x2207;</span><sup><span 
+class="cmr-8">2</span></sup><span 
+class="cmmi-10x-x-109">f</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-10x-x-109">d &#x003C; </span>0.
+          </li>
+          <li 
+  class="enumerate" id="x1-21x4">The feasible region is compact and the objective function is continuous, so a global minimizer
+          exists. The feasible region is convex and there is a strictly feasible point, for example
+          <span 
+class="cmmi-10x-x-109">x </span>= (0<span 
+class="cmmi-10x-x-109">,</span>0). Thus, the global minimizer is a KKT point. The only KKT points with
+          negative objective function value are <span 
+class="cmsy-10x-x-109">±</span><span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span>, so they are optimal, and the optimal value is
+          <span 
+class="cmsy-10x-x-109">-</span><img 
+src="midterm2016sol11x.png" alt="(1--aT-b)2
+ ||a- b||22"  class="frac" align="middle"> = <span 
+class="cmsy-10x-x-109">-</span><img 
+src="midterm2016sol12x.png" alt="1
+2"  class="frac" align="middle">(1 <span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">b</span>).</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-23x2"><a 
+ id="x1-222"></a> (20 points) Consider again the problem of Question&#x00A0;<a 
+href="#x1-21">1<!--tex4ht:ref: q.kkt1 --></a>. The dual function is
+     <table 
+class="equation"><tr><td><a 
+ id="x1-24r5"></a>
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="midterm2016sol13x.png" alt="&#x03B8;(u ) := min (aTx )(bTx )+ u(xTx - 1)
+       x&#x2208;&#x211D;n
+     " class="math-display" ></center></td><td class="equation-label">(5)</td></tr></table>
+     <!--l. 152--><p class="nopar" >
+     where <span 
+class="cmmi-10x-x-109">u </span><span 
+class="cmsy-10x-x-109">&#x2265; </span>0 is a scalar. Express the dual function in closed form (that is, solve the minimization
+     problem in (<a 
+href="#x1-24r5">5<!--tex4ht:ref: eq.theta --></a>) for each value of <span 
+class="cmmi-10x-x-109">u </span><span 
+class="cmsy-10x-x-109">&#x2265; </span>0). Hence solve the dual problem
+     <center class="math-display" >
+     <img 
+src="midterm2016sol14x.png" alt=" max   &#x03B8;(u).
+u&#x2208;&#x211D;,u&#x2265;0
+     " class="math-display" ></center>
+     <!--l. 159--><p class="nopar" >
+     <!--l. 161--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution:</span>
+     <!--l. 164--><p class="noindent" >We can write
+     <center class="math-display" >
+     <img 
+src="midterm2016sol15x.png" alt="                  1
+&#x03B8;(u) = - u + min  -xT(2uI + abT + baT)x.
+             x&#x2208;&#x211D;n 2
+     " class="math-display" ></center>
+     <!--l. 167--><p class="nopar" >
+     If the matrix 2<span 
+class="cmmi-10x-x-109">uI </span>+ <span 
+class="cmmi-10x-x-109">ab</span><sup><span 
+class="cmmi-8">T</span> </sup> + <span 
+class="cmmi-10x-x-109">ba</span><sup><span 
+class="cmmi-8">T</span> </sup> is positive semidefinite then the optimal solution to the minimization
+     problem is to take <span 
+class="cmmi-10x-x-109">x </span>= 0, giving <span 
+class="cmmi-10x-x-109">&#x03B8;</span>(<span 
+class="cmmi-10x-x-109">u</span>) = <span 
+class="cmsy-10x-x-109">-</span><span 
+class="cmmi-10x-x-109">u</span>.
+     <!--l. 171--><p class="noindent" >If the matrix 2<span 
+class="cmmi-10x-x-109">uI </span>+ <span 
+class="cmmi-10x-x-109">ab</span><sup><span 
+class="cmmi-8">T</span> </sup> + <span 
+class="cmmi-10x-x-109">ba</span><sup><span 
+class="cmmi-8">T</span> </sup> has a negative eigenvalue with corresponding eigenvector&#x00A0;<span 
+class="cmmi-10x-x-109">w </span>then
+     taking <span 
+class="cmmi-10x-x-109">x </span>= <span 
+class="cmmi-10x-x-109">&#x03BC;w </span>with <span 
+class="cmmi-10x-x-109">&#x03BC; </span><span 
+class="cmsy-10x-x-109">&#x2192;&#x221E; </span>shows the minimization problem has an unbounded optimal value so
+     <span 
+class="cmmi-10x-x-109">&#x03B8;</span>(<span 
+class="cmmi-10x-x-109">u</span>) = <span 
+class="cmsy-10x-x-109">-&#x221E;</span>.
+     <!--l. 175--><p class="noindent" >The eigenvalues of 2<span 
+class="cmmi-10x-x-109">uI </span>+ <span 
+class="cmmi-10x-x-109">ab</span><sup><span 
+class="cmmi-8">T</span> </sup> + <span 
+class="cmmi-10x-x-109">ba</span><sup><span 
+class="cmmi-8">T</span> </sup> are equal to 2<span 
+class="cmmi-10x-x-109">u </span>plus the eigenvalues of <span 
+class="cmmi-10x-x-109">M </span>:= <span 
+class="cmmi-10x-x-109">ab</span><sup><span 
+class="cmmi-8">T</span> </sup> + <span 
+class="cmmi-10x-x-109">ba</span><sup><span 
+class="cmmi-8">T</span> </sup>.
+     Any vector orthogonal to both <span 
+class="cmmi-10x-x-109">a </span>and <span 
+class="cmmi-10x-x-109">b </span>is an eigenvector of&#x00A0;<span 
+class="cmmi-10x-x-109">M </span>with eigenvalue&#x00A0;0. So 0
+     is an eigenvector of <span 
+class="cmmi-10x-x-109">M </span>with multiplicity <span 
+class="cmmi-10x-x-109">n </span><span 
+class="cmsy-10x-x-109">- </span>2. The remaining eigenvectors are linear
+     combinations of <span 
+class="cmmi-10x-x-109">a </span>and&#x00A0;<span 
+class="cmmi-10x-x-109">b</span>. Let <span 
+class="cmmi-10x-x-109">w </span>= <span 
+class="cmmi-10x-x-109">&#x03B1;a </span>+ <span 
+class="cmmi-10x-x-109">&#x03B2;b </span>be an eigenvector of <span 
+class="cmmi-10x-x-109">M </span>with eigenvalue&#x00A0;<span 
+class="cmmi-10x-x-109">&#x03BB;</span>. We have
+     <div class="eqnarray">
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="midterm2016sol16x.png" alt="&#x03BB;&#x03B1;a + &#x03BB;&#x03B2;b  =   M w
+                T         T
+           =   (b  w)a + (a  w)b
+           =   (&#x03B1;aT b + &#x03B2;)a+ (&#x03B1; + &#x03B2;aT b)b.
+     " class="math-display" ></center>
+     </div>Thus, since <span 
+class="cmmi-10x-x-109">a </span>and <span 
+class="cmmi-10x-x-109">b </span>are linearly independent,
+     <center class="math-display" >
+     <img 
+src="midterm2016sol17x.png" alt="&#x03BB; = aTb + &#x03B2;-= aT b+ &#x03B1;-
+          &#x03B1;         &#x03B2;
+     " class="math-display" ></center>
+     <!--l. 188--><p class="nopar" >
+     so <span 
+class="cmmi-10x-x-109">&#x03B1;</span><sup><span 
+class="cmr-8">2</span></sup> = <span 
+class="cmmi-10x-x-109">&#x03B2;</span><sup><span 
+class="cmr-8">2</span></sup> so <span 
+class="cmmi-10x-x-109">&#x03B1; </span>= <span 
+class="cmsy-10x-x-109">±</span><span 
+class="cmmi-10x-x-109">&#x03B2;</span>. Thus, we obtain eigenvectors: <div class="eqnarray">
+     <center class="math-display" >
+     <img 
+src="midterm2016sol18x.png" alt="v1  =  a + b, with eigenvalue aT b+ 1 &#x003E; 0
+
+v2  =  a - b, with eigenvalue aT b- 1 &#x003C; 0.
+     " class="math-display" ></center>
+     </div>We then obtain
+     <center class="math-display" >
+     <img 
+src="midterm2016sol19x.png" alt="       {                T
+          - u  if u &#x2265; 1-a2-b
+&#x03B8;(u) =                   1-aTb
+          - &#x221E;  if 0 &#x2264; u &#x003C;  2
+     " class="math-display" ></center>
+     <!--l. 203--><p class="nopar" >
+     Thus, the dual problem is:
+     <center class="math-display" >
+     <img 
+src="midterm2016sol20x.png" alt="max        - u
+subject to  u &#x2265; 1-aTb
+                 2
+                                                                                         
+                                                                                         
+     " class="math-display" ></center>
+     <!--l. 210--><p class="nopar" >
+     which has optimal value <span 
+class="cmsy-10x-x-109">-</span><img 
+src="midterm2016sol21x.png" alt="1-aTb
+  2"  class="frac" align="middle"> achieved by <span 
+class="cmmi-10x-x-109">u</span><sup><span 
+class="cmsy-8">*</span></sup> = <img 
+src="midterm2016sol22x.png" alt="1-aTb
+  2"  class="frac" align="middle">.
+     <!--l. 213--><p class="noindent" >Note that for this problem the optimal primal and dual values agree.
+     <!--l. 215--><p class="noindent" >Note that the point <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> from Question&#x00A0;<a 
+href="#x1-21">1<!--tex4ht:ref: q.kkt1 --></a> is a member of the solution set&#x00A0;<span 
+class="cmmi-10x-x-109">X</span>(<span 
+class="cmmi-10x-x-109">u</span><sup><span 
+class="cmsy-8">*</span></sup>), as is any point of the
+     form <span 
+class="cmmi-10x-x-109">&#x03B1;</span><span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> for any scalar&#x00A0;<span 
+class="cmmi-10x-x-109">&#x03B1;</span>.
+     </li>
+     <li 
+  class="enumerate" id="x1-28x3"><a 
+ id="x1-273"></a> (20 points) In the following convex nonsmooth optimization problem
+     <table 
+class="equation"><tr><td><a 
+ id="x1-29r6"></a>
+     <center class="math-display" >
+     <img 
+src="midterm2016sol23x.png" alt="                    &#x2211;
+minx &#x2208;&#x211D;n   f(x) :=     ni=1|xi|
+subject to               Ax   =   b,
+     " class="math-display" ></center></td><td class="equation-label">(6)</td></tr></table>
+     <!--l. 228--><p class="nopar" >
+     we have <span 
+class="cmmi-10x-x-109">b </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">m</span></sup> and <span 
+class="cmmi-10x-x-109">A </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">m</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup>. Let <span 
+class="cmmi-10x-x-109">e </span>denote the vector of ones. The problem can be expressed
+     equivalently as the linear program
+     <table 
+class="equation"><tr><td><a 
+ id="x1-30r7"></a>
+     <center class="math-display" >
+     <img 
+src="midterm2016sol24x.png" alt="            T        T
+minu,v&#x2208;&#x211D;n   e u  +   e v
+subject to  Au   -   Av   =  b
+                    u,v  &#x2265;  0.
+     " class="math-display" ></center></td><td class="equation-label">(7)</td></tr></table>
+     <!--l. 238--><p class="nopar" >
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-32x1">What is the dual linear program to (<a 
+href="#x1-30r7">7<!--tex4ht:ref: eq.nsprimal --></a>)?
+                                                                                         
+                                                                                         
+          </li>
+          <li 
+  class="enumerate" id="x1-34x2">Assume you have an optimal solution (<span 
+class="cmmi-10x-x-109">u</span><sup><span 
+class="cmsy-8">*</span></sup><span 
+class="cmmi-10x-x-109">,v</span><sup><span 
+class="cmsy-8">*</span></sup>) to (<a 
+href="#x1-30r7">7<!--tex4ht:ref: eq.nsprimal --></a>) along with an optimal dual solution. Let
+          <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmsy-8">*</span></sup> = <span 
+class="cmmi-10x-x-109">u</span><sup><span 
+class="cmsy-8">*</span></sup><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">v</span><sup><span 
+class="cmsy-8">*</span></sup>. Construct a subgradient <span 
+class="cmmi-10x-x-109">&#x03BE; </span>to <span 
+class="cmmi-10x-x-109">f</span>(<span 
+class="cmmi-10x-x-109">x</span>) at <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmsy-8">*</span></sup> such that
+          <center class="math-display" >
+          <img 
+src="midterm2016sol25x.png" alt="                   *    T      *         n
+ T    f(x*)  &#x2265;  f (x ) + &#x03BE; (x - x ) &#x2200;x &#x2208; &#x211D;
+&#x03BE; (x - x )  &#x2265;  0                  &#x2200;x  feasible in (6).
+          " class="math-display" ></center>
+          <!--l. 252--><p class="nopar" >
+          Make sure you explain why these conditions hold for your choice of&#x00A0;<span 
+class="cmmi-10x-x-109">&#x03BE;</span>.</li></ol>
+     <!--l. 256--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution:</span>
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-36x1">The dual is
+          <center class="math-display" >
+          <img 
+src="midterm2016sol26x.png" alt="                   T
+maxy &#x2208;&#x211D;m,s,t&#x2208;&#x211D;n    b y
+subject to         ATy  +   s  =  e
+                - ATy  +   t  =  e
+                         s,t  &#x2265;  0
+          " class="math-display" ></center>
+          <!--l. 268--><p class="nopar" >
+          </li>
+          <li 
+  class="enumerate" id="x1-38x2">Take <span 
+class="cmmi-10x-x-109">&#x03BE; </span>= <span 
+class="cmbx-10x-x-109">A</span><sup><span 
+class="cmbx-8">T</span></sup><span 
+class="cmbx-10x-x-109">y</span>. Note that:
+              <ul class="itemize1">
+              <li class="itemize">For <span 
+class="cmmi-10x-x-109">&#x03BE; </span>to be a subgradient, we need:
+              <center class="math-display" >
+              <img 
+src="midterm2016sol27x.png" alt="  (
+  {  =   1      if x*i &#x003E; 0
+&#x03BE;i   =   - 1    if x*i &#x003C; 0
+  (  &#x2208;   [- 1,1] if x* = 0.
+                   i
+              " class="math-display" ></center>
+              <!--l. 279--><p class="nopar" >
+              By complementary slackness, if <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> <span 
+class="cmmi-10x-x-109">&#x003E; </span>0 then <span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> <span 
+class="cmmi-10x-x-109">&#x003E; </span>0 so <span 
+class="cmmi-10x-x-109">s</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> = 0 so (<span 
+class="cmmi-10x-x-109">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">y</span><sup><span 
+class="cmsy-8">*</span></sup>)<sub><span 
+class="cmmi-8">i</span></sub> = 1, as
+              required.
+              <!--l. 283--><p class="noindent" >By complementary slackness, if <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> <span 
+class="cmmi-10x-x-109">&#x003C; </span>0 then <span 
+class="cmmi-10x-x-109">v</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> <span 
+class="cmmi-10x-x-109">&#x003E; </span>0 so <span 
+class="cmmi-10x-x-109">t</span><sub><span 
+class="cmmi-8">i</span></sub><sup><span 
+class="cmsy-8">*</span></sup> = 0 so (<span 
+class="cmmi-10x-x-109">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">y</span><sup><span 
+class="cmsy-8">*</span></sup>)<sub><span 
+class="cmmi-8">i</span></sub> = <span 
+class="cmsy-10x-x-109">-</span>1, as
+              required.
+              <!--l. 286--><p class="noindent" >By dual feasibility, if <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmmi-8">i</span></sub> = 0 then <span 
+class="cmsy-10x-x-109">-</span>1 <span 
+class="cmsy-10x-x-109">&#x2264; </span>(<span 
+class="cmmi-10x-x-109">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">y</span><sup><span 
+class="cmsy-8">*</span></sup>)<sub><span 
+class="cmmi-8">i</span></sub> <span 
+class="cmsy-10x-x-109">&#x2264; </span>1, as required.
+              </li>
+              <li class="itemize">The normal cone to the manifold consists of vectors of the form <span 
+class="cmmi-10x-x-109">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">z </span>for some <span 
+class="cmmi-10x-x-109">z </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">m</span></sup>, so
+              our choice <span 
+class="cmmi-10x-x-109">&#x03BE; </span>is in the normal cone. If <span 
+class="cmmi-10x-x-109">x </span>satisfies <span 
+class="cmmi-10x-x-109">Ax </span>= <span 
+class="cmmi-10x-x-109">b </span>then <span 
+class="cmmi-10x-x-109">A</span>(<span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmsy-8">*</span></sup>) = 0,
+                                                                                         
+                                                                                         
+              so
+              <center class="math-display" >
+              <img 
+src="midterm2016sol28x.png" alt="&#x03BE;T(x - x*) = yTA (x - x*) = 0.
+              " class="math-display" ></center>
+              <!--l. 293--><p class="nopar" >
+              </li></ul>
+          </li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-40x4">(10 points.) Let <span 
+class="cmmi-10x-x-109">a </span>be a positive scalar and let <span 
+class="cmmi-10x-x-109">f </span>: <span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup> <span 
+class="cmsy-10x-x-109">&#x2192; </span><span 
+class="msbm-10x-x-109">&#x211D; </span>be defined as
+     <center class="math-display" >
+     <img 
+src="midterm2016sol29x.png" alt="f(x) = (||x||2 - a)2.
+     " class="math-display" ></center>
+     <!--l. 302--><p class="nopar" >
+     Is <span 
+class="cmmi-10x-x-109">f</span>(<span 
+class="cmmi-10x-x-109">x</span>) convex?
+     <!--l. 305--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution:</span>
+     <!--l. 308--><p class="noindent" >No. Eg, <span 
+class="cmmi-10x-x-109">f</span>(0) = <span 
+class="cmmi-10x-x-109">a</span><sup><span 
+class="cmr-8">2</span></sup>, while <span 
+class="cmmi-10x-x-109">f</span>(<span 
+class="cmsy-10x-x-109">±</span><span 
+class="cmmi-10x-x-109">av</span>) = 0 for any unit vector&#x00A0;<span 
+class="cmmi-10x-x-109">v</span>. So
+     <center class="math-display" >
+     <img 
+src="midterm2016sol30x.png" alt="  (              )             (    )     (       )
+    1-    1-          2          1-         1-
+f   2av + 2(- av)  = a &#x003E;  0 = f  2av  + f   2(- av ) ,
+     " class="math-display" ></center>
+     <!--l. 313--><p class="nopar" >
+     violating the definition of a convex function.
+     <!--l. 316--><p class="noindent" >Alternatively, it is possible to also answer this question using the gradient or Hessian of&#x00A0;<span 
+class="cmmi-10x-x-109">f</span>(<span 
+class="cmmi-10x-x-109">x</span>),
+     which are defined provided <span 
+class="cmmi-10x-x-109">x</span><span 
+class="cmmi-10x-x-109">&#x2260;</span>0. Note that <span 
+class="cmmi-10x-x-109">f</span>(<span 
+class="cmmi-10x-x-109">x</span>) is nondifferentiable when <span 
+class="cmmi-10x-x-109">x </span>= 0. We
+     have
+     <center class="math-display" >
+     <img 
+src="midterm2016sol31x.png" alt="              (       )
+ &#x2207;f (x)  =  2  1-  -a-- x
+                   ||x||2
+                     (      T )
+&#x2207;2f (x)  =  2I - ||2xa||2 I - |xx|x||22
+     " class="math-display" ></center>
+     <!--l. 326--><p class="nopar" >
+     for <span 
+class="cmmi-10x-x-109">x</span><span 
+class="cmmi-10x-x-109">&#x2260;</span>0. The Hessian matrix is not psd if <span 
+class="cmmi-10x-x-109">n </span><span 
+class="cmsy-10x-x-109">&#x2265; </span>2 and <span 
+class="cmsy-10x-x-109">||</span><span 
+class="cmmi-10x-x-109">x</span><span 
+class="cmsy-10x-x-109">||</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmmi-10x-x-109">&#x003C; a</span>.
+     </li>
+     <li 
+  class="enumerate" id="x1-42x5">(25 points) Consider the problem
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="midterm2016sol32x.png" alt="minx &#x2208;&#x211D;2   f (x ) := x21 + x22
+                        ( x  - 1 )T (  2  1 ) ( x  - 1 )
+subject to  g(x) :=  24-     1                      1      &#x2264;  0.
+                          x2 - 1       1  2     x2 - 1
+     " class="math-display" ></center>
+     <!--l. 342--><p class="nopar" >
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-44x1">(10 points) Verify that <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">1</span></sup> = (3<span 
+class="cmmi-10x-x-109">,</span>3) and <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">2</span></sup> = (<span 
+class="cmsy-10x-x-109">-</span>1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmsy-10x-x-109">-</span>1) are KKT points.
+          </li>
+          <li 
+  class="enumerate" id="x1-46x2">(15 points) What do the second order necessary and sufficient conditions imply about
+          <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">1</span></sup> and&#x00A0;<span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">2</span></sup>?</li></ol>
+     <!--l. 350--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution:</span>
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-48x1">We have <span 
+class="cmmi-10x-x-109">g</span>(<span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">1</span></sup>) = <span 
+class="cmmi-10x-x-109">g</span>(<span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">2</span></sup>) = 0, so the points are feasible, and complementarity is satisfied
+          for any <span 
+class="cmmi-10x-x-109">u </span><span 
+class="cmsy-10x-x-109">&#x2265; </span>0.
+          <!--l. 357--><p class="noindent" >The gradient condition is
+          <center class="math-display" >
+          <img 
+src="midterm2016sol33x.png" alt="(      )      (      ) (         )    (   )
+   2x1          2  1      x1 - 1        0
+   2x2   - 2u   1  2      x2 - 1   =    0   .
+          " class="math-display" ></center>
+          <!--l. 365--><p class="nopar" >
+          At <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">1</span></sup>, we require <span 
+class="cmmi-10x-x-109">u </span>to satisfy
+          <center class="math-display" >
+          <img 
+src="midterm2016sol34x.png" alt="(   )    (    )      (      )  (   )    (    )      (   )
+  0         6          2  1      2         6          6
+  0    =    6   - 2u   1  2      2    =    6   - 2u   6   ,
+          " class="math-display" ></center>
+          <!--l. 377--><p class="nopar" >
+          so we can take <span 
+class="cmmi-10x-x-109">u </span>= 0<span 
+class="cmmi-10x-x-109">.</span>5.
+          <!--l. 380--><p class="noindent" >At <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">2</span></sup>, we require <span 
+class="cmmi-10x-x-109">u </span>to satisfy
+          <center class="math-display" >
+          <img 
+src="midterm2016sol35x.png" alt="(   )    (     )      (       ) (     )    (     )      (     )
+  0         - 2          2  1     - 2         - 2          - 6
+  0    =    - 2   - 2u   1  2     - 2    =    - 2   - 2u   - 6  ,
+          " class="math-display" ></center>
+          <!--l. 391--><p class="nopar" >
+          so we can take <span 
+class="cmmi-10x-x-109">u </span>= <img 
+src="midterm2016sol36x.png" alt="1
+6"  class="frac" align="middle">.
+                                                                                         
+                                                                                         
+          </li>
+          <li 
+  class="enumerate" id="x1-50x2">The Hessian of the Lagrangian is
+          <center class="math-display" >
+          <img 
+src="midterm2016sol37x.png" alt="             ( 2  0 )      (  2  1 )
+&#x2207;2xxL (x,u) =           - 2u          .
+               0  2           1  2
+          " class="math-display" ></center>
+          <!--l. 401--><p class="nopar" >
+          When <span 
+class="cmmi-10x-x-109">x </span>= <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">1</span></sup> and <span 
+class="cmmi-10x-x-109">u </span>= 0<span 
+class="cmmi-10x-x-109">.</span>5, we get
+          <center class="math-display" >
+          <img 
+src="midterm2016sol38x.png" alt="               (  2 0 )    (  2  1 )    (   0  - 1 )
+&#x2207;2xxL (x1,0.5) =           -           =              ,
+                  0 2         1  2        - 1   0
+          " class="math-display" ></center>
+          <!--l. 410--><p class="nopar" >
+          which is indefinite. We restrict attention to directions satisfying <span 
+class="cmmi-10x-x-109">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmsy-10x-x-109">&#x2207;</span><span 
+class="cmmi-10x-x-109">g </span>= 0. We
+          have
+          <center class="math-display" >
+          <img 
+src="midterm2016sol39x.png" alt="           (      )  (   )    (     )
+&#x2207;g (x1) = 2  2  1      2    =    12   ,
+             1  2      2         12
+          " class="math-display" ></center>
+          <!--l. 419--><p class="nopar" >
+          so we require <span 
+class="cmmi-10x-x-109">d </span>= <span 
+class="cmmi-10x-x-109">&#x03BC;</span>(1<span 
+class="cmmi-10x-x-109">,</span><span 
+class="cmsy-10x-x-109">-</span>1) for some scalar&#x00A0;<span 
+class="cmmi-10x-x-109">&#x03BC;</span>. For such <span 
+class="cmmi-10x-x-109">d</span>, we have
+          <center class="math-display" >
+          <img 
+src="midterm2016sol40x.png" alt="                     (     )T (          ) (     )
+dT&#x2207;2xxL(x1,0.5 )d = &#x03BC;2     1        0  - 1       1    = 2&#x03BC;2
+                       - 1       - 1   0      - 1
+          " class="math-display" ></center>
+          <!--l. 428--><p class="nopar" >
+          so the second order sufficient conditions are satisfied at <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">1</span></sup>, so the point is a local
+          minimizer.
+          <!--l. 432--><p class="noindent" >When <span 
+class="cmmi-10x-x-109">x </span>= <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">2</span></sup> and <span 
+class="cmmi-10x-x-109">u </span>= <img 
+src="midterm2016sol41x.png" alt="1
+6"  class="frac" align="middle">, we get
+          <center class="math-display" >
+          <img 
+src="midterm2016sol42x.png" alt="              (      )      (      )      (         )
+ 2     2 1-     2  0      1-  2  1      1-    4  - 1
+&#x2207;xxL (x ,6) =   0  2    - 3   1  2    = 3   - 1   4   ,
+          " class="math-display" ></center>
+          <!--l. 440--><p class="nopar" >
+          which is positive definite, so the second order sufficient conditions are satisfied at <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">2</span></sup>, so the
+          point is a local minimizer.
+                                                                                         
+                                                                                         
+          </li></ol>
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                               </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                                                          </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours: Monday 2&#8211;3pm, Tuesday 11am&#8211;1pm, Wednesday 11am&#8211;1pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

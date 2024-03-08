@@ -1,0 +1,915 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw4sol2022.tex"> 
+<meta name="date" content="2022-10-17 10:38:00"> 
+<link rel="stylesheet" type="text/css" href="hw4sol2022.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 48--><p class="noindent" >
+<!--l. 50--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12x-x-120">Math Models of Operations Research</span></a><br />
+<a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12x-x-120">MATP 4700 </span></a><br /><br />
+<span 
+class="cmbx-12x-x-120">Homework 4 Solutions</span><br /><br />
+<span 
+class="cmbx-12x-x-120">Solutions</span></div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 58--><p class="noindent" >
+ This homework will not be collected or graded.</div>
+<!--l. 64--><p class="noindent" >Questions from Kupferschmid, Chapter 5 (available on LMS):
+      <ul class="itemize1">
+      <li class="itemize">5.5.13(b) (lecture 11). Hint: you should only need one artificial variable in Phase I for
+      the dual problem.
+      </li>
+      <li class="itemize">5.5.21 (lecture 12C)
+      </li>
+      <li class="itemize">5.5.25 (lecture 12C)
+      </li>
+      <li class="itemize">5.5.31 (lecture 11)
+      </li>
+      <li class="itemize">5.5.34 (lecture 12C for parts (d) and (g); lecture 11 for the other parts) Hint for part
+      (e): A shortcut to avoid using Phase I: pivot on the <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">11</span></sub>, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">12</span></sub>, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">13</span></sub>  entries in the last 3
+      constraints, and on <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">21</span></sub> in the second constraint.</li></ul>
+<!--l. 85--><p class="noindent" >In addition, read Sections 5.1 and 5.2 from the text.
+<!--l. 87--><p class="noindent" >Also, install AMPL on your computer and try solving a test problem, for example the problem in
+5.5.25 (you don&#8217;t need to submit anything for this question).
+<!--l. 95--><p class="noindent" >Solving the homework problems (and other problems from the text) will improve your
+understanding of the material.
+<!--l. 101--><p class="noindent" >Working out the problems yourself will greatly improve your understanding of the material and
+help you on the exams.
+                                                                                         
+                                                                                         
+<!--l. 110--><p class="noindent" >You can ask questions on piazza, in addition to using office hours or email.
+      <ul class="itemize1">
+      <li class="itemize"><span 
+class="cmbx-12">5.5.13(b) </span>Initial primal tableau is in unbounded form:
+      <center class="math-display" >
+      <img 
+src="hw4sol20220x.png" alt="----x1---x2--x3--x4---x5-
+|- 9 |0   0  - 2  1    0 |
+|----|-------------------|
+|  3 |0   0  - 1  2    1 |
+|  1 |1   0   0   1    0 |
+|--5-|0---1--- 4--1----0-|
+|    |
+      " class="math-display" ></center>
+      <!--l. 125--><p class="nopar" >
+      We give two approaches to the dual for this question:
+      <!--l. 128--><p class="noindent" >(i) <span 
+class="cmbx-12">write the problem as an inequality problem in the nonbasics:</span>
+      <!--l. 130--><p class="noindent" >Also change the direction of the inequalities:
+      <center class="math-display" >
+      <img 
+src="hw4sol20221x.png" alt="minx3,x4    - 2x3  +    x4  +  9
+subject to     x3  -  2x4   &#x2265;  - 3
+
+                   -    x4  &#x2265;  - 1
+              4x3  -    x4  &#x2265;  - 5
+                    x3, x4  &#x2265;  0
+      " class="math-display" ></center>
+      <!--l. 140--><p class="nopar" >
+      This problem has dual
+      <center class="math-display" >
+      <img 
+src="hw4sol20222x.png" alt="maxy &#x2208;&#x211D;3   - 3y1  -   y2  -  5y3  +   9
+subject to     y1          +  4y3  &#x2264;   - 2
+           - 2y1  -   y2  -   y3  &#x2264;   1
+                        y1,y2,y3  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 150--><p class="nopar" >
+      We convert this into standard form with nonnegative right hand side, with slack variables&#x00A0;<span 
+class="cmmi-12">v</span>.
+      We only introduce an artificial variable <span 
+class="cmmi-12">w</span><sub><span 
+class="cmr-8">1</span></sub> for the first constraint, since <span 
+class="cmmi-12">v</span><sub><span 
+class="cmr-8">2</span></sub> can be the initial
+      basic variable for the second constraint. We use an initial tableau for the artificial problem
+      of
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="hw4sol20223x.png" alt="     y1   y2  y3   v1  v2  w1
+|--|--------------------------|
+|0-|--0---0----0----0---0---1-|
+|2 |- 1   0   - 4 - 1   0   1 |
+|1-|--2--- 1--- 1---0---1---0--
+|  |
+      " class="math-display" ></center>
+      <!--l. 164--><p class="nopar" >
+      Subtracting the first constraint from the objective gives an optimal tableau:
+      <center class="math-display" >
+      <img 
+src="hw4sol20224x.png" alt="|----|-y1---y2--y3---v1--v2--w1-|
+|- 2 |  1   0    4    1   0   0 |
+|----|--------------------------|
+|  2 |- 1   0  - 4  - 1   0   1 |
+|--1-|--2--- 1---1----0---1---0--
+|    |
+      " class="math-display" ></center>
+      <!--l. 175--><p class="nopar" >
+      Since the optimal value of the artificial problem is positive, the original dual problem is
+      infeasible. The first dual constraint cannot be satisfied, corresponding to the ray for the <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">4</span></sub>
+      column.
+      <!--l. 182--><p class="noindent" >(ii) <span 
+class="cmbx-12">Split equalities into two sets of inequalities:</span>
+      <!--l. 184--><p class="noindent" >Primal problem can be written
+      <center class="math-display" >
+      <img 
+src="hw4sol20225x.png" alt="min           cTx + d
+    x       [      ]       [     ]
+subject to      A   x  &#x2265;       b
+              - A            - b
+                    x  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 192--><p class="nopar" >
+      which has dual
+      <center class="math-display" >
+      <img 
+src="hw4sol20226x.png" alt="max         bT u  -   bTv   +  d
+subject to  AT u  -   ATv   &#x2264;  c
+                      u,v   &#x2265;  0
+      " class="math-display" ></center>
+      <!--l. 200--><p class="nopar" >
+      This is equivalent to the standard form problem
+      <table 
+class="equation"><tr><td><a 
+ id="x1-2r1"></a>
+      <center class="math-display" >
+      <img 
+src="hw4sol20227x.png" alt="min         - bT u +   bTv  -    d
+subject to   AT u  -  AT v  +   w   =  c
+                            u,v,w   &#x2265;  0
+      " class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+      <!--l. 208--><p class="nopar" >
+      Initial simplex tableau for dual problem is
+      <center class="math-display" >
+      <img 
+src="hw4sol20228x.png" alt="      u   u    u    v    v    v   w   w   w    w   w
+|---|--1----2---3----1----2----3---1----2---3---4----5-|
+|-9-|--3---1----5----3----1----5---0---0----0---0----0-|
+| 0 |  0   1    0    0  - 1    0   1   0    0   0    0 |
+| 0 |  0   0    1    0    0  - 1   0   1    0   0    0 |
+|- 2|- 1   0  - 4    1    0    4   0   0    1   0    0 |
+|   |                                                  |
+| 1 |  2   1    1  - 2  - 1  - 1   0   0    0   1    0 |
+|-0-|--1---0----0----1----0----0---0---0----0---0----1-|
+|   |
+      " class="math-display" ></center>
+      <!--l. 220--><p class="nopar" >
+      The first step in the method of artificial variables is to ensure all terms on right hand side are
+      nonnegative. We multiply the third constraint by -1. Then, since we no longer have an
+      identity, we add an artificial variable <span 
+class="cmmi-12">z</span><sub><span 
+class="cmr-8">1</span></sub> for the third constraint. The artificial problem
+      is
+      <center class="math-display" >
+      <img 
+src="hw4sol20229x.png" alt="|--u1--u2--u3---v1---v2--v3--w1---w2---w3--w4--w5---z1-|
+|0 |0   0   0    0   0    0    0   0    0   0    0   1 |
+|0-|0---1---0----0--- 1---0----1---0----0---0----0---0-|
+|  |                                                   |
+|0 |0   0   1    0   0   - 1   0   1    0   0    0   0 |
+|2 |1   0   4  - 1   0   - 4   0   0  - 1   0    0   1 |
+|1 |2   1   1  - 2  - 1  - 1   0   0    0   1    0   0 |
+|0 |1   0   0  - 1   0    0    0   0    0   0    1   0 |
+|--|---------------------------------------------------
+|  |
+      " class="math-display" ></center>
+      <!--l. 235--><p class="nopar" >
+      Pivot to canonical form:
+      <center class="math-display" >
+      <img 
+src="hw4sol202210x.png" alt="      u1  u2   u3   v1   v2   v3 w1   w2   w3  w4  w5   z1
+|- 2|--1---0----4----1----0---4----0---0----0---0----0---0-|
+|---|------------------------------------------------------|
+| 0 |  0   1    0    0  - 1   0    1   0    0   0    0   0 |
+| 0 |  0   0    1    0    0  - 1   0   1    0   0    0   0 |
+| 2 |  1   0    4  - 1    0  - 4   0   0  - 1   0    0   1 |
+| 1 |  2   1    1  - 2  - 1  - 1   0   0    0   1    0   0 |
+|   |                                                      |
+|-0-|--1---0----0----1----0---0----0---0----0---0----1---0--
+|   |
+      " class="math-display" ></center>
+      <!--l. 247--><p class="nopar" >
+      Bring <span 
+class="cmmi-12">u</span><sub><span 
+class="cmr-8">3</span></sub> into the basis:
+      <center class="math-display" >
+      <img 
+src="hw4sol202211x.png" alt="|----|u1--u2--u3---v1---v2---v3--w1---w2---w3--w4--w5---z1-|
+|--2-|- 1--0---0----1----0----0---0----4----0---0----0---0-|
+|  0 | 0   1   0    0  - 1    0   1    0    0   0    0   0 |
+|  0 | 0   0   1    0    0  - 1   0    1    0   0    0   0 |
+|  2 | 1   0   0   - 1   0    0   0  - 4  - 1   0    0   1 |
+|    |                                                     |
+|  1 | 2   1   0   - 2 - 1    0   0  - 1    0   1    0   0 |
+|--0-|-1---0---0---- 1---0----0---0----0----0---0----1---0-|
+|    |
+      " class="math-display" ></center>
+      <!--l. 259--><p class="nopar" >
+      Bring <span 
+class="cmmi-12">u</span><sub><span 
+class="cmr-8">1</span></sub> into the basis:
+      <center class="math-display" >
+      <img 
+src="hw4sol202212x.png" alt="|----u1--u2--u3---v1---v2---v3--w1---w2--w3---w4---w5--z1-|
+|- 2 |0   0   0    0    0    0   0    4    0   0    1   0 |
+|--0-|0---1---0----0----1----0---1----0----0---0----0---0-|
+|    |                                                    |
+|  0 |0   0   1    0    0  - 1   0    1    0   0    0   0 |
+|  2 |0   0   0    0    0    0   0  - 4  - 1   0  - 1   1 |
+|  1 |0   1   0    0  - 1    0   0  - 1    0   1  - 2   0 |
+|  0 |1   0   0  - 1    0    0   0    0    0   0    1   0 |
+|----|----------------------------------------------------
+|    |
+      " class="math-display" ></center>
+      <!--l. 271--><p class="nopar" >
+      This shows the artificial problem has positive optimal value, so the original dual problem is
+      <span 
+class="cmbx-12">infeasible</span>. If we delete the artificial column, we get a tableau for the dual problem that is in
+      infeasible form&#x00A0;2:
+      <center class="math-display" >
+      <img 
+src="hw4sol202213x.png" alt="|----u1--u2--u3---v1---v2---v3--w1---w2--w3---w4--w5--|
+|--9-|3---1---5----3----1----5---0----0----0---0----0-|
+|  0 |0   1   0    0  - 1    0   1    0    0   0    0 |
+|  0 |0   0   1    0    0  - 1   0    1    0   0    0 |
+|    |                                                |
+|  2 |0   0   0    0    0    0   0  - 4  - 1   0  - 1 |
+|  1 |0   1   0    0  - 1    0   0  - 1    0   1  - 2 |
+|--0-|1---0---0----1----0----0---0----0----0---0----1-|
+|    |
+      " class="math-display" ></center>
+      <!--l. 286--><p class="nopar" >
+      The fourth dual constraint cannot be satisfied (we have <span 
+class="cmmi-12">w</span><sub><span 
+class="cmr-8">4</span></sub> positive), corresponding to the
+      ray for the <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">4</span></sub> column.
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">5.5.21 </span>The given <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> implies the primal slacks are <span 
+class="cmmi-12">s</span><sup><span 
+class="cmsy-8">*</span></sup> = <span 
+class="cmmi-12">Ax</span><sup><span 
+class="cmsy-8">*</span></sup><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">b </span>= (0<span 
+class="cmmi-12">, </span>7<span 
+class="cmmi-12">.</span>5<span 
+class="cmmi-12">, </span>0). The given <span 
+class="cmmi-12">y</span><sup><span 
+class="cmsy-8">*</span></sup>
+      implies the dual slacks are <span 
+class="cmmi-12">w</span><sup><span 
+class="cmsy-8">*</span></sup> = <span 
+class="cmmi-12">c </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y</span><sup><span 
+class="cmsy-8">*</span></sup> = (0<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>18<span 
+class="cmmi-12">.</span>75<span 
+class="cmmi-12">, </span>76<span 
+class="cmmi-12">.</span>25). We do indeed have
+      (<span 
+class="cmmi-12">s</span><sup><span 
+class="cmsy-8">*</span></sup>)<sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> = 0 and (<span 
+class="cmmi-12">w</span><sup><span 
+class="cmsy-8">*</span></sup>)<sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>= 0.
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">5.5.25</span>
+           <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+        a. </dt><dd 
+class="enumerate-enumitem">
+                                                                                         
+                                                                                         
+           <!--l. 326--><p class="noindent" >
+<img src=q25a.png>
+           </dd><dt class="enumerate-enumitem">
+        b. </dt><dd 
+class="enumerate-enumitem">Standard form:
+           <center class="math-display" >
+           <img 
+src="hw4sol202214x.png" alt="minx &#x2208;&#x211D;4    x1  -   x2
+subject to  x1  +   x2  +  x3          =   1
+
+                    x2         +   x4  =   1
+                            x1,...,x4  &#x2265;   0
+           " class="math-display" ></center>
+           <!--l. 337--><p class="nopar" >
+           <center class="par-math-display" >
+           <img 
+src="hw4sol202215x.png" alt="---x1--x2--x3---x4--
+|0 |1  - 1  0    0 |
+|--|---------------|
+|1 |1   1   1    0 |
+|1-|0---1---0----1--
+|  |
+           " class="par-math-display" ></center>
+           <!--l. 346--><p class="nopar" >
+           </dd><dt class="enumerate-enumitem">
+        c. </dt><dd 
+class="enumerate-enumitem">Pivot with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> entering the basis:
+           <center class="math-display" >
+           <img 
+src="hw4sol202216x.png" alt="|--|x1---x2--x3--x4-|
+|1 | 2    0   1   0 |
+|1-|-1----1---1---0-|
+|  |                |
+|0-|- 1---0--- 1--1--
+|  |
+           " class="math-display" ></center>
+           <!--l. 357--><p class="nopar" >
+           Optimal <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> = (0<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>0)<sup><span 
+class="cmmi-8">T</span> </sup> with value <span 
+class="cmmi-12">z</span><sup><span 
+class="cmsy-8">*</span></sup> = <span 
+class="cmsy-10x-x-120">-</span>1.
+           <!--l. 362--><p class="noindent" >Pivot instead with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">4</span></sub> entering the basis:
+           <center class="math-display" >
+           <img 
+src="hw4sol202217x.png" alt="|--x1--x2--x3--x4--|
+-1--1---0---0----1--
+|0 |1   0   1  - 1 |
+|  |               |
+|1-|0---1---0----1--
+|  |
+           " class="math-display" ></center>
+           <!--l. 370--><p class="nopar" >
+           Optimal <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> = (0<span 
+class="cmmi-12">, </span>1<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>0)<sup><span 
+class="cmmi-8">T</span> </sup> with value <span 
+class="cmmi-12">z</span><sup><span 
+class="cmsy-8">*</span></sup> = <span 
+class="cmsy-10x-x-120">-</span>1.
+           </dd><dt class="enumerate-enumitem">
+        d. </dt><dd 
+class="enumerate-enumitem">Optimal dual values are reduced costs of the original slack variables.
+           <!--l. 376--><p class="noindent" >In first optimal tableau, get <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> = 1, <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub> = 0. We can see from the picture that if
+           the first constraint becomes <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265;-</span>1 + <span 
+class="cmmi-12">t </span>then the objective function
+           value increases to <span 
+class="cmsy-10x-x-120">-</span>1 + <span 
+class="cmmi-12">t</span>, with new optimal solution <span 
+class="cmmi-12">x </span>= (0<span 
+class="cmmi-12">, </span>1 <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">t</span>)<sup><span 
+class="cmmi-8">T</span> </sup>. (Valid
+           for 0 <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120">&#x2264; </span>1.) Hence, the shadow price of the first constraint is 1, which is
+           indeed&#x00A0;<span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub>.
+<img src=q25d.png>
+
+           <!--l. 409--><p class="noindent" >In second optimal tableau, get <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> = 0, <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub> = 1. We can see from the picture that if the
+           second constraint becomes <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265;-</span>1 + <span 
+class="cmmi-12">t </span>then the objective function value
+                                                                                         
+                                                                                         
+           increases to <span 
+class="cmsy-10x-x-120">-</span>1 + <span 
+class="cmmi-12">t</span>, with new optimal solution <span 
+class="cmmi-12">x </span>= (0<span 
+class="cmmi-12">, </span>1 <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">t</span>)<sup><span 
+class="cmmi-8">T</span> </sup>. (Valid for
+           0 <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">t </span><span 
+class="cmsy-10x-x-120">&#x2264; </span>1.) Hence, the shadow price of the seond constraint is 1, which is
+           indeed&#x00A0;<span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub>.
+<img src=q25d2.png>
+           </dd><dt class="enumerate-enumitem">
+        e. </dt><dd 
+class="enumerate-enumitem">Dual is
+           <center class="math-display" >
+           <img 
+src="hw4sol202218x.png" alt="maxy &#x2208;&#x211D;2    - y1  -  y2
+subject to  - y1         &#x2264;   1
+            - y1  -  y2  &#x2264;   - 1
+                  y ,y   &#x2265;   0
+                    1  2
+           " class="math-display" ></center>
+<img src=q25e.png>
+           </dd><dt class="enumerate-enumitem">
+        f. </dt><dd 
+class="enumerate-enumitem">Standard form of dual is
+                                                                                         
+                                                                                         
+           <center class="math-display" >
+           <img 
+src="hw4sol202219x.png" alt="min    4     y1  +   y2
+    y&#x2208;&#x211D;
+subject to   - y1         +  y3          =   1
+            - y1 -   y2         +   y4  =   - 1
+                           y1,y2,y3,y4  &#x2265;   0
+           " class="math-display" ></center>
+           <!--l. 494--><p class="nopar" >
+           <center class="par-math-display" >
+           <img 
+src="hw4sol202220x.png" alt="       y1  y2  y3  y4
+|----|----------------|
+|--0-|--1---1---0---0-|
+|  1 |- 1   0   1   0 |
+|--1-|--1--- 1--0---1--
+|    |
+           " class="par-math-display" ></center>
+           <!--l. 503--><p class="nopar" >
+           </dd><dt class="enumerate-enumitem">
+        g. </dt><dd 
+class="enumerate-enumitem">This tableau is not in canonical form. We could use the method of artificial variables to
+           get a standard form. Alternatively, we can see that pivoting in the second row and the
+           and <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub> column immediately gives a standard form:
+           <center class="par-math-display" >
+           <img 
+src="hw4sol202221x.png" alt="|----|-y1--y2-y3---y4-|
+|- 1 |  0  0   0    1 |
+|--1-|--1--0---1----0-|
+|    |                |
+|--1-|--1--1---0----1--
+|    |
+           " class="par-math-display" ></center>
+           <!--l. 517--><p class="nopar" >
+           This tableau is optimal.
+           <!--l. 520--><p class="noindent" >We can pivot to bring <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> into the basis and remain optimal:
+           <center class="math-display" >
+           <img 
+src="hw4sol202222x.png" alt="|----y1--y2--y3--y4-|
+|- 1 |0   0  0    1 |
+|--2-|0---1--1----1-|
+|    |              |
+|--1-|1---1--0----1--
+|    |
+           " class="math-display" ></center>
+           <!--l. 528--><p class="nopar" >
+           </dd><dt class="enumerate-enumitem">
+        h. </dt><dd 
+class="enumerate-enumitem">In each tableau, the optimal primal values are the reduced costs of the dual
+           slacks, namely <span 
+class="cmmi-12">x </span>= (0<span 
+class="cmmi-12">, </span>1) in both cases, which agrees with the solution found
+           earlier.
+           <!--l. 535--><p class="noindent" >Modifying the first dual constraint to <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>1 + <span 
+class="cmmi-12">t </span>doesn&#8217;t change the optimal
+           solution, verifying the shadow price <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> for the first dual constraint is zero:
+<img src=q25h.png>
+           <!--l. 569--><p class="noindent" >Modifying the second dual constraint to <span 
+class="cmsy-10x-x-120">-</span><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264;-</span>1 + <span 
+class="cmmi-12">t </span>changes the optimal
+           value to <span 
+class="cmsy-10x-x-120">-</span>1 + <span 
+class="cmmi-12">t</span>, verifying the shadow price <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> for the second dual constraint
+           is&#x00A0;1:
+<img src=q25h2.png>
+                                                                                         
+                                                                                         
+           </dd></dl>
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">5.5.31 </span>We assume <span 
+class="cmmi-12">C </span>is <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">m</span>. Note that the given problem is in the form of the
+      maximization problem in our standard primal-dual pair. Dual problem is
+      <center class="math-display" >
+      <img 
+src="hw4sol202223x.png" alt="              T
+mint&#x2208;&#x211D;n     y  t
+subject to  CT t &#x2265;   a
+               t &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 617--><p class="nopar" >
+      </li>
+      <li class="itemize"><span 
+class="cmbx-12">5.5.34</span>
+           <dl class="enumerate-enumitem"><dt class="enumerate-enumitem">
+        a. </dt><dd 
+class="enumerate-enumitem">Dual is
+           <center class="math-display" >
+           <img 
+src="hw4sol202224x.png" alt="max    5   30y1  +   10y2  +   20y3  +   15y4  +  5y5
+    y&#x2208;&#x211D;
+subject to     y1           +     y3                    &#x2264;   4
+              y1                     +     y4          &#x2264;   1
+              y1                               +    y5 &#x2264;   2
+                       y2  +     y3                    &#x2264;   3
+                       y             +     y           &#x2264;   2
+                        2                   4
+                       y2                      +    y5 &#x2264;   1
+                                             y1,...,y5     free
+           " class="math-display" ></center>
+           <!--l. 637--><p class="nopar" >
+           </dd><dt class="enumerate-enumitem">
+        b. </dt><dd 
+class="enumerate-enumitem">Standard form:
+           <center class="math-display" >
+           <img 
+src="hw4sol202225x.png" alt="msiunbyje&#x2208;c&#x211D;1t0 to,w&#x2208;&#x211D;6  -30y1y+3-0yy6 -   10y2+ 10y7  -+  20y3y+2-0yy8 -   15y4+ 15y9  -  5y5+5y10 +   w  =   4
+                 y11- y66                      3   8 +      y4- y9             +   w12 =   1
+                 y1- y6                                          +    y5 - y10 +  w3 =   2
+                               y2- y7 +     y3- y8                           +   w4 =   3
+                               yy2-- y y7              +      y4- y9 +    y - y  ++   ww5 ==   21
+                                2  7                               y1,.5..,y110,0w1,...,w66 &#x2265;   0
+           " class="math-display" ></center>
+           <!--l. 654--><p class="nopar" >
+           </dd><dt class="enumerate-enumitem">
+        c. </dt><dd 
+class="enumerate-enumitem">Solve the dual:
+           <center class="math-display" >
+           <img 
+src="hw4sol202226x.png" alt="|--|--y1----y2----y3----y4---y5---y6--y7---y8---y9--y10--w1--w2--w3---w4--w5---w6-|
+|0-|--30----10----20----15----5--30---10---20---15----5---0---0----0---0----0---0-|
+|4 |   1     0     1     0    0  - 1   0  - 1    0    0   1   0    0   0    0   0 |
+|1 |   1     0     0     1    0  - 1   0    0  - 1    0   0   1    0   0    0   0 |
+|  |                                                                              |
+|2 |   1     0     0     0    1  - 1   0    0    0  - 1   0   0    1   0    0   0 |
+|3 |   0     1     1     0    0   0  - 1  - 1    0    0   0   0    0   1    0   0 |
+|2 |   0     1     0     1    0   0  - 1    0  - 1    0   0   0    0   0    1   0 |
+|1 |   0     1     0     0    1   0  - 1    0    0  - 1   0   0    0   0    0   1 |
+|--|------------------------------------------------------------------------------
+|  |
+           " class="math-display" ></center>
+           <!--l. 668--><p class="nopar" >
+           Pivot with <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> entering the basis:
+           <center class="math-display" >
+           <img 
+src="hw4sol202227x.png" alt="    y     y     y    y   y    y    y    y     y   y    w   w    w   w    w   w
+|---|1-----2-----3----4----5---6----7----8-----9---10---1----2---3----4---5----6|
+|30-|0----10----20--15---- 5---0---10---20----15----5---0---30---0----0---0---0-|
+| 3 |0     0     1  - 1   0    0    0  - 1     1    0   1  - 1   0    0   0   0 |
+| 1 |1     0     0    1   0  - 1    0    0   - 1    0   0    1   0    0   0   0 |
+| 1 |0     0     0  - 1   1    0    0    0     1  - 1   0  - 1   1    0   0   0 |
+| 3 |0     1     1    0   0    0  - 1  - 1     0    0   0    0   0    1   0   0 |
+|   |                                                                           |
+| 2 |0     1     0    1   0    0  - 1    0   - 1    0   0    0   0    0   1   0 |
+|-1-|0-----1-----0----0---1----0----1----0-----0----1---0----0---0----0---0---1--
+|   |
+           " class="math-display" ></center>
+                                                                                         
+                                                                                         
+           <!--l. 681--><p class="nopar" >
+           Pivot with <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">3</span></sub> entering the basis, choose <span 
+class="cmmi-12">w</span><sub><span 
+class="cmr-8">4</span></sub> to leave basis:
+           <center class="math-display" >
+           <img 
+src="hw4sol202228x.png" alt="|---y1---y2--y3--y4---y5---y6----y7---y8----y9--y10-w1---w2---w3--w4---w5--w6--|
+|90 |0  10   0   15  - 5    0  - 10    0  - 15   5    0  30    0   20   0    0 |
+|-0-|0----1--0----1----0----0-----1----0----1----0----1----1---0----1---0----0-|
+|   |                                                                          |
+| 1 |1    0  0    1    0  - 1     0    0   - 1   0    0    1   0    0   0    0 |
+| 1 |0    0  0  - 1    1    0     0    0    1   - 1   0  - 1   1    0   0    0 |
+| 3 |0    1  1    0    0    0   - 1  - 1    0    0    0    0   0    1   0    0 |
+| 2 |0    1  0    1    0    0   - 1    0   - 1   0    0    0   0    0   1    0 |
+| 1 |0    1  0    0    1    0   - 1    0    0   - 1   0    0   0    0   0    1 |
+|---|--------------------------------------------------------------------------|
+|   |
+           " class="math-display" ></center>
+           <!--l. 694--><p class="nopar" >
+           Pivot with <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">5</span></sub> entering the basis, choose <span 
+class="cmmi-12">w</span><sub><span 
+class="cmr-8">3</span></sub> to leave basis:
+           <center class="math-display" >
+           <img 
+src="hw4sol202229x.png" alt="----y1---y2--y3---y4--y5--y6----y7---y8----y9--y10--w1--w2---w3---w4--w5---w6--
+|95 |0   10   0  10   0    0  - 10    0  - 10    0   0   25    5  20    0   0 |
+|---|-------------------------------------------------------------------------|
+| 0 |0  - 1   0  - 1  0    0     1    0     1    0   1  - 1    0  - 1   0   0 |
+| 1 |1    0   0    1  0  - 1     0    0   - 1    0   0    1    0   0    0   0 |
+| 1 |0    0   0  - 1  1    0     0    0     1  - 1   0  - 1    1   0    0   0 |
+| 3 |0    1   1    0  0    0   - 1  - 1     0    0   0    0    0   1    0   0 |
+| 2 |0    1   0    1  0    0   - 1    0   - 1    0   0    0    0   0    1   0 |
+|   |                                                                         |
+|-0-|0----1---0----1--0----0-----1----0-----1----0---0----1----1---0----0---1--
+|   |
+           " class="math-display" ></center>
+           <!--l. 707--><p class="nopar" >
+           Pivot with <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">7</span></sub> entering the basis:
+           <center class="math-display" >
+           <img 
+src="hw4sol202230x.png" alt="|----y1--y2--y3---y4--y5---y6--y7---y8--y9--y10--w1---w2---w3---w4--w5--w6--|
+|95  |0   0   0    0   0    0   0   0    0    0  10   15    5   10   0    0 |
+|--0-|0--- 1--0----1---0----0---1---0----1----0---1---- 1---0----1---0----0-|
+|    |                                                                      |
+|  1 |1   0   0    1   0  - 1   0   0   - 1   0   0    1    0    0   0    0 |
+|  1 |0   0   0  - 1   1    0   0   0    1  - 1   0   - 1   1    0   0    0 |
+|  3 |0   0   1  - 1   0    0   0  - 1   1    0   1   - 1   0    0   0    0 |
+|  2 |0   0   0    0   0    0   0   0    0    0   1   - 1   0  - 1   1    0 |
+|  0 |0   0   0    0   0    0   0   0    0    0   1    0  - 1  - 1   0    1 |
+|----|----------------------------------------------------------------------|
+|    |
+           " class="math-display" ></center>
+           <!--l. 720--><p class="nopar" >
+           Optimal dual value for the min value of the max problem is -95. So the optimal value of
+           the dual problem is +95.
+           </dd><dt class="enumerate-enumitem">
+        d. </dt><dd 
+class="enumerate-enumitem">Optimal <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup>: This comes directly from the reduced costs for <span 
+class="cmmi-12">w</span><sub>
+<span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,w</span><sub><span 
+class="cmr-8">6</span></sub>. In particular, we
+           get <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">11</span></sub> = 10, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">12</span></sub> = 15, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">13</span></sub> = 5, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">21</span></sub> = 10, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">22</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">23</span></sub> = 0. It can be checked that <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> is
+           feasible with value 95.
+           <!--l. 729--><p class="noindent" >We have multiple optimal dual solutions: we can pivot to bring in <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">4</span></sub> or <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">9</span></sub>; also, the <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub>,
+           <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">6</span></sub>, <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">8</span></sub>, and <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">10</span></sub> columns all lead to optimal rays.
+           <!--l. 734--><p class="noindent" >We can pivot in the last row and the <span 
+class="cmmi-12">w</span><sub><span 
+class="cmr-8">3</span></sub> column and still remain in optimal
+           form:
+           <center class="math-display" >
+           <img 
+src="hw4sol202231x.png" alt="|---y1---y2--y3---y4--y5---y6--y7--y8---y9--y10--w1---w2---w3--w4---w5--w6--|
+|95-|0----0---0----0---0----0--0----0----0----0---15--15----0----5---0----5-|
+| 0 |0  - 1   0  - 1   0    0  1    0    1    0    1  - 1   0  - 1   0    0 |
+| 1 |1    0   0    1   0  - 1  0    0  - 1    0    0   1    0    0   0    0 |
+|   |                                                                       |
+| 1 |0    0   0  - 1   1    0  0    0    1  - 1    1  - 1   0  - 1   0    1 |
+| 3 |0    0   1  - 1   0    0  0   - 1   1    0    1  - 1   0    0   0    0 |
+| 2 |0    0   0    0   0    0  0    0    0    0    1  - 1   0  - 1   1    0 |
+| 0 |0    0   0    0   0    0  0    0    0    0  - 1   0    1    1   0  - 1 |
+|---|-----------------------------------------------------------------------
+|   |
+           " class="math-display" ></center>
+           <!--l. 747--><p class="nopar" >
+           This gives another primal optimal solution from the reduced costs for <span 
+class="cmmi-12">w</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,w</span><sub><span 
+class="cmr-8">6</span></sub>. In
+           particular, we get <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">11</span></sub> = 15, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">12</span></sub> = 15, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">13</span></sub> = 0, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">21</span></sub> = 5, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">22</span></sub> = 0, <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">23</span></sub> = 5. It can be
+           checked that <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> is feasible with value 95.
+           </dd><dt class="enumerate-enumitem">
+        e. </dt><dd 
+class="enumerate-enumitem">Initial tableau for the primal is
+           <center class="math-display" >
+                                                                                         
+                                                                                         
+           <img 
+src="hw4sol202232x.png" alt="----x11-x12--x13--x21--x22--x23-
+| 0 |4    1    2    3    2    1 |
+|---|---------------------------|
+|30 |1    1    1    0    0    0 |
+|10 |0    0    0    1    1    1 |
+|20 |1    0    0    1    0    0 |
+|15 |0    1    0    0    1    0 |
+| 5 |0    0    1    0    0    1 |
+|---|---------------------------|
+|   |
+           " class="math-display" ></center>
+           <!--l. 765--><p class="nopar" >
+           This is not optimal because it&#8217;s not in canonical form.
+           </dd><dt class="enumerate-enumitem">
+        f. </dt><dd 
+class="enumerate-enumitem">Pivoting as suggested in the hint gives the tableau
+           <center class="math-display" >
+           <img 
+src="hw4sol202233x.png" alt="|----x11--x12--x13--x21--x22--x23-|
+|--95-|0----0----0----0----2----0-|
+|   0 |0    0    0    0    0    0 |
+|  10 |0    0    0    1    1    1 |
+|     |                           |
+|  10 |1    0    0    0  - 1  - 1 |
+|  15 |0    1    0    0    1    0 |
+|---5-|0----0----1----0----0----1-|
+|     |
+           " class="math-display" ></center>
+           <!--l. 780--><p class="nopar" >
+           Deleting the row of zeroes gives a tableau in optimal form:
+           <center class="math-display" >
+           <img 
+src="hw4sol202234x.png" alt="     x    x    x    x    x    x
+|-----|11---12---13---21---22---23-|
+|--95-|0----0----0----0----2----0-|
+|  10 |0    0    0    1    1    1 |
+|  10 |1    0    0    0  - 1  - 1 |
+|  15 |0    1    0    0    1    0 |
+|     |                           |
+|---5-|0----0----1----0----0----1-|
+|     |
+           " class="math-display" ></center>
+           <!--l. 791--><p class="nopar" >
+           <!--l. 793--><p class="noindent" >Note that this LP has multiple optimal solutions, since the nonbasic variable&#x00A0;<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">23</span></sub> has
+                                                                                         
+                                                                                         
+           zero reduced cost. Pivoting so <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">23</span></sub> replaces <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">13</span></sub> in the basis gives the new optimal
+           tableau
+           <center class="math-display" >
+           <img 
+src="hw4sol202235x.png" alt="|----x11--x12--x13--x21--x22--x23-|
+|- 95 |0    0    0    0    2    0 |
+|---5-|0----0----1----1----1----0-|
+|     |                           |
+|  15 |1    0    1    0  - 1    0 |
+|  15 |0    1    0    0    1    0 |
+|---5-|0----0----1----0----0----1-|
+|     |
+           " class="math-display" ></center>
+           <!--l. 806--><p class="nopar" >
+           <!--l. 808--><p class="noindent" >The two primal optimal solutions found agree with those found in part&#x00A0;(d).
+           </dd><dt class="enumerate-enumitem">
+        g. </dt><dd 
+class="enumerate-enumitem">The optimal values of the original dual variables include <span 
+class="cmmi-12">y</span><sup><span 
+class="cmsy-8">*</span></sup> = (1<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>3<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>1)<sup><span 
+class="cmmi-8">T</span> </sup>, coming
+           from the tableau in part&#x00A0;(c). The optimal values of the <span 
+class="cmmi-12">y </span>variables can&#8217;t be read off the
+           optimal primal tableau, because the constraints in the primal problem are
+           equalities.
+           <!--l. 817--><p class="noindent" >On the other hand, the optimal dual slacks&#x00A0;<span 
+class="cmmi-12">w </span>do appear as the reduced costs for the
+           primal variables in the optimal primal tableaus.
+           </dd></dl>
+      </li></ul>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                             </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                                        </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Tuesday 2.30&#8211;4pm in AE 325;                                                         </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Thursday 1&#8211;3pm webex: <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-12">https://rensselaer.webex.com/meet/mitchj</span></a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-7-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;                                                                                                         </td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

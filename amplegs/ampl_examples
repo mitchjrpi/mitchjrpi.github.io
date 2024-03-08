@@ -1,0 +1,62 @@
+AMPL EXAMPLES
+=============
+
+(1) Brewery example from Ecker and Kupferschmid, p. 16:
+=====================================================
+
+Model file (no data file is needed):
+=====================================================
+var  x1 >= 0;
+var  x2 >= 0;
+var  x3 >= 0;
+var  x4 >= 0;
+
+maximize objective: 6 * x1 + 5 * x2 + 3 * x3 + 7 * x4;
+
+subject to malt: 1*x1 + 1 * x2 + 3 * x4 <= 50;
+subject to hops: 2*x1 + 1 * x2 +2 * x3 + x4 <= 150;
+subject to yeast: x1 + x2 + x3 + 4 * x4 <= 80;
+=====================================================
+
+
+
+
+(2) Exercise 2.10 from Ecker and Kupferschmid:
+=====================================================
+
+Model file:
+=====================================================
+set MACHINE;
+set PRODUCT;
+
+var P{p in PRODUCT} >= 0;
+var X{m in MACHINE, p in PRODUCT} >= 0;
+var TOTAL>=0;
+
+param table{m in MACHINE, p in PRODUCT} >= 0;
+
+
+maximize production: TOTAL;
+
+subject to findtot: TOTAL = sum{p in PRODUCT} P[p];
+
+subject to balance1: P['p1'] = 0.5*TOTAL;
+subject to balance2: P['p2'] = 0.25*TOTAL;
+subject to balance3: P['p3'] = 0.25*TOTAL;
+
+subject to definitions {p in PRODUCT}:
+     P[p]=sum{j in MACHINE} table[j,p]*X[j,p];
+
+subject to conservation {m in MACHINE}:
+     sum{p in PRODUCT} X[m,p] <= 1;
+=====================================================
+
+Data file:
+=====================================================
+set MACHINE = m1 m2;
+set PRODUCT = p1 p2 p3;
+
+param table: p1 p2 p3 :=
+       m1     8  2  9
+       m2     3  5  6;
+=====================================================

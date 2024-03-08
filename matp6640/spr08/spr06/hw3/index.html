@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>hw3</TITLE>
+<META NAME="description" CONTENT="hw3">
+<META NAME="keywords" CONTENT="hw3">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="hw3.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY >
+
+<P>
+<DIV ALIGN="CENTER">
+</DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1"><a href=..>MATP6640/DSES6770
+Linear Programming</a>, Homework 3.
+  </FONT>
+</DIV>
+
+<P>
+<DIV ALIGN="RIGHT">
+Due:  Friday, March 3, 2006.
+
+</DIV>
+
+<P>
+Dantzig-Wolfe decomposition solves the linear programming problem
+    <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lrcl}
+        \min          & c^Tx \\
+        \mbox{s.t.}   &  Ax  & = & b  \qquad \qquad (P)  \\
+                      &  Hx  & = & h  \\
+                      &   x & \geq & 0.
+      \end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="232" HEIGHT="99" BORDER="0"
+ SRC="img1.png"
+ ALT="\begin{displaymath}
+\begin{array}{lrcl}
+\min &amp; c^Tx \\
+\mbox{s.t.} &amp; Ax &amp; = ...
+...\qquad (P) \\
+&amp; Hx &amp; = &amp; h \\
+&amp; x &amp; \geq &amp; 0.
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The procedure
+takes <!-- MATH
+ $X = \{ x \in I \!\! R^n: Hx=h, x \geq 0 \}$
+ -->
+<IMG
+ WIDTH="260" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$X = \{ x \in I \!\! R^n: Hx=h, x \geq 0 \}$">,
+and solves subproblems of the form
+    <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{displaymath}
+\begin{array}{lccl} 
+        \min          & (c^T - \pi^T A)x \\
+        \mbox{s.t.}   &  Hx  & = & h  \qquad \qquad (SP(\pi))  \\
+                      &   x & \geq & 0, 
+      \end{array}
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="348" HEIGHT="76" BORDER="0"
+ SRC="img3.png"
+ ALT="\begin{displaymath}
+\begin{array}{lccl}
+\min &amp; (c^T - \pi^T A)x \\
+\mbox{s....
+...h \qquad \qquad (SP(\pi)) \\
+&amp; x &amp; \geq &amp; 0,
+\end{array}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <IMG
+ WIDTH="51" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$(\pi,\sigma)$"> is the current dual solution to the Master Problem.
+
+<P>
+<BR>
+
+<P>
+
+<OL>
+<LI>When using Dantzig-Wolfe decomposition,
+    assume the current subproblem has an optimal solution <IMG
+ WIDTH="16" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.png"
+ ALT="$\bar{x}$"> with value
+    <IMG
+ WIDTH="15" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img6.png"
+ ALT="$v$">.  Can you give a lower bound on the optimal value of <IMG
+ WIDTH="34" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$(P)$">?
+    What does your lower bound become if <IMG
+ WIDTH="51" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$(\pi,\sigma)$"> is dual feasible?
+</LI>
+<LI>Suppose <IMG
+ WIDTH="34" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$(P)$"> has been solved using Dantzig-Wolfe decomposition.
+    How would you find
+    the optimal dual solution to the original problem&nbsp;<IMG
+ WIDTH="34" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$(P)$">?
+</LI>
+<LI>Given an optimal basic feasible solution to the Master Problem, give an example to
+    show that the corresponding
+    feasible point&nbsp;<IMG
+ WIDTH="16" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$x$"> might not be a basic feasible solution for&nbsp;(P).
+    How would you find an optimal basic feasible solution to&nbsp;(P), in the general case?
+</LI>
+<LI>The <B>Project and Presentation:</B>  
+<BR>
+Along with your solutions to this homework, hand in a brief description of
+    what you would like to do for the project and presentation part of this course.
+    As stated in the course outline:
+    <BLOCKQUOTE>
+The presentation will be of either one or two recent papers in interior point methods or a research project. You will also have to write a summary/analysis of the paper(s) or project. You can work in pairs for the presentation part of the course. You may discuss your paper(s) with other people and with me, but your writeup must be your own work. The presentations will take place in exam week during the time-slot for the final exam.
+    
+</BLOCKQUOTE>
+    The project can arise from your own research, or I can suggest a computational
+    project.
+</LI>
+</OL>
+
+<P>
+
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT"><a href=../..>John
+Mitchell</a></TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT">Amos Eaton 325</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT">x6915.</TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT"><a href=mailto:mitchj@rpi.edu>mitchj at rpi.edu</a></TD>
+</TR>
+<TR><TD ALIGN="LEFT">&nbsp;</TD><TD ALIGN="LEFT">Office hours: Tuesday: 2 - 3.30pm.</TD>
+</TR>
+</TABLE>
+
+<HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL>
+<LI><A NAME="tex2html3"
+  HREF="node1.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<br>
+2006-02-23
+</ADDRESS>
+</BODY>
+</HTML>

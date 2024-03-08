@@ -1,0 +1,126 @@
+This is TeX, Version 3.14159 (Web2c 7.1) (format=latex 98.1.13)  20 SEP 2005 17:37
+**./images.tex
+(./images.tex
+LaTeX2e <1997/06/01>
+
+(/campus/text/tex/3.14159/common/texmf/tex/latex/base/article.cls
+Document Class: article 1997/06/16 v1.3v Standard LaTeX document class
+(/campus/text/tex/3.14159/common/texmf/tex/latex/base/size10.clo
+File: size10.clo 1997/06/16 v1.3v Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (/campus/text/tex/3.14159/common/texmf/tex/latex209/misc/fullpage.sty
+Style Option FULLPAGE Version 2 as of 15 Dec 1988
+)
+
+! LaTeX Error: Unknown option `myheadings' for package `fullpage'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 
+    
+The option `myheadings' was not declared in package `fullpage', perhaps you
+misspelled its name. Try typing  <return>  to proceed.
+
+(/campus/text/tex/3.14159/common/texmf/tex/latex/graphics/color.sty
+Package: color 1997/06/07 v1.0e Standard LaTeX Color (DPC)
+(/campus/text/tex/3.14159/common/texmf/tex/latex/graphics/color.cfg)
+Package color Info: Driver file: dvips.def on input line 129.
+(/campus/text/tex/3.14159/common/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1996/12/12 v3.0d Driver-dependant file (DPC,SPQR)
+) (/campus/text/tex/3.14159/common/texmf/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1996/12/12 v3.0d Driver-dependant file (DPC,SPQR)
+))
+\sizebox=\box26
+\lthtmlwrite=\write3
+(images.aux)
+\openout1 = `images.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+latex2htmlLength hsize=349.0pt
+latex2htmlLength vsize=673.20255pt
+latex2htmlLength hoffset=0.0pt
+latex2htmlLength voffset=0.0pt
+latex2htmlLength topmargin=0.0pt
+latex2htmlLength topskip=0.00003pt
+latex2htmlLength headheight=0.0pt
+latex2htmlLength headsep=0.0pt
+latex2htmlLength parskip=0.0pt plus 1.0pt
+latex2htmlLength oddsidemargin=0.0pt
+latex2htmlLength evensidemargin=0.0pt
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 107.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 107.
+l2hSize :displaymath13:50.19998pt::0.0pt::349.0pt.
+[1
+
+
+]
+l2hSize :displaymath27:50.19998pt::0.0pt::349.0pt.
+[2
+
+
+]
+l2hSize :displaymath40:50.19998pt::0.0pt::349.0pt.
+[3
+
+
+]
+l2hSize :displaymath51:37.00034pt::0.0pt::349.0pt.
+[4
+
+
+]
+l2hSize :displaymath60:49.0pt::0.0pt::349.0pt.
+[5
+
+
+]
+Overfull \hbox (52.2335pt too wide) detected at line 175
+[]
+ []
+
+l2hSize :displaymath70:49.0pt::0.0pt::349.0pt.
+[6
+
+
+]
+l2hSize :displaymath80:50.19998pt::0.0pt::349.0pt.
+[7
+
+
+] (images.aux) ) 
+Here is how much of TeX's memory you used:
+ 502 strings out of 10991
+ 6436 string characters out of 74034
+ 49266 words of memory out of 263001
+ 3423 multiletter control sequences out of 10000+0
+ 3640 words of font info for 14 fonts, out of 100000 for 500
+ 14 hyphenation exceptions out of 1000
+ 23i,8n,21p,182b,215s stack positions out of 300i,100n,500p,10000b,4000s
+
+Output written on images.dvi (7 pages, 4540 bytes).

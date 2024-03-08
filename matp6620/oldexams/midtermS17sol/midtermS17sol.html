@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="midtermS17sol.tex"> 
+<meta name="date" content="2017-04-03 11:05:00"> 
+<link rel="stylesheet" type="text/css" href="midtermS17sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 53--><p class="noindent" >
+<!--l. 55--><p class="noindent" ><span 
+class="cmr-12x-x-120">MATP6620/ISYE6770</span><br />
+<span 
+class="cmbx-12x-x-120">Combinatorial Optimization and Integer Programming </span><br />
+<span 
+class="cmr-12x-x-120">Spring 2017</span></div>
+<div class="center" 
+>
+<!--l. 60--><p class="noindent" >
+<!--l. 61--><p class="noindent" >Midterm Exam, Friday, March 31, 2017.</div>
+<!--l. 64--><p class="noindent" >Please do all four problems. Show all work. No books or calculators allowed. You may use any
+result from class, the homeworks, or the texts, except where stated. You may use one sheet of
+handwritten notes. The exam lasts 110 minutes.
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">(20 points) You wish to choose from a set of possible investments <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">, </span>7<span 
+class="cmsy-10x-x-120">}</span>, subject to the
+      following constraints:
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-5x1">You cannot invest in all of them.
+           </li>
+           <li 
+  class="enumerate" id="x1-7x2">Investment 1 must be chosen if investment 3 is chosen.
+           </li>
+           <li 
+  class="enumerate" id="x1-9x3">Investment 5 can be chosen only if investment 2 is also chosen.
+           </li>
+           <li 
+  class="enumerate" id="x1-11x4">You must choose either both investments 1 and 6 or neither.
+           </li>
+           <li 
+  class="enumerate" id="x1-13x5">You must choose either at least one of the investments 1,2,3, and/or at least two
+           investments from 2,5,6,7.</li></ol>
+      <!--l. 96--><p class="noindent" >Model this as a 0-1 integer programming feasibility problem.
+      <!--l. 98--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 100--><p class="noindent" >The model is <div class="eqnarray">
+                                                                                         
+
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="midtermS17sol0x.png" alt="   x1 + x2 + x3 + x4 + x5 + x6 + x7  &#x2264;   6
+                            x1 - x3  &#x2265;   0
+
+                            x2 - x5  &#x2265;   0
+                            x1 - x6  =   0
+
+x1 + x2 + x3 + 0.5x5 + 0.5x6 + 0.5x7 &#x2265;   1
+                          x1,...,x7      binary
+      " class="math-display" ></center>
+      </div>
+      <!--l. 110--><p class="noindent" >For the final constraint for condition (e), we need
+      <center class="math-display" >
+      <img 
+src="midtermS17sol1x.png" alt="x1 + x2 + x3 &#x2265; 1   or   x2 + x5 + x6 + x7 &#x2265; 2
+      " class="math-display" ></center>
+      <!--l. 114--><p class="nopar" >
+      or equivalently, we need
+      <center class="math-display" >
+      <img 
+src="midtermS17sol2x.png" alt="x1 + x2 + x3 &#x2265; 1   or   0.5(x2 + x5 + x6 + x7) &#x2265; 1.
+      " class="math-display" ></center>
+      <!--l. 118--><p class="nopar" >
+      The corresponding disjunctive cut is
+      <center class="math-display" >
+      <img 
+src="midtermS17sol3x.png" alt="x1 + x2 + x3 + 0.5x5 +  0.5x6 + 0.5x7 &#x2265; 1,
+      " class="math-display" ></center>
+      <!--l. 122--><p class="nopar" >
+      from taking the larger coefficient for each&#x00A0;<span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub>. We can confirm the constraint is equivalent to
+      the required logical condition by examining cases.
+                                                                                         
+
+                                                                                         
+      <!--l. 127--><p class="noindent" >An <span 
+class="cmbx-12">alternative approach </span>for constraint (e): this is the more standard approach, and
+      doesn&#8217;t need to exploit the disjunctive cut structure. We introduce a new binary variable <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">e</span></sub>
+      and impose two constraints: <div class="eqnarray">
+      <center class="math-display" >
+      <img 
+src="midtermS17sol4x.png" alt="     x1 + x2 + x3  &#x2265;   ze
+x  + x  + x  + x   &#x2265;   2(1 - z ).
+  2   5    6    7             e
+      " class="math-display" ></center>
+      </div>This works since we have two cases:
+           <ul class="itemize1">
+           <li class="itemize">If <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">e</span></sub>  = 1 then we must choose at least one of investments 1,2,3. There is no
+           restriction imposed on investments 2,5,6,7.
+           </li>
+           <li class="itemize">If <span 
+class="cmmi-12">z</span><sub><span 
+class="cmmi-8">e</span></sub> = 0 then we must choose at least two of investments 2,5,6,7. There is no
+           restriction imposed on investments 1,2,3.</li></ul>
+      </li>
+      <li 
+  class="enumerate" id="x1-17x2">
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-19x1">(15 points) <a 
+ id="x1-181"></a>We have a collection of 2<span 
+class="cmmi-12">k </span><span 
+class="cmsy-10x-x-120">- </span>1 objects, where <span 
+class="cmmi-12">k </span>is a positive integer.
+           Let
+           <center class="math-display" >
+           <img 
+src="midtermS17sol5x.png" alt="     {
+        1  if object i selected
+xi =    0  otherwise
+           " class="math-display" ></center>
+           <!--l. 167--><p class="nopar" >
+           Assume that at most one item can be selected from each subset of size&#x00A0;<span 
+class="cmmi-12">k</span>. Show that the
+           constraint
+                                                                                         
+
+                                                                                         
+           <center class="math-display" >
+           <img 
+src="midtermS17sol6x.png" alt="2&#x2211;k-1
+    x  &#x2264; 1
+     i
+ i=1
+           " class="math-display" ></center>
+           <!--l. 172--><p class="nopar" >
+           has Chvatal rank at most one.
+           </li>
+           <li 
+  class="enumerate" id="x1-21x2">(10 points) In a particular node packing problem on a graph <span 
+class="cmmi-12">G </span>= (<span 
+class="cmmi-12">V,E</span>), we have a
+           clique <span 
+class="cmmi-12">C </span>of size 17. The initial LP relaxation only includes constraints for the
+           edges,
+           <center class="math-display" >
+           <img 
+src="midtermS17sol7x.png" alt="xi + xj &#x2264; 1   for all edges (i,j) &#x2208; E.
+           " class="math-display" ></center>
+           <!--l. 179--><p class="nopar" >
+           Show that the clique constraint
+           <center class="math-display" >
+           <img 
+src="midtermS17sol8x.png" alt="&#x2211;
+    xi &#x2264; 1
+i&#x2208;C
+           " class="math-display" ></center>
+           <!--l. 183--><p class="nopar" >
+           has Chvatal rank at most&#x00A0;4.</li></ol>
+      <!--l. 187--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-23x1">For each subset <span 
+class="cmmi-12">K </span>with <span 
+class="cmsy-10x-x-120">|</span><span 
+class="cmmi-12">K</span><span 
+class="cmsy-10x-x-120">| </span>= <span 
+class="cmmi-12">k</span>, we have the valid constraint
+           <center class="math-display" >
+           <img 
+src="midtermS17sol9x.png" alt="&#x2211;
+    xi &#x2264; 1.
+i&#x2208;K
+           " class="math-display" ></center>
+           <!--l. 193--><p class="nopar" >
+           Adding the inequalities, we get
+                                                                                         
+
+                                                                                         
+           <center class="math-display" >
+           <img 
+src="midtermS17sol10x.png" alt="(         )  2k&#x2211;- 1     (         )
+   2k - 2        x &#x2264;     2k - 1
+   k - 1          i        k
+             i=1
+           " class="math-display" ></center>
+           <!--l. 198--><p class="nopar" >
+           where the term on the right hand side is the number of subsets of cardinality <span 
+class="cmmi-12">k </span>and the
+           term on the left is the number containing any particular&#x00A0;<span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">i</span></sub>. Dividing by the term on the
+           left and rounding, we get <div class="eqnarray">
+           <center class="math-display" >
+           <img 
+src="midtermS17sol11x.png" alt="             (         )
+           ||    2k - 1   ||
+2k&#x2211;- 1       ||      k      ||
+    xi  &#x2264;  | (---------)-|
+i=1        &#x2308;    2k - 2   &#x2309;
+                k - 1
+
+           &#x230A;   (2k--1)!  &#x230B;
+             --k!(k-1)!--
+        =    --(2k--2)!--
+             (k-1)!(k- 1)!
+           &#x230A;       &#x230B;
+             2k---1-
+        =      k
+
+        =  1
+           " class="math-display" ></center>
+           </div>as required. Thus, the given inequality has Chvatal rank at most&#x00A0;1.
+           <!--l. 217--><p class="noindent" >An <span 
+class="cmbx-12">alternative approach</span>, which uses only a linear number of subsets:
+           <!--l. 219--><p class="noindent" >Consider the following 2<span 
+class="cmmi-12">k </span><span 
+class="cmsy-10x-x-120">- </span>1 subsets of the items, each of cardinality <span 
+class="cmmi-12">k</span>:
+           <div class="eqnarray">
+                                                                                         
+
+                                                                                         
+           <center class="math-display" >
+           <img 
+src="midtermS17sol12x.png" alt="        {1, 2,...,k}
+     {2,3, ...,k,k + 1}
+              .
+              ..
+{k,k + 1, ...,2k - 2,2k - 1}
+
+ {k + 1,k + 2,...,2k - 1,1}
+              ..
+              .
+{2k - 2,2k -  1,1,...,k - 2}
+
+   {2k - 1,1,2,...,k - 1}
+           " class="math-display" ></center>
+           </div>Each item appears in exactly <span 
+class="cmmi-12">k </span>of these subsets. The sum of the given valid inequalities
+           for these subsets can be written
+           <center class="math-display" >
+           <img 
+src="midtermS17sol13x.png" alt="  2&#x2211;k-1
+k     xi &#x2264; 2k - 1.
+   i=1
+           " class="math-display" ></center>
+           <!--l. 234--><p class="nopar" >
+           Dividing by <span 
+class="cmmi-12">k </span>and rounding down gives the valid inequality
+           <center class="math-display" >
+           <img 
+src="midtermS17sol14x.png" alt="2&#x2211;k-1     &#x230A;       &#x230B;
+    x  &#x2264;   2k---1-  = 1,
+     i       k
+ i=1
+           " class="math-display" ></center>
+           <!--l. 238--><p class="nopar" >
+           so the required inequality indeed has Chvatal rank no larger than one.
+           </li>
+           <li 
+  class="enumerate" id="x1-27x2">From part <a 
+href="#x1-181">2a<!--tex4ht:ref: q.chvatala --></a>, we get:
+                                                                                         
+
+                                                                                         
+               <ul class="itemize1">
+               <li class="itemize">clique inequalities for subcliques of size 3 have Chvatal rank at most 1.
+               </li>
+               <li class="itemize">clique inequalities for subcliques of size 5 have Chvatal rank at most 2.
+               </li>
+               <li class="itemize">clique inequalities for subcliques of size 9 have Chvatal rank at most 3.
+               </li>
+               <li class="itemize">clique inequality for the clique of size 17 has Chvatal rank at most 4.</li></ul>
+           </li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-29x3">An integer program of the form
+      <center class="math-display" >
+      <img 
+src="midtermS17sol15x.png" alt="             T
+minx        c x
+subject to  Ax   =   b
+              x  &#x2265;   0, integer
+      " class="math-display" ></center>
+      <!--l. 276--><p class="nopar" >
+      has an LP relaxation which has optimal form
+      <center class="math-display" >
+      <img 
+src="midtermS17sol16x.png" alt="min         3.2x1          +  0.7x3          +   7.2
+subject to  2.1x1  +   x2  +  1.3x3          =   5.2
+            1.3x1          -  0.6x3  +   x4  =   2.6
+
+                                         xi  &#x2265;   0  &#x2200;i
+      " class="math-display" ></center>
+      <!--l. 285--><p class="nopar" >
+      with optimal basic feasible solution <span 
+class="cmmi-12">x </span>= (0<span 
+class="cmmi-12">, </span>5<span 
+class="cmmi-12">.</span>2<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>2<span 
+class="cmmi-12">.</span>6) with value&#x00A0;7<span 
+class="cmmi-12">.</span>2.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-31x1">(10 points) Assume we know a feasible integer solution with value 10. Does this tell
+           us anything about the nonbasic variables <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> or <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> in an optimal integer solution?
+           </li>
+           <li 
+  class="enumerate" id="x1-33x2">(10  points)  What  are  the  Gomory  cutting  planes  corresponding  to  the  two
+           constraints?</li></ol>
+      <!--l. 296--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+                                                                                         
+
+                                                                                         
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-35x1">If <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>1 then the objective function value is at least 10.4. So we must have <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> = 0
+           in any optimal solution.
+           <!--l. 302--><p class="noindent" >If <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>5 then the objective function value is at least 10.7. So we must have <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>4
+           in any optimal solution.
+           </li>
+           <li 
+  class="enumerate" id="x1-37x2">The cuts are <div class="eqnarray">
+           <center class="math-display" >
+           <img 
+src="midtermS17sol17x.png" alt="0.1x1 + 0.3x3  &#x2265;   0.2
+
+0.3x1 + 0.4x3  &#x2265;   0.6.
+           " class="math-display" ></center>
+           </div></li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-40x4">
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-42x1">(10 points) Solve the minimum spanning tree problem on the following graph:
+           <div class="center" 
+>
+<!--l. 343--><p class="noindent" >
+<!--l. 432--><p class="noindent" > <img src=q4graph.png>
+</div>
+           </li>
+           <li 
+  class="enumerate" id="x1-44x2">We could imagine a cutting plane approach to solve the minimum spanning tree
+           problem, initializing with the constraints that every vertex is adjacent to at least one
+           edge in the solution, and the total number of edges is one less than the number of
+           vertices.
+               <ol  class="enumerate3" >
+               <li 
+  class="enumerate" id="x1-46x1">(10 points) <a 
+ id="x1-451"></a>Show that such a relaxation for the graph above has a feasible
+               solution with value&#x00A0;36.
+               </li>
+               <li 
+  class="enumerate" id="x1-48x2">(10 points) Can you find valid constraints that are violated by your solution
+               in part&#x00A0;<a 
+href="#x1-451">4(b)<span class="roman-numeral">i</span><!--tex4ht:ref: q.spanrelax --></a>?
+               </li>
+               <li 
+  class="enumerate" id="x1-50x3">(5 points) Consider now a general graph. Let <span 
+class="cmmi-12">S </span>denote the set of incidence
+               vectors  of  spanning  trees.  Given  a  feasible  solution  <span class="bar-css"><span 
+class="cmmi-12">x</span></span> to  a  relaxation  of
+               the minimum spanning tree with <span class="bar-css"><span 
+class="cmmi-12">x</span></span> <span 
+class="cmsy-10x-x-120">&#x2044;&#x2208;</span> conv(<span 
+class="cmmi-12">S</span>), a separation routine can be
+               designed to find a violated valid constraint for conv(<span 
+class="cmmi-12">S</span>). In the best case,
+               would you expect such a routine to run in polynomial time? Justify your
+               answer.</li></ol>
+           </li></ol>
+      <!--l. 460--><p class="noindent" ><span 
+class="cmbx-12">Solution</span>
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-52x1">Using a greedy algorithm gives one optimal solution with value&#x00A0;42:
+           <div class="center" 
+>
+<!--l. 464--><p class="noindent" >
+<!--l. 553--><p class="noindent" > <img src=q4tree.png>
+</div>
+                                                                                         
+
+                                                                                         
+           </li>
+           <li 
+  class="enumerate" id="x1-54x2">
+               <ol  class="enumerate3" >
+               <li 
+  class="enumerate" id="x1-56x1">A feasible solution to the relaxation with value 36, where all nonzero <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">e</span></sub> are equal to
+               one:
+               <div class="center" 
+>
+<!--l. 562--><p class="noindent" >
+<!--l. 651--><p class="noindent" > <img src=q4relax.png>
+</div>
+               <!--l. 653--><p class="noindent" >The solution uses 10 edges and has at least one edge incident to each
+               vertex.
+               <!--l. 655--><p class="noindent" >There is a better feasible solution to the relaxation: replace edges (<span 
+class="cmmi-12">d,h</span>) and (<span 
+class="cmmi-12">d,j</span>)
+               by edges (<span 
+class="cmmi-12">g,p</span>) and (<span 
+class="cmmi-12">h,j</span>), which has value 35.
+               </li>
+               <li 
+  class="enumerate" id="x1-58x2">A spanning tree is acyclic and connected. The feasible solution above is neither.
+               Violated valid constraints include <div class="eqnarray">
+               <center class="math-display" >
+               <img 
+src="midtermS17sol18x.png" alt="xac + xad + xcd  &#x2264;  2
+ xbl + xjk + xlp &#x2265;  1.
+               " class="math-display" ></center>
+               </div>
+                                                                                         
+
+                                                                                         
+               </li>
+               <li 
+  class="enumerate" id="x1-61x3">The optimization problem of finding the minimum spanning tree can be solved in
+               polynomial time. From the polynomial equivalence of separation and
+               optimization, this means the separation problem can also be solved in polynomial
+               time.</li></ol>
+           </li></ol>
+      </li></ol>
+    
+</body></html> 
+
+                                                                                         
+
+

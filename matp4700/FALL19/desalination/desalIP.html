@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="desalIP.tex"> 
+<meta name="date" content="2019-11-17 20:34:00"> 
+<link rel="stylesheet" type="text/css" href="desalIP.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 32--><p class="noindent" >
+<!--l. 34--><p class="noindent" ><span class="underline"><span 
+class="cmbx-12x-x-120">Case Study:</span></span>
+<!--l. 38--><p class="noindent" ><span class="underline"><span 
+class="cmbx-12x-x-120">Abacus Water</span></span>
+<!--l. 42--><p class="noindent" ><span class="underline"><span 
+class="cmbx-12x-x-120">Integer Optimization Model</span></span> </div>
+<div class="center" 
+>
+<!--l. 46--><p class="noindent" >
+<!--l. 48--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmr-12">MATP4700 Math Models of Operations Research</span></a>
+<!--l. 50--><p class="noindent" ><span 
+class="cmr-12">Fall 2019</span>
+</div>
+<!--l. 55--><p class="noindent" ><span 
+class="cmti-10x-x-109">Students may work in groups of up to three people. You may consult your textbooks, your notes, online</span>
+<span 
+class="cmti-10x-x-109">information, the TA, and me. You may not solicit help from other sources.</span>
+<!--l. 61--><p class="indent" >   Due: <span 
+class="cmbx-10x-x-109">Friday, December 6, 2019. </span>(30 points) <br 
+class="newline" />
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Forecasting future demand and expanding capacity</h3>
+<!--l. 65--><p class="noindent" >Abacus Water has predicted that demand for freshwater will increase over the next 20 years, so they need
+to construct additional desalination plants. There are three possible locations:
+     <ul class="itemize1">
+     <li class="itemize">Plant P5, connected to city B.
+     </li>
+     <li class="itemize">Plant P6, connected to city D.
+     </li>
+     <li class="itemize">Plant P7, connected to city F.</li></ul>
+<!--l. 73--><p class="noindent" >Each additional plant would incur additional operational costs per 1<span 
+class="cmmi-10x-x-109">,</span>000<span 
+class="cmmi-10x-x-109">m</span><sup><span 
+class="cmr-8">3</span></sup> of purified water supplied. The
+new plants would use only renewable energy sources. An improved disposal system would be installed at
+each of the new plants, so all brine produced at the new plants can be disposed of without additional
+charges.
+<!--l. 80--><p class="indent" >   They have various daily capacity options at each location. At most one of the options is chosen
+at each location, so Abacus Water could build up to 3 new desalination plants, one at each
+location.
+<!--l. 85--><p class="indent" >   In addition to operational costs, Abacus Water would incur construction costs. Each capacity option
+has a corresponding construction cost. These costs are represented as a daily cost in the data
+file.
+                                                                                         
+                                                                                         
+<!--l. 89--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-20002"></a>Renewable energy</h3>
+<!--l. 91--><p class="noindent" >Let <span 
+class="cmmi-10x-x-109">P </span>denote the amount of purified water produced by the original four desalination plants. Abacus
+Water is now allowed to use more non-renewable energy sources, but only if they pay for any carbon used
+beyond 0<span 
+class="cmmi-10x-x-109">.</span>05<span 
+class="cmmi-10x-x-109">P</span>. In particular, Abacus Water has obtained the option to purchase carbon offsets. These
+must be purchased in blocks of size equivalent to the energy required to produce 10<sup><span 
+class="cmr-8">5</span></sup><span 
+class="cmmi-10x-x-109">m</span><sup><span 
+class="cmr-8">3</span></sup> of purified water.
+The cost of such a block is&#x00A0;$5,000.
+<!--l. 99--><p class="indent" >   For example, assume Abacus Water supplies <span 
+class="cmmi-10x-x-109">P </span>= 5<span 
+class="cmmi-10x-x-109">.</span>5 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>10<sup><span 
+class="cmr-8">5</span></sup><span 
+class="cmmi-10x-x-109">m</span><sup><span 
+class="cmr-8">3</span></sup> purified water from the original
+plants, and 1<span 
+class="cmmi-10x-x-109">.</span>5 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>10<sup><span 
+class="cmr-8">5</span></sup><span 
+class="cmmi-10x-x-109">m</span><sup><span 
+class="cmr-8">3</span></sup> of this was produced using non-renewable energy sources. We have
+0<span 
+class="cmmi-10x-x-109">.</span>05<span 
+class="cmmi-10x-x-109">P </span>= 0<span 
+class="cmmi-10x-x-109">.</span>275 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>10<sup><span 
+class="cmr-8">5</span></sup><span 
+class="cmmi-10x-x-109">m</span><sup><span 
+class="cmr-8">3</span></sup>, so Abacus Water would have to offset 1<span 
+class="cmmi-10x-x-109">.</span>225 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>10<sup><span 
+class="cmr-8">5</span></sup><span 
+class="cmmi-10x-x-109">m</span><sup><span 
+class="cmr-8">3</span></sup> due to carbon usage. Thus,
+they would have to buy 2 blocks for a cost of&#x00A0;$10,000.
+<!--l. 115--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-30003"></a>Questions</h3>
+<!--l. 117--><p class="noindent" >All the data are contained in a modified data file, <a 
+href="http://www.rpi.edu/~mitchj/matp4700/desalination/desalIP.dat" >desalIP.dat</a>.
+Updated parameter definitions can be
+found in a modified model file, <a 
+href="http://www.rpi.edu/~mitchj/matp4700/desalination/desalIP.mod" >desalIP.mod</a>.
+(Note: The given model file will run, but it doesn&#8217;t impose any limits or costs on P5, P6, or P7, and it
+doesn&#8217;t allow for carbon offsets.)
+Versions in rtf format of the
+<a href="http://www.rpi.edu/~mitchj/matp4700/desalination/desalIPmod.rtf">model</a>
+and
+<a
+href="http://www.rpi.edu/~mitchj/matp4700/desalination/desalIPdat.rtf">data</a>
+files are available;
+these won't run in ampl, but they should easily show you the changes
+from the original model and data files.
+
+
+<p>
+Add variables and constraints to the model file, and
+modify the objective function in order to model the new features. Solve the modified integer
+program.
+<!--l. 125--><p class="indent" >   You can use your own model file if you prefer, provided it accurately solves the original linear
+optimization problem.
+<!--l. 128--><p class="indent" >   What is the optimal value? (Hint: It should be somewhere between $650,000 and $700,000 per day.)
+What additional plants are constructed, with which option? How many carbon offset blocks are
+purchased?
+<!--l. 133--><p class="indent" >   Please email me your updated model file. You can submit your report either electronically as a pdf file
+or in class.
+<!--l. 139--><p class="indent" >
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                             </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                       </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours: Tuesdays 2&#8211;4pm.                        </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Jun Tan office hours: Thursdays 1-2pm, AE 430.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

@@ -1,0 +1,752 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="callcenter2022.tex"> 
+<meta name="date" content="2022-09-29 19:45:00"> 
+<link rel="stylesheet" type="text/css" href="callcenter2022.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 45--><p class="noindent" >
+<!--l. 47--><p class="noindent" ><span class="underline"><span 
+class="cmbx-12x-x-120">Case Study:</span></span>
+<!--l. 51--><p class="noindent" ><span class="underline"><span 
+class="cmcsc-10x-x-144">M<span 
+class="small-caps">e</span><span 
+class="small-caps">s</span><span 
+class="small-caps">l</span><span 
+class="small-caps">i</span><span 
+class="small-caps">e</span><span 
+class="small-caps">r</span> S<span 
+class="small-caps">e</span><span 
+class="small-caps">r</span><span 
+class="small-caps">v</span><span 
+class="small-caps">i</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span></span></span> </div>
+<div class="center" 
+>
+<!--l. 55--><p class="noindent" >
+<!--l. 57--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmr-12">MATP4700 Math Models of Operations Research</span></a>
+<!--l. 59--><p class="noindent" ><span 
+class="cmr-12">Fall 2022</span>
+</div>
+<!--l. 64--><p class="noindent" ><span class="uline">Students may work in groups of up to three people. You are strongly encouraged to work in groups; if
+you&#8217;re unable to find a partner, please let me know. You may be able to use <span 
+class="cmtt-10x-x-109">piazza</span> to find teammates.
+You may consult your textbooks, your notes, online information, and me. You may not solicit help from
+other sources.</span>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Introduction</h3>
+<!--l. 82--><p class="noindent" ><span 
+class="cmcsc-10x-x-109">M<span 
+class="small-caps">e</span><span 
+class="small-caps">s</span><span 
+class="small-caps">l</span><span 
+class="small-caps">i</span><span 
+class="small-caps">e</span><span 
+class="small-caps">r</span> S<span 
+class="small-caps">e</span><span 
+class="small-caps">r</span><span 
+class="small-caps">v</span><span 
+class="small-caps">i</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span> </span>operates a telephone call center. Its employees answer incoming service calls for
+customers of two financial institutions, <span 
+class="cmcsc-10x-x-109">A<span 
+class="small-caps">d</span><span 
+class="small-caps">a</span><span 
+class="small-caps">m</span><span 
+class="small-caps">s</span> F<span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">i</span><span 
+class="small-caps">a</span><span 
+class="small-caps">l</span> </span>and <span 
+class="cmcsc-10x-x-109">B<span 
+class="small-caps">a</span><span 
+class="small-caps">m</span><span 
+class="small-caps">f</span><span 
+class="small-caps">o</span><span 
+class="small-caps">r</span><span 
+class="small-caps">d</span> B<span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">k</span>.</span><span 
+class="cmcsc-10x-x-109">&#x00A0;</span>It aims to limit waiting
+times for customers while minimizing its employment costs. It wants to set up a linear programming
+problem to model its operations.
+<!--l. 90--><p class="indent" >   (The solution to your linear program may be fractional. This is OK, you don&#8217;t need to
+require the number of workers to be integer. We will return to this issue in the third part of the
+project.)
+<!--l. 96--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-20002"></a>Shifts</h3>
+<!--l. 98--><p class="noindent" >Calls can come in at any time. <span 
+class="cmcsc-10x-x-109">M<span 
+class="small-caps">e</span><span 
+class="small-caps">s</span><span 
+class="small-caps">l</span><span 
+class="small-caps">i</span><span 
+class="small-caps">e</span><span 
+class="small-caps">r</span> S<span 
+class="small-caps">e</span><span 
+class="small-caps">r</span><span 
+class="small-caps">v</span><span 
+class="small-caps">i</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span> </span>hires workers in shifts. There are 24 possible shifts,
+starting at each hour of the day. Each shift is seven hours long, consisting of working for three hours, a
+break for one hour, and then working for another three hours. Workers are paid for seven hours
+of employment for each shift, at a rate of $18 per hour for each hour worked between 9am
+and 5pm and at a rate of $27 per hour for each hour worked between 5pm and 9am. Thus,
+workers who start work at 3pm would earn $171 (= 2 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>18 + 5 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>27), they would have a break
+between 6pm and 7pm, and they would finish work at 10pm. Up to 100 workers can work any
+shift.
+<!--l. 111--><p class="indent" >   The workers in each shift are assigned to either <span 
+class="cmcsc-10x-x-109">A<span 
+class="small-caps">d</span><span 
+class="small-caps">a</span><span 
+class="small-caps">m</span><span 
+class="small-caps">s</span> F<span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">i</span><span 
+class="small-caps">a</span><span 
+class="small-caps">l</span> </span>or <span 
+class="cmcsc-10x-x-109">B<span 
+class="small-caps">a</span><span 
+class="small-caps">m</span><span 
+class="small-caps">f</span><span 
+class="small-caps">o</span><span 
+class="small-caps">r</span><span 
+class="small-caps">d</span> B<span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">k</span>.</span><span 
+class="cmcsc-10x-x-109">&#x00A0;</span>They then
+work for that same bank for the duration of their shift.
+                                                                                         
+                                                                                         
+<!--l. 114--><p class="indent" >   Due to capacity constraints, <span 
+class="cmcsc-10x-x-109">M<span 
+class="small-caps">e</span><span 
+class="small-caps">s</span><span 
+class="small-caps">l</span><span 
+class="small-caps">i</span><span 
+class="small-caps">e</span><span 
+class="small-caps">r</span> S<span 
+class="small-caps">e</span><span 
+class="small-caps">r</span><span 
+class="small-caps">v</span><span 
+class="small-caps">i</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span> </span>can have at most 420 workers working at the same
+time. Any worker who is scheduled to be working must be working at that time; they cannot be idle just
+due to the capacity constraint.
+<!--l. 120--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-30003"></a>Demand</h3>
+<!--l. 122--><p class="noindent" >The two financial institutions&#8217; demand for service varies through the day. In addition to varying by time
+of day, the demand also varies stochastically within each hour. For example, one day may see 80 calls from
+customers of <span 
+class="cmcsc-10x-x-109">B<span 
+class="small-caps">a</span><span 
+class="small-caps">m</span><span 
+class="small-caps">f</span><span 
+class="small-caps">o</span><span 
+class="small-caps">r</span><span 
+class="small-caps">d</span> B<span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">k</span> </span>between 9am and 10am, while another day may see 120 calls. In order to
+simplify the modeling process, <span 
+class="cmcsc-10x-x-109">M<span 
+class="small-caps">e</span><span 
+class="small-caps">s</span><span 
+class="small-caps">l</span><span 
+class="small-caps">i</span><span 
+class="small-caps">e</span><span 
+class="small-caps">r</span> S<span 
+class="small-caps">e</span><span 
+class="small-caps">r</span><span 
+class="small-caps">v</span><span 
+class="small-caps">i</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span> </span>has assumed the demand is deterministic. It
+has estimated the number of employees it needs working at each hour of the day in order to
+adequately service <span 
+class="cmcsc-10x-x-109">A<span 
+class="small-caps">d</span><span 
+class="small-caps">a</span><span 
+class="small-caps">m</span><span 
+class="small-caps">s</span> F<span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">i</span><span 
+class="small-caps">a</span><span 
+class="small-caps">l</span> </span>and <span 
+class="cmcsc-10x-x-109">B<span 
+class="small-caps">a</span><span 
+class="small-caps">m</span><span 
+class="small-caps">f</span><span 
+class="small-caps">o</span><span 
+class="small-caps">r</span><span 
+class="small-caps">d</span> B<span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">k</span>.</span><span 
+class="cmcsc-10x-x-109">&#x00A0;</span>These numbers are given in
+Table&#x00A0;<a 
+href="#x1-30011">1<!--tex4ht:ref: table.demand --></a>.
+   <div class="table">
+                                                                                         
+                                                                                         
+<!--l. 136--><p class="indent" >   <a 
+ id="x1-30011"></a><hr class="float"><div class="float" 
+>
+                                                                                         
+                                                                                         
+<div class="center" 
+>
+<!--l. 137--><p class="noindent" >
+<div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0" rules="groups" 
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><colgroup id="TBL-1-2g"><col 
+id="TBL-1-2"><col 
+id="TBL-1-3"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-1-1"  
+class="td11">Hour</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-1-2"  
+class="td11"><span 
+class="cmcsc-10x-x-109">A<span 
+class="small-caps">d</span><span 
+class="small-caps">a</span><span 
+class="small-caps">m</span><span 
+class="small-caps">s</span> F<span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">i</span><span 
+class="small-caps">a</span><span 
+class="small-caps">l</span></span></td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-1-3"  
+class="td11"><span 
+class="cmcsc-10x-x-109">B<span 
+class="small-caps">a</span><span 
+class="small-caps">m</span><span 
+class="small-caps">f</span><span 
+class="small-caps">o</span><span 
+class="small-caps">r</span><span 
+class="small-caps">d</span> B<span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">k</span></span></td></tr><tr 
+class="hline"><td><hr></td><td><hr></td><td><hr></td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-2-1"  
+class="td11"> 0</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-2-2"  
+class="td11"> 120</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-2-3"  
+class="td11"> 70</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-3-1"  
+class="td11">    1</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-3-2"  
+class="td11">               95</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-3-3"  
+class="td11">             40</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-4-1"  
+class="td11"> 2</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-4-2"  
+class="td11"> 90</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-4-3"  
+class="td11"> 20</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-5-1"  
+class="td11">    3</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-5-2"  
+class="td11">               50</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-5-3"  
+class="td11">             30</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-6-1"  
+class="td11"> 4</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-6-2"  
+class="td11"> 30</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-6-3"  
+class="td11"> 50</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-7-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-7-1"  
+class="td11">    5</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-7-2"  
+class="td11">               30</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-7-3"  
+class="td11">             40</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-8-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-8-1"  
+class="td11"> 6</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-8-2"  
+class="td11"> 60</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-8-3"  
+class="td11"> 40</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-9-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-9-1"  
+class="td11">    7</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-9-2"  
+class="td11">              110</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-9-3"  
+class="td11">             90</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-10-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-10-1"  
+class="td11"> 8</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-10-2"  
+class="td11"> 140</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-10-3"  
+class="td11"> 110</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-11-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-11-1"  
+class="td11">    9</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-11-2"  
+class="td11">              200</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-11-3"  
+class="td11">            110</td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-12-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-12-1"  
+class="td11"> 10</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-12-2"  
+class="td11"> 180</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-12-3"  
+class="td11"> 110</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-13-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-13-1"  
+class="td11">   11</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-13-2"  
+class="td11">              180</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-13-3"  
+class="td11">            130</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-14-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-14-1"  
+class="td11">   12</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-14-2"  
+class="td11">              240</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-14-3"  
+class="td11">            150</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-15-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-15-1"  
+class="td11">   13</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-15-2"  
+class="td11">              220</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-15-3"  
+class="td11">            160</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-16-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-16-1"  
+class="td11">   14</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-16-2"  
+class="td11">              220</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-16-3"  
+class="td11">            120</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-17-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-17-1"  
+class="td11">   15</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-17-2"  
+class="td11">              230</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-17-3"  
+class="td11">            130</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-18-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-18-1"  
+class="td11">   16</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-18-2"  
+class="td11">              250</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-18-3"  
+class="td11">            160</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-19-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-19-1"  
+class="td11">   17</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-19-2"  
+class="td11">              260</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-19-3"  
+class="td11">            180</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-20-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-20-1"  
+class="td11">   18</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-20-2"  
+class="td11">              230</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-20-3"  
+class="td11">            200</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-21-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-21-1"  
+class="td11">   19</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-21-2"  
+class="td11">              250</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-21-3"  
+class="td11">            170</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-22-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-22-1"  
+class="td11">   20</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-22-2"  
+class="td11">              260</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-22-3"  
+class="td11">            140</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-23-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-23-1"  
+class="td11">   21</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-23-2"  
+class="td11">              250</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-23-3"  
+class="td11">            110</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-24-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-24-1"  
+class="td11">   22</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-24-2"  
+class="td11">              220</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-24-3"  
+class="td11">            100</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-25-"><td  style="white-space:nowrap; text-align:right;" id="TBL-1-25-1"  
+class="td11">   23</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-25-2"  
+class="td11">              190</td><td  style="white-space:nowrap; text-align:right;" id="TBL-1-25-3"  
+class="td11">             90</td></tr></table></div>
+<br /> <div class="caption" 
+><span class="id">Table&#x00A0;1: </span><span  
+class="content">Demand for call center employees </span></div><!--tex4ht:label?: x1-30011 -->
+</div>
+                                                                                         
+                                                                                         
+   </div><hr class="endfloat" />
+   </div>
+   <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x1-40004"></a>Short-staffing and penalties</h3>
+<!--l. 171--><p class="noindent" ><span 
+class="cmcsc-10x-x-109">M<span 
+class="small-caps">e</span><span 
+class="small-caps">s</span><span 
+class="small-caps">l</span><span 
+class="small-caps">i</span><span 
+class="small-caps">e</span><span 
+class="small-caps">r</span> S<span 
+class="small-caps">e</span><span 
+class="small-caps">r</span><span 
+class="small-caps">v</span><span 
+class="small-caps">i</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span> </span>is prepared to have fewer employees working at a particular time than
+the number given in the table. For example, it doesn&#8217;t require it has 100 people available
+to answer phones between 6am and 7am. However, in order to try to control the quality of
+service (QoS), it has imposed a limit on how short-staffed it can be. In particular, it requires
+that it is no more than ten workers short for either client for any hour, and it ensures that it
+is no more than 40 (respectively, 30) employees short over the course of the whole day for
+servicing the calls from <span 
+class="cmcsc-10x-x-109">A<span 
+class="small-caps">d</span><span 
+class="small-caps">a</span><span 
+class="small-caps">m</span><span 
+class="small-caps">s</span> F<span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">i</span><span 
+class="small-caps">a</span><span 
+class="small-caps">l</span> </span>(respectively, <span 
+class="cmcsc-10x-x-109">B<span 
+class="small-caps">a</span><span 
+class="small-caps">m</span><span 
+class="small-caps">f</span><span 
+class="small-caps">o</span><span 
+class="small-caps">r</span><span 
+class="small-caps">d</span> B<span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">k</span> </span>). Thus, it may
+have only 80 employees working between 6am and 7am, with 50 of those assigned to calls
+from customers of <span 
+class="cmcsc-10x-x-109">A<span 
+class="small-caps">d</span><span 
+class="small-caps">a</span><span 
+class="small-caps">m</span><span 
+class="small-caps">s</span> F<span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">i</span><span 
+class="small-caps">a</span><span 
+class="small-caps">l</span> </span>and 30 assigned to calls from customers of <span 
+class="cmcsc-10x-x-109">B<span 
+class="small-caps">a</span><span 
+class="small-caps">m</span><span 
+class="small-caps">f</span><span 
+class="small-caps">o</span><span 
+class="small-caps">r</span><span 
+class="small-caps">d</span></span>
+<span 
+class="cmcsc-10x-x-109">B<span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">k</span>.</span><span 
+class="cmcsc-10x-x-109">&#x00A0;</span>
+<!--l. 184--><p class="indent" >   <span 
+class="cmcsc-10x-x-109">B<span 
+class="small-caps">a</span><span 
+class="small-caps">m</span><span 
+class="small-caps">f</span><span 
+class="small-caps">o</span><span 
+class="small-caps">r</span><span 
+class="small-caps">d</span> B<span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">k</span> </span>is more worried about missed calls between 7am and 6pm. Therefore, for those eleven
+hours, <span 
+class="cmcsc-10x-x-109">M<span 
+class="small-caps">e</span><span 
+class="small-caps">s</span><span 
+class="small-caps">l</span><span 
+class="small-caps">i</span><span 
+class="small-caps">e</span><span 
+class="small-caps">r</span> S<span 
+class="small-caps">e</span><span 
+class="small-caps">r</span><span 
+class="small-caps">v</span><span 
+class="small-caps">i</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span> </span>has decided to model a cost of $60 per worker for a staffing level that falls
+below the desired level of service to customers of <span 
+class="cmcsc-10x-x-109">B<span 
+class="small-caps">a</span><span 
+class="small-caps">m</span><span 
+class="small-caps">f</span><span 
+class="small-caps">o</span><span 
+class="small-caps">r</span><span 
+class="small-caps">d</span> B<span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">k</span>.</span><span 
+class="cmcsc-10x-x-109">&#x00A0;</span>Between 6pm and 7am the
+corresponding cost is $30 per worker.
+<!--l. 190--><p class="indent" >   <span 
+class="cmcsc-10x-x-109">A<span 
+class="small-caps">d</span><span 
+class="small-caps">a</span><span 
+class="small-caps">m</span><span 
+class="small-caps">s</span> F<span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">i</span><span 
+class="small-caps">a</span><span 
+class="small-caps">l</span> </span>is not so sensitive to the time of day, with all calls being equally important.
+<span 
+class="cmcsc-10x-x-109">M<span 
+class="small-caps">e</span><span 
+class="small-caps">s</span><span 
+class="small-caps">l</span><span 
+class="small-caps">i</span><span 
+class="small-caps">e</span><span 
+class="small-caps">r</span> S<span 
+class="small-caps">e</span><span 
+class="small-caps">r</span><span 
+class="small-caps">v</span><span 
+class="small-caps">i</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span> </span>models this as a cost of $45 per worker for a staffing level that falls below the desired
+level to service customers of <span 
+class="cmcsc-10x-x-109">A<span 
+class="small-caps">d</span><span 
+class="small-caps">a</span><span 
+class="small-caps">m</span><span 
+class="small-caps">s</span> F<span 
+class="small-caps">i</span><span 
+class="small-caps">n</span><span 
+class="small-caps">a</span><span 
+class="small-caps">n</span><span 
+class="small-caps">c</span><span 
+class="small-caps">i</span><span 
+class="small-caps">a</span><span 
+class="small-caps">l</span>.</span><span 
+class="cmcsc-10x-x-109">&#x00A0;</span>
+<!--l. 194--><p class="indent" >   <span 
+class="cmcsc-10x-x-109">M<span 
+class="small-caps">e</span><span 
+class="small-caps">s</span><span 
+class="small-caps">l</span><span 
+class="small-caps">i</span><span 
+class="small-caps">e</span><span 
+class="small-caps">r</span> S<span 
+class="small-caps">e</span><span 
+class="small-caps">r</span><span 
+class="small-caps">v</span><span 
+class="small-caps">i</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span> </span>has imposed an additional restriction to try to control the QoS. Namely, it requires
+that there are at least 80 employees available to answer phones at any one time.
+<!--l. 198--><p class="indent" >   (<span 
+class="cmbx-10x-x-109">Technical aside: </span><span 
+class="cmcsc-10x-x-109">M<span 
+class="small-caps">e</span><span 
+class="small-caps">s</span><span 
+class="small-caps">l</span><span 
+class="small-caps">i</span><span 
+class="small-caps">e</span><span 
+class="small-caps">r</span> S<span 
+class="small-caps">e</span><span 
+class="small-caps">r</span><span 
+class="small-caps">v</span><span 
+class="small-caps">i</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span> </span>expects that the required service level for any given hour will
+be no larger than the number given in the table with 95% confidence. For the times with low demand, a
+sudden rise in demand could swamp the employees, so to guard against this <span 
+class="cmcsc-10x-x-109">M<span 
+class="small-caps">e</span><span 
+class="small-caps">s</span><span 
+class="small-caps">l</span><span 
+class="small-caps">i</span><span 
+class="small-caps">e</span><span 
+class="small-caps">r</span> S<span 
+class="small-caps">e</span><span 
+class="small-caps">r</span><span 
+class="small-caps">v</span><span 
+class="small-caps">i</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span> </span>requires a
+minimum total employee level. <span 
+class="cmcsc-10x-x-109">M<span 
+class="small-caps">e</span><span 
+class="small-caps">s</span><span 
+class="small-caps">l</span><span 
+class="small-caps">i</span><span 
+class="small-caps">e</span><span 
+class="small-caps">r</span> S<span 
+class="small-caps">e</span><span 
+class="small-caps">r</span><span 
+class="small-caps">v</span><span 
+class="small-caps">i</span><span 
+class="small-caps">c</span><span 
+class="small-caps">e</span><span 
+class="small-caps">s</span> </span>has contracts with each bank that stipulate a desired
+QoS with penalties for failure to meet those quotas; the short-staffing costs are estimates of the effect of
+short-staffing on the QoS penalties.)
+<!--l. 213--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
+ id="x1-50005"></a>Variables </h3>
+<!--l. 215--><p class="noindent" >You will probably need several sets of variables. The principal decision variables are the number of
+workers starting each shift who are working for each bank. You may also find it useful to define other
+(state) variables which are linear functions of these (decision) variables.
+<!--l. 221--><p class="indent" >   If you want your variables to be nonnegative, you have to explicitly state they are nonnegative.
+<!--l. 232--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
+ id="x1-60006"></a>Constraints</h3>
+<!--l. 234--><p class="noindent" >You will need several sets of constraints in your model.
+                                                                                         
+                                                                                         
+<!--l. 242--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">7   </span> <a 
+ id="x1-70007"></a>The data</h3>
+<!--l. 246--><p class="noindent" >All the data can be found on LMS, and also on the course webpage at
+     <div class="quote">
+     <!--l. 250--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700/callcenter2022/shiftsAB.dat" class="url" ><span 
+class="cmtt-10x-x-109">http://www.rpi.edu/</span><span 
+class="cmtt-10x-x-109">~</span><span 
+class="cmtt-10x-x-109">mitchj/matp4700/callcenter2022/shiftsAB.dat</span></a></div>
+<!--l. 252--><p class="noindent" >The parameter definitions in the model file can be found on LMS and at
+     <div class="quote">
+     <!--l. 254--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700/callcenter2022/shiftsABparam.mod" class="url" ><span 
+class="cmtt-10x-x-109">http://www.rpi.edu/</span><span 
+class="cmtt-10x-x-109">~</span><span 
+class="cmtt-10x-x-109">mitchj/matp4700/callcenter2022/shiftsABparam.mod</span></a></div>
+<!--l. 263--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">8   </span> <a 
+ id="x1-80008"></a>Questions</h3>
+<!--l. 264--><p class="noindent" >
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-8002x1">Due: <span 
+class="cmbx-10x-x-109">Friday, October 21</span>, 11.59pm, on LMS. (30 points) <br 
+class="newline" /><span class="uline">Please submit a written report, your problem files, and any AMPL output used. Choose a
+     name for your model file that is distinctive to your group.</span>
+     <!--l. 272--><p class="noindent" >Formulate  and  solve  the  problem  as  a  linear  optimization  problem.  Clearly  define  every
+     variable in your formulation. Explain every constraint including coefficients.
+     <!--l. 276--><p class="noindent" >Hint: your optimal value should be between $150,000 and $200,000.
+     <!--l. 278--><p class="noindent" >Only one submission is needed from each group, but ensure that every team member&#8217;s name
+     appears at the top of the report.
+     </li>
+     <li 
+  class="enumerate" id="x1-8004x2"><span 
+class="cmbx-10x-x-109">Sensitivity analysis </span>(40 points): To be distributed later. Due on Friday November&#x00A0;11.
+     </li>
+     <li 
+  class="enumerate" id="x1-8006x3"><span 
+class="cmbx-10x-x-109">Extra conditions </span>(30 points): To be distributed later. Due on Tuesday December&#x00A0;6.</li></ol>
+<!--l. 288--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">9   </span> <a 
+ id="x1-90009"></a>AMPL notes</h3>
+     <ul class="itemize1">
+     <li class="itemize">AMPL comes with an IDE, which is fairly user friendly. I believe it is integrated into the
+     single downloads for all 3 operating systems.
+                                                                                         
+                                                                                         
+     </li>
+     <li class="itemize">If you are working in a Windows operating system and don&#8217;t use the IDE, you can edit your
+     model and data files in Office, for example. Save the files as plain text files. Windows may
+     append the suffix <span 
+class="cmtt-10x-x-109">txt </span>to the file names, in which case you would need to include that suffix
+     when asking ampl to read the file.
+     </li>
+     <li class="itemize">If you want to read in a new model file <span 
+class="cmtt-10x-x-109">chips.mod </span>and data file <span 
+class="cmtt-10x-x-109">chips.dat</span>, you can use the <span 
+class="cmtt-10x-x-109">reset</span>
+     command: <div class="verse">
+             <!--l. 315--><p class="noindent" > ampl: <span 
+class="cmtt-10x-x-109">reset;</span><br />
+             ampl: <span 
+class="cmtt-10x-x-109">model chips.mod;</span><br />
+             ampl: <span 
+class="cmtt-10x-x-109">data chips.dat;</span>
+</div>
+     </li>
+     <li class="itemize">If you want to reset the whole data file and read in a new data file <span 
+class="cmtt-10x-x-109">chips.dat</span>, but you want to keep
+     the model file as before, you can type <div class="verse">
+             <!--l. 325--><p class="noindent" > ampl: <span 
+class="cmtt-10x-x-109">reset data;</span><br />
+             ampl: <span 
+class="cmtt-10x-x-109">data chips.dat;</span>
+</div>
+     </li>
+     <li class="itemize">More hints are available online from my page about AMPL:
+          <div class="quote">
+          <!--l. 348--><p class="noindent" ><a 
+href="http://homepages.rpi.edu/~mitchj/ampldetails.html" class="url" ><span 
+class="cmtt-10x-x-109">http://homepages.rpi.edu/</span><span 
+class="cmtt-10x-x-109">~</span><span 
+class="cmtt-10x-x-109">mitchj/ampldetails.html</span></a></div>
+     </li>
+     <li class="itemize">This project is available from LMS and also from the course webpage, at
+          <div class="quote">
+          <!--l. 353--><p class="noindent" ><a 
+href="http://homepages.rpi.edu/~mitchj/matp4700/#project" class="url" ><span 
+class="cmtt-10x-x-109">http://homepages.rpi.edu/</span><span 
+class="cmtt-10x-x-109">~</span><span 
+class="cmtt-10x-x-109">mitchj/matp4700/#project</span></a></div>
+     <!--l. 355--><p class="noindent" >where you will also find more information about AMPL.</li></ul>
+   <div class="tabular"> <table id="TBL-2" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-2-1g"><col 
+id="TBL-2-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-2-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                             </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                                                        </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Tuesday 2.30&#8211;4pm in AE 325;                                                         </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Thursday 1&#8211;3pm webex: <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-10x-x-109">https://rensselaer.webex.com/meet/mitchj</span></a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-2-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-2-7-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;                                                                                                          </td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

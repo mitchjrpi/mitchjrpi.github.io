@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="exam3f08.tex"> 
+<meta name="date" content="2010-11-16 13:15:00"> 
+<link rel="stylesheet" type="text/css" href="exam3f08.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 17--><p class="noindent" >
+<!--l. 19--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12x-x-120">Math Models of Operations Research</span></a><br />
+<a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmbx-12x-x-120">MATP 4700 / DSES 4770</span></a></div>
+<div class="center" 
+>
+<!--l. 24--><p class="noindent" >
+<!--l. 25--><p class="noindent" >Third Exam, Friday, December 5, 2008.</div>
+<!--l. 28--><p class="noindent" >You may use any result from your notes or a homework that is clearly stated. You may use one
+sheet of handwritten notes, but no other sources. The exam consists of five questions, and lasts one
+hundred and ten minutes.
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">(20 points)
+      <!--l. 39--><p class="noindent" >A pharmaceutical manufacturer must supply 30 batches of its new medication in the
+      next quarter, then 25, 10, and 35 in successive quarters. Each quarter in which the
+      company makes product requires $100,000 setup, plus $3000 per batch produced. There
+      is no limit on production capacity. Batches can be held in inventory, but the cost is a
+      high $5000 per batch per quarter. The company seeks a minimum total cost production
+      plan.
+      <!--l. 46--><p class="noindent" >This problem can be approached by dynamic programming, with states <span 
+class="cmmi-12">k </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">, </span>5
+      representing the reaching of quarter <span 
+class="cmmi-12">k </span>with all earlier demand fulfilled and no inventory
+      on hand.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-5x1">(15 points)
+           <!--l. 53--><p class="noindent" >Sketch the digraph corresponding to the dynamic program structure. Include costs
+           on all arcs.
+           </li>
+           <li 
+  class="enumerate" id="x1-7x2">(5 points)
+           <!--l. 57--><p class="noindent" >Explain why the feasible production plans correspond exactly to the paths from
+           node <span 
+class="cmmi-12">k </span>= 1 to node <span 
+class="cmmi-12">k </span>= 5 in your digraph.
+           </li></ol>
+                                                                                         
+
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-9x2">(15 points)
+      <!--l. 69--><p class="noindent" >Solving the linear programming relaxation of a certain integer program results in the
+      following optimal tableau:
+      <center class="par-math-display" >
+      <img 
+src="exam3f080x.png" alt="|-----x1--x2--x3-----x4---x5--x6-|
+|- 8.0|0   0   4      1    1   5 |
+|-----|--------------------------|
+| 4.5 |1   0   4  - 3.5  - 1   3 |
+--3.5--0---1---1----0.5----0---2--
+      " class="par-math-display" ></center>
+      <!--l. 79--><p class="nopar" >
+      <!--l. 81--><p class="noindent" >We decide to solve this problem using branch-and-bound and we branch first on
+      <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub>.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-11x1">(5 points) Show that the branch with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>4 is infeasible.
+           </li>
+           <li 
+  class="enumerate" id="x1-13x2">(10 points) Show that the optimal solution to the LP relaxation of the branch
+           with <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>3 is integral. What do you conclude?</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-15x3">(10 points.)
+      <!--l. 95--><p class="noindent" >Consider the primal-dual pair of linear programs
+      <center class="math-display" >
+      <img 
+src="exam3f081x.png" alt="min        cT x                       max         bT y
+subject to   Ax   =   b  (P )           subject to  AT y  +  s  =   c  (D )
+
+              x  &#x2265;   0                                     s  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 102--><p class="nopar" >
+      where <span 
+class="cmmi-12">x</span>, <span 
+class="cmmi-12">s</span>, and <span 
+class="cmmi-12">c </span>are <span 
+class="cmmi-12">n</span>-vectors, <span 
+class="cmmi-12">b </span>and <span 
+class="cmmi-12">y </span>are <span 
+class="cmmi-12">m</span>-vectors, and <span 
+class="cmmi-12">A </span>is an <span 
+class="cmmi-12">m </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>matrix of
+      rank&#x00A0;<span 
+class="cmmi-12">m</span>.
+      <!--l. 106--><p class="noindent" >Assume <img 
+src="exam3f082x.png" alt="¯x"  class="bar" > <span 
+class="cmmi-12">&#x003E; </span>0 is feasible in (<span 
+class="cmmi-12">P</span>) and (<img 
+src="exam3f083x.png" alt="y¯"  class="bar" > <span 
+class="cmmi-12">,</span><img 
+src="exam3f084x.png" alt="¯s"  class="bar" > ) is feasible in (<span 
+class="cmmi-12">D</span>) with <img 
+src="exam3f085x.png" alt="s¯"  class="bar" > <span 
+class="cmmi-12">&#x003E; </span>0. Given a diagonal
+      scaling matrix <span 
+class="cmmi-12">X </span>with positive diagonal entries, the affine scaling direction requires
+                                                                                         
+
+                                                                                         
+      calculating the projection of <span 
+class="cmmi-12">Xc </span>onto the nullspace of <span 
+class="cmmi-12">AX</span>. Let <span 
+class="cmmi-12">P</span><sub><span 
+class="cmmi-8">AX</span></sub> denote the projection
+      matrix and let <span 
+class="cmmi-12">d </span>denote this projection, so <span 
+class="cmmi-12">d </span>= <span 
+class="cmmi-12">P</span><sub><span 
+class="cmmi-8">AX</span></sub><span 
+class="cmmi-12">Xc</span>.
+      <!--l. 113--><p class="noindent" >Show that <span 
+class="cmmi-12">d </span>= <span 
+class="cmmi-12">P</span><sub><span 
+class="cmmi-8">AX</span></sub><span 
+class="cmmi-12">X</span><img 
+src="exam3f086x.png" alt="¯s"  class="bar" > .
+      </li>
+      <li 
+  class="enumerate" id="x1-17x4">(15 points)
+      <!--l. 119--><p class="noindent" >Use dynamic programming to find the <span 
+class="cmbx-12">longest </span>path from vertex 1 to vertex&#x00A0;<span 
+class="cmmi-12">t </span>in the
+      following graph, where the edge lengths are given on the graph:
+      <div class="center" 
+>
+<!--l. 122--><p class="noindent" >
+<!--l. 123--><p class="center" ><img 
+src="exam3f087x.png" alt="PICT" >
+</div>      <!--l. 181--><p class="noindent" >(Hint: If the vertices are ordered 1 <span 
+class="cmsy-10x-x-120">- </span>4 <span 
+class="cmsy-10x-x-120">- </span>5 <span 
+class="cmsy-10x-x-120">- </span>6 <span 
+class="cmsy-10x-x-120">- </span>7 <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">t </span>then every arc is directed from an
+      earlier vertex to a later vertex. It follows that we can find the longest path to each vertex in
+      succession.)
+      </li>
+      <li 
+  class="enumerate" id="x1-19x5">(20 points)
+      <!--l. 189--><p class="noindent" >Consider the integer program
+      <center class="math-display" >
+      <img 
+src="exam3f088x.png" alt="max    x1  +   2x2
+s.t.    x1  +   5x2  &#x2264;   20              (IP )
+
+      4x1  +    x2  &#x2264;   16
+             x1,x2  &#x2265;   0, integer
+      " class="math-display" ></center>
+                                                                                         
+
+                                                                                         
+      <!--l. 197--><p class="nopar" >
+      The optimal solution to the linear programming relaxation of this problem is <img 
+src="exam3f089x.png" alt="¯x"  class="bar" > = (3<img 
+src="exam3f0810x.png" alt="-3
+19"  class="frac" align="middle"><span 
+class="cmmi-12">, </span>3<img 
+src="exam3f0811x.png" alt="-7
+19"  class="frac" align="middle">).
+      The problem is illustrated here:
+      <div class="center" 
+>
+<!--l. 201--><p class="noindent" >
+<!--l. 202--><p class="center" ><img 
+src="exam3f0812x.png" alt="PICT" >
+</div>
+      <!--l. 228--><p class="noindent" >Solve this problem using branch-and-bound. (Note: It is acceptable to solve the LP
+      relaxations graphically.)
+      </li>
+      <li 
+  class="enumerate" id="x1-21x6">(20 points)
+      <!--l. 234--><p class="noindent" >The point <span 
+class="cmmi-12">x </span>= (1<span 
+class="cmmi-12">, </span>2<span 
+class="cmmi-12">, </span>3<span 
+class="cmmi-12">, </span>1) is an interior feasible point to the linear program
+      <center class="math-display" >
+      <img 
+src="exam3f0813x.png" alt="min        13x1   +  5x2   +  x3  +   7x4
+subject to    3x1  +    x2  -  x3  +    x4  =   3
+
+              x1           +  x3  -    x4  =   3
+                            x1, x2, x3, x4 &#x2265;   0.
+      " class="math-display" ></center>
+                                                                                         
+
+                                                                                         
+      <!--l. 242--><p class="nopar" >
+      The barrier problem for this linear program for a positive choice of <span 
+class="cmmi-12">&#x03BC; </span>is
+      <center class="math-display" >
+      <img 
+src="exam3f0814x.png" alt="min         13x1  +   5x2  +   x3  +  7x4   -  &#x03BC; &#x2211;4   lnxi
+subject to   3x   +    x   -   x   +    x   =  3   i=1
+               1        2       3        4
+              x1           +   x3  -    x4  =  3
+                            x1, x2, x3, x4  &#x2265;  0.
+      " class="math-display" ></center>
+      <!--l. 251--><p class="nopar" >
+      <!--l. 253--><p class="noindent" >Show that <span 
+class="cmmi-12">x </span>= (1<span 
+class="cmmi-12">, </span>2<span 
+class="cmmi-12">, </span>3<span 
+class="cmmi-12">, </span>1) solves the barrier problem when <span 
+class="cmmi-12">&#x03BC; </span>= 6. (Hint: the dual problem to
+      min<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>: <span 
+class="cmmi-12">Ax </span>= <span 
+class="cmmi-12">b,x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmsy-10x-x-120">} </span>is max<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span>: <span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">c</span><span 
+class="cmsy-10x-x-120">}</span>.)
+      </li></ol>
+    
+</body></html> 
+
+                                                                                         
+
+

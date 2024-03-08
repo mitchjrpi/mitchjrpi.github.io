@@ -1,0 +1,13 @@
+\documentclass{article}
+
+\begin{document}
+
+In this thesis, we use Integer Programming (IP) to develop exact algorithms for the following graph partition problem with minimum size constraints: given a complete graph $K_n = (V, E)$, with edge weight $c_e$ on each edge, the graph partition problem with minimum size constraints requires partitioning the vertices of $K_n$ into sets that each have at least $S$ vertices, so as to minimize the sum of weights of the partitions. It is similar to the classic graph partition problem, but the additional size constraint makes it much harder to solve.
+
+We consider two different measures to represent the weight of each partition. The Clique Partition Problem with Minimum Size Constraint (CPPMIN) uses the sum of weights of all the edges in each partition. The Minimum Weight Constrained Forest (MWCF) problem uses the weight of the edges in the minimum spanning tree of each partition. Both are NP-hard problems and can be used to model a large variety of practical optimization problems, including micro-aggregation of statistical data, sports team alignment, political districting and telecommunication network design.
+
+We first try to formulate and solve the IP problems using branch-and-cut. For both problems, we discuss the polyhedral structure, derive strong valid inequalities for their corresponding polytopes, and design routines to generate the violated inequalities as cutting planes. Our computational results show that with these strong cutting planes, a branch-and-cut algorithm leads to high quality solutions in a reasonable amount of time.
+
+We then formulate and solve the CPPMIN using branch-and-price-and-cut to compare with the branch-and-cut method. We successfully combine row generation and column generation to yield strong LP relaxations. We discuss the properties of the column generation problem, minimum node-edge-weighted cluster problem, and solve it as an IP. Our computation shows similar performance to the branch-and-cut algorithm.
+
+\end{document}

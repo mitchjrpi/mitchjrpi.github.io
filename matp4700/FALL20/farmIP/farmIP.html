@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="farmIP.tex"> 
+<meta name="date" content="2020-11-26 16:47:00"> 
+<link rel="stylesheet" type="text/css" href="farmIP.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 34--><p class="noindent" >
+<!--l. 36--><p class="noindent" ><span class="underline"><span 
+class="cmbx-12x-x-120">Mixed Integer Optimization for Case Study:</span></span>
+<!--l. 40--><p class="noindent" ><span class="underline"><span 
+class="cmcsc-10x-x-144">F<span 
+class="small-caps">a</span><span 
+class="small-caps">r</span><span 
+class="small-caps">m</span>C<span 
+class="small-caps">o</span></span></span> </div>
+<div class="center" 
+>
+<!--l. 44--><p class="noindent" >
+<!--l. 46--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmr-12">MATP4700 Math Models of Operations Research</span></a>
+<!--l. 48--><p class="noindent" ><span 
+class="cmr-12">Fall 2020</span>
+</div>
+<!--l. 53--><p class="noindent" ><span 
+class="cmti-10x-x-109">Students may work in groups of up to three people. You may consult your textbooks, your notes, online</span>
+<span 
+class="cmti-10x-x-109">information, the TA, and me. You may not solicit help from other sources.</span>
+<!--l. 59--><p class="indent" >   Due: <span 
+class="cmbx-10x-x-109">Tuesday, December 8, 2020. </span>(30 points) <br 
+class="newline" />
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Binary variables</h3>
+<!--l. 63--><p class="noindent" ><span 
+class="cmcsc-10x-x-109">F<span 
+class="small-caps">a</span><span 
+class="small-caps">r</span><span 
+class="small-caps">m</span>C<span 
+class="small-caps">o</span> </span>wants to only grow a single crop in each field. Further, if they use a particular technology in a
+field then they want to use that technology for the whole of the field.
+<!--l. 69--><p class="indent" >   (They&#8217;ll still grow different crops in different fields, and enforce the balance and availability
+constraints.)
+<!--l. 72--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-20002"></a>Groups of Fields</h3>
+<!--l. 74--><p class="noindent" >The geography of the farm makes it useful to split the fields into two groups:
+                                                                                         
+                                                                                         
+   <div class="verbatim" id="verbatim-1">
+set&#x00A0;FIELDSa&#x00A0;:=&#x00A0;1&#x00A0;2&#x00A0;3&#x00A0;4&#x00A0;5&#x00A0;6&#x00A0;7&#x00A0;8&#x00A0;9&#x00A0;10;
+&#x00A0;<br />set&#x00A0;FIELDSb&#x00A0;:=&#x00A0;11&#x00A0;12&#x00A0;13&#x00A0;14&#x00A0;15&#x00A0;16&#x00A0;17&#x00A0;18&#x00A0;19&#x00A0;20;
+</div>
+<!--l. 80--><p class="nopar" >
+<!--l. 82--><p class="indent" >   The three technologies of <span 
+class="cmtt-10x-x-109">fertilizer</span>, <span 
+class="cmtt-10x-x-109">pollinators</span>, and <span 
+class="cmtt-10x-x-109">labor </span>can each only be used in one of the
+two groups. It is allowed, for example, to use <span 
+class="cmtt-10x-x-109">fertilizer </span>and <span 
+class="cmtt-10x-x-109">pollinators </span>in <span 
+class="cmtt-10x-x-109">FIELDSa</span>, and to use <span 
+class="cmtt-10x-x-109">labor</span>
+in <span 
+class="cmtt-10x-x-109">FIELDSb</span>.
+<!--l. 87--><p class="indent" >   The command in the data file that defines the affected technologies is
+                                                                                         
+                                                                                         
+   <div class="verbatim" id="verbatim-2">
+set&#x00A0;TECHlimited&#x00A0;:=&#x00A0;fertilizer&#x00A0;pollinators&#x00A0;labor;
+</div>
+<!--l. 90--><p class="nopar" >
+<!--l. 92--><p class="indent" >   There are also 3 additional lines in the model file to set up the subgroups:
+                                                                                         
+                                                                                         
+   <div class="verbatim" id="verbatim-3">
+set&#x00A0;TECHlimited;&#x00A0;&#x00A0;#&#x00A0;&#x00A0;techs&#x00A0;limited&#x00A0;to&#x00A0;half&#x00A0;the&#x00A0;fields
+&#x00A0;<br />set&#x00A0;FIELDSa&#x00A0;within&#x00A0;FIELDS;
+&#x00A0;<br />set&#x00A0;FIELDSb&#x00A0;within&#x00A0;FIELDS;
+</div>
+<!--l. 97--><p class="nopar" >
+<!--l. 99--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-30003"></a>Bulk Purchase of Water</h3>
+<!--l. 101--><p class="noindent" >The supplier of the <span 
+class="cmtt-10x-x-109">water </span>technology is offering a discount on bulk purchases. The cost to use <span 
+class="cmtt-10x-x-109">water </span>on
+all the fields in one group is 402 and the total cost to use it on all fields is 800.
+<!--l. 106--><p class="indent" >   It is still allowed to pay for <span 
+class="cmtt-10x-x-109">water </span>on a field-by-field basis if desired.
+<!--l. 108--><p class="indent" >   It&#8217;s possible to combine a bulk purchase on one group with field-by-field purchases on the other group.
+For example, <span 
+class="cmcsc-10x-x-109">F<span 
+class="small-caps">a</span><span 
+class="small-caps">r</span><span 
+class="small-caps">m</span>C<span 
+class="small-caps">o</span> </span>could install <span 
+class="cmtt-10x-x-109">water </span>on all the fields in <span 
+class="cmtt-10x-x-109">FIELDb </span>at a cost of 402 and then also
+install it on just a few of the fields in <span 
+class="cmtt-10x-x-109">FIELDSa</span>, paying for the fields in <span 
+class="cmtt-10x-x-109">FIELDSa </span>on a per-field
+basis.
+<!--l. 114--><p class="indent" >   For this model, <span 
+class="cmcsc-10x-x-109">F<span 
+class="small-caps">a</span><span 
+class="small-caps">r</span><span 
+class="small-caps">m</span>C<span 
+class="small-caps">o</span> </span>will ignore the constraint on the availability of <span 
+class="cmtt-10x-x-109">water</span>. You can accomplish
+this by changing the value of <span 
+class="cmtt-10x-x-109">availability[&#8217;water&#8217;] </span>in the data file to 900. See the AMPL Notes later
+for another way to model this.
+<!--l. 120--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
+ id="x1-40004"></a>Questions</h3>
+<!--l. 122--><p class="noindent" >All the data are contained in a modified data file, <a 
+href="http://www.rpi.edu/~mitchj/matp4700/farmIP/farmIP.dat" >farmIP.dat</a>. Updated parameter definitions can be found
+in a modified model parameter file, <a 
+href="http://www.rpi.edu/~mitchj/matp4700/farmIP/farmIP.mod" >farmIP.mod</a>.
+<!--l. 137--><p class="indent" >   Modify your model in order to model the new features. Solve the modified integer program.
+<!--l. 140--><p class="indent" >   You can use your own model file if you prefer, provided it accurately solves the original linear
+optimization problem. Alternatively you can modify my <a 
+href="http://www.rpi.edu/~mitchj/matp4700/farmIP/farm.mod" >LP model file</a>.
+<!--l. 146--><p class="indent" >   Hint: You can model this as a single integer program. In my version, I needed to introduce 6 binary
+variables and over 20 linear constraints just to handle the bulk purchase opportunity. If you prefer, you
+can construct several different models, one for each way to proceed with the bulk purchase
+option.
+<!--l. 153--><p class="indent" >   What is the optimal value? (Hint: It should be somewhere between 8,000 and 9,000.) What bulk
+purchase(s) are made? In which group of fields is each technology used?
+<!--l. 163--><p class="indent" >   Answers should be submitted to LMS. You need to upload your model file as well as a pdf
+writeup.
+<!--l. 168--><p class="noindent" ><span 
+class="cmbx-12">AMPL notes</span>
+     <ul class="itemize1">
+     <li class="itemize">You can use the keyword binary, for example as:
+                                                                                         
+                                                                                         
+     <div class="verbatim" id="verbatim-4">
+     var&#x00A0;grow{CROPS,FIELDS}&#x00A0;binary;
+</div>
+     <!--l. 175--><p class="nopar" >
+     </li>
+     <li class="itemize">You can work with a particular technology by placing it in quote marks, for example
+     as:
+                                                                                         
+                                                                                         
+     <div class="verbatim" id="verbatim-5">
+     techuse[j,&#8217;water&#8217;]
+</div>
+     <!--l. 181--><p class="nopar" >
+     </li>
+     <li class="itemize">The AMPL symbol for &#8220;not equal&#8221; is <span 
+class="cmmi-10x-x-109">&#x003C;&#x003E;</span>. For example, if you have a constraint called <span 
+class="cmtt-10x-x-109">techavail</span>
+     that applies to all technologies except water then you can set it up as:
+                                                                                         
+                                                                                         
+     <div class="verbatim" id="verbatim-6">
+     subject&#x00A0;to&#x00A0;techavail{k&#x00A0;in&#x00A0;TECHNOLOGIES:&#x00A0;k&#x00A0;&#x003C;&#x003E;&#x00A0;&#8217;water&#8217;}:
+</div>
+     <!--l. 188--><p class="nopar" ></li></ul>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                           </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Tuesday, Friday, 11am&#8211;12noon, webex:                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-10x-x-109">https://rensselaer.webex.com/meet/mitchj</span></a>   </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-7-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;                                                                             </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-8-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <span class="underline"><span 
+class="cmbx-10x-x-109">TA:</span></span> Jun Tan, tanj8 at rpi dot edu.</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-9-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-9-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours Wednesday 7.30pm&#8211;8.30pm on webex:</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-10-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-10-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="https://rensselaer.webex.com/meet/tanj8" class="url" ><span 
+class="cmtt-10x-x-109">https://rensselaer.webex.com/meet/tanj8</span></a>    </td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

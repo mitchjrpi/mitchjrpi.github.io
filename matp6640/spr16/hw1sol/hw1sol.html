@@ -1,0 +1,619 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw1sol.tex"> 
+<meta name="date" content="2016-02-07 12:46:00"> 
+<link rel="stylesheet" type="text/css" href="hw1sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 21--><p class="noindent" >
+<!--l. 23--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12x-x-120">MATP6640/ISYE6770 Linear Programming</span></a><span 
+class="cmr-12x-x-120">, Homework 1.</span><br /><br />
+<span 
+class="cmr-12x-x-120">Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 28--><p class="noindent" >
+ Due: Friday, February 5, 2016.<br />
+10% penalty for each day late.</div>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">Let (<span 
+class="cmmi-12">P</span>) be the standard form LP, min<span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>: <span 
+class="cmmi-12">Ax </span>= <span 
+class="cmmi-12">b, x </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0<span 
+class="cmsy-10x-x-120">}</span>. In class, we saw that if
+      a problem of the form (<span 
+class="cmmi-12">P</span>) has a feasible solution then it has a basic feasible solution.
+      Construct a similar proof to show that if (<span 
+class="cmmi-12">P</span>) has an optimal solution, it has a basic
+      feasible solution that is optimal.
+      <!--l. 58--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 60--><p class="noindent" >Assume <img 
+src="hw1sol0x.png" alt="&#x02C6;x"  class="circ" > is an optimal solution that is not a BFS. Then there exists <span 
+class="cmmi-12">y</span><span 
+class="cmmi-12">&#x2260;</span>0 with <span 
+class="cmmi-12">Ay </span>= 0
+      and <span 
+class="cmmi-12">y</span><sub><span 
+class="cmmi-8">j</span></sub>  = 0 if <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">j</span></sub>  = 0. By construction, there exists scalar <span 
+class="cmmi-12">&#x03B8; &#x003E; </span>0 with both <img 
+src="hw1sol1x.png" alt="&#x02C6;x"  class="circ" > <span 
+class="cmsy-10x-x-120">± </span><span 
+class="cmmi-12">&#x03B8;y</span>
+      feasible. If <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y</span><span 
+class="cmmi-12">&#x2260;</span>0 then either <img 
+src="hw1sol2x.png" alt="&#x02C6;x"  class="circ" > + <span 
+class="cmmi-12">&#x03B8;y </span>or <img 
+src="hw1sol3x.png" alt="&#x02C6;x"  class="circ" > <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03B8;y </span>has objective function value lower than
+      that of&#x00A0;<img 
+src="hw1sol4x.png" alt="&#x02C6;x"  class="circ" >, so <img 
+src="hw1sol5x.png" alt="&#x02C6;x"  class="circ" > is not optimal, a contradiction.
+      <!--l. 68--><p class="noindent" >So we must have <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span>= 0. Without loss of generality, we can assume <span 
+class="cmmi-12">y </span>has at least one
+      negative component. Then there exists a step length <img 
+src="hw1sol6x.png" alt="&#x02C6;&#x03B8;"  class="circ" > such that <img 
+src="hw1sol7x.png" alt="&#x02C6;x"  class="circ" > + <img 
+src="hw1sol8x.png" alt="&#x02C6;&#x03B8;"  class="circ" > <span 
+class="cmmi-12">y </span>is feasible and
+      has strictly smaller support than&#x00A0;<img 
+src="hw1sol9x.png" alt="&#x02C6;x"  class="circ" >. Since <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">y </span>= 0, this point is also optimal.
+      <!--l. 74--><p class="noindent" >We can proceed iteratively in this manner until we obtain an optimal BFS.
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2">Assume it is known that the fractional linear program
+      <center class="math-display" >
+      <img 
+src="hw1sol10x.png" alt="min           cTx+g--
+              dTx+h
+subject to Ax   &#x2265;   b
+      " class="math-display" ></center>
+      <!--l. 84--><p class="nopar" >
+      has an optimal value in the range [<span 
+class="cmmi-12">&#x03B1;,&#x03B2;</span>]. In addition, assume that any <span 
+class="cmmi-12">x </span>satisfying <span 
+class="cmmi-12">Ax </span><span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">b</span>
+      also satisfies <span 
+class="cmmi-12">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>+ <span 
+class="cmmi-12">h &#x003E; </span>0. Develop a procedure that uses linear programming as a subroutine
+                                                                                         
+                                                                                         
+      to find the optimal value of the fractional linear program, to within any desired tolerance.
+      (<span 
+class="cmti-12">Hint: </span>Consider the problem of determining whether the optimal value is above or below a
+      given threshold&#x00A0;<span 
+class="cmmi-12">&#x03C4;</span>.)
+      <!--l. 93--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 95--><p class="noindent" >We have an algorithm:
+           <dl class="description"><dt class="description">
+      <span 
+class="cmbx-12">0. Initialize:</span> </dt><dd 
+class="description">Set <span 
+class="cmmi-12">l </span>= <span 
+class="cmmi-12">&#x03B1;</span>, <span 
+class="cmmi-12">u </span>= <span 
+class="cmmi-12">&#x03B2;</span>, <span 
+class="cmmi-12">z </span>= 0<span 
+class="cmmi-12">.</span>5(<span 
+class="cmmi-12">u </span>+ <span 
+class="cmmi-12">l</span>). Set tolerance <span 
+class="cmmi-12">&#x03F5;</span>
+           </dd><dt class="description">
+      <span 
+class="cmbx-12">1. Determine if </span><span 
+class="cmmi-12">z </span><span 
+class="cmbx-12">is a lower bound on the optimal value:</span> </dt><dd 
+class="description">Let
+           <center class="math-display" >
+           <img 
+src="hw1sol11x.png" alt="v(z) =  min         cTx + g -  z(dTx +  h)
+
+        subject to  Ax   &#x2265;   b.
+           " class="math-display" ></center>
+           <!--l. 106--><p class="nopar" >
+           </dd><dt class="description">
+      <span 
+class="cmbx-12">2. Break into cases</span> </dt><dd 
+class="description">: <br 
+class="newline" />If <span 
+class="cmmi-12">v</span>(<span 
+class="cmmi-12">z</span>) <span 
+class="cmmi-12">&#x003E; </span>0 then update <span 
+class="cmmi-12">l </span><span 
+class="cmsy-10x-x-120">&#x2190; </span><span 
+class="cmmi-12">z</span>, <span 
+class="cmmi-12">z </span><span 
+class="cmsy-10x-x-120">&#x2190; </span>0<span 
+class="cmmi-12">.</span>5(<span 
+class="cmmi-12">u </span>+ <span 
+class="cmmi-12">l</span>), else update <span 
+class="cmmi-12">u </span><span 
+class="cmsy-10x-x-120">&#x2190; </span><span 
+class="cmmi-12">z</span>, <span 
+class="cmmi-12">z </span><span 
+class="cmsy-10x-x-120">&#x2190; </span>0<span 
+class="cmmi-12">.</span>5(<span 
+class="cmmi-12">u </span>+ <span 
+class="cmmi-12">l</span>).
+           </dd><dt class="description">
+      <span 
+class="cmbx-12">3. Loop or terminate</span> </dt><dd 
+class="description">: <br 
+class="newline" />If <span 
+class="cmmi-12">u </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">l &#x003C; &#x03F5;</span>, STOP. Else, loop back to Step 1.</dd></dl>
+      <!--l. 113--><p class="noindent" >This binary search algorithm works, because the fractional LP has optimal value strictly
+      larger than <span 
+class="cmmi-12">z </span>if and only if <img 
+src="hw1sol12x.png" alt="cTx+g-
+dTx+h"  class="frac" align="middle"> <span 
+class="cmmi-12">&#x003E; z </span>for all feasible&#x00A0;<span 
+class="cmmi-12">x</span>, which is equivalent to stating that
+      <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>+ <span 
+class="cmmi-12">g</span> <span 
+class="cmmi-12">&#x003E; z</span>(<span 
+class="cmmi-12">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>+ <span 
+class="cmmi-12">h</span>) for all feasible <span 
+class="cmmi-12">x </span>since <span 
+class="cmmi-12">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>+ <span 
+class="cmmi-12">h &#x003E; </span>0, which is equivalent to stating that
+      <span 
+class="cmmi-12">v</span>(<span 
+class="cmmi-12">z</span>) <span 
+class="cmmi-12">&#x003E; </span>0.
+      <!--l. 121--><p class="noindent" >Note that it is not enough to just try minimizing <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>or maximizing <span 
+class="cmmi-12">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x</span>, as shown by the
+      following example which has optimal solution <span 
+class="cmmi-12">x </span>= (2<span 
+class="cmmi-12">, </span>2):
+      <center class="math-display" >
+      <img 
+src="hw1sol13x.png" alt="min         -x1-
+            5-x2
+subject to   2x1  +    x2  &#x2265;   6
+              x1  +   2x2  &#x2265;   6
+
+               1  &#x2264;    x2  &#x2264;   4
+              x1           &#x2265;   1
+      " class="math-display" ></center>
+                                                                                         
+                                                                                         
+      <!--l. 131--><p class="nopar" >
+      <!--l. 135--><p class="noindent" >A fractional LP may have a finite optimal value, yet not achieve that value, as in the next
+      example in just one variable:
+      <center class="math-display" >
+      <img 
+src="hw1sol14x.png" alt="            x+2
+minx &#x2208;IR     x+1
+subject to  x &#x2265; 0.
+      " class="math-display" ></center>
+      <!--l. 142--><p class="nopar" >
+      <!--l. 146--><p class="noindent" >Note also that we could solve the problem using a change of variables. In particular,
+      define
+      <center class="math-display" >
+      <img 
+src="hw1sol15x.png" alt="    ----1---           ---x----
+t = dT x + h,     z =  dTx + h
+      " class="math-display" ></center>
+      <!--l. 150--><p class="nopar" >
+      and solve the problem
+      <center class="math-display" >
+      <img 
+src="hw1sol16x.png" alt="minz,t      cTz   +  gt
+subject to   Az   -   bt &#x2265;   0
+            dTz   +  ht  =   1
+
+                       t &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 159--><p class="nopar" >
+      The optimal value of this problem is equal to the optimal value of the original problem. If the
+      optimal solution (<span 
+class="cmmi-12">z</span><sup><span 
+class="cmsy-8">*</span></sup><span 
+class="cmmi-12">,t</span><sup><span 
+class="cmsy-8">*</span></sup>) to this new problem has <span 
+class="cmmi-12">t</span><sup><span 
+class="cmsy-8">*</span></sup> <span 
+class="cmmi-12">&#x003E; </span>0 then we can recover an optimal
+      solution to the original problem by setting <span 
+class="cmmi-12">x </span>= <span 
+class="cmmi-12">z</span><sup><span 
+class="cmsy-8">*</span></sup><span 
+class="cmmi-12">&#x2215;t</span><sup><span 
+class="cmsy-8">*</span></sup>. If the optimal solution has <span 
+class="cmmi-12">t</span><sup><span 
+class="cmsy-8">*</span></sup> = 0 then
+      there is no optimal solution to the original problem; the optimal value is only approached
+      asymptotically.
+      <!--l. 169--><p class="noindent" >One final observation about this problem: the objective function is monotonic on straight
+      lines, so consequently if there is an optimal solution then there is a BFS that is
+      optimal.
+                                                                                         
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-7x3">Consider the linear program
+      <center class="math-display" >
+      <img 
+src="hw1sol17x.png" alt="min  x1       -  x3  +   5x4  -    x5
+s.t.  x        -  x   +   3x   -    x   =   1
+       1           3       4        5
+          x2  +  x3  +   4x4  +   2x5  =   4
+                     -    x4  +   3x5  =   0.
+                            x1,...,x5  &#x2265;   0
+      " class="math-display" ></center>
+      <!--l. 184--><p class="nopar" >
+      The point <span 
+class="cmmi-12">x </span>= (1<span 
+class="cmmi-12">, </span>4<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>0)<sup><span 
+class="cmmi-8">T</span> </sup> is a basic feasible solution for this problem. Find all the bases
+      corresponding to this bfs. Use complementary slackness to show that this point is
+      optimal.
+      <!--l. 190--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 192--><p class="noindent" >Any basis consists of three columns. This set of three columns must include the first two
+      columns since <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0 and <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0. The first three columns are linearly dependent so they
+      don&#8217;t give a basis. The other two choices are valid, namely the sets of columns <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmmi-12">, </span>2<span 
+class="cmmi-12">, </span>4<span 
+class="cmsy-10x-x-120">} </span>and
+      <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmmi-12">, </span>2<span 
+class="cmmi-12">, </span>5<span 
+class="cmsy-10x-x-120">}</span>.
+      <!--l. 197--><p class="noindent" >The dual problem is
+      <center class="math-display" >
+      <img 
+src="hw1sol18x.png" alt="max          y1  +   4y2
+subject to    y1                   +   s1  =  1
+                      y2          +   s2  =  0
+           - y1  +    y2          +   s3  =  - 1
+
+            3y1  +   4y2  -   y3  +   s4  =  5
+           - y1  +   2y2  +  3y3  +   s5  =  - 1
+                                      si  &#x2265;  0,   i = 1,...,5
+      " class="math-display" ></center>
+      <!--l. 208--><p class="nopar" >
+      From complementary slackness, we must have <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">2</span></sub> = 0, giving <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> = 1, <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">2</span></sub> = 0. This in turn
+      forces <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">3</span></sub> = 0. The nonnegativity requirements on <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">4</span></sub> and <span 
+class="cmmi-12">s</span><sub><span 
+class="cmr-8">5</span></sub> are satisfied provided
+      <span 
+class="cmsy-10x-x-120">-</span>2 <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">3</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>0. Since there are feasible dual solutions satisfying complementary slackness, the
+      given primal solution is optimal.
+      </li>
+      <li 
+  class="enumerate" id="x1-9x4">Consider the standard form linear programming problem
+      <center class="math-display" >
+                                                                                         
+                                                                                         
+      <img 
+src="hw1sol19x.png" alt="min   cTx
+s.t.   Ax   =   b           (P )
+
+        x  &#x2265;   0.
+      " class="math-display" ></center>
+      <!--l. 231--><p class="nopar" >
+      Here, <span 
+class="cmmi-12">A </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /></span> <span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">m</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup>, the dimensions of <span 
+class="cmmi-12">x</span>, <span 
+class="cmmi-12">c</span>, and <span 
+class="cmmi-12">b </span>are defined appropriately, and 1 <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">m </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">n </span>= 3.
+      The first row of the system <span 
+class="cmmi-12">Ax </span>= <span 
+class="cmmi-12">b </span>is the constraint <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> + 2<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> + 6<span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> = 12. Let <span 
+class="cmmi-12">K </span>be the
+      feasible region of&#x00A0;(<span 
+class="cmmi-12">P</span>).
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-11x1">Construct a linear programming problem of the form (<span 
+class="cmmi-12">P</span>) with dim(<span 
+class="cmmi-12">K</span>) <span 
+class="cmmi-12">&#x003E; n </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">m</span>.
+           </li>
+           <li 
+  class="enumerate" id="x1-13x2">Construct a feasible linear programming problem of the form (<span 
+class="cmmi-12">P</span>) with dim(<span 
+class="cmmi-12">K</span>) <span 
+class="cmmi-12">&#x003C;</span>
+           <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">m</span>, <span 
+class="cmmi-12">b &#x003E; </span>0, and rank(<span 
+class="cmmi-12">A</span>) = <span 
+class="cmmi-12">m</span>.
+           </li>
+           <li 
+  class="enumerate" id="x1-15x3">In  part&#x00A0;(b),  the  linear  program  you  defined  has  a  degenerate  basic  feasible
+           solution. What are the bases associated with that bfs?</li></ol>
+      <!--l. 251--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-17x1"><span 
+class="cmmi-12">n </span>= 3, <span 
+class="cmmi-12">m </span>= 2, dim(<span 
+class="cmmi-12">K</span>) = 2 <span 
+class="cmmi-12">&#x003E; n </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">m</span>:
+           <center class="math-display" >
+           <img 
+src="hw1sol20x.png" alt="min          x1
+subject to   x1  +   2x2  +    6x3  =   12
+            2x1  +   4x2  +   12x3  =   24
+                                 x  &#x2265;   0.
+           " class="math-display" ></center>
+           <!--l. 262--><p class="nopar" >
+           </li>
+           <li 
+  class="enumerate" id="x1-19x2"><span 
+class="cmmi-12">n </span>= 3, <span 
+class="cmmi-12">m </span>= 2, dim(<span 
+class="cmmi-12">K</span>) = 0 <span 
+class="cmmi-12">&#x003C; n </span><span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">m</span>, rank(<span 
+class="cmmi-12">A</span>) = 2:
+           <center class="math-display" >
+           <img 
+src="hw1sol21x.png" alt="min         x1
+subject to  x1  +  2x2  +    6x3  =   12
+
+                            12x3  =   24
+                               x  &#x2265;   0.
+           " class="math-display" ></center>
+                                                                                         
+                                                                                         
+           <!--l. 271--><p class="nopar" >
+           </li>
+           <li 
+  class="enumerate" id="x1-21x3">The only feasible solution is <span 
+class="cmmi-12">x </span>= (0<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>2). Any basis has two basic variables. The bases
+           consist of the sets of columns <span 
+class="cmsy-10x-x-120">{</span>1<span 
+class="cmmi-12">, </span>3<span 
+class="cmsy-10x-x-120">} </span>and <span 
+class="cmsy-10x-x-120">{</span>2<span 
+class="cmmi-12">, </span>3<span 
+class="cmsy-10x-x-120">}</span>.</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-23x5">Show that a convex cone has at most one extreme point, namely the origin. Give an example
+      of a convex cone with no extreme points.
+      <!--l. 357--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 359--><p class="noindent" >Assume <span class="bar-css"><span 
+class="cmmi-12">x</span></span><span 
+class="cmmi-12">&#x2260;</span>0 is an extreme point of the cone, which we designate as&#x00A0;<span 
+class="cmmi-12">K</span>. Then
+      <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">1</span></sup> := 0<span 
+class="cmmi-12">.</span>5<span class="bar-css"><span 
+class="cmmi-12">x</span></span> and <span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">2</span></sup> := 1<span 
+class="cmmi-12">.</span>5<span class="bar-css"><span 
+class="cmmi-12">x</span></span> are two distinct points in&#x00A0;<span 
+class="cmmi-12">K</span>, since it is a cone. We have
+      <span class="bar-css"><span 
+class="cmmi-12">x</span></span> = 0<span 
+class="cmmi-12">.</span>5<span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">1</span></sup> + 0<span 
+class="cmmi-12">.</span>5<span 
+class="cmmi-12">x</span><sup><span 
+class="cmr-8">2</span></sup> so <span class="bar-css"><span 
+class="cmmi-12">x</span></span> is not an extreme point. So the only possible extreme point is the
+      origin.
+      <!--l. 364--><p class="noindent" >Any subspace is a convex cone without an extreme point. So for example we can take&#x00A0;<span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup> for
+      any finite positive&#x00A0;<span 
+class="cmmi-12">n</span>.
+      </li>
+      <li 
+  class="enumerate" id="x1-25x6">Let <span 
+class="cmmi-12">A </span>be a <span 
+class="cmmi-12">p </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>matrix and <span 
+class="cmmi-12">B </span>be a <span 
+class="cmmi-12">q </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>matrix. Show that exactly one of the following
+      systems has a solution:
+           <div class="quote">
+           <!--l. 390--><p class="noindent" ><span 
+class="cmbx-12">System 1: </span><span 
+class="cmmi-12">Ax &#x003C; </span>0, <span 
+class="cmmi-12">Bx </span>= 0 for some <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup>. <br 
+class="newline" /><span 
+class="cmbx-12">System 2: </span><span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">u </span>+ <span 
+class="cmmi-12">B</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">v </span>= 0 for some <span 
+class="cmmi-12">u </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">p</span></sup>, <span 
+class="cmmi-12">v </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">q</span></sup>, with <span 
+class="cmmi-12">u </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0 and <span 
+class="cmmi-12">u</span><span 
+class="cmmi-12">&#x2260;</span>0.</div>
+      <!--l. 395--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 397--><p class="noindent" >Consider the primal-dual pair of linear programs
+      <center class="math-display" >
+      <img 
+src="hw1sol22x.png" alt="               T
+min         - eTx        T                             max          0
+subject to   A  u  +   B  v  =   0      (P )           subject to   Ax  &#x2264;   - e      (D )
+                u            &#x2265;   0                                Bx   =    0,
+      " class="math-display" ></center>
+      <!--l. 405--><p class="nopar" >
+      where <span 
+class="cmmi-12">e </span>denotes the vector of ones.
+      <!--l. 408--><p class="noindent" >Note that any feasible solution to (<span 
+class="cmmi-12">D</span>) can be scaled to give a feasible solution to System 1,
+      and any feasible solution to System&#x00A0;1 is feasible in&#x00A0;(<span 
+class="cmmi-12">D</span>).
+                                                                                         
+                                                                                         
+      <!--l. 411--><p class="noindent" ><span 
+class="cmbx-12">Assume System 2 has a solution: </span>Then (<span 
+class="cmmi-12">P</span>) is feasible with objective value <span 
+class="cmmi-12">&#x003C; </span>0. By
+      duality, (<span 
+class="cmmi-12">D</span>) is infeasible. Hence System 2 is inconsistent. Thus, <span 
+class="cmti-12">at most one of the systems</span>
+      <span 
+class="cmti-12">has a solution</span>.
+      <!--l. 416--><p class="noindent" ><span 
+class="cmbx-12">Assume System 2 does not have a solution: </span>Then any feasible solution to (<span 
+class="cmmi-12">P</span>)
+      has <span 
+class="cmmi-12">u </span>= 0, so (<span 
+class="cmmi-12">P</span>) has optimal value&#x00A0;0. By duality, (<span 
+class="cmmi-12">D</span>) is feasible with optimal
+      value&#x00A0;0. Hence, System 1 is consistent. Thus, <span 
+class="cmti-12">at least one of the systems has a</span>
+      <span 
+class="cmti-12">solution</span>.
+      <!--l. 422--><p class="noindent" >So exactly one of the two systems is consistent.
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                      </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Tuesday 2&#8211;4pm; Wednesday 12noon&#8211;2pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

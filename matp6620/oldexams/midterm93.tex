@@ -1,0 +1,94 @@
+\documentstyle[12pt]{article}
+
+\oddsidemargin -.5in
+\textwidth 7.5in
+\textheight 9in
+\topmargin -30pt
+
+\begin{document}
+
+%\setcounter{page}{0}
+
+
+\begin{center}
+  67.612  Combinatorial Optimization and Integer Programming, Spring 93.
+\end{center}
+
+\begin{center}
+  Midterm Exam, Monday, March 29, 1993.
+\end{center}
+
+Please do all four problems. Show all work. No books or calculators allowed.
+You may use any result from class, the homeworks, or the texts.
+You may use one sheet of handwritten notes.
+The exam lasts two hours.
+
+
+\begin{enumerate}
+   \item (20 points)
+      Find the shortest path from vertex 1 to vertex 6 in the following
+      graph. Edge lengths are indicated on the edges.
+   \item (20 points)
+      For each of the following graphs, find the maximum cardinality matching
+      and give a short proof that it realy does contain the largest possible
+      number of edges.
+   \item (40 points)
+      \begin{enumerate}
+         \item (35 points; each part is worth five points.) \label{particular}
+            Consider the binary knapsack problem:
+            \begin{displaymath}
+              \begin{array}{lrcrcrcrcrcl}
+     \max        & 10x_1 & + & 8x_2 & + & 5x_3 & + & 2x_4 & + & x_5 \\
+     \mbox{st }  &  2x_1 & + & 4x_2 & + & 5x_3 & + & 3x_4 & + & 4x_5 & \leq & 10
+                                 \qquad \qquad (KP)  \\
+                 &&&&&&&&& x_i && \mbox{binary.}
+              \end{array}
+            \end{displaymath}
+            Let $P=\{x \in {\Re}^5_+:2x_1+4x_2+5x_3+3x_4+4x_5\leq 10,
+                    0 \leq x_i \leq 1\}$ and~$S=P\cap{\cal Z}^5$.
+            \begin{enumerate}
+              \item
+                 Solve the LP-relaxation
+                 $\max\{10x_1+8x_2+5x_3+2x_4+x_5 : x \in P \}$.
+              \item
+                 What is the dimension of $S$?
+              \item
+                 Prove that $x_1+x_2+x_3 \leq 2$ is a valid inequality for~$S$.
+              \item
+                 Prove that $x_1+x_2+x_3 \leq 2$ is a facet of conv($S$),
+                 the convex hull of~$S$.
+              \item
+                 What is the Chvatal-Gomory rank of the inequality
+                 $x_1+x_2+x_3 \leq 2$?
+              \item
+                 Prove that $x_3+x_4+x_5 \leq 2$ is a valid inequality for~$S$.
+              \item
+                 Show that the inequality $x_3+x_4+x_5 \leq 2$ can be lifted
+                 to give a stronger valid inequality for~$S$.
+            \end{enumerate}
+         \item (5 points)
+            Consider the general binary knapsack problem:
+            \begin{displaymath}
+              \begin{array}{lrcl}
+                \max          & \sum_{i=1}^n c_ix_i \\
+                \mbox{s.t. }  & \sum_{i=1}^n a_ix_i & \leq & b \\
+                              &            x_i  && \mbox{binary.}
+              \end{array}
+            \end{displaymath}
+            Generalize the results of part~\ref{particular} to give a class of
+            valid inequalities for this problem.
+      \end{enumerate}
+   \item (20 points) The {\em max clique} feasibility problem can be described
+     as follows:
+     \begin{quote}
+       An {\em instance} consists of a graph $G=(V,E)$ and an integer $k$.
+       The answer is {\em YES} if the graph contains a clique with at
+       least $k$ vertices; otherwise, the answer is~{\em NO}.
+     \end{quote}
+     Show that the {\em max clique} problem is $NP$-complete.
+     (Hint: You may want to look at the {\em complement} of $G=(V,E)$,
+     that is, the graph $G=(V,E')$ where $e$ is in $E'$ if and only if
+     it is not in~$E$.)
+\end{enumerate}
+
+\end{document}

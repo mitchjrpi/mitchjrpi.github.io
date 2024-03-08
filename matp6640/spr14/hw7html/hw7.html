@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw7.tex"> 
+<meta name="date" content="2014-04-28 10:35:00"> 
+<link rel="stylesheet" type="text/css" href="hw7.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 13--><p class="noindent" >
+<!--l. 15--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12x-x-120">MATP6640/DSES6770 Linear Programming</span></a><span 
+class="cmr-12x-x-120">, Homework 7.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 19--><p class="noindent" >
+ Due: Tuesday, May 6, 2014.<br />
+10% penalty for each day late.</div>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1"><a 
+ id="x1-21"></a> Let
+      <center class="math-display" >
+      <img 
+src="hw70x.png" alt="      &#x230A; 0  a  b &#x230B;
+C  :=  | a  0  c | .
+      &#x2308;         &#x2309;
+        b  c  0
+      " class="math-display" ></center>
+      <!--l. 201--><p class="nopar" >
+      A primal and dual pair of semidefinite programs are
+      <center class="math-display" >
+      <img 
+src="hw71x.png" alt="min   trace(CX  )                       max   &#x2211;3   y
+                                               i=1 i
+s.t.  Xii  =  1   i = 1,2,3    (P )    s.t.   diag(y)  +   S  =   C     (D )
+       X   &#x227D;  0                                           S  &#x227D;   0
+      " class="math-display" ></center>
+      <!--l. 210--><p class="nopar" >
+      where diag(<span 
+class="cmmi-12">y</span>) is the diagonal matrix with diagonal entries equal to the components of&#x00A0;<span 
+class="cmmi-12">y</span>.
+      Let
+      <center class="math-display" >
+      <img 
+src="hw72x.png" alt="      &#x230A; ab &#x230B;         &#x230A;               &#x230B;                    a2c2+a2b2- b2c2
+        -c               1  - &#x03B2;  - &#x03B3;               &#x03B2;  =   ----2a2bc----
+&#x02C6;y = - || ac || ,  X&#x02C6; = |&#x2308; - &#x03B2;    1   - &#x03B4; |&#x2309; , with     &#x03B3;  =   a2b2+b2c2-a2c2
+      &#x2308;  bbc &#x2309;                                               22 2ab222c 2 2
+         a-            - &#x03B3;   - &#x03B4;   1               &#x03B4;  =   ac-+b2abcc-2a-b-
+      " class="math-display" ></center>
+      <!--l. 223--><p class="nopar" >
+      Assume 2<span 
+class="cmmi-12">c </span><span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">a </span><span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">b </span><span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">c &#x003E; </span>0.
+                                                                                         
+                                                                                         
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-5x1">Let <span 
+class="cmmi-12">&#x015C;</span> = <span 
+class="cmmi-12">C </span><span 
+class="cmsy-10x-x-120">-</span> diag(<span 
+class="cmmi-12">&#x0177;</span>). Show <span 
+class="cmmi-12">&#x015C;</span> <span 
+class="cmsy-10x-x-120">&#x227D; </span>0 by finding a vector <span 
+class="cmmi-12">v </span>so that <span 
+class="cmmi-12">&#x015C;</span> = <span 
+class="cmmi-12">vv</span><sup><span 
+class="cmmi-8">T</span> </sup>.
+           </li>
+           <li 
+  class="enumerate" id="x1-7x2">Show <img 
+src="hw73x.png" alt="&#x02C6;X"  class="circ" ><span 
+class="cmmi-12">v </span>= 0. What can you conclude about the determinant of&#x00A0;<img 
+src="hw74x.png" alt="X&#x02C6;"  class="circ" >?</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-9x2">Returning to the semidefinite program in Question&#x00A0;<a 
+href="#x1-21">1<!--tex4ht:ref: q1 --></a>:
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-11x1">Show that each of <span 
+class="cmmi-12">&#x03B2;</span>, <span 
+class="cmmi-12">&#x03B3;</span>, and <span 
+class="cmmi-12">&#x03B4; </span>are no larger than 1 in absolute value. What can
+           you conclude about the determinants of the principal 2 <span 
+class="cmsy-10x-x-120">&#x00D7; </span>2 submatrices of&#x00A0;<img 
+src="hw75x.png" alt="&#x02C6;
+X"  class="circ" >?
+           </li>
+           <li 
+  class="enumerate" id="x1-13x2">Show that <span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">&#x0177;</span> = trace(<span 
+class="cmmi-12">C</span><img 
+src="hw76x.png" alt="&#x02C6;
+X"  class="circ" >). What do you conclude?</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-15x3">Show that the constraint <span 
+class="cmmi-12">x</span><sup><span 
+class="cmmi-8">m</span></sup> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">n</span></sup>, <span 
+class="cmmi-12">x,y </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0, is equivalent to a collection of <span 
+class="cmmi-12">O</span>(<span 
+class="cmmi-12">m</span>) second order
+      cone constraints, where <span 
+class="cmmi-12">m </span><span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">n </span>are positive integers. (Hint: consider the equivalent inequality
+      <span 
+class="cmmi-12">x</span><sup><span 
+class="cmmi-8">p</span></sup> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">y</span><sup><span 
+class="cmmi-8">n</span></sup><span 
+class="cmmi-12">x</span><sup><span 
+class="cmmi-8">p</span><span 
+class="cmsy-8">-</span><span 
+class="cmmi-8">m</span></sup>1<sup><span 
+class="cmmi-8">m</span><span 
+class="cmsy-8">-</span><span 
+class="cmmi-8">n</span></sup>, where <span 
+class="cmmi-12">p </span><span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">m </span>is a power of two. Use rotated second order cone
+      constraints.)
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                         </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                                    </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Tuesday: 2&#8211;4pm, Wednesday: 11am&#8211;1pm, Friday: 3-4pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

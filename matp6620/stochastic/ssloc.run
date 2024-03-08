@@ -1,0 +1,26 @@
+#
+# a stochastic server location model
+#
+reset;
+
+model ssloc.mod;
+
+data ssloc.dat;
+
+problem stocprogdirect: x,y,z,cost,serverUB,serverLB,shortfall,shortfallclosed,meetdemand;
+
+problem expected: x,yaverage,zaverage,costaverage,serverUB,serverLB,shortfallaverage,
+  shortfallclosedaverage,meetaveragedemand;
+
+
+solve expected;
+
+display x, zaverage;
+
+display _total_solve_elapsed_time;
+
+solve stocprogdirect;
+
+display x, z;
+
+display _total_solve_elapsed_time;

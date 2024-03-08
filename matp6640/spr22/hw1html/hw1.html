@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw1.tex"> 
+<meta name="date" content="2022-01-09 20:33:00"> 
+<link rel="stylesheet" type="text/css" href="hw1.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 30--><p class="noindent" >
+<!--l. 32--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12">MATP6640/ISYE6770 Linear and Conic Optimization</span></a><span 
+class="cmr-12">, Homework 1.</span>
+</div>
+                                                                                                       <div class="flushright" 
+>
+<!--l. 37--><p class="noindent" >
+ Due: 11.59pm on Friday, January 21, 2022 on LMS.<br />
+10% penalty for each day late.</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1">Let <span 
+class="cmmi-10x-x-109">a,b </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">L</span>, where <span 
+class="cmmi-10x-x-109">L </span>is an affine space in <span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup>. Let <span 
+class="cmmi-10x-x-109">L</span><sup><span 
+class="cmmi-8">a</span></sup> := <span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup> : <span 
+class="cmmi-10x-x-109">x </span>= <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> <span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">a</span> for some <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> <span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">L</span><span 
+class="cmsy-10x-x-109">}</span>. Define <span 
+class="cmmi-10x-x-109">L</span><sup><span 
+class="cmmi-8">b</span></sup>
+     similarly. Let <span 
+class="cmmi-10x-x-109">x </span>be a point in <span 
+class="cmmi-10x-x-109">L</span><sup><span 
+class="cmmi-8">a</span></sup>. Show that <span 
+class="cmmi-10x-x-109">x </span>is also in <span 
+class="cmmi-10x-x-109">L</span><sup><span 
+class="cmmi-8">b</span></sup>. How are <span 
+class="cmmi-10x-x-109">L</span><sup><span 
+class="cmmi-8">a</span></sup> and <span 
+class="cmmi-10x-x-109">L</span><sup><span 
+class="cmmi-8">b</span></sup> related?
+     </li>
+     <li 
+  class="enumerate" id="x1-5x2">Let <span 
+class="cmmi-10x-x-109">Q </span>be a convex polyhedron in <span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup> and let <span 
+class="cmmi-10x-x-109">F </span>be a nonempty face of&#x00A0;<span 
+class="cmmi-10x-x-109">Q</span>. Let <span 
+class="cmmi-10x-x-109">x </span>be a point on the face&#x00A0;<span 
+class="cmmi-10x-x-109">F</span>.
+     Show that <span 
+class="cmmi-10x-x-109">x </span>is an extreme point of <span 
+class="cmmi-10x-x-109">Q </span>if and only if it is an extreme point of&#x00A0;<span 
+class="cmmi-10x-x-109">F</span>.
+     </li>
+     <li 
+  class="enumerate" id="x1-7x3">Consider the optimization problem
+     <table 
+class="equation"><tr><td><a 
+ id="x1-8r1"></a>
+     <center class="math-display" >
+     <img 
+src="hw10x.png" alt="            T        T
+minx,w     c x  +   d w
+subject to  Ax  +   Hw    &#x2264;  b
+            |xi| =     wi     &#x2200;i
+     " class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+     <!--l. 114--><p class="nopar" >
+     where <span 
+class="cmmi-10x-x-109">x,w </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup>, <span 
+class="cmmi-10x-x-109">b </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">m</span></sup>, and all other vectors and matrices are dimensioned appropriately. Note that the
+     components of <span 
+class="cmmi-10x-x-109">x </span>are not restricted in sign.
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-10x1">Assume all entries in <span 
+class="cmmi-10x-x-109">d </span>and <span 
+class="cmmi-10x-x-109">H </span>are nonnegative. Show that (<a 
+href="#x1-8r1">1<!--tex4ht:ref: eq.abs --></a>) can be formulated as an equivalent linear
+          program, in the sense that the LP and (<a 
+href="#x1-8r1">1<!--tex4ht:ref: eq.abs --></a>) have the same optimal value if they are feasible, and each is
+          infeasible if the other is infeasible.
+          </li>
+          <li 
+  class="enumerate" id="x1-12x2">Provide a counterexample with <span 
+class="cmmi-10x-x-109">n </span>= 1 where your LP and (<a 
+href="#x1-8r1">1<!--tex4ht:ref: eq.abs --></a>) are not equivalent when <span 
+class="cmmi-10x-x-109">H </span>contains
+          negative entries.</li></ol>
+                                                                                                       
+                                                                                                       
+     </li>
+     <li 
+  class="enumerate" id="x1-14x4">What is the dual of the following linear programming problem?
+     <center class="math-display" >
+     <img 
+src="hw11x.png" alt="min  3x1  -   5x2   +   8x3
+s.t.   x             -    x   =     6
+       1                   3
+              2x2   -    x3  &#x2265;   - 5
+      x1  +    x2            &#x2264;     6
+               x2  &#x2264; 0,  x3  &#x2265;    0.
+     " class="math-display" ></center>
+     <!--l. 168--><p class="nopar" >
+     Use complementary slackness to show that <span 
+class="cmmi-10x-x-109">x </span>= (6<span 
+class="cmmi-10x-x-109">,</span>0<span 
+class="cmmi-10x-x-109">,</span>0) is optimal for this problem. Find two different dual optimal
+     solutions.
+     </li>
+     <li 
+  class="enumerate" id="x1-16x5">Let <span 
+class="cmmi-10x-x-109">A </span>be a <span 
+class="cmmi-10x-x-109">p </span><span 
+class="cmsy-10x-x-109">&#x00D7; </span><span 
+class="cmmi-10x-x-109">n </span>matrix and <span 
+class="cmmi-10x-x-109">B </span>be a <span 
+class="cmmi-10x-x-109">q </span><span 
+class="cmsy-10x-x-109">&#x00D7; </span><span 
+class="cmmi-10x-x-109">n </span>matrix. Show that exactly one of the following systems has a
+     solution:
+          <div class="quote">
+          <!--l. 260--><p class="noindent" ><span 
+class="cmbx-10x-x-109">System 1: </span><span 
+class="cmmi-10x-x-109">Ax &#x003C; </span>0, <span 
+class="cmmi-10x-x-109">Bx </span>= 0 for some <span 
+class="cmmi-10x-x-109">x </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup>. <br 
+class="newline" /><span 
+class="cmbx-10x-x-109">System 2: </span><span 
+class="cmmi-10x-x-109">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">u </span>+ <span 
+class="cmmi-10x-x-109">B</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">v </span>= 0 for some <span 
+class="cmmi-10x-x-109">u </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">p</span></sup>, <span 
+class="cmmi-10x-x-109">v </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">q</span></sup>, with <span 
+class="cmmi-10x-x-109">u </span><span 
+class="cmsy-10x-x-109">&#x2265; </span>0 and <span 
+class="cmmi-10x-x-109">u</span><span 
+class="cmmi-10x-x-109">&#x2260;</span>0.</div>
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                                                                  </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                                                                                            </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours: Tuesday, Friday 12noon-2pm on webex <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-10x-x-109">https://rensselaer.webex.com/meet/mitchj</span></a></td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                                       
+
+

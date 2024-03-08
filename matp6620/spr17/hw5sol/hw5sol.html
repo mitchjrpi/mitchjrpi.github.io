@@ -1,0 +1,651 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw5sol.tex"> 
+<meta name="date" content="2017-04-17 07:10:00"> 
+<link rel="stylesheet" type="text/css" href="hw5sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 27--><p class="noindent" >
+<!--l. 30--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6620" ><span 
+class="cmr-12x-x-120">MATP6620 / ISYE6760</span><br />
+<span 
+class="cmr-12x-x-120">Combinatorial Optimization and Integer Programming</span></a><br />
+<span 
+class="cmr-12x-x-120">Homework 5.</span><br />
+<span 
+class="cmr-12x-x-120">Solutions</span>
+</div>
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">Nemhauser and Wolsey, page 381, question 3. <a 
+ id="x1-21"></a>
+      <!--l. 46--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 48--><p class="noindent" >The problem is
+      <center class="math-display" >
+      <img 
+src="hw5sol0x.png" alt="max         16x1  +   19x2  +   23x3  +   28x4
+
+subject to   2x1  +    3x2  +    4x3  +    5x4  &#x2264;   74
+                                             x  &#x2208;   B
+      " class="math-display" ></center>
+      <!--l. 55--><p class="nopar" >
+      In the tree below, the optimal value of a node is denoted by&#x00A0;<span 
+class="cmmi-12">z</span><sup><span 
+class="cmsy-8">*</span></sup> and the optimal solution to
+      the LP relaxation is denoted&#x00A0;<span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup>.
+                                                                                         
+                                                                                         
+      <!--l. 72--><p class="noindent" >                                                                                                             
+<img src=hw5q1bnb.png>
+      <!--l. 74--><p class="noindent" >The process found four integer solutions. The optimal solution is the best of these, namely
+      <span 
+class="cmmi-12">x</span><sup><span 
+class="cmsy-8">*</span></sup> = (1<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>0<span 
+class="cmmi-12">, </span>1) with value&#x00A0;44.
+      </li>
+      <li 
+  class="enumerate" id="x1-5x2">Given a complete graph <span 
+class="cmmi-12">G </span>= (<span 
+class="cmmi-12">V,E</span>) with edge weights <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">e</span></sub> and <span 
+class="cmmi-12">n </span>= <span 
+class="cmmi-12">kp </span>nodes, we wish to
+      partition the vertices into <span 
+class="cmmi-12">k </span>sets each containing exactly <span 
+class="cmmi-12">p </span>vertices so as to minimize the sum
+      of the edge weights of the edges with endpoints in the same set. Let <span 
+class="cmmi-12">e </span>denote the <span 
+class="cmmi-12">n</span>-vector of
+      ones and let <span 
+class="cmmi-12">w</span><sub><span 
+class="cmmi-8">ii</span></sub> = 0 for <span 
+class="cmmi-12">i </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span>. Show that the following semidefinite program
+      gives a lower bound on the optimal value of this problem, where <span 
+class="cmmi-12">X </span>is an <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n</span>
+      matrix:
+      <center class="math-display" >
+      <img 
+src="hw5sol15x.png" alt="               &#x2211;n   &#x2211;n
+min        0.5   i=1   j=1 wijXij
+subject to                   Xii  =   1   i = 1, ...,n
+                             Xe   =   pe
+
+                              X       symmetric   and positive semide finite
+      " class="math-display" ></center>
+      <!--l. 115--><p class="nopar" >
+      <!--l. 117--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 120--><p class="noindent" >Given a feasible solution to the partitioning problem, define the <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">k </span>matrix <span class="bar-css"><span 
+class="cmmi-12">Y </span></span>
+      with
+      <center class="math-display" >
+      <img 
+src="hw5sol16x.png" alt="      {
+¯Y  =    1  if vertex i is in set j
+ ij     0  otherwise
+      " class="math-display" ></center>
+      <!--l. 129--><p class="nopar" >
+      and set <span class="bar-css"><span 
+class="cmmi-12">X</span></span> = <span class="bar-css"><span 
+class="cmmi-12">Y </span></span><span class="bar-css"><span 
+class="cmmi-12">Y </span></span><sup><span 
+class="cmmi-8">T</span> </sup>, so <span class="bar-css"><span 
+class="cmmi-12">X</span></span> <span 
+class="cmsy-10x-x-120">&#x227D; </span>0. Note that
+      <center class="math-display" >
+      <img 
+src="hw5sol17x.png" alt="      &#x2211;k    2
+¯Xii =     ¯Yij = 1
+      j=1
+      " class="math-display" ></center>
+      <!--l. 134--><p class="nopar" >
+      since each vertex is in exactly one set. Further,
+      <center class="math-display" >
+      <img 
+src="hw5sol18x.png" alt="           n         n   k           k     (  n    )       k
+( ¯ )     &#x2211;   ¯     &#x2211;   &#x2211;   ¯ ¯     &#x2211;   ¯    &#x2211;   ¯        &#x2211;   ¯
+ Xe  i =      Xil =        YijYlj =     Yij     Ylj   = p    Yij = p
+          l=1       l=1 j=1         j=1      l=1           j=1
+      " class="math-display" ></center>
+      <!--l. 143--><p class="nopar" >
+      Thus, <span class="bar-css"><span 
+class="cmmi-12">X</span></span> is feasible in the given SDP.
+      <!--l. 146--><p class="noindent" >Now we examine the objective function value. We have
+      <center class="math-display" >
+      <img 
+src="hw5sol19x.png" alt="                                  (         )
+   &#x2211;n  &#x2211;n              &#x2211;n  &#x2211;n       &#x2211;k
+0.5        wij ¯Xij = 0.5      wij      Y¯il¯Yjl
+   i=1 j=1             i=1 j=1      l=1
+      " class="math-display" ></center>
+      <!--l. 150--><p class="nopar" >
+      Note that
+      <center class="math-display" >
+      <img 
+src="hw5sol20x.png" alt="  k          {
+&#x2211;   ¯  ¯       1  if i and j are in the same set
+    YilYjl =    0  otherwise
+ l=1
+      " class="math-display" ></center>
+      <!--l. 160--><p class="nopar" >
+      and so the objective function value is equal to the value of the partition. Hence the SDP is a
+      relaxation of the partition problem.
+      </li>
+      <li 
+  class="enumerate" id="x1-7x3">Let
+      <center class="math-display" >
+      <img 
+src="hw5sol21x.png" alt="      &#x230A;               &#x230B;
+        x11  x12  x13
+X  =  &#x2308; x21  x22  x23 &#x2309; .
+        x31  x32  x33
+      " class="math-display" ></center>
+      <!--l. 192--><p class="nopar" >
+      Assume <span 
+class="cmmi-12">X </span>is symmetric. Assume the 2 <span 
+class="cmsy-10x-x-120">&#x00D7; </span>2 submatrices
+      <center class="math-display" >
+      <img 
+src="hw5sol22x.png" alt="[          ]          [          ]
+  x11  x12              x22  x23
+  x21  x22     and      x32  x33
+      " class="math-display" ></center>
+      <!--l. 199--><p class="nopar" >
+      are positive semidefinite. Show that <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">13</span></sub> can be chosen so that <span 
+class="cmmi-12">X </span>is positive semidefinite.
+      (This result can be generalized to allow an approach to solving semidefinite programs that
+      exploits sparsity. The approach involves looking at cliques in chordal graphs.)
+      <!--l. 206--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 208--><p class="noindent" >We need to be able to choose <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">13</span></sub> so that the following (sub)determinants are
+      nonnegative:
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="hw5sol23x.png" alt="|| x11  x13||
+||         || =  x11x33 - x213 &#x2265; 0
+  x13  x33
+      " class="math-display" ></center>
+      <!--l. 213--><p class="nopar" >
+      and
+      <center class="math-display" >
+      <img 
+src="hw5sol24x.png" alt="|| x11  x12 x13 ||
+||              ||                                2        2        2
+| x21  x22 x23 | =  x11x22x33 + 2x12x23x13 - x11x23 - x33x12 - x22x13 &#x2265; 0.
+| x31  x32 x33 |
+      " class="math-display" ></center>
+      <!--l. 220--><p class="nopar" >
+      We break into cases based on the value of <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">22</span></sub>, which must be nonnegative:
+           <ul class="itemize1">
+           <li class="itemize">If <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">22</span></sub> = 0: Then we must have <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">12</span></sub> = <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">23</span></sub> = 0 for the subdeterminants of the given
+           two 2 <span 
+class="cmsy-10x-x-120">&#x00D7; </span>2 matrices to be nonnegative. We can then choose <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">13</span></sub>  = 0 and we get
+           <span 
+class="cmmi-12">X </span><span 
+class="cmsy-10x-x-120">&#x227D; </span>0.
+           </li>
+           <li class="itemize">If <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">22</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0: We choose <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">13</span></sub> to maximize det(<span 
+class="cmmi-12">X</span>). It is maximized when
+           <center class="math-display" >
+           <img 
+src="hw5sol25x.png" alt="      x  x
+x13 = -12-23.
+       x22
+           " class="math-display" ></center>
+           <!--l. 230--><p class="nopar" >
+           With this choice, we get
+           <center class="math-display" >
+           <img 
+src="hw5sol26x.png" alt="|               |
+|| x11  x12  x13 ||                   2  2                      2 2
+| x21  x22  x23 |  =  x11x22x33 + 2x12x23 - x11x223 - x33x212 - x12x23
+|| x    x    x   ||                   x22                       x22
+   31   32   33                     2     x2    2
+                   =  x33 (x11x22 - x12) + x2232 (x 12 - x11x22)
+                   =  -1-(x  x   - x2 ) (x  x  - x2 )
+                      x22   11  22    12    22 33    23
+                  &#x2265;   0
+           " class="math-display" ></center>
+                                                                                         
+                                                                                         
+           <!--l. 244--><p class="nopar" >
+           since the given 2 <span 
+class="cmsy-10x-x-120">&#x00D7; </span>2 submatrices are positive semidefinite.
+           <!--l. 247--><p class="noindent" >With this choice, we also get
+           <center class="math-display" >
+           <img 
+src="hw5sol27x.png" alt="|| x   x   ||               x2x2
+||  11   13||  =   x11x33 - -12x223
+  x13 x33         1         22       2  2
+             =   x222 (x11x22x22x33 - x12x23)
+             &#x2265;   0
+           " class="math-display" ></center>
+           <!--l. 255--><p class="nopar" >
+           since <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">11</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">22</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">12</span></sub><sup><span 
+class="cmr-8">2</span></sup> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0 and <span 
+class="cmmi-12">x</span><sub>
+<span 
+class="cmr-8">22</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">33</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">23</span></sub><sup><span 
+class="cmr-8">2</span></sup> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0.
+           </li></ul>
+      <!--l. 259--><p class="noindent" >Thus, we can always choose <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">13</span></sub> to ensure <span 
+class="cmmi-12">X </span><span 
+class="cmsy-10x-x-120">&#x227D; </span>0.
+      </li>
+      <li 
+  class="enumerate" id="x1-9x4">Nemhauser and Wolsey, page 531, question 30(ii). (All the nodes in the graph are
+      transshipment nodes.)
+      <!--l. 372--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 374--><p class="noindent" >Solution to initial LP relaxation of the fixed charge network flow problem (4.1) on page 496
+      of the text is
+      <center class="math-display" >
+      <img 
+src="hw5sol28x.png" alt="                              2-               1-
+y15 = 3,x15 = 1,y54 = 2,x54 = 3,y53 = 1,x53 =  3.
+      " class="math-display" ></center>
+      <!--l. 379--><p class="nopar" >
+      The generalized flow cover inequalities are given in equation (4.5) on page 499 of the text.
+      Possible inequalities include:
+           <ul class="itemize1">
+           <li class="itemize">For node 3: Have <span 
+class="cmmi-12">b </span>=  <span 
+class="cmsy-10x-x-120">-</span>1. Take <span 
+class="cmmi-12">C</span><sup><span 
+class="cmr-8">+</span></sup>  =  <span 
+class="cmsy-10x-x-120">&#x2205;</span>, <span 
+class="cmmi-12">C</span><sup><span 
+class="cmsy-8">-</span></sup> =  <span 
+class="cmsy-10x-x-120">&#x2205;</span>, <span 
+class="cmmi-12">L </span>=  <span 
+class="cmsy-10x-x-120">{</span>(5<span 
+class="cmmi-12">, </span>3)<span 
+class="cmsy-10x-x-120">}</span>, <span 
+class="cmmi-12">N</span><sup><span 
+class="cmsy-8">-</span></sup> <span 
+class="cmsy-10x-x-120">\ </span><span 
+class="cmmi-12">L </span>=
+           <span 
+class="cmsy-10x-x-120">{</span>(2<span 
+class="cmmi-12">, </span>3)<span 
+class="cmmi-12">, </span>(4<span 
+class="cmmi-12">, </span>3)<span 
+class="cmsy-10x-x-120">}</span>.
+           <!--l. 386--><p class="noindent" >We then get <span 
+class="cmmi-12">&#x03BB; </span>= <span 
+class="cmex-10x-x-120">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">e</span><span 
+class="cmsy-8">&#x2208;</span><span 
+class="cmmi-8">C</span><sup><span 
+class="cmr-6">+</span></sup></sub><span 
+class="cmmi-12">u</span><sub><span 
+class="cmmi-8">e</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">b </span>= 1 <span 
+class="cmmi-12">&#x003E; </span>0. The constraint is
+           <center class="math-display" >
+           <img 
+src="hw5sol29x.png" alt="0 &#x2264;  - 1 + x53 + y23 + y43,
+           " class="math-display" ></center>
+                                                                                         
+                                                                                         
+           <!--l. 390--><p class="nopar" >
+           which is violated by the solution to the LP relaxation.
+           </li>
+           <li class="itemize">For node 3: Have <span 
+class="cmmi-12">b </span>= <span 
+class="cmsy-10x-x-120">-</span>1. Take <span 
+class="cmmi-12">C</span><sup><span 
+class="cmr-8">+</span></sup> = <span 
+class="cmsy-10x-x-120">&#x2205;</span>, <span 
+class="cmmi-12">C</span><sup><span 
+class="cmsy-8">-</span></sup> = <span 
+class="cmsy-10x-x-120">&#x2205;</span>, <span 
+class="cmmi-12">L </span>= <span 
+class="cmsy-10x-x-120">{</span>(5<span 
+class="cmmi-12">, </span>3)<span 
+class="cmmi-12">, </span>(2<span 
+class="cmmi-12">, </span>3)<span 
+class="cmmi-12">, </span>(4<span 
+class="cmmi-12">, </span>3)<span 
+class="cmsy-10x-x-120">}</span>,
+           <span 
+class="cmmi-12">N</span><sup><span 
+class="cmsy-8">-</span></sup><span 
+class="cmsy-10x-x-120">\ </span><span 
+class="cmmi-12">L </span>= <span 
+class="cmsy-10x-x-120">&#x2205;</span>.
+           <!--l. 395--><p class="noindent" >We then get <span 
+class="cmmi-12">&#x03BB; </span>= <span 
+class="cmex-10x-x-120">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">e</span><span 
+class="cmsy-8">&#x2208;</span><span 
+class="cmmi-8">C</span><sup><span 
+class="cmr-6">+</span></sup></sub><span 
+class="cmmi-12">u</span><sub><span 
+class="cmmi-8">e</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">b </span>= 1 <span 
+class="cmmi-12">&#x003E; </span>0. The constraint is
+           <center class="math-display" >
+           <img 
+src="hw5sol30x.png" alt="0 &#x2264;  - 1 + x53 + x23 + x43,
+           " class="math-display" ></center>
+           <!--l. 399--><p class="nopar" >
+           which is violated by the solution to the LP relaxation.
+           </li>
+           <li class="itemize">For node 4: Have <span 
+class="cmmi-12">b </span>= <span 
+class="cmsy-10x-x-120">-</span>2. Take <span 
+class="cmmi-12">C</span><sup><span 
+class="cmr-8">+</span></sup> = <span 
+class="cmsy-10x-x-120">&#x2205;</span>, <span 
+class="cmmi-12">C</span><sup><span 
+class="cmsy-8">-</span></sup> = <span 
+class="cmsy-10x-x-120">&#x2205;</span>, <span 
+class="cmmi-12">L </span>= <span 
+class="cmsy-10x-x-120">{</span>(5<span 
+class="cmmi-12">, </span>4)<span 
+class="cmsy-10x-x-120">}</span>, <span 
+class="cmmi-12">N</span><sup><span 
+class="cmsy-8">-</span></sup><span 
+class="cmsy-10x-x-120">\</span><span 
+class="cmmi-12">L </span>= <span 
+class="cmsy-10x-x-120">{</span>(2<span 
+class="cmmi-12">, </span>4)<span 
+class="cmmi-12">, </span>(3<span 
+class="cmmi-12">, </span>4)<span 
+class="cmsy-10x-x-120">}</span>.
+           <!--l. 404--><p class="noindent" >We then get <span 
+class="cmmi-12">&#x03BB; </span>= <span 
+class="cmex-10x-x-120">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">e</span><span 
+class="cmsy-8">&#x2208;</span><span 
+class="cmmi-8">C</span><sup><span 
+class="cmr-6">+</span></sup></sub><span 
+class="cmmi-12">u</span><sub><span 
+class="cmmi-8">e</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">b </span>= 2 <span 
+class="cmmi-12">&#x003E; </span>0. The constraint is
+           <center class="math-display" >
+           <img 
+src="hw5sol31x.png" alt="0 &#x2264; -  2 + 2x  + y   + y  ,
+             54   24    34
+           " class="math-display" ></center>
+           <!--l. 408--><p class="nopar" >
+           which is violated by the solution to the LP relaxation.
+           </li>
+           <li class="itemize">For node 4: Have <span 
+class="cmmi-12">b </span>= <span 
+class="cmsy-10x-x-120">-</span>2. Take <span 
+class="cmmi-12">C</span><sup><span 
+class="cmr-8">+</span></sup> = <span 
+class="cmsy-10x-x-120">&#x2205;</span>, <span 
+class="cmmi-12">C</span><sup><span 
+class="cmsy-8">-</span></sup> = <span 
+class="cmsy-10x-x-120">&#x2205;</span>, <span 
+class="cmmi-12">L </span>= <span 
+class="cmsy-10x-x-120">{</span>(5<span 
+class="cmmi-12">, </span>4)<span 
+class="cmmi-12">, </span>(2<span 
+class="cmmi-12">, </span>4)<span 
+class="cmmi-12">, </span>(2<span 
+class="cmmi-12">, </span>4)<span 
+class="cmsy-10x-x-120">}</span>,
+           <span 
+class="cmmi-12">N</span><sup><span 
+class="cmsy-8">-</span></sup><span 
+class="cmsy-10x-x-120">\ </span><span 
+class="cmmi-12">L </span>= <span 
+class="cmsy-10x-x-120">&#x2205;</span>.
+           <!--l. 413--><p class="noindent" >We then get <span 
+class="cmmi-12">&#x03BB; </span>= <span 
+class="cmex-10x-x-120">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">e</span><span 
+class="cmsy-8">&#x2208;</span><span 
+class="cmmi-8">C</span><sup><span 
+class="cmr-6">+</span></sup></sub><span 
+class="cmmi-12">u</span><sub><span 
+class="cmmi-8">e</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">b </span>= 2 <span 
+class="cmmi-12">&#x003E; </span>0. The constraint is
+           <center class="math-display" >
+           <img 
+src="hw5sol32x.png" alt="0 &#x2264;  - 2 + 2x   + 2x   + 2x  ,
+              54     24     34
+           " class="math-display" ></center>
+           <!--l. 417--><p class="nopar" >
+           which is violated by the solution to the LP relaxation.</li></ul>
+      <!--l. 421--><p class="noindent" >Similar inequalities can also be constructed using the formulation in the notes, where <span 
+class="cmmi-12">b </span>now
+      represents net <span 
+class="cmti-12">demand</span>. In this notation, the incoming arcs are <span 
+class="cmmi-12">C</span><sub><span 
+class="cmr-8">1</span></sub> and the outgoing arcs are
+      <span 
+class="cmmi-12">C</span><sub><span 
+class="cmr-8">2</span></sub>.
+      <!--l. 425--><p class="noindent" >For example: At node 3, we have <span 
+class="cmmi-12">b </span>= 1. We take <span 
+class="cmmi-12">C</span><sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmsy-10x-x-120">{</span>(5<span 
+class="cmmi-12">, </span>3)<span 
+class="cmsy-10x-x-120">}</span>, <span 
+class="cmmi-12">C</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmsy-10x-x-120">&#x2205;</span>,
+      <span 
+class="cmmi-12">L</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmsy-10x-x-120">{</span>(3<span 
+class="cmmi-12">, </span>4)<span 
+class="cmmi-12">, </span>(3<span 
+class="cmmi-12">, </span>5)<span 
+class="cmmi-12">, </span>(3<span 
+class="cmmi-12">, </span>2)<span 
+class="cmsy-10x-x-120">}</span>. We have <span 
+class="cmmi-12">&#x03BB; </span>= <span 
+class="cmmi-12">u</span><sub><span 
+class="cmr-8">53</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">b </span>= 2, so <span 
+class="cmmi-12">u</span><sub><span 
+class="cmr-8">53</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03BB; </span>= 1. The constraint
+      is
+                                                                                         
+                                                                                         
+      <center class="math-display" >
+      <img 
+src="hw5sol33x.png" alt="y53 + (1 - x53) &#x2264; 1 + y34 + y35 + y32,
+      " class="math-display" ></center>
+      <!--l. 432--><p class="nopar" >
+      which is violated by the solution to the LP relaxation.
+      <!--l. 435--><p class="noindent" >At node 4, we have <span 
+class="cmmi-12">b </span>= 2. We take <span 
+class="cmmi-12">C</span><sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmsy-10x-x-120">{</span>(5<span 
+class="cmmi-12">, </span>4)<span 
+class="cmsy-10x-x-120">}</span>, <span 
+class="cmmi-12">C</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmsy-10x-x-120">&#x2205;</span>, <span 
+class="cmmi-12">L</span><sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmsy-10x-x-120">{</span>(4<span 
+class="cmmi-12">, </span>3)<span 
+class="cmmi-12">, </span>(4<span 
+class="cmmi-12">, </span>5)<span 
+class="cmmi-12">, </span>(4<span 
+class="cmmi-12">, </span>2)<span 
+class="cmsy-10x-x-120">}</span>. We have
+      <span 
+class="cmmi-12">&#x03BB; </span>= <span 
+class="cmmi-12">u</span><sub><span 
+class="cmr-8">54</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">b </span>= 1, so <span 
+class="cmmi-12">u</span><sub><span 
+class="cmr-8">54</span></sub> <span 
+class="cmsy-10x-x-120">- </span><span 
+class="cmmi-12">&#x03BB; </span>= 2. The constraint is
+      <center class="math-display" >
+      <img 
+src="hw5sol34x.png" alt="y  + 2(1 - x  ) &#x2264; 2 + y  + y   + y  ,
+ 54         54         43    45    42
+      " class="math-display" ></center>
+      <!--l. 441--><p class="nopar" >
+      which is violated by the solution to the LP relaxation.
+      </li>
+      <li 
+  class="enumerate" id="x1-11x5">Let <span 
+class="cmmi-12">X </span>be a symmetric positive semidefinite real 2 <span 
+class="cmsy-10x-x-120">&#x00D7; </span>2 matrix with <span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">12</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0. Show that <span 
+class="cmmi-12">X </span>can
+      be factored as <span 
+class="cmmi-12">WW</span><sup><span 
+class="cmmi-8">T</span> </sup> where <span 
+class="cmmi-12">W</span><sub>
+<span 
+class="cmmi-8">ij</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>0 for each entry.
+      <!--l. 474--><p class="noindent" ><span 
+class="cmbx-12">Solution:</span>
+      <!--l. 476--><p class="noindent" >If <span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">12</span></sub> = 0 then we can take
+      <center class="math-display" >
+      <img 
+src="hw5sol35x.png" alt="      [ &#x221A; ----        ]
+W  =      X11   &#x221A;-0--   .
+          0      X22
+      " class="math-display" ></center>
+      <!--l. 479--><p class="nopar" >
+      <!--l. 481--><p class="noindent" >If <span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">12</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0 then both <span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">11</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0 and <span 
+class="cmmi-12">X</span><sub><span 
+class="cmr-8">22</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0. We can take <span 
+class="cmmi-12">W </span>to be the Cholesky factor
+      of&#x00A0;<span 
+class="cmmi-12">X</span>:
+      <center class="math-display" >
+      <img 
+src="hw5sol36x.png" alt="      [ &#x221A; ----               ]
+          X11  &#x2218;  ---0-------
+W  =     X&#x221A;12--    X11X22-X212
+          X11        X11
+      " class="math-display" ></center>
+      <!--l. 489--><p class="nopar" >
+      From the assumptions, all the entries of <span 
+class="cmmi-12">W </span>are well-defined and nonnegative.
+                                                                                         
+                                                                                         
+      </li>
+      <li 
+  class="enumerate" id="x1-13x6">Give a progress report on your project. Your report should be at least a couple of
+      paragraphs long. It doesn&#8217;t need to repeat anything from your initial report from
+      March&#x00A0;3.
+      </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                          </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         x6915.                                                                                     </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;         Office hours: Tuesday 11 April 2-3pm, Wednesday 12 April 11am&#8211;1pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="final09s.tex"> 
+<meta name="date" content="2011-12-01 12:01:00"> 
+<link rel="stylesheet" type="text/css" href="final09s.css"> 
+</head><body 
+>
+<!--l. 23--><p class="noindent" >&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;                                                                                             Name:
+<div class="center" 
+>
+<!--l. 26--><p class="noindent" >
+<!--l. 27--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6600" >MATP6600/DSES6780 Nonlinear Programming</a>,<br />
+Final Exam, Friday, December 11, 2009.</div>
+<!--l. 31--><p class="indent" >   Please do all three problems. You must show all work to obtain full credit. Results from class or
+the text may be used if properly stated. No books or calculators allowed. The exam lasts one hour
+and 50 minutes.
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">(40 points; each part is worth 10 points.) Consider the unconstrained problem
+      <center class="math-display" >
+      <img 
+src="final09s0x.png" alt="min f (x) := 1(x - 2)2 + x4,             (P )
+             2
+      " class="math-display" ></center>
+      <!--l. 42--><p class="nopar" >
+      where <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-32.png" alt="&#x2208;" class="10-120x-x-32" /> </span><span 
+class="cmmi-12">IR</span>. We are going to investigate a bundle method for solving this problem. Let
+      <img 
+src="final09s1x.png" alt="¯x"  class="bar" > = 0 be the current point. A bundle subproblem for (<span 
+class="cmmi-12">P</span>) is
+      <center class="math-display" >
+      <img 
+src="final09s2x.png" alt="                     1       2
+minx,z        z  +   2(x - ¯x)          (BQP  )
+subject to  - z  -   2x  &#x2264;   - 2
+      " class="math-display" ></center>
+      <!--l. 51--><p class="nopar" >
+      where <span 
+class="cmmi-12">z </span>and <span 
+class="cmmi-12">x </span>are variable scalars.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-5x1">Show that the optimal solution to the bundle subproblem (<span 
+class="cmmi-12">BQP</span>) is to take <span 
+class="cmmi-12">x </span>= 2.
+           </li>
+           <li 
+  class="enumerate" id="x1-7x2">Show  that  the  objective  function  value  for  <span 
+class="cmmi-12">x  </span>=  2  predicted  by  the  bundle
+           subproblem is noticeably less than the actual value&#x00A0;<span 
+class="cmmi-12">f</span>(2).
+           </li>
+           <li 
+  class="enumerate" id="x1-9x3"><a 
+ id="x1-83"></a> What is the valid subgradient inequality generated at the point <span 
+class="cmmi-12">x </span>= 2? Show
+           that the inequality is violated by the solution to (<span 
+class="cmmi-12">BQP</span>).
+                                                                                         
+
+                                                                                         
+           </li>
+           <li 
+  class="enumerate" id="x1-11x4">Add the constraint found in part&#x00A0;<a 
+href="#x1-83">1c<!--tex4ht:ref: part.find constraint --></a> to (<span 
+class="cmmi-12">BQP</span>) and find the new optimal solution,
+           assuming a null step was taken so we still have <img 
+src="final09s3x.png" alt="x¯"  class="bar" > = 0.</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-13x2">(40 points.) Consider the quadratic programming problem
+      <center class="math-display" >
+      <img 
+src="final09s4x.png" alt="      T     1 T
+min  c  x + 2x  Qx          (QP  )
+s.t.  Ax  &#x2265;  b
+      " class="math-display" ></center>
+      <!--l. 75--><p class="nopar" >
+      where <span 
+class="cmmi-12">x </span>and <span 
+class="cmmi-12">c </span>are <span 
+class="cmmi-12">n</span>-vectors, <span 
+class="cmmi-12">Q </span>is symmetric and positive semidefinite, <span 
+class="cmmi-12">b </span>is an <span 
+class="cmmi-12">m</span>-vector, and
+      <span 
+class="cmmi-12">A </span>is <span 
+class="cmmi-12">m </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n</span>.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-15x1">(20 points) Show that the Lagrangian dual of (<span 
+class="cmmi-12">QP</span>) can be written
+           <center class="math-display" >
+           <img 
+src="final09s5x.png" alt="maxx,u      bTu -  12xTQx
+subject to  c + Qx - AT u  =   0         (QD  )
+                        u  &#x2265;   0
+           " class="math-display" ></center>
+           <!--l. 95--><p class="nopar" >
+           </li>
+           <li 
+  class="enumerate" id="x1-17x2">(10 points) Let <img 
+src="final09s6x.png" alt="¯x"  class="bar" >, <img 
+src="final09s7x.png" alt="¯u"  class="bar" > be a feasible solution to (<span 
+class="cmmi-12">QD</span>). Assume there exists an <span 
+class="cmmi-12">n</span>-vector <span 
+class="cmmi-12">d</span><sub><span 
+class="cmmi-8">x</span></sub>
+           with <span 
+class="cmmi-12">d</span><sub><span 
+class="cmmi-8">x</span></sub><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">Qd</span><sub>
+<span 
+class="cmmi-8">x</span></sub> = 0. Show that <span 
+class="cmmi-12">Qd</span><sub><span 
+class="cmmi-8">x</span></sub> = 0. Assume there also exists a nonnegative <span 
+class="cmmi-12">m</span>-vector
+           <span 
+class="cmmi-12">d</span><sub><span 
+class="cmmi-8">u</span></sub> with <span 
+class="cmmi-12">b</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">d</span><sub>
+<span 
+class="cmmi-8">u</span></sub> <span 
+class="cmmi-12">&#x003E; </span>0 and <span 
+class="cmmi-12">A</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">d</span><sub>
+<span 
+class="cmmi-8">u</span></sub> = 0. What does this imply about (<span 
+class="cmmi-12">QD</span>) and about
+           (<span 
+class="cmmi-12">QP</span>)?
+           </li>
+           <li 
+  class="enumerate" id="x1-19x3">(10 points) Assume there exists a vector <span 
+class="cmmi-12">d </span>satisfying <span 
+class="cmmi-12">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">d &#x003C; </span>0, <span 
+class="cmmi-12">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">Qd </span>= 0, and <span 
+class="cmmi-12">Ad </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>0.
+           What does this imply about (<span 
+class="cmmi-12">QD</span>)? Assume further that there exists an <img 
+src="final09s8x.png" alt="&#x02C6;x"  class="circ" >
+           satisfying <span 
+class="cmmi-12">A</span><img 
+src="final09s9x.png" alt="x&#x02C6;"  class="circ" > <span 
+class="cmmi-12">&#x003E; b</span>. What does your result about (<span 
+class="cmmi-12">QD</span>) then imply about
+           (<span 
+class="cmmi-12">QP</span>)?</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-21x3">(20 points; each part is worth 10 points.) The function <span 
+class="cmmi-12">f </span>: <span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup> <span 
+class="cmsy-10x-x-120">&#x2192; </span><span 
+class="cmmi-12">IR </span>is convex and
+                                                                                         
+
+                                                                                         
+      the function <span 
+class="cmmi-12">&#x03D5; </span>: <span 
+class="cmmi-12">IR </span><span 
+class="cmsy-10x-x-120">&#x2192; </span><span 
+class="cmmi-12">IR </span>is convex and monotonically strictly increasing. Define
+      <span 
+class="cmmi-12">g</span>(<span 
+class="cmmi-12">x</span>) := <span 
+class="cmmi-12">&#x03D5;</span>(<span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>)), so <span 
+class="cmmi-12">g </span>: <span 
+class="cmmi-12">IR</span><sup><span 
+class="cmmi-8">n</span></sup> <span 
+class="cmsy-10x-x-120">&#x2192; </span><span 
+class="cmmi-12">IR</span>. The problems of minimizing <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) and of minimizing <span 
+class="cmmi-12">g</span>(<span 
+class="cmmi-12">x</span>)
+      are equivalent, with the same optimal points. Assume <span 
+class="cmmi-12">f</span>, <span 
+class="cmmi-12">g</span>, and <span 
+class="cmmi-12">&#x03D5; </span>are all smooth
+      functions.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-23x1">How do the steepest descent directions for <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) and <span 
+class="cmmi-12">g</span>(<span 
+class="cmmi-12">x</span>) compare?
+           </li>
+           <li 
+  class="enumerate" id="x1-25x2">How do the Newton directions for <span 
+class="cmmi-12">f</span>(<span 
+class="cmmi-12">x</span>) and <span 
+class="cmmi-12">g</span>(<span 
+class="cmmi-12">x</span>) compare? (Hint: If <span 
+class="cmmi-12">M </span>is an invertible
+           <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>matrix and <span 
+class="cmmi-12">a </span>is an <span 
+class="cmmi-12">n</span>-vector, then
+           <center class="math-display" >
+           <img 
+src="final09s10x.png" alt="(M  +  aaT)-1 =  M - 1 - -----1------M - 1aaT M  -1
+                        1 + aTM - 1a
+           " class="math-display" ></center>
+           <!--l. 127--><p class="nopar" >
+           provided 1 + <span 
+class="cmmi-12">a</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">M</span><sup><span 
+class="cmsy-8">-</span><span 
+class="cmr-8">1</span></sup><span 
+class="cmmi-12">a</span><span 
+class="cmmi-12">&#x2260;</span>0.)</li></ol>
+      </li></ol>
+    
+</body></html> 
+
+                                                                                         
+
+

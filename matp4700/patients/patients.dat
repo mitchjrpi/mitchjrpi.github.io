@@ -1,0 +1,36 @@
+set ZONE1 := apple banana grape;
+set ZONE2 := melon orange pear;
+
+
+param:    demand  avail_IC  used_IC  extra_nurses  costs      pop  :=
+  apple      75      40        10      80           2000     1000
+  banana     20       7			0	   20			1500	  250
+  grape     130		100		   10	  150		    1800	 2000
+  melon     150		110		   25	  160           1700     2500
+  orange     10       0         5	   30		    2200      200
+  pear		 60		 40        12      70           2000	  600
+  ;
+  
+param nurse_cost :
+         apple  banana  grape  melon  orange  pear  :=
+ apple	   0      120     150    0      0      0
+ banana   110      0      140    0      0      0
+ grape    160     100      0     0      0      0
+ melon     0       0       0     0      60     60
+ orange    0       0       0     70     0      0
+ pear      0       0       0     70     0      0
+ ;
+
+param transp_costs :
+        apple  banana  grape  melon  orange  pear  :=
+ apple	   0      100      120    200     200     200
+ banana   100      0       120    200     200     200
+ grape    130     110       0     200     200     200
+ melon    200     200      200     0      190      90
+ orange   200     200      200    160      0       80
+ pear     200     200      200    110     130      0
+ ;
+ 
+param nurse_per_pat := 3;  # minimum number of workers per patient
+
+param minratio := 0.8; # each city must end up with at least minratio of the average capacity

@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw1sol.tex"> 
+<meta name="date" content="2020-01-15 12:03:00"> 
+<link rel="stylesheet" type="text/css" href="hw1sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 30--><p class="noindent" >
+<!--l. 32--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12">MATP6640/ISYE6770 Linear and Conic Optimization</span></a><span 
+class="cmr-12">, Homework 1.</span><br />
+<span 
+class="cmr-12">Solutions</span>
+</div>
+                                                                                                       <div class="flushright" 
+>
+<!--l. 38--><p class="noindent" >
+ Due: Thursday, January 23, 2020.<br />
+10% penalty for each day late.</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1">Assume it is known that the fractional linear program
+     <center class="math-display" >
+     <img 
+src="hw1sol0x.png" alt="min          cT-x+g--
+             dT x+h
+subject to  Ax  &#x2265;   b
+     " class="math-display" ></center>
+     <!--l. 75--><p class="nopar" >
+     has an optimal value in the range [<span 
+class="cmmi-10x-x-109">&#x03B1;,&#x03B2;</span>]. In addition, assume that any <span 
+class="cmmi-10x-x-109">x </span>satisfying <span 
+class="cmmi-10x-x-109">Ax </span><span 
+class="cmsy-10x-x-109">&#x2265; </span><span 
+class="cmmi-10x-x-109">b </span>also satisfies <span 
+class="cmmi-10x-x-109">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">x </span>+ <span 
+class="cmmi-10x-x-109">h &#x003E; </span>0.
+     Develop a procedure that uses linear programming as a subroutine to find the optimal value of the fractional linear
+     program, to within any desired tolerance. (<span 
+class="cmti-10x-x-109">Hint: </span>Consider the problem of determining whether the optimal value is
+     above or below a given threshold&#x00A0;<span 
+class="cmmi-10x-x-109">&#x03C4;</span>.)
+     <!--l. 84--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution:</span>
+     <!--l. 87--><p class="noindent" >We have an algorithm:
+          <dl class="description"><dt class="description">
+     <span 
+class="cmbx-10x-x-109">0. Initialize:</span> </dt><dd 
+class="description">Set <span 
+class="cmmi-10x-x-109">l </span>= <span 
+class="cmmi-10x-x-109">&#x03B1;</span>, <span 
+class="cmmi-10x-x-109">u </span>= <span 
+class="cmmi-10x-x-109">&#x03B2;</span>, <span 
+class="cmmi-10x-x-109">z </span>= 0<span 
+class="cmmi-10x-x-109">.</span>5(<span 
+class="cmmi-10x-x-109">u </span>+ <span 
+class="cmmi-10x-x-109">l</span>). Set tolerance <span 
+class="cmmi-10x-x-109">&#x03F5;</span>
+          </dd><dt class="description">
+     <span 
+class="cmbx-10x-x-109">1. Determine if </span><span 
+class="cmmi-10x-x-109">z </span><span 
+class="cmbx-10x-x-109">is a lower bound on the optimal value:</span> </dt><dd 
+class="description">Let
+          <center class="math-display" >
+          <img 
+src="hw1sol1x.png" alt="                   T           T
+v(z) = min        c x + g - z(d x + h)
+       subject to  Ax   &#x2265;  b.
+          " class="math-display" ></center>
+          <!--l. 98--><p class="nopar" >
+          </dd><dt class="description">
+     <span 
+class="cmbx-10x-x-109">2. Break into cases</span> </dt><dd 
+class="description">: <br 
+class="newline" />If <span 
+class="cmmi-10x-x-109">v</span>(<span 
+class="cmmi-10x-x-109">z</span>) <span 
+class="cmmi-10x-x-109">&#x003E; </span>0 then update <span 
+class="cmmi-10x-x-109">l </span><span 
+class="cmsy-10x-x-109">&#x2190; </span><span 
+class="cmmi-10x-x-109">z</span>, <span 
+class="cmmi-10x-x-109">z </span><span 
+class="cmsy-10x-x-109">&#x2190; </span>0<span 
+class="cmmi-10x-x-109">.</span>5(<span 
+class="cmmi-10x-x-109">u </span>+ <span 
+class="cmmi-10x-x-109">l</span>), else update <span 
+class="cmmi-10x-x-109">u </span><span 
+class="cmsy-10x-x-109">&#x2190; </span><span 
+class="cmmi-10x-x-109">z</span>, <span 
+class="cmmi-10x-x-109">z </span><span 
+class="cmsy-10x-x-109">&#x2190; </span>0<span 
+class="cmmi-10x-x-109">.</span>5(<span 
+class="cmmi-10x-x-109">u </span>+ <span 
+class="cmmi-10x-x-109">l</span>).
+                                                                                                       
+                                                                                                       
+          </dd><dt class="description">
+     <span 
+class="cmbx-10x-x-109">3. Loop or terminate</span> </dt><dd 
+class="description">: <br 
+class="newline" />If <span 
+class="cmmi-10x-x-109">u </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">l &#x003C; &#x03F5;</span>, STOP. Else, loop back to Step 1.</dd></dl>
+     <!--l. 105--><p class="noindent" >This binary search algorithm works, because the fractional LP has optimal value strictly larger than <span 
+class="cmmi-10x-x-109">z </span>if and only if
+     <img 
+src="hw1sol2x.png" alt="cTTx+g-
+d x+h"  class="frac" align="middle"> <span 
+class="cmmi-10x-x-109">&#x003E; z </span>for all feasible&#x00A0;<span 
+class="cmmi-10x-x-109">x</span>, which is equivalent to stating that <span 
+class="cmmi-10x-x-109">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">x </span>+ <span 
+class="cmmi-10x-x-109">g</span> <span 
+class="cmmi-10x-x-109">&#x003E; z</span>(<span 
+class="cmmi-10x-x-109">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">x </span>+ <span 
+class="cmmi-10x-x-109">h</span>) for all feasible <span 
+class="cmmi-10x-x-109">x </span>since
+     <span 
+class="cmmi-10x-x-109">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">x </span>+ <span 
+class="cmmi-10x-x-109">h &#x003E; </span>0, which is equivalent to stating that <span 
+class="cmmi-10x-x-109">v</span>(<span 
+class="cmmi-10x-x-109">z</span>) <span 
+class="cmmi-10x-x-109">&#x003E; </span>0.
+     <!--l. 113--><p class="noindent" >Note that it is not enough to just try minimizing <span 
+class="cmmi-10x-x-109">c</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">x </span>or maximizing <span 
+class="cmmi-10x-x-109">d</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-10x-x-109">x</span>, as shown by the following example which
+     has optimal solution <span 
+class="cmmi-10x-x-109">x </span>= (2<span 
+class="cmmi-10x-x-109">,</span>2):
+     <center class="math-display" >
+     <img 
+src="hw1sol3x.png" alt="min        -x1-
+           5-x2
+subject to   2x1  +   x2  &#x2265;   6
+             x1  +  2x2  &#x2265;   6
+              1  &#x2264;   x2  &#x2264;   4
+             x1          &#x2265;   1
+     " class="math-display" ></center>
+     <!--l. 123--><p class="nopar" >
+     <!--l. 127--><p class="noindent" >A fractional LP may have a finite optimal value, yet not achieve that value, as in the next example in just one
+     variable:
+     <center class="math-display" >
+     <img 
+src="hw1sol4x.png" alt="            x+2
+minx &#x2208;&#x211D;     x+1
+subject to  x &#x2265; 0.
+     " class="math-display" ></center>
+     <!--l. 134--><p class="nopar" >
+     <!--l. 138--><p class="noindent" >Note also that we could solve the problem using a change of variables. In particular, define
+     <center class="math-display" >
+     <img 
+src="hw1sol5x.png" alt="       1               x
+t = dT-x+-h,    z = dTx-+-h-
+     " class="math-display" ></center>
+     <!--l. 142--><p class="nopar" >
+     and solve the problem
+     <center class="math-display" >
+     <img 
+src="hw1sol6x.png" alt="min        cTz  +   gt
+   z,t
+subject to  AzT   -   bt &#x2265;   0
+           d z  +  ht  =   1
+                     t &#x2265;   0
+     " class="math-display" ></center>
+     <!--l. 151--><p class="nopar" >
+     The optimal value of this problem is equal to the optimal value of the original problem. If the optimal solution
+     (<span 
+class="cmmi-10x-x-109">z</span><sup><span 
+class="cmsy-8">*</span></sup><span 
+class="cmmi-10x-x-109">,t</span><sup><span 
+class="cmsy-8">*</span></sup>) to this new problem has <span 
+class="cmmi-10x-x-109">t</span><sup><span 
+class="cmsy-8">*</span></sup> <span 
+class="cmmi-10x-x-109">&#x003E; </span>0 then we can recover an optimal solution to the original problem by setting
+     <span 
+class="cmmi-10x-x-109">x </span>= <span 
+class="cmmi-10x-x-109">z</span><sup><span 
+class="cmsy-8">*</span></sup><span 
+class="cmmi-10x-x-109">&#x2215;t</span><sup><span 
+class="cmsy-8">*</span></sup>. If the optimal solution has <span 
+class="cmmi-10x-x-109">t</span><sup><span 
+class="cmsy-8">*</span></sup> = 0 then there is no optimal solution to the original problem; the optimal
+     value is only approached asymptotically.
+     <!--l. 161--><p class="noindent" >One final observation about this problem: the objective function is monotonic on straight lines, so consequently if
+     there is an optimal solution then there is a BFS that is optimal.
+     </li>
+     <li 
+  class="enumerate" id="x1-5x2">Consider the linear program
+     <center class="math-display" >
+     <img 
+src="hw1sol7x.png" alt="min  x1      -   x3  +   5x4  -   x5
+s.t.  x1      -   x3  +   3x4  -   x5  =   1
+         x2  +   x3  +   4x4  +  2x5  =   4
+                     -    x4  +  3x5  =   0.
+                           x1,...,x5  &#x2265;   0
+     " class="math-display" ></center>
+     <!--l. 177--><p class="nopar" >
+     The point <span 
+class="cmmi-10x-x-109">x </span>= (1<span 
+class="cmmi-10x-x-109">,</span>4<span 
+class="cmmi-10x-x-109">,</span>0<span 
+class="cmmi-10x-x-109">,</span>0<span 
+class="cmmi-10x-x-109">,</span>0)<sup><span 
+class="cmmi-8">T</span> </sup> is a basic feasible solution for this problem. Find all the bases corresponding to this
+     bfs.
+     <!--l. 183--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution:</span>
+     <!--l. 185--><p class="noindent" >Any basis consists of three columns. This set of three columns must include the first two columns since <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmmi-10x-x-109">&#x003E; </span>0 and
+     <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">2</span></sub> <span 
+class="cmmi-10x-x-109">&#x003E; </span>0. The first three columns are linearly dependent so they don&#8217;t give a basis. The other two choices are valid,
+     namely the sets of columns <span 
+class="cmsy-10x-x-109">{</span>1<span 
+class="cmmi-10x-x-109">,</span>2<span 
+class="cmmi-10x-x-109">,</span>4<span 
+class="cmsy-10x-x-109">} </span>and <span 
+class="cmsy-10x-x-109">{</span>1<span 
+class="cmmi-10x-x-109">,</span>2<span 
+class="cmmi-10x-x-109">,</span>5<span 
+class="cmsy-10x-x-109">}</span>.
+     </li>
+     <li 
+  class="enumerate" id="x1-7x3">Consider the standard form linear programming problem
+     <center class="math-display" >
+     <img 
+src="hw1sol8x.png" alt="      T
+min   c x
+s.t.   Ax   =  b           (P )
+        x  &#x2265;  0.
+     " class="math-display" ></center>
+     <!--l. 242--><p class="nopar" >
+     Here, <span 
+class="cmmi-10x-x-109">A </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">m</span><span 
+class="cmsy-8">&#x00D7;</span><span 
+class="cmmi-8">n</span></sup>, the dimensions of <span 
+class="cmmi-10x-x-109">x</span>, <span 
+class="cmmi-10x-x-109">c</span>, and <span 
+class="cmmi-10x-x-109">b </span>are defined appropriately, and 1 <span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmmi-10x-x-109">m </span><span 
+class="cmsy-10x-x-109">&#x2264; </span><span 
+class="cmmi-10x-x-109">n </span>= 3. The
+     first row of the system <span 
+class="cmmi-10x-x-109">Ax </span>= <span 
+class="cmmi-10x-x-109">b </span>is the constraint <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">1</span></sub> + 2<span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">2</span></sub> + 6<span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">3</span></sub> = 12. Let <span 
+class="cmmi-10x-x-109">K </span>be the feasible region
+     of&#x00A0;(<span 
+class="cmmi-10x-x-109">P</span>).
+                                                                                                       
+                                                                                                       
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-9x1">Construct a linear programming problem of the form (<span 
+class="cmmi-10x-x-109">P</span>) with dim(<span 
+class="cmmi-10x-x-109">K</span>) <span 
+class="cmmi-10x-x-109">&#x003E; n </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">m</span>.
+          </li>
+          <li 
+  class="enumerate" id="x1-11x2">Construct a feasible linear programming problem of the form (<span 
+class="cmmi-10x-x-109">P</span>) with dim(<span 
+class="cmmi-10x-x-109">K</span>) <span 
+class="cmmi-10x-x-109">&#x003C; n </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">m</span>, <span 
+class="cmmi-10x-x-109">b &#x003E; </span>0, and
+          rank(<span 
+class="cmmi-10x-x-109">A</span>) = <span 
+class="cmmi-10x-x-109">m</span>.
+          </li>
+          <li 
+  class="enumerate" id="x1-13x3">In part&#x00A0;(b), the linear program you defined has a degenerate basic feasible solution. What are the bases
+          associated with that bfs?</li></ol>
+     <!--l. 262--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution:</span>
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-15x1"><span 
+class="cmmi-10x-x-109">n </span>= 3, <span 
+class="cmmi-10x-x-109">m </span>= 2, dim(<span 
+class="cmmi-10x-x-109">K</span>) = 2 <span 
+class="cmmi-10x-x-109">&#x003E; n </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">m</span>:
+          <center class="math-display" >
+          <img 
+src="hw1sol9x.png" alt="min         x1
+subject to   x1  +   2x2  +    6x3  =  12
+           2x1  +   4x2  +  12x3   =  24
+                               x   &#x2265;  0.
+          " class="math-display" ></center>
+          <!--l. 273--><p class="nopar" >
+          </li>
+          <li 
+  class="enumerate" id="x1-17x2"><span 
+class="cmmi-10x-x-109">n </span>= 3, <span 
+class="cmmi-10x-x-109">m </span>= 2, dim(<span 
+class="cmmi-10x-x-109">K</span>) = 0 <span 
+class="cmmi-10x-x-109">&#x003C; n </span><span 
+class="cmsy-10x-x-109">- </span><span 
+class="cmmi-10x-x-109">m</span>, rank(<span 
+class="cmmi-10x-x-109">A</span>) = 2:
+          <center class="math-display" >
+          <img 
+src="hw1sol10x.png" alt="min        x1
+subject to x1  +  2x2  +    6x3  =   12
+                           12x3  =   24
+                              x  &#x2265;   0.
+          " class="math-display" ></center>
+          <!--l. 282--><p class="nopar" >
+          </li>
+          <li 
+  class="enumerate" id="x1-19x3">The only feasible solution is <span 
+class="cmmi-10x-x-109">x </span>= (0<span 
+class="cmmi-10x-x-109">,</span>0<span 
+class="cmmi-10x-x-109">,</span>2). Any basis has two basic variables. The bases consist of the sets of
+          columns <span 
+class="cmsy-10x-x-109">{</span>1<span 
+class="cmmi-10x-x-109">,</span>3<span 
+class="cmsy-10x-x-109">} </span>and <span 
+class="cmsy-10x-x-109">{</span>2<span 
+class="cmmi-10x-x-109">,</span>3<span 
+class="cmsy-10x-x-109">}</span>.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-21x4">Show that a convex cone has at most one extreme point, namely the origin. Give an example of a convex cone with
+     no extreme points.
+     <!--l. 368--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Solution:</span>
+     <!--l. 370--><p class="noindent" >Assume <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span><span 
+class="cmmi-10x-x-109">&#x2260;</span>0 is an extreme point of the cone, which we designate as&#x00A0;<span 
+class="cmmi-10x-x-109">K</span>. Then <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">1</span></sup> := 0<span 
+class="cmmi-10x-x-109">.</span>5<span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> and <span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">2</span></sup> := 1<span 
+class="cmmi-10x-x-109">.</span>5<span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> are two
+     distinct points in&#x00A0;<span 
+class="cmmi-10x-x-109">K</span>, since it is a cone. We have <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> = 0<span 
+class="cmmi-10x-x-109">.</span>5<span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">1</span></sup> + 0<span 
+class="cmmi-10x-x-109">.</span>5<span 
+class="cmmi-10x-x-109">x</span><sup><span 
+class="cmr-8">2</span></sup> so <span class="bar-css"><span 
+class="cmmi-10x-x-109">x</span></span> is not an extreme point. So the only possible
+     extreme point is the origin.
+                                                                                                       
+                                                                                                       
+     <!--l. 375--><p class="noindent" >Any subspace is a convex cone without an extreme point. So for example we can take&#x00A0;<span 
+class="msbm-10x-x-109">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup> for any finite
+     positive&#x00A0;<span 
+class="cmmi-10x-x-109">n</span>.
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                   </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                              </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours: Monday 2&#8211;4pm; Wednesday 11am&#8211;1pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                                       
+
+

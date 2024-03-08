@@ -1,0 +1,82 @@
+Q1:
+ampl: model tsplp.mod; data tsp.dat; solve;
+CPLEX 12.6.0.0: optimal solution; objective 356.5
+15 dual simplex iterations (0 in phase I)
+ampl: display x;
+x [*,*]
+:   1    2    3   4   5   6    7    8    9    10     :=
+0   0   0     1   0   0   0   1     0   0     0
+1   .   0.5   0   0   0   0   0.5   1   0     0
+2   .    .    0   0   0   0   0.5   0   1     0
+3   .    .    .   0   0   0   0     0   0     1
+4   .    .    .   .   1   1   0     0   0     0
+5   .    .    .   .   .   1   0     0   0     0
+6   .    .    .   .   .   .   0     0   0     0
+7   .    .    .   .   .   .    .    0   0     0
+8   .    .    .   .   .   .    .    .   0.5   0.5
+9   .    .    .   .   .   .    .    .    .    0.5
+;
+
+
+Q2:
+ampl: reset; model tspsub4lp.mod; data tsp.dat; solve;
+CPLEX 12.6.0.0: optimal solution; objective 371.5
+37 dual simplex iterations (18 in phase I) on the dual problem
+ampl: display x;
+x [*,*]
+:   1    2    3   4   5   6    7    8    9    10     :=
+0   0   0     1   1   0   0   0     0   0     0
+1   .   0.5   0   0   0   0   0.5   1   0     0
+2   .    .    0   0   0   0   0.5   0   1     0
+3   .    .    .   0   0   0   0     0   0     1
+4   .    .    .   .   1   0   0     0   0     0
+5   .    .    .   .   .   1   0     0   0     0
+6   .    .    .   .   .   .   1     0   0     0
+7   .    .    .   .   .   .    .    0   0     0
+8   .    .    .   .   .   .    .    .   0.5   0.5
+9   .    .    .   .   .   .    .    .    .    0.5
+;
+
+
+
+Q3:
+ampl: reset; model tspip.mod; data tsp.dat; solve;
+CPLEX 12.6.0.0: optimal integer solution; objective 357
+16 MIP simplex iterations
+0 branch-and-bound nodes
+ampl: display x;
+x [*,*]
+:   1   2   3   4   5   6   7   8   9  10    :=
+0   0   0   0   0   0   0   1   0   0   1
+1   .   1   0   0   0   0   0   1   0   0
+2   .   .   0   0   0   0   0   0   1   0
+3   .   .   .   0   0   0   1   0   0   1
+4   .   .   .   .   1   1   0   0   0   0
+5   .   .   .   .   .   1   0   0   0   0
+6   .   .   .   .   .   .   0   0   0   0
+7   .   .   .   .   .   .   .   0   0   0
+8   .   .   .   .   .   .   .   .   1   0
+9   .   .   .   .   .   .   .   .   .   0
+;
+
+
+Q4:
+ampl: reset; model tspip_plus2.mod; data tsp.dat; solve;
+CPLEX 12.6.0.0: optimal integer solution; objective 373
+24 MIP simplex iterations
+0 branch-and-bound nodes
+ampl: display x;
+x [*,*]
+:   1   2   3   4   5   6   7   8   9  10    :=
+0   0   0   0   1   0   0   0   0   0   1
+1   .   0   0   0   0   0   1   1   0   0
+2   .   .   1   0   0   0   0   0   1   0
+3   .   .   .   0   0   0   0   0   0   1
+4   .   .   .   .   1   0   0   0   0   0
+5   .   .   .   .   .   1   0   0   0   0
+6   .   .   .   .   .   .   1   0   0   0
+7   .   .   .   .   .   .   .   0   0   0
+8   .   .   .   .   .   .   .   .   1   0
+9   .   .   .   .   .   .   .   .   .   0
+;
+

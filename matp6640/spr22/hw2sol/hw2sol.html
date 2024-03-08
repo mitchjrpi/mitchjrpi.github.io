@@ -1,0 +1,787 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw2sol.tex"> 
+<meta name="date" content="2022-02-08 14:50:00"> 
+<link rel="stylesheet" type="text/css" href="hw2sol.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 58--><p class="noindent" >
+<!--l. 61--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12">MATP6640/ISYE6770 Linear Programming</span></a><span 
+class="cmr-12">, Homework 2.</span><br /><br />
+<span 
+class="cmbx-12">Solutions</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 66--><p class="noindent" >
+ Due: 11.59pm on Friday, February 4, 2022 on LMS.<br />
+10% penalty for each day late.</div>
+     <dl class="enumerate"><dt class="enumerate">
+  1. </dt><dd 
+class="enumerate"><a 
+ id="x1-21"></a> Prove that if (<span 
+class="cmmi-10">D</span>) has a nondegenerate optimal solution then (<span 
+class="cmmi-10">P</span>) has a unique optimal solution for the
+     primal-dual pair
+     <center class="math-display" >
+     <img 
+src="hw2sol0x.png" alt="min   n   cTx                   max   m    bT y
+subjxe&#x2208;c&#x211D;t to  Ax  =  b    (P)      subyje&#x2208;c&#x211D;t to AT y  &#x2264;  c      (D )
+            x  &#x2265;  0                          y     free
+     " class="math-display" ></center>
+     <!--l. 89--><p class="nopar" >
+     where <span 
+class="cmmi-10">c </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="msbm-10">&#x211D;</span><sup><span 
+class="cmmi-7">n</span></sup>, <span 
+class="cmmi-10">b </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="msbm-10">&#x211D;</span><sup><span 
+class="cmmi-7">m</span></sup>, and <span 
+class="cmmi-10">A </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="msbm-10">&#x211D;</span><sup><span 
+class="cmmi-7">m</span><span 
+class="cmsy-7">&#x00D7;</span><span 
+class="cmmi-7">n</span></sup>.
+     <!--l. 92--><p class="noindent" ><span 
+class="cmbx-10">Solution: </span>In a nondegenerate dual optimal solution&#x00A0;<span class="bar-css"><span 
+class="cmmi-10">y</span></span>, we can write <span 
+class="cmmi-10">A </span>= [<span 
+class="cmmi-10">B,N</span>] where <span 
+class="cmmi-10">B </span>is a basis matrix
+     of&#x00A0;<span 
+class="msbm-10">&#x211D;</span><sup><span 
+class="cmmi-7">m</span></sup> with <span class="bar-css"><span 
+class="cmmi-10">y</span></span> = <span 
+class="cmmi-10">B</span><sup><span 
+class="cmsy-7">-</span><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">c</span><sub><span 
+class="cmmi-7">B</span></sub> and <span 
+class="cmmi-10">N</span><sup><span 
+class="cmmi-7">T</span></sup><span class="bar-css"><span 
+class="cmmi-10">y</span></span> <span 
+class="cmmi-10">&#x003C; c</span><sup><span 
+class="cmmi-7">N</span></sup>. From complementary slackness, any primal optimal solution must
+     satisfy&#x00A0;<span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">N</span></sub> = 0. Thus, <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">B</span></sub> = <span 
+class="cmmi-10">B</span><sup><span 
+class="cmsy-7">-</span><span 
+class="cmr-7">1</span></sup><span 
+class="cmmi-10">b </span>in any primal optimal solution, so the primal problem has a unique optimal
+     solution.
+     </dd><dt class="enumerate">
+  2. </dt><dd 
+class="enumerate"><a 
+ id="x1-32"></a> Let <span 
+class="cmmi-10">A </span>be an <span 
+class="cmmi-10">m </span><span 
+class="cmsy-10">&#x00D7; </span><span 
+class="cmmi-10">n </span>matrix and let <span 
+class="cmmi-10">b </span>be a vector in <span 
+class="msbm-10">&#x211D;</span><sup><span 
+class="cmmi-7">m</span></sup>. We consider the problem of minimizing
+     <span 
+class="cmsy-10">||</span><span 
+class="cmmi-10">Ax </span><span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">b</span><span 
+class="cmsy-10">||</span><sub><span 
+class="cmsy-7">&#x221E;</span></sub> := max<sub><span 
+class="cmmi-7">i</span><span 
+class="cmr-7">=1</span><span 
+class="cmmi-7">,</span><span 
+class="cmmi-7">&#x2026;</span><span 
+class="cmmi-7">,m</span></sub><span 
+class="cmsy-10">{|</span>(<span 
+class="cmmi-10">Ax </span><span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">b</span>)<sub><span 
+class="cmmi-7">i</span></sub><span 
+class="cmsy-10">|} </span>over all <span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="msbm-10">&#x211D;</span><sup><span 
+class="cmmi-7">n</span></sup>. Let <span 
+class="cmmi-10">v </span>be the value of the optimal cost.
+         <dl class="enumerate"><dt class="enumerate">
+      (a) </dt><dd 
+class="enumerate">Let <span 
+class="cmmi-10">y </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="msbm-10">&#x211D;</span><sup><span 
+class="cmmi-7">m</span></sup> satisfy <span 
+class="cmex-10">&#x2211;</span>
+  <sub><span 
+class="cmmi-7">i</span><span 
+class="cmr-7">=1</span></sub><sup><span 
+class="cmmi-7">m</span></sup><span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">y</span><sub><span 
+class="cmmi-7">i</span></sub><span 
+class="cmsy-10">|&#x2264; </span>1 and <span 
+class="cmmi-10">A</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">y </span>= 0. Show that <span 
+class="cmmi-10">b</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">y </span><span 
+class="cmsy-10">&#x2264; </span><span 
+class="cmmi-10">v </span>without using Question&#x00A0;<a 
+href="#x1-83">3<!--tex4ht:ref: q4.6b --></a>.
+         </dd><dt class="enumerate">
+     (b) </dt><dd 
+class="enumerate">Reformulate the problem as a linear program and show that an optimal solution exists.</dd></dl>
+     <!--l. 132--><p class="noindent" ><span 
+class="cmbx-10">Solutions:</span>
+         <dl class="enumerate"><dt class="enumerate">
+      (a) </dt><dd 
+class="enumerate">We have
+         <center class="math-display" >
+         <img 
+src="hw2sol1x.png" alt="bTy  =  (Ax )Ty + (b- Ax)Ty = xTAy + (b - Ax)Ty = (b - Ax)Ty
+     =  &#x2211;m   (b- Ax) y &#x2264; &#x2211;m   |(b- Ax )||y |
+        &#x2211;mi=1       i i    i=1        i i
+     &#x2264;    i=1v|yi| = v
+         " class="math-display" ></center>
+                                                                                         
+                                                                                         
+         <!--l. 147--><p class="nopar" >
+         as required.
+         </dd><dt class="enumerate">
+     (b) </dt><dd 
+class="enumerate">The minmax problem is equivalent to the following LP:
+         <center class="math-display" >
+         <img 
+src="hw2sol2x.png" alt="minx&#x2208;&#x211D;n,u&#x2208;&#x211D;       u
+subject to   Ax - b  &#x2264;  ue
+            b- Ax   &#x2264;  ue
+         " class="math-display" ></center>
+         <!--l. 157--><p class="nopar" >
+         where <span 
+class="cmmi-10">e </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="msbm-10">&#x211D;</span><sup><span 
+class="cmmi-7">m</span></sup> denotes the vector of ones. This problem is feasible. For example, we can take <span 
+class="cmmi-10">x </span>= 0 and
+         <span 
+class="cmmi-10">u </span>= <span 
+class="cmsy-10">||</span><span 
+class="cmmi-10">b</span><span 
+class="cmsy-10">||</span><sub><span 
+class="cmsy-7">&#x221E;</span></sub>. Also, the constraints force <span 
+class="cmmi-10">u </span><span 
+class="cmsy-10">&#x2265; </span>0, so the problem has a finite optimal value. Therefore, by
+         strong duality it has an optimal solution.
+         </dd></dl>
+     </dd><dt class="enumerate">
+  3. </dt><dd 
+class="enumerate"><a 
+ id="x1-83"></a> In the setting of Question&#x00A0;<a 
+href="#x1-32">2<!--tex4ht:ref: q4.6 --></a>, use LP duality to show that the optimal value of the following problem is
+     <span 
+class="cmmi-10">v</span>:
+     <center class="math-display" >
+     <img 
+src="hw2sol3x.png" alt="max            bTy
+subject to      AT y  =  0
+          &#x2211;m   |yi|  &#x2264;  1.
+            i=1
+     " class="math-display" ></center>
+     <!--l. 174--><p class="nopar" >
+     <!--l. 178--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 181--><p class="noindent" >The LP in the solution to Question&#x00A0;<a 
+href="#x1-32">2<!--tex4ht:ref: q4.6 --></a> can be written equivalently as
+     <center class="math-display" >
+     <img 
+src="hw2sol4x.png" alt="minx&#x2208;&#x211D;n,u&#x2208; &#x211D;         u
+subject to   - Ax + ue  &#x2265;  - b
+              Ax + ue  &#x2265;  b
+                    u  &#x2265;  0.
+     " class="math-display" ></center>
+     <!--l. 189--><p class="nopar" >
+     The dual problem to this LP is
+     <table 
+class="equation"><tr><td><a 
+ id="x1-9r1"></a>
+     <center class="math-display" >
+                                                                                         
+                                                                                         
+     <img 
+src="hw2sol5x.png" alt="                  T     T
+maxw &#x2208;&#x211D;m,z&#x2208;&#x211D;m    - bT w + bTz
+subject to      - A wT + A Tz  =  0
+                 e w + e z  &#x2264;  1
+                       w,z  &#x2265;  0.
+     " class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+     <!--l. 198--><p class="nopar" >
+     By strong duality, the optimal value of this LP is&#x00A0;<span 
+class="cmmi-10">v</span>. By setting <span 
+class="cmmi-10">y </span>= <span 
+class="cmmi-10">z </span><span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">w</span>, the dual LP is equivalent to the
+     problem given in the question.
+     <!--l. 203--><p class="noindent" >Note that if <span 
+class="cmmi-10">A </span>has rank <span 
+class="cmmi-10">m </span>then the problem in Question&#x00A0;<a 
+href="#x1-32">2<!--tex4ht:ref: q4.6 --></a> has optimal value&#x00A0;0, since there exists an <span 
+class="cmmi-10">x </span>with
+     <span 
+class="cmmi-10">Ax </span>= <span 
+class="cmmi-10">b</span>. In this case, the only feasible solution to <span 
+class="cmmi-10">A</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">y </span>= 0 is <span 
+class="cmmi-10">y </span>= 0, so we cannot impose the restriction that
+     <span 
+class="cmex-10">&#x2211;</span>
+       <sub><span 
+class="cmmi-7">i</span><span 
+class="cmr-7">=1</span></sub><sup><span 
+class="cmmi-7">m</span></sup><span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">y</span><sub><span 
+class="cmmi-7">i</span></sub><span 
+class="cmsy-10">| </span>= 1.
+     </dd><dt class="enumerate">
+  4. </dt><dd 
+class="enumerate">Define the Lagrangian
+     <center class="math-display" >
+     <img 
+src="hw2sol6x.png" alt="L (x,y) := cTx +yT (b - Ax).
+     " class="math-display" ></center>
+     <!--l. 234--><p class="nopar" >
+     Show that
+     <center class="math-display" >
+     <img 
+src="hw2sol7x.png" alt="   *        *  *        *              m
+L(x ,y) &#x2264; L(x ,y) &#x2264; L(x,y ) &#x2200;x &#x2265; 0,&#x2200;y &#x2208; &#x211D;
+     " class="math-display" ></center>
+     <!--l. 238--><p class="nopar" >
+     if and only if <span 
+class="cmmi-10">x</span><sup><span 
+class="cmsy-7">*</span></sup> and <span 
+class="cmmi-10">y</span><sup><span 
+class="cmsy-7">*</span></sup> are optimal solutions to the primal-dual pair from Question&#x00A0;<a 
+href="#x1-21">1<!--tex4ht:ref: q1 --></a>.
+     <!--l. 242--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+         <ul class="itemize1">
+         <li class="itemize">Assume <span 
+class="cmmi-10">x</span><sup><span 
+class="cmsy-7">*</span></sup> and <span 
+class="cmmi-10">y</span><sup><span 
+class="cmsy-7">*</span></sup> are optimal:
+         <!--l. 248--><p class="noindent" >Note that
+         <center class="math-display" >
+         <img 
+src="hw2sol8x.png" alt="L(x*,y*) = cT x* + (y*)T(b- Ax *) = cTx* = bT y*
+         " class="math-display" ></center>
+         <!--l. 251--><p class="nopar" >
+         from feasibility of <span 
+class="cmmi-10">x</span><sup><span 
+class="cmsy-7">*</span></sup> and from strong duality. For any <span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2265; </span>0 and any&#x00A0;<span 
+class="cmmi-10">y</span>, we have <div class="eqnarray">
+         <center class="math-display" >
+         <img 
+src="hw2sol9x.png" alt="   *        T  *   T       *
+L(x ,y) =   c x + y (b- Ax )
+        =   cT x* since x* feasible
+        =   L(x*,y*)
+        =   bT y* from strong duality
+            T  *   T     T  *                           *
+        &#x2264;   b y + x (c- A  y)  from  x &#x2265; 0 and feasibility of y
+        =   cT x+ (y*)T (b - Ax )
+        =   L(x,y*)
+         " class="math-display" ></center>
+         </div>as required.
+         </li>
+         <li class="itemize">Assume the inequalities hold:
+         <!--l. 266--><p class="noindent" >Then
+         <center class="math-display" >
+         <img 
+src="hw2sol10x.png" alt="cTx* + yT(b- Ax *) = L(x*,y) &#x2264; L(x*,y*) = cTx* +(y*)T(b- Ax*)
+         " class="math-display" ></center>
+         <!--l. 269--><p class="nopar" >
+         for all <span 
+class="cmmi-10">y </span><span 
+class="cmsy-10">&#x2208; </span><span 
+class="msbm-10">&#x211D;</span><sup><span 
+class="cmmi-7">m</span></sup>, so <span 
+class="cmmi-10">b </span><span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">Ax</span><sup><span 
+class="cmsy-7">*</span></sup> = 0. (Otherwise, we can choose <span 
+class="cmmi-10">y </span>= <span 
+class="cmmi-10">y</span><sup><span 
+class="cmsy-7">*</span></sup> + (<span 
+class="cmmi-10">b </span><span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">Ax</span><sup><span 
+class="cmsy-7">*</span></sup>).) So <span 
+class="cmmi-10">x</span><sup><span 
+class="cmsy-7">*</span></sup> is <span 
+class="cmbx-10">primal</span>
+         <span 
+class="cmbx-10">feasible</span>.
+         <!--l. 273--><p class="noindent" >Also, <div class="eqnarray">
+         <center class="math-display" >
+         <img 
+src="hw2sol11x.png" alt="bTy* + (x*)T(c- AT y*) =  cTx * + (y*)T(b- Ax *)
+                      =  L (x *,y*) &#x2264; L (x,y*)
+                          T      *T           T *   T      T *
+                      =  c x + (y )(b- Ax ) = b y + x (c - A y )
+         " class="math-display" ></center>
+         </div>for all <span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&#x2265; </span>0, so:
+             <dl class="enumerate"><dt class="enumerate">
+         (a) </dt><dd 
+class="enumerate"><span 
+class="cmmi-10">c </span><span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">A</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">y</span><sup><span 
+class="cmsy-7">*</span></sup><span 
+class="cmsy-10">&#x2265; </span>0: otherwise we can choose
+             <center class="math-display" >
+             <img 
+src="hw2sol12x.png" alt="     {
+xj =   x*j     if (c- AT y*)j &#x2265; 0
+       x*j + 1 if (c- AT y*)j &#x003C; 0,
+             " class="math-display" ></center>
+             <!--l. 287--><p class="nopar" >
+             so <span 
+class="cmmi-10">y</span><sup><span 
+class="cmsy-7">*</span></sup> is <span 
+class="cmbx-10">dual feasible</span>, and
+                                                                                         
+                                                                                         
+             </dd><dt class="enumerate">
+         (b) </dt><dd 
+class="enumerate">the inequality holds when <span 
+class="cmmi-10">x </span>= 0, so (<span 
+class="cmmi-10">x</span><sup><span 
+class="cmsy-7">*</span></sup>)<sup><span 
+class="cmmi-7">T</span></sup>(<span 
+class="cmmi-10">c </span><span 
+class="cmsy-10">- </span><span 
+class="cmmi-10">A</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">y</span><sup><span 
+class="cmsy-7">*</span></sup>) <span 
+class="cmsy-10">&#x2264; </span>0, so <span 
+class="cmbx-10">complementary slackness</span>
+             <span 
+class="cmbx-10">holds</span>.</dd></dl>
+         <!--l. 292--><p class="noindent" >Thus, <span 
+class="cmmi-10">x</span><sup><span 
+class="cmsy-7">*</span></sup> and <span 
+class="cmmi-10">y</span><sup><span 
+class="cmsy-7">*</span></sup> are optimal.</li></ul>
+     </dd><dt class="enumerate">
+  5. </dt><dd 
+class="enumerate">Consider the linear programming problem <a 
+ id="x1-155"></a>
+     <center class="math-display" >
+     <img 
+src="hw2sol13x.png" alt="min   4x1  +  x2          +  x4  -  5x5
+s.t.   2x1  +  x2          +  x4  -  2x5  =  3
+      - x1 +  x2  +   x3                 =  3
+       x1                 +  x4  -   x5  =  1
+                      xi  &#x2265;  0,       i  =  1,...,5.
+     " class="math-display" ></center>
+     <!--l. 398--><p class="nopar" >
+     Show that this problem has unbounded objective function value by using the revised simplex algorithm
+     starting from the basic feasible solution <span 
+class="cmmi-10">x </span>= [0<span 
+class="cmmi-10">,</span>2<span 
+class="cmmi-10">,</span>1<span 
+class="cmmi-10">,</span>1<span 
+class="cmmi-10">,</span>0]<sup><span 
+class="cmmi-7">T</span></sup>. Use the eta factorization of the inverse, so you
+     should first factorize the initial basis <span 
+class="cmmi-10">B </span>as <span 
+class="cmmi-10">LB </span>= <span 
+class="cmmi-10">U</span>, where <span 
+class="cmmi-10">L </span>is lower triangular and <span 
+class="cmmi-10">U </span>is upper triangular. On
+     subsequent iterations, update the basis matrix by using eta matrices. What is the ray that you find? (Hint:
+     you should find the ray on the second iteration.)
+     <!--l. 422--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 425--><p class="noindent" >We have the initial basis matrix
+     <center class="math-display" >
+     <img 
+src="hw2sol14x.png" alt="    &#x230A;         &#x230B;
+       1  0 1
+B = &#x2308;  1  1 0 &#x2309; .
+       0  0 1
+     " class="math-display" ></center>
+     <!--l. 428--><p class="nopar" >
+     Pivoting on the top left entry in <span 
+class="cmmi-10">B </span>can be represented as the matrix product <span 
+class="cmmi-10">L</span><sup><span 
+class="cmr-7">1</span></sup><span 
+class="cmmi-10">B </span>= <span 
+class="cmmi-10">U</span><sup><span 
+class="cmr-7">1</span></sup> as below:
+     <center class="math-display" >
+     <img 
+src="hw2sol15x.png" alt="&#x230A;   1  0  0 &#x230B;&#x230A; 1  0  1 &#x230B;   &#x230A;  1  0   1 &#x230B;
+&#x2308; - 1  1  0 &#x2309;&#x2308; 1  1  0 &#x2309; = &#x2308;  0  1 - 1 &#x2309;
+    0  0  1    0  0  1        0  0   1
+     " class="math-display" ></center>
+     <!--l. 435--><p class="nopar" >
+     so we have
+     <center class="math-display" >
+     <img 
+src="hw2sol16x.png" alt="    &#x230A;          &#x230B;         &#x230A;           &#x230B;
+        1 0  0              1  0   1
+L = &#x2308; - 1 1  0 &#x2309; and U = &#x2308;  0  1 - 1 &#x2309;.
+        0 0  1              0  0   1
+     " class="math-display" ></center>
+                                                                                         
+                                                                                         
+     <!--l. 452--><p class="nopar" >
+     First calculate the dual solution <span 
+class="cmmi-10">y </span>= <span 
+class="cmmi-10">B</span><sup><span 
+class="cmsy-7">-</span><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">c</span><sub><span 
+class="cmmi-7">b</span></sub>, which requires first solving <span 
+class="cmmi-10">U</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">z </span>= <span 
+class="cmmi-10">c</span><sub><span 
+class="cmmi-7">B</span></sub> and then calculating
+     <span 
+class="cmmi-10">y </span>= <span 
+class="cmmi-10">L</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">z</span>. We have
+     <center class="math-display" >
+     <img 
+src="hw2sol17x.png" alt="       &#x230A;          &#x230B;         &#x230A;   &#x230B;        &#x230A;   &#x230B;
+         1   0  0             1            1
+U Tz = &#x2308; 0   1  0 &#x2309; z = cB = &#x2308; 0 &#x2309; so z = &#x2308; 0 &#x2309;
+         1  - 1 1             1            0
+     " class="math-display" ></center>
+     <!--l. 465--><p class="nopar" >
+     and then
+     <center class="math-display" >
+     <img 
+src="hw2sol18x.png" alt="    &#x230A; 1  - 1 0 &#x230B;     &#x230A; 1  0  - 1 &#x230B; &#x230A; 1 &#x230B;  &#x230A; 1 &#x230B;
+y = &#x2308; 0    1 0 &#x2309; z = &#x2308; 0  1   1 &#x2309; &#x2308; 0 &#x2309; = &#x2308; 0 &#x2309; .
+      0    0 1         0  0   1     0       0
+     " class="math-display" ></center>
+     <!--l. 475--><p class="nopar" >
+     The reduced costs are then
+     <center class="math-display" >
+     <img 
+src="hw2sol19x.png" alt="                                      &#x230A;         &#x230B;
+                 T                    &#x2308;  2  - 2 &#x2309;
+[¯c1,¯c5] = [c1,c5] - y N = [4, - 5] - [1,0,0] - 1   0   = [4, - 5] - [2, - 2] = [2, - 3]
+                                         1  - 1
+     " class="math-display" ></center>
+     <!--l. 483--><p class="nopar" >
+     so <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">5</span></sub> enters the basis. We need to calculate <span 
+class="cmmi-10">d</span>, the <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">5</span></sub> column of <span 
+class="cmmi-10">B</span><sup><span 
+class="cmsy-7">-</span><span 
+class="cmr-7">1</span></sup><span 
+class="cmmi-10">N</span>. This requires calculating <span 
+class="cmmi-10">q </span>= <span 
+class="cmmi-10">La</span><sup><span 
+class="cmr-7">5</span></sup> and
+     then solving <span 
+class="cmmi-10">Ud </span>= <span 
+class="cmmi-10">q</span>. We get
+     <center class="math-display" >
+     <img 
+src="hw2sol20x.png" alt="    &#x230A;          &#x230B; &#x230A;     &#x230B;   &#x230A;     &#x230B;
+        1  0  0    - 2       - 2
+q = &#x2308; - 1  1  0&#x2309; &#x2308;   0 &#x2309; = &#x2308;   2 &#x2309;
+        0  0  1    - 1       - 1
+     " class="math-display" ></center>
+     <!--l. 493--><p class="nopar" >
+     and then
+     <center class="math-display" >
+     <img 
+src="hw2sol21x.png" alt="&#x230A;  1 0    1 &#x230B;    &#x230A; - 2 &#x230B;       &#x230A; d2 &#x230B;    &#x230A; - 1 &#x230B;
+&#x2308;  0 1  - 1 &#x2309;d = &#x2308;   2 &#x2309; so d = &#x2308; d3 &#x2309; = &#x2308;  1 &#x2309; .
+   0 0    1        - 1           d4        - 1
+     " class="math-display" ></center>
+     <!--l. 504--><p class="nopar" >
+     The minimum ratio test gives
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="hw2sol22x.png" alt="        {          }
+&#x0394; = min   xBi: di &#x003E; 0 = 1, achieved by i = 3
+          di
+     " class="math-display" ></center>
+     <!--l. 509--><p class="nopar" >
+     so <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">3</span></sub> leaves the basis and <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">5</span></sub> enters the basis with a value of&#x00A0;1. The old basic variables are updated as
+     <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">B</span></sub> <span 
+class="cmsy-10">- </span>&#x0394;<span 
+class="cmmi-10">d </span>so the new bfs is
+     <center class="math-display" >
+     <img 
+src="hw2sol23x.png" alt="     &#x230A;    &#x230B;    &#x230A;   &#x230B;
+       x2        3
+xB = &#x2308; x5 &#x2309;  = &#x2308; 1 &#x2309;
+       x4        2
+     " class="math-display" ></center>
+     <!--l. 517--><p class="nopar" >
+     with value 3 + &#x0394;<span style="margin-left:0.3em" class="thinspace"></span><span class="bar-css"><span 
+class="cmmi-10">c</span></span><sub><span 
+class="cmr-7">2</span></sub> = 0.
+     <!--l. 522--><p class="noindent" ><span 
+class="cmti-10">Second iteration:</span>
+     <!--l. 525--><p class="noindent" >We need to calculate the updated reduced costs, so we first need to calculate the updated dual variables. The
+     elementary matrix <span 
+class="cmmi-10">E</span><sup><span 
+class="cmr-7">1</span></sup> can be constructed using&#x00A0;<span 
+class="cmmi-10">d </span>and then we solve (<span 
+class="cmmi-10">E</span><sup><span 
+class="cmr-7">1</span></sup>)<sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">w </span>= <span 
+class="cmmi-10">c</span><sub><span 
+class="cmmi-7">B</span></sub> followed by solving
+     <span 
+class="cmmi-10">U</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">z </span>= <span 
+class="cmmi-10">w </span>and calculating <span 
+class="cmmi-10">y </span>= <span 
+class="cmmi-10">L</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">z</span>. To find <span 
+class="cmmi-10">w</span>, we solve
+     <center class="math-display" >
+     <img 
+src="hw2sol24x.png" alt="&#x230A;            &#x230B;    &#x230A;     &#x230B;              &#x230A;     &#x230B;
+    1 0    0          1                    1
+&#x2308; - 1 1  - 1 &#x2309;w = &#x2308;  - 5 &#x2309; , giving w = &#x2308; - 3 &#x2309;.
+    0 0    1          1                    1
+     " class="math-display" ></center>
+     <!--l. 537--><p class="nopar" >
+     We then solve to get <span 
+class="cmmi-10">z</span>:
+     <center class="math-display" >
+     <img 
+src="hw2sol25x.png" alt="      &#x230A;  1   0  0 &#x230B;        &#x230A;   1 &#x230B;             &#x230A;   1 &#x230B;
+UTz = &#x2308;  0   1  0 &#x2309;z = w = &#x2308; - 3 &#x2309;,   giving z = &#x2308; - 3 &#x2309;.
+         1 - 1  1              1                 - 3
+     " class="math-display" ></center>
+     <!--l. 548--><p class="nopar" >
+     and then
+     <center class="math-display" >
+     <img 
+src="hw2sol26x.png" alt="         &#x230A;  1  - 1 0 &#x230B;    &#x230A; 1  - 1  0 &#x230B;&#x230A;   1 &#x230B;   &#x230A;   4 &#x230B;
+    T    &#x2308;  0   1  0 &#x2309;    &#x2308; 0    1  0 &#x2309;&#x2308; - 3 &#x2309;   &#x2308; - 3 &#x2309;
+y = L z =   0   0  1  z =   0    0  1    - 3   =   - 3  .
+     " class="math-display" ></center>
+     <!--l. 558--><p class="nopar" >
+     The reduced costs are then
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="hw2sol27x.png" alt="                                        &#x230A;        &#x230B;
+                 T                      &#x2308;   2  0 &#x2309;
+[¯c1,¯c3] = [c1,c3] - y N = [4,0] - [4, - 3, - 3] - 1 1   = [4,0] - [8, - 3] = [- 4,3]
+                                            1  0
+     " class="math-display" ></center>
+     <!--l. 566--><p class="nopar" >
+     so <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> enters the basis. We need to calculate <span 
+class="cmmi-10">d</span>, the <span 
+class="cmmi-10">x</span><sub><span 
+class="cmr-7">1</span></sub> column of <span 
+class="cmmi-10">B</span><sup><span 
+class="cmsy-7">-</span><span 
+class="cmr-7">1</span></sup><span 
+class="cmmi-10">N</span>. This requires calculating <span 
+class="cmmi-10">q </span>= <span 
+class="cmmi-10">La</span><sup><span 
+class="cmr-7">1</span></sup>, then
+     solving <span 
+class="cmmi-10">Up </span>= <span 
+class="cmmi-10">q</span>, and then solving <span 
+class="cmmi-10">E</span><sup><span 
+class="cmr-7">1</span></sup><span 
+class="cmmi-10">d </span>= <span 
+class="cmmi-10">p</span>. We get
+     <center class="math-display" >
+     <img 
+src="hw2sol28x.png" alt="    &#x230A;          &#x230B; &#x230A;     &#x230B;   &#x230A;     &#x230B;
+        1  0  0      2         2
+q = &#x2308; - 1  1  0&#x2309; &#x2308; - 1 &#x2309; = &#x2308; - 3 &#x2309;
+        0  0  1      1         1
+     " class="math-display" ></center>
+     <!--l. 577--><p class="nopar" >
+     and then
+     <center class="math-display" >
+     <img 
+src="hw2sol29x.png" alt="&#x230A;  1 0    1 &#x230B;    &#x230A;   2 &#x230B;       &#x230A;   1 &#x230B;
+&#x2308;  0 1  - 1 &#x2309;p = &#x2308; - 3 &#x2309; so p = &#x2308; - 2 &#x2309;
+   0 0    1          1             1
+     " class="math-display" ></center>
+     <!--l. 588--><p class="nopar" >
+     and then
+     <center class="math-display" >
+     <img 
+src="hw2sol30x.png" alt="&#x230A;          &#x230B;    &#x230A;     &#x230B;         &#x230A;    &#x230B;   &#x230A;     &#x230B;
+&#x2308; 1  - 1 0 &#x2309;    &#x2308;   1 &#x2309;         &#x2308; d2 &#x2309;   &#x2308; - 1 &#x2309;
+  0   1  0   d =   - 2  and d =   d5   =   - 2  .
+  0  - 1 1          1             d4       - 1
+     " class="math-display" ></center>
+     <!--l. 598--><p class="nopar" >
+     Since <span 
+class="cmmi-10">d </span><span 
+class="cmsy-10">&#x2264; </span>0, we have an unbounded problem. The ray consists of the negative of this&#x00A0;<span 
+class="cmmi-10">d</span>, plus a component of 1
+     for the incoming variable, so the ray is
+     <center class="math-display" >
+     <img 
+src="hw2sol31x.png" alt="   &#x230A;    &#x230B;    &#x230A;   &#x230B;
+      r1        1
+   ||  r2 ||    || 1 ||
+r = || r3 || =  || 0 ||.
+   &#x2308;  r4 &#x2309;    &#x2308; 1 &#x2309;
+      r5        2
+     " class="math-display" ></center>
+     <!--l. 607--><p class="nopar" >
+     It can be checked that <span 
+class="cmmi-10">Ar </span>= 0 and <span 
+class="cmmi-10">c</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">r </span>= <span class="bar-css"><span 
+class="cmmi-10">c</span></span><sub><span 
+class="cmr-7">1</span></sub> = <span 
+class="cmsy-10">-</span>4.
+     </dd><dt class="enumerate">
+                                                                                         
+                                                                                         
+  6. </dt><dd 
+class="enumerate">The dual to the linear program in Question&#x00A0;<a 
+href="#x1-155">5<!--tex4ht:ref: q.ray --></a> is infeasible. Taking nonnegative linear combinations of the dual
+     constraints gives further valid dual constraints. Show how the ray you found for the linear programming
+     problem in Question&#x00A0;<a 
+href="#x1-155">5<!--tex4ht:ref: q.ray --></a> can be used to construct a linear combination of the dual constraints that is clearly
+     infeasible.
+     <!--l. 618--><p class="noindent" ><span 
+class="cmbx-10">Solution:</span>
+     <!--l. 621--><p class="noindent" >The dual to the LP in Question&#x00A0;<a 
+href="#x1-155">5<!--tex4ht:ref: q.ray --></a> is
+     <center class="math-display" >
+     <img 
+src="hw2sol32x.png" alt="max        3y1  +  3y2  +  y3
+subject to  2y1  -   y2  +  y3  &#x2264;    4
+            y1  +   y2         &#x2264;    1
+                    y2         &#x2264;    0
+            y1          +  y3  &#x2264;    1
+          - 2y1         -  y3  &#x2264;  - 5
+     " class="math-display" ></center>
+     <!--l. 631--><p class="nopar" >
+     The ray <span 
+class="cmmi-10">r </span>from Question&#x00A0;<a 
+href="#x1-155">5<!--tex4ht:ref: q.ray --></a> suggests taking the sum of <span 
+class="cmmi-10">r</span><sub><span 
+class="cmmi-7">i</span></sub> multiplied by the <span 
+class="cmmi-10">i</span>th dual constraint. This gives the
+     following constraint on&#x00A0;<span 
+class="cmmi-10">y</span>:
+     <center class="math-display" >
+     <img 
+src="hw2sol33x.png" alt="0y1 + 0y2 +0y3 &#x2264; - 4,   or 0 &#x2264; - 4,
+     " class="math-display" ></center>
+     <!--l. 636--><p class="nopar" >
+     which clearly cannot be satisfied. Hence the dual problem is infeasible.
+     </dd><dt class="enumerate">
+  7. </dt><dd 
+class="enumerate">Use <a 
+href="http://www.rpi.edu/~mitchj/ampldetails.html" ><span 
+class="cmbx-10">AMPL</span></a> or another linear programming package to solve the standard form linear programming
+     problem
+     <center class="math-display" >
+     <img 
+src="hw2sol34x.png" alt="minx&#x2208;&#x211D;5  x1  +  3x2  +  x3         -   4x5
+s.t.      x1          +  x3         -   2x5  =  10
+             -  3x2  +  x3  +   x4 +   2x5  =  7
+         x1  +   x2                -   3x5  =  6
+                                        xj  &#x2265;  0,j = 1,...,5
+     " class="math-display" ></center>
+     <!--l. 655--><p class="nopar" >
+     (See the course webpage for more information on <a 
+href="http://www.rpi.edu/~mitchj/ampldetails.html" >AMPL</a>. The software is available on <a 
+href="http://lms.rpi.edu" >LMS</a>.)
+     <!--l. 660--><p class="noindent" ><span 
+class="cmbx-10">Solution: </span>Here are the <a 
+href="standard.mod" >model file</a>, <a 
+href="standard4.dat" >data file</a>, and <a 
+href="standard4.out" >output file</a>.
+     </dd></dl>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                                                         </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           x6915.                                                                                                                    </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           Office hours: Thursday 11am&#8211;1pm., on webex <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-10">https://rensselaer.webex.com/meet/mitchj</span></a></td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

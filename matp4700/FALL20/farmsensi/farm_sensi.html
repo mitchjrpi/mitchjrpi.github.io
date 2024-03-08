@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="farm_sensi.tex"> 
+<meta name="date" content="2020-11-04 20:55:00"> 
+<link rel="stylesheet" type="text/css" href="farm_sensi.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 34--><p class="noindent" >
+<!--l. 36--><p class="noindent" ><span class="underline"><span 
+class="cmbx-12x-x-120">Sensitivity Analysis for Case Study:</span></span>
+<!--l. 40--><p class="noindent" ><span class="underline"><span 
+class="cmcsc-10x-x-144">F<span 
+class="small-caps">a</span><span 
+class="small-caps">r</span><span 
+class="small-caps">m</span>C<span 
+class="small-caps">o</span></span></span> </div>
+<div class="center" 
+>
+<!--l. 44--><p class="noindent" >
+<!--l. 46--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp4700" ><span 
+class="cmr-12">MATP4700 Math Models of Operations Research</span></a>
+<!--l. 48--><p class="noindent" ><span 
+class="cmr-12">Fall 2020</span>
+</div>
+<!--l. 53--><p class="noindent" ><span 
+class="cmti-10x-x-109">Students may work in groups of up to three people. You may consult your textbooks, your notes, online</span>
+<span 
+class="cmti-10x-x-109">information, the TA, and me. You may not solicit help from other sources.</span>
+<!--l. 61--><p class="indent" >   Due: <span 
+class="cmbx-10x-x-109">Friday November</span><span 
+class="cmbx-10x-x-109">&#x00A0;13, 2020. </span>(30 points. Questions 1&#8211;4 are worth 3 points each; Questions 5&#8211;7
+are worth 6 points each.)
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Introduction</h3>
+<!--l. 66--><p class="noindent" >The solution found in <a 
+href="http://www.rpi.edu/~mitchj/matp4700/farm/farm.html" >Part 1</a> depends on the precise values of various parameters. Use sensitivity analysis
+to answer the following questions. Answer them without re-solving the linear program. Include
+printouts of relevant parts of your AMPL output. Assume that each part is independent of
+the others. Procedures for obtaining shadow prices and other relevant information are given
+below.
+<!--l. 81--><p class="indent" >   If you prefer to use them, my <a 
+href="http://www.rpi.edu/~mitchj/matp4700/farm/farm.mod" >model file</a> is available on LMS and the course website. The solution
+to the LP relaxation has value 8619.6444. If your model returns a different value, or if your
+model is nonlinear, you need to either modify your model so it does give this value, or use my
+model.
+<!--l. 102--><p class="indent" >   Notes: (1) You may want to solve a modified problem to check your answer for Questions 1&#8211;4, or to try
+to determine where to look for sensitivity information. That is OK, but I don&#8217;t want to see those results!
+You must give me the information using only sensitivity analysis. (2) AMPL might give a dual variable or
+reduced cost of the opposite sign from what you expect. That&#8217;s OK, you can just use the sign you&#8217;d
+expect.
+<!--l. 117--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-20002"></a>Questions</h3>
+<!--l. 118--><p class="noindent" >
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-2002x1"><a 
+ id="x1-20011"></a> In the current solution, <span 
+class="cmtt-10x-x-109">strawberries </span>are not grown in <span 
+class="cmtt-10x-x-109">field</span><span 
+class="cmtt-10x-x-109">&#x00A0;1</span>. From looking at reduced
+     costs, determine what the yield for <span 
+class="cmtt-10x-x-109">strawberries </span>in <span 
+class="cmtt-10x-x-109">field</span><span 
+class="cmtt-10x-x-109">&#x00A0;1 </span>would have to be to make it
+     attractive to grow them there?
+                                                                                         
+                                                                                         
+     </li>
+     <li 
+  class="enumerate" id="x1-2004x2"><a 
+ id="x1-20032"></a> If the amount <span 
+class="cmcsc-10x-x-109">F<span 
+class="small-caps">a</span><span 
+class="small-caps">r</span><span 
+class="small-caps">m</span>C<span 
+class="small-caps">o</span> </span>is willing to spend on monitoring increases to 500, estimate change
+     in objective function value.
+     </li>
+     <li 
+  class="enumerate" id="x1-2006x3">Use sensitivity analysis to estimate the improvement in the optimal value if the costs of
+     monitoring are reduced by&#x00A0;10%.
+     </li>
+     <li 
+  class="enumerate" id="x1-2008x4"><a 
+ id="x1-20074"></a> Use sensitivity analysis to estimate the change in the objective function value if the value of
+     <span 
+class="cmtt-10x-x-109">propLB[&#8217;sorghum&#8217;] </span>is dropped to&#x00A0;0<span 
+class="cmmi-10x-x-109">.</span>09. What about if we reduced <span 
+class="cmtt-10x-x-109">propLB[&#8217;wheat&#8217;]</span>?
+     </li>
+     <li 
+  class="enumerate" id="x1-2010x5">Use the command <span 
+class="cmtt-10x-x-109">let availability[&#8217;monitoring&#8217;]:=500; </span>and solve. Is the change in
+     objective function value larger or smaller than your prediction in Question&#x00A0;<a 
+href="#x1-20032">2<!--tex4ht:ref: monitorchange --></a>? Why?
+     </li>
+     <li 
+  class="enumerate" id="x1-2012x6"><a 
+ id="x1-20116"></a> The answer you get in Question&#x00A0;<a 
+href="#x1-20011">1<!--tex4ht:ref: straw1 --></a> should be greater than 300. However, using the command
+     <span 
+class="cmtt-10x-x-109">let yield[&#8217;strawberries&#8217;,1]:=300; </span>and  then  solving,  we  see  that  <span 
+class="cmtt-10x-x-109">strawberries </span>are
+     grown in <span 
+class="cmtt-10x-x-109">field</span><span 
+class="cmtt-10x-x-109">&#x00A0;1</span>. How do you explain this?
+     </li>
+     <li 
+  class="enumerate" id="x1-2014x7">Use the command <span 
+class="cmtt-10x-x-109">propLB[&#8217;sorghum&#8217;]:=0.09; </span>and solve. Is the change in objective function
+     value larger or smaller than your prediction in Question&#x00A0;<a 
+href="#x1-20074">4<!--tex4ht:ref: balance --></a>? Why?
+     <!--l. 150--><p class="noindent" >Now use the command <span 
+class="cmtt-10x-x-109">propLB[&#8217;sorghum&#8217;]:=0.099; </span>and solve. Is the change in objective
+     function value larger or smaller than 10% of your predicted change in Question&#x00A0;<a 
+href="#x1-20074">4<!--tex4ht:ref: balance --></a>? Why?</li></ol>
+<!--l. 155--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
+ id="x1-30003"></a>AMPL notes</h3>
+     <ul class="itemize1">
+     <li class="itemize">To find the value of a dual variable corresponding to a constraint called <span 
+class="cmtt-10x-x-109">fabcap</span>, type
+          <div class="quote">
+          <!--l. 162--><p class="noindent" ><span 
+class="cmtt-10x-x-109">display fabcap;</span></div>
+     <!--l. 163--><p class="noindent" >To find the slack in the constraint, type
+          <div class="quote">
+          <!--l. 164--><p class="noindent" ><span 
+class="cmtt-10x-x-109">display fabcap.slack;</span></div>
+     </li>
+     <li class="itemize">To find the reduced cost of a variable called SELL in the optimal tableau, type
+                                                                                         
+                                                                                         
+          <div class="quote">
+          <!--l. 168--><p class="noindent" ><span 
+class="cmtt-10x-x-109">display SELL.rc;</span></div>
+     </li>
+     <li class="itemize">If you are working in a Windows operating system, you can edit your model and data files in Office,
+     for example. Save the files as plain text files. Windows may append the suffix <span 
+class="cmtt-10x-x-109">txt </span>to the file
+     names, in which case you would need to include that suffix when asking ampl to read the
+     file.
+     </li>
+     <li class="itemize">If you want to read in a new model file <span 
+class="cmtt-10x-x-109">chips.mod </span>and data file <span 
+class="cmtt-10x-x-109">chips.dat</span>, you can use the <span 
+class="cmtt-10x-x-109">reset</span>
+     command: <div class="verse">
+             <!--l. 184--><p class="noindent" > ampl: <span 
+class="cmtt-10x-x-109">reset;</span><br />
+             ampl: <span 
+class="cmtt-10x-x-109">model chips.mod;</span><br />
+             ampl: <span 
+class="cmtt-10x-x-109">data chips.dat;</span>
+</div>
+     </li>
+     <li class="itemize">If you want to reset the whole data file and read in a new data file <span 
+class="cmtt-10x-x-109">chips.dat</span>, but you want to keep
+     the model file as before, you can type <div class="verse">
+             <!--l. 194--><p class="noindent" > ampl: <span 
+class="cmtt-10x-x-109">reset data;</span><br />
+             ampl: <span 
+class="cmtt-10x-x-109">data chips.dat;</span>
+</div>
+     </li>
+     <li class="itemize">If you want to change one parameter, you can use the <span 
+class="cmbx-10x-x-109">let </span>command as follows: <div class="verse">
+             <!--l. 217--><p class="noindent" > (<span 
+class="cmmi-10x-x-109">OS</span>)<span 
+class="cmmi-10x-x-109">&#x00A0;</span><span 
+class="cmtt-10x-x-109">ampl</span><br />
+             ampl: <span 
+class="cmtt-10x-x-109">model sample/steel.mod;</span><br />
+             ampl: <span 
+class="cmtt-10x-x-109">data sample/steel.dat;</span><br />
+             ampl: <span 
+class="cmtt-10x-x-109">solve;</span><br />
+             MINOS 5.4: optimal solution found.<br />
+             2 iterations, objective 192000<br />
+             ampl: <span 
+class="cmtt-10x-x-109">let rate["bands"]:=250;</span><br />
+             ampl: <span 
+class="cmtt-10x-x-109">solve;</span><br />
+             MINOS 5.4: optimal solution found.<br />
+             1 iterations, objective 217200
+                                                                                         
+                                                                                         
+</div>
+     This changes the rate for bands and then resolves the problem.
+     </li>
+     <li class="itemize">One way to find bounds on parameters in AMPL is to use the cplex option of sensitivity. This will
+     let you find ranges in which parameters can be changed without the set of optimal basic variables
+     changing. First make sure CPLEX is the solver: <div class="verse">
+             <!--l. 238--><p class="noindent" > ampl: <span 
+class="cmtt-10x-x-109">option solver cplex;</span>
+</div>
+     Once you&#8217;ve established cplex as the solver, enter the following command:
+<div class="verse">
+             <!--l. 245--><p class="noindent" > ampl: <span 
+class="cmtt-10x-x-109">option cplex</span><span 
+class="cmtt-10x-x-109">_options &#8217;sensitivity&#8217;;</span>
+</div>
+     Solve the problem again, and then you can then use the suffixes <span 
+class="cmtt-10x-x-109">up </span>and <span 
+class="cmtt-10x-x-109">down </span>on variable names, as
+     described for reduced costs and slacks.
+     </li>
+     <li class="itemize">Two useful commands to suppress the displaying of zero-valued variables are: <div class="verse">
+             <!--l. 254--><p class="noindent" > ampl: <span 
+class="cmtt-10x-x-109">option omit</span><span 
+class="cmtt-10x-x-109">_zero</span><span 
+class="cmtt-10x-x-109">_rows 1;</span>
+</div>
+     and <div class="verse">
+             <!--l. 258--><p class="noindent" > ampl: <span 
+class="cmtt-10x-x-109">option display</span><span 
+class="cmtt-10x-x-109">_1col 10000;</span>
+</div>
+     The first command suppresses the zeroes, except in a matrix. The second command prevents the
+     display of output in matrices (unless the row of the matrix would have at least 10000
+     entries).
+     </li>
+     <li class="itemize">All the variables and their reduced costs can be displayed simultaneously by using the
+     command
+          <div class="quote">
+                                                                                         
+                                                                                         
+          <div class="verbatim" id="verbatim-1">
+display&#x00A0;{j&#x00A0;in&#x00A0;1.._nvars}&#x00A0;(_varname[j],_var[j],_var[j].rc);
+</div>
+          <!--l. 271--><p class="nopar" ></div>
+     <!--l. 273--><p class="noindent" >(See page 249 of the AMPL text.)
+     <!--l. 275--><p class="noindent" >All the constraints and their shadow prices can be displayed simultaneously by using the
+     command
+          <div class="quote">
+                                                                                         
+                                                                                         
+          <div class="verbatim" id="verbatim-2">
+display&#x00A0;{j&#x00A0;in&#x00A0;1.._ncons}&#x00A0;(_conname[j],_con[j]);
+</div>
+          <!--l. 279--><p class="nopar" ></div>
+     <!--l. 281--><p class="noindent" >(Again, see page 249 of the AMPL text.)
+     <!--l. 283--><p class="noindent" >These commands can be used with the other suffixes available when using the cplex sensitivity
+     option.
+     </li>
+     <li class="itemize">You can use <span 
+class="cmtt-10x-x-109">sum </span>and other AMPL commands after solving the problem to find values of various
+     combinations of the primal and dual variables and the parameters. For example, you can display the
+     total value of a variable hydrorelease[h,t] over all time periods <span 
+class="cmmi-10x-x-109">t </span>from 1 to <span 
+class="cmti-10x-x-109">horizon </span>at a particular
+     reservoir A using the command: <div class="verse">
+             <!--l. 293--><p class="noindent" > ampl: <span 
+class="cmtt-10x-x-109">display sum</span><span 
+class="cmsy-10x-x-109">{</span><span 
+class="cmtt-10x-x-109">t in 1..horizon</span><span 
+class="cmsy-10x-x-109">} </span><span 
+class="cmtt-10x-x-109">hydrorelease[&#8217;A&#8217;,t];</span>
+</div>
+     </li>
+     <li class="itemize">More hints are available online from my page about AMPL:
+          <div class="quote">
+          <!--l. 300--><p class="noindent" ><a 
+href="http://homepages.rpi.edu/~mitchj/ampldetails.html" class="url" ><span 
+class="cmtt-10x-x-109">http://homepages.rpi.edu/</span><span 
+class="cmtt-10x-x-109">~</span><span 
+class="cmtt-10x-x-109">mitchj/ampldetails.html</span></a></div>
+     </li>
+     <li class="itemize">This project is available from LMS and also from the course webpage, at
+          <div class="quote">
+          <!--l. 305--><p class="noindent" ><a 
+href="http://homepages.rpi.edu/~mitchj/matp4700/#project" class="url" ><span 
+class="cmtt-10x-x-109">http://homepages.rpi.edu/</span><span 
+class="cmtt-10x-x-109">~</span><span 
+class="cmtt-10x-x-109">mitchj/matp4700/#project</span></a></div>
+     <!--l. 307--><p class="noindent" >where you will also find more information about AMPL.</li></ul>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                           </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Tuesday, Friday, 11am&#8211;12noon, webex:                </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-6-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-6-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-10x-x-109">https://rensselaer.webex.com/meet/mitchj</span></a>   </td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-7-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-7-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;                                                                             </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-8-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-8-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <span class="underline"><span 
+class="cmbx-10x-x-109">TA:</span></span> Jun Tan, tanj8 at rpi dot edu.</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-9-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-9-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours Wednesday 7.30pm&#8211;8.30pm on webex:</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-10-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-10-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="https://rensselaer.webex.com/meet/tanj8" class="url" ><span 
+class="cmtt-10x-x-109">https://rensselaer.webex.com/meet/tanj8</span></a>    </td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

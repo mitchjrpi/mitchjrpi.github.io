@@ -1,0 +1,437 @@
+z = -114
+
+CPLEX 12.6.0.0: optimal solution; objective -29
+12 dual simplex iterations (4 in phase I)
+lowerbound = 0
+upperbound = -14
+itercount = 0
+subprobval = -29
+z = -114
+
+xbar [*] :=
+1  1
+2  1
+3  1
+4  1
+5  1
+6  1
+;
+
+nExtPts = 1
+
+CPLEX 12.6.0.0: optimal integer solution; objective -29
+0 MIP simplex iterations
+0 branch-and-bound nodes
+CPLEX 12.6.0.0: optimal solution; objective 23.6
+22 simplex iterations (0 in phase I)
+lowerbound = -29
+upperbound = -14
+itercount = 1
+subprobval = 23.6
+z = -29
+
+xbar [*] :=
+1  0
+2  0
+3  0
+4  0
+5  0
+6  0
+;
+
+nExtPts = 2
+
+CPLEX 12.6.0.0: optimal integer solution; objective -27
+0 MIP simplex iterations
+0 branch-and-bound nodes
+CPLEX 12.6.0.0: optimal solution; objective -20
+5 simplex iterations (0 in phase I)
+lowerbound = -27
+upperbound = -18
+itercount = 2
+subprobval = -20
+z = -29
+
+xbar [*] :=
+1  0
+2  1
+3  0
+4  0
+5  0
+6  0
+;
+
+nExtPts = 3
+
+CPLEX 12.6.0.0: optimal integer solution; objective -27
+0 MIP simplex iterations
+0 branch-and-bound nodes
+CPLEX 12.6.0.0: optimal solution; objective -20
+5 simplex iterations (0 in phase I)
+lowerbound = -27
+upperbound = -18
+itercount = 3
+subprobval = -20
+z = -29
+
+xbar [*] :=
+1  0
+2  0
+3  0
+4  0
+5  0
+6  1
+;
+
+nExtPts = 4
+
+CPLEX 12.6.0.0: optimal integer solution; objective -26
+9 MIP simplex iterations
+0 branch-and-bound nodes
+CPLEX 12.6.0.0: optimal solution; objective -17
+11 simplex iterations (0 in phase I)
+lowerbound = -26
+upperbound = -18
+itercount = 4
+subprobval = -17
+z = -28
+
+xbar [*] :=
+1  0
+2  0
+3  0
+4  0
+5  1
+6  0
+;
+
+nExtPts = 5
+
+CPLEX 12.6.0.0: optimal integer solution; objective -25
+0 MIP simplex iterations
+0 branch-and-bound nodes
+CPLEX 12.6.0.0: optimal solution; objective -26
+16 simplex iterations (0 in phase I)
+lowerbound = -25
+upperbound = -22
+itercount = 5
+subprobval = -26
+z = -29
+
+xbar [*] :=
+1  0
+2  0
+3  0
+4  0
+5  1
+6  1
+;
+
+nExtPts = 6
+
+CPLEX 12.6.0.0: optimal integer solution; objective -25
+10 MIP simplex iterations
+0 branch-and-bound nodes
+CPLEX 12.6.0.0: optimal solution; objective -25
+3 simplex iterations (0 in phase I)
+lowerbound = -25
+upperbound = -22
+itercount = 6
+subprobval = -25
+z = -29
+
+xbar [*] :=
+1  0
+2  1
+3  0
+4  0
+5  0
+6  1
+;
+
+nExtPts = 7
+
+CPLEX 12.6.0.0: optimal integer solution; objective -25
+8 MIP simplex iterations
+0 branch-and-bound nodes
+CPLEX 12.6.0.0: optimal solution; objective -25
+5 simplex iterations (0 in phase I)
+lowerbound = -25
+upperbound = -22
+itercount = 7
+subprobval = -25
+z = -29
+
+xbar [*] :=
+1  0
+2  1
+3  0
+4  0
+5  1
+6  0
+;
+
+nExtPts = 8
+
+CPLEX 12.6.0.0: optimal integer solution; objective -24
+23 MIP simplex iterations
+0 branch-and-bound nodes
+CPLEX 12.6.0.0: optimal solution; objective -24
+4 simplex iterations (0 in phase I)
+lowerbound = -24
+upperbound = -22
+itercount = 8
+subprobval = -24
+z = -29
+
+xbar [*] :=
+1  0
+2  1
+3  0
+4  1
+5  0
+6  0
+;
+
+nExtPts = 9
+
+CPLEX 12.6.0.0: optimal integer solution; objective -24
+13 MIP simplex iterations
+0 branch-and-bound nodes
+CPLEX 12.6.0.0: optimal solution; objective -24
+6 simplex iterations (0 in phase I)
+lowerbound = -24
+upperbound = -22
+itercount = 9
+subprobval = -24
+z = -29
+
+xbar [*] :=
+1  1
+2  0
+3  0
+4  0
+5  0
+6  1
+;
+
+nExtPts = 10
+
+CPLEX 12.6.0.0: optimal integer solution; objective -24
+11 MIP simplex iterations
+0 branch-and-bound nodes
+CPLEX 12.6.0.0: optimal solution; objective -24
+3 simplex iterations (0 in phase I)
+lowerbound = -24
+upperbound = -22
+itercount = 10
+subprobval = -24
+z = -29
+
+xbar [*] :=
+1  1
+2  1
+3  0
+4  0
+5  0
+6  0
+;
+
+nExtPts = 11
+
+CPLEX 12.6.0.0: optimal integer solution; objective -24
+9 MIP simplex iterations
+0 branch-and-bound nodes
+CPLEX 12.6.0.0: optimal solution; objective -25
+3 simplex iterations (0 in phase I)
+lowerbound = -24
+upperbound = -22
+itercount = 11
+subprobval = -25
+z = -29
+
+xbar [*] :=
+1  1
+2  0
+3  0
+4  0
+5  1
+6  0
+;
+
+nExtPts = 12
+
+CPLEX 12.6.0.0: optimal integer solution; objective -23
+19 MIP simplex iterations
+0 branch-and-bound nodes
+CPLEX 12.6.0.0: optimal solution; objective -28
+5 simplex iterations (0 in phase I)
+lowerbound = -23
+upperbound = -22
+itercount = 12
+subprobval = -28
+z = -29
+
+xbar [*] :=
+1  0
+2  1
+3  0
+4  0
+5  1
+6  1
+;
+
+nExtPts = 13
+
+CPLEX 12.6.0.0: optimal integer solution; objective -23
+19 MIP simplex iterations
+0 branch-and-bound nodes
+CPLEX 12.6.0.0: optimal solution; objective -24
+5 simplex iterations (0 in phase I)
+lowerbound = -23
+upperbound = -22
+itercount = 13
+subprobval = -24
+z = -29
+
+xbar [*] :=
+1  0
+2  0
+3  1
+4  1
+5  0
+6  0
+;
+
+nExtPts = 14
+
+CPLEX 12.6.0.0: optimal integer solution; objective -23
+24 MIP simplex iterations
+0 branch-and-bound nodes
+CPLEX 12.6.0.0: optimal solution; objective -24
+2 simplex iterations (0 in phase I)
+lowerbound = -23
+upperbound = -22
+itercount = 14
+subprobval = -24
+z = -29
+
+xbar [*] :=
+1  1
+2  0
+3  1
+4  0
+5  0
+6  0
+;
+
+nExtPts = 15
+
+CPLEX 12.6.0.0: optimal integer solution; objective -22
+24 MIP simplex iterations
+0 branch-and-bound nodes
+CPLEX 12.6.0.0: optimal solution; objective -27
+5 simplex iterations (0 in phase I)
+lowerbound = -22
+upperbound = -22
+itercount = 15
+subprobval = -27
+z = -29
+
+xbar [*] :=
+1  0
+2  0
+3  0
+4  1
+5  1
+6  1
+;
+
+nExtPts = 16
+
+CPLEX 12.6.0.0: optimal integer solution; objective -22
+24 MIP simplex iterations
+0 branch-and-bound nodes
+CPLEX 12.6.0.0: optimal solution; objective -26
+5 simplex iterations (0 in phase I)
+lowerbound = -22
+upperbound = -22
+itercount = 16
+subprobval = -26
+z = -29
+
+xbar [*] :=
+1  0
+2  1
+3  0
+4  1
+5  0
+6  1
+;
+
+nExtPts = 17
+
+CPLEX 12.6.0.0: optimal integer solution; objective -22
+24 MIP simplex iterations
+0 branch-and-bound nodes
+CPLEX 12.6.0.0: optimal solution; objective -27
+3 simplex iterations (0 in phase I)
+lowerbound = -22
+upperbound = -22
+itercount = 17
+subprobval = -27
+z = -29
+
+xbar [*] :=
+1  0
+2  1
+3  0
+4  1
+5  1
+6  0
+;
+
+nExtPts = 18
+
+CPLEX 12.6.0.0: optimal integer solution; objective -22
+34 MIP simplex iterations
+0 branch-and-bound nodes
+CPLEX 12.6.0.0: optimal solution; objective -26
+4 simplex iterations (0 in phase I)
+lowerbound = -22
+upperbound = -22
+itercount = 18
+subprobval = -26
+z = -26
+
+xbar [*] :=
+1  0
+2  0
+3  0
+4  0
+5  1
+6  1
+;
+
+CPLEX 12.6.0.0: optimal integer solution; objective -22
+6 MIP simplex iterations
+0 branch-and-bound nodes
+x [*] :=
+1  0
+2  0
+3  0
+4  0
+5  1
+6  1
+;
+
+y [*,*] (tr)
+:   1   2   3   4    :=
+1   0   0   0   0
+2   0   0   0   0
+3   0   0   0   0
+4   0   0   0   0
+5   1   1   0   0
+6   0   0   1   1
+;
+

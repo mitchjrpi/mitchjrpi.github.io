@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw4.tex"> 
+<meta name="date" content="2022-02-23 13:00:00"> 
+<link rel="stylesheet" type="text/css" href="hw4.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 16--><p class="noindent" >
+<!--l. 18--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12">MATP6640/ISYE6770 Linear Programming</span></a><span 
+class="cmr-12">, Homework 4.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 23--><p class="noindent" >
+ Due: 11.59pm on Friday, March 4, 2022 on LMS.<br />
+10% penalty for each day late.</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1">Solve the primal and dual semidefinite programs:
+     <center class="math-display" >
+     <img 
+src="hw40x.png" alt="          [      ]
+            1  0                             max         2   2y
+minX &#x2208;S2+    0  1   &#x2219;X                            y&#x2208;IR,S&#x2208;S+
+          [      ]                                 [ 1  1 ]             [ 1  0 ]
+s.t.         1  1   &#x2219;X   =   2    (SDP )      s.t.  y  1  0     +  S   =    0  1      (SDD  )
+            1  0
+                    X   &#x227D;   0                                    S   &#x227D;  0
+     " class="math-display" ></center>
+     <!--l. 96--><p class="nopar" >
+     What are the optimal solutions <span 
+class="cmmi-10x-x-109">X </span>and <span 
+class="cmmi-10x-x-109">y</span>, <span 
+class="cmmi-10x-x-109">S</span>? What are the optimal values?
+     </li>
+     <li 
+  class="enumerate" id="x1-5x2">Use the network simplex algorithm to find the minimum cost flow for the problem with the following
+     linear programming representation:
+     <center class="math-display" >
+     <img 
+src="hw41x.png" alt="min               -  2x13  -   x23 -   2x24          -   10x41
+subject to  - x12  -   x13                            +     x41  =  0
+             x12           -   x23 -    x24                     =  0
+                      x13  +   x23           -  x34             =  0
+                                        x    +  x    -     x    =  0
+                                         24       34         41
+                                        0 &#x2264; x12,x13,x23,x24,x34 &#x2264;  1
+                                                  0  &#x2264;     x41  &#x2264;  10
+     " class="math-display" ></center>
+     <!--l. 283--><p class="nopar" >
+     Use the initial basic feasible solution with basic variables <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">12</span></sub> = 1, <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">13</span></sub> = 0, <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">41</span></sub> = 1, with nonbasic
+     variables <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">23</span></sub> = 1<span 
+class="cmmi-10x-x-109">,x</span><sub><span 
+class="cmr-8">24</span></sub> = 0<span 
+class="cmmi-10x-x-109">,x</span><sub><span 
+class="cmr-8">34</span></sub> = 1<span 
+class="cmmi-10x-x-109">. </span>You should need two iterations.
+                                                                                         
+                                                                                         
+     </li>
+     <li 
+  class="enumerate" id="x1-7x3">(Bertsimas and Tsitsiklis 7.4) Assume we have a network flow problem on a simple graph <span 
+class="cmmi-10x-x-109">G </span>= (<span 
+class="cmmi-10x-x-109">V,E</span>)
+     where the cost <span 
+class="cmmi-10x-x-109">f</span><sub><span 
+class="cmmi-8">e</span></sub>(<span 
+class="cmmi-10x-x-109">x</span>) of shipping <span 
+class="cmmi-10x-x-109">x </span>units along arc <span 
+class="cmmi-10x-x-109">e </span>is a convex nonnegative piecewise linear
+     function with <span 
+class="cmmi-10x-x-109">f</span><sub><span 
+class="cmmi-8">e</span></sub>(0) = 0. Assume arc <span 
+class="cmmi-10x-x-109">e </span>has capacity&#x00A0;<span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmmi-8">e</span></sub>. The supply <span 
+class="cmmi-10x-x-109">b</span><sub><span 
+class="cmmi-8">v</span></sub> at each node <span 
+class="cmmi-10x-x-109">v </span>is given and
+     the aim is to construct a minimum cost circulation. Show that we can construct an
+     equivalent problem on a modified graph <span 
+class="cmmi-10x-x-109">G</span><span 
+class="cmsy-10x-x-109">&#x2032; </span>= (<span 
+class="cmmi-10x-x-109">V </span><span 
+class="cmsy-10x-x-109">&#x2032;</span><span 
+class="cmmi-10x-x-109">,E</span><span 
+class="cmsy-10x-x-109">&#x2032;</span>) where all the arc costs are linear. (The
+     graph <span 
+class="cmmi-10x-x-109">G</span><span 
+class="cmsy-10x-x-109">&#x2032; </span>should also be simple. A directed graph is simple if it has no parallel arcs or
+     loops.)
+     </li>
+     <li 
+  class="enumerate" id="x1-9x4">(Bertsimas and Tsitsiklis 7.13) Suppose we are given a noninteger optimal solution to an
+     uncapacitated network flow problem with integer data. Show that there exists a cycle with every arc
+     on the cycle carrying a positive flow. What can you say about the cost of such a cycle? How
+     could you exploit the cycles to construct an optimal integral solution? (Note: Some arcs
+     may be oriented in the opposite direction from the cycle. The cost of the cycle is the
+     difference between the sum of the costs of the arcs oriented in the same direction as the
+     cycle and the sum of the costs of the arcs oriented in the opposite direction from the
+     cycle.)
+     </li>
+     <li 
+  class="enumerate" id="x1-11x5">Consider a multicommodity network flow problem with three commodities on a graph <span 
+class="cmmi-10x-x-109">G </span>= (<span 
+class="cmmi-10x-x-109">V,E</span>)
+     with five nodes and seven edges. The seven edges and their costs and capacities are as
+     follows:
+     <center class="math-display" >
+     <img 
+src="hw42x.png" alt="          |
+-edge-----|(1,2)--(1,5)--(2,3)--(2,4)--(2,5)-(3,4)--(4,5)-
+ cost     |   8     11     7     10     6      6     8
+ capacity |  25     40    35     50    40     25    50
+     " class="math-display" ></center>
+     <!--l. 354--><p class="nopar" >
+     The costs are identical for each commodity. 25 units of commodity A need to be moved from node 1
+     to node&#x00A0;3. 20 units of commodity B need to be moved from node 5 to node&#x00A0;3. 20 units of
+     commodity C need to be moved from node 4 to node&#x00A0;1. The current set of paths consists of
+     1 <span 
+class="cmsy-10x-x-109">&#x2192; </span>2 <span 
+class="cmsy-10x-x-109">&#x2192; </span>3 and 1 <span 
+class="cmsy-10x-x-109">&#x2192; </span>5 <span 
+class="cmsy-10x-x-109">&#x2192; </span>4 <span 
+class="cmsy-10x-x-109">&#x2192; </span>3 for commodity&#x00A0;A, 5 <span 
+class="cmsy-10x-x-109">&#x2192; </span>2 <span 
+class="cmsy-10x-x-109">&#x2192; </span>3 for commodity&#x00A0;B, and 4 <span 
+class="cmsy-10x-x-109">&#x2192; </span>5 <span 
+class="cmsy-10x-x-109">&#x2192; </span>1 for
+     commodity&#x00A0;<span 
+class="cmmi-10x-x-109">C</span>. Use the path based approach described in class to show that this is not an optimal
+     set of paths. What is the optimal solution?
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                                                         </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                                                                                    </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours: Thursday 11am&#8211;1pm., on webex <a 
+href="https://rensselaer.webex.com/meet/mitchj" class="url" ><span 
+class="cmtt-10x-x-109">https://rensselaer.webex.com/meet/mitchj</span></a></td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

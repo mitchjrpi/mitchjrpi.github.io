@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Homework 4</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="hw4">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="hw4.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+     <a href=..>MATP6640/DSES6770 Linear Programming</a>, Homework 4.
+  </FONT>
+</DIV>
+
+<P>
+
+<DIV ALIGN="RIGHT">
+   Due:  Thursday, March 18, 2004.
+
+</DIV>
+
+<P>
+
+<BR>
+
+<P>
+Dantzig-Wolfe decomposition solves the linear programming problem
+    <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcl}
+        \min          & c^Tx \\
+        \mbox{s.t.}   &  Ax  & = & b  \qquad \qquad (P)  \\
+                      &  Hx  & = & h  \\
+                      &   x & \geq & 0.
+      \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="207" HEIGHT="83"
+ SRC="img1.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcl}
+\min &amp; c^Tx \\
+\mbox{s.t.} &amp; Ax &amp; = ...
+...\qquad (P) \\
+&amp; Hx &amp; = &amp; h \\
+&amp; x &amp; \geq &amp; 0.
+\end{array} \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The procedure
+takes <!-- MATH: $X = \{ x \in I \!\! R^n: Hx=h, x \geq 0 \}$ -->
+<IMG
+ WIDTH="220" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$X = \{ x \in I \!\! R^n: Hx=h, x \geq 0 \}$">,
+and solves subproblems of the form
+    <BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lccl} 
+        \min          & (c^T - \pi^T A)x \\
+        \mbox{s.t.}   &  Hx  & = & h  \qquad \qquad (SP(\pi))  \\
+                      &   x & \geq & 0, 
+      \end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="305" HEIGHT="64"
+ SRC="img3.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lccl}
+\min &amp; (c^T - \pi^T A)x \\
+\mbox{s....
+...h \qquad \qquad (SP(\pi)) \\
+&amp; x &amp; \geq &amp; 0,
+\end{array}
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <IMG
+ WIDTH="42" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$(\pi,\sigma)$">
+is the current dual solution to the Master Problem.
+
+<P>
+
+<BR>
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>When using Dantzig-Wolfe decomposition,
+assume the current subproblem has an optimal solution <IMG
+ WIDTH="13" HEIGHT="13" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.gif"
+ ALT="$\bar{x}$">
+with value
+    <I>v</I>.  Can you give a lower bound on the optimal value of (<I>P</I>)?
+    What does your lower bound become if <IMG
+ WIDTH="42" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$(\pi,\sigma)$">
+is dual feasible?
+<DT>2.
+<DD>Suppose (<I>P</I>) has been solved using Dantzig-Wolfe decomposition.
+    How would you find
+    the optimal dual solution to the original problem&nbsp;(<I>P</I>)?
+<DT>3.
+<DD>Assume there are no constraints of the form <I>Hx</I>=<I>h</I>.
+    What are the extreme point(s) and extreme ray(s) of&nbsp;<I>X</I>?
+    What is the Master Problem?
+    How does Dantzig-Wolfe decomposition compare with the simplex algorithm?
+<DT>4.
+<DD>Use the network simplex algorithm to find the minimum cost flow for the problem
+with
+the following linear programming representation:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcrcrcrcrcrcl}
+\min & & - & 2x_{13}& - & x_{23} & - & 2x_{24} &&& - & 10 x_{41} \\
+\mbox{subject to} & -x_{12} & - & x_{13} &&&&&&& + & x_{41} & = & 0 \\
+& x_{12} &&& - & x_{23} & - & x_{24} &&&&& = & 0 \\
+&&& x_{13} & + & x_{23} &&& - & x_{34} &&& = & 0 \\
+&&&&&&& x_{24} & + & x_{34} & - & x_{41} & = & 0 \\
+& \multicolumn{11}{r}{0 \, \leq \, x_{12}, x_{13}, x_{23}, x_{24}, x_{34}}
+& \leq & 1 \\
+&&&&&&&&& 0 & \leq & x_{41} & \leq & 10
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="545" HEIGHT="140"
+ SRC="img6.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcrcrcrcrcrcl}
+\min &amp; &amp; - &amp; 2x_{13}&amp; - &amp; x_{2...
+...leq &amp; 1 \\
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp; 0 &amp; \leq &amp; x_{41} &amp; \leq &amp; 10
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+Use the initial basic feasible solution with basic variables:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+x_{12} = 1, \quad x_{34}=1, \quad x_{41}=1
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="199" HEIGHT="27"
+ SRC="img7.gif"
+ ALT="\begin{displaymath}
+x_{12} = 1, \quad x_{34}=1, \quad x_{41}=1
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+and nonbasic variables
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+x_{13}=0, \quad x_{23}=1, \quad x_{24}=0.
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="203" HEIGHT="27"
+ SRC="img8.gif"
+ ALT="\begin{displaymath}
+x_{13}=0, \quad x_{23}=1, \quad x_{24}=0.
+\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+You should need three iterations.
+<DT>5.
+<DD>(20 points)
+In <a href=http://eaton.math.rpi.edu/CourseMaterials/Spring04/JM6640/hwkq.pdf>this link</a>
+you'll find an algorithm
+taken from a paper that was published in <EM>SIAM Review</EM>.
+It gives a Phase I procedure for finding an initial basic feasible solution
+for the linear program <!-- MATH: $\max \{ c^Tx : Ax=b, x \geq 0 \}$ -->
+<IMG
+ WIDTH="182" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$\max \{ c^Tx : Ax=b, x \geq 0 \}$">,
+where
+<I>A</I> is a <I>m</I>  x  <I>n</I> matrix.
+The procedure is a greedy approach which builds up the basic feasible
+solution from scratch, assigning a basic variable to each row.
+The ``If not'' on the last line of Step 3a is in answer to the second
+line of Step&nbsp;3.
+
+<P>
+The author declares elsewhere that the number of iterations to get an
+initial basic feasible solution with this algorithm is at most&nbsp;<I>m</I>.
+Show that if this was true then a pivot algorithm could be designed
+which would solve the linear program in at most <I>O</I>(<I>m</I>+<I>n</I>) pivots.
+
+<P>
+Construct a feasible linear program which this algorithm
+declares infeasible.
+(Such an example exists with 2 constraints and 4 variables.)
+</DL>
+
+<P>
+
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD></TD><TD ALIGN="LEFT"><a href=../..>John Mitchell</a></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Amos Eaton 325</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">x6915.</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT"><a href=mailto:mitchj@rpi.edu>mitchj@rpi.edu</a></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Office hours: Mondays March 1 and 15: 3pm - 5pm.</TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E. Mitchell</a>
+<BR><I>2004-02-20</I>
+</ADDRESS>
+</BODY>
+</HTML>

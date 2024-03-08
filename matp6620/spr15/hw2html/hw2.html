@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw2.tex"> 
+<meta name="date" content="2015-02-11 11:01:00"> 
+<link rel="stylesheet" type="text/css" href="hw2.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 24--><p class="noindent" >
+<!--l. 26--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6620" ><span 
+class="cmr-12">MATP6620/DSES6760 Combinatorial Optimization &amp; Integer Programming</span></a><br />
+<span 
+class="cmr-12">Homework 2.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 31--><p class="noindent" >
+ Due: Friday, February 20, 2015, in class.<br />
+Penalty for late homeworks: 10% for each day or part of a day.</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1">A method for representing a spanning tree on the vertices <span 
+class="cmsy-10">{</span>1<span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&#x2026;</span><span 
+class="cmmi-10">,n</span><span 
+class="cmsy-10">} </span>as a string of <span 
+class="cmmi-10">n</span><span 
+class="cmsy-10">- </span>2 numbers was presented
+     in class. Find the trees with 8 vertices corresponding to the following strings:
+         <ol  class="enumerate2" >
+         <li 
+  class="enumerate" id="x1-5x1">856143.
+         </li>
+         <li 
+  class="enumerate" id="x1-7x2">341432.
+         </li>
+         <li 
+  class="enumerate" id="x1-9x3">432544.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-11x2">Show that <div class="eqnarray">
+     <center class="math-display" >
+     <img 
+src="hw20x.png" alt="              3
+S   :=  {x &#x2208; ZZ + : 7x1 + 9x2 + 12x3 &#x2265; 17}
+    =  {x &#x2208; ZZ3+ : 4x1 + 5x2 + 6x3 &#x2265; 10}
+    =  {x &#x2208; ZZ3+ : x1 + x2 + x3 &#x2265; 2, 2x1 + 3x2 + 4x3 &#x2265; 6}.
+     " class="math-display" ></center>
+     </div>Which formulation do you think is most effective for solving max<span 
+class="cmsy-10">{</span><span 
+class="cmmi-10">c</span><sup><span 
+class="cmmi-7">T</span></sup><span 
+class="cmmi-10">x </span>: <span 
+class="cmmi-10">x </span><span 
+class="cmsy-10"><img 
+src="cmsy10-32.png" alt="&#x2208;" class="10x-x-32" /> </span><span 
+class="cmmi-10">S</span><span 
+class="cmsy-10">}</span>? Why? You may want to
+     experiment with AMPL to confirm your answer.
+     </li>
+     <li 
+  class="enumerate" id="x1-14x3">Assume that we have a polynomial time algorithm for <span 
+class="cmti-10">computing the length </span>of the shortest TSP tour, so given
+     any graph <span 
+class="cmmi-10">G </span>= (<span 
+class="cmmi-10">V,E</span>) with edge lengths <span 
+class="cmmi-10">c</span><sub><span 
+class="cmmi-7">e</span></sub>, this algorithm will tell us the length of the optimal tour,
+     but it will <span 
+class="cmti-10">not </span>tell us the edges that are used in the optimal tour. Prove that we can use this
+     algorithm as a subroutine in a polynomial time algorithm for <span 
+class="cmti-10">finding the edges </span>in the shortest TSP
+     tour.
+                                                                                         
+                                                                                         
+     </li>
+     <li 
+  class="enumerate" id="x1-16x4">Using the <span 
+class="cmti-10">Hamiltonian path </span>problem, or otherwise, show that the following problem is <span 
+class="cmsy-10"><img 
+src="cmsy10-4e.png" alt="N" class="10x-x-4e" /><img 
+src="cmsy10-50.png" alt="P" class="10x-x-50" /></span>-complete.
+         <div class="quote">
+         <!--l. 305--><p class="noindent" >Given a graph <span 
+class="cmmi-10">G </span>= (<span 
+class="cmmi-10">V,E</span>) and a set <span 
+class="cmmi-10">L </span><span 
+class="cmsy-10">&#x2286; </span><span 
+class="cmmi-10">V </span>, is there a spanning tree <span 
+class="cmmi-10">T </span>of <span 
+class="cmmi-10">G </span>such that the
+         set of leaves is <span 
+class="cmmi-10">L</span>?</div>
+     <!--l. 308--><p class="noindent" >(A <span 
+class="cmti-10">leaf </span>of a tree is a vertex of degree 1. The Hamiltonian path problem is: Given a graph <span 
+class="cmmi-10">G </span>= (<span 
+class="cmmi-10">V,E</span>), does
+     there exist a path which visits all the vertices of <span 
+class="cmmi-10">G </span>exactly once? You may assume that this problem is
+     <span 
+class="cmsy-10"><img 
+src="cmsy10-4e.png" alt="N" class="10x-x-4e" /><img 
+src="cmsy10-50.png" alt="P" class="10x-x-50" /></span>
+     -complete.)
+     </li>
+     <li 
+  class="enumerate" id="x1-18x5">Consider the optimization problem
+     <center class="math-display" >
+     <img 
+src="hw21x.png" alt="max            x12
+subject to     x11      =  2
+           [   x22   ]  =  1
+             x11  x12
+             x12  x22    is  positive semidefinite
+     " class="math-display" ></center>
+     <!--l. 383--><p class="nopar" >
+     Show that the optimal value is irrational. Can this problem be solved in polynomial time?</li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                     </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           x6915.                                               </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;           Office hours: Tuesday, Wednesday, 2&#8211;4pm.</td> </tr></table>
+</div>
+    
+</body></html> 
+
+                                                                                         
+
+

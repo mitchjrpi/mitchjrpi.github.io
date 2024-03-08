@@ -1,0 +1,779 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="maxcutProofs.tex"> 
+<meta name="date" content="2017-02-28 21:23:00"> 
+<link rel="stylesheet" type="text/css" href="maxcutProofs.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 113--><p class="noindent" >
+<!--l. 114--><p class="noindent" ><span 
+class="cmbx-12x-x-172">Proofs for the MaxCut Polyhedron</span><br />
+<a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a></div>
+   <h3 class="sectionHead"><span class="titlemark">1   </span> <a 
+ id="x1-10001"></a>Dimension</h3>
+<!--l. 120--><p class="noindent" >Given a graph <span 
+class="cmmi-12">G </span>= (<span 
+class="cmmi-12">V,E</span>), a cut partitions <span 
+class="cmmi-12">V </span>into two sets <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub> and&#x00A0;<span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">2</span></sub>. An edge <span 
+class="cmmi-12">e </span>= (<span 
+class="cmmi-12">u,v</span>) is in the
+cut if exactly one of its endpoints is in&#x00A0;<span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub>. We represent this cut using the binary vector <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup>,
+where <span 
+class="cmmi-12">n </span>= <span 
+class="cmsy-10x-x-120">|</span><span 
+class="cmmi-12">E</span><span 
+class="cmsy-10x-x-120">|</span>, with
+   <center class="math-display" >
+<img 
+src="maxcutProofs0x.png" alt="      {
+xe =     1  if e is in the cut
+         0  otherwise.
+" class="math-display" ></center>
+<!--l. 125--><p class="nopar" >
+Let <span 
+class="cmmi-12">S </span><span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="msbm-10x-x-120">&#x211D;</span><sup><span 
+class="cmmi-8">n</span></sup> denote the set of incidence vectors of feasible solutions and let conv(<span 
+class="cmmi-12">S</span>) denote its
+convex hull.
+<!--l. 129--><p class="indent" >   The proofs below are adapted from Deza and Laurent (<span 
+class="cmti-12">Mathematical Programming </span>56:121&#8211;160,
+1992).
+   <div class="newtheorem">
+<!--l. 132--><p class="noindent" ><span class="head">
+<span 
+class="cmbx-12">Theorem</span><span 
+class="cmbx-12">&#x00A0;1</span> </span><span 
+class="cmti-12">The MaxCut polyhedron conv</span>(<span 
+class="cmmi-12">S</span>) <span 
+class="cmti-12">is full-dimensional.</span>
+   </div>
+<!--l. 137--><p class="indent" >   <span 
+class="cmbx-12">Proof. </span>If the polyhedron is not full-dimensional then there exists a nontrivial constraint
+   <table 
+class="equation"><tr><td><a 
+ id="x1-1002r1"></a>
+   <center class="math-display" >
+<img 
+src="maxcutProofs1x.png" alt="&#x2211;  a x  =  b
+     e e
+e&#x2208;E
+" class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+                                                                                         
+                                                                                         
+<!--l. 140--><p class="nopar" >
+that is satisfied by all <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">S</span>. We show that any such equality must actually be trivial with <span 
+class="cmmi-12">b </span>= 0
+and <span 
+class="cmmi-12">a</span><sub><span 
+class="cmmi-8">e</span></sub> = 0 for all <span 
+class="cmmi-12">e </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">E</span>.
+<!--l. 147--><p class="noindent" ><span 
+class="cmbx-12">b </span>= <span 
+class="cmbx-12">0 </span>: One valid partition is to take <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmmi-12">V </span>and <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmsy-10x-x-120">&#x2205;</span>, which results in <span 
+class="cmmi-12">x</span><sub><span 
+class="cmmi-8">e</span></sub> = 0 for all <span 
+class="cmmi-12">e </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">E</span>.
+Hence the left hand side of (<a 
+href="#x1-1002r1">1<!--tex4ht:ref: eq:equality --></a>) evaluates to zero, so we must have <span 
+class="cmmi-12">b </span>= 0.
+<!--l. 154--><p class="noindent" ><span 
+class="cmbx-12">a</span><sub><span 
+class="cmbx-8">e</span></sub> = <span 
+class="cmbx-12">0</span><span style="margin-left:0.3em" class="thinspace"></span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmsy-10x-x-120">&#x2200;</span><span 
+class="cmbx-12">e </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmbx-12">E </span>: Pick an arbitrary edge <span class="bar-css"><span 
+class="cmmi-12">e</span></span> = (<span 
+class="cmmi-12">r,s</span>) and show <span 
+class="cmmi-12">a</span><sub><span class="bar-css"><span 
+class="cmmi-8">e</span></span></sub> = 0 by considering three
+cuts.
+      <ul class="itemize1">
+      <li class="itemize"><span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">r</span><span 
+class="cmsy-10x-x-120">}</span>, <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmmi-12">V </span><span 
+class="cmsy-10x-x-120">\ </span><span 
+class="cmmi-12">r</span>. Then (<a 
+href="#x1-1002r1">1<!--tex4ht:ref: eq:equality --></a>) becomes
+      <table 
+class="equation"><tr><td><a 
+ id="x1-1003r2"></a>
+      <center class="math-display" >
+      <img 
+src="maxcutProofs2x.png" alt="        &#x2211;
+ars +         ae = 0.
+      e&#x2208; &#x03B4;(r),e&#x2044;=¯e
+      " class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+      <!--l. 161--><p class="nopar" >
+      </li>
+      <li class="itemize"><span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">s</span><span 
+class="cmsy-10x-x-120">}</span>, <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmmi-12">V </span><span 
+class="cmsy-10x-x-120">\ </span><span 
+class="cmmi-12">s</span>. Then (<a 
+href="#x1-1002r1">1<!--tex4ht:ref: eq:equality --></a>) becomes
+      <table 
+class="equation"><tr><td><a 
+ id="x1-1004r3"></a>
+      <center class="math-display" >
+      <img 
+src="maxcutProofs3x.png" alt="        &#x2211;
+ars +         ae = 0.
+      e&#x2208; &#x03B4;(s),e&#x2044;= ¯e
+      " class="math-display" ></center></td><td class="equation-label">(3)</td></tr></table>
+      <!--l. 165--><p class="nopar" >
+                                                                                         
+                                                                                         
+      </li>
+      <li class="itemize"><span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">r,s</span><span 
+class="cmsy-10x-x-120">}</span>, <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmmi-12">V </span><span 
+class="cmsy-10x-x-120">\{</span><span 
+class="cmmi-12">r,s</span><span 
+class="cmsy-10x-x-120">}</span>. Then (<a 
+href="#x1-1002r1">1<!--tex4ht:ref: eq:equality --></a>) becomes
+      <table 
+class="equation"><tr><td><a 
+ id="x1-1005r4"></a>
+      <center class="math-display" >
+      <img 
+src="maxcutProofs4x.png" alt="  &#x2211;             &#x2211;
+        ae +          ae = 0.
+
+e&#x2208;&#x03B4;(r),e&#x2044;=¯e     e&#x2208;&#x03B4;(s),e&#x2044;=e¯
+      " class="math-display" ></center></td><td class="equation-label">(4)</td></tr></table>
+      <!--l. 169--><p class="nopar" >
+      </li></ul>
+<!--l. 171--><p class="noindent" >Then (<a 
+href="#x1-1003r2">2<!--tex4ht:ref: eq:caseA --></a>)+(<a 
+href="#x1-1004r3">3<!--tex4ht:ref: eq:caseB --></a>)-(<a 
+href="#x1-1005r4">4<!--tex4ht:ref: eq:caseC --></a>) implies
+   <center class="math-display" >
+<img 
+src="maxcutProofs5x.png" alt="2a   = 0   &#x21D2;    a  = 0.
+  rs             ¯e
+" class="math-display" ></center>
+<!--l. 174--><p class="nopar" >
+This holds for all <span class="bar-css"><span 
+class="cmmi-12">e</span></span> <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">E</span>, as required.                                                                     <span 
+class="msam-10x-x-120">&#x25A1;</span>
+                                                                                         
+                                                                                         
+<!--l. 182--><p class="noindent" >
+   <h3 class="sectionHead"><span class="titlemark">2   </span> <a 
+ id="x1-20002"></a>Facets</h3>
+<!--l. 184--><p class="noindent" >Let <span 
+class="cmmi-12">C </span><span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="cmmi-12">E </span>denote a cycle in the graph. Let <span 
+class="cmmi-12">F </span><span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="cmmi-12">C </span>with <span 
+class="cmsy-10x-x-120">|</span><span 
+class="cmmi-12">F</span><span 
+class="cmsy-10x-x-120">| </span>odd. We have the valid
+constraint
+   <table 
+class="equation"><tr><td><a 
+ id="x1-2001r5"></a>
+   <center class="math-display" >
+<img 
+src="maxcutProofs6x.png" alt="&#x2211;         &#x2211;
+    xe -      xe &#x2264;  |F | - 1.
+e&#x2208;F      e&#x2208;C\F
+" class="math-display" ></center></td><td class="equation-label">(5)</td></tr></table>
+<!--l. 189--><p class="nopar" >
+This is facet-defining provided the cycle contains no <span 
+class="cmbx-12">chords</span>; that is, there are no edges of the form
+(<span 
+class="cmmi-12">u,v</span>) <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">E </span>where <span 
+class="cmmi-12">u </span>and <span 
+class="cmmi-12">v </span>are nonconsecutive nodes in the cycle.
+<!--l. 196--><p class="indent" >   One way to prove a valid constraint is facet-defining is to show that it is not implied by
+another valid constraint. This lets us state the general proof-by-contradiction procedure as
+follows:
+      <ul class="itemize1">
+      <li class="itemize">Let <span 
+class="cmmi-12">&#x03C0;</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x</span><span style="margin-left:0.3em" class="thinspace"></span> <span 
+class="cmsy-10x-x-120">&#x2264;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">&#x03C0;</span><sub>
+<span 
+class="cmr-8">0</span></sub>  denote the given inequality, and we want to prove this defines a facet
+      of conv(<span 
+class="cmmi-12">S</span>). Assume there exists <img 
+src="maxcutProofs7x.png" alt="&#x02DC;x"  class="tilde" > <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">S </span>satisfying <span 
+class="cmmi-12">&#x03C0;</span><sup><span 
+class="cmmi-8">T</span> </sup><img 
+src="maxcutProofs8x.png" alt="&#x02DC;x"  class="tilde" > <span 
+class="cmmi-12">&#x003C; &#x03C0;</span><sub>
+<span 
+class="cmr-8">0</span></sub>, so the face defined by the
+      inequality is not equal to&#x00A0;<span 
+class="cmmi-12">S</span>.
+      </li>
+      <li class="itemize">We need to show there is no other inequality <span 
+class="cmmi-12">g</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x</span><span style="margin-left:0.3em" class="thinspace"></span> <span 
+class="cmsy-10x-x-120">&#x2264;</span><span style="margin-left:0.3em" class="thinspace"></span><span 
+class="cmmi-12">h </span>satisfying all of the following:
+           <dl class="enumerate"><dt class="enumerate">
+        1. </dt><dd 
+class="enumerate"><span 
+class="cmmi-12">g</span><sup><span 
+class="cmmi-8">T</span> </sup><span class="bar-css"><span 
+class="cmmi-12">x</span></span> <span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">h </span>for all <span class="bar-css"><span 
+class="cmmi-12">x</span></span> <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">S</span>, so the constraint is valid.
+           </dd><dt class="enumerate">
+        2. </dt><dd 
+class="enumerate"><span 
+class="cmmi-12">g</span><sup><span 
+class="cmmi-8">T</span> </sup><span class="bar-css"><span 
+class="cmmi-12">x</span></span> = <span 
+class="cmmi-12">h </span>for all <span class="bar-css"><span 
+class="cmmi-12">x</span></span> <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">S </span>satisfying <span 
+class="cmmi-12">&#x03C0;</span><sup><span 
+class="cmmi-8">T</span> </sup><span class="bar-css"><span 
+class="cmmi-12">x</span></span> = <span 
+class="cmmi-12">&#x03C0;</span><sub>
+<span 
+class="cmr-8">0</span></sub> (so it includes the same face).
+           </dd><dt class="enumerate">
+        3. </dt><dd 
+class="enumerate">There is a point <img 
+src="maxcutProofs9x.png" alt="&#x02C6;x"  class="circ" > <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">S </span>with <span 
+class="cmmi-12">g</span><sup><span 
+class="cmmi-8">T</span> </sup><img 
+src="maxcutProofs10x.png" alt="x&#x02C6;"  class="circ" > = <span 
+class="cmmi-12">h</span>, <span 
+class="cmmi-12">&#x03C0;</span><sup><span 
+class="cmmi-8">T</span> </sup><img 
+src="maxcutProofs11x.png" alt="&#x02C6;x"  class="circ" > <span 
+class="cmmi-12">&#x003C; &#x03C0;</span><sub>
+<span 
+class="cmr-8">0</span></sub> (so the face defined by <span 
+class="cmmi-12">g</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>= <span 
+class="cmmi-12">h</span>
+           strictly contains the face implied by the original inequality).
+                                                                                         
+                                                                                         
+           </dd><dt class="enumerate">
+        4. </dt><dd 
+class="enumerate">There is a point <img 
+src="maxcutProofs12x.png" alt="x&#x02DC;"  class="tilde" > <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">S </span>with <span 
+class="cmmi-12">g</span><sup><span 
+class="cmmi-8">T</span> </sup><img 
+src="maxcutProofs13x.png" alt="&#x02DC;x"  class="tilde" > <span 
+class="cmmi-12">&#x003C; h </span>(so the face defined by <span 
+class="cmmi-12">g</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>= <span 
+class="cmmi-12">h </span>is not the
+           whole of&#x00A0;<span 
+class="cmmi-12">S</span>).</dd></dl>
+      </li>
+      <li class="itemize">When <span 
+class="cmmi-12">S </span>is full-dimensional, one way to show there is no other inequality satisfying all four
+      conditions is to assume we have an inequality that satisfies the first two conditions and then
+      show this inequality must just be a positive rescaling of <span 
+class="cmmi-12">&#x03C0;</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">&#x03C0;</span><sub>
+<span 
+class="cmr-8">0</span></sub>.</li></ul>
+<!--l. 231--><p class="indent" >   We show that one particular odd-subset constraint is facet defining. The proof can be
+extended to show that any inequality of the form (<a 
+href="#x1-2001r5">5<!--tex4ht:ref: eq:oddsubset --></a>) is facet defining for <span 
+class="cmsy-10x-x-120">|</span><span 
+class="cmmi-12">F</span><span 
+class="cmsy-10x-x-120">| </span>odd and <span 
+class="cmmi-12">C</span>
+chordless.
+                                                                                         
+                                                                                         
+<!--l. 237--><p class="indent" >   In particular, consider the inequality
+   <table 
+class="equation"><tr><td><a 
+ id="x1-2006r6"></a>
+   <center class="math-display" >
+<img 
+src="maxcutProofs14x.png" alt="xij - xik - xjk &#x2264; 0
+" class="math-display" ></center></td><td class="equation-label">(6)</td></tr></table>
+<!--l. 240--><p class="nopar" >
+for three vertices <span 
+class="cmmi-12">i,j,k </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">V </span>and three edges (<span 
+class="cmmi-12">i,j</span>)<span 
+class="cmmi-12">, </span>(<span 
+class="cmmi-12">i,k</span>)<span 
+class="cmmi-12">, </span>(<span 
+class="cmmi-12">j,k</span>) <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">E</span>. This constraint is satisfied at
+equality by three types of cuts:
+      <dl class="enumerate"><dt class="enumerate">
+   1. </dt><dd 
+class="enumerate"><span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">i,j,k</span><span 
+class="cmsy-10x-x-120">}&#x2286; </span><span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub>.
+      </dd><dt class="enumerate">
+   2. </dt><dd 
+class="enumerate"><span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">i,k</span><span 
+class="cmsy-10x-x-120">}&#x2286; </span><span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub>, <span 
+class="cmmi-12">j </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">2</span></sub>.
+      </dd><dt class="enumerate">
+   3. </dt><dd 
+class="enumerate"><span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">j,k</span><span 
+class="cmsy-10x-x-120">}&#x2286; </span><span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub>, <span 
+class="cmmi-12">i </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">2</span></sub>.</dd></dl>
+<!--l. 248--><p class="noindent" >The remaining vertices can be placed in either <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub> or <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">2</span></sub>. The roles of <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub> and <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">2</span></sub> can be
+reversed.
+<!--l. 254--><p class="indent" >   Assume inequality (<a 
+href="#x1-2006r6">6<!--tex4ht:ref: eq:tri --></a>) is implied by <span 
+class="cmmi-12">g</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2264; </span><span 
+class="cmmi-12">h</span>, and look at possible choices for <span 
+class="cmmi-12">g</span>
+and&#x00A0;<span 
+class="cmmi-12">h</span>.
+<!--l. 259--><p class="indent" >   First, determine <span 
+class="cmmi-12">h</span>. The cut <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmmi-12">V </span>, <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmsy-10x-x-120">&#x2205; </span>satisfies (<a 
+href="#x1-2006r6">6<!--tex4ht:ref: eq:tri --></a>) at equality, so it must also satisfy
+<span 
+class="cmmi-12">g</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>= <span 
+class="cmmi-12">h </span>from the second requirement in the general procedure on the previous page. For this cut,
+<span 
+class="cmmi-12">x </span>= 0, so we must have <span 
+class="cmbx-12">h </span>= <span 
+class="cmbx-12">0</span>, the same right hand side as in&#x00A0;(<a 
+href="#x1-2006r6">6<!--tex4ht:ref: eq:tri --></a>). So <span 
+class="cmmi-12">g</span><sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">x </span>= 0 for any <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">S </span>that
+satisfies&#x00A0;(<a 
+href="#x1-2006r6">6<!--tex4ht:ref: eq:tri --></a>) at equality.
+<!--l. 268--><p class="indent" >   Now determine the values of <span 
+class="cmmi-12">g </span>by looking at various cuts. In this way, we can set up multiple
+equalities that must be satisfied by the components of&#x00A0;<span 
+class="cmmi-12">g</span>, and then these can be combined to show
+<span 
+class="cmmi-12">g </span>is a multiple of the original coefficients in&#x00A0;(<a 
+href="#x1-2006r6">6<!--tex4ht:ref: eq:tri --></a>). In particular, we want to show that
+<div class="eqnarray">
+   <center class="math-display" >
+                                                                                         
+                                                                                         
+<img 
+src="maxcutProofs15x.png" alt="g  = g   = - g  , and
+ ik     jk      ij
+grs = 0  if {r,s} &#x2044;&#x2286; {i,j,k}.
+" class="math-display" ></center>
+</div>
+      <ul class="itemize1">
+      <li class="itemize">Let <span 
+class="cmmi-12">l </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">V </span><span 
+class="cmsy-10x-x-120">\{</span><span 
+class="cmmi-12">k</span><span 
+class="cmsy-10x-x-120">} </span>and set <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmmi-12">V </span><span 
+class="cmsy-10x-x-120">\{</span><span 
+class="cmmi-12">l</span><span 
+class="cmsy-10x-x-120">}</span>, <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">l</span><span 
+class="cmsy-10x-x-120">}</span>. We have
+      <table 
+class="equation"><tr><td><a 
+ id="x1-2011r7"></a>
+      <center class="math-display" >
+      <img 
+src="maxcutProofs16x.png" alt="   &#x2211;     g  =  0.
+          vl
+v&#x2208;V,(v,l)&#x2208;E
+      " class="math-display" ></center></td><td class="equation-label">(7)</td></tr></table>
+      <!--l. 284--><p class="nopar" >
+      </li>
+      <li class="itemize">Consider edges where neither endpoint is in <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">i,j,k</span><span 
+class="cmsy-10x-x-120">}</span>. In particular, let <span 
+class="cmbx-12">l</span><span 
+class="cmmi-12">,</span><span 
+class="cmbx-12">m </span><span 
+class="cmsy-10x-x-120">&#x2044;&#x2208;{</span><span 
+class="cmbx-12">i</span><span 
+class="cmmi-12">,</span><span 
+class="cmbx-12">j</span><span 
+class="cmmi-12">,</span><span 
+class="cmbx-12">k</span><span 
+class="cmsy-10x-x-120">}</span> with
+      (<span 
+class="cmmi-12">l,m</span>) <span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="cmmi-12">E </span>and take <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmmi-12">V </span><span 
+class="cmsy-10x-x-120">\{</span><span 
+class="cmmi-12">l,m</span><span 
+class="cmsy-10x-x-120">}</span>, <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">l,m</span><span 
+class="cmsy-10x-x-120">}</span>. We have
+      <table 
+class="equation"><tr><td><a 
+ id="x1-2012r8"></a>
+      <center class="math-display" >
+      <img 
+src="maxcutProofs17x.png" alt="   &#x2211;              &#x2211;
+         gvl +           gvm - 2glm =  0.
+v&#x2208;V,(v,l)&#x2208;E      v&#x2208;V,(v,m )&#x2208;E
+      " class="math-display" ></center></td><td class="equation-label">(8)</td></tr></table>
+                                                                                         
+                                                                                         
+      <!--l. 290--><p class="nopar" >
+      It follows from (<a 
+href="#x1-2011r7">7<!--tex4ht:ref: eq:l --></a>) that
+      <table 
+class="equation"><tr><td><a 
+ id="x1-2013r9"></a>
+      <center class="math-display" >
+      <img 
+src="maxcutProofs18x.png" alt="glm = 0.
+      " class="math-display" ></center></td><td class="equation-label">(9)</td></tr></table>
+      <!--l. 294--><p class="nopar" >
+      </li>
+      <li class="itemize">Now look at edges (<span 
+class="cmmi-12">j,l</span>) where <span 
+class="cmbx-12">l </span><span 
+class="cmsy-10x-x-120">&#x2044;&#x2208;{</span><span 
+class="cmbx-12">i</span><span 
+class="cmmi-12">,</span><span 
+class="cmbx-12">j</span><span 
+class="cmmi-12">,</span><span 
+class="cmbx-12">k</span><span 
+class="cmsy-10x-x-120">}</span>. Take <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmmi-12">V </span><span 
+class="cmsy-10x-x-120">\{</span><span 
+class="cmmi-12">j,l</span><span 
+class="cmsy-10x-x-120">}</span>, <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">j,l</span><span 
+class="cmsy-10x-x-120">}</span>. We
+      have
+      <table 
+class="equation"><tr><td><a 
+ id="x1-2014r10"></a>
+      <center class="math-display" >
+      <img 
+src="maxcutProofs19x.png" alt="   &#x2211;              &#x2211;
+         gvl +          gvj - 2gjl = 0.
+v&#x2208;V,(v,l)&#x2208;E      v&#x2208;V,(v,j)&#x2208;E
+      " class="math-display" ></center></td><td class="equation-label">(10)</td></tr></table>
+      <!--l. 299--><p class="nopar" >
+      It follows from (<a 
+href="#x1-2011r7">7<!--tex4ht:ref: eq:l --></a>) that
+      <table 
+class="equation"><tr><td><a 
+ id="x1-2015r11"></a>
+      <center class="math-display" >
+                                                                                         
+                                                                                         
+      <img 
+src="maxcutProofs20x.png" alt="g  = 0.
+ jl
+      " class="math-display" ></center></td><td class="equation-label">(11)</td></tr></table>
+      <!--l. 303--><p class="nopar" >
+      </li>
+      <li class="itemize">In an analogous manner, we obtain
+      <table 
+class="equation"><tr><td><a 
+ id="x1-2016r12"></a>
+      <center class="math-display" >
+      <img 
+src="maxcutProofs21x.png" alt="g  = 0
+ il
+      " class="math-display" ></center></td><td class="equation-label">(12)</td></tr></table>
+      <!--l. 307--><p class="nopar" >
+      for <span 
+class="cmbx-12">l </span><span 
+class="cmsy-10x-x-120">&#x2044;&#x2208;{</span><span 
+class="cmbx-12">i</span><span 
+class="cmmi-12">,</span><span 
+class="cmbx-12">j</span><span 
+class="cmmi-12">,</span><span 
+class="cmbx-12">k</span><span 
+class="cmsy-10x-x-120">}</span>.</li></ul>
+<!--l. 311--><p class="noindent" >We still need to determine <span 
+class="cmmi-12">g</span><sub><span 
+class="cmmi-8">ij</span></sub>, <span 
+class="cmmi-12">g</span><sub><span 
+class="cmmi-8">ik</span></sub>, and <span 
+class="cmmi-12">g</span><sub><span 
+class="cmmi-8">jk</span></sub>, and also <span 
+class="cmmi-12">g</span><sub><span 
+class="cmmi-8">kl</span></sub> for <span 
+class="cmmi-12">l </span><span 
+class="cmsy-10x-x-120">&#x2044;&#x2208;{</span><span 
+class="cmmi-12">i,j</span><span 
+class="cmsy-10x-x-120">}</span>.
+      <ul class="itemize1">
+      <li class="itemize">Next, we show that <span 
+class="cmmi-12">g</span><sub><span 
+class="cmmi-8">ij</span></sub>, <span 
+class="cmmi-12">g</span><sub><span 
+class="cmmi-8">ik</span></sub>, <span 
+class="cmmi-12">g</span><sub><span 
+class="cmmi-8">jk</span></sub> have the same relationship as in&#x00A0;(<a 
+href="#x1-2006r6">6<!--tex4ht:ref: eq:tri --></a>). Take <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmmi-12">V </span><span 
+class="cmsy-10x-x-120">\{</span><span 
+class="cmmi-12">i</span><span 
+class="cmsy-10x-x-120">}</span>,
+      <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">i</span><span 
+class="cmsy-10x-x-120">}</span>. We obtain
+      <table 
+class="equation"><tr><td><a 
+ id="x1-2017r13"></a>
+      <center class="math-display" >
+      <img 
+src="maxcutProofs22x.png" alt="       &#x2211;                 &#x2211;
+0 =          giv =                giv + gij + gik  &#x21D2; (12)  gij + gik = 0.
+
+    v&#x2208;V,(i,v)&#x2208;E      v&#x2208;V\{i,j,k},(i,v)&#x2208;E
+      " class="math-display" ></center></td><td class="equation-label">(13)</td></tr></table>
+                                                                                         
+                                                                                         
+      <!--l. 319--><p class="nopar" >
+      Similarly, taking <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmmi-12">V </span><span 
+class="cmsy-10x-x-120">\ </span><span 
+class="cmmi-12">j</span>, <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmmi-12">j </span>and using (<a 
+href="#x1-2015r11">11<!--tex4ht:ref: eq:jl2 --></a>), we obtain
+      <table 
+class="equation"><tr><td><a 
+ id="x1-2018r14"></a>
+      <center class="math-display" >
+      <img 
+src="maxcutProofs23x.png" alt="gij + gjk = 0.
+      " class="math-display" ></center></td><td class="equation-label">(14)</td></tr></table>
+      <!--l. 325--><p class="nopar" >
+      From (<a 
+href="#x1-2017r13">13<!--tex4ht:ref: eq:ijik --></a>) and (<a 
+href="#x1-2018r14">14<!--tex4ht:ref: eq:ijjk --></a>), we have
+      <table 
+class="equation"><tr><td><a 
+ id="x1-2019r15"></a>
+      <center class="math-display" >
+      <img 
+src="maxcutProofs24x.png" alt="gik = gjk =  - gij,
+      " class="math-display" ></center></td><td class="equation-label">(15)</td></tr></table>
+      <!--l. 329--><p class="nopar" >
+      agreeing with the relationship between these coefficients in&#x00A0;(<a 
+href="#x1-2006r6">6<!--tex4ht:ref: eq:tri --></a>).
+      </li>
+      <li class="itemize">Finally, look at <span 
+class="cmmi-12">g</span><sub><span 
+class="cmmi-8">kl</span></sub> for <span 
+class="cmmi-12">l </span><span 
+class="cmsy-10x-x-120">&#x2044;&#x2208;{</span><span 
+class="cmmi-12">i,j,k</span><span 
+class="cmsy-10x-x-120">}</span>. Set <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">i,k</span><span 
+class="cmsy-10x-x-120">}</span>, <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmmi-12">V </span><span 
+class="cmsy-10x-x-120">\{</span><span 
+class="cmmi-12">i,k</span><span 
+class="cmsy-10x-x-120">}</span>. We have
+      <div class="eqnarray">
+      <center class="math-display" >
+      <img 
+src="maxcutProofs25x.png" alt="            &#x2211;              &#x2211;
+0   =             giv +           gkv - 2gik
+         v&#x2208;V,(i,v)&#x2208;E      v&#x2208;V,(k,v)&#x2208;E
+               &#x2211;
+   = (7)                 gkv + gik + gjk - 2gik
+         v&#x2208;V\{i,j,k},(k,v)&#x2208;E
+               &#x2211;
+   =(15)                gkv.                                   (16)
+         v&#x2208;V\{i,j,k},(k,v)&#x2208;E
+      " class="math-display" ><a 
+ id="x1-2020r16"></a></center>
+      </div>Now with <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">1</span></sub> = <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">i,k,l</span><span 
+class="cmsy-10x-x-120">} </span>and <span 
+class="cmmi-12">V</span> <sub><span 
+class="cmr-8">2</span></sub> = <span 
+class="cmmi-12">V </span><span 
+class="cmsy-10x-x-120">\{</span><span 
+class="cmmi-12">i,k,l</span><span 
+class="cmsy-10x-x-120">}</span>, we get <div class="eqnarray">
+      <center class="math-display" >
+      <img 
+src="maxcutProofs26x.png" alt="          &#x2211;              &#x2211;              &#x2211;
+0  =            giv +          gkv +           glv - 2gik - 2gil - 2gkl
+       v&#x2208;V,(i,v)&#x2208;E       v&#x2208;V,(k,v)&#x2208;E      v&#x2208;V,(l,v)&#x2208;E
+
+   =   gij + gik + gik + gjk + gkl - 2gik - 2gkl, by (9),(11),(12),(16),
+      " class="math-display" ></center>
+      </div>and thus from (<a 
+href="#x1-2019r15">15<!--tex4ht:ref: eq:main_coeffs --></a>)
+      <center class="math-display" >
+      <img 
+src="maxcutProofs27x.png" alt="0 =  - gkl.
+      " class="math-display" ></center>
+      <!--l. 352--><p class="nopar" >
+      </li></ul>
+<!--l. 354--><p class="noindent" >So all coefficients are positive multiples of those in (<a 
+href="#x1-2006r6">6<!--tex4ht:ref: eq:tri --></a>).
+    
+</body></html> 
+
+                                                                                         
+
+

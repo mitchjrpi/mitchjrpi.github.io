@@ -1,0 +1,109 @@
+\documentstyle[12pt]{article}
+
+\newcommand{\re}{I\!\!R}
+
+\oddsidemargin -.5in
+\textwidth 7.5in
+\textheight 9.8in
+\topmargin -30pt
+\headsep 0in
+\headheight 0in
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+{\bf\large\bf Subspaces, Affine sets, Convex sets, Cones} \\ John Mitchell
+\end{center}
+
+This document describes various subsets of $\re^n$.
+%Throughout, we will take $A$ to be the $3 \times 4$ matrix
+%\begin{displaymath}
+%   A = \left[ \begin{array}{rrrr}
+%     1 & 2 & 3 & 4 \\
+%    -2 & 3 & -1 & 5 \\
+%     3 & -1 & 4 & -1  \end{array}  \right]
+%\end{displaymath}
+
+\begin{itemize}
+ \item
+Let $v_1,\ldots,v_k$ be $k$ vectors in $\re^n$.
+Let $\lambda_1,\ldots,\lambda_k$ be $k$ scalars.
+The vector $v:=\sum_{i=1}^k\lambda_iv_i$ is a
+{\bf linear combination} of $v_1,\ldots,v_k$.
+ \item
+Let $S$ be a subset of $\re^n$.
+$S$ is a {\bf subspace} if it is closed under linear combinations.
+Thus, for any $k>0$, for any vectors $v_1,\ldots,v_k \in S$,
+and for any scalars $\lambda_1,\ldots,\lambda_k$, the linear
+combination $v:=\sum_{i=1}^k\lambda_iv_i$ is also in~$S$.
+Notice that the origin is in any nonempty subspace --- just take all
+$\lambda_i=0$.
+ \item
+The row space, range, and null space of a matrix are all subspaces.
+ \item
+Let $v_1,\ldots,v_k$ be $k$ vectors in $\re^n$.
+Let $\lambda_1,\ldots,\lambda_k$ be $k$ scalars
+{\em satisfying $\sum_{i=1}^k\lambda_i=1$}.
+(Note: some of the scalars may be negative.)
+The vector $v:=\sum_{i=1}^k\lambda_iv_i$ is an
+{\bf affine combination} of $v_1,\ldots,v_k$.
+ \item
+Let $S$ be a subset of $\re^n$.
+$S$ is an {\bf affine space} if it is closed under affine combinations.
+Thus, for any $k>0$, for any vectors $v_1,\ldots,v_k \in S$,
+and for any scalars $\lambda_1,\ldots,\lambda_k$
+satisfying $\sum_{i=1}^k\lambda_i=1$, the affine
+combination $v:=\sum_{i=1}^k\lambda_iv_i$ is also in~$S$.
+ \item
+The set of solutions to the system of equations $Ax=b$ is an
+affine space.
+This is why we talk about affine spaces in this course!
+ \item
+An affine space is a translation of a subspace.
+ \item
+Any subspace is also an affine space.
+ \item
+Let $v_1,\ldots,v_k$ be $k$ vectors in $\re^n$.
+Let $\lambda_1,\ldots,\lambda_k$ be $k$ {\em nonnegative} scalars
+satisfying $\sum_{i=1}^k\lambda_i=1$.
+The vector $v:=\sum_{i=1}^k\lambda_iv_i$ is a
+{\bf convex combination} of $v_1,\ldots,v_k$.
+ \item
+Let $S$ be a subset of $\re^n$.
+$S$ is an {\bf convex set} if it is closed under convex combinations.
+Thus, for any $k>0$, for any vectors $v_1,\ldots,v_k \in S$,
+and for any nonnegative scalars $\lambda_1,\ldots,\lambda_k$
+satisfying $\sum_{i=1}^k\lambda_i=1$, the convex
+combination $v:=\sum_{i=1}^k\lambda_iv_i$ is also in~$S$.
+ \item
+Polyhedra are convex sets.
+ \item
+A polytope is defined to be a bounded polyhedron.
+Note that every point in a polytope is a convex combination of the
+extreme points.
+ \item
+Any subspace is a convex set.
+Any affine space is a convex set.
+ \item
+Let $S$ be a subset of $\re^n$. $S$ is a {\bf cone}
+if it is closed under nonnegative scalar multiplication.
+Thus, for any vector $v\in S$ and for any nonnegative scalar~$\lambda$,
+the vector $\lambda v$ is also in $S$.
+ \item
+Let $S$ be a subset of $\re^n$. $S$ is a {\bf convex cone}
+if it is a cone and it is convex.
+It can be shown that this is equivalent to saying that $S$
+is closed under nonnegative linear combinations.
+Thus, for any $k>0$, for any vectors $v_1,\ldots,v_k \in S$,
+and for any nonnegative scalars $\lambda_1,\ldots,\lambda_k$,
+the linear combination $v:=\sum_{i=1}^k\lambda_iv_i$ is also in~$S$.
+ \item
+The origin is in any nonempty cone --- just take $\lambda=0$.
+ \item
+Any subspace is a convex cone.
+\end{itemize}
+
+
+\end{document}

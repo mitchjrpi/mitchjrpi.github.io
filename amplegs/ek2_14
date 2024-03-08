@@ -1,0 +1,65 @@
+Using AMPL to solve Exercise 2.14 from Ecker and Kupferschmid
+
+===============================================================
+
+# model file   ek2_14.mod
+
+set MACHINE;
+set PRODUCT;
+
+var x{p in PRODUCT} >= 0;   #  easiest to put nonnegativity constraint in
+                            #  when defining the variable, if appropriate
+                            #  x is the amount we produce of each variable
+var TOTAL>=0;               #  TOTAL is the total amount produced.
+
+param r{p in PRODUCT, m in MACHINE} >= 0; # r[p,m]=amount of time on machine m
+                                          #    required by product p
+param c{m in MACHINE} >= 0;  #  capacity of machine m.
+   #  It is not necessary to require that these parameters be nonnegative.
+   #  This is included so that AMPL can perform a simple check on the data,
+   #    to make sure we've not put anything blatantly wrong in, that is,
+   #    negative numbers for these parameters.
+
+
+
+maximize production: TOTAL;    #  the objective function
+
+subject to findtot: TOTAL = sum{p in PRODUCT} x[p];
+                               #  the TOTAL produced is the sum of the amount
+                               #  produced of each product
+
+subject to capacity {m in MACHINE}:
+     sum{p in PRODUCT} r[p,m] * x[p] <= c[m];
+
+subject to balance: x['p1'] >= TOTAL/3;
+########end of model file
+
+
+########data file   ek2_14.dat
+set MACHINE = lathe sander polisher;
+set PRODUCT = p1 p2;
+
+param r (tr):  p1   p2 :=      #  the tr indicates this is a transpose,
+                               #  because the rows of r correspond to the
+                               #  products and the columns to the machines.
+   lathe       1.1  2.0
+   sander      3.0  4.5
+   polisher    2.5  1.3;
+
+param c := lathe 1000 sander 2000 polisher 1500;
+########end of data file ek2_14.dat
+
+
+
+########alternative data file ek2_14a.dat with more machines and products
+set MACHINE = lathe sander polisher saw;
+set PRODUCT = p1 p2 p3 p4 p5;
+
+param r (tr):  p1   p2   p3   p4   p5  :=
+   lathe       1.1  2.0  1.3  2.3  1.8
+   sander      3.0  4.5  4.7  1.5  3.6
+   polisher    2.5  1.3  2.0  1.5  2.8
+   saw         2.4  2.7  1.8  2.0  3.1;
+
+param c := lathe 1000 sander 2000 polisher 1500  saw 1200;
+########end of alternative data file.

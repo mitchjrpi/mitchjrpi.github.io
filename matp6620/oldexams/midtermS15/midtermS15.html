@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="midtermS15.tex"> 
+<meta name="date" content="2017-03-19 16:34:00"> 
+<link rel="stylesheet" type="text/css" href="midtermS15.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 43--><p class="noindent" >
+<!--l. 45--><p class="noindent" ><span 
+class="cmr-12x-x-120">MATP6620/ISYE6770</span><br />
+<span 
+class="cmbx-12x-x-120">Combinatorial Optimization and Integer Programming </span><br />
+<span 
+class="cmr-12x-x-120">Spring 2015</span></div>
+<div class="center" 
+>
+<!--l. 50--><p class="noindent" >
+<!--l. 51--><p class="noindent" >Midterm Exam, Friday, April 24, 2015.</div>
+<!--l. 54--><p class="noindent" >Please do all four problems. Show all work. No books or calculators allowed. You may use any
+result from class, the homeworks, or the texts, except where stated. You may use one sheet of
+handwritten notes. The exam lasts 110 minutes.
+      <ol  class="enumerate1" >
+      <li 
+  class="enumerate" id="x1-3x1">We want to find a maximum weighted clique on the graph&#x00A0;<span 
+class="cmmi-12">G </span>= (<span 
+class="cmmi-12">V,E</span>). Let <span 
+class="cmmi-12">n </span>= <span 
+class="cmsy-10x-x-120">|</span><span 
+class="cmmi-12">V </span><span 
+class="cmsy-10x-x-120">|</span>. We
+      define binary variables <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">B</span><sup><span 
+class="cmmi-8">n</span></sup> by
+      <center class="math-display" >
+      <img 
+src="midtermS150x.png" alt="      {
+        1   if vertex v is in the clique
+xv =    0   otherwise
+      " class="math-display" ></center>
+      <!--l. 111--><p class="nopar" >
+      and we denote the set of feasible vectors <span 
+class="cmmi-12">x </span>by&#x00A0;<span 
+class="cmmi-12">S</span>.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-5x1">(10 points) Show that dim(<span 
+class="cmmi-12">S</span>) = <span 
+class="cmmi-12">n</span>.
+           </li>
+           <li 
+  class="enumerate" id="x1-7x2">(10 points) An independent subset <span 
+class="cmmi-12">U </span><span 
+class="cmsy-10x-x-120">&#x2286; </span><span 
+class="cmmi-12">V </span>is a collection of vertices, no two of which are
+           adjacent in&#x00A0;<span 
+class="cmmi-12">G</span>. Any clique contains at most one of the vertices in&#x00A0;<span 
+class="cmmi-12">U</span>. Show that the
+           corresponding inequality
+           <center class="math-display" >
+           <img 
+src="midtermS151x.png" alt="&#x2211;
+    xv &#x2264; 1
+v&#x2208;U
+           " class="math-display" ></center>
+           <!--l. 121--><p class="nopar" >
+           defines a facet of the convex hull of&#x00A0;<span 
+class="cmmi-12">S </span>if <span 
+class="cmmi-12">U </span>is a maximal independent set.</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-9x2">The nonnegative integer variables <span 
+class="cmmi-12">x </span><span 
+class="cmsy-10x-x-120">&#x2208; </span><span 
+class="msbm-10x-x-120">&#x2124;</span><sup><span 
+class="cmr-8">4</span></sup> satisfy the linear equality
+      <table 
+class="equation"><tr><td><a 
+ id="x1-10r1"></a>
+      <center class="math-display" >
+      <img 
+src="midtermS152x.png" alt="x1 + 1.6x2 - 2.7x3 + 0.1x4 =  2.5.
+      " class="math-display" ></center></td><td class="equation-label">(1)</td></tr></table>
+      <!--l. 144--><p class="nopar" >
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-12x1">(7 points) <a 
+ id="x1-111"></a>Give a linear inequality of the form <span 
+class="cmmi-12">g</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> + <span 
+class="cmmi-12">g</span><sub><span 
+class="cmr-8">3</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> + <span 
+class="cmmi-12">g</span><sub><span 
+class="cmr-8">4</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">4</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>1 that must
+           be satisfied by <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-12">,x</span><sub><span 
+class="cmr-8">3</span></sub><span 
+class="cmmi-12">,x</span><sub><span 
+class="cmr-8">4</span></sub><span 
+class="cmsy-10x-x-120">} </span>if <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">&#x2264; </span>2.
+           </li>
+           <li 
+  class="enumerate" id="x1-14x2">(8 points) <a 
+ id="x1-132"></a>Give a linear inequality of the form <span 
+class="cmmi-12">h</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub> + <span 
+class="cmmi-12">h</span><sub><span 
+class="cmr-8">3</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub> + <span 
+class="cmmi-12">h</span><sub><span 
+class="cmr-8">4</span></sub><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">4</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>1 that must
+           be satisfied by <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub><span 
+class="cmmi-12">,x</span><sub><span 
+class="cmr-8">3</span></sub><span 
+class="cmmi-12">,x</span><sub><span 
+class="cmr-8">4</span></sub><span 
+class="cmsy-10x-x-120">} </span>if <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">1</span></sub> <span 
+class="cmsy-10x-x-120">&#x2265; </span>3.
+           </li>
+           <li 
+  class="enumerate" id="x1-16x3">(5 points) <a 
+ id="x1-153"></a>Argue why the inequality
+           <center class="math-display" >
+           <img 
+src="midtermS153x.png" alt="max {g ,h  }x  + max {g ,h  }x +  max {g ,h  }x  &#x2265; 1
+       2  2  2          3  3  3         4   4  4
+           " class="math-display" ></center>
+           <!--l. 158--><p class="nopar" >
+           is valid for any nonnegative integer solution to&#x00A0;(<a 
+href="#x1-10r1">1<!--tex4ht:ref: eq:q2init --></a>). Write down the inequality.
+                                                                                         
+
+                                                                                         
+           </li>
+           <li 
+  class="enumerate" id="x1-18x4">We can define a new variable <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> so that
+           <table 
+class="equation"><tr><td><a 
+ id="x1-19r2"></a>
+           <center class="math-display" >
+           <img 
+src="midtermS154x.png" alt="y1 - 0.4x2 + 0.3x3 + 0.1x4 =  0.5.
+           " class="math-display" ></center></td><td class="equation-label">(2)</td></tr></table>
+           <!--l. 164--><p class="nopar" >
+               <ol  class="enumerate3" >
+               <li 
+  class="enumerate" id="x1-21x1">(5 points) Show that <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub> must be integral.
+               </li>
+               <li 
+  class="enumerate" id="x1-23x2">(10  points)  Derive  another  valid  inequality  on  <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">2</span></sub>,  <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">3</span></sub>,  and  <span 
+class="cmmi-12">x</span><sub><span 
+class="cmr-8">4</span></sub>,  using  the
+               disjunction that either <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub>  <span 
+class="cmsy-10x-x-120">&#x2264; </span>0 or <span 
+class="cmmi-12">y</span><sub><span 
+class="cmr-8">1</span></sub>  <span 
+class="cmsy-10x-x-120">&#x2265; </span>1, as in parts <a 
+href="#x1-111">2a<!--tex4ht:ref: q2:parta --></a>&#8211;<a 
+href="#x1-153">2c<!--tex4ht:ref: q2:partc --></a>. Which valid
+               inequality is stronger?</li></ol>
+           </li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-25x3">In this problem, we consider two problems in <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /></span>:
+           <div class="quote">
+           <!--l. 204--><p class="noindent" ><span 
+class="cmbx-12">The partition problem: </span>Given <span 
+class="cmmi-12">n </span>positive integers <span 
+class="cmsy-10x-x-120">{</span><span 
+class="cmmi-12">a</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,a</span><sub><span 
+class="cmmi-8">n</span></sub><span 
+class="cmsy-10x-x-120">} </span>with sum <span 
+class="cmex-10x-x-120">&#x2211;</span>
+  <sub><span 
+class="cmmi-8">j</span><span 
+class="cmr-8">=1</span></sub><sup><span 
+class="cmmi-8">n</span></sup><span 
+class="cmmi-12">a</span><sub>
+<span 
+class="cmmi-8">j</span></sub>
+           even, does there exist a subset <span 
+class="cmmi-12">J </span><span 
+class="cmsy-10x-x-120">&#x2286;{</span>1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,n</span><span 
+class="cmsy-10x-x-120">} </span>such that
+           <center class="math-display" >
+           <img 
+src="midtermS155x.png" alt="&#x2211;        &#x2211;
+    aj =     aj?
+j&#x2208;J       j&#x2044;&#x2208;J
+           " class="math-display" ></center>
+           <!--l. 209--><p class="nopar" >
+           </div>
+                                                                                         
+
+                                                                                         
+           <div class="quote">
+           <!--l. 212--><p class="noindent" ><span 
+class="cmbx-12">2-machine scheduling: </span>Given two identical machines, <span 
+class="cmmi-12">m </span>jobs requiring
+           positive integer processing time <span 
+class="cmmi-12">b</span><sub><span 
+class="cmmi-8">j</span></sub> for <span 
+class="cmmi-12">j </span>= 1<span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,m</span>, and a positive integer&#x00A0;<span 
+class="cmmi-12">T</span>,
+           can the jobs be scheduled so that all the jobs are finished by time&#x00A0;<span 
+class="cmmi-12">T</span>? Note
+           that each job must be processed on exactly one machine, each machine can
+           only process one job at a time, once a job is started it must be run to
+           completion, and the jobs can be processed in any order.</div>
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-27x1">(10 points) Show that any instance of the partition problem can be polynomially
+           transformed into an equivalent instance of the 2-machine scheduling problem.
+           </li>
+           <li 
+  class="enumerate" id="x1-29x2">(5 points) Assume the 2-machine scheduling problem is <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /></span>-Complete. Can we
+           conclude that the partition problem is <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /></span>-Complete?
+           </li>
+           <li 
+  class="enumerate" id="x1-31x3">(5 points) Assume the partition problem is <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /></span>-Complete. Can we conclude that
+           the 2-machine scheduling problem is <span 
+class="cmsy-10x-x-120"><img 
+src="cmsy10-c-4e.png" alt="N" class="10-120x-x-4e" /><img 
+src="cmsy10-c-50.png" alt="P" class="10-120x-x-50" /></span>-Complete?</li></ol>
+      </li>
+      <li 
+  class="enumerate" id="x1-33x4">Let <span 
+class="cmmi-12">k </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>2 and <span 
+class="cmmi-12">p </span><span 
+class="cmsy-10x-x-120">&#x2265; </span>2 be positive integers. Assume we have <span 
+class="cmmi-12">n </span>= <span 
+class="cmmi-12">kp </span>items. We want to cluster
+      the items into <span 
+class="cmmi-12">k </span>clusters <span 
+class="cmmi-12">C</span><sub><span 
+class="cmr-8">1</span></sub><span 
+class="cmmi-12">,</span><span 
+class="cmmi-12">&#x2026;</span><span 
+class="cmmi-12">,C</span><sub><span 
+class="cmmi-8">k</span></sub> each containing exactly <span 
+class="cmmi-12">p </span>items. We can represent the
+      assignment of items to clusters using a <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">k </span>matrix <span 
+class="cmmi-12">Y </span>with
+      <center class="math-display" >
+      <img 
+src="midtermS156x.png" alt="      {  1  if item  i is in cluster C
+Yir =                             r
+         0  otherwise.
+      " class="math-display" ></center>
+      <!--l. 267--><p class="nopar" >
+      Let <span 
+class="cmmi-12">e</span><sup><span 
+class="cmmi-8">q</span></sup> represent the <span 
+class="cmmi-12">q</span>-dimensional vector of ones.
+           <ol  class="enumerate2" >
+           <li 
+  class="enumerate" id="x1-35x1">(10 points) Show that <span 
+class="cmmi-12">Y e</span><sup><span 
+class="cmmi-8">k</span></sup> = <span 
+class="cmmi-12">e</span><sup><span 
+class="cmmi-8">n</span></sup> and <span 
+class="cmmi-12">Y</span> <sup><span 
+class="cmmi-8">T</span> </sup><span 
+class="cmmi-12">e</span><sup><span 
+class="cmmi-8">n</span></sup> = <span 
+class="cmmi-12">pe</span><sup><span 
+class="cmmi-8">k</span></sup>.
+           </li>
+           <li 
+  class="enumerate" id="x1-37x2">To set up a semidefinite programming relaxation of the clustering problem, we can
+           define an <span 
+class="cmmi-12">n </span><span 
+class="cmsy-10x-x-120">&#x00D7; </span><span 
+class="cmmi-12">n </span>matrix&#x00A0;<span 
+class="cmmi-12">X </span>= <span 
+class="cmmi-12">Y Y</span> <sup><span 
+class="cmmi-8">T</span> </sup>.
+               <ol  class="enumerate3" >
+               <li 
+  class="enumerate" id="x1-39x1">(10 points) Show each diagonal entry of <span 
+class="cmmi-12">X </span>is equal to one.
+                                                                                         
+
+                                                                                         
+               </li>
+               <li 
+  class="enumerate" id="x1-41x2">(5 points) What is the value of the product <span 
+class="cmmi-12">Xe</span><sup><span 
+class="cmmi-8">n</span></sup>?</li></ol>
+           </li></ol>
+      </li></ol>
+    
+</body></html> 
+
+                                                                                         
+
+

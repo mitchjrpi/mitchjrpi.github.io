@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw4.tex"> 
+<meta name="date" content="2018-02-27 17:33:00"> 
+<link rel="stylesheet" type="text/css" href="hw4.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 12--><p class="noindent" >
+<!--l. 14--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12">MATP6640/ISYE6770 Linear Programming</span></a><span 
+class="cmr-12">, Homework 4.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 19--><p class="noindent" >
+ Due: Friday, March 9, 2018.<br />
+10% penalty for each day late.</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1">Consider the problem
+     <center class="math-display" >
+     <img 
+src="hw40x.png" alt="           &#x2211;    &#x2211;
+maxx         mi=1  nj=1 cijxij
+subject to          &#x2211;nj=1 xij =   1       i = 1,...,m
+                &#x2211;m   wijxij &#x2264;   bj      j = 1,...,n
+                  i=1   x       binary  i = 1,...,m, j = 1,...,m
+                         ij
+     " class="math-display" ></center>
+     <!--l. 45--><p class="nopar" >
+     where all the parameters <span 
+class="cmmi-10x-x-109">c</span>, <span 
+class="cmmi-10x-x-109">w</span>, and <span 
+class="cmmi-10x-x-109">b </span>are positive integers. Construct a Dantzig-Wolfe approach to
+     this problem, where integrality is imposed in the subproblem but not in the master problem. The
+     equality constraints should be in the master problem and the inequality constraints should be
+     handled through the subproblem. Your formulation should be disaggregated. What is your criterion
+     for optimality in the master problem?
+     </li>
+     <li 
+  class="enumerate" id="x1-5x2">The directed graph <span 
+class="cmmi-10x-x-109">G </span>= (<span 
+class="cmmi-10x-x-109">V,E</span>) is as follows:
+     <div class="center" 
+>
+<!--l. 64--><p class="noindent" >
+                                                                                         
+                                                                                         
+<!--l. 65--><p class="center" ><img 
+src="hw41x.png" alt="PICT" >
+</div>
+     <!--l. 100--><p class="noindent" >One unit of commodity A must be shipped from <span 
+class="cmmi-10x-x-109">b </span>to <span 
+class="cmmi-10x-x-109">c </span>and one unit of commodity B must be
+     shipped from <span 
+class="cmmi-10x-x-109">f </span>to <span 
+class="cmmi-10x-x-109">e</span>. The cost of shipping one unit of flow along an arc is indicated in the figure. The
+     cost is the same for each commodity. Each arc <span 
+class="cmmi-10x-x-109">e </span><span 
+class="cmsy-10x-x-109">&#x2208; </span><span 
+class="cmmi-10x-x-109">E </span>in the graph has capacity equal to one; this is
+     the maximum total flow along the arc for the combination of the two commodities. Used the
+     path-based formulation to find the minimum cost total flow. What is the optimal <span 
+class="cmti-10x-x-109">integral</span>
+     flow?
+     </li>
+     <li 
+  class="enumerate" id="x1-7x3">Use the network simplex algorithm to find the minimum cost flow for the problem with the following
+     linear programming representation:
+     <center class="math-display" >
+     <img 
+src="hw42x.png" alt="min               -  2x13  -   x23 -   2x24          -   10x41
+subject to  - x12  -   x13                            +     x41  =  0
+             x12           -   x23 -    x24                     =  0
+                      x    +   x             -  x               =  0
+                        13       23                34
+                                        x24  +  x34  -     x41  =  0
+                                       0 &#x2264; x12,x13,x23,x24,x34  &#x2264;  1
+                                                  0  &#x2264;     x41  &#x2264;  10
+     " class="math-display" ></center>
+     <!--l. 244--><p class="nopar" >
+     Use the initial basic feasible solution with basic variables <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">12</span></sub> = 1<span 
+class="cmmi-10x-x-109">,x</span><sub><span 
+class="cmr-8">34</span></sub> = 1<span 
+class="cmmi-10x-x-109">,x</span><sub><span 
+class="cmr-8">41</span></sub> = 1 and nonbasic
+     variables <span 
+class="cmmi-10x-x-109">x</span><sub><span 
+class="cmr-8">13</span></sub> = 0<span 
+class="cmmi-10x-x-109">,x</span><sub><span 
+class="cmr-8">23</span></sub> = 1<span 
+class="cmmi-10x-x-109">,x</span><sub><span 
+class="cmr-8">24</span></sub> = 0<span 
+class="cmmi-10x-x-109">. </span>You should need three iterations.
+     </li>
+     <li 
+  class="enumerate" id="x1-9x4">(Bertsimas and Tsitsiklis 7.4) Assume we have a network flow problem on a simple graph <span 
+class="cmmi-10x-x-109">G </span>= (<span 
+class="cmmi-10x-x-109">V,E</span>)
+     where the cost <span 
+class="cmmi-10x-x-109">f</span><sub><span 
+class="cmmi-8">e</span></sub>(<span 
+class="cmmi-10x-x-109">x</span>) of shipping <span 
+class="cmmi-10x-x-109">x </span>units along arc <span 
+class="cmmi-10x-x-109">e </span>is a convex nonnegative piecewise linear
+                                                                                         
+                                                                                         
+     function with <span 
+class="cmmi-10x-x-109">f</span><sub><span 
+class="cmmi-8">e</span></sub>(0) = 0. Assume arc <span 
+class="cmmi-10x-x-109">e </span>has capacity&#x00A0;<span 
+class="cmmi-10x-x-109">u</span><sub><span 
+class="cmmi-8">e</span></sub>. The supply <span 
+class="cmmi-10x-x-109">b</span><sub><span 
+class="cmmi-8">v</span></sub> at each node <span 
+class="cmmi-10x-x-109">v </span>is given and
+     the aim is to construct a minimum cost circulation. Show that we can construct an
+     equivalent problem on a modified graph <span 
+class="cmmi-10x-x-109">G</span><span 
+class="cmsy-10x-x-109">&#x2032; </span>= (<span 
+class="cmmi-10x-x-109">V </span><span 
+class="cmsy-10x-x-109">&#x2032;</span><span 
+class="cmmi-10x-x-109">,E</span><span 
+class="cmsy-10x-x-109">&#x2032;</span>) where all the arc costs are linear. (The
+     graph <span 
+class="cmmi-10x-x-109">G</span><span 
+class="cmsy-10x-x-109">&#x2032; </span>should also be simple. A directed graph is simple if it has no parallel arcs or
+     loops.)
+     </li>
+     <li 
+  class="enumerate" id="x1-11x5">(Bertsimas and Tsitsiklis 7.13) Suppose we are given a noninteger optimal solution to an
+     uncapacitated network flow problem with integer data. Show that there exists a cycle with every arc
+     on the cycle carrying a positive flow. What can you say about the cost of such a cycle? How
+     could you exploit the cycles to construct an optimal integral solution? (Note: Some arcs
+     may be oriented in the opposite direction from the cycle. The cost of the cycle is the
+     difference between the sum of the costs of the arcs oriented in the same direction as the
+     cycle and the sum of the costs of the arcs oriented in the opposite direction from the
+     cycle.)
+     </li>
+     <li 
+  class="enumerate" id="x1-13x6">Consider a multicommodity network flow problem with three commodities on a graph <span 
+class="cmmi-10x-x-109">G </span>= (<span 
+class="cmmi-10x-x-109">V,E</span>)
+     with five nodes and seven edges. The seven edges and their costs and capacities are as
+     follows:
+     <center class="math-display" >
+     <img 
+src="hw43x.png" alt=" edge     |(1,2)  (1,5)  (2,3)  (2,4)  (2,5) (3,4)  (4,5)
+----------|---------------------------------------------
+ cost     |   8     11     7     10     6      6     8
+ capacity |  25     40    35     50    40     25    50
+     " class="math-display" ></center>
+     <!--l. 315--><p class="nopar" >
+     The costs are identical for each commodity. 25 units of commodity A need to be moved from node 1
+     to node&#x00A0;3. 20 units of commodity B need to be moved from node 5 to node&#x00A0;3. 20 units of
+     commodity C need to be moved from node 4 to node&#x00A0;1. The current set of paths consists of
+     1 <span 
+class="cmsy-10x-x-109">&#x2192; </span>2 <span 
+class="cmsy-10x-x-109">&#x2192; </span>3 and 1 <span 
+class="cmsy-10x-x-109">&#x2192; </span>5 <span 
+class="cmsy-10x-x-109">&#x2192; </span>4 <span 
+class="cmsy-10x-x-109">&#x2192; </span>3 for commodity&#x00A0;A, 5 <span 
+class="cmsy-10x-x-109">&#x2192; </span>2 <span 
+class="cmsy-10x-x-109">&#x2192; </span>3 for commodity&#x00A0;B, and 4 <span 
+class="cmsy-10x-x-109">&#x2192; </span>5 <span 
+class="cmsy-10x-x-109">&#x2192; </span>1 for
+     commodity&#x00A0;<span 
+class="cmmi-10x-x-109">C</span>. Use the path based approach described in class to show that this is not an optimal
+     set of paths. What is the optimal solution?
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                       </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                                 </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours: Tuesday: 12&#8211;2pm, Wednesday: 11am&#8211;1pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

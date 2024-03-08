@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html --> 
+<meta name="src" content="hw7.tex"> 
+<meta name="date" content="2018-04-24 12:02:00"> 
+<link rel="stylesheet" type="text/css" href="hw7.css"> 
+</head><body 
+>
+<div class="center" 
+>
+<!--l. 13--><p class="noindent" >
+<!--l. 15--><p class="noindent" ><a 
+href="http://www.rpi.edu/~mitchj/matp6640" ><span 
+class="cmr-12">MATP6640/DSES6770 Linear Programming</span></a><span 
+class="cmr-12">, Homework 7.</span>
+</div>
+                                                                                         <div class="flushright" 
+>
+<!--l. 19--><p class="noindent" >
+ Due: Tuesday, May 1, 2018.<br />
+10% penalty for each day late.</div>
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1"><a 
+ id="x1-21"></a> Let
+     <center class="math-display" >
+     <img 
+src="hw70x.png" alt="     &#x230A;         &#x230B;         &#x230A;           &#x230B;         &#x230A;          &#x230B;
+       0  0  0             1    0  0              0  0  1         [   ]
+C :=  |&#x2308; 0  0  0 |&#x2309;,  A1 := |&#x2308; 0  - 1  0 |&#x2309; ,  A2 := |&#x2308;  0  0  1 |&#x2309;,  b :=   1
+       0  0  2             0    0  0              1  1  1           3
+     " class="math-display" ></center>
+     <!--l. 79--><p class="nopar" >
+     The primal and dual semidefinite programs are
+     <center class="math-display" >
+     <img 
+src="hw71x.png" alt="                                                        T
+min   trace(CX )                           max   &#x2211;2    b y
+s.t.  trace(AiX )  =  bi  i = 1,2    (P)    s.t.     i=1Aiyi  +  S   =  C     (D)
+              X   &#x227D;  0                                         S   &#x227D;  0
+     " class="math-display" ></center>
+     <!--l. 88--><p class="nopar" >
+     Show that both (<span 
+class="cmmi-10x-x-109">P</span>) and (<span 
+class="cmmi-10x-x-109">D</span>) are feasible, but that the optimal value of (<span 
+class="cmmi-10x-x-109">P</span>) is not achieved.
+     </li>
+     <li 
+  class="enumerate" id="x1-5x2"><a 
+ id="x1-42"></a> Let
+     <center class="math-display" >
+     <img 
+src="hw72x.png" alt="     [ 0  0 ]         [ 1   0 ]          [ 0  1 ]        [ 3 ]
+C :=          ,  A1 :=           ,  A2 :=         ,  b :=
+       0  9             0  - 1             1  2            6
+     " class="math-display" ></center>
+     <!--l. 179--><p class="nopar" >
+     The primal and dual semidefinite programs are
+                                                                                         
+                                                                                         
+     <center class="math-display" >
+     <img 
+src="hw73x.png" alt="min   trace(CX )                               max   &#x2211;     bT y
+s.t.  trace(AiX )  =   bi   i = 1,...,2   (P)    s.t.     2i=1 Aiyi  +  S   =  C     (D )
+              X   &#x227D;   0                                            S   &#x227D;  0
+     " class="math-display" ></center>
+     <!--l. 188--><p class="nopar" >
+     Show that (<span 
+class="cmmi-10x-x-109">P</span>) has an optimal value of&#x00A0;9. Is (<span 
+class="cmmi-10x-x-109">D</span>) strictly feasible? Show that <span 
+class="cmmi-10x-x-109">y </span>= (<span 
+class="cmsy-10x-x-109">-</span>1<span 
+class="cmmi-10x-x-109">,</span>2) is optimal
+     for&#x00A0;(<span 
+class="cmmi-10x-x-109">D</span>). Show that the optimal <span 
+class="cmmi-10x-x-109">X </span>and <span 
+class="cmmi-10x-x-109">S </span>matrices are simultaneously diagonalizable.
+     </li>
+     <li 
+  class="enumerate" id="x1-7x3">
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-9x1">Formulate the primal problem in Question&#x00A0;<a 
+href="#x1-42">2<!--tex4ht:ref: q.sdp2 --></a> as an equivalent second order cone program,
+          and solve it using CPLEX.
+          </li>
+          <li 
+  class="enumerate" id="x1-11x2">Formulate the dual problem in Question&#x00A0;<a 
+href="#x1-42">2<!--tex4ht:ref: q.sdp2 --></a> as an equivalent second order cone program,
+          and solve it using CPLEX.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-13x4">
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x1-15x1">Construct and solve a second order cone relaxation of the primal SDP in Question&#x00A0;<a 
+href="#x1-21">1<!--tex4ht:ref: q.sdp1 --></a>,
+          by requiring all the principal 1 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>1 and 2 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>2 subdeterminants of <span 
+class="cmmi-10x-x-109">X </span>be nonnegative.
+          </li>
+          <li 
+  class="enumerate" id="x1-17x2">Construct and solve a second order cone relaxation of the dual SDP in Question&#x00A0;<a 
+href="#x1-21">1<!--tex4ht:ref: q.sdp1 --></a>, by
+          requiring all the principal 1 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>1 and 2 <span 
+class="cmsy-10x-x-109">&#x00D7; </span>2 subdeterminants of <span 
+class="cmmi-10x-x-109">S </span>be nonnegative.</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x1-19x5">Most semidefinite relaxations of combinatorial optimization problems result in a linear constraint on
+     the trace of the primal matrix&#x00A0;<span 
+class="cmmi-10x-x-109">X</span>. For example, in the relaxation of MaxCut, the diagonal
+     entries are all required to equal one, so the trace must equal the number of nodes. The
+     relaxation of the combinatorial optimization problem gives a primal SDP; assume this primal
+     SDP and its dual are feasible. Show that if the linear constraints of the primal problem
+     imply that any feasible solution must satisfy trace(<span 
+class="cmmi-10x-x-109">X</span>) = <span 
+class="cmmi-10x-x-109">a </span>for some positive constant <span 
+class="cmmi-10x-x-109">a</span>
+     then the feasible region for the dual is unbounded, and strictly feasible dual solutions
+     exist.
+     </li>
+     <li 
+  class="enumerate" id="x1-21x6"><span 
+class="cmbx-10x-x-109">The project: </span>Project presentations will be on Thursday, May 10, from 3-6pm in Lally 02. Your
+     presentation should be no more than 15 minutes long. Please <span 
+class="cmbx-10x-x-109">bring your presentation on a</span>
+     <span 
+class="cmbx-10x-x-109">memory stick</span>, or something with a usb port. In order to encourage <span 
+class="cmbx-10x-x-109">questions</span>, your grade will
+                                                                                         
+                                                                                         
+     not be lowered if you are unable to answer questions from other students, but it may
+     be raised. Moreover, I may give some <span 
+class="cmbx-10x-x-109">bonus points </span>for asking a particularly good
+     question.
+     <!--l. 328--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Handouts: </span>Please prepare <span 
+class="cmbx-10x-x-109">20 copies of your slides</span>, to be handed out before your
+     talk.
+     <!--l. 332--><p class="noindent" ><span 
+class="cmbx-10x-x-109">Reports: </span>Your writeup is due by Wednesday May 9, as an emailed pdf file. It should describe the
+     problem you worked on, what you did to solve the problem, and the significance of what you did.
+     You should also cite relevant references and state what was novel about your approach. In addition,
+     email me a copy of your slides.
+     <!--l. 338--><p class="noindent" >For group projects, each group member should email me a description of his or her individual
+     contribution. (Plain text or pdf is fine.)
+     </li></ol>
+   <div class="tabular"> <table id="TBL-1" class="tabular" 
+cellspacing="0" cellpadding="0"  
+><colgroup id="TBL-1-1g"><col 
+id="TBL-1-1"></colgroup><tr  
+ style="vertical-align:baseline;" id="TBL-1-1-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-1-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          <a 
+href="http://www.rpi.edu/~mitchj" >John Mitchell</a>                                                                             </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-2-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-2-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; Amos Eaton 325</td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-3-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-3-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          x6915.                                                                                       </td></tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-4-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-4-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0; <a 
+href="mailto:mitchj@rpi.edu" >mitchj at rpi dot edu</a></td>
+</tr><tr  
+ style="vertical-align:baseline;" id="TBL-1-5-"><td  style="white-space:nowrap; text-align:left;" id="TBL-1-5-1"  
+class="td01">&#x00A0;&#x00A0;&#x00A0;          Office hours: Tuesday: 12&#8211;2pm, Wednesday: 11am&#8211;1pm, Friday: 12&#8211;1pm.</td> </tr></table></div>
+    
+</body></html> 
+
+                                                                                         
+
+

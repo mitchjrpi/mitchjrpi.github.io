@@ -1,0 +1,239 @@
+====================
+Question 1:
+====================
+
+Multiply the following numbers by 0.5:
+
+ampl: reset; model desalination.mod; data desalination.dat; solve;
+CPLEX 12.9.0.0: optimal solution; objective 223561.175
+18 dual simplex iterations (0 in phase I)
+ampl: display flowconservationcities;
+flowconservationcities [*] :=
+A  593.65
+B  623.65
+C  601.65
+D  624.65
+E  599.65
+F  628.65
+;
+
+====================
+Question 2:
+====================
+
+30 for (A,B),  -30 for (B,A):
+
+ampl: display ship, ship.rc, edgecost;
+:       ship   ship.rc edgecost    :=
+A  B     0         5       35
+A  C     0        30       38
+A  D     0        11       42
+A  F    89.475     0       35
+B  A     0        45       15
+B  C     0        33       11
+C  A     0        20       12
+C  B    50         0       22
+C  F     0.025     0       27
+D  A     0        45       14
+D  E     0        27        2
+E  D    19.5       0       25
+E  F    60.5       0       29
+F  A     0        46       11
+F  C     0        39       12
+F  E     0        40       11
+P1 A   100         0       35
+P2 A    79.475     0       52
+P3 C    80.025     0       23
+P4 E   130         0       33
+;
+
+====================
+Question 3:
+====================
+
+Decrease wellcost by wells.rc:
+
+ampl: display wellcost, wells.rc;
+: wellcost wells.rc    :=
+A     900     331
+B     700     101
+C     800     223
+D     600       0
+E     800     225
+F    1200     596
+;
+
+====================
+Question 4:
+====================
+
+Use wells.up:
+ampl: display wells, wells.rc, wells.up, wells.down;
+:  wells wells.rc   wells.up wells.down    :=
+A    0      331     1e+20          569
+B    0      101     1e+20          599
+C    0      223     1e+20          577
+D   20.5      0       624.65    -1e+20
+E    0      225     1e+20          575
+F    0      596     1e+20          604
+;
+
+Once value increases to 624.65, the basis changes.
+
+Alternatively, can use the shadow price for the limitwells constraint:
+
+ampl: display limitwells;
+limitwells = -24.65
+
+====================
+Question 5:
+====================
+
+Estimate is 10 times the values in the dischargebound column:
+
+ampl: display discharge, disposal, dischargemax, dischargebound;
+:  discharge disposal dischargemax dischargebound    :=
+P1     20       0           20              0
+P2     12       3.895       12           -110
+P3     10       6.005       10           -130
+P4     16      10           16           -120
+;
+
+If we make the change, the value increases by
+223561.175-222779.5 = 781.675, which is smaller than the predicted 1300.
+
+ampl: let dischargemax['P3']:= 20; solve;
+CPLEX 12.9.0.0: optimal solution; objective 222779.5
+2 dual simplex iterations (0 in phase I)
+ampl: display discharge, disposal, dischargemax, dischargebound;
+:  discharge disposal dischargemax dischargebound    :=
+P1    20         0          20              0
+P2    12         4.1        12           -110
+P3    19.9       0          20              0
+P4    16        10          16           -120
+;
+
+This is because the basic sequence changes: disposal['P3'] is now nonbasic.
+
+sensitivity options for the constraint discharge bound don't give anything useful.
+They give the right information from the constraint finddisposal:
+
+ampl: display finddisposal, finddisposal.up, finddisposal.down, discharge, disposal;
+:  finddisposal finddisposal.up finddisposal.down discharge disposal    :=
+P1        0               0           -20             20       0
+P2      110           1e+20            -3.895         12       3.895
+P3      130           1e+20            -6.005         10       6.005
+P4      120           1e+20           -10             16      10
+;
+
+This is predictable: this implies that if dischargebound changes by the value of
+disposal then the basis changes.
+
+====================
+Question 6:
+====================
+
+Improvement in value is (shadow price)x(change in rhs). Have
+
+limitwells*0.05*(sum{k in CITIES} demand[k]) = -505.325
+
+Check: actual value decreases from 223561.175 to 223173,
+a decrease of 223561.175 - 223173 = 388.175,
+with the modification of the limitwells constraint to:
+
+subject to limitwells: sum{j in CITIES} wells[j] <= 0.1*sum{k in CITIES} demand[k];
+
+This is because the basis changes. For example, ship[C,F] was basic,
+but now the basic ship variables are:
+
+ampl: reset; model desalination.mod; data desalination.dat; solve;
+CPLEX 12.9.0.0: optimal solution; objective 223173
+17 dual simplex iterations (0 in phase I)
+ampl: display ship;
+ship :=
+A  B    18.5
+A  F    70
+C  B    31.5
+E  F    80
+P1 A   100
+P2 A    78.5
+P3 C    61.5
+P4 E   130
+;
+
+Can also see the basis will change using sensitivity analysis:
+
+ampl: option cplex_options 'sensitivity';
+ampl: display limitwells, limitwells.up, limitwells.down;
+limitwells = -24.65
+limitwells.up = 20.5263
+limitwells.down = 0
+
+ship[C,F] leaves basis when the rhs of the limitwells constraint is set to 20.5263
+
+====================
+Question 7:
+====================
+
+Improvement in value is (shadow price)x(change in rhs). Have
+
+limitcarbon*0.01*(sum{k in PLANTS} supply[k]) = -183.065
+
+With the modified constraint:
+
+subject to limitcarbon:
+   sum{j in PLANTS} carbon[j] <= 0.06 * sum{k in PLANTS} supply[k];
+
+CPLEX 12.9.0.0: optimal solution; objective 223397.46
+
+Improvement in objective function value is
+- 223397.46 + 223561.175 = 163.715
+
+As in question 6, the basis is changed. ship[C,F] is no longer basic:
+
+ship :=
+A  B     3.87
+A  F    89.5
+C  B    46.13
+E  D    19.5
+E  F    60.5
+P1 A   100
+P2 A    83.37
+P3 C    76.13
+P4 E   130
+;
+
+The sensitivity option is helpful here:
+
+ampl: display limitcarbon, limitcarbon.up, limitcarbon.down;
+limitcarbon = -47
+limitcarbon.up = 0.025
+limitcarbon.down = -9.475
+
+This says that if the RHS is increased by 0.025 than the basis changes.
+Indeed, if we add 0.027 to the RHS, ship[C,F] becomes nonbasic.
+
+====================
+Question 8:
+====================
+
+ampl: let demand['A'] := 90.5;
+ampl: solve;
+CPLEX 12.9.0.0: optimal solution; objective 223857.3837
+0 simplex iterations (0 in phase I)
+
+Increase in objective function value is
+223857.3837 -  223561.175 = 296.209
+
+Predicted increase is
+0.5*flowconservationcities['A'] = 296.825.
+
+If we change the demand then we change the RHS of the limitwells constraint,
+which has a shadow price of 24.65. The predicted change in the optimal value
+just from this constraint is 24.65*0.05*0.5 = 0.61625,
+which is exactly the difference between the predicted and actual
+optimal values derived earlier.
+
+The same difference of 0.616 should occur for all 6 cities.
+
+
