@@ -1,0 +1,68 @@
+This directory contains FORTRAN files for generating random
+linear ordering problems.
+
+In the linear ordering problem, we are given MATSIZE objects, and we
+have pairwise comparisons between the objects. We want to choose the
+best ordering for the objects. MAT(I,J) gives the benefit of placing
+I before J in the ordering. Thus, we want to choose the ordering that
+solves:
+  max  sum MAT(I,J): I is before J in the ordering
+
+c
+c  The files generate a random DEGENERATE linear ordering problem.
+c    The coefficients mat_ij are uniformly distributed between 0 and 99
+c    for i < j,and uniformly distributed between 0 and (100*RATIO)-1
+c    for i > j.  They are INTEGRAL.
+c
+c    Further, PROPZERO of the coefficients are zero.
+c
+c  The objective is to find an ordering that maximizes the
+c    sum MAT(I,J) : I is before J in the ordering
+c
+c  The program linordgen.f reads in four parameters from the file fort.15:
+c
+c     MATSIZE:   The number of sectors in the instance. Can be no larger
+c                than 250.
+c     ISEED:     A random seed.
+c     RATIO and PROPZERO:  See the first two paragraphs.
+c
+c  MATSIZE and ISEED are integers, the other two numbers can be anything
+c     between 0 and 1. The format of file  fort.15  is
+c     MATSIZE, ISEED, RATIO, PROPZERO
+c
+
+The FORTRAN program geninput.f generates 30 input files in the required
+fort.15 format. These correspond to the instances described in the paper
+@techreport{MB_combined,
+    AUTHOR  =  {J. E. Mitchell and B. Borchers},
+    TITLE   =  {Solving linear ordering problems with a combined
+      interior point/simplex cutting plane algorithm},
+    YEAR    =  1997,
+    MONTH   =  {September},
+    INSTITUTION={Mathematical Sciences, Rensselaer Polytechnic Institute},
+    ADDRESS =  {Troy, NY 12180--3590},
+    NOTE={Accepted for publication in {\em Proceedings of HPOPT97},
+    Rotterdam, The Netherlands},
+    URL={http://www.math.rpi.edu/~mitchj/papers/combined.ps} }
+These seed files are also contained in the subdirectory  seeds
+
+These input files can then be copied to  fort.15  and then linordgen.f
+can be used to generate the matrices. Note that linordgen.f generates
+several lines of additional output before generating the entries MAT(I,J).
+The entries MAT(I,J) are output as
+MAT(1,1)
+MAT(1,2)
+...
+MAT(1,MATSIZE)
+MAT(2,1)
+MAT(2,2)
+...
+...
+MAT(MATSIZE,1)
+MAT(MATSIZE,2)
+...
+MAT(MATSIZE,MATSIZE)
+
+The file r100a2prob contains the output generated from input seeds/r100a2
+The first 14 lines contain information about the instance, and the last
+10000 lines contain the entries in MAT(.,.)
