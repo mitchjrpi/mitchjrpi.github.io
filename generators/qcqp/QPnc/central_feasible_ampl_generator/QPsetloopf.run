@@ -1,0 +1,322 @@
+
+shell '/bin/rm Qpsetf.dat';
+reset;
+printf "param n := 20;\n" > QPsetf.dat;
+printf "param nQ := 20;\n" > QPsetf.dat;
+printf "param m := 80;\n" > QPsetf.dat;
+printf "param p:= 20;\n" > QPsetf.dat;
+printf "set PAIRS := ;\n" > QPsetf.dat;
+
+printf "Now solve problem 1 with n=20,nQ=20,m=80,p=20\n" >> QPloopf.out;
+reset; option randseed 12345;
+model QPsetf.run;
+
+printf "Now solve problem 2 with n=20,nQ=20,m=80,p=20\n" >> QPloopf.out;
+reset; option randseed 4187;
+model QPsetf.run;
+
+printf "Now solve problem 3 with n=20,nQ=20,m=80,p=20\n" >> QPloopf.out;
+reset; option randseed 317919;
+model QPsetf.run;
+
+printf "Now solve problem 4 with n=20,nQ=20,m=80,p=20\n" >> QPloopf.out;
+reset; option randseed 318373161;
+model QPsetf.run;
+
+printf "Now solve problem 5 with n=20,nQ=20,m=80,p=20\n" >> QPloopf.out;
+reset; option randseed 13719;
+model QPsetf.run;
+
+shell '/bin/rm QPsetf.dat';
+reset;
+printf "param n := 40;\n" > QPsetf.dat;
+printf "param nQ := 20;\n" > QPsetf.dat;
+printf "param m := 80;\n" > QPsetf.dat;
+printf "param p:= 40;\n" > QPsetf.dat;
+printf "set PAIRS := ;\n" > QPsetf.dat;
+
+printf "Now solve problem 1 with n=40,nQ=20,m=80,p=40\n" >> QPloopf.out;
+reset; option randseed 81438514;
+model QPsetf.run;
+
+printf "Now solve problem 2 with n=40,nQ=20,m=80,p=40\n" >> QPloopf.out;
+reset; option randseed 131878;
+model QPsetf.run;
+reset; option randseed 131878;
+
+printf "Now solve problem 3 with n=40,nQ=20,m=80,p=40\n" >> QPloopf.out;
+reset; option randseed 17873;
+model QPsetf.run;
+reset; option randseed 17873;
+
+printf "Now solve problem 4 with n=40,nQ=20,m=80,p=40\n" >> QPloopf.out;
+reset; option randseed 173877;
+model QPsetf.run;
+reset; option randseed 173877;
+
+printf "Now solve problem 5 with n=40,nQ=20,m=80,p=40\n" >> QPloopf.out;
+reset; option randseed 8173771;
+model QPsetf.run;
+reset; option randseed 8173771;
+
+
+shell '/bin/rm QPsetf.dat';
+reset;
+printf "param n := 60;\n" > QPsetf.dat;
+printf "param nQ := 20;\n" > QPsetf.dat;
+printf "param m := 80;\n" > QPsetf.dat;
+printf "param p:= 60;\n" > QPsetf.dat;
+printf "set PAIRS := ;\n" > QPsetf.dat;
+
+printf "Now solve problem 1 with n=60,nQ=20,m=80,p=60\n" >> QPloopf.out;
+reset; option randseed 187317;
+model QPsetf.run;
+reset; option randseed 187317;
+
+printf "Now solve problem 2 with n=60,nQ=20,m=80,p=60\n" >> QPloopf.out;
+reset; option randseed 719736;
+model QPsetf.run;
+reset; option randseed 719736;
+
+printf "Now solve problem 3 with n=60,nQ=20,m=80,p=60\n" >> QPloopf.out;
+reset; option randseed 817837;
+model QPsetf.run;
+reset; option randseed 817837;
+
+printf "Now solve problem 4 with n=60,nQ=20,m=80,p=60\n" >> QPloopf.out;
+reset; option randseed 8173873;
+model QPsetf.run;
+reset; option randseed 8173873;
+
+printf "Now solve problem 5 with n=60,nQ=20,m=80,p=60\n" >> QPloopf.out;
+reset; option randseed 1737397;
+model QPsetf.run;
+reset; option randseed 1737397;
+
+shell '/bin/rm QPsetf.dat';
+reset;
+printf "param n := 80;\n" > QPsetf.dat;
+printf "param nQ := 20;\n" > QPsetf.dat;
+printf "param m := 80;\n" > QPsetf.dat;
+printf "param p:= 80;\n" > QPsetf.dat;
+printf "set PAIRS := ;\n" > QPsetf.dat;
+
+printf "Now solve problem 1 with n=80,nQ=20,m=80,p=80\n" >> QPloopf.out;
+reset; option randseed 1738767;
+model QPsetf.run;
+reset; option randseed 1738767;
+
+printf "Now solve problem 2 with n=80,nQ=20,m=80,p=80\n" >> QPloopf.out;
+reset; option randseed 871763;
+model QPsetf.run;
+reset; option randseed 871763;
+
+printf "Now solve problem 3 with n=80,nQ=20,m=80,p=80\n" >> QPloopf.out;
+reset; option randseed 1367837;
+model QPsetf.run;
+reset; option randseed 1367837;
+
+printf "Now solve problem 4 with n=80,nQ=20,m=80,p=80\n" >> QPloopf.out;
+reset; option randseed 768719;
+model QPsetf.run;
+reset; option randseed 768719;
+
+printf "Now solve problem 5 with n=80,nQ=20,m=80,p=80\n" >> QPloopf.out;
+reset; option randseed 87713;
+model QPsetf.run;
+reset; option randseed 87713;
+
+shell '/bin/rm QPsetf.dat';
+reset;
+printf "param n := 100;\n" > QPsetf.dat;
+printf "param nQ := 20;\n" > QPsetf.dat;
+printf "param m := 80;\n" > QPsetf.dat;
+printf "param p:= 100;\n" > QPsetf.dat;
+printf "set PAIRS := ;\n" > QPsetf.dat;
+
+printf "Now solve problem 1 with n=100,nQ=20,m=80,p=100\n" >> QPloopf.out;
+reset; option randseed 7167;
+model QPsetf.run;
+reset; option randseed 7167;
+
+printf "Now solve problem 2 with n=100,nQ=20,m=80,p=100\n" >> QPloopf.out;
+reset; option randseed 317798;
+model QPsetf.run;
+reset; option randseed 317798;
+
+printf "Now solve problem 3 with n=100,nQ=20,m=80,p=100\n" >> QPloopf.out;
+reset; option randseed 3183878;
+model QPsetf.run;
+reset; option randseed 3183878;
+
+printf "Now solve problem 4 with n=100,nQ=20,m=80,p=100\n" >> QPloopf.out;
+reset; option randseed 187387837;
+model QPsetf.run;
+reset; option randseed 187387837;
+
+printf "Now solve problem 5 with n=100,nQ=20,m=80,p=100\n" >> QPloopf.out;
+reset; option randseed 1837189;
+model QPsetf.run;
+reset; option randseed 1837189;
+
+shell '/bin/rm Qpset.dat';
+reset;
+printf "param n := 20;\n" > QPsetf.dat;
+printf "param nQ := 50;\n" > QPsetf.dat;
+printf "param m := 160;\n" > QPsetf.dat;
+printf "param p:= 20;\n" > QPsetf.dat;
+printf "set PAIRS := ;\n" > QPsetf.dat;
+
+printf "Now solve problem 1 with n=20,nQ=50,m=160,p=20\n" >> QPloopf.out;
+reset; option randseed 12345;
+model QPsetf.run;
+
+printf "Now solve problem 2 with n=20,nQ=50,m=160,p=20\n" >> QPloopf.out;
+reset; option randseed 4187;
+model QPsetf.run;
+
+printf "Now solve problem 3 with n=20,nQ=50,m=160,p=20\n" >> QPloopf.out;
+reset; option randseed 317919;
+model QPsetf.run;
+
+printf "Now solve problem 4 with n=20,nQ=50,m=160,p=20\n" >> QPloopf.out;
+reset; option randseed 318373161;
+model QPsetf.run;
+
+printf "Now solve problem 5 with n=20,nQ=50,m=160,p=20\n" >> QPloopf.out;
+reset; option randseed 13719;
+model QPsetf.run;
+
+shell '/bin/rm QPsetf.dat';
+reset;
+printf "param n := 40;\n" > QPsetf.dat;
+printf "param nQ := 50;\n" > QPsetf.dat;
+printf "param m := 160;\n" > QPsetf.dat;
+printf "param p:= 40;\n" > QPsetf.dat;
+printf "set PAIRS := ;\n" > QPsetf.dat;
+
+printf "Now solve problem 1 with n=40,nQ=50,m=160,p=40\n" >> QPloopf.out;
+reset; option randseed 81438514;
+model QPsetf.run;
+
+printf "Now solve problem 2 with n=40,nQ=50,m=160,p=40\n" >> QPloopf.out;
+reset; option randseed 131878;
+model QPsetf.run;
+reset; option randseed 131878;
+
+printf "Now solve problem 3 with n=40,nQ=50,m=160,p=40\n" >> QPloopf.out;
+reset; option randseed 17873;
+model QPsetf.run;
+reset; option randseed 17873;
+
+printf "Now solve problem 4 with n=40,nQ=50,m=160,p=40\n" >> QPloopf.out;
+reset; option randseed 173877;
+model QPsetf.run;
+reset; option randseed 173877;
+
+printf "Now solve problem 5 with n=40,nQ=50,m=160,p=40\n" >> QPloopf.out;
+reset; option randseed 8173771;
+model QPsetf.run;
+reset; option randseed 8173771;
+
+
+shell '/bin/rm QPsetf.dat';
+reset;
+printf "param n := 60;\n" > QPsetf.dat;
+printf "param nQ := 50;\n" > QPsetf.dat;
+printf "param m := 160;\n" > QPsetf.dat;
+printf "param p:= 60;\n" > QPsetf.dat;
+printf "set PAIRS := ;\n" > QPsetf.dat;
+
+printf "Now solve problem 1 with n=60,nQ=50,m=160,p=60\n" >> QPloopf.out;
+reset; option randseed 187317;
+model QPsetf.run;
+reset; option randseed 187317;
+
+printf "Now solve problem 2 with n=60,nQ=50,m=160,p=60\n" >> QPloopf.out;
+reset; option randseed 719736;
+model QPsetf.run;
+reset; option randseed 719736;
+
+printf "Now solve problem 3 with n=60,nQ=50,m=160,p=60\n" >> QPloopf.out;
+reset; option randseed 817837;
+model QPsetf.run;
+reset; option randseed 817837;
+
+printf "Now solve problem 4 with n=60,nQ=50,m=160,p=60\n" >> QPloopf.out;
+reset; option randseed 8173873;
+model QPsetf.run;
+reset; option randseed 8173873;
+
+printf "Now solve problem 5 with n=60,nQ=50,m=160,p=60\n" >> QPloopf.out;
+reset; option randseed 1737397;
+model QPsetf.run;
+reset; option randseed 1737397;
+
+shell '/bin/rm QPsetf.dat';
+reset;
+printf "param n := 80;\n" > QPsetf.dat;
+printf "param nQ := 50;\n" > QPsetf.dat;
+printf "param m := 160;\n" > QPsetf.dat;
+printf "param p:= 80;\n" > QPsetf.dat;
+printf "set PAIRS := ;\n" > QPsetf.dat;
+
+printf "Now solve problem 1 with n=80,nQ=50,m=160,p=80\n" >> QPloopf.out;
+reset; option randseed 1738767;
+model QPsetf.run;
+reset; option randseed 1738767;
+
+printf "Now solve problem 2 with n=80,nQ=50,m=160,p=80\n" >> QPloopf.out;
+reset; option randseed 871763;
+model QPsetf.run;
+reset; option randseed 871763;
+
+printf "Now solve problem 3 with n=80,nQ=50,m=160,p=80\n" >> QPloopf.out;
+reset; option randseed 1367837;
+model QPsetf.run;
+reset; option randseed 1367837;
+
+printf "Now solve problem 4 with n=80,nQ=50,m=160,p=80\n" >> QPloopf.out;
+reset; option randseed 768719;
+model QPsetf.run;
+reset; option randseed 768719;
+
+printf "Now solve problem 5 with n=80,nQ=50,m=160,p=80\n" >> QPloopf.out;
+reset; option randseed 87713;
+model QPsetf.run;
+reset; option randseed 87713;
+
+shell '/bin/rm QPsetf.dat';
+reset;
+printf "param n := 100;\n" > QPsetf.dat;
+printf "param nQ := 50;\n" > QPsetf.dat;
+printf "param m := 160;\n" > QPsetf.dat;
+printf "param p:= 100;\n" > QPsetf.dat;
+printf "set PAIRS := ;\n" > QPsetf.dat;
+
+printf "Now solve problem 1 with n=100,nQ=50,m=160,p=100\n" >> QPloopf.out;
+reset; option randseed 7167;
+model QPsetf.run;
+reset; option randseed 7167;
+
+printf "Now solve problem 2 with n=100,nQ=50,m=160,p=100\n" >> QPloopf.out;
+reset; option randseed 317798;
+model QPsetf.run;
+reset; option randseed 317798;
+
+printf "Now solve problem 3 with n=100,nQ=50,m=160,p=100\n" >> QPloopf.out;
+reset; option randseed 3183878;
+model QPsetf.run;
+reset; option randseed 3183878;
+
+printf "Now solve problem 4 with n=100,nQ=50,m=160,p=100\n" >> QPloopf.out;
+reset; option randseed 187387837;
+model QPsetf.run;
+reset; option randseed 187387837;
+
+printf "Now solve problem 5 with n=100,nQ=50,m=160,p=100\n" >> QPloopf.out;
+reset; option randseed 1837189;
+model QPsetf.run;
+reset; option randseed 1837189;
+
+

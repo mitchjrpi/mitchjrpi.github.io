@@ -1,0 +1,356 @@
+*************************************************************
+
+   NEOS Server Version 5.0
+   Job#     : 318256
+   Password : tvJQyOXI
+   Solver   : minco:BARON:GAMS
+   Start    : 2012-10-09 14:48:32
+   End      : 2012-10-09 14:48:41
+   Host     : neos-4.chtc.wisc.edu
+
+   Disclaimer:
+
+   This information is provided without any express or
+   implied warranty. In particular, there is no warranty
+   of any kind concerning the fitness of this
+   information  for any particular purpose.
+*************************************************************
+GAMS Rev 239  LEX-LEG 23.9.3 x86_64/Linux              10/09/12 19:51:19 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+
+
+COMPILATION TIME     =        0.035 SECONDS      4 Mb  LEX239-239 Sep 26, 2012
+GAMS Rev 239  LEX-LEG 23.9.3 x86_64/Linux              10/09/12 19:51:19 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE QPncg Using NLP From line 1952
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           4     SINGLE EQUATIONS          210
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           31
+NON ZERO ELEMENTS         5,431     NON LINEAR N-Z          3,000
+DERIVATIVE POOL              10     CONSTANT POOL          16,935
+CODE LENGTH             113,856
+
+
+GENERATION TIME      =        0.043 SECONDS      7 Mb  LEX239-239 Sep 26, 2012
+
+
+EXECUTION TIME       =        0.043 SECONDS      7 Mb  LEX239-239 Sep 26, 2012
+GAMS Rev 239  LEX-LEG 23.9.3 x86_64/Linux              10/09/12 19:51:19 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE QPncg Using NLP From line 1952
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   QPncg               OBJECTIVE  z
+     TYPE    NLP                 DIRECTION  MINIMIZE
+     SOLVER  BARON               FROM LINE  1952
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      2 Locally Optimal           
+**** OBJECTIVE VALUE               -2.0829
+
+ RESOURCE USAGE, LIMIT          7.610      1000.000
+ ITERATION COUNT, LIMIT         0    2000000000
+ EVALUATION ERRORS              0             0
+
+GAMS/BARON       Jul  4, 2012 23.9.3 LEX 34973.35450 LEG x86_64/Linux         
+
+Branch And Reduce Optimization Navigator
+Nikolaos Sahinidis and Mohit Tawarmalani
+The Optimization Firm, LLC.
+
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- EQU OBJective       .         .         .        1.000      
+
+---- EQU xub  
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+x1      -INF      0.048     1.000      .         
+x2      -INF       .        1.000      .         
+x3      -INF       .        1.000      .         
+x4      -INF       .        1.000      .         
+x5      -INF       .        1.000      .         
+x6      -INF       .        1.000      .         
+x7      -INF       .        1.000      .         
+x8      -INF       .        1.000      .         
+x9      -INF       .        1.000      .         
+x10     -INF       .        1.000      .         
+x11     -INF       .        1.000      .         
+x12     -INF       .        1.000      .         
+x13     -INF       .        1.000      .         
+x14     -INF      0.471     1.000      .         
+x15     -INF       .        1.000      .         
+x16     -INF       .        1.000      .         
+x17     -INF       .        1.000      .         
+x18     -INF       .        1.000      .         
+x19     -INF      0.175     1.000      .         
+x20     -INF       .        1.000      .         
+x21     -INF       .        1.000      .         
+x22     -INF       .        1.000      .         
+x23     -INF      1.000     1.000    -0.215      
+x24     -INF       .        1.000      .         
+x25     -INF       .        1.000      .         
+x26     -INF       .        1.000      .         
+x27     -INF       .        1.000      .         
+x28     -INF       .        1.000      .         
+x29     -INF       .        1.000      .         
+x30     -INF       .        1.000      .         
+
+---- EQU cQ  
+
+        LOWER     LEVEL     UPPER    MARGINAL
+
+qc1     -3.490     0.461     +INF       .         
+qc2     -4.780    -0.133     +INF       .         
+qc3     -2.482     1.280     +INF       .         
+qc4     -4.682    -0.574     +INF       .         
+qc5     -4.832     0.214     +INF       .         
+qc6     -2.563    -0.198     +INF       .         
+qc7     -2.968     0.318     +INF       .         
+qc8     -2.132    -0.010     +INF       .         
+qc9     -4.607     1.329     +INF       .         
+qc10    -1.134     1.384     +INF       .         
+qc11    -2.358     0.599     +INF       .         
+qc12    -1.598    -0.618     +INF       .         
+qc13    -3.248    -0.692     +INF       .         
+qc14    -3.107    -0.460     +INF       .         
+qc15    -3.792     0.857     +INF       .         
+qc16    -4.674    -0.315     +INF       .         
+qc17    -2.618     0.834     +INF       .         
+qc18    -1.454     1.426     +INF       .         
+qc19    -4.843     0.183     +INF       .         
+qc20    -4.502    -0.567     +INF       .         
+qc21    -3.948     0.757     +INF       .         
+qc22    -4.626     1.297     +INF       .         
+qc23    -3.915    -0.235     +INF       .         
+qc24    -2.349    -0.235     +INF       .         
+qc25    -4.624     0.743     +INF       .         
+qc26    -3.904    -0.832     +INF       .         
+qc27    -2.348     0.182     +INF       .         
+qc28    -2.568    -0.793     +INF       .         
+qc29    -3.357     0.851     +INF       .         
+qc30    -1.766    -0.112     +INF       .         
+qc31    -2.180     0.266     +INF       .         
+qc32    -4.671     0.290     +INF       .         
+qc33    -2.470    -0.427     +INF       .         
+qc34    -4.449    -0.796     +INF       .         
+qc35    -4.265     0.909     +INF       .         
+qc36    -2.710    -0.399     +INF       .         
+qc37    -1.001    -0.178     +INF       .         
+qc38    -1.899    -0.134     +INF       .         
+qc39    -3.359    -0.271     +INF       .         
+qc40    -3.764    -0.311     +INF       .         
+qc41    -2.856     0.450     +INF       .         
+qc42    -2.658    -0.413     +INF       .         
+qc43    -3.904    -0.040     +INF       .         
+qc44    -2.903     0.181     +INF       .         
+qc45    -2.972    -0.197     +INF       .         
+qc46    -3.679    -0.520     +INF       .         
+qc47    -4.488     0.608     +INF       .         
+qc48    -1.940    -0.712     +INF       .         
+qc49    -1.980     0.084     +INF       .         
+qc50    -3.235    -0.298     +INF       .         
+qc51    -1.590    -0.503     +INF       .         
+qc52    -2.789    -0.475     +INF       .         
+qc53    -2.926    -0.208     +INF       .         
+qc54    -2.823    -1.060     +INF       .         
+qc55    -2.854    -0.218     +INF       .         
+qc56    -1.612     0.354     +INF       .         
+qc57    -2.440     0.253     +INF       .         
+qc58    -4.111    -0.697     +INF       .         
+qc59    -1.331    -0.405     +INF       .         
+qc60    -2.666     1.250     +INF       .         
+qc61    -4.241     0.646     +INF       .         
+qc62    -4.702    -0.588     +INF       .         
+qc63    -2.930    -1.205     +INF       .         
+qc64    -1.048    -0.376     +INF       .         
+qc65    -3.302     0.458     +INF       .         
+qc66    -1.456    -0.793     +INF       .         
+qc67    -2.855     1.323     +INF       .         
+qc68    -3.782    -0.345     +INF       .         
+qc69    -2.126     0.169     +INF       .         
+qc70    -1.833    -0.527     +INF       .         
+qc71    -3.070     0.737     +INF       .         
+qc72    -1.312     0.427     +INF       .         
+qc73    -1.347     0.985     +INF       .         
+qc74    -1.399    -0.923     +INF       .         
+qc75    -1.147     0.572     +INF       .         
+qc76    -2.202    -0.776     +INF       .         
+qc77    -3.195     0.882     +INF       .         
+qc78    -4.073     0.405     +INF       .         
+qc79    -1.852    -0.328     +INF       .         
+qc80    -2.159     1.591     +INF       .         
+qc81    -3.064    -0.717     +INF       .         
+qc82    -4.561    -0.238     +INF       .         
+qc83    -3.258    -0.206     +INF       .         
+qc84    -4.937    -1.053     +INF       .         
+qc85    -1.480     0.330     +INF       .         
+qc86    -4.068    -0.428     +INF       .         
+qc87    -2.786     0.798     +INF       .         
+qc88    -4.595    -0.279     +INF       .         
+qc89    -2.096    -0.738     +INF       .         
+qc90    -3.140     0.541     +INF       .         
+qc91    -1.958     0.833     +INF       .         
+qc92    -4.818     0.156     +INF       .         
+qc93    -4.455    -0.484     +INF       .         
+qc94    -1.988    -0.819     +INF       .         
+qc95    -3.043    -1.091     +INF       .         
+qc96    -3.421    -0.110     +INF       .         
+qc97    -2.718    -1.037     +INF       .         
+qc98    -4.003    -0.189     +INF       .         
+qc99    -4.047    -1.079     +INF       .         
+
+---- EQU cL  
+
+         LOWER     LEVEL     UPPER    MARGINAL
+
+lin1      -INF      0.939     3.242      .         
+lin2      -INF      0.918     2.344      .         
+lin3      -INF      0.343     3.604      .         
+lin4      -INF      0.853     1.250      .         
+lin5      -INF      1.040     4.798      .         
+lin6      -INF      0.997     4.811      .         
+lin7      -INF      0.949     1.745      .         
+lin8      -INF      0.702     2.777      .         
+lin9      -INF      0.767     3.367      .         
+lin10     -INF      0.564     2.988      .         
+lin11     -INF      1.144     4.176      .         
+lin12     -INF      0.749     2.728      .         
+lin13     -INF      0.307     1.627      .         
+lin14     -INF      1.015     1.589      .         
+lin15     -INF      0.683     2.129      .         
+lin16     -INF      0.594     3.970      .         
+lin17     -INF      1.246     1.708      .         
+lin18     -INF      0.624     4.302      .         
+lin19     -INF      0.682     1.442      .         
+lin20     -INF      1.189     4.241      .         
+lin21     -INF      0.236     1.060      .         
+lin22     -INF      0.953     3.525      .         
+lin23     -INF      1.145     3.523      .         
+lin24     -INF      0.423     4.307      .         
+lin25     -INF      1.153     1.900      .         
+lin26     -INF      0.891     2.749      .         
+lin27     -INF      0.740     2.813      .         
+lin28     -INF      0.563     4.486      .         
+lin29     -INF      0.592     2.715      .         
+lin30     -INF      1.001     2.986      .         
+lin31     -INF      0.938     1.090      .         
+lin32     -INF      0.731     3.517      .         
+lin33     -INF      0.576     1.923      .         
+lin34     -INF      1.553     3.753      .         
+lin35     -INF      0.378     3.846      .         
+lin36     -INF      1.089     4.445      .         
+lin37     -INF      1.315     1.315    -0.887      
+lin38     -INF      1.159     4.138      .         
+lin39     -INF      0.369     3.846      .         
+lin40     -INF      0.289     2.143      .         
+lin41     -INF      0.744     3.277      .         
+lin42     -INF      0.346     3.785      .         
+lin43     -INF      1.188     3.264      .         
+lin44     -INF      0.608     2.398      .         
+lin45     -INF      0.672     1.102      .         
+lin46     -INF      0.548     3.717      .         
+lin47     -INF      1.270     1.270    -0.987      
+lin48     -INF      1.044     2.073      .         
+lin49     -INF      1.235     2.720      .         
+lin50     -INF      0.787     4.472      .         
+lin51     -INF      1.038     1.058 5.0036E-8      
+lin52     -INF      0.727     4.841      .         
+lin53     -INF      0.863     3.193      .         
+lin54     -INF      0.848     4.452      .         
+lin55     -INF      1.001     1.010      .         
+lin56     -INF      0.942     2.256      .         
+lin57     -INF      0.613     3.590      .         
+lin58     -INF      0.879     3.290      .         
+lin59     -INF      1.043     1.831      .         
+lin60     -INF      1.063     1.161      .         
+lin61     -INF      0.623     2.480      .         
+lin62     -INF      1.044     3.609      .         
+lin63     -INF      0.979     1.235      .         
+lin64     -INF      1.068     2.995      .         
+lin65     -INF      0.397     1.230      .         
+lin66     -INF      0.796     1.587      .         
+lin67     -INF      0.915     1.099      .         
+lin68     -INF      1.280     3.748      .         
+lin69     -INF      0.820     1.928      .         
+lin70     -INF      0.791     4.207      .         
+lin71     -INF      0.713     4.637      .         
+lin72     -INF      0.992     2.575      .         
+lin73     -INF      1.070     3.422      .         
+lin74     -INF      1.139     3.056      .         
+lin75     -INF      0.748     1.121      .         
+lin76     -INF      0.848     1.216      .         
+lin77     -INF      1.175     3.094      .         
+lin78     -INF      0.460     2.067      .         
+lin79     -INF      1.146     3.512      .         
+lin80     -INF      1.024     4.045      .         
+
+---- VAR x  
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+x1       .        0.048     +INF       .         
+x2       .         .        +INF      0.059      
+x3       .         .        +INF      2.293      
+x4       .         .        +INF      1.245      
+x5       .         .        +INF      1.521      
+x6       .         .        +INF      0.916      
+x7       .         .        +INF      1.521      
+x8       .         .        +INF      1.076      
+x9       .         .        +INF      1.737      
+x10      .         .        +INF      1.876      
+x11      .         .        +INF      0.069      
+x12      .         .        +INF      1.934      
+x13      .         .        +INF      0.510      
+x14      .        0.471     +INF       .         
+x15      .         .        +INF      1.258      
+x16      .         .        +INF      1.446      
+x17      .         .        +INF      0.149      
+x18      .         .        +INF      0.150      
+x19      .        0.175     +INF       .         
+x20      .         .        +INF      0.641      
+x21      .         .        +INF      1.949      
+x22      .         .        +INF      0.816      
+x23      .        1.000     +INF       .         
+x24      .         .        +INF      2.104      
+x25      .         .        +INF      0.185      
+x26      .         .        +INF      0.886      
+x27      .         .        +INF      0.975      
+x28      .         .        +INF      0.338      
+x29      .         .        +INF      0.328      
+x30      .         .        +INF      2.007      
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- VAR z              -INF     -2.083     +INF       .         
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+                             0     ERRORS
+
+
+EXECUTION TIME       =        0.000 SECONDS      3 Mb  LEX239-239 Sep 26, 2012
+
+
+USER: NEOS Server                                    G100907:1412AS-LNX
+      University of Wisconsin-Madison                            DC8499
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      /scratch/neos/solver/jobs/318256/MODEL.gms
+Output     /scratch/neos/solver/jobs/318256/solve.out
+
