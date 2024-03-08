@@ -1,5 +1,0 @@
-param n := 20;
-param nQ := 20;
-param m := 60;
-param p:= 20;
-set PAIRS := ;
