@@ -1,0 +1,79 @@
+ GRIDSIZE is   40
+ FIELD is   0.
+ Seed is   23409
+ Upper bound is  0.
+ Lower bound is   -1600.0000000000
+ M is   1
+ N is   4801
+ Added   500 Constraints in this stage   1 at iteration   2
+  Number of each type:   500    0    0    0
+ We now have   500 Constraints.
+ We now have   5300 Variables 
+ We now have   2500 Nonzeroes
+   1 constraints dropped;   0 through fixing vars
+Upper and lower bounds:  -0.10880000D+04 -0.16000000D+04
+ Time on this stage:     3.68000 seconds
+ Added   460 Constraints in this stage   2 at iteration   4
+  Number of each type:   460    0    0    0
+ We now have   960 Constraints.
+ We now have   5760 Variables 
+ We now have   4800 Nonzeroes
+Upper and lower bounds:  -0.10880000D+04 -0.14464068D+04
+ Time on this stage:     6.11000 seconds
+ Added   185 Constraints in this stage   3 at iteration   9
+  Number of each type:   185    0    0    0
+ We now have   1145 Constraints.
+ We now have   5945 Variables 
+ We now have   5725 Nonzeroes
+Upper and lower bounds:  -0.11020000D+04 -0.11183478D+04
+ Time on this stage:     6.86000 seconds
+ Added   78 Constraints in this stage   4 at iteration   14
+  Number of each type:    78    0    0    0
+ We now have   1223 Constraints.
+ We now have   6023 Variables 
+ We now have   6115 Nonzeroes
+Upper and lower bounds:  -0.11020000D+04 -0.11136268D+04
+ Time on this stage:     3.66000 seconds
+ Added   61 Constraints in this stage   5 at iteration   19
+  Number of each type:    40    0   21    0
+ We now have   1284 Constraints.
+ We now have   6084 Variables 
+ We now have   6766 Nonzeroes
+Upper and lower bounds:  -0.11020000D+04 -0.11084143D+04
+ Time on this stage:     4.42000 seconds
+ Added   65 Constraints in this stage   6 at iteration   26
+  Number of each type:    40    0   12   13
+ We now have   1349 Constraints.
+ We now have   6149 Variables 
+ We now have   8005 Nonzeroes
+Upper and lower bounds:  -0.11020000D+04 -0.11084143D+04
+ Time on this stage:     8.47000 seconds
+ Added   60 Constraints in this stage   7 at iteration   36
+  Number of each type:    40    0    9   11
+ We now have   1409 Constraints.
+ We now have   6209 Variables 
+ We now have   9015 Nonzeroes
+Upper and lower bounds:  -0.11020000D+04 -0.11084143D+04
+ Time on this stage:     12.9700 seconds
+ Last stage took     9.99000 seconds
+ Done!
+ Found a cut with value    -1104.0000000000
+ The corresponding dual objective was    -1105.8318685044
+ The energy is    -1.3800000000000
+ Added   1409 Constraints in   7 Stages
+ At the end, M and N were  1409  6209
+ Number of fixed edges:   0
+   1156 of   1409 constraints were tight
+ There were   3081 Fractional Variables
+   Checking squares required      0.190002 seconds
+   Checking triangles required   0. seconds
+   BFS routine required            2.43000 seconds in   3 stages
+   Barahona-Mahjoub required       4.80000 seconds in   2 stages
+   PSOL required                   27.1100 seconds
+   Fixing variables required       5.99976E-02 seconds
+   Dropping variables required     4.00047E-02 seconds
+ Finished!
+ Used   46 Total Iterations
+ Used     56.2200 seconds (CPU)
+  PDSTEP used     19.7100 seconds
+  EVAL used     35.3700 seconds

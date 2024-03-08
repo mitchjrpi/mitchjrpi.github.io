@@ -1,0 +1,89 @@
+<TITLE>  Generating Ising spin glass problems </TITLE>
+
+<H1>  Generating Ising spin glass problems </H1>
+
+<H2>  Problems with any total edge weight </H2>
+
+These problems are generated using the fortran program
+<A HREF=initpgen1-1write.f>initpgen1-1write.f</A>.
+This program calls
+<A HREF=random.f>random.f</A> as a subroutine.
+You can compile them using
+<CENTER>
+<TT>f77 initpgen1-1write.f random.f -o initpgen1-1write</TT>
+</CENTER>
+for example.
+If you are using SunOS 5.6 (Solaris), you can download the
+<A HREF=initpgen1-1write>executable</A> directly.
+
+<P>
+
+A sample input file is contained in
+<A HREF=fort.7>fort.7</A>;
+this produces the output contained in
+<A HREF=fort.9>fort.9</A>.
+The output produced by my cutting plane code for this problem
+is contained in <A HREF=out40>out40</A>.
+In general, an input file must be placed in <tt>fort.7</tt>,
+and the generated problem will be sent to the standard output.
+
+<P>
+
+The problems are generated on a square grid, embedded on a torus.
+Thus, every vertex has four neighbours.
+The input file <tt>fort.7</tt> contains two parameters:
+the size of the grid and the seed.
+The first row of output gives the number of vertices,
+the number of edges, and the seed.
+Subsequent rows list the endpoints of each edge together with
+the cost of the edge.
+The objective is to choose a cut that minimizes the sum of the
+weights of the edges appearing in the cut.
+Every edge has cost +1 or -1, evenly distributed.
+
+<P>
+The sum of the edge weights produced by this generator may be anything.
+For a generator where the edge weights are forced to sum to zero,
+look <A HREF=../total0>here</A>.
+
+<P>
+
+Seeds and energies for several problems are available
+(there are 100 problems of each size):
+<UL>
+<LI><A HREF=seed_energy10>Grid size = 10</A>.
+<LI><A HREF=seed_energy20>Grid size = 20</A>.
+<LI><A HREF=seed_energy30>Grid size = 30</A>.
+<LI><A HREF=seed_energy40>Grid size = 40</A>.
+<LI><A HREF=seed_energy50>Grid size = 50</A>.
+<LI><A HREF=seed_energy60>Grid size = 60</A>.
+<LI><A HREF=seed_energy70>Grid size = 70</A>.
+<LI><A HREF=seed_energy80>Grid size = 80</A>.
+<LI><A HREF=seed_energy90>Grid size = 90</A>.
+<LI><A HREF=seed_energy100>Grid size = 100</A>.
+</UL>
+
+<P>
+Note that
+<CENTER>
+energy = (2*(value of optimal cut) - (sum of edge weights))
+ / (number of vertices)
+</CENTER>
+
+<HR>
+
+<A HREF=../../..>Back to my homepage</A>.
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-39407322-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
