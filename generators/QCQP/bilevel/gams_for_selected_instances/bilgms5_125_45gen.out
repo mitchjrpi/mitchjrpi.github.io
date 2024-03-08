@@ -1,0 +1,37 @@
+_total_solve_elapsed_time = 0
+
+n = 5
+bdim = 125
+gdim = 45
+
+Solve LP relaxation
+CPLEX 11.0.0: unbounded problem.
+6 dual simplex iterations (6 in phase I)
+variable.unbdd returned
+31 extra simplex iterations for ray (19 in phase I)
+
+suffix unbdd OUT;
+:       x       w    ytilde     c    d     :=
+1   0.037037    1   0.037037     4   -1
+2   0.037037    1   0.037037     1   -8
+3   0.0925926   0   0.0925926   -5    3
+4   0.0740741   0   0.0740741   -4    4
+5   0.0555556   1   0.0555556   -2   -9
+;
+
+Solve convex quadratic relaxation
+CPLEX 11.0.0: primal optimal (no dual solution available); objective -15.02307435
+12 barrier iterations
+No basis.
+:      x          w       ytilde    c    d     :=
+1   0.794415   0.518182   1.3126     4   -1
+2   0.823302   0.549242   1.37254    1   -8
+3   1.20985    0.446591   1.65644   -5    3
+4   1.13263    0.461364   1.59399   -4    4
+5   0.936532   0.538258   1.47479   -2   -9
+;
+
+sum{i in 1 .. n} x[i]*(0.5*x[i] + w[i]) = 4.8971
+
+_total_solve_elapsed_time = 0.03
+

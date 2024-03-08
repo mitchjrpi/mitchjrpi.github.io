@@ -1,0 +1,256 @@
+*************************************************************
+
+   NEOS Server Version 5.0
+
+   Disclaimer:
+
+   This information is provided without any express or
+   implied warranty. In particular, there is no warranty
+   of any kind concerning the fitness of this
+   information  for any particular purpose.
+*************************************************************
+Job 320988 has finished.
+GAMS Rev 239  LEX-LEG 23.9.3 x86_64/Linux              10/11/12 06:52:53 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+
+
+COMPILATION TIME     =        0.001 SECONDS      3 Mb  LEX239-239 Sep 26, 2012
+GAMS Rev 239  LEX-LEG 23.9.3 x86_64/Linux              10/11/12 06:52:53 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE bilgms Using NLP From line 180
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           6     SINGLE EQUATIONS           62
+BLOCKS OF VARIABLES           5     SINGLE VARIABLES           61
+NON ZERO ELEMENTS           458     NON LINEAR N-Z             50
+DERIVATIVE POOL              10     CONSTANT POOL              16
+CODE LENGTH                  77
+
+
+GENERATION TIME      =        0.003 SECONDS      4 Mb  LEX239-239 Sep 26, 2012
+
+
+EXECUTION TIME       =        0.003 SECONDS      4 Mb  LEX239-239 Sep 26, 2012
+GAMS Rev 239  LEX-LEG 23.9.3 x86_64/Linux              10/11/12 06:52:53 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE bilgms Using NLP From line 180
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   bilgms              OBJECTIVE  z
+     TYPE    NLP                 DIRECTION  MINIMIZE
+     SOLVER  BARON               FROM LINE  180
+
+**** SOLVER STATUS     3 Resource Interrupt        
+**** MODEL STATUS      2 Locally Optimal           
+**** OBJECTIVE VALUE              -13.2477
+
+ RESOURCE USAGE, LIMIT       1000.000      1000.000
+ ITERATION COUNT, LIMIT         0    2000000000
+ EVALUATION ERRORS              0             0
+
+GAMS/BARON       Jul  4, 2012 23.9.3 LEX 34973.35450 LEG x86_64/Linux         
+
+Branch And Reduce Optimization Navigator
+Nikolaos Sahinidis and Mohit Tawarmalani
+The Optimization Firm, LLC.
+
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- EQU OBJective       .         .         .        1.000      
+
+---- EQU wub  
+
+      LOWER     LEVEL     UPPER    MARGINAL
+
+x1     -INF      0.543     1.000      .         
+x2     -INF      0.517     1.000      .         
+x3     -INF      0.541     1.000      .         
+x4     -INF      0.352     1.000      .         
+x5     -INF      0.592     1.000      .         
+
+---- EQU bcon  
+
+          LOWER     LEVEL     UPPER    MARGINAL
+
+bcon1       .        0.645     +INF       .         
+bcon2      2.000     2.372     +INF       .         
+bcon3     -5.000    -5.000     +INF      1.218      
+bcon4       .        0.354     +INF       .         
+bcon5     -3.000    -2.687     +INF       .         
+bcon6      4.000     4.860     +INF       .         
+bcon7     -5.500    -4.842     +INF       .         
+bcon8     -1.000    -1.000     +INF      1.489      
+bcon9      0.500     0.504     +INF       .         
+bcon10     6.000     6.376     +INF       .         
+bcon11    -3.000    -2.573     +INF       .         
+bcon12      .        0.394     +INF       .         
+bcon13    -6.000    -5.521     +INF       .         
+bcon14    -0.500     0.659     +INF       .         
+bcon15    -0.500     0.309     +INF       .         
+bcon16     2.500     3.199     +INF       .         
+bcon17     1.500     1.589     +INF       .         
+bcon18     2.000     2.028     +INF       .         
+bcon19    -6.000    -5.211     +INF       .         
+bcon20     6.000     6.366     +INF       .         
+bcon21     1.500     1.500     +INF      0.118      
+bcon22    -5.500    -5.395     +INF       .         
+bcon23     1.000     1.000     +INF      0.569      
+bcon24    -5.500    -5.500     +INF      0.068      
+bcon25     3.500     3.541     +INF       .         
+
+---- EQU gcon  
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+y1     15.000    15.000    15.000      .         
+y2     20.000    20.000    20.000 -7.325E-6      
+y3     21.000    21.000    21.000      .         
+y4     20.000    20.000    20.000    -0.688      
+y5     19.000    19.000    19.000     2.502      
+y6     15.000    15.000    15.000      .         
+y7     16.000    16.000    16.000      .         
+y8     11.000    11.000    11.000      .         
+y9     13.000    13.000    13.000      .         
+y10    17.000    17.000    17.000      .         
+y11    12.000    12.000    12.000      .         
+y12    15.000    15.000    15.000      .         
+y13    15.000    15.000    15.000      .         
+y14    12.000    12.000    12.000      .         
+y15    18.000    18.000    18.000      .         
+y16    19.000    19.000    19.000      .         
+y17    15.000    15.000    15.000      .         
+y18    18.000    18.000    18.000      .         
+y19    22.000    22.000    22.000    -2.641      
+y20    13.000    13.000    13.000      .         
+y21    20.000    20.000    20.000      .         
+y22    20.000    20.000    20.000     0.915      
+y23    16.000    16.000    16.000      .         
+y24    14.000    14.000    14.000      .         
+y25    18.000    18.000    18.000      .         
+
+---- EQU KKT  
+
+      LOWER     LEVEL     UPPER    MARGINAL
+
+x1      .         .         .        0.922      
+x2      .         .         .       -0.812      
+x3      .         .         .        0.694      
+x4      .         .         .       -1.159      
+x5      .         .         .        0.307      
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- EQU compl           .    6.1858E-8      .      -19.517      
+
+                       LOWER     LEVEL     UPPER    MARGINAL
+
+---- VAR z              -INF    -13.248     +INF       .         
+
+---- VAR x  
+
+      LOWER     LEVEL     UPPER    MARGINAL
+
+x1     -INF      0.865     +INF       .         
+x2     -INF      0.991     +INF       .         
+x3     -INF      0.950     +INF       .         
+x4     -INF      1.016     +INF       .         
+x5     -INF      0.955     +INF       .         
+
+---- VAR w  
+
+      LOWER     LEVEL     UPPER    MARGINAL
+
+x1      .        0.543     +INF       .         
+x2      .        0.517     +INF       .         
+x3      .        0.541     +INF       .         
+x4      .        0.352     +INF       .         
+x5      .        0.592     +INF       .         
+
+---- VAR y  
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+y1       .         .        +INF      7.266      
+y2       .    3.7257E-7     +INF  -1.631E-7      
+y3       .         .        +INF      0.285      
+y4       .        0.064     +INF       .         
+y5       .        0.006     +INF       .         
+y6       .         .        +INF      7.693      
+y7       .         .        +INF      4.844      
+y8       .         .        +INF      9.260      
+y9       .         .        +INF      8.263      
+y10      .         .        +INF      2.707      
+y11      .         .        +INF      8.690      
+y12      .         .        +INF      4.844      
+y13      .         .        +INF      2.707      
+y14      .         .        +INF      8.120      
+y15      .         .        +INF      4.131      
+y16      .         .        +INF      1.852      
+y17      .         .        +INF      5.129      
+y18      .         .        +INF      3.989      
+y19      .        0.228     +INF       .         
+y20      .         .        +INF      5.983      
+y21      .         .        +INF      1.140      
+y22      .        0.030     +INF       .         
+y23      .         .        +INF      4.701      
+y24      .         .        +INF      7.408      
+y25      .         .        +INF      1.140      
+
+---- VAR s  
+
+       LOWER     LEVEL     UPPER    MARGINAL
+
+y1       .        0.393     +INF       .         
+y2       .        0.166     +INF  -5.326E-8      
+y3       .        0.105     +INF       .         
+y4       .         .        +INF      0.566      
+y5       .         .        +INF      2.610      
+y6       .        0.302     +INF       .         
+y7       .        0.078     +INF       .         
+y8       .        0.523     +INF       .         
+y9       .        0.403     +INF       .         
+y10      .        0.200     +INF       .         
+y11      .        0.533     +INF       .         
+y12      .        0.133     +INF       .         
+y13      .        0.144     +INF       .         
+y14      .        0.599     +INF       .         
+y15      .        0.229     +INF       .         
+y16      .        0.105     +INF       .         
+y17      .        0.405     +INF       .         
+y18      .        0.425     +INF       .         
+y19      .         .        +INF      1.805      
+y20      .        0.223     +INF       .         
+y21      .        0.090     +INF       .         
+y22      .         .        +INF      1.493      
+y23      .        0.329     +INF       .         
+y24      .        0.474     +INF       .         
+y25      .        0.035     +INF       .         
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+                             0     ERRORS
+
+
+EXECUTION TIME       =        0.006 SECONDS      2 Mb  LEX239-239 Sep 26, 2012
+
+
+USER: NEOS Server                                    G100907:1412AS-LNX
+      University of Wisconsin-Madison                            DC8499
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      /scratch/neos/solver/jobs/320988/MODEL.gms
+Output     /scratch/neos/solver/jobs/320988/solve.out
+

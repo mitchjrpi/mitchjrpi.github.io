@@ -1,0 +1,179 @@
+shell "/bin/rm bilgms";
+
+reset;
+display _total_solve_elapsed_time;
+#option solver knitroampl;
+model bilevel.mod;
+data bilevel.dat;
+
+param LPlb;
+param QRlb;
+
+
+problem LPrelax: x, w, y, ytilde, bilevelobj, bcon, gcon,
+          def_ytilde, KKTgrad;
+
+problem quadrelax: x, w, y, ytilde, sigma, bilevelobj, bcon, gcon,
+          def_ytilde, KKTgrad, lifted, quadcon;
+
+problem original: x, w, y, ytilde, bilevelobj, bcon, gcon,
+          def_ytilde, KKTgrad, unlifted;
+
+problem innerQP: x, innerQPobj, gcon;
+
+display n,bdim,gdim;
+
+printf "Solve LP relaxation\n";
+solve LPrelax;     #
+display x,w,ytilde,c,d;
+
+if solve_result_num > 5 then {
+   let LPlb := -1e30
+}
+else {
+   let LPlb := sum{i in 1..n} (c[i] * x[i] + d[i]*w[i]);
+}
+
+
+printf "Solve convex quadratic relaxation\n";
+solve quadrelax;
+display x,w,ytilde,c,d;
+display sum{i in 1..n} x[i]*(0.5*x[i]+w[i]);
+
+if solve_result_num > 5 then {
+   display solve_result_num;
+   let QRlb := -1e30
+}
+else {
+   let QRlb := sum{i in 1..n} (c[i] * x[i] + d[i]*w[i]);
+}
+
+
+
+#
+# print out stuff for GAMS
+#
+printf "* problem bilgms\n" > bilgms;
+printf "SET xVars   /x1*x%i/;\n",n > bilgms;
+#printf "SET wVars   /w1*w%i/;\n",n > bilgms;
+printf "SET yVars   /y1*y%i/;\n",gdim > bilgms;
+#printf "SET QuadCons   /qc1*qc%i/;\n",gdim > bilgms;
+printf "SET bLinCons   /bcon1*bcon%i/;\n",bdim > bilgms;
+#printf "SET gLinCons   /gcon1*gcon%i/;\n",gdim > bilgms;
+#printf "SET KKTCons   /KKT1*KKT%i/;\n\n",n > bilgms;
+#printf "ALIAS(Vars,j,jj);\n \n" > bilgms;
+#printf "ALIAS(pVars,xVars,wVars,KKTCons);\n" > bilgms;
+#printf "ALIAS(xVars,wVars);\n" > bilgms;
+#printf "ALIAS(xVars,KKTCons);\n" > bilgms;
+#printf "ALIAS(yVars,gLinCons);\n \n" > bilgms;
+
+#printf "SET kk /set.j.set.jj/; \n\n" > bilgms;
+
+
+
+printf "PARAMETER c(xVars)\n  /  \n" > bilgms;
+for {i in 1..n} {
+printf "x%i %16.8e \n",i,c[i] > bilgms;
+}
+printf " / \n \n" > bilgms;
+
+printf "PARAMETER d(xVars)\n  /  \n" > bilgms;
+for {i in 1..n} {
+printf "x%i %16.8e \n",i,d[i] > bilgms;
+}
+printf " / \n \n" > bilgms;
+
+printf "PARAMETER b(bLinCons)\n  /  \n" > bilgms;
+for {i in 1..bdim} {
+printf "bcon%i %16.8e \n",i,b[i] > bilgms;
+}
+printf " / \n \n" > bilgms;
+
+printf "PARAMETER g(yVars)\n  /  \n" > bilgms;
+for {i in 1..gdim} {
+printf "y%i %16.8e \n",i,g[i] > bilgms;
+}
+printf " / \n \n" > bilgms;
+
+printf "TABLE Bmat(bLinCons,xVars)\n               " > bilgms;
+for {i in 1..n} {
+printf " x%i                ",i > bilgms;
+}
+printf "\n" > bilgms;
+for {i in 1..bdim} {
+printf "bcon%i",i > bilgms;
+for {j in 1..n} {
+printf "%16.8e    ",B[i,j] > bilgms;
+}
+printf "\n" > bilgms;
+}
+printf " ;\n\n" > bilgms;
+
+printf "TABLE Hmat(yVars,xVars)\n               " > bilgms;
+for {i in 1..n} {
+printf " x%i                ",i > bilgms;
+}
+printf "\n" > bilgms;
+for {i in 1..gdim} {
+printf "y%i",i > bilgms;
+for {j in 1..n} {
+printf "%16.8e    ",H[i,j] > bilgms;
+}
+printf "\n" > bilgms;
+}
+printf " ;\n\n" > bilgms;
+
+printf "*ampl res : LPlb %16.8e, QRlb %16.8e\n",
+LPlb,QRlb > bilgms;
+
+
+
+# print out the remaining part of the GAMS model file
+
+printf "\n" > bilgms;
+printf "VARIABLES z\n" >bilgms;
+printf "          x(xVars);\n\n" > bilgms;
+printf "POSITIVE VARIABLES w(xVars)\n" > bilgms;
+printf "                   y(yVars)\n" > bilgms;
+printf "                   s(yVars);\n" > bilgms;
+
+printf "\n" > bilgms;
+printf "EQUATIONS\n" > bilgms;
+printf "   OBJective\n" > bilgms;
+printf "   wub(xVars)\n" > bilgms;
+printf "   bcon(bLinCons)\n" > bilgms;
+printf "   gcon(yVars)\n" > bilgms;
+printf "   KKT(xVars)\n" > bilgms;
+printf "   compl;\n" > bilgms;
+
+printf "\n" > bilgms;
+printf "OBJective.. z =e= SUM(xVars, c(xVars) * x(xVars))\n" > bilgms;
+printf "  + SUM(xVars, d(xVars) *w(xVars));\n" > bilgms;
+
+printf "\n" > bilgms;
+printf "wub(xVars)..  w(xVars) =l= 1;\n" > bilgms;
+
+printf "\n" > bilgms;
+printf "bcon(bLinCons)..\n" > bilgms;
+printf "  SUM(xVars, Bmat(bLinCons,xVars)*w(xVars)) =g= b(bLinCons);\n" > bilgms;
+
+printf "\n" > bilgms;
+printf "gcon(yVars)..\n" > bilgms;
+printf "  SUM(xVars, Hmat(yVars,xVars)*x(xVars)) -s(yVars) =e= g(yVars);\n" > bilgms;
+
+printf "\n" > bilgms;
+printf "KKT(xVars)..\n" > bilgms;
+printf "  x(xVars) + w(xVars) -\n" > bilgms;
+printf "    SUM(yVars, Hmat(yVars,xVars)*y(yVars)) =e= 0;\n" > bilgms;
+
+printf "\n" > bilgms;
+printf "compl..\n" > bilgms;
+printf "SUM(yVars,y(yVars)*s(yVars)) =e= 0;\n" > bilgms;
+
+printf "\n" > bilgms;
+printf "model bilgms  /all/;\n" > bilgms;
+
+printf "\n" > bilgms;
+printf "solve bilgms using nlp minimizing z;\n" > bilgms;
+
+display _total_solve_elapsed_time;
