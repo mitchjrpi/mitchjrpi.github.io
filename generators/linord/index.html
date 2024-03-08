@@ -1,0 +1,159 @@
+<TITLE>  Generating linear ordering problems </TITLE>
+
+<H1>  Generating linear ordering problems </H1>
+
+<H3>  Downloading the generator  </H3>
+You can find here pointers to FORTRAN files that can be used
+to generate random degenerate linear ordering problems.
+In particular, these routines can be used to generate the
+thirty problems described in the paper
+<A HREF="http://eaton.math.rpi.edu/faculty/Mitchell/papers/combined.html">"Solving
+linear ordering problems
+with a combined interior point/simplex cutting plane algorithm"</A>:
+<PRE>
+@incollection{MB_combined,
+    AUTHOR  =  {J. E. Mitchell and B. Borchers},
+    TITLE   =  {Solving linear ordering problems with a combined
+      interior point/simplex cutting plane algorithm},
+    YEAR    =  2000,
+    BOOKTITLE= {High Performance Optimization},
+    EDITOR  =  {H. L. Frenk and C. Roos and T. Terlaky and S. Zhang},
+    PUBLISHER= {Kluwer Academic Publishers},
+    ADDRESS =  {Dordrecht, The Netherlands},
+    PAGES   =  {349--366},
+    CHAPTER =  14,
+    URL={http://www.rpi.edu/~mitchj/papers/combined.html} }
+</PRE>
+
+You need to download two files to generate the problems:
+<UL>
+<LI><A HREF="http:linordgen.f">linordgen.f</A>:
+This file will take a seed file and generate a linear ordering problem.
+<LI><A HREF="http:geninput.f">geninput.f</A>:
+This file will create the thirty seed files used in the paper.
+</UL>
+
+The following are also available:
+<UL>
+<LI><A HREF="http:problems.tar.gz">problems.tar.gz</A> (1.1M):
+This contains the thirty instances in a single file.
+You will need to <TT>gunzip</TT> the file, and then use <TT>tar</TT> to extract
+the instances. The tar process will set up a directory <TT>problems</TT>
+containing the instances.
+Note: this file is large, so you should probably only download it if
+you are unable to get the problem generator to work.
+<LI><A HREF="http:gen_probs">gen_probs</A>:
+This is a 60 line command file that will take the inputs
+created by geninput.f and use linordgen.f to turn them
+into the problem instances.
+This replaces the mechanical steps of copying the seed files to fort.15
+and then creating the actual instances.
+Take the following steps:
+<OL>
+<LI>Compile geninput.f to give an executable <TT>geninput</TT>,
+place it in a subdirectory <TT>seeds</TT>, and run it.
+<LI>Compile linordgen.f to give an executable <TT>linordgen</TT>,
+in the main directory.
+<LI>Create another subdirectory called <TT>problems</TT>.
+<LI>Run <TT>gen_probs</TT>.
+</OL>
+<li>
+The <a href=values>optimal values</a> of the problems.
+</UL>
+
+<H3> The linear ordering problem  </H3>
+
+In the linear ordering problem, we are given MATSIZE objects, and we
+have pairwise comparisons between the objects. We want to choose the
+best ordering for the objects. MAT(I,J) gives the benefit of placing
+I before J in the ordering. Thus, we want to choose the ordering that
+solves:
+<PRE>
+  max  sum MAT(I,J): I is before J in the ordering
+</PRE>
+
+A collection of <B>real-world</B> instances of the linear ordering
+problem is available from
+<A HREF="http://www.iwr.uni-heidelberg.de/groups/comopt/software/LOLIB/">
+LOLIB</A>.
+
+<H3> The generated instances  </H3>
+
+The files generate random DEGENERATE linear ordering problems.
+The coefficients mat_ij are uniformly distributed between 0 and 99
+for i < j,and uniformly distributed between 0 and (100*RATIO)-1
+for i > j.  They are INTEGRAL.
+Further, PROPZERO of the coefficients are zero.
+<P>
+The program linordgen.f reads in four parameters from the file fort.15:
+<UL>
+<LI><B>MATSIZE</B>:   The number of sectors in the instance. Can be no larger
+than 250.
+<LI><B>ISEED</B>:     A random seed.
+<LI><B>RATIO</B> and <B>PROPZERO</B>:  See above.
+</UL>
+MATSIZE and ISEED are integers, the other two numbers can be anything
+between 0 and 1. The format of file  fort.15  is
+MATSIZE, ISEED, RATIO, PROPZERO
+<P>
+The generator creates a permutation before actually generating the
+instances, so that the trivial ordering is not necessarily a good
+guess.
+<P>
+The FORTRAN program geninput.f generates 30 input files in the required
+fort.15 format. These correspond to the instances described in the paper
+<A HREF="http://eaton.math.rpi.edu/faculty/Mitchell/papers/combined.html">"Solving
+linear ordering problems
+with a combined interior point/simplex cutting plane algorithm"</A>.
+These seed files are also contained in the subdirectory
+<A HREF=seeds>seeds</A>.
+The <A HREF=values>optimal values</A> for these problems and
+some others are available.
+<P>
+These input files can then be copied to  fort.15  and then linordgen.f
+can be used to generate the matrices. Note that linordgen.f generates
+several lines of additional output before generating the entries MAT(I,J).
+The entries MAT(I,J) are output as
+<PRE>
+MAT(1,1)
+MAT(1,2)
+...
+MAT(1,MATSIZE)
+MAT(2,1)
+MAT(2,2)
+...
+...
+MAT(MATSIZE,1)
+MAT(MATSIZE,2)
+...
+MAT(MATSIZE,MATSIZE)
+</PRE>
+The file <A HREF="r100a2prob">r100a2prob</A>
+contains the output generated by linordgen.f from input
+<A HREF="seeds/r100a2">seeds/r100a2</A>.
+The first 14 lines contain information about the instance, and the last
+10000 lines contain the entries in MAT(.,.)
+<P>
+Another version of geninput.f that generates a larger number of test
+input files is also available:
+<A HREF="seeds/geninput0.f">geninput0.f</A>.
+The output from this program is in the directory
+<A HREF="seeds/lots">seeds/lots</A>.
+
+<HR>
+
+<A HREF=../..>Back to my homepage</A>.
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-39407322-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
