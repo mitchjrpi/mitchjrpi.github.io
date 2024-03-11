@@ -1,0 +1,125 @@
+<TITLE>VSS for Birge and Louveaux, Question 1, Page 43</TITLE>
+
+
+<H3>VSS for Birge and Louveaux, Question 1, Page 43</H3>
+
+<a href=..>MATP 6960 Stochastic Programming</a>
+
+<p>
+
+Finding the value of the <b>deterministic solution</b>:
+
+<p>
+
+The same <a href=birge43q1.mod>model file</a> can be used.
+All the demand parameters in the <a href=birge43q1.dat>old data file</a>
+are replaced by their average values, to give a
+<a href=birge43q1ev.dat>new data file</a>.
+Solving gives the following:
+
+<pre>
+==================================================
+CPLEX 6.6.0: 
+CPLEX 6.6.0: optimal solution; objective 225.83335
+15 simplex iterations (0 in phase I)
+ampl: display x;
+x [*] :=
+business   28.3333
+ economy  134.167
+   first   11.6667
+;
+
+ampl: display y;
+y :=
+business midday     28.3333
+business morning    28.3333
+business weekend    28.3333
+economy  midday    134.167
+economy  morning   134.167
+economy  weekend   134.167
+first    midday     11.6667
+first    morning    11.6667
+first    weekend    11.6667
+;
+=================================================
+</pre>
+
+<p>
+
+Note that 225.833 is the value of the deterministic
+solution, assuming we can sell the average number of
+tickets in each scenario.
+
+<p>
+
+To calculate the <b>Value of the Stochastic Solution</b>,
+we need to calculate the objective function value
+for the following restricted version of y:
+
+<pre>
+y :=
+business midday     10
+business morning    28.3333
+business weekend    25
+economy  midday    134.167
+economy  morning   134.167
+economy  weekend   134.167
+first    midday      5
+first    morning    11.6667
+first    weekend    10
+;
+</pre>
+
+This has objective function value  203.0559.
+
+<p>
+
+The <b>value of the stochastic solution</b> is thus
+208.3333333 - 203.0559 = <b>5.277</b>.
+
+<pre>
+===============================================
+===============================================
+</pre>
+
+If we force <b>integrality</b>, the solution to the
+deterministic problem is:
+
+<pre>
+===============================================
+CPLEX 6.6.0: 
+CPLEX 6.6.0: optimal integer solution; objective 225
+10 MIP simplex iterations
+0 branch-and-bound nodes
+ampl: display x;
+x [*] :=
+business   28
+ economy  136
+   first   11
+;
+
+ampl: display y;
+y :=
+business midday     28
+business morning    28
+business weekend    28
+economy  midday    136
+economy  morning   136
+economy  weekend   136
+first    midday     11
+first    morning    11
+first    weekend    11
+;
+===============================================
+</pre>
+
+Restricting y shows that this has objective
+function value 204 in the stochastic program.
+
+<p>
+
+So <b>VSS = 208.3333333 - 204 = 4.33</b>.
+
+<hr>
+
+<a href=../..>John Mitchell</a>

@@ -1,0 +1,86 @@
+%\documentclass{article}
+\documentclass[12pt]{article}
+
+\pagestyle{empty}
+
+\oddsidemargin -.5in
+\textwidth 7.5in
+\textheight 10in
+\topmargin -30pt
+\headsep 0in
+\headheight 0in
+
+\newcommand{\real}{I\!\! R}
+
+\begin{document}
+
+\begin{center}
+  \begin{large}
+     MATP6960 Stochastic Programming, Homework 4
+  \end{large}
+\end{center}
+
+\begin{flushright}
+   Due:  Thursday, October 24, 2002.
+\end{flushright}
+
+\vspace{\baselineskip}
+
+%Each question is worth 20 points.
+You may want to use AMPL on some of these questions.
+
+\begin{enumerate}
+\item Birge and Louveaux, page 151, question 3.
+\item Birge and Louveaux, page 169, question 2.
+\item Consider again the Northam Airlines example of question 1 on page 43,
+which was part of Homework~1.
+\begin{enumerate}
+\item Show that the second stage problem has six constraints and nine variables,
+once slacks are
+included, but that there are only eight bases which need to be considered.
+What are the corresponding dual optimal solutions?
+\item Solve the problem using the L-shaped method. Take $\bar{x}=(5,10,150)^T$
+as the first stage variables in the solution to the initial relaxation.
+Include the simple bounds that $x$ should be no larger than the maximum
+demand.
+Also include the simple bounds
+that the revenue in any scenario can be no larger than the revenue
+obtained from the maximum demand for that scenario.
+For example, the maximum possible revenue under Scenario 2 is 255,
+normalizing so that the revenue from an economy class passenger is~1.
+Use the multicut method.
+If there are multiple optimal dual solutions, add all the possible
+constraints.
+You should get the optimal solution after three rounds of adding cutting
+planes.
+\end{enumerate}
+\item The second stage constraints of a two-stage problem look as follows:
+\begin{displaymath}
+\begin{array}{rcl}
+\left[ \begin{array}{rrrr}1&3&-1&0\\2&-1&2&1\end{array}\right] y &=&
+\left[\begin{array}{r}-6\\-4\end{array}\right] \xi +
+\left[ \begin{array}{rrr}5&-1&0\\0&2&4\end{array}\right] x    \\
+y & \geq & 0
+\end{array}
+\end{displaymath}
+where $\xi$ is a random variable with support $\Xi = [0,1]$.
+Write down the linear program (both primal and dual formulation)
+needed to check whether a given $\bar{x}$ produces a feasible second-stage
+problem. If the second stage problem is not feasible, show how to use your formulation to
+produce an inequality in $x$ that cuts off the given~$\bar{x}$.
+Construct the inequality explicitly if $\bar{x}=(1,1,1)^T$.
+(Taken from Kall and Wallace.)
+\end{enumerate}
+
+\vfill
+
+\begin{tabular}{@{\hspace{.5in}}ll}
+   John Mitchell  &
+   Amos Eaton 325  \\
+   x6915.  &
+   mitchj@rpi.edu  \\
+   Office hours:  &
+   Tuesday: 2pm -- 4pm.
+\end{tabular}
+
+\end{document}

@@ -1,0 +1,15 @@
+CPLEX 6.6.0: 
+CPLEX 6.6.0: optimal solution; objective 203.0559
+0 simplex iterations (0 in phase I)
+ampl: display z;
+z :=
+business midday     10
+business morning    28.3333
+business weekend    25
+economy  midday    134.167
+economy  morning   134.167
+economy  weekend   134.167
+first    midday      5
+first    morning    11.6667
+first    weekend    10
+;

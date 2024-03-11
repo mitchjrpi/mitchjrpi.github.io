@@ -1,0 +1,18 @@
+ampl: reset data;
+ampl: data networkflow2.dat;
+ampl: solve;
+CPLEX 12.8.0.0: optimal solution; objective 201
+2 dual simplex iterations (0 in phase I)
+ampl: display x;
+x :=
+r s   6
+r t   9
+s t   5
+s u   4
+t u   4
+t v   4
+u v   0
+u w   2
+v w   8
+;
+

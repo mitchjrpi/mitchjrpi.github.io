@@ -1,0 +1,87 @@
+<title>Sudoku with AMPL</title>
+
+<h2>Solving Sudoku using AMPL</h2>
+
+A
+<a href=http://www.sudoku.org.uk/>sudoku</a>
+problem can be modeled as an integer programming feasibility
+problem.
+
+<h4>Some model files:</h4>
+
+<ol>
+<li> <a href=sudoku.mod>sudoku.mod</a>:
+ known entries in the square are input in triples.
+    Eg, if square(3,2) contains a 5, then the KNOWN[5,2,3]=1.
+
+<li> <a href=sudokuInit.mod>sudokuInit.mod</a>:
+known entries are input in a 9x9 grid, with
+    zeroes representing the unknown entries.
+
+<li><a href=sudokuI2.mod>sudokuI2.mod</a>:
+as for sudokuInit.mod, except for the objective function.
+
+<li><a href=sudokuI2b.mod>sudokuI2b.mod</a>:
+as for sudokuI2.mod, with the binary restriction on the variables
+imposed explicitly.
+
+<li> <a href=sudokuQ.mod>sudokuQ.mod</a>:
+as for sudoku.mod, except with a quadratic objective
+
+<li> <a href=sudokuQI.mod>sudokuQI.mod</a>:
+as for sudokuInit.mod, except a quadratic
+    objective is used, to try to find alternative feasible
+    solutions to the LP relaxation.
+</ol>
+
+<h4>Data files:</h4>
+
+<ul>
+<li>
+<a href=sudoku2.dat>sudoku2.dat</a>,
+<a href=sudoku3.dat>sudoku3.dat</a>,
+ and <a href=sudoku4.dat>sudoku4.dat</a>
+ are input files for <a href=sudoku.mod>sudoku.mod</a>.
+These problems are solved by the CPLEX LP preprocessor.
+<li>
+<a href=sudokuI.dat>sudokuI.dat</a>,
+<a href=sudokuI2.dat>sudokuI2.dat</a>,
+and
+<a href=sudokuI3.dat>sudokuI3.dat</a>
+are input files for <a href=sudokuInit.mod>sudokuInit.mod</a>.
+For these problems, the solution to the LP relaxation is nonintegral.
+These problems are taken from
+<a href=http://www.sudoku.org.uk/bifurcation.htm>here</a>.
+</ul>
+
+<h4>Other sites</h4>
+
+<ul>
+<li>
+An <a href=http://www.sudoku.org.uk/blunder.htm>example
+with 1905 solutions.</a>
+Legitimate problems have a unique solution.
+<li>
+<a href=http://www.google.com/search?q=sudoku>Googling sudoku</a>.
+<li>
+<a href=http://www.nikoli.co.jp/puzzles/1/lets_make_sudoku00-e.htm>Creating
+sudoku puzzles</a>.
+<li>
+<a href=http://www.timesonline.co.uk/article/0,,7-1757275,00.html>A variant of sudoku</a>.
+<li>
+<a href=http://www.kakuro.info/>Kakuro</a>, another number puzzle.
+</ul>
+
+<hr>
+
+<a href=..>John Mitchell</a>
+<br>
+1 Nov 2005
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-924637-1";
+_udn ="rpi.edu";
+urchinTracker();
+</script>

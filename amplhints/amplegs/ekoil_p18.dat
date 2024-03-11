@@ -1,0 +1,23 @@
+set PROCESS := old, new;
+set CRUDE := crude1, crude2, crude3;
+set REFINED := regular, super;
+
+param: contractsize price :=
+ regular   500        6
+ super     300        9;
+
+param: crudequantities :=
+ crude1   1500
+ crude2   1900
+ crude3   1000;
+
+param  production :
+          new  old  :=
+ regular   9    5
+ super     7    9;
+
+param  crudeuse :
+          new  old  :=
+ crude1    5    3
+ crude2    7    9
+ crude3    2    4;

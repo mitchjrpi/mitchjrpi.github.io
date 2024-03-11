@@ -1,0 +1,110 @@
+%\documentclass{article}
+\documentclass[12pt]{article}
+
+\pagestyle{empty}
+
+\oddsidemargin -.5in
+\textwidth 7.5in
+\textheight 10in
+\topmargin -30pt
+\headsep 0in
+\headheight 0in
+
+\newcommand{\real}{I\!\! R}
+
+\begin{document}
+
+\begin{center}
+  \begin{large}
+     MATP6960 Stochastic Programming, Homework 3
+  \end{large}
+\end{center}
+
+\begin{flushright}
+   Due:  Thursday, October 10, 2002.
+\end{flushright}
+
+%\vspace{\baselineskip}
+
+
+\begin{enumerate}
+\item Birge and Louveaux, page 109, question 1.
+\item Birge and Louveaux, page 109, question 2.
+\item Birge and Louveaux, page 121, question 1.
+Assume $x \geq 0$ and $\xi \geq 0$ for this question.
+The {\em Gomory function} for $y_1^*$ is
+$y_1^*=\min\{2,\lfloor \xi x \rfloor \}$.
+See page 110 for other examples of Gomory functions.
+\item Birge and Louveaux, page 121, question 2.
+\item %PTSP question.
+The complete graph below consists of a number of teeth and a base.
+Each tooth has length one.
+The base has width and length one.
+It contains $k^4(2k-1)+2k(2k+1)+4 \approx 2k^5$ vertices arranged as follows:
+\begin{itemize}
+\item
+There are $k$ teeth in the graph, each of width $\frac{1}{2k-1}$.
+\item
+There are $k^4$ points evenly spaced in each
+short horizontal segment, both at the top and the bottom of the teeth.
+\item
+There are $2k+1$ teeth evenly spaced along each side of each tooth.
+\item
+There are four additional vertices at the corners of the handle.
+\end{itemize}
+The graph is complete, with each vertex connected to each other vertex.
+The distance between two vertices is their standard Euclidean distance.
+The optimal TSP tour for the graph is to travel up and down each tooth
+successively and then go round the handle.
+Let each vertex be present with probability $p=\frac{1}{k^3}$,
+with the presence of each vertex independent of the others.
+\begin{enumerate}
+\item
+Show that the expected length of the {\em a priori} tour given
+by the optimal TSP tour is approximately $E(L_{TSP})=2k+2$, for large~$k$.
+\item
+Find another {\em a priori} tour that has an expected length of
+approximately $E(L_{PTSP})=4$ in the probabilistic TSP, for large~$k$.
+\item
+As constructed, the ratio
+$\frac{E(L_{TSP})}{E(L_{PTSP})}$
+takes a value of approximately the fifth root of $n$ as $n\rightarrow\infty$,
+where $n$ is the number of vertices in the graph.
+By redesigning this graph, how large can you make the ratio
+$\frac{E(L_{TSP})}{E(L_{PTSP})}$?
+\end{enumerate}
+
+\begin{picture}(300,160)(0,20)
+\put(20,20){\line(0,1){160}}
+\put(20,20){\line(1,0){160}}
+\put(180,20){\line(0,1){160}}
+\put(20,180){\line(1,0){20}}
+\put(60,180){\line(1,0){20}}
+\put(120,180){\line(1,0){20}}
+\put(160,180){\line(1,0){20}}
+\put(40,100){\line(1,0){20}}
+\put(140,100){\line(1,0){20}}
+\put(40,100){\line(0,1){80}}
+\put(60,100){\line(0,1){80}}
+\put(80,100){\line(0,1){80}}
+\put(160,100){\line(0,1){80}}
+\put(140,100){\line(0,1){80}}
+\put(120,100){\line(0,1){80}}
+\multiput(85,140)(5,0){7}{\circle*{3}}
+\put(200,140){$k$ teeth, each of width $\frac{1}{2k-1}$ and height one}
+\put(200,60){Handle of width one and height one}
+\end{picture}
+\end{enumerate}
+
+\vfill
+
+\begin{tabular}{@{\hspace{.5in}}ll}
+   John Mitchell  &
+   Amos Eaton 325  \\
+   x6915.  &
+   mitchj@rpi.edu  \\
+   Office hours:  &
+   Tuesday: 2pm -- 4pm.
+\end{tabular}
+
+\end{document}

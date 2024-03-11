@@ -1,0 +1,35 @@
+set YARN  := extrafine fine medium coarse;
+set COMPANIES := inzaghi nesta cuomo delpiero vieri giuliani zoff;
+set OUTSIDE := inzaghi nesta cuomo delpiero vieri giuliani;
+
+param:      demand  transportcost:=
+  extrafine  25000     .01
+  fine       26000     .01
+  medium     28000     .015
+  coarse     28000     .015  ;
+
+param:    capacity distance :=
+  inzaghi   2500    30
+  nesta     3000    40
+  cuomo     2500    80
+  delpiero  2600    70
+  vieri     2500    70
+  zoff     38000     0
+  giuliani  2500    50   ;
+
+param machinehours:
+            inzaghi nesta      cuomo delpiero vieri   zoff   giuliani :=
+  extrafine  100      .7       .675   100     .65     .625     .700
+  fine       .4       .5       .45    .45     .45     .5       .45
+  medium     .375     .35      .4     .35     .4      .425     .35
+  coarse     .25      .25      .25    .2      .25     .425     .4   ;
+
+param productioncost:
+            inzaghi  nesta     cuomo  delpiero vieri   zoff   giuliani :=
+  extrafine  1000     17.4      17.4   1000    17.5    18.25   19.75
+  fine       13       14.1      14.22  14.3    13.8    13.9    13.9
+  medium     10.65    11.2      11     11.25   11.4    11.4    10.75
+  coarse     9.6      9.45      9.5    9.6     9.6     8.9      9.4  ;
+
+param batchsize := 1000;
+param switchcost := 1200;

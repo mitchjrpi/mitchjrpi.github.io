@@ -1,0 +1,295 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Stochastic Programming Homework 7</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="hw7">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="hw7.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+     <a href=..>MATP6960 Stochastic Programming</a>, Homework 7
+  </FONT>
+</DIV>
+
+<P>
+
+<DIV ALIGN="RIGHT">
+   Due:  Thursday, December 5, 2002.
+
+</DIV>
+
+<P>
+
+<BR>
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>Consider the three stage problem
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcl}
+\min && Q^2(x^1) \\
+\mbox{s.t.} & 1  \leq & x^1 & \leq 3 \\
+\end{array}
+\end{displaymath} -->
+
+<IMG
+ WIDTH="192" HEIGHT="53"
+ SRC="img1.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcl}
+\min &amp;&amp; Q^2(x^1) \\
+\mbox{s.t.} &amp; 1 \leq &amp; x^1 &amp; \leq 3 \\
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+with <!-- MATH: $Q^2(x^1)=E_{\xi}[Q^2(x^1,\xi)]$ -->
+<IMG
+ WIDTH="188" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$Q^2(x^1)=E_{\xi}[Q^2(x^1,\xi)]$">,
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{rlrcl}
+Q^2(x^1,\xi) = & \min & Q^3(x^2) \\
+&\mbox{s.t.} & x^{2,+} - x^{2,-} & = & \xi_1 - x^1 \\
+&& x^{2,+}, x^{2,-} & \geq & 0
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="345" HEIGHT="76"
+ SRC="img3.gif"
+ ALT="\begin{displaymath}
+\begin{array}{rlrcl}
+Q^2(x^1,\xi) = &amp; \min &amp; Q^3(x^2) \\
+&amp;\...
+... = &amp; \xi_1 - x^1 \\
+&amp;&amp; x^{2,+}, x^{2,-} &amp; \geq &amp; 0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+and <!-- MATH: $Q^3(x^2)=E_{\xi}[Q^3(x^2,\xi)]$ -->
+<IMG
+ WIDTH="188" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$Q^3(x^2)=E_{\xi}[Q^3(x^2,\xi)]$">,
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{rlrcl}
+Q^3(x^2,\xi) = & \min & x^{3,+} + x^{3,-} \\
+&\mbox{s.t.} & x^{3,+} - x^{3,-} & = & \xi_2 x^{2,+} - \xi_3 x^{2,-} \\
+&& x^{3,+}, x^{3,-} & \geq & 0.
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="407" HEIGHT="76"
+ SRC="img5.gif"
+ ALT="\begin{displaymath}
+\begin{array}{rlrcl}
+Q^3(x^2,\xi) = &amp; \min &amp; x^{3,+} + x^{3,...
+...- \xi_3 x^{2,-} \\
+&amp;&amp; x^{3,+}, x^{3,-} &amp; \geq &amp; 0.
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The random variable <IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\xi_1$">
+takes the value 0 or 4 each with probability&nbsp;0.5.
+The random variable <IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\xi_2$">
+is equal to 2 if <IMG
+ WIDTH="54" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.gif"
+ ALT="$\xi_1=0$">;
+otherwise, it is equal to zero.
+The random variable <IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$\xi_3$">
+is equal to 2 if <IMG
+ WIDTH="54" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$\xi_1=4$">;
+otherwise, it is equal to zero.
+
+<P>
+Show that the optimal value of this problem is zero, achieved by any feasible&nbsp;<I>x</I><SUP>1</SUP>.
+Show that setting each <IMG
+ WIDTH="18" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.gif"
+ ALT="$\xi_i$">
+equal to its mean and solving the resulting problem
+does not give a lower bound on <I>Q</I><SUP>2</SUP>(<I>x</I><SUP>1</SUP>), unless <I>x</I><SUP>1</SUP>=2.
+
+<P>
+
+<DT>2.
+<DD>Consider the three stage problem
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{lrcl}
+\min && Q^2(x^1) \\
+\mbox{s.t.} & 0  \leq & x^1 & \leq 4 \\
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="192" HEIGHT="53"
+ SRC="img12.gif"
+ ALT="\begin{displaymath}
+\begin{array}{lrcl}
+\min &amp;&amp; Q^2(x^1) \\
+\mbox{s.t.} &amp; 0 \leq &amp; x^1 &amp; \leq 4 \\
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+with <!-- MATH: $Q^2(x^1)=E_{\xi}[Q^2(x^1,\xi)]$ -->
+<IMG
+ WIDTH="188" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$Q^2(x^1)=E_{\xi}[Q^2(x^1,\xi)]$">,
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{rlrcl}
+Q^2(x^1,\xi) = & \min & x^{2,+} + x^{2,-} + Q^3(x^2) \\
+&\mbox{s.t.} & x^{2,+} - x^{2,-} & = & \xi_1 - x^1 \\
+&& 0 \leq  x^{2,+}, x^{2,-} & \leq & 4
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="422" HEIGHT="76"
+ SRC="img13.gif"
+ ALT="\begin{displaymath}
+\begin{array}{rlrcl}
+Q^2(x^1,\xi) = &amp; \min &amp; x^{2,+} + x^{2,...
+...i_1 - x^1 \\
+&amp;&amp; 0 \leq x^{2,+}, x^{2,-} &amp; \leq &amp; 4
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+and <!-- MATH: $Q^3(x^2)=E_{\xi}[Q^3(x^2,\xi)]$ -->
+<IMG
+ WIDTH="188" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$Q^3(x^2)=E_{\xi}[Q^3(x^2,\xi)]$">,
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{rlrcl}
+Q^3(x^2,\xi) = & \min & x^{3,+} + x^{3,-} \\
+&\mbox{s.t.} & x^{3,+} - x^{3,-} & = & \xi_2 - x^{2,+} \\
+&& 0 \leq x^{3,+}, x^{3,-} & \leq & 4.
+\end{array}
+\end{displaymath} -->
+
+
+<IMG
+ WIDTH="380" HEIGHT="76"
+ SRC="img14.gif"
+ ALT="\begin{displaymath}
+\begin{array}{rlrcl}
+Q^3(x^2,\xi) = &amp; \min &amp; x^{3,+} + x^{3,...
+... x^{2,+} \\
+&amp;&amp; 0 \leq x^{3,+}, x^{3,-} &amp; \leq &amp; 4.
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+The random variables <IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\xi_1$">
+and <IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\xi_2$">
+each take the value 1 or 3 with probability&nbsp;0.5,
+independently.
+
+<P>
+By formulating the extensive form of the problem as a linear programming problem,
+or otherwise,
+confirm that the optimal value is&nbsp;2.5.
+Show that if <I>x</I><SUP>1</SUP>=0 then <I>Q</I><SUP>2</SUP>(<I>x</I><SUP>1</SUP>)=3.
+
+<P>
+Take <I>x</I><SUP>1</SUP>=2 as the first stage solution in the nested L-shaped method for this problem.
+Find the first cut generated by the algorithm of the form <!-- MATH: $E^1_1x^1 + \theta^1 \geq e^1_1$ -->
+<IMG
+ WIDTH="126" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.gif"
+ ALT="$E^1_1x^1 + \theta^1 \geq e^1_1$">.
+Show that <!-- MATH: $E^1_1x^1 + Q^2(x^1) > e^1_1$ -->
+<I>E</I><SUP>1</SUP><SUB>1</SUB><I>x</I><SUP>1</SUP> + <I>Q</I><SUP>2</SUP>(<I>x</I><SUP>1</SUP>) &gt; <I>e</I><SUP>1</SUP><SUB>1</SUB> for all feasible&nbsp;<I>x</I><SUP>1</SUP>. 
+</DL>
+
+<P>
+
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD></TD><TD ALIGN="LEFT"><a href=../..>John Mitchell</a></TD>
+<TD ALIGN="LEFT">Amos Eaton 325</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">x6915.</TD>
+<TD ALIGN="LEFT"><a href=mailto:mitchj@rpi.edu>mitchj@rpi.edu</a></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Office hours:</TD>
+<TD ALIGN="LEFT">Tuesday: 2pm - 4pm.</TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E Mitchell</a>
+<BR><I>2002-11-25</I>
+</ADDRESS>
+</BODY>
+</HTML>

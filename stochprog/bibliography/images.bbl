@@ -1,0 +1,166 @@
+\begin{thebibliography}{10}
+
+\bibitem{ariyawansa2}
+K.~A. Ariyawansa and A.~J. Felt.
+\newblock On a new collection of stochastic linear programming test problems.
+\newblock Technical Report 01--04, Pure and Applied Mathematics, Washington
+  State University, Pullman, WA 99164--3113, May 2001.
+
+\bibitem{birge4}
+J.~R. Birge.
+\newblock Stochastic programming computation and applications.
+\newblock {\em INFORMS Journal on Computing}, 9:111--133, 1997.
+
+\bibitem{birge2}
+J.~R. Birge, C.~J. Donohue, D.~F. Holmes, and O.~G. Svintsitski.
+\newblock A parallel implementation of the nested decomposition algorithm for
+  multistage stochastic linear programs.
+\newblock {\em Mathematical Programming}, 75:327--352, 1996.
+
+\bibitem{caroe2}
+C.~C. Car\oe \ and R.~Schultz.
+\newblock Dual decomposition in stochastic integer programming.
+\newblock {\em Operations Research Letters}, 24(1--2):37--45, 1999.
+
+\bibitem{caroe1}
+C.~C. Car\oe \ and J.~Tind.
+\newblock {L}-shaped decomposition of two-stage stochastic programs with
+  integer recourse.
+\newblock {\em Mathematical Programming}, 83:451--464, 1998.
+
+\bibitem{cormican1}
+K.~Cormican, D.~Morton, and R.~Wood.
+\newblock Stochastic network interdiction.
+\newblock {\em Operations Research}, 46(2):184--197, 1998.
+
+\bibitem{drijver1}
+S.~J. Drijver, W.~K.~Klein Haneveld, and M.~H. van~der Vleck.
+\newblock Asset liability management modeling using multistage mixed-integer
+  stochastic programming.
+\newblock Technical report, SOM, University of Groningen, The Netherlands,
+  2000.
+
+\bibitem{fleten1}
+S.-E. Fleten, K.~H{\o}yland, and S.~W. Wallace.
+\newblock The performance of stochastic dynamic and fixed mix portfolio models.
+\newblock {\em European Journal of Operational Research}, 140(1):37--49, 2002.
+
+\bibitem{fragniere2}
+E.~Fragniere, J.~Gondzio, and J.-P. Vial.
+\newblock Building and solving large-scale stochastic programs on an affordable
+  distributed computing system.
+\newblock {\em Annals of Operations Research}, 99:167--187, 2000.
+
+\bibitem{godfrey1}
+G.~A. Godfrey and W.~B. Powell.
+\newblock An adaptive, distribution-free approximation method for the
+  newsvendor problem with censored demands, with applications to inventory and
+  distribution problems.
+\newblock {\em Management Science}, 47(8):1101--1112, 2001.
+
+\bibitem{gondzio8}
+J.~Gondzio and R.~Kouwenberg.
+\newblock High-performance computing for asset-liability management.
+\newblock {\em Operations Research}, 49(6):879--891, 2001.
+
+\bibitem{gulpinar1}
+N.~Gulpinar, B.~Rustem, and R.~Settergren.
+\newblock Multistage stochastic programming in computational finance.
+\newblock In E.~J. Kontoghiorghes, B.~Rustem, and S.~Siokos, editors, {\em
+  Computational Methods in Decision-Making, Economics and Finance}, volume~74
+  of {\em Applied Optimization}, chapter~3. Kluwer Academic Publishers,
+  Dordrecht, The Netherlands, 2002.
+
+\bibitem{haugen1}
+K.~Haugen and S.~W. Wallace.
+\newblock Market mechanisms and stochastic programming.
+\newblock Technical report, Molde University College, Norway, December 2001.
+
+\bibitem{higle4}
+J.~L. Higle.
+\newblock Variance reduction and objective function evaluation in stochastic
+  linear programs.
+\newblock {\em INFORMS Journal on Computing}, 10:236--247, 1998.
+
+\bibitem{linderoth3}
+J.~Linderoth and S.~Wright.
+\newblock Decomposition algorithms for stochastic programming on a
+  computational grid.
+\newblock Technical Report Preprint ANL/MCS, Mathematics and Computer Science
+  Division, Argonne National Laboratory, Argonne, Illinois 60439, April 2001.
+
+\bibitem{linderoth4}
+J.~T. Linderoth, A.~Shapiro, and S.~J. Wright.
+\newblock The empirical behavior of sampling methods for stochastic
+  programming.
+\newblock Technical Report Optimization Technical Report 02-01, Computer
+  Sciences Department, University of Wisconsin, Madison, January 2002.
+\newblock Revised October 2002.
+
+\bibitem{mak1}
+W.~K. Mak, D.~P. Morton, and R.~K. Wood.
+\newblock Monte carlo bounding techniques for determining solution quality in
+  stochastic programs.
+\newblock {\em Operations Research Letters}, 24:47--56, 1999.
+
+\bibitem{mulvey6}
+J.~M. Mulvey and K.~Simsek.
+\newblock Rebalancing strategies for long-term investors.
+\newblock In E.~J. Kontoghiorghes, B.~Rustem, and S.~Siokos, editors, {\em
+  Computational Methods in Decision-Making, Economics and Finance}, volume~74
+  of {\em Applied Optimization}, chapter~6. Kluwer Academic Publishers,
+  Dordrecht, The Netherlands, 2002.
+
+\bibitem{mulvey1}
+J.~M. Mulvey, R.~J. Vanderbei, and S.~J. Zenios.
+\newblock Robust optimization of large-scale systems.
+\newblock {\em Operations Research}, 43:264--281, 1995.
+
+\bibitem{mulvey3}
+R.~Rush, J.~M. Mulvey, J.~E. Mitchell, and T.~R. Willemain.
+\newblock Stratified filtered sampling in stochastic optimization.
+\newblock {\em Journal of Applied Mathematics and Decision Sciences},
+  4(1):17--38, 2000.
+
+\bibitem{sen1}
+S.~Sen and J.~L. Higle.
+\newblock An introductory tutorial on stochastic linear programming models.
+\newblock {\em Interfaces}, 29(2):33--61, 1999.
+
+\bibitem{seshadri1}
+S.~Seshadri, A.~Khanna, F.~Harche, and R.~Wyle.
+\newblock A method for strategic asset-liability management with an application
+  to the {Federal} {Home} {Loan} {Bank} of {New} {York}.
+\newblock {\em Operations Research}, 47(3):345--360, 1999.
+
+\bibitem{takriti2}
+S.~Takriti and S.~Ahmed.
+\newblock On robust optimization of two-stage systems.
+\newblock Technical report, Mathematical Sciences Department, T. J. Watson
+  Research Center, IBM, Yorktown Heights, NY, February 2001.
+
+\bibitem{takriti1}
+S.~Takriti and J.~R. Birge.
+\newblock Lagrangian solution techniques and bounds for loosely coupled
+  mixed-integer stochastic programs.
+\newblock {\em Operations Research}, 48(1):91--98, 2000.
+
+\bibitem{verweij1}
+B.~Verweij, S.~Ahmed, A.~Kleywegt, G.~L. Nemhauser, and A.~Shapiro.
+\newblock The sample average approximation method applied to stochastic routing
+  problems: A computational study.
+\newblock Technical report, The Logistics Institute, Georgia Institute of
+  Technology, Atlanta, GA, August 2001.
+
+\bibitem{wets1}
+R.~J.-B. Wets.
+\newblock Challenges in stochastic programming.
+\newblock {\em Mathematical Programming}, 75:115--135, 1996.
+
+\bibitem{yzhao1}
+Y.~Zhao and W.~T. Ziemba.
+\newblock A stochastic programming model using an endogenously determined worst
+  case risk measure for dynamic asset allocation.
+\newblock {\em Mathematical Programming}, 89(2):293--309, 2001.
+
+\end{thebibliography}

@@ -1,0 +1,12 @@
+reset;
+
+display _total_solve_elapsed_time;
+
+model standard_rand.mod;
+data standard_rand.dat;
+
+solve;
+
+display m,n;
+
+display _total_solve_elapsed_time;

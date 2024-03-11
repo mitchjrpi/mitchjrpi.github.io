@@ -1,0 +1,357 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>AMPL Hints</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="amplhints">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="amplhints.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+<B><FONT SIZE="+1">Some Hints for Getting More from AMPL and CPLEX</FONT></B>  
+<BR>
+</DIV>
+<P>
+<DIV ALIGN="CENTER">
+<a href=..><B>John Mitchell</B></a>
+
+</DIV>
+
+<P>
+
+<h3>Modifying models, sensitivity analysis, and displaying results</h3>
+
+<UL>
+
+<li>The <a href=http://www.ampl.com>AMPL</a> website
+contains the
+<a href=http://www.ampl.com/BOOK/contents.html>first chapter
+of the AMPL book</a>,
+a collection of
+<a href=http://www.ampl.com/FAQ/>frequently asked questions</a>,
+and a <a href=http://www.ampl.com/BOOKLETS/README101.cplex>list of
+all the cplex options available in AMPL</a>.
+
+<LI>If you are working in a <b>Windows</b> operating system,
+you can edit your model
+and data files in Office, for example. Save the files as plain text files.
+Windows may append the suffix <TT>txt</TT> to the file names, in which case you would
+need to include that suffix when asking ampl to read the file.
+
+<LI>If you want to read in a <b>new model file</b> <TT>chips.mod</TT>
+and data file <TT>chips.dat</TT>,
+you can use the <TT>reset</TT> command:
+<BLOCKQUOTE>
+ampl: <TT>reset;</TT>  
+<BR>
+ampl: <TT>model chips.mod;</TT>  
+<BR>
+ampl: <TT>data chips.dat;</TT>
+
+</BLOCKQUOTE>
+
+<LI>If you want to <b>reset the whole data file</b>
+and read in a new data file <TT>chips.dat</TT>,
+but you want to keep the model
+file as before, you can type
+<BLOCKQUOTE>
+ampl: <TT>reset data;</TT>  
+<BR>
+ampl: <TT>data chips.dat;</TT>
+
+</BLOCKQUOTE>
+
+<LI>If you want to <b>change one parameter</b>, you can use the <B>let</B>
+command as follows:
+<BLOCKQUOTE>
+(<I>OS</I>)&nbsp;<TT>ampl</TT>
+<BR>
+ampl: <TT>model sample/steel.mod;</TT>
+<BR>
+ampl: <TT>data sample/steel.dat;</TT>
+<BR>
+ampl: <TT>solve;</TT>
+<BR>
+MINOS 5.4: optimal solution found.
+<BR>
+2 iterations, objective 192000  
+<BR>
+ampl: <TT>let rate["bands"]:=250;</TT>
+<BR>
+ampl: <TT>solve;</TT> 
+<BR>
+MINOS 5.4: optimal solution found.  
+<BR>
+1 iterations, objective 217200
+
+</BLOCKQUOTE>
+This changes the rate for bands and then resolves the problem.
+
+<P>
+
+<LI>If you want to <b>add some constraints</b>, you can put them in a file
+and then read them in. For example, let <a href=linord.mod>linord.mod</a>
+and <a href=linord.dat>linord.dat</a>
+describe a <a href=http://www.rpi.edu/~mitchj/generators/linord/>linear
+ordering problem</a>, without any
+triangle inequalities.
+Let <a href=cuts.mod>cuts.mod</a> contain some violated triangle inequalities.
+The model with the extra cuts can be solved as follows:
+<BLOCKQUOTE>
+(<I>OS</I>)&nbsp;<TT>ampl</TT>
+<BR>
+ampl: <TT>model linord.mod;</TT>
+<BR>
+ampl: <TT>data linord.dat;</TT>
+<BR>
+ampl: <TT>solve;</TT>
+<BR>
+ILOG CPLEX 9.100, licensed to "rensselaer-troy, ny", options: e m b q 
+<BR>
+CPLEX 9.1.0: optimal solution; objective -35 
+<BR>
+0 dual simplex iterations (0 in phase I) 
+<BR>
+ampl: <TT>model cuts.mod;</TT>
+<BR>
+ampl: <TT>solve;</TT>
+<BR>
+ILOG CPLEX 9.100, licensed to "rensselaer-troy, ny", options: e m b q 
+<BR>
+CPLEX 9.1.0: optimal solution; objective -33 
+<BR>
+1 dual simplex iterations (0 in phase I)
+</BLOCKQUOTE>
+
+A log of this AMPL run can be found
+<a href=linord.out>here</a>.
+
+<P>
+
+<LI>To find the value of a <b>dual variable</b>
+corresponding to a constraint called <TT>fabcap</TT>,
+type
+<BLOCKQUOTE>
+  <TT>display fabcap;</TT>  
+</BLOCKQUOTE>
+To find the slack in the constraint, type
+<BLOCKQUOTE>
+  <TT>display fabcap.slack;</TT>  
+</BLOCKQUOTE>
+
+<LI>To find the <b>reduced cost</b> of a variable called SELL in the optimal
+tableau, type
+<BLOCKQUOTE>
+  <TT>display SELL.rc;</TT>  
+</BLOCKQUOTE>
+
+<LI>One way to find <b>bounds on parameters</b> in AMPL
+is to use the cplex option
+of sensitivity.
+This will let you find ranges in which parameters can be changed
+without the set of optimal basic variables changing.
+First make sure CPLEX is the solver:
+<BLOCKQUOTE>
+ampl: <TT>option solver cplexamp;</TT>
+
+</BLOCKQUOTE>
+
+<P>
+Once you've established cplex as the solver,
+enter the following command:
+
+<P>
+
+<BLOCKQUOTE>
+ampl: <TT>option cplex_options 'sensitivity';</TT>
+
+</BLOCKQUOTE>
+Solve the problem again, and then
+you can then use the suffices <TT>up</TT> and <TT>down</TT> on variable names,
+as described for reduced costs and slacks.
+
+<P>
+
+<LI>All the variables and their reduced costs can be <b>displayed
+simultaneously</b> by using the command<PRE>
+ 
+display {j in 1.._nvars} (_varname[j],_var[j],_var[j].rc);
+</PRE>
+(See page 249 of the AMPL text.)
+
+<P>
+All the constraints and their shadow prices can be displayed simultaneously by using the command <PRE>
+display {j in 1.._ncons} (_conname[j],_con[j]);
+</PRE>
+(Again, see page 249 of the AMPL text.)
+
+<P>
+These commands can be used with the other suffices available when using the
+cplex sensitivity option.
+
+<P>
+
+<LI>You can use <TT>sum</TT> and other AMPL commands after solving the
+problem to find values of various <b>combinations</b> of the primal and
+dual variables and the parameters.
+
+<P>
+
+<LI>A variable can be declared <b>binary</b>. For example:<PRE>
+var make {SET} binary;
+</PRE>
+
+<LI>A variable can be declared <b>integer</b>
+as well as nonnegative and bounded. For
+ example:<PRE>
+var make {SET} &gt;= 0, &lt;= 100, integer;
+</PRE>
+
+<LI>On RCS or Windows machines, you can use the solver <TT>cplex</TT>
+for solving <b>mixed integer programming problems</b>.
+For MacOSX, you may be able to find a useful solver from the
+<a href=http://www.ampl.com/solvers.html>AMPL</a> webpage.
+
+<P>
+Alternatively, you can submit your model to the NEOS server at
+<a href=http://www.neos-server.org/neos/>http://www.neos-server.org/neos/</a>.
+I would suggest using the solver <TT>MINTO</TT>.
+Note that you will need to use a commands file
+if you want to get output that is nicely formatted and easy to interpret.
+The command file can be pretty simple. For example:<PRE>
+solve;
+display invest0, nblocks0;
+display invest1, buy, sell, buyindicator;
+</PRE>
+
+<li><a href=http://www.or.unc.edu/~pataki/hhh/ampl/amplhandout.pdf>Debugging
+an infeasible model</a> by
+<a href=http://www.or.unc.edu/~pataki/>Gabor Pataki</a>.
+This uses the IIS options within CPLEX.
+In particular, you can use the AMPL command
+<tt>option cplex_options 'iisfind 1';</tt>
+
+
+<p>
+
+<li>A
+<a href=http://www.ampl.com/BOOKLETS/README101.cplex>list of
+all the cplex options available in AMPL</a>.
+<P>
+
+</UL>
+
+<h3>Examples:</h3>
+
+<ul>
+<li>
+<a href=http://www.ampl.com/EXAMPLES/index.html>Examples from the
+AMPL website</a>.
+(There are two RPI alumni mentioned on this page:
+<a href=http://www.oberlin.edu/~math/faculty/bosch.html>Bob Bosch</a>
+and
+<a href=http://www.princeton.edu/~rvdb/>Bob Vanderbei</a>.)
+<li>
+Here are some more <a href=amplegs.html>AMPL examples</a>.
+<li>
+<a href=amplegs>More examples</a>,
+including a
+<a href=amplegs/brewABC.mod>set formulation of a general production problem</a>
+together with
+<a href=amplegs/brewA.dat>three</a>
+<a href=amplegs/brewB.dat>data</a>
+<a href=amplegs/brewC.dat>files</a>.
+<li>
+The CPLEX distribution of AMPL examples can be found
+<a href=http://www.rpi.edu/dept/math/math-programming/ampl90/examples/>here</a>.
+<li>
+An excellent collection of
+<a href=http://www.sor.princeton.edu/~rvdb/ampl/nlmodels/><b>nonlinear</b>
+programming models</a>.
+A good place to start may be the block QP models in the <i>Cute set</i>,
+for example
+<a href=http://www.sor.princeton.edu/~rvdb/ampl/nlmodels/cute/blockqp1.mod>blockqp1.mod</a>.
+</ul>
+
+<h3>Web resources and hints</h3>
+<ul>
+<li>
+The CPLEX manual is part of the software distribution.
+So when you download and install cplex on your computer,
+it creates a documentation folder.
+The documentation comes in both html and pdf format.
+It should give you some sort of introduction to modeling
+as well as to the syntax of CPLEX.
+It also includes some tutorials in the gscplex.pdf file.
+There is also a folder of examples included in the distribution.
+The documentation also includes information about installing CPLEX.
+<li>The <a href=http://www.ilog.com/products/cplex/>CPLEX website</a>.
+<li>Information on using the <a href=http://www.rpi.edu/~mitchj/cplex/>CPLEX
+callable library</a>, including a sample makefile.
+<li>
+Here is the
+<a href=http://eaton.math.rpi.edu/cplex90html/index.html>
+cplex 9.0 documentation</a>.
+This page has links to an overview of the callable library,
+and also links to material on getting started with cplex and
+to the user's manual.
+The <a href=http://eaton.math.rpi.edu/cplex90html/pdf/usrcplex.pdf>user
+guide</a> is also available as a pdf file.
+<li>
+You can submit your model to the NEOS server at
+<a href=http://www.neos-server.org/neos/>http://www.neos-server.org/neos/</a>.
+</ul>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=..>John E. Mitchell</a>
+<BR><I>2007-03-05</I>
+</ADDRESS>
+</BODY>
+</HTML>
+
+<script
+  type="text/JavaScript"
+  language="JavaScript">
+<!--
+//
+// get last modified date of the
+// current document.
+//
+
+document.write(
+  "Last updated: " +
+   document.lastModified );
+
+// -->
+</script>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-924637-1";
+_udn ="rpi.edu";
+urchinTracker();
+</script>
+

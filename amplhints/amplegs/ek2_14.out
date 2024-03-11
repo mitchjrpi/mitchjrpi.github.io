@@ -1,0 +1,51 @@
+~/ampl.jem/examples (5) ampl
+ampl: model ek2_14.mod;
+ampl: data ek2_14.dat;
+ampl: solve;
+CPLEX 6.6.0: 
+CPLEX 6.6.0: optimal solution; objective 632.6530612
+2 simplex iterations (0 in phase I)
+ampl: display x;
+x [*] :=
+p1  564.626
+p2   68.0272
+;
+
+ampl: display capacity.slack;
+capacity.slack [*] :=
+   lathe  242.857
+polisher    0
+  sander    0
+;
+
+ampl: display balance.slack;
+balance.slack = 353.741
+
+ampl: reset data;
+ampl: data ek2_14a.dat;
+ampl: solve;
+CPLEX 6.6.0: 
+CPLEX 6.6.0: optimal solution; objective 586.7158672
+4 simplex iterations (0 in phase I)
+ampl: display x;
+x [*] :=
+p1  195.572
+p2    0
+p3  258.303
+p4  132.841
+p5    0
+;
+
+ampl: display capacity.slack;
+capacity.slack [*] :=
+   lathe  143.542
+polisher  295.203
+  sander   -2.27374e-13
+     saw    0
+;
+
+ampl: display balance.slack;
+balance.slack = 0
+
+ampl: quit;
+~/ampl.jem/examples (6)

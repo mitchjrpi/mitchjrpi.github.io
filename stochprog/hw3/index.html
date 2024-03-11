@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Homework 3</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="hw3">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="hw3.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+     <a href=..>MATP6960 Stochastic Programming</a>, Homework 3
+  </FONT>
+</DIV>
+
+<P>
+
+<DIV ALIGN="RIGHT">
+   Due:  Thursday, October 10, 2002.
+
+</DIV>
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>Birge and Louveaux, page 109, question 1.
+<DT>2.
+<DD>Birge and Louveaux, page 109, question 2.
+<DT>3.
+<DD>Birge and Louveaux, page 121, question 1.
+Assume <IMG
+ WIDTH="49" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$x \geq 0$">
+and <IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$\xi \geq 0$">
+for this question.
+Also assume the recourse variables <i>y</i> are nonnegative.
+The <EM>Gomory function</EM> for <I>y</I><SUB>1</SUB><SUP>*</SUP> is
+<!-- MATH: $y_1^*=\min\{2,\lfloor \xi x \rfloor \}$ -->
+<IMG
+ WIDTH="151" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$y_1^*=\min\{2,\lfloor \xi x \rfloor \}$">.
+See page 110 for other examples of Gomory functions.
+<DT>4.
+<DD>Birge and Louveaux, page 121, question 2.
+<DT>5.
+<DD>The complete graph below consists of a number of teeth and a base.
+Each tooth has length one.
+The base has width and length one.
+It contains <!-- MATH: $k^4(2k-1)+2k(2k+1)+4 \approx 2k^5$ -->
+<IMG
+ WIDTH="274" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$k^4(2k-1)+2k(2k+1)+4 \approx 2k^5$">
+vertices arranged as follows:
+<UL>
+
+<LI>There are <I>k</I> teeth in the graph, each of width <!-- MATH: $\frac{1}{2k-1}$ -->
+<IMG
+ WIDTH="39" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$\frac{1}{2k-1}$">.
+
+<LI>There are <I>k</I><SUP>4</SUP> points evenly spaced in each
+short horizontal segment, both at the top and the bottom of the teeth.
+
+<LI>There are 2<I>k</I>+1 teeth evenly spaced along each side of each tooth.
+
+<LI>There are four additional vertices at the corners of the handle.
+
+</UL>
+The graph is complete, with each vertex connected to each other vertex.
+The distance between two vertices is their standard Euclidean distance.
+The optimal TSP tour for the graph is to travel up and down each tooth
+successively and then go round the handle.
+Let each vertex be present with probability <!-- MATH: $p=\frac{1}{k^3}$ -->
+<IMG
+ WIDTH="56" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$p=\frac{1}{k^3}$">,
+with the presence of each vertex independent of the others.
+<DL COMPACT>
+<DT>(a)
+<DD>Show that the expected length of the <EM>a priori</EM> tour given
+by the optimal TSP tour is approximately <!-- MATH: $E(L_{TSP})=2k+2$ -->
+<I>E</I>(<I>L</I><SUB><I>TSP</I></SUB>)=2<I>k</I>+2, for large&nbsp;<I>k</I>.
+<DT>(b)
+<DD>Find another <EM>a priori</EM> tour that has an expected length of
+approximately <I>E</I>(<I>L</I><SUB><I>PTSP</I></SUB>)=4 in the probabilistic TSP, for large&nbsp;<I>k</I>.
+<DT>(c)
+<DD>As constructed, the ratio
+<!-- MATH: $\frac{E(L_{TSP})}{E(L_{PTSP})}$ -->
+<IMG
+ WIDTH="73" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\frac{E(L_{TSP})}{E(L_{PTSP})}$">
+takes a value of approximately the fifth root of <I>n</I> as <!-- MATH: $n\rightarrow\infty$ -->
+<IMG
+ WIDTH="64" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.gif"
+ ALT="$n\rightarrow\infty$">,
+where <I>n</I> is the number of vertices in the graph.
+By redesigning this graph, how large can you make the ratio
+<!-- MATH: $\frac{E(L_{TSP})}{E(L_{PTSP})}$ -->
+<IMG
+ WIDTH="73" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.gif"
+ ALT="$\frac{E(L_{TSP})}{E(L_{PTSP})}$">?
+</DL>
+
+<P>
+
+<BR>
+<IMG
+ WIDTH="635" HEIGHT="256" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.gif"
+ ALT="\begin{picture}
+(300,160)(0,20)
+\put(20,20){\line(0,1){160}}
+\put(20,20){\line(1...
+...e and height one}
+\put(200,60){Handle of width one and height one}
+\end{picture}">
+<BR></DL>
+
+<P>
+
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD></TD><TD ALIGN="LEFT"><a href=../..>John Mitchell</a></TD>
+<TD ALIGN="LEFT">Amos Eaton 325</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">x6915.</TD>
+<TD ALIGN="LEFT"><a href=mailto:mitchj@rpi.edu>mitchj@rpi.edu</a></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Office hours:</TD>
+<TD ALIGN="LEFT">Tuesday: 2pm - 4pm.</TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E Mitchell</a>
+<BR><I>2002-09-30</I>
+</ADDRESS>
+</BODY>
+</HTML>

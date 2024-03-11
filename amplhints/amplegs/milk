@@ -1,0 +1,8 @@
+var  milk >= 0;
+var  cheese >= 0;
+var  butter >= 0;
+
+maximize revenue: milk + 3*cheese + 1.5 * butter;
+
+subject to production: milk + cheese + butter <= 10000;
+subject to labor: 3 * cheese + 2 * butter <= 8000;

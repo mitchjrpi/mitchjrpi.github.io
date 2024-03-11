@@ -1,0 +1,23 @@
+three model files:
+
+(1) sudoku.mod:  known entries in the square are input in triples.
+    Eg, if square(3,2) contains a 5, then the KNOWN[5,2,3]=1.
+
+(2) sudokuInit.mod: known entries are input in a 9x9 grid, with
+    zeroes representing the unknown entries.
+
+(3) sudokuQ.mod: as for sudoku.mod, except with a quadratic objective
+
+(4) sudokuQI.mod: as for sudokuInit.mod, except a quadratic
+    objective is used, to try to find alternative feasible
+    solutions to the LP relaxation.
+
+
+sudoku2.dat and sudoku3.dat are input files for sudoku.mod
+
+sudokuI.dat is an input file for sudokuInit.mod and sudokuQ.mod
+
+sudoku5.dat is Problem 25 from the Guardian Weekly of Feb 17-23, 2006.
+The LP solution is fractional, and the preprocessor with CPLEX B&B
+is unable to solve it. The problem does solve in the root node.
+sudokuI5.dat is the same problem in the other format.

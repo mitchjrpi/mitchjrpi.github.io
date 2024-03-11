@@ -1,0 +1,38 @@
+~/public_html/amplhints (23) ampl
+ILOG AMPL 9.100, licensed to "rensselaer-troy, ny".
+AMPL Version 20021038 (SunOS 5.8)
+ampl: model linord.mod
+ampl: data linord.dat
+ampl: solve;
+ILOG CPLEX 9.100, licensed to "rensselaer-troy, ny", options: e m b q 
+CPLEX 9.1.0: optimal solution; objective -35
+0 dual simplex iterations (0 in phase I)
+ampl: display x;
+x [*,*]
+:   2   3   4   5   6   7   8    :=
+1   1   0   1   0   0   1   1
+2   .   1   0   0   1   1   0
+3   .   .   0   1   0   0   1
+4   .   .   .   1   0   0   1
+5   .   .   .   .   0   1   1
+6   .   .   .   .   .   1   0
+7   .   .   .   .   .   .   0
+;
+
+ampl: model cuts.mod;
+ampl: solve;
+ILOG CPLEX 9.100, licensed to "rensselaer-troy, ny", options: e m b q 
+CPLEX 9.1.0: optimal solution; objective -33
+1 dual simplex iterations (0 in phase I)
+ampl: display x;
+x [*,*]
+:   2   3   4   5   6   7   8    :=
+1   1   1   1   0   0   1   1
+2   .   1   0   0   1   1   0
+3   .   .   0   1   0   0   1
+4   .   .   .   1   0   0   1
+5   .   .   .   .   0   1   1
+6   .   .   .   .   .   1   0
+7   .   .   .   .   .   .   0
+;
+

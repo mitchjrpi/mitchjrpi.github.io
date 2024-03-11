@@ -1,0 +1,25 @@
+reset;
+
+display _total_solve_elapsed_time;
+
+model debris.mod;
+model sizes.mod;
+data debris.dat;
+
+
+
+  
+
+problem LPrelax: open, flow, useorigin, useorigdest, maxdelay,
+  objective, finddelay, onlyuseopen, capacitylimit, limitorigins,
+  openusedorigins,
+  flowconservationorigin,
+  flowconservationdest, flowconservationdest0,
+  flowconservationtransp, flowconservationotherdest;
+
+display gridwidth, gridheight, ndest, origin_limit, capacity;
+display sum{j in DESTINATIONS} demand[j];
+
+solve LPrelax;
+
+display _total_solve_elapsed_time;

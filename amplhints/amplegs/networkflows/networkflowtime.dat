@@ -1,0 +1,28 @@
+set NODES := r s t u v w;
+set ARCS := (r,s) (r,t) (s,t) (s,u) (t,u) (t,v) (u,v) (u,w) (v,w)
+(r,r) (s,s) (t,t) (u,u) (v,v) (w,w);
+
+param T := 5;
+
+param supply :=
+r 1 10
+w 5 -10
+;
+
+param: cost  capacity traveltime :=
+r,s     5      7        1
+r,t     4      4        1
+s,t     3      5        1
+s,u     5      4        1
+t,u     7      6        1
+t,v     4      4        1
+u,v     3      5        1
+u,w     4      7        1
+v,w     5      3        1
+r,r     0     20        1
+s,s     0     20        1
+t,t     0     20        1
+u,u     0     20        1
+v,v     0     20        1
+w,w     0     20        1
+;

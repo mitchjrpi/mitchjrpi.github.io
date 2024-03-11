@@ -1,0 +1,5 @@
+set NODES := A B C D E F G H J ;
+
+param: EDGES :  c  :=
+  A B 1 A F 1 A G 2 B C 1 C D 1 C G 2 C H 1 C J 2 D E 1 D J 2 E F 1 E J 2
+  F G 2 F H 1 G H 1 H J 1; 

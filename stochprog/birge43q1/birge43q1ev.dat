@@ -1,0 +1,13 @@
+set TICKETCLASSES = first business economy;
+set SCENARIOS = morning weekend midday;
+
+param profit := first 3 business 2 economy 1;
+
+param spaceuse := first 2 business 1.5 economy 1;
+
+param demand :  morning weekend midday :=
+   first          11.6667      11.6667      11.6667
+   business       28.3333      28.3333     28.3333
+   economy       175     175    175;
+
+param planesize := 200;

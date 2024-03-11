@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p5 (May 15th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Homework 4</TITLE>
+<META NAME="description" CONTENT="No Title">
+<META NAME="keywords" CONTENT="hw4">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="hw4.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+
+<P>
+
+<DIV ALIGN="CENTER">
+  </DIV>
+<DIV ALIGN="CENTER"><FONT SIZE="+1">
+     <a href=..>MATP6960 Stochastic Programming</a>, Homework 4
+  </FONT>
+</DIV>
+
+<P>
+
+<DIV ALIGN="RIGHT">
+   Due:  Thursday, October 24, 2002.
+
+</DIV>
+
+<P>
+
+<BR>
+
+<P>
+You may want to use AMPL on some of these questions.
+
+<P>
+
+<DL COMPACT>
+<DT>1.
+<DD>Birge and Louveaux, page 151, question 3.
+<DT>2.
+<DD>Birge and Louveaux, page 169, question 2.
+<DT>3.
+<DD>Consider again the Northam Airlines example of question 1 on page 43,
+which was part of Homework&nbsp;1.
+<DL COMPACT>
+<DT>(a)
+<DD>Show that the second stage problem has six constraints and nine variables,
+once slacks are
+included, but that there are only eight bases which need to be considered.
+What are the corresponding dual optimal solutions?
+<DT>(b)
+<DD>Solve the problem using the L-shaped method. Take <!-- MATH: $\bar{x}=(5,10,150)^T$ -->
+<IMG
+ WIDTH="138" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\bar{x}=(5,10,150)^T$">
+as the first stage variables in the solution to the initial relaxation.
+Include the simple bounds that <i>x</i> should be no larger than the maximum
+demand.
+Also include the simple bounds
+that the revenue in any scenario can be no larger than the revenue
+obtained from the maximum demand for that scenario.
+For example, the maximum possible revenue under Scenario 2 is 255,
+normalizing so that the revenue from an economy class passenger is 1.
+Use the multicut method.
+If there are multiple optimal dual solutions, add all the possible
+constraints.
+You should get the optimal solution after three rounds of adding cutting
+planes.
+</DL>
+<DT>4.
+<DD>The second stage constraints of a two-stage problem look as follows:
+<BR><P></P>
+<DIV ALIGN="CENTER">
+<!-- MATH: \begin{displaymath}
+\begin{array}{rcl}
+\left[ \begin{array}{rrrr}1&3&-1&0\\2&-1&2&1\end{array}\right] y &=&
+\left[\begin{array}{r}-6\\-4\end{array}\right] \xi +
+\left[ \begin{array}{rrr}5&-1&0\\0&2&4\end{array}\right] x    \\
+y & \geq & 0
+\end{array}
+\end{displaymath} -->
+
+<IMG
+ WIDTH="421" HEIGHT="78"
+ SRC="img2.gif"
+ ALT="\begin{displaymath}
+\begin{array}{rcl}
+\left[ \begin{array}{rrrr}1&amp;3&amp;-1&amp;0\\ 2&amp;-1...
+...5&amp;-1&amp;0\\ 0&amp;2&amp;4\end{array}\right] x \\
+y &amp; \geq &amp; 0
+\end{array}\end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+where <IMG
+ WIDTH="13" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$\xi$">
+is a random variable with support <IMG
+ WIDTH="79" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\Xi = [0,1]$">.
+Write down the linear program (both primal and dual formulation)
+needed to check whether a given <IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.gif"
+ ALT="$\bar{x}$">
+produces a feasible second-stage
+problem. If the second stage problem is not feasible, show how to use your formulation to
+produce an inequality in <I>x</I> that cuts off the given&nbsp;<IMG
+ WIDTH="15" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img5.gif"
+ ALT="$\bar{x}$">.
+Construct the inequality explicitly if <!-- MATH: $\bar{x}=(1,1,1)^T$ -->
+<IMG
+ WIDTH="110" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$\bar{x}=(1,1,1)^T$">.
+(Taken from Kall and Wallace.)
+</DL>
+
+<P>
+
+<P>
+
+<TABLE CELLPADDING=3>
+<TR><TD></TD><TD ALIGN="LEFT"><a href=../..>John Mitchell</a></TD>
+<TD ALIGN="LEFT">Amos Eaton 325</TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">x6915.</TD>
+<TD ALIGN="LEFT"><a href=mailto:mitchj@rpi.edu>mitchj@rpi.edu</a></TD>
+</TR>
+<TR><TD></TD><TD ALIGN="LEFT">Office hours:</TD>
+<TD ALIGN="LEFT">Tuesday: 2pm - 4pm.</TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html3"
+ HREF="node1.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<ADDRESS>
+<a href=../..>John E Mitchell</a>
+<BR><I>2002-10-15</I>
+</ADDRESS>
+</BODY>
+</HTML>

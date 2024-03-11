@@ -1,0 +1,8 @@
+var  tv >= 10;
+var  magazines >= 2;
+var  radio >= 0, <= 120;
+
+maximize audience: 1.8 * tv + magazines + .25 * radio;
+
+subject to budget: 20000 * tv + 10000 * magazines + 2000 * radio <= 1000000;
+subject to create: tv + 3 * magazines + (1/7) * radio <=100;
