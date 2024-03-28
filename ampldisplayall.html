@@ -1,0 +1,28 @@
+<title>Displaying all variables</title>
+
+<h2>Displaying all variables</h2>
+
+
+<li><b>Displaying all variables:</b>
+<br>
+All the variables and their reduced costs
+can be displayed simultaneously by using the command
+<br>
+<pre>
+display {j in 1.._nvars} (_varname[j],_var[j],_var[j].rc);
+</pre>
+(See page 249 of the AMPL text.)
+<li><b>Displaying all shadow prices:</b>
+<br>
+All the constraints and their shadow prices
+can be displayed simultaneously by using the command
+<br>
+<pre>
+display {j in 1.._ncons} (_conname[j],_con[j]);
+</pre>
+(See page 249 of the AMPL text.)
+</ul>
+
+<hr>
+
+<a href=ampldetails.html>AMPL Details</a> | <a href=index.html>John Mitchell</a>
